@@ -12,53 +12,53 @@
     };
 
     # Plugins
-    nvim-which-key = { url = "github:folke/which-key.nvim"; flake = false; };
-    plenary = { url = "github:nvim-lua/plenary.nvim"; flake = false; };
-    impatient = { url = "github:lewis6991/impatient.nvim"; flake = false; };
-    lspconfig = { url = "github:neovim/nvim-lspconfig"; flake = false; };
-    lspstatus = { url = "github:nvim-lua/lsp-status.nvim"; flake = false; };
-    luadev = { url = "github:folke/lua-dev.nvim"; flake = false; };
-    null-ls = { url = "github:jose-elias-alvarez/null-ls.nvim"; flake = false; };
-    lsp_ts_utils = { url = "github:jose-elias-alvarez/nvim-lsp-ts-utils"; flake = false; };
-    lspkind = { url = "github:onsails/lspkind-nvim"; flake = false; };
-    trouble = { url = "github:folke/trouble.nvim"; flake = false; };
-    jdtls = { url = "github:mfussenegger/nvim-jdtls"; flake = false; };
+    alpha = { url = "github:goolord/alpha-nvim"; flake = false; };
+    beancount = { url = "github:polarmutex/beancount.nvim"; flake = false; };
     cmp = { url = "github:hrsh7th/nvim-cmp"; flake = false; };
     cmp_buffer = { url = "github:hrsh7th/cmp-buffer"; flake = false; };
-    cmp_path = { url = "github:hrsh7th/cmp-path"; flake = false; };
+    cmp_emoji = { url = "github:hrsh7th/cmp-emoji"; flake = false; };
     cmp_lua = { url = "github:hrsh7th/cmp-nvim-lua"; flake = false; };
     cmp_lsp = { url = "github:hrsh7th/cmp-nvim-lsp"; flake = false; };
-    cmp_emoji = { url = "github:hrsh7th/cmp-emoji"; flake = false; };
     cmp_luasnip = { url = "github:saadparwaiz1/cmp_luasnip"; flake = false; };
-    luasnip = { url = "github:L3MON4D3/LuaSnip"; flake = false; };
-    treesitter = { url = "github:nvim-treesitter/nvim-treesitter"; flake = false; };
-    treesitter_playground = { url = "github:nvim-treesitter/playground"; flake = false; };
-    telescope = { url = "github:nvim-telescope/telescope.nvim"; flake = false; };
-    harpoon = { url = "github:ThePrimeagen/harpoon"; flake = false; };
-    lightspeed = { url = "github:ggandor/lightspeed.nvim"; flake = false; }; # TODO
-    gitsigns = { url = "github:lewis6991/gitsigns.nvim"; flake = false; };
-    neogit = { url = "github:TimUntersberger/neogit"; flake = false; };
-    diffview = { url = "github:sindrets/diffview.nvim"; flake = false; };
-    git-worktree = { url = "github:ThePrimeagen/git-worktree.nvim"; flake = false; };
-    git-linker = { url = "github:ruifm/gitlinker.nvim"; flake = false; };
-    octo = { url = "github:pwntester/octo.nvim"; flake = false; };
-    which-key = { url = "github:folke/which-key.nvim"; flake = false; };
+    cmp_path = { url = "github:hrsh7th/cmp-path"; flake = false; };
+    colorizer = { url = "github:norcalli/nvim-colorizer.lua"; flake = false; };
     dap = { url = "github:mfussenegger/nvim-dap"; flake = false; };
     dap-python = { url = "github:mfussenegger/nvim-dap-python"; flake = false; };
     dap-virt-text = { url = "github:theHamsta/nvim-dap-virtual-text"; flake = false; };
-    telescope-dap = { url = "github:nvim-telescope/telescope-dap.nvim"; flake = false; };
+    diffview = { url = "github:sindrets/diffview.nvim"; flake = false; };
+    dial = { url = "github:monaqa/dial.nvim"; flake = false; };
+    gitsigns = { url = "github:lewis6991/gitsigns.nvim"; flake = false; };
+    git-linker = { url = "github:ruifm/gitlinker.nvim"; flake = false; };
+    git-worktree = { url = "github:ThePrimeagen/git-worktree.nvim"; flake = false; };
+    harpoon = { url = "github:ThePrimeagen/harpoon"; flake = false; };
+    impatient = { url = "github:lewis6991/impatient.nvim"; flake = false; };
+    jdtls = { url = "github:mfussenegger/nvim-jdtls"; flake = false; };
     lightline = { url = "github:nvim-lualine/lualine.nvim"; flake = false; };
-    alpha = { url = "github:goolord/alpha-nvim"; flake = false; };
+    lightspeed = { url = "github:ggandor/lightspeed.nvim"; flake = false; }; # TODO
+    lspconfig = { url = "github:neovim/nvim-lspconfig"; flake = false; };
+    lspkind = { url = "github:onsails/lspkind-nvim"; flake = false; };
+    lspstatus = { url = "github:nvim-lua/lsp-status.nvim"; flake = false; };
+    lsp_ts_utils = { url = "github:jose-elias-alvarez/nvim-lsp-ts-utils"; flake = false; };
+    luadev = { url = "github:folke/lua-dev.nvim"; flake = false; };
+    luasnip = { url = "github:L3MON4D3/LuaSnip"; flake = false; };
+    neogit = { url = "github:TimUntersberger/neogit"; flake = false; };
+    # todo neoscroll
+    nvim-which-key = { url = "github:folke/which-key.nvim"; flake = false; };
+    null-ls = { url = "github:jose-elias-alvarez/null-ls.nvim"; flake = false; };
+    octo = { url = "github:pwntester/octo.nvim"; flake = false; };
+    plenary = { url = "github:nvim-lua/plenary.nvim"; flake = false; };
+    startuptime = { url = "github:tweekmonster/startuptime.vim"; flake = false; };
+    telescope = { url = "github:nvim-telescope/telescope.nvim"; flake = false; };
+    telescope-dap = { url = "github:nvim-telescope/telescope-dap.nvim"; flake = false; };
+    treesitter = { url = "github:nvim-treesitter/nvim-treesitter"; flake = false; };
+    treesitter_playground = { url = "github:nvim-treesitter/playground"; flake = false; };
+    trouble = { url = "github:folke/trouble.nvim"; flake = false; };
+    todo-comments = { url = "github:folke/todo-comments.nvim"; flake = false; };
     undotree = { url = "github:mbbill/undotree"; flake = false; };
+    vim-be-good = { url = "github:ThePrimeagen/vim-be-good"; flake = false; };
     vim-illuminate = { url = "github:RRethy/vim-illuminate"; flake = false; };
     web-devicons = { url = "github:kyazdani42/nvim-web-devicons"; flake = false; };
-    colorizer = { url = "github:norcalli/nvim-colorizer.lua"; flake = false; };
-    # todo neoscroll
-    dial = { url = "github:monaqa/dial.nvim"; flake = false; };
-    beancount = { url = "github:polarmutex/beancount.nvim"; flake = false; };
-    vim-be-good = { url = "github:ThePrimeagen/vim-be-good"; flake = false; };
-    todo-comments = { url = "github:folke/todo-comments.nvim"; flake = false; };
-    startuptime = { url = "github:tweekmonster/startuptime.vim"; flake = false; };
+    which-key = { url = "github:folke/which-key.nvim"; flake = false; };
 
     # lsp
     rnix-lsp.url = github:nix-community/rnix-lsp;
