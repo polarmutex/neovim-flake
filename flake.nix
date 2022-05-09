@@ -17,7 +17,7 @@
       flake = false;
     };
     nix2vim = {
-      url = "github:gytis-ivaskevicius/nix2vim";
+      url = "github:polarmutex/nix2vim";
       inputs.nixpkgs.follows = "stable";
     };
     neovim = {
@@ -115,11 +115,6 @@
 
       overlay = prev: final: rec {
 
-        luaConfigBuilder = import ./lib/lua-config-builder.nix {
-          pkgs = prev;
-          lib = prev.lib;
-        };
-
         # Example of packaging plugin with Nix
         dracula = prev.vimUtils.buildVimPluginFrom2Nix {
           pname = "dracula-nvim";
@@ -193,7 +188,7 @@
         # Generate our init.lua from neoConfig using vim2nix transpiler
         neovimConfig =
           let
-            luaConfig = luaConfigBuilder {
+            luaConfig = prev.luaConfigBuilder {
               config = import ./neoConfig.nix {
                 inherit (nix2vim.lib) dsl;
                 pkgs = prev;
@@ -348,11 +343,23 @@
       # The package built by `nix build .`
 
       defaultPackage = pkgs.customNeovim;
+
       # The app run by `nix run .`
       defaultApp = {
         type = "app";
         program = "${pkgs.customNeovim}/bin/nvim";
       };
+
+      home-managerModule =
+        { config
+        , lib
+        , pkgs
+        , ...
+        }:
+        import ./home-manager.nix {
+          inherit config lib pkgs;
+        };
+
 
     });
 }
