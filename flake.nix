@@ -185,10 +185,7 @@
       # The packages: our custom neovim and the config text file
       packages = lib.withDefaultSystems (sys: {
         neovim-polar = mkNeovimPackage allPkgs."${sys}";
-        luaConfigBuilder = import ./lib/lua-config-builder.nix {
-            pkgs = allPkgs;
-            lib = nixpkgs.lib;
-          };
+        luaConfigBuilder = allPkgs.luaConfigBuilder;
       });
 
       # The package built by `nix build .`

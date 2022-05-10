@@ -45,6 +45,25 @@ in
         description = "Enable neovim";
       };
     };
+
+    polar.programs.neovim.lsp = {
+
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Enable neovim lsp support";
+      };
+      nix = mkOption {
+        type = types.bool;
+        default = true;
+        description = "Enable lsp nix";
+      };
+      rust = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp rust";
+      };
+    };
   };
 
   config = mkIf cfg.enable {
@@ -52,7 +71,7 @@ in
 
     home.packages = with pkgs; [
       neovim-polar
-      clang-tools
+      #clang-tools
       stylua
       #nodePackages.bash-language-server
       #nodePackages.dockerfile-language-server-nodejs
@@ -65,7 +84,7 @@ in
       nodePackages.vscode-css-languageserver-bin
       nodePackages.vscode-html-languageserver-bin
       nodePackages.vscode-json-languageserver
-      rnix-lsp
+      (if cfg.lsp.nix then rnix-lsp else null)
       sumneko-lua-language-server
       #jdtls
       nodePackages.svelte-language-server
@@ -85,32 +104,40 @@ in
     #xdg.configFile = link-one "config" "." "nvim";
 
     #xdg.configFile."nvim/init.lua".source = ./config/init.lua;
-    xdg.configFile."nvim/init.lua".source = link "config/init.lua";
+    xdg.configFile."nvim/lua/polarmutex/init.lua".source = link "config/init.lua";
 
     xdg.configFile."nvim/lua/polarmutex/treesitter.lua".text =
     let
         lua_config = pkgs.luaConfigBuilder {
-            config = import ./config/treesitter.nix {
-                inherit dsl;
-                pkgs = pkgs;
-            };
+            imports = [
+	    ./config/treesitter.nix
+	    ];
         };
     in lua_config.lua;
 
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/python.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-python}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/lua.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-lua}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/rust.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-rust}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/java.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-java}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/c.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-c}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/cpp.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-cpp}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/typescript.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-typescript}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/html.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-html}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/markdown.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-markdown}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/nix.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-nix}/parser";
-    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/svelte.so".source = "${pkgs.my.tree-sitter-svelte}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/svelte.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-svelte}/parser";
-    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/beancount.so".source = "${pkgs.my.tree-sitter-beancount}/parser";
-    xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/beancount.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-beancount}/parser";
+    xdg.configFile."nvim/lua/polarmutex/lsp.lua".text =
+    let
+        lua_config = pkgs.luaConfigBuilder {
+            imports = (if cfg.lsp.nix then [ ./config/lsp_nix.nix ] else [])
+            ++ (if cfg.lsp.rust then [ ./config/lsp_rust.nix ] else [])
+	    ;
+        };
+    in lua_config.lua;
+
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/python.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-python}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/lua.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-lua}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/rust.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-rust}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/java.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-java}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/c.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-c}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/cpp.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-cpp}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/typescript.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-typescript}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/html.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-html}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/markdown.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-markdown}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/nix.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-nix}/parser";
+    ##xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/svelte.so".source = "${pkgs.my.tree-sitter-svelte}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/svelte.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-svelte}/parser";
+    ##xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/beancount.so".source = "${pkgs.my.tree-sitter-beancount}/parser";
+    #xdg.dataFile."nvim/site/pack/packer/start/nvim-treesitter/parser/beancount.so".source = "${pkgs.tree-sitter.builtGrammars.tree-sitter-beancount}/parser";
   };
 
 }

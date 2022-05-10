@@ -47,7 +47,12 @@ rec {
       viAlias = true;
       vimAlias = true;
       configure = {
-        #customRC = vim.configRC;
+        customRC = ''
+set runtimepath^=~/.config/nvim
+lua << EOF
+require('polarmutex')
+EOF
+'';
 
         packages.myVimPackage = with pkgs.vimPlugins; {
           start = startPlugins; #vim.startPlugins;

@@ -1,14 +1,15 @@
 { pkgs, lib }:
 
 with lib;
-{ config }:
+{ ...  }@config:
 let
+dsl = import ./dsl.nix { inherit lib; };
   result = evalModules {
     modules = [
       (import ./api.options.nix)
       config
     ];
-    specialArgs = { inherit pkgs; };
+    specialArgs = { inherit pkgs dsl; };
   };
 in
 {
