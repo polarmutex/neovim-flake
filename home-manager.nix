@@ -43,6 +43,7 @@ in
     # plugins
     ./config/plugins/nvim-cmp
     ./config/plugins/tokyonight-nvim
+    ./config/plugins/telescope
   ];
 
   options = {

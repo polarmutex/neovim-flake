@@ -28,7 +28,7 @@ with inputs; {
     plenary-nvim = (withSrc prev.vimPlugins.plenary-nvim plenary-nvim-src);
     popup-nvim = (withSrc prev.vimPlugins.popup-nvim popup-nvim-src);
     rust-tools = plugin "rust-tools" rust-tools-src;
-    telescope-nvim = (withSrc prev.vimPlugins.telescope-nvim telescope-src);
+    telescope-nvim = plugin "telescope-nvim" telescope-nvim-src;
     telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
     tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
     which-key = plugin "which-key" which-key-src;

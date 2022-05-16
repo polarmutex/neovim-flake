@@ -12,13 +12,16 @@ with dsl; {
     # lsp
     nvim-lspconfig
     lspkind-nvim
-    #null-ls-nvim
+    null-ls-nvim
     #fidget
     #vimPlugins.lsp_signature-nvim
 
     # utility p for lua
     plenary-nvim
     popup-nvim
+
+    # telescope
+    telescope-nvim
 
     # themes
     tokyonight-nvim

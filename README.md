@@ -15,6 +15,14 @@
     - [ ] playground
 - [ ] plugins
     - [ ] telescope
+        - [ ] dap ext
+        - [ ] gitworktrees ext
+        - [ ] notify ext
+        - [ ] neoclip ext
+        - [ ] fzf ext
+        - [ ] smart history ext
+        - [ ] gh ext
+        - [ ] octo ext
     - [ ] neogit
 
 ## Inspiration
