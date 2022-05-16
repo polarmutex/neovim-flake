@@ -10,9 +10,17 @@
     - [ ] svelte
     - [ ] typescript
     - [ ] beancount
+    - [ ] null-ls
+        - [ ] stylua
+    - [ ] workspace diagnostics
 - [ ] Treesitter
     - [x] basic
     - [ ] playground
+- [ ] dap
+    - [ ] lua
+    - [ ] rust
+    - [ ] java
+    - [ ] python
 - [ ] plugins
     - [ ] telescope
         - [ ] dap ext
@@ -26,6 +34,25 @@
     - [ ] neogit
     - [x] gitsigns
     - [x] lualine
+    - [ ] comments
+    - [ ] colorizer
+    - [ ] harpoon
+    - [ ] dashboard
+    - [ ] vim-be-good
+    - [ ] vim-apm
+    - [ ] dial
+    - [ ] specs
+    - [ ] octo
+    - [ ] lightspeed
+    - [ ] impatient
+    - [ ] lua-dev
+    - [ ] trouble
+    - [ ] nvim-jdtls
+    - [ ] luasnip
+- [ ] spellcheck
+- [ ] themes
+    - [ ] gruvbox
+    - [ ] kanagawa
 
 ## Inspiration
 
