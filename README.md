@@ -1,4 +1,17 @@
-# neovim-config
+# neovim-config as a flake
+
+## Status
+- [ ] Lsp
+    - [x] Nix
+    - [ ] lua
+    - [ ] python
+    - [ ] rust
+    - [ ] java
+    - [ ] svelte
+    - [ ] typescript
+- [ ] Treesitter
+    - [x] basic
+    - [ ] playground
 
 ## Inspiration
 

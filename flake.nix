@@ -4,6 +4,7 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
 
     neovim = {
       url = "github:neovim/neovim?dir=contrib&tag=master";
@@ -35,6 +36,14 @@
     };
     conceal = {
       url = "github:ticki/rust-cute-vim";
+      flake = false;
+    };
+    tokyonight-nvim-src = {
+      url = "github:folke/tokyonight.nvim";
+      flake = false;
+    };
+    null-ls-nvim-src = {
+      url = "github:jose-elias-alvarez/null-ls.nvim";
       flake = false;
     };
     nvim-dap = {
@@ -99,113 +108,31 @@
     inputs@{ self
     , nixpkgs
     , neovim
+    , flake-utils
     , rnix-lsp
     , ...
     }:
     let
-      plugins = [
-        "blamer-nvim"
-        "nvim-cmp"
-        "cmp-nvim-lsp"
-        "cmp-buffer"
-        "colorizer"
-        "comment-nvim"
-        "conceal"
-        "nvim-dap"
-        "nvim-dap-virtual-text"
-        "fidget"
-        "lspconfig"
-        "plenary-nvim"
-        "popup-nvim"
-        "rnix-lsp"
-        "rust-tools-nvim"
-        "telescope-nvim"
-        "telescope-dap-nvim"
-        "telescope-ui-select"
-        "nvim-treesitter"
-        "nvim-treesitter-context"
-        "which-key-nvim"
-      ];
-
-      lib = import ./lib;
 
       dsl = import ./lib/dsl.nix { inherit (nixpkgs) lib; };
 
       # Function to override the source of a package
       withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
 
-    externalBitsOverlay = top: last: {
-      rnix-lsp = rnix-lsp.defaultPackage.${top.system};
-      neovim-nightly = neovim.defaultPackage.${top.system};
-    };
-
-      pluginOverlay = top: last:
-        let
-          buildPlug = name: top.vimUtils.buildVimPluginFrom2Nix {
-            pname = name;
-            version = "master";
-            src = builtins.getAttr name inputs;
-          };
-        in
-        {
-          neovimPlugins = builtins.listToAttrs (map
-            (name: {
-              inherit name;
-              value = buildPlug name;
-            })
-            plugins);
+      overlay = final: prev: rec {
+        nix2luaUtils = prev.callPackage ./lib/utils.nix { inherit nixpkgs; };
+        luaConfigBuilder = import ./lib/lua-config-builder.nix {
+          pkgs = prev;
+          lib = prev.lib;
         };
-
-      allPkgs = lib.mkPkgs {
-        inherit nixpkgs;
-        cfg = { };
-        overlays = [
-          pluginOverlay
-          externalBitsOverlay
-          (self: last: {
-          luaConfigBuilder = import ./lib/lua-config-builder.nix {
-            pkgs = last;
-            lib = last.lib;
-          };
-        })
-        ];
+        neovimBuilder = import ./lib/neovim-builder.nix {
+          pkgs = prev;
+          lib = prev.lib;
+        };
       };
-
-      mkNeovimPackage = pkgs: lib.neovimBuilder {
-        inherit pkgs;
-        startPlugins = with pkgs.neovimPlugins; [
-          nvim-treesitter
-        ];
-        optPlugins = [ ];
-      };
-
-
     in
     {
-      # The packages: our custom neovim and the config text file
-      packages = lib.withDefaultSystems (sys: {
-        neovim-polar = mkNeovimPackage allPkgs."${sys}";
-        luaConfigBuilder = allPkgs.luaConfigBuilder;
-      });
-
-      # The package built by `nix build .`
-      defaultPackage = lib.withDefaultSystems (sys:
-        self.packages."${sys}".neovim-polar
-      );
-
-      apps = lib.withDefaultSystems (sys: {
-        nvim = {
-          type = "app";
-          program = "${self.defaultPackage."${sys}"}/bin/nvim";
-        };
-      });
-
-      # The app run by `nix run .`
-      defaultApp = lib.withDefaultSystems (sys: {
-        type = "app";
-        program = "${self.defaultPackage."${sys}"}/bin/nvim";
-      });
-
+      inherit overlay;
       home-managerModule =
         { config
         , lib
@@ -215,5 +142,29 @@
         import ./home-manager.nix {
           inherit config lib pkgs dsl;
         };
-    };
+    } //
+    flake-utils.lib.eachDefaultSystem (system:
+    let
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          neovim.overlay
+          (import ./plugins.nix inputs)
+          overlay
+        ];
+      };
+      neovim-polar = pkgs.neovimBuilder {
+        package = pkgs.neovim;
+        imports = [
+          ./modules/init.nix
+          ./modules/plugins.nix
+        ];
+        enableViAlias = true;
+        enableVimAlias = true;
+      };
+    in
+    {
+      defaultPackage = neovim-polar;
+
+    });
 }
