@@ -32,49 +32,33 @@ let
       map mkPath paths
     );
 
-  cfg = config.polar.programs.neovim;
+  cfg = config.polar.programs.neovim.plugins.cmp;
 in
 {
 
-  imports = [
-    ./config/lsp
-    ./config/treesitter
-
-    # plugins
-    ./config/plugins/nvim-cmp
-    ./config/plugins/tokyonight-nvim
-  ];
-
   options = {
 
-    polar.programs.neovim = {
+    polar.programs.neovim.plugins.cmp = {
 
       enable = mkOption {
         type = types.bool;
-        default = false;
-        description = "Enable neovim";
+        default = true;
+        description = "Enable nvim-cmp";
       };
     };
   };
 
   config = mkIf cfg.enable {
-    home.sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
 
-    home.packages = with pkgs; [
-      neovim-polar
-      ripgrep
-      prettierd
-    ];
-
-    # old way
-    #xdg.configFile = link-one "config" "." "nvim";
-
-    # new way
-
-    # INIT.lua
-    #xdg.configFile."nvim/lua/polarmutex/init.lua".source = link "config/init.lua";
-
-    xdg.configFile."nvim/lua/polarmutex/options.lua".source = link "config/options.lua";
+    xdg.configFile."nvim/plugin/cmp.lua".text =
+      let
+        lua_config = pkgs.luaConfigBuilder {
+          imports = [
+            ./completion.nix
+          ];
+        };
+      in
+      lua_config.lua;
 
   };
 

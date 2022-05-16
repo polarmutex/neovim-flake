@@ -32,50 +32,36 @@ let
       map mkPath paths
     );
 
-  cfg = config.polar.programs.neovim;
+  cfg = config.polar.programs.neovim.treesitter;
 in
 {
 
-  imports = [
-    ./config/lsp
-    ./config/treesitter
-
-    # plugins
-    ./config/plugins/nvim-cmp
-    ./config/plugins/tokyonight-nvim
-  ];
 
   options = {
 
-    polar.programs.neovim = {
+    polar.programs.neovim.treesitter = {
 
       enable = mkOption {
         type = types.bool;
-        default = false;
-        description = "Enable neovim";
+        default = true;
+        description = "Enable neovim treesitter";
       };
     };
   };
 
   config = mkIf cfg.enable {
-    home.sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
 
-    home.packages = with pkgs; [
-      neovim-polar
-      ripgrep
-      prettierd
-    ];
+    #TODO Hack to fix treesitter-nix changes
+    xdg.configFile."nvim/plugin/fix_nix.lua".source = link "config/treesitter/fix_nix.lua";
 
-    # old way
-    #xdg.configFile = link-one "config" "." "nvim";
-
-    # new way
-
-    # INIT.lua
-    #xdg.configFile."nvim/lua/polarmutex/init.lua".source = link "config/init.lua";
-
-    xdg.configFile."nvim/lua/polarmutex/options.lua".source = link "config/options.lua";
-
+    xdg.configFile."nvim/lua/polarmutex/treesitter.lua".text =
+      let
+        lua_config = pkgs.luaConfigBuilder {
+          imports = [
+            ./treesitter.nix
+          ];
+        };
+      in
+      lua_config.lua;
   };
-
 }

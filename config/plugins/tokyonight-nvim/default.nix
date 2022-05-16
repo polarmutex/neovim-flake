@@ -32,50 +32,36 @@ let
       map mkPath paths
     );
 
-  cfg = config.polar.programs.neovim;
+  cfg = config.polar.programs.neovim.plugins.tokyonight;
 in
 {
 
-  imports = [
-    ./config/lsp
-    ./config/treesitter
-
-    # plugins
-    ./config/plugins/nvim-cmp
-    ./config/plugins/tokyonight-nvim
-  ];
-
   options = {
 
-    polar.programs.neovim = {
+    polar.programs.neovim.plugins.tokyonight = {
 
       enable = mkOption {
         type = types.bool;
-        default = false;
-        description = "Enable neovim";
+        default = true;
+        description = "Enable";
       };
     };
   };
 
   config = mkIf cfg.enable {
-    home.sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
 
-    home.packages = with pkgs; [
-      neovim-polar
-      ripgrep
-      prettierd
-    ];
+    xdg.configFile."nvim/plugin/tokyonight.lua".text = ''
+          -- Example config in Lua
+      vim.g.tokyonight_style = "night"
+      vim.g.tokyonight_italic_functions = true
 
-    # old way
-    #xdg.configFile = link-one "config" "." "nvim";
+      -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+      vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
-    # new way
-
-    # INIT.lua
-    #xdg.configFile."nvim/lua/polarmutex/init.lua".source = link "config/init.lua";
-
-    xdg.configFile."nvim/lua/polarmutex/options.lua".source = link "config/options.lua";
-
+      -- Load the colorscheme
+      --vim.cmd[[colorscheme tokyonight]]
+      require("tokyonight").colorscheme()
+    '';
   };
 
 }
