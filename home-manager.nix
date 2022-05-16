@@ -43,6 +43,7 @@ in
     # plugins
     ./config/plugins/gitsigns
     ./config/plugins/lualine
+    ./config/plugins/neogit
     ./config/plugins/nvim-cmp
     ./config/plugins/telescope
     ./config/plugins/tokyonight-nvim

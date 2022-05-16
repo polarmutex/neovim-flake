@@ -58,8 +58,8 @@
       url = "github:nvim-lualine/lualine.nvim";
       flake = false;
     };
-    tokyonight-nvim-src = {
-      url = "github:folke/tokyonight.nvim";
+    neogit-src = {
+      url = "github:TimUntersberger/neogit";
       flake = false;
     };
     null-ls-nvim-src = {
@@ -116,6 +116,10 @@
     };
     telescope-ui-select-src = {
       url = "github:nvim-telescope/telescope-ui-select.nvim";
+      flake = false;
+    };
+    tokyonight-nvim-src = {
+      url = "github:folke/tokyonight.nvim";
       flake = false;
     };
     which-key-nvim-src = {

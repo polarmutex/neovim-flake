@@ -17,6 +17,7 @@ with dsl; {
     #vimPlugins.lsp_signature-nvim
 
     # git
+    neogit
     gitsigns-nvim
 
     # utility p for lua
