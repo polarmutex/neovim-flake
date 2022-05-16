@@ -10,32 +10,44 @@
       url = "github:neovim/neovim?dir=contrib&tag=master";
     };
 
-    blamer-nvim = {
+    blamer-nvim-src = {
       url = "github:APZelos/blamer.nvim";
       flake = false;
     };
-    nvim-cmp = {
-      url = "github:hrsh7th/nvim-cmp";
-      flake = false;
-    };
-    cmp-nvim-lsp = {
+    cmp-nvim-lsp-src = {
       url = "github:hrsh7th/cmp-nvim-lsp";
       flake = false;
     };
-    cmp-buffer = {
+    cmp-buffer-src = {
       url = "github:hrsh7th/cmp-buffer";
       flake = false;
     };
-    colorizer = {
+    cmp-nvim-lua-src = {
+      url = "github:hrsh7th/cmp-nvim-lua";
+      flake = false;
+    };
+    cmp-path-src = {
+      url = "github:hrsh7th/cmp-path";
+      flake = false;
+    };
+    colorizer-src = {
       url = "github:powerman/vim-plugin-AnsiEsc";
       flake = false;
     };
-    comment-nvim = {
+    comment-nvim-src = {
       url = "github:numToStr/Comment.nvim";
       flake = false;
     };
-    conceal = {
+    conceal-src = {
       url = "github:ticki/rust-cute-vim";
+      flake = false;
+    };
+    fidget-src = {
+      url = "github:j-hui/fidget.nvim";
+      flake = false;
+    };
+    lspkind-nvim-src = {
+      url = "github:onsails/lspkind-nvim";
       flake = false;
     };
     tokyonight-nvim-src = {
@@ -46,59 +58,59 @@
       url = "github:jose-elias-alvarez/null-ls.nvim";
       flake = false;
     };
-    nvim-dap = {
+    nvim-cmp-src = {
+      url = "github:hrsh7th/nvim-cmp";
+      flake = false;
+    };
+    nvim-dap-src = {
       url = "github:mfussenegger/nvim-dap";
       flake = false;
     };
-    nvim-dap-virtual-text = {
+    nvim-dap-virtual-text-src = {
       url = "github:theHamsta/nvim-dap-virtual-text";
       flake = false;
     };
-    fidget = {
-      url = "github:j-hui/fidget.nvim";
-      flake = false;
-    };
-    nvim-lspconfig = {
+    nvim-lspconfig-src = {
       url = "github:neovim/nvim-lspconfig";
       flake = false;
     };
-    plenary-nvim = {
+    nvim-treesitter-src = {
+      url = "github:nvim-treesitter/nvim-treesitter";
+      flake = false;
+    };
+    nvim-treesitter-context-src = {
+      url = "github:romgrk/nvim-treesitter-context";
+      flake = false;
+    };
+    plenary-nvim-src = {
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
     };
-    popup-nvim = {
+    popup-nvim-src = {
       url = "github:nvim-lua/popup.nvim";
       flake = false;
     };
     rnix-lsp = {
       url = "github:Ma27/rnix-lsp";
     };
-    rust-tools-nvim = {
+    rust-tools-nvim-src = {
       url = "github:simrat39/rust-tools.nvim";
       flake = false;
     };
-    telescope-nvim = {
+    telescope-nvim-src = {
       url =
         "github:nvim-telescope/telescope.nvim";
       flake = false;
     };
-    telescope-dap-nvim = {
+    telescope-dap-nvim-src = {
       url = "github:nvim-telescope/telescope-dap.nvim";
       flake = false;
     };
-    telescope-ui-select = {
+    telescope-ui-select-src = {
       url = "github:nvim-telescope/telescope-ui-select.nvim";
       flake = false;
     };
-    nvim-treesitter = {
-      url = "github:nvim-treesitter/nvim-treesitter";
-      flake = false;
-    };
-    nvim-treesitter-context = {
-      url = "github:romgrk/nvim-treesitter-context";
-      flake = false;
-    };
-    which-key-nvim = {
+    which-key-nvim-src = {
       url = "github:folke/which-key.nvim";
       flake = false;
     };

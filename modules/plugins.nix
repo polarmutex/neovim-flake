@@ -1,40 +1,29 @@
 { pkgs, dsl, ... }:
 with dsl; {
-  plugins = with pkgs; [
+  plugins = with pkgs.neovimPlugins; [
 
-    # lsp
-    null-ls-nvim
-
-    # completion framework
-    cmp-nvim-lsp
+    # completion
     nvim-cmp
     cmp-buffer
+    cmp-nvim-lsp
+    cmp-nvim-lua
+    cmp-path
 
-    # lsp things
-    vimPlugins.lsp_signature-nvim
-    vimPlugins.lspkind-nvim
-    vimPlugins.nvim-lspconfig
-
-    # utility functions for lsp
-    vimPlugins.plenary-nvim
-
-    # popout for documentation
-    vimPlugins.popup-nvim
-
-    # more lsp rust functionality
-    #rust-tools
-
-    # for updating rust crates
-    vimPlugins.crates-nvim
-
-    # for showing lsp progress
+    # lsp
+    nvim-lspconfig
+    lspkind-nvim
+    #null-ls-nvim
     #fidget
+    #vimPlugins.lsp_signature-nvim
+
+    # utility p for lua
+    plenary-nvim
+    popup-nvim
 
     # themes
     tokyonight-nvim
 
-    # which method am I on
-    #vimPlugins.nvim-treesitter-context
+    # treesitter
     (nvim-treesitter.withPlugins
       # tree sitter with language support
       (plugins:

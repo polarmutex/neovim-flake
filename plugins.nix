@@ -9,35 +9,28 @@ let
 in
 with inputs; {
 
-  # LSP
-  null-ls-nvim = (withSrc prev.vimPlugins.null-ls-nvim null-ls-nvim-src);
   rnix-lsp = inputs.rnix-lsp.packages.${prev.system}.rnix-lsp;
 
-  # Treesitter
-  nvim-treesitter =
-    (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
-
-  # Telescope
-  telescope-nvim = (withSrc prev.vimPlugins.telescope-nvim inputs.telescope-src);
-
-  # Auto-complete
-  nvim-cmp = (withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp);
-  cmp-buffer = (withSrc prev.vimPlugins.cmp-buffer inputs.cmp-buffer);
-  cmp-nvim-lsp = withSrc prev.vimPlugins.cmp-nvim-lsp inputs.cmp-nvim-lsp;
-
-  # Colorschemes
-  tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
-
-  # Example of packaging plugin with Nix
-  blamer-nvim = plugin "blamer-nvim" blamer-nvim-src;
-  colorizer = plugin "colorizer" colorizer-src;
-  comment-nvim = plugin "comment-nvim" comment-nvim-src;
-  conceal = plugin "conceal" conceal-src;
-  dracula = plugin "dracula" dracula-nvim;
-  fidget = plugin "fidget" fidget-src;
-  neogen = plugin "neogen" neogen-src;
-  parinfer-rust-nvim = plugin "parinfer-rust" prev.parinfer-rust;
-  rust-tools = plugin "rust-tools" rust-tools-src;
-  telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
-  which-key = plugin "which-key" which-key-src;
+  neovimPlugins = {
+    cmp-buffer = (withSrc prev.vimPlugins.cmp-buffer cmp-buffer-src);
+    cmp-nvim-lsp = withSrc prev.vimPlugins.cmp-nvim-lsp cmp-nvim-lsp-src;
+    cmp-nvim-lua = withSrc prev.vimPlugins.cmp-nvim-lua cmp-nvim-lua-src;
+    cmp-path = (withSrc prev.vimPlugins.cmp-path cmp-path-src);
+    colorizer = plugin "colorizer" colorizer-src;
+    comment-nvim = plugin "comment-nvim" comment-nvim-src;
+    conceal = plugin "conceal" conceal-src;
+    fidget = plugin "fidget" fidget-src;
+    lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
+    null-ls-nvim = plugin "null-ls-nvim" null-ls-nvim-src;
+    nvim-cmp = (withSrc prev.vimPlugins.nvim-cmp nvim-cmp-src);
+    nvim-lspconfig = (withSrc prev.vimPlugins.nvim-lspconfig nvim-lspconfig-src);
+    nvim-treesitter = (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
+    plenary-nvim = (withSrc prev.vimPlugins.plenary-nvim plenary-nvim-src);
+    popup-nvim = (withSrc prev.vimPlugins.popup-nvim popup-nvim-src);
+    rust-tools = plugin "rust-tools" rust-tools-src;
+    telescope-nvim = (withSrc prev.vimPlugins.telescope-nvim telescope-src);
+    telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
+    tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
+    which-key = plugin "which-key" which-key-src;
+  };
 }

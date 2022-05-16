@@ -50,15 +50,16 @@ in
 
   config = mkIf cfg.enable {
 
-    xdg.configFile."nvim/plugin/cmp.lua".text =
-      let
-        lua_config = pkgs.luaConfigBuilder {
-          imports = [
-            ./completion.nix
-          ];
-        };
-      in
-      lua_config.lua;
+    xdg.configFile."nvim/plugin/cmp.lua".source = link "config/plugins/nvim-cmp/cmp.lua";
+    #xdg.configFile."nvim/plugin/cmp.lua".text =
+    #  let
+    #    lua_config = pkgs.luaConfigBuilder {
+    #      imports = [
+    #        ./completion.nix
+    #      ];
+    #    };
+    #  in
+    #  lua_config.lua;
 
   };
 
