@@ -13,7 +13,7 @@ with dsl; {
     nvim-lspconfig
     lspkind-nvim
     null-ls-nvim
-    #fidget
+    fidget
     #vimPlugins.lsp_signature-nvim
 
     # git
