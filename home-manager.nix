@@ -41,9 +41,10 @@ in
     ./config/treesitter
 
     # plugins
+    ./config/plugins/gitsigns
     ./config/plugins/nvim-cmp
-    ./config/plugins/tokyonight-nvim
     ./config/plugins/telescope
+    ./config/plugins/tokyonight-nvim
   ];
 
   options = {

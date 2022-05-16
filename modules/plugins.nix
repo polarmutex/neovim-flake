@@ -16,6 +16,9 @@ with dsl; {
     #fidget
     #vimPlugins.lsp_signature-nvim
 
+    # git
+    gitsigns-nvim
+
     # utility p for lua
     plenary-nvim
     popup-nvim

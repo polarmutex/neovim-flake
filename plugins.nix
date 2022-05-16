@@ -20,6 +20,7 @@ with inputs; {
     comment-nvim = plugin "comment-nvim" comment-nvim-src;
     conceal = plugin "conceal" conceal-src;
     fidget = plugin "fidget" fidget-src;
+    gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
     lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
     null-ls-nvim = plugin "null-ls-nvim" null-ls-nvim-src;
     nvim-cmp = (withSrc prev.vimPlugins.nvim-cmp nvim-cmp-src);

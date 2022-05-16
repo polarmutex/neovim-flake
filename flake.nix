@@ -46,6 +46,10 @@
       url = "github:j-hui/fidget.nvim";
       flake = false;
     };
+    gitsigns-nvim-src = {
+      url = "github:lewis6991/gitsigns.nvim";
+      flake = false;
+    };
     lspkind-nvim-src = {
       url = "github:onsails/lspkind-nvim";
       flake = false;

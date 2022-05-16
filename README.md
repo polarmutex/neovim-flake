@@ -24,6 +24,7 @@
         - [ ] gh ext
         - [ ] octo ext
     - [ ] neogit
+    - [x] gitsigns
 
 ## Inspiration
 
