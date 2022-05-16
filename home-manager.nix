@@ -53,15 +53,46 @@ in
         default = true;
         description = "Enable neovim lsp support";
       };
+
+      beancount = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp beancount";
+      };
+      lua = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp lua";
+      };
+      java = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp java";
+      };
       nix = mkOption {
         type = types.bool;
         default = true;
         description = "Enable lsp nix";
       };
+      python = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp python";
+      };
       rust = mkOption {
         type = types.bool;
         default = false;
         description = "Enable lsp rust";
+      };
+      svelte = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp svelte";
+      };
+      typescript = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp typescript";
       };
     };
   };
@@ -71,35 +102,29 @@ in
 
     home.packages = with pkgs; [
       neovim-polar
-      clang-tools
-      stylua
-      nodePackages.bash-language-server
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.eslint_d
-      nodePackages.markdownlint-cli
-      nodePackages.pyright
-      nodePackages.stylelint
-      nodePackages.typescript-language-server
-      nodePackages.vim-language-server
-      nodePackages.vscode-css-languageserver-bin
-      nodePackages.vscode-html-languageserver-bin
-      nodePackages.vscode-json-languageserver
-      (if cfg.lsp.nix then rnix-lsp else null)
-      sumneko-lua-language-server
-      #jdtls
-      nodePackages.svelte-language-server
-      prettierd
       ripgrep
-      #python39Packages.python-lsp-server
-      ##python39Packages.pyls-flake8
-      #python39Packages.flake8
-      #TODO python39Packages.pylsp-mypy
-      #TODO python39Packages.mypy
-      #python39Packages.pyls-isort
-      #python39Packages.python-lsp-black
-      (if cfg.lsp.rust then rust-analyzer else null)
+      clang-tools
+      #nodePackages.bash-language-server
+      #nodePackages.dockerfile-language-server-nodejs
+      #nodePackages.eslint_d
+      #nodePackages.markdownlint-cli
+      #nodePackages.stylelint
+      #nodePackages.vim-language-server
+      #nodePackages.vscode-css-languageserver-bin
+      #nodePackages.vscode-html-languageserver-bin
+      #nodePackages.vscode-json-languageserver
+      prettierd
       beancount-language-server
-    ];
+    ]
+    ++ (if cfg.lsp.nix then [ rnix-lsp ] else [ ])
+    ++ (if cfg.lsp.rust then [ rust-analyzer ] else [ ])
+    ++ (if cfg.lsp.lua then [ sumneko-lua-language-server stylua ] else [ ])
+    ++ (if cfg.lsp.python then [ nodePackages.pyright ] else [ ])
+    ++ (if cfg.lsp.typescript then [ nodePackages.typescript-language-server ] else [ ])
+    ++ (if cfg.lsp.svelte then [ nodePackages.svelte-language-server ] else [ ])
+    ++ (if cfg.lsp.java then [ jdtls ] else [ ])
+    ++ (if cfg.lsp.beancount then [ beancount-language-server ] else [ ])
+    ;
 
     # old way
     #xdg.configFile = link-one "config" "." "nvim";
@@ -129,6 +154,7 @@ in
           imports = [ ./config/lsp/lsp.nix ]
             ++ (if cfg.lsp.nix then [ ./config/lsp/lsp_nix.nix ] else [ ])
             ++ (if cfg.lsp.rust then [ ./config/lsp/lsp_rust.nix ] else [ ])
+            ++ (if cfg.lsp.lua then [ ./config/lsp/lsp_lua.nix ] else [ ])
           ;
         };
       in
