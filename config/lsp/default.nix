@@ -50,6 +50,11 @@ in
         default = false;
         description = "Enable lsp beancount";
       };
+      cpp = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp cpp";
+      };
       lua = mkOption {
         type = types.bool;
         default = false;
@@ -101,6 +106,7 @@ in
       ++ (if cfg.svelte then [ nodePackages.svelte-language-server ] else [ ])
       ++ (if cfg.java then [ jdtls ] else [ ])
       ++ (if cfg.beancount then [ beancount-language-server ] else [ ])
+      ++ (if cfg.cpp then [ clang-tools ] else [ ])
       ;
 
       xdg.configFile."nvim/lua/polarmutex/lsp.lua".text =
@@ -110,6 +116,8 @@ in
               ++ (if cfg.nix then [ ./lsp_nix.nix ] else [ ])
               ++ (if cfg.rust then [ ./lsp_rust.nix ] else [ ])
               ++ (if cfg.lua then [ ./lsp_lua.nix ] else [ ])
+              ++ (if cfg.python then [ ./lsp_python.nix ] else [ ])
+              ++ (if cfg.cpp then [ ./lsp_cpp.nix ] else [ ])
             ;
           };
         in
