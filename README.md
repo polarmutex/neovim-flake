@@ -25,6 +25,7 @@
         - [ ] octo ext
     - [ ] neogit
     - [x] gitsigns
+    - [x] lualine
 
 ## Inspiration
 

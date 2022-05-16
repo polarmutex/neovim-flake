@@ -22,6 +22,7 @@ with inputs; {
     fidget = plugin "fidget" fidget-src;
     gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
     lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
+    lualine-nvim = (withSrc prev.vimPlugins.lualine-nvim lualine-nvim-src);
     null-ls-nvim = plugin "null-ls-nvim" null-ls-nvim-src;
     nvim-cmp = (withSrc prev.vimPlugins.nvim-cmp nvim-cmp-src);
     nvim-lspconfig = (withSrc prev.vimPlugins.nvim-lspconfig nvim-lspconfig-src);

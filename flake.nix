@@ -54,6 +54,10 @@
       url = "github:onsails/lspkind-nvim";
       flake = false;
     };
+    lualine-nvim-src = {
+      url = "github:nvim-lualine/lualine.nvim";
+      flake = false;
+    };
     tokyonight-nvim-src = {
       url = "github:folke/tokyonight.nvim";
       flake = false;
