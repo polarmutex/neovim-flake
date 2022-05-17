@@ -10,6 +10,7 @@
     - [ ] svelte
     - [ ] typescript
     - [ ] beancount
+    - [ ] [ltex](https://github.com/valentjn/ltex-ls)
     - [ ] null-ls
         - [ ] stylua
     - [ ] workspace diagnostics
