@@ -1,6 +1,9 @@
 require("vim.treesitter.query").set_query("nix", "locals", "")
 require("vim.treesitter.query").set_query("nix", "folds", "")
-require("vim.treesitter.query").set_query("nix", "highlights", [[
+require("vim.treesitter.query").set_query(
+    "nix",
+    "highlights",
+    [[
 (comment) @comment
 
 [
@@ -96,4 +99,5 @@ require("vim.treesitter.query").set_query("nix", "highlights", [[
 ] @punctuation.bracket
 
 (identifier) @variable
-]])
+]]
+)

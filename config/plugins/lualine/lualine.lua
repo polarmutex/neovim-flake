@@ -32,7 +32,7 @@ local config = {
             {
                 "branch",
                 condition = conditions.check_git_workspace,
-            }
+            },
         },
         lualine_c = {
             { "diagnostics", sources = { "nvim_diagnostic" } },
@@ -70,7 +70,7 @@ local config = {
                 end,
                 icon = " LSP:",
                 color = { fg = "#ffffff", gui = "bold" },
-            }
+            },
         },
         lualine_z = { "location" },
     },

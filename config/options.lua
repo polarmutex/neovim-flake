@@ -60,17 +60,17 @@ vim.g.loaded_matchparen = 1
 
 -- Use proper syntax highlighting in code blocks
 local fences = {
-  "lua",
-  -- "vim",
-  "json",
-  "typescript",
-  "javascript",
-  "js=javascript",
-  "ts=typescript",
-  "shell=sh",
-  "python",
-  "sh",
-  "console=sh",
+    "lua",
+    -- "vim",
+    "json",
+    "typescript",
+    "javascript",
+    "js=javascript",
+    "ts=typescript",
+    "shell=sh",
+    "python",
+    "sh",
+    "console=sh",
 }
 vim.g.markdown_fenced_languages = fences
 

@@ -49,7 +49,7 @@ function M.setup(client, buf)
         autocmd! * <buffer>
         autocmd BufWritePre <buffer> lua require("polarmutex.lsp_formatting").format()
       augroup END
-    ]]   )
+    ]])
     end
 end
 

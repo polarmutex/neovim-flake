@@ -1,8 +1,8 @@
-local actions = require "telescope.actions"
-local action_state = require "telescope.actions.state"
-local action_layout = require "telescope.actions.layout"
+local actions = require("telescope.actions")
+local action_state = require("telescope.actions.state")
+local action_layout = require("telescope.actions.layout")
 
-require("telescope").setup {
+require("telescope").setup({
     defaults = {
         prompt_prefix = "> ",
         selection_caret = "> ",
@@ -97,8 +97,7 @@ require("telescope").setup {
         },
     },
 
-    pickers = {
-    },
+    pickers = {},
 
     extensions = {
         --TODO fzy_native = {
@@ -133,9 +132,9 @@ require("telescope").setup {
         --},
 
         ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
+            require("telescope.themes").get_dropdown({
                 -- even more opts
-            },
+            }),
         },
 
         -- frecency = {
@@ -145,19 +144,19 @@ require("telescope").setup {
         --   },
         -- },
     },
-}
+})
 
 local map = vim.keymap.set
 
 local function no_preview(opts)
     return vim.tbl_extend(
         "force",
-        require("telescope.themes").get_dropdown {
+        require("telescope.themes").get_dropdown({
             layout_config = {
                 width = 0.6,
             },
             previewer = false,
-        },
+        }),
         opts or {}
     )
 end
@@ -167,12 +166,12 @@ local function builtins()
 end
 
 local function grep_prompt()
-    require("telescope.builtin").grep_string {
+    require("telescope.builtin").grep_string({
         path_display = { "shorten" },
-        search = vim.fn.input "Grep String > ",
+        search = vim.fn.input("Grep String > "),
         only_sort_text = true,
         use_regex = true,
-    }
+    })
 end
 
 map("n", "<C-p>", require("telescope.builtin").find_files, {

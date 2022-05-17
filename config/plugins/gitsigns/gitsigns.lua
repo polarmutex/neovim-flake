@@ -1,10 +1,10 @@
-require("gitsigns").setup {
+require("gitsigns").setup({
     signs = {
         add = {
             hl = "GitSignsAdd",
             text = "▍",
             numhl = "GitSignsAddNr",
-            linehl = "GitSignsAddLn"
+            linehl = "GitSignsAddLn",
         },
         change = {
             hl = "GitSignsChange",
@@ -61,4 +61,4 @@ require("gitsigns").setup {
     diff_opts = {
         internal = true,
     },
-}
+})

@@ -1,7 +1,7 @@
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- Don't show the dumb matching stuff.
-vim.opt.shortmess:append "c"
+vim.opt.shortmess:append("c")
 
 local ok, lspkind = pcall(require, "lspkind")
 if not ok then
@@ -10,37 +10,35 @@ end
 
 lspkind.init()
 
-local cmp = require "cmp"
+local cmp = require("cmp")
 
-cmp.setup {
+cmp.setup({
     mapping = {
-        ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
-        ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+        ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-e>"] = cmp.mapping.abort(),
         ["<c-y>"] = cmp.mapping(
-            cmp.mapping.confirm {
+            cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Insert,
                 select = true,
-            },
+            }),
             { "i", "c" }
         ),
 
-        ["<c-space>"] = cmp.mapping {
+        ["<c-space>"] = cmp.mapping({
             i = cmp.mapping.complete(),
-            c = function(
-         --[[fallback]]
-            )
+            c = function(--[[fallback]])
                 if cmp.visible() then
-                    if not cmp.confirm { select = true } then
+                    if not cmp.confirm({ select = true }) then
                         return
                     end
                 else
                     cmp.complete()
                 end
             end,
-        },
+        }),
 
         -- ["<tab>"] = false,
         ["<tab>"] = cmp.config.disable,
@@ -68,8 +66,8 @@ cmp.setup {
             -- copied from cmp-under, but I don't think I need the plugin for this.
             -- I might add some more of my own.
             function(entry1, entry2)
-                local _, entry1_under = entry1.completion_item.label:find "^_+"
-                local _, entry2_under = entry2.completion_item.label:find "^_+"
+                local _, entry1_under = entry1.completion_item.label:find("^_+")
+                local _, entry2_under = entry2.completion_item.label:find("^_+")
                 entry1_under = entry1_under or 0
                 entry2_under = entry2_under or 0
                 if entry1_under > entry2_under then
@@ -95,7 +93,7 @@ cmp.setup {
 
     formatting = {
         -- Youtube: How to set up nice formatting for your sources.
-        format = lspkind.cmp_format {
+        format = lspkind.cmp_format({
             with_text = true,
             menu = {
                 buffer = "[buf]",
@@ -105,6 +103,6 @@ cmp.setup {
                 --luasnip = "[snip]",
                 gh_issues = "[issues]",
             },
-        },
+        }),
     },
-}
+})

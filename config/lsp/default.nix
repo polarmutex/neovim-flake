@@ -121,9 +121,10 @@ in
             ;
           };
         in
-        lua_config.lua;
+        concatStrings [ lua_config.lua (builtins.readFile ./null-ls.lua) ];
 
       # null-ls-nvim
       xdg.configFile."nvim/lua/polarmutex/lsp_formatting.lua".source = link "config/lsp/lsp_formatting.lua";
+      #xdg.configFile."stylua/stylua.toml".source = if cfg.lua then link "config/lsp/stylua.toml" else null;
     };
 }

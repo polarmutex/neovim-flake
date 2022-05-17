@@ -8,4 +8,3 @@ require("neogit").setup({
     },
     --TODO integrations = { diffview = true },
 })
-
