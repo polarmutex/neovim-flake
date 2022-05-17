@@ -93,22 +93,8 @@ in
     };
   };
 
-  config = mkIf cfg.enable
+  config = mkIf cfg.enable (mkMerge [
     {
-
-      home.packages = with pkgs; [
-      ]
-      ++ (if cfg.nix then [ rnix-lsp ] else [ ])
-      ++ (if cfg.rust then [ rust-analyzer ] else [ ])
-      ++ (if cfg.lua then [ sumneko-lua-language-server stylua ] else [ ])
-      ++ (if cfg.python then [ nodePackages.pyright ] else [ ])
-      ++ (if cfg.typescript then [ nodePackages.typescript-language-server ] else [ ])
-      ++ (if cfg.svelte then [ nodePackages.svelte-language-server ] else [ ])
-      ++ (if cfg.java then [ jdtls ] else [ ])
-      ++ (if cfg.beancount then [ beancount-language-server ] else [ ])
-      ++ (if cfg.cpp then [ clang-tools ] else [ ])
-      ;
-
       xdg.configFile."nvim/lua/polarmutex/lsp.lua".text =
         let
           lua_config = pkgs.luaConfigBuilder {
@@ -118,6 +104,7 @@ in
               ++ (if cfg.lua then [ ./lsp_lua.nix ] else [ ])
               ++ (if cfg.python then [ ./lsp_python.nix ] else [ ])
               ++ (if cfg.cpp then [ ./lsp_cpp.nix ] else [ ])
+              ++ (if cfg.java then [ ./lsp_java.nix ] else [ ])
             ;
           };
         in
@@ -129,5 +116,61 @@ in
 
       # null-ls-nvim
       xdg.configFile."nvim/lua/polarmutex/lsp_formatting.lua".source = link "config/lsp/lsp_formatting.lua";
-    };
+    }
+    # BEANCOUNT
+    (mkIf cfg.beancount {
+      home.packages = with pkgs; [
+        beancount-language-server
+      ];
+    })
+    # CPP
+    (mkIf cfg.cpp {
+      home.packages = with pkgs; [
+        clang-tools
+      ];
+    })
+    # JAVA
+    (mkIf cfg.java {
+      home.packages = with pkgs; [
+        jdt-language-server
+      ];
+      xdg.configFile."nvim/lua/polarmutex/lsp_java.lua".source = link "config/lsp/lsp_java.lua";
+    })
+    # LUA
+    (mkIf cfg.lua {
+      home.packages = with pkgs; [
+        sumneko-lua-language-server
+      ];
+    })
+    # NIX
+    (mkIf cfg.nix {
+      home.packages = with pkgs; [
+        rnix-lsp
+      ];
+    })
+    # PYTHON
+    (mkIf cfg.python {
+      home.packages = with pkgs; [
+        nodePackages.pyright
+      ];
+    })
+    # RUST
+    (mkIf cfg.rust {
+      home.packages = with pkgs; [
+        rust-analyzer
+      ];
+    })
+    # SVELTE
+    (mkIf cfg.svelte {
+      home.packages = with pkgs; [
+        nodePackages.svelte-language-server
+      ];
+    })
+    # TYPESCRIPT
+    (mkIf cfg.typescript {
+      home.packages = with pkgs; [
+        nodePackages.typescript-language-server
+      ];
+    })
+  ]);
 }

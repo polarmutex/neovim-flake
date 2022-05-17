@@ -6,7 +6,7 @@
     - [x] lua
     - [ ] python
     - [ ] rust
-    - [ ] java
+    - [x] java
     - [ ] svelte
     - [ ] typescript
     - [ ] beancount
@@ -32,7 +32,7 @@
         - [ ] smart history ext
         - [ ] gh ext
         - [ ] octo ext
-    - [ ] neogit
+    - [x] neogit
     - [x] gitsigns
     - [x] lualine
     - [ ] comments
@@ -48,7 +48,7 @@
     - [ ] impatient
     - [ ] lua-dev
     - [ ] trouble
-    - [ ] nvim-jdtls
+    - [x] nvim-jdtls
     - [ ] luasnip
 - [ ] spellcheck
 - [ ] themes

@@ -14,6 +14,7 @@ with dsl; {
     lspkind-nvim
     null-ls-nvim
     fidget
+    nvim-jdtls
     #vimPlugins.lsp_signature-nvim
 
     # git

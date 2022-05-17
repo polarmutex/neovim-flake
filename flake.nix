@@ -78,6 +78,10 @@
       url = "github:theHamsta/nvim-dap-virtual-text";
       flake = false;
     };
+    nvim-jdtls-src = {
+      url = "github:mfussenegger/nvim-jdtls";
+      flake = false;
+    };
     nvim-lspconfig-src = {
       url = "github:neovim/nvim-lspconfig";
       flake = false;
