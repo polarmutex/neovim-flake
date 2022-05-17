@@ -39,6 +39,7 @@
     - [ ] colorizer
     - [ ] harpoon
     - [ ] dashboard
+    - [ ] mini.nvim
     - [ ] vim-be-good
     - [ ] vim-apm
     - [ ] dial
@@ -65,6 +66,10 @@
 ### neovim configs
 - [folke](https://github.com/folke/dot)
 - [tjdevries](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim)
+- [kitten](https://github.com/kitten/nix-system)
+- [pokerus](https://github.com/j-hui/pokerus/tree/main/nvim.config/nvim)
+- [eleaniva](https://github.com/elianiva/dotfiles/tree/master/nvim/.config/nvim)
+- [garcia5](https://github.com/garcia5/dotfiles/blob/master/files/nvim)
 
 ## Essential libraries used
 
