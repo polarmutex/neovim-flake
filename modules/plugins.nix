@@ -30,6 +30,7 @@ with dsl; {
 
     # themes
     tokyonight-nvim
+    kanagawa-nvim
 
     # treesitter
     (nvim-treesitter.withPlugins

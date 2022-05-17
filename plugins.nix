@@ -21,6 +21,7 @@ with inputs; {
     conceal = plugin "conceal" conceal-src;
     fidget = plugin "fidget" fidget-src;
     gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
+    kanagawa-nvim = plugin "kanagawa-nvim" kanagawa-nvim-src;
     lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
     lualine-nvim = (withSrc prev.vimPlugins.lualine-nvim lualine-nvim-src);
     neogit = plugin "neogit" neogit-src;

@@ -47,7 +47,8 @@ in
     ./config/plugins/neogit
     ./config/plugins/nvim-cmp
     ./config/plugins/telescope
-    ./config/plugins/tokyonight-nvim
+    #./config/plugins/tokyonight-nvim
+    ./config/plugins/kanagawa-nvim
   ];
 
   options = {

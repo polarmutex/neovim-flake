@@ -50,6 +50,10 @@
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
     };
+    kanagawa-nvim-src = {
+      url = "github:rebelot/kanagawa.nvim";
+      flake = false;
+    };
     lspkind-nvim-src = {
       url = "github:onsails/lspkind-nvim";
       flake = false;
