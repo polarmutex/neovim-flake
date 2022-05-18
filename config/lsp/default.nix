@@ -110,8 +110,9 @@ in
         in
         concatStrings [
           (builtins.readFile ./lsp_diag.lua)
-          (builtins.readFile ./null-ls.lua)
           lua_config.lua
+          # needs to be below lua_config for on_attach
+          (builtins.readFile ./null-ls.lua)
         ];
 
       # null-ls-nvim
@@ -140,6 +141,7 @@ in
     (mkIf cfg.lua {
       home.packages = with pkgs; [
         sumneko-lua-language-server
+        stylua
       ];
     })
     # NIX
