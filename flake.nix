@@ -9,6 +9,9 @@
     neovim = {
       url = "github:neovim/neovim?dir=contrib&tag=master";
     };
+    awesome-flake = {
+      url = "github:polarmutex/awesome-flake";
+    };
 
     blamer-nvim-src = {
       url = "github:APZelos/blamer.nvim";
@@ -140,6 +143,7 @@
     inputs@{ self
     , nixpkgs
     , neovim
+    , awesome-flake
     , flake-utils
     , rnix-lsp
     , ...
@@ -154,11 +158,11 @@
       overlay = final: prev: rec {
         nix2luaUtils = prev.callPackage ./lib/utils.nix { inherit nixpkgs; };
         luaConfigBuilder = import ./lib/lua-config-builder.nix {
-          pkgs = prev;
+          pkgs = final;
           lib = prev.lib;
         };
         neovimBuilder = import ./lib/neovim-builder.nix {
-          pkgs = prev;
+          pkgs = final;
           lib = prev.lib;
         };
       };
@@ -181,6 +185,7 @@
         inherit system;
         overlays = [
           neovim.overlay
+          awesome-flake.overlay
           (import ./plugins.nix inputs)
           overlay
         ];
