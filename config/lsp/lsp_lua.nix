@@ -18,6 +18,7 @@ with dsl;
       on_attach = rawLua "on_attach";
       settings =
         {
+          # Do not send telemetry data containing a randomized but unique identifier
           telemetry = {
             enable = false;
           };
@@ -36,7 +37,10 @@ with dsl;
             };
             diagnostics = {
               # Get the language server to recognize the `vim` global
-              globals = rawLua "{ 'vim'  }";
+              globals = [
+                "vim"
+                "awesome"
+              ];
             };
             workspace = {
               # Make the server aware of Neovim runtime files
@@ -45,10 +49,6 @@ with dsl;
                 ", true)"
                 "${pkgs.awesome-git}/share/awesome/lib"
               ];
-            };
-            # Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-              enable = false;
             };
           };
         };
