@@ -38,8 +38,12 @@ with dsl;
             diagnostics = {
               # Get the language server to recognize the `vim` global
               globals = [
+                # neovim
                 "vim"
+                # awesomewm
                 "awesome"
+                "client"
+                "screen"
               ];
             };
             workspace = {
