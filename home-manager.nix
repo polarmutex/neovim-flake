@@ -69,7 +69,6 @@ in
     home.packages = with pkgs; [
       neovim-polar
       ripgrep
-      prettierd
     ];
 
     # old way

@@ -4,7 +4,7 @@ nls.setup({
     debounce = 150,
     --save_after_format = false,
     sources = {
-        --nls.builtins.formatting.prettierd,
+        nls.builtins.formatting.prettierd,
         --.with({
         --    filetypes = {
         --        "astro",
