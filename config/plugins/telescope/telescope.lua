@@ -146,6 +146,8 @@ require("telescope").setup({
     },
 })
 
+_ = require("telescope").load_extension("beancount")
+
 local map = vim.keymap.set
 
 local function no_preview(opts)
@@ -200,6 +202,12 @@ map("n", "<Leader>fb", require("telescope.builtin").current_buffer_fuzzy_find, {
 
 map("n", "<Leader>kb", require("telescope.builtin").keymaps, {
     desc = "Telescope: keymaps",
+    noremap = true,
+    silent = true,
+})
+
+map("n", "<Leader>mt", require("telescope").extensions.beancount.copy_transactions, {
+    desc = "Telescope: copy beancount transactions",
     noremap = true,
     silent = true,
 })

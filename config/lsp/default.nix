@@ -95,6 +95,9 @@ in
 
   config = mkIf cfg.enable (mkMerge [
     {
+      home.packages = with pkgs; [
+      ];
+
       xdg.configFile."nvim/lua/polarmutex/lsp.lua".text =
         let
           lua_config = pkgs.luaConfigBuilder {
@@ -105,6 +108,7 @@ in
               ++ (if cfg.python then [ ./lsp_python.nix ] else [ ])
               ++ (if cfg.cpp then [ ./lsp_cpp.nix ] else [ ])
               ++ (if cfg.java then [ ./lsp_java.nix ] else [ ])
+              ++ (if cfg.beancount then [ ./lsp_beancount.nix ] else [ ])
             ;
           };
         in
