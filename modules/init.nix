@@ -23,6 +23,7 @@
 
     vim.opt.runtimepath:append("~/repos/personal/beancount.nvim/master")
     require('polarmutex.options')
+    require('polarmutex.mappings')
     require('polarmutex.lsp')
     require('polarmutex.treesitter')
   '';
