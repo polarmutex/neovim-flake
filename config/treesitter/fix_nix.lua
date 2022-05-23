@@ -1,3 +1,4 @@
+--[=====[
 require("vim.treesitter.query").set_query("nix", "locals", "")
 require("vim.treesitter.query").set_query("nix", "folds", "")
 require("vim.treesitter.query").set_query(
@@ -7,14 +8,14 @@ require("vim.treesitter.query").set_query(
 (comment) @comment
 
 [
-  "if" 
+  "if"
   "then"
   "else"
   "let"
   "inherit"
   "in"
   "rec"
-  "with" 
+  "with"
   "assert"
   "or"
 ] @keyword
@@ -101,3 +102,4 @@ require("vim.treesitter.query").set_query(
 (identifier) @variable
 ]]
 )
+--]=====]
