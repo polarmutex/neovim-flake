@@ -21,7 +21,7 @@
       return require(name)
     end
 
-    vim.opt.runtimepath:append("~/repos/personal/beancount.nvim/master")
+    --vim.opt.runtimepath:append("~/repos/personal/beancount.nvim/master")
     require('polarmutex.options')
     require('polarmutex.mappings')
     require('polarmutex.lsp')

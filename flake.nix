@@ -13,6 +13,10 @@
       url = "github:polarmutex/awesome-flake";
     };
 
+    beancount-nvim-src = {
+      url = "github:polarmutex/beancount.nvim";
+      flake = false;
+    };
     blamer-nvim-src = {
       url = "github:APZelos/blamer.nvim";
       flake = false;

@@ -2,6 +2,7 @@
 with dsl; {
   plugins = with pkgs.neovimPlugins; [
 
+    beancount-nvim
     # completion
     nvim-cmp
     cmp-buffer

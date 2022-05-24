@@ -12,6 +12,7 @@ with inputs; {
   rnix-lsp = inputs.rnix-lsp.packages.${prev.system}.rnix-lsp;
 
   neovimPlugins = {
+    beancount-nvim = plugin "beancount-nvim" beancount-nvim-src;
     cmp-buffer = (withSrc prev.vimPlugins.cmp-buffer cmp-buffer-src);
     cmp-nvim-lsp = withSrc prev.vimPlugins.cmp-nvim-lsp cmp-nvim-lsp-src;
     cmp-nvim-lua = withSrc prev.vimPlugins.cmp-nvim-lua cmp-nvim-lua-src;
