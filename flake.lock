@@ -597,30 +597,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "inputs": {
-        "awesome-git-src": "awesome-git-src",
-        "beancount-langserver": "beancount-langserver",
-        "flake-utils": "flake-utils_4",
-        "naersk": "naersk_2",
-        "neovim": "neovim",
-        "nixpkgs": "nixpkgs_7",
-        "wezterm-git-src": "wezterm-git-src"
-      },
-      "locked": {
-        "lastModified": 1653398518,
-        "narHash": "sha256-MCHG3PqLAT7oBWOHmSFsI/DS789vxbx9AKonpD6V8LI=",
-        "owner": "polarmutex",
-        "repo": "nur",
-        "rev": "fcc2ac4bb7682f77647da0c7d42dd6d7849964ff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "polarmutex",
-        "repo": "nur",
-        "type": "github"
-      }
-    },
     "nvim-cmp-src": {
       "flake": false,
       "locked": {
@@ -749,6 +725,30 @@
         "type": "github"
       }
     },
+    "polar-nur": {
+      "inputs": {
+        "awesome-git-src": "awesome-git-src",
+        "beancount-langserver": "beancount-langserver",
+        "flake-utils": "flake-utils_4",
+        "naersk": "naersk_2",
+        "neovim": "neovim",
+        "nixpkgs": "nixpkgs_7",
+        "wezterm-git-src": "wezterm-git-src"
+      },
+      "locked": {
+        "lastModified": 1653398518,
+        "narHash": "sha256-MCHG3PqLAT7oBWOHmSFsI/DS789vxbx9AKonpD6V8LI=",
+        "owner": "polarmutex",
+        "repo": "nur",
+        "rev": "fcc2ac4bb7682f77647da0c7d42dd6d7849964ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "polarmutex",
+        "repo": "nur",
+        "type": "github"
+      }
+    },
     "popup-nvim-src": {
       "flake": false,
       "locked": {
@@ -806,7 +806,6 @@
         "neogit-src": "neogit-src",
         "nixpkgs": "nixpkgs_2",
         "null-ls-nvim-src": "null-ls-nvim-src",
-        "nur": "nur",
         "nvim-cmp-src": "nvim-cmp-src",
         "nvim-dap-src": "nvim-dap-src",
         "nvim-dap-virtual-text-src": "nvim-dap-virtual-text-src",
@@ -815,6 +814,7 @@
         "nvim-treesitter-context-src": "nvim-treesitter-context-src",
         "nvim-treesitter-src": "nvim-treesitter-src",
         "plenary-nvim-src": "plenary-nvim-src",
+        "polar-nur": "polar-nur",
         "popup-nvim-src": "popup-nvim-src",
         "rnix-lsp": "rnix-lsp",
         "rust-tools-nvim-src": "rust-tools-nvim-src",
