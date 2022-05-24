@@ -6,8 +6,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
-    neovim = {
-      url = "github:neovim/neovim?dir=contrib&tag=master";
+    nur = {
+      url = "github:polarmutex/nur";
     };
     awesome-flake = {
       url = "github:polarmutex/awesome-flake";
@@ -146,7 +146,7 @@
   outputs =
     inputs@{ self
     , nixpkgs
-    , neovim
+    , nur
     , awesome-flake
     , flake-utils
     , rnix-lsp
@@ -188,7 +188,7 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          neovim.overlay
+          nur.overlay
           awesome-flake.overlay
           (import ./plugins.nix inputs)
           overlay
