@@ -193,7 +193,6 @@
         ];
       };
       neovim-polar = pkgs.neovimBuilder {
-        #package = final.neovim;
         imports = [
           ./modules/init.nix
           ./modules/plugins.nix
