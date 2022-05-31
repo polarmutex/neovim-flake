@@ -28,8 +28,8 @@ in
 
     package = mkOption {
       type = types.package;
-      default = pkgs.neovim-unwrapped;
-      example = literalExpression "pkgs.neovim-unwrapped";
+      default = pkgs.neovim-git;
+      example = literalExpression "pkgs.neovim-git";
       description = "Neovim package to use.";
     };
 

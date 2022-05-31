@@ -9,9 +9,6 @@
     polar-nur = {
       url = "github:polarmutex/nur";
     };
-    awesome-flake = {
-      url = "github:polarmutex/awesome-flake";
-    };
 
     beancount-nvim-src = {
       url = "github:polarmutex/beancount.nvim";
@@ -147,7 +144,6 @@
     inputs@{ self
     , nixpkgs
     , polar-nur
-    , awesome-flake
     , flake-utils
     , rnix-lsp
     , ...
@@ -160,11 +156,14 @@
       withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
 
       overlay = final: prev: rec {
+
         nix2luaUtils = prev.callPackage ./lib/utils.nix { inherit nixpkgs; };
+
         luaConfigBuilder = import ./lib/lua-config-builder.nix {
           pkgs = final;
           lib = prev.lib;
         };
+
         neovimBuilder = import ./lib/neovim-builder.nix {
           pkgs = final;
           lib = prev.lib;
@@ -188,14 +187,13 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          polar-nur.overlay
-          awesome-flake.overlay
+          polar-nur.overlays.default
           (import ./plugins.nix inputs)
           overlay
         ];
       };
       neovim-polar = pkgs.neovimBuilder {
-        package = pkgs.neovim;
+        #package = final.neovim;
         imports = [
           ./modules/init.nix
           ./modules/plugins.nix
@@ -205,7 +203,7 @@
       };
     in
     {
-      defaultPackage = neovim-polar;
+      packages.default = neovim-polar;
 
     });
 }
