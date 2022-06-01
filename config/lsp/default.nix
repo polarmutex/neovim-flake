@@ -138,6 +138,7 @@ in
     (mkIf cfg.java {
       home.packages = with pkgs; [
         jdt-language-server
+        google-java-format
       ];
       xdg.configFile."nvim/lua/polarmutex/lsp_java.lua".source = link "config/lsp/lsp_java.lua";
     })

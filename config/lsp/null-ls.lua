@@ -24,6 +24,7 @@ nls.setup({
         --    args = { "--config-path", vim.fn.stdpath("config") .. "lua/stylua.toml", "-" },
         --}),
         nls.builtins.formatting.stylua,
+        nls.builtins.formatting.google_java_format,
         --nls.builtins.formatting.eslint_d,
         --nls.builtins.diagnostics.shellcheck,
         --nls.builtins.diagnostics.markdownlint,
