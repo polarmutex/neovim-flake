@@ -167,16 +167,16 @@
     "colorizer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1554648757,
-        "narHash": "sha256-N7UVzk/XUX76XcPHds+lLMZzO7gahj/9LIfof2BPThc=",
-        "owner": "powerman",
-        "repo": "vim-plugin-AnsiEsc",
-        "rev": "690f820d20b6e3a79ba20499874eb7333aa4ca5c",
+        "lastModified": 1591879145,
+        "narHash": "sha256-6YrnItxExL2C8pNIdLd+hXCjsB2MbZANwWkah6dreD8=",
+        "owner": "norcalli",
+        "repo": "nvim-colorizer.lua",
+        "rev": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
         "type": "github"
       },
       "original": {
-        "owner": "powerman",
-        "repo": "vim-plugin-AnsiEsc",
+        "owner": "norcalli",
+        "repo": "nvim-colorizer.lua",
         "type": "github"
       }
     },
@@ -448,11 +448,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1653918805,
-        "narHash": "sha256-6ahwAnBNGgqSNSn/6RnsxrlFi+fkA+RyT6o/5S1915o=",
+        "lastModified": 1654007547,
+        "narHash": "sha256-G812EeXZeGeGjkAvbTleGwcKFCGxdLOQb9aViOWASPc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a0a69be4b5ee63f1b5e75887a406e9194012b492",
+        "rev": "5643714dea562f0161529ab23058562afeff46d0",
         "type": "github"
       },
       "original": {
