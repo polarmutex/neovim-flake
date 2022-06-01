@@ -35,7 +35,7 @@
       flake = false;
     };
     colorizer-src = {
-      url = "github:powerman/vim-plugin-AnsiEsc";
+      url = "github:norcalli/nvim-colorizer.lua";
       flake = false;
     };
     comment-nvim-src = {

@@ -3,6 +3,7 @@ with dsl; {
   plugins = with pkgs.neovimPlugins; [
 
     beancount-nvim
+    colorizer
     # completion
     nvim-cmp
     cmp-buffer

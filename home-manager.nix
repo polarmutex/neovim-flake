@@ -41,6 +41,7 @@ in
     ./config/treesitter
 
     # plugins
+    ./config/plugins/colorizer
     ./config/plugins/fidget
     ./config/plugins/gitsigns
     ./config/plugins/lualine
