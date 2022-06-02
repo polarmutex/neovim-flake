@@ -1,5 +1,7 @@
 { lib, pkgs, ... }: {
   lua = ''
+    require('polarmutex.profile')
+
     local ok, plenary_reload = pcall(require, "plenary.reload")
     if not ok then
       reloader = require
