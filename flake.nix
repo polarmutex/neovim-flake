@@ -4,6 +4,7 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
 
     polar-nur = {
@@ -143,6 +144,7 @@
   outputs =
     inputs@{ self
     , nixpkgs
+    , nixpkgs-master
     , polar-nur
     , flake-utils
     , rnix-lsp
@@ -184,7 +186,7 @@
     } //
     flake-utils.lib.eachDefaultSystem (system:
     let
-      pkgs = import nixpkgs {
+      pkgs = import nixpkgs-master {
         inherit system;
         overlays = [
           polar-nur.overlays.default

@@ -51,9 +51,6 @@ in
 
   config = mkIf cfg.enable {
 
-    #TODO Hack to fix treesitter-nix changes
-    xdg.configFile."nvim/plugin/fix_nix.lua".source = link "config/treesitter/fix_nix.lua";
-
     xdg.configFile."nvim/lua/polarmutex/treesitter.lua".text =
       let
         lua_config = pkgs.luaConfigBuilder {

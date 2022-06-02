@@ -462,6 +462,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1654199472,
+        "narHash": "sha256-rLVt/c+STWmNjdkhtEv6qo5EWjYb8/h89vGoOWa1Ei4=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "9d449f590af8741ea0662633e490954bb1fbddf7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "narHash": "sha256-u1zLtPmQzhT9mNXyM8Ey9pk7orDrIKdwooeGDEXm5xM=",
@@ -772,6 +787,7 @@
         "lualine-nvim-src": "lualine-nvim-src",
         "neogit-src": "neogit-src",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-master": "nixpkgs-master",
         "null-ls-nvim-src": "null-ls-nvim-src",
         "nvim-cmp-src": "nvim-cmp-src",
         "nvim-dap-src": "nvim-dap-src",
