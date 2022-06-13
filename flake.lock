@@ -708,11 +708,11 @@
     "plenary-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1654718185,
-        "narHash": "sha256-MKKs4gsv6DUZsW4VMb35CD5aSWEj3k1DXhwpVTBEJLU=",
+        "lastModified": 1655062860,
+        "narHash": "sha256-pZ/x59dlSy4STWttE7wZMiVY2+vMY33FYpICk76FqRc=",
         "owner": "nvim-lua",
         "repo": "plenary.nvim",
-        "rev": "9c3239bc5f99b85be1123107f7290d16a68f8e64",
+        "rev": "968a4b9afec0c633bc369662e78f8c5db0eba249",
         "type": "github"
       },
       "original": {
