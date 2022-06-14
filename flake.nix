@@ -1,6 +1,7 @@
 {
   description = "Tutorial Flake accompanying vimconf talk.";
 
+
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
