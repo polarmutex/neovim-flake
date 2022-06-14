@@ -772,11 +772,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1651229115,
-        "narHash": "sha256-ic9hnLq3f7KIpr0uJXptHOImPv4CqznTE9yBM/LCiko=",
+        "lastModified": 1655204811,
+        "narHash": "sha256-XtEycAZBlYVuu78cWI0SCvsGWipXglxcUknLlcF7BiM=",
         "owner": "Ma27",
         "repo": "rnix-lsp",
-        "rev": "9736265eb4fd4d1488b34b229ad1ab589610740e",
+        "rev": "2e49c1f31d6ad46d3f2adbfc1863a896835e4dd0",
         "type": "github"
       },
       "original": {
