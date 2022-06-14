@@ -28,7 +28,7 @@ in
 
     package = mkOption {
       type = types.package;
-      default = pkgs.neovim-git;
+      default = pkgs.neovim;
       example = literalExpression "pkgs.neovim-git";
       description = "Neovim package to use.";
     };

@@ -190,18 +190,22 @@
         inherit system;
         overlays = [
           polar-nur.overlays.default
+          (final: prev: {
+            neovim = polar-nur.packages.${final.system}.neovim-git;
+          })
           (import ./plugins.nix inputs)
           overlay
         ];
       };
-      neovim-polar = pkgs.neovimBuilder {
-        imports = [
-          ./modules/init.nix
-          ./modules/plugins.nix
-        ];
-        enableViAlias = true;
-        enableVimAlias = true;
-      };
+      neovim-polar = pkgs.neovimBuilder
+        {
+          imports = [
+            ./modules/init.nix
+            ./modules/plugins.nix
+          ];
+          enableViAlias = true;
+          enableVimAlias = true;
+        };
     in
     {
       packages.default = neovim-polar;
