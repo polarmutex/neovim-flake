@@ -52,7 +52,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           pull-request-token: ${{ steps.generate-token.outputs.token }}
           #pull-request-token: ${{ secrets.GH_TOKEN }}
-          pull-request-author: "polarmutex[bot] <polarmutex@users.noreply.github.com>"
+          pull-request-author: "polarmutex[bot] <polarmutex[bot]@users.noreply.github.com>"
           pull-request-labels: dependencies,autorebase:opt-in
           automerge: true
           delete-branch: true
