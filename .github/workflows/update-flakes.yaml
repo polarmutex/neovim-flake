@@ -40,13 +40,19 @@ jobs:
           extra_nix_config: |
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
 
+      - uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_KEY }}
+
       - uses: cpcloud/flake-update-action@v1.0.2
         with:
           dependency: ${{ matrix.flake }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          #pull-request-token: ${{ steps.generate-token.outputs.token }}
-          pull-request-token: ${{ secrets.GH_TOKEN }}
-          pull-request-author: "polarmutex <polarmutex@users.noreply.github.com>"
+          pull-request-token: ${{ steps.generate-token.outputs.token }}
+          #pull-request-token: ${{ secrets.GH_TOKEN }}
+          pull-request-author: "polarmutex[bot] <polarmutex@users.noreply.github.com>"
           pull-request-labels: dependencies,autorebase:opt-in
           automerge: true
           delete-branch: true
