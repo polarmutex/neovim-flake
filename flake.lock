@@ -119,11 +119,11 @@
     "cmp-buffer-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1652074301,
-        "narHash": "sha256-jxtrPAhI8v0a9gmSlRZWFLyH3JYcmyLaV9fDnBHvy4U=",
+        "lastModified": 1655319089,
+        "narHash": "sha256-+iNqM9lVowC1q4lfErN7CBPAVArVlp5yV9lwH77QnnE=",
         "owner": "hrsh7th",
         "repo": "cmp-buffer",
-        "rev": "12463cfcd9b14052f9effccbf1d84caa7a2d57f0",
+        "rev": "62fc67a2b0205136bc3e312664624ba2ab4a9323",
         "type": "github"
       },
       "original": {
