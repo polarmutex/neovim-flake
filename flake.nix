@@ -211,5 +211,11 @@
     {
       packages.default = neovim-polar;
 
+      # check to see if any config errors ars displayed
+      # TODO need to have version with all the config
+      checks.neovim = pkgs.runCommand "neovim-config-check" { } ''
+        ${pkgs.neovim}/bin/nvim --headless -c q > $out
+      '';
+
     });
 }
