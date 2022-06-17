@@ -11,7 +11,7 @@ with dsl;
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "on_attach";
     init_options = {
-      journal_file = "/home/polar/repos/personal/beancount/journal.beancount";
+      journal_file = "/home/polar/repos/personal/beancount/main.beancount";
     };
   };
 
