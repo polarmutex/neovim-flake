@@ -676,11 +676,11 @@
     "nvim-treesitter-context-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1655299310,
-        "narHash": "sha256-FPyqqMOopd4hHnhPDqzRsQ9ezm8YpM9O1XVwjPJ93+8=",
+        "lastModified": 1655530738,
+        "narHash": "sha256-hMf8cJPqKn1bDEOR8czgyYw9wrPcYvSCJsOQlSJVtbc=",
         "owner": "romgrk",
         "repo": "nvim-treesitter-context",
-        "rev": "fff47da1ddddcdeab8d66f384f0a0496eb8fb024",
+        "rev": "2837cd67ccdc50b7c7fe5a6a8cb0ca8cc6e2aae3",
         "type": "github"
       },
       "original": {
