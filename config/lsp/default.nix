@@ -109,6 +109,7 @@ in
               ++ (if cfg.cpp then [ ./lsp_cpp.nix ] else [ ])
               ++ (if cfg.java then [ ./lsp_java.nix ] else [ ])
               ++ (if cfg.beancount then [ ./lsp_beancount.nix ] else [ ])
+              ++ (if cfg.typescript then [ ./lsp_typescript.nix ] else [ ])
             ;
           };
         in
@@ -177,6 +178,8 @@ in
     (mkIf cfg.typescript {
       home.packages = with pkgs; [
         nodePackages.typescript-language-server
+        nodePackages.eslint_d
+        nodePackages.prettier_d_slim
       ];
     })
   ]);
