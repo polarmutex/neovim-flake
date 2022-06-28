@@ -31,6 +31,7 @@ with inputs; {
     nvim-jdtls = plugin "nvim-jdtls" nvim-jdtls-src;
     nvim-lspconfig = (withSrc prev.vimPlugins.nvim-lspconfig nvim-lspconfig-src);
     nvim-treesitter = (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
+    nvim-treesitter-playground = (withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
     plenary-nvim = (withSrc prev.vimPlugins.plenary-nvim plenary-nvim-src);
     popup-nvim = (withSrc prev.vimPlugins.popup-nvim popup-nvim-src);
     rust-tools = plugin "rust-tools" rust-tools-src;

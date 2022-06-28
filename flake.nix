@@ -11,6 +11,9 @@
     polar-nur = {
       url = "github:polarmutex/nur";
     };
+    tree-sitter-beancount = {
+      url = "github:polarmutex/tree-sitter-beancount";
+    };
 
     beancount-nvim-src = {
       url = "github:polarmutex/beancount.nvim";
@@ -104,6 +107,10 @@
       url = "github:romgrk/nvim-treesitter-context";
       flake = false;
     };
+    nvim-treesitter-playground-src = {
+      url = "github:nvim-treesitter/playground";
+      flake = false;
+    };
     plenary-nvim-src = {
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
@@ -147,6 +154,7 @@
     , nixpkgs
     , nixpkgs-master
     , polar-nur
+    , tree-sitter-beancount
     , flake-utils
     , rnix-lsp
     , ...
@@ -191,6 +199,7 @@
         inherit system;
         overlays = [
           polar-nur.overlays.default
+          tree-sitter-beancount.overlays.default
           (final: prev: {
             neovim = polar-nur.packages.${final.system}.neovim-git;
           })

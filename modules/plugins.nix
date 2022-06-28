@@ -54,6 +54,7 @@ with dsl; {
           tree-sitter-svelte
           tree-sitter-typescript
         ]))
+    nvim-treesitter-playground
 
     lualine-nvim
   ];
