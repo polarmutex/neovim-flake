@@ -304,6 +304,21 @@
         "type": "github"
       }
     },
+    "flake-utils_5": {
+      "locked": {
+        "lastModified": 1656065134,
+        "narHash": "sha256-oc6E6ByIw3oJaIyc67maaFcnjYOz1mMcOtHxbEf9NwQ=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "bee6a7250dd1b01844a2de7e02e4df7d8a0a206c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "gitsigns-nvim-src": {
       "flake": false,
       "locked": {
@@ -577,6 +592,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_8": {
+      "locked": {
+        "lastModified": 1656239181,
+        "narHash": "sha256-wW1xRFBn376yGloXZ4QzBE4hjipMawpV18Lshd9QSPw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f2537a505d45c31fe5d9c27ea9829b6f4c4e6ac5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "null-ls-nvim-src": {
       "flake": false,
       "locked": {
@@ -689,6 +720,22 @@
         "type": "github"
       }
     },
+    "nvim-treesitter-playground-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1655914602,
+        "narHash": "sha256-7iB5Tf34mLghaFlD+iW++yF3/EgXA2SHKTVcyf+Vd2Q=",
+        "owner": "nvim-treesitter",
+        "repo": "playground",
+        "rev": "ce7e4b757598f1c785ed0fd94fc65959acd7d39c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-treesitter",
+        "repo": "playground",
+        "type": "github"
+      }
+    },
     "nvim-treesitter-src": {
       "flake": false,
       "locked": {
@@ -765,6 +812,31 @@
         "type": "github"
       }
     },
+    "pre-commit-hooks": {
+      "inputs": {
+        "flake-utils": [
+          "tree-sitter-beancount",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "tree-sitter-beancount",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1656169028,
+        "narHash": "sha256-y9DRauokIeVHM7d29lwT8A+0YoGUBXV3H0VErxQeA8s=",
+        "owner": "cachix",
+        "repo": "pre-commit-hooks.nix",
+        "rev": "db3bd555d3a3ceab208bed48f983ccaa6a71a25e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cachix",
+        "repo": "pre-commit-hooks.nix",
+        "type": "github"
+      }
+    },
     "rnix-lsp": {
       "inputs": {
         "naersk": "naersk_3",
@@ -812,6 +884,7 @@
         "nvim-jdtls-src": "nvim-jdtls-src",
         "nvim-lspconfig-src": "nvim-lspconfig-src",
         "nvim-treesitter-context-src": "nvim-treesitter-context-src",
+        "nvim-treesitter-playground-src": "nvim-treesitter-playground-src",
         "nvim-treesitter-src": "nvim-treesitter-src",
         "plenary-nvim-src": "plenary-nvim-src",
         "polar-nur": "polar-nur",
@@ -822,6 +895,7 @@
         "telescope-nvim-src": "telescope-nvim-src",
         "telescope-ui-select-src": "telescope-ui-select-src",
         "tokyonight-nvim-src": "tokyonight-nvim-src",
+        "tree-sitter-beancount": "tree-sitter-beancount",
         "which-key-nvim-src": "which-key-nvim-src"
       }
     },
@@ -918,6 +992,26 @@
       "original": {
         "owner": "folke",
         "repo": "tokyonight.nvim",
+        "type": "github"
+      }
+    },
+    "tree-sitter-beancount": {
+      "inputs": {
+        "flake-utils": "flake-utils_5",
+        "nixpkgs": "nixpkgs_8",
+        "pre-commit-hooks": "pre-commit-hooks"
+      },
+      "locked": {
+        "lastModified": 1656380348,
+        "narHash": "sha256-eCu4aJKAYiLlJT5uLaahh8vFsYGlvuaPxLCnS0fz0Mg=",
+        "owner": "polarmutex",
+        "repo": "tree-sitter-beancount",
+        "rev": "a1050584340a2375b6b480ba9e9691aebb9d33d5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "polarmutex",
+        "repo": "tree-sitter-beancount",
         "type": "github"
       }
     },
