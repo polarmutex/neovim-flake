@@ -23,6 +23,9 @@
       return require(name)
     end
 
+    -- enable filetype.lua
+    vim.g.do_filetype_lua = 1
+
     --vim.opt.runtimepath:append("~/repos/personal/beancount.nvim/master")
     require('polarmutex.options')
     require('polarmutex.mappings')

@@ -45,6 +45,11 @@ in
         description = "Enable neovim lsp support";
       };
 
+      astro = mkOption {
+        type = types.bool;
+        default = false;
+        description = "Enable lsp astro";
+      };
       beancount = mkOption {
         type = types.bool;
         default = false;
@@ -110,6 +115,8 @@ in
               ++ (if cfg.java then [ ./lsp_java.nix ] else [ ])
               ++ (if cfg.beancount then [ ./lsp_beancount.nix ] else [ ])
               ++ (if cfg.typescript then [ ./lsp_typescript.nix ] else [ ])
+              ++ (if cfg.astro then [ ./lsp_astro.nix ] else [ ])
+              ++ (if cfg.svelte then [ ./lsp_svelte.nix ] else [ ])
             ;
           };
         in
@@ -180,6 +187,12 @@ in
         nodePackages.typescript-language-server
         nodePackages.eslint_d
         nodePackages.prettier_d_slim
+      ];
+    })
+    # Astro
+    (mkIf cfg.astro {
+      home.packages = with pkgs; [
+        nodePackages."@astrojs/language-server"
       ];
     })
   ]);

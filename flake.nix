@@ -179,6 +179,19 @@
           pkgs = final;
           lib = prev.lib;
         };
+
+        tree-sitter = prev.tree-sitter.override {
+          extraGrammars = {
+            tree-sitter-astro = {
+              src = prev.fetchFromGitHub {
+                owner = "virchau13";
+                repo = "tree-sitter-astro";
+                rev = "master";
+                sha256 = "sha256-brBbBmkHn0N9wu5Y6hatJhntZRVfBOwK4hIczPHVF6w=";
+              };
+            };
+          };
+        };
       };
     in
     {

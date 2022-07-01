@@ -83,6 +83,7 @@ in
     xdg.configFile."nvim/lua/polarmutex/profile.lua".source = link "config/profile.lua";
     xdg.configFile."nvim/lua/polarmutex/options.lua".source = link "config/options.lua";
     xdg.configFile."nvim/lua/polarmutex/mappings.lua".source = link "config/mappings.lua";
+    xdg.configFile."nvim/filetype.lua".source = link "config/filetype.lua";
 
   };
 

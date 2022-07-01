@@ -39,6 +39,7 @@ with dsl; {
       # tree sitter with language support
       (plugins:
         with plugins; [
+          tree-sitter-astro
           tree-sitter-beancount
           tree-sitter-c
           tree-sitter-cpp

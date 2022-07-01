@@ -13,6 +13,7 @@ nls.setup({
         nls.builtins.formatting.prettier_d_slim.with({
             filetypes = {
                 "astro",
+                "svelte",
                 "javascript",
                 "typescript",
                 "css",
