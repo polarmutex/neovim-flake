@@ -1002,11 +1002,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1656380348,
-        "narHash": "sha256-eCu4aJKAYiLlJT5uLaahh8vFsYGlvuaPxLCnS0fz0Mg=",
+        "lastModified": 1656773244,
+        "narHash": "sha256-Uh9/yBYXNKBvdpqNv1kr5eREYmKy3Z/kvaSZQpUl+0U=",
         "owner": "polarmutex",
         "repo": "tree-sitter-beancount",
-        "rev": "a1050584340a2375b6b480ba9e9691aebb9d33d5",
+        "rev": "4cbd1f09cd07c1f1fabf867c2cf354f9da53cc4c",
         "type": "github"
       },
       "original": {
