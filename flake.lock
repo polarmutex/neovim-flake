@@ -950,11 +950,11 @@
     "telescope-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1656710964,
-        "narHash": "sha256-1mJSo43Zy/AluQtYr1uuak9EyxQ5peyjXa0yl78N6Z4=",
+        "lastModified": 1656847519,
+        "narHash": "sha256-w9AoD59FLmB/pc6BhIpA3W8IgYrbn3vZElvAbxsZunA=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "7df95f9b208ba7228a25e7f75fb4cc02d6604cce",
+        "rev": "4afd1be74a3fa633cfc324de8653206a5c143470",
         "type": "github"
       },
       "original": {
