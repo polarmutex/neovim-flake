@@ -276,11 +276,11 @@
     },
     "flake-utils_3": {
       "locked": {
-        "lastModified": 1656065134,
-        "narHash": "sha256-oc6E6ByIw3oJaIyc67maaFcnjYOz1mMcOtHxbEf9NwQ=",
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "bee6a7250dd1b01844a2de7e02e4df7d8a0a206c",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
         "type": "github"
       },
       "original": {
@@ -463,11 +463,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1656904399,
-        "narHash": "sha256-lJRk5fLa5xPARKIhslP9J6dLuhjV+4HmCfa+tr2HqvA=",
+        "lastModified": 1656974878,
+        "narHash": "sha256-2sYphwcnVmtL+P3liksDWUwKsqej97hf3p/R/3GUIQk=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "f075feee3258d15f6549e33c185f6165f9c7fbfc",
+        "rev": "d07a39c54b1ecd767590821601c33164df4ba3e0",
         "type": "github"
       },
       "original": {
@@ -532,11 +532,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1656755932,
-        "narHash": "sha256-TGThfOxr+HjFK464+UoUE6rClp2cwxjiKvHcBVdIGSQ=",
+        "lastModified": 1656847440,
+        "narHash": "sha256-9LRlUrdU+TNAAp393hqDaKnwBssLLkxpRQEAzLSC2pM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "660ac43ff9ab1f12e28bfb31d4719795777fe152",
+        "rev": "d63774ae64431366be4d1f2aede50e52204c7d6c",
         "type": "github"
       },
       "original": {
@@ -562,11 +562,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1656755932,
-        "narHash": "sha256-TGThfOxr+HjFK464+UoUE6rClp2cwxjiKvHcBVdIGSQ=",
+        "lastModified": 1656847440,
+        "narHash": "sha256-9LRlUrdU+TNAAp393hqDaKnwBssLLkxpRQEAzLSC2pM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "660ac43ff9ab1f12e28bfb31d4719795777fe152",
+        "rev": "d63774ae64431366be4d1f2aede50e52204c7d6c",
         "type": "github"
       },
       "original": {
@@ -783,11 +783,11 @@
         "wezterm-git-src": "wezterm-git-src"
       },
       "locked": {
-        "lastModified": 1656912768,
-        "narHash": "sha256-ivNQzBZUCaKNVkQY3k1sT1dUgGXjuNpdWzeaG1rArII=",
+        "lastModified": 1656998757,
+        "narHash": "sha256-jrX4HY34vRqZZN7qmTj525LibOqLIPw4YUNEespSJ6M=",
         "owner": "polarmutex",
         "repo": "nur",
-        "rev": "9535f947925c552866a3f11a9452085f917d17d2",
+        "rev": "87cdcfd1fc0af37244f17283050e1e550f39a316",
         "type": "github"
       },
       "original": {
@@ -1033,11 +1033,11 @@
     "wezterm-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1656699860,
-        "narHash": "sha256-W7N7CNByruJJkuZIBMrkvqmn1ynka6HIq8g+7+s37Ig=",
+        "lastModified": 1656994345,
+        "narHash": "sha256-N67dKwVQDLx0c8m5QnB+MT0aOYWHGSALFXy5W27Np7U=",
         "ref": "main",
-        "rev": "2a47f3e4924615486da49188959e1487d8eb2df0",
-        "revCount": 5835,
+        "rev": "67b96b9b5c962a1b9dc66961422ffdb6364e4ed1",
+        "revCount": 5844,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"
