@@ -656,6 +656,22 @@
         "type": "github"
       }
     },
+    "nvim-dap-ui-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1656751678,
+        "narHash": "sha256-L+8em3pbbjEfLno8diDEIEErPXfsV78H0/qCPKW7Lag=",
+        "owner": "rcarriga",
+        "repo": "nvim-dap-ui",
+        "rev": "d33b905770f9c674468b0b83bed3aeab41cf9bb0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rcarriga",
+        "repo": "nvim-dap-ui",
+        "type": "github"
+      }
+    },
     "nvim-dap-virtual-text-src": {
       "flake": false,
       "locked": {
@@ -880,6 +896,7 @@
         "null-ls-nvim-src": "null-ls-nvim-src",
         "nvim-cmp-src": "nvim-cmp-src",
         "nvim-dap-src": "nvim-dap-src",
+        "nvim-dap-ui-src": "nvim-dap-ui-src",
         "nvim-dap-virtual-text-src": "nvim-dap-virtual-text-src",
         "nvim-jdtls-src": "nvim-jdtls-src",
         "nvim-lspconfig-src": "nvim-lspconfig-src",

@@ -5,3 +5,11 @@ map("n", "<Leader>mc", ":%s/txn/*/gc<CR>", {
     noremap = true,
     silent = true,
 })
+
+map("n", "<Leader><Leader>", function()
+    dapui.close()
+end, {
+    desc = "DAP: cloese UI",
+    noremap = true,
+    silent = true,
+})

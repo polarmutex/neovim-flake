@@ -19,6 +19,11 @@ with dsl; {
     nvim-jdtls
     #vimPlugins.lsp_signature-nvim
 
+    #dap
+    nvim-dap
+    nvim-dap-ui
+    nvim-dap-virtual-text
+
     # git
     neogit
     gitsigns-nvim

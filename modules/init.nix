@@ -30,6 +30,7 @@
     require('polarmutex.options')
     require('polarmutex.mappings')
     require('polarmutex.lsp')
+    require('polarmutex.dap')
     require('polarmutex.treesitter')
   '';
 }

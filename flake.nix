@@ -87,6 +87,10 @@
       url = "github:mfussenegger/nvim-dap";
       flake = false;
     };
+    nvim-dap-ui-src = {
+      url = "github:rcarriga/nvim-dap-ui";
+      flake = false;
+    };
     nvim-dap-virtual-text-src = {
       url = "github:theHamsta/nvim-dap-virtual-text";
       flake = false;

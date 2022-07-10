@@ -127,7 +127,12 @@ in
           (builtins.readFile ./null-ls.lua)
         ];
 
-      # null-ls-nvim
+      xdg.configFile."nvim/lua/polarmutex/dap.lua".source = link "config/lsp/dap.lua";
+      #concatStrings [
+      #  (builtins.readFile ./dap.lua)
+      #  (if cfg.cpp then (builtins.readFile ./dap_cpp.lua) else [ ])
+      #];
+
       xdg.configFile."nvim/lua/polarmutex/lsp_formatting.lua".source = link "config/lsp/lsp_formatting.lua";
     }
     # BEANCOUNT
@@ -140,6 +145,7 @@ in
     (mkIf cfg.cpp {
       home.packages = with pkgs; [
         clang-tools
+        lldb
       ];
     })
     # JAVA

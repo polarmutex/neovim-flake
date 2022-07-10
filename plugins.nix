@@ -28,6 +28,9 @@ with inputs; {
     neogit = plugin "neogit" neogit-src;
     null-ls-nvim = plugin "null-ls-nvim" null-ls-nvim-src;
     nvim-cmp = (withSrc prev.vimPlugins.nvim-cmp nvim-cmp-src);
+    nvim-dap = (withSrc prev.vimPlugins.nvim-dap nvim-dap-src);
+    nvim-dap-ui = (withSrc prev.vimPlugins.nvim-dap-ui nvim-dap-ui-src);
+    nvim-dap-virtual-text = (withSrc prev.vimPlugins.nvim-dap-virtual-text nvim-dap-virtual-text-src);
     nvim-jdtls = plugin "nvim-jdtls" nvim-jdtls-src;
     nvim-lspconfig = (withSrc prev.vimPlugins.nvim-lspconfig nvim-lspconfig-src);
     nvim-treesitter = (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
