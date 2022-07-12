@@ -199,11 +199,11 @@
     "comment-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1656524855,
-        "narHash": "sha256-ONCVs8cyYl4lnhboCRXkmW5iqMuWzOL4/vSnthzf8l8=",
+        "lastModified": 1657602299,
+        "narHash": "sha256-MzsV225rBUMFe/oyNOLCAWWP8g84udjbOae+glePg+A=",
         "owner": "numToStr",
         "repo": "Comment.nvim",
-        "rev": "4086630ce2aaf76b2652516ee3169f0b558f6be1",
+        "rev": "a7c826d41ca5edef184a4d862ab25adcd886712c",
         "type": "github"
       },
       "original": {
