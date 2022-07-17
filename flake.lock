@@ -443,11 +443,11 @@
     "neogit-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1657919607,
-        "narHash": "sha256-zkSObNkOtSq5N4gqCxXZAH2V0p21jaAd2n9u26UeI30=",
+        "lastModified": 1658064726,
+        "narHash": "sha256-kd+bIcz3M4MwR7hvbLbNSrAQHhb2BL/DPLadE6GHNf4=",
         "owner": "TimUntersberger",
         "repo": "neogit",
-        "rev": "f9b29244189ed4dab7b4a19e3245365a9d4e9249",
+        "rev": "73fc14502703f48930eabfc494d30476c6def0d6",
         "type": "github"
       },
       "original": {
