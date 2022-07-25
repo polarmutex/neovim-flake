@@ -231,11 +231,11 @@
     "fidget-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1655066771,
-        "narHash": "sha256-eX226T/678fWC7Ph+J/LgeKlDxJHdcTBXVwjJOS3Emw=",
+        "lastModified": 1658719305,
+        "narHash": "sha256-i0RfvrBEAT1xJC+fIYNoEAUpBiIMFrQmrlLq9RLYeOg=",
         "owner": "j-hui",
         "repo": "fidget.nvim",
-        "rev": "46d1110435f1f023c22fa95bb10b3906aecd7bde",
+        "rev": "492492e7d50452a9ace8346d31f6d6da40439f0e",
         "type": "github"
       },
       "original": {
