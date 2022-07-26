@@ -167,11 +167,11 @@
     "cmp-path-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1658821386,
-        "narHash": "sha256-2hZTYLSeigl24yVTByFAQtH7CmeOikgwoYLE5L39Wl0=",
+        "lastModified": 1658844613,
+        "narHash": "sha256-G/I2SH4Uidr25/4fjrtcK3VfxWwD9MSN+ODcB6zjvVo=",
         "owner": "hrsh7th",
         "repo": "cmp-path",
-        "rev": "bee12940fd4b3ec6238f43ba2c5515fa3e018e96",
+        "rev": "447c87cdd6e6d6a1d2488b1d43108bfa217f56e1",
         "type": "github"
       },
       "original": {
