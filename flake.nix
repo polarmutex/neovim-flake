@@ -241,5 +241,7 @@
       #  ${pkgs.neovim}/bin/nvim --headless -c q > $out
       #'';
 
+      devShells.default = pkgs.mkShell { };
+
     });
 }
