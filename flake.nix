@@ -5,7 +5,6 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
 
     polar-nur = {
@@ -156,7 +155,6 @@
   outputs =
     inputs@{ self
     , nixpkgs
-    , nixpkgs-master
     , polar-nur
     , tree-sitter-beancount
     , flake-utils
@@ -207,41 +205,41 @@
         , ...
         }:
         import ./home-manager.nix {
-          inherit config lib pkgs dsl;
+          inherit config lib pkgs dsl inputs;
         };
     } //
     flake-utils.lib.eachDefaultSystem (system:
     let
-      pkgs = import nixpkgs-master {
-        inherit system;
-        overlays = [
-          polar-nur.overlays.default
-          tree-sitter-beancount.overlays.default
-          (final: prev: {
-            neovim = polar-nur.packages.${final.system}.neovim-git;
-          })
-          (import ./plugins.nix inputs)
-          overlay
-        ];
-      };
-      neovim-polar = pkgs.neovimBuilder
-        {
-          imports = [
-            ./modules/init.nix
-            ./modules/plugins.nix
-          ];
-          enableViAlias = true;
-          enableVimAlias = true;
-        };
+      #pkgs = import nixpkgs {
+      #  inherit system;
+      #  overlays = [
+      #    polar-nur.overlays.default
+      #    tree-sitter-beancount.overlays.default
+      #    (final: prev: {
+      #      neovim = polar-nur.packages.${final.system}.neovim-git;
+      #    })
+      #    (import ./plugins.nix inputs)
+      #    overlay
+      #  ];
+      #};
+      #neovim-polar = pkgs.neovimBuilder
+      #  {
+      #    imports = [
+      #      ./modules/init.nix
+      #      ./modules/plugins.nix
+      #    ];
+      #    enableViAlias = true;
+      #    enableVimAlias = true;
+      #  };
     in
     {
-      packages.default = neovim-polar;
+      #packages.default = neovim-polar;
 
       # check to see if any config errors ars displayed
       # TODO need to have version with all the config
-      checks.neovim = pkgs.runCommand "neovim-config-check" { } ''
-        ${pkgs.neovim}/bin/nvim --headless -c q > $out
-      '';
+      #checks.neovim = pkgs.runCommand "neovim-config-check" { } ''
+      #  ${pkgs.neovim}/bin/nvim --headless -c q > $out
+      #'';
 
     });
 }

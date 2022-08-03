@@ -2,6 +2,7 @@
 , pkgs
 , lib
 , dsl
+, inputs
 , ...
 }:
 with lib;
@@ -31,6 +32,12 @@ let
     builtins.listToAttrs (
       map mkPath paths
     );
+
+  withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
+  plugin = pname: src: pkgs.vimUtils.buildVimPluginFrom2Nix {
+    inherit pname src;
+    version = "master";
+  };
 
   cfg = config.polar.programs.neovim;
 in
@@ -68,9 +75,48 @@ in
     home.sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
 
     home.packages = with pkgs; [
-      neovim-polar
+      #neovim-polar
       ripgrep
     ];
+
+    programs.neovim = {
+      enable = true;
+      package = pkgs.neovim; # should be unwrapped master
+      extraConfig = ''
+        lua require('polarmutex.init')
+      '';
+      plugins = [
+        (plugin "beancount-nvim" inputs.beancount-nvim-src)
+        (withSrc pkgs.vimPlugins.cmp-buffer inputs.cmp-buffer-src)
+        (withSrc pkgs.vimPlugins.cmp-nvim-lsp inputs.cmp-nvim-lsp-src)
+        (withSrc pkgs.vimPlugins.cmp-nvim-lua inputs.cmp-nvim-lua-src)
+        (withSrc pkgs.vimPlugins.cmp-path inputs.cmp-path-src)
+        (plugin "colorizer" inputs.colorizer-src)
+        (plugin "comment-nvim" inputs.comment-nvim-src)
+        (plugin "conceal" inputs.conceal-src)
+        (plugin "fidget" inputs.fidget-src)
+        (plugin "gitsigns-nvim" inputs.gitsigns-nvim-src)
+        (plugin "kanagawa-nvim" inputs.kanagawa-nvim-src)
+        (withSrc pkgs.vimPlugins.lspkind-nvim inputs.lspkind-nvim-src)
+        (withSrc pkgs.vimPlugins.lualine-nvim inputs.lualine-nvim-src)
+        (plugin "neogit" inputs.neogit-src)
+        (plugin "null-ls-nvim" inputs.null-ls-nvim-src)
+        (withSrc pkgs.vimPlugins.nvim-cmp inputs.nvim-cmp-src)
+        (withSrc pkgs.vimPlugins.nvim-dap inputs.nvim-dap-src)
+        (withSrc pkgs.vimPlugins.nvim-dap-ui inputs.nvim-dap-ui-src)
+        (withSrc pkgs.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src)
+        (plugin "nvim-jdtls" inputs.nvim-jdtls-src)
+        (withSrc pkgs.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src)
+        (withSrc pkgs.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src)
+        (withSrc pkgs.vimPlugins.playground inputs.nvim-treesitter-playground-src)
+        (withSrc pkgs.vimPlugins.plenary-nvim inputs.plenary-nvim-src)
+        (withSrc pkgs.vimPlugins.popup-nvim inputs.popup-nvim-src)
+        (plugin "rust-tools" inputs.rust-tools-nvim-src)
+        (plugin "telescope-nvim" inputs.telescope-nvim-src)
+        (plugin "telescope-ui-select" inputs.telescope-ui-select-src)
+        (plugin "tokyonight-nvim" inputs.tokyonight-nvim-src)
+      ];
+    };
 
     # old way
     #xdg.configFile = link-one "config" "." "nvim";
@@ -78,7 +124,7 @@ in
     # new way
 
     # INIT.lua
-    #xdg.configFile."nvim/lua/polarmutex/init.lua".source = link "config/init.lua";
+    xdg.configFile."nvim/lua/polarmutex/init.lua".source = link "config/init.lua";
 
     xdg.configFile."nvim/lua/polarmutex/profile.lua".source = link "config/profile.lua";
     xdg.configFile."nvim/lua/polarmutex/options.lua".source = link "config/options.lua";
