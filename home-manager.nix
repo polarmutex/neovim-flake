@@ -107,7 +107,20 @@ in
         (withSrc pkgs.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src)
         (plugin "nvim-jdtls" inputs.nvim-jdtls-src)
         (withSrc pkgs.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src)
-        (withSrc pkgs.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src)
+        #(withSrc pkgs.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src)
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (
+          plugins: with plugins; [
+            tree-sitter-bash
+            tree-sitter-beancount
+            tree-sitter-c
+            tree-sitter-java
+            tree-sitter-lua
+            tree-sitter-json
+            tree-sitter-nix
+            tree-sitter-python
+            tree-sitter-rust
+          ]
+        ))
         (withSrc pkgs.vimPlugins.playground inputs.nvim-treesitter-playground-src)
         (withSrc pkgs.vimPlugins.plenary-nvim inputs.plenary-nvim-src)
         (withSrc pkgs.vimPlugins.popup-nvim inputs.popup-nvim-src)

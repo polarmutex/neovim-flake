@@ -210,27 +210,27 @@
     } //
     flake-utils.lib.eachDefaultSystem (system:
     let
-      #pkgs = import nixpkgs {
-      #  inherit system;
-      #  overlays = [
-      #    polar-nur.overlays.default
-      #    tree-sitter-beancount.overlays.default
-      #    (final: prev: {
-      #      neovim = polar-nur.packages.${final.system}.neovim-git;
-      #    })
-      #    (import ./plugins.nix inputs)
-      #    overlay
-      #  ];
-      #};
-      #neovim-polar = pkgs.neovimBuilder
-      #  {
-      #    imports = [
-      #      ./modules/init.nix
-      #      ./modules/plugins.nix
-      #    ];
-      #    enableViAlias = true;
-      #    enableVimAlias = true;
-      #  };
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [
+          polar-nur.overlays.default
+          tree-sitter-beancount.overlays.default
+          (final: prev: {
+            neovim = polar-nur.packages.${final.system}.neovim-git;
+          })
+          (import ./plugins.nix inputs)
+          overlay
+        ];
+      };
+      neovim-polar = pkgs.neovimBuilder
+        {
+          imports = [
+            ./modules/init.nix
+            ./modules/plugins.nix
+          ];
+          enableViAlias = true;
+          enableVimAlias = true;
+        };
     in
     {
       #packages.default = neovim-polar;
