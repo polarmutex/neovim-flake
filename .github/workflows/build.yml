@@ -17,8 +17,8 @@ jobs:
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes
-      - name: Build
-        run: nix build
+    #- name: Build
+    #  run: nix build
 
       - name: Test
         run: nix flake check
