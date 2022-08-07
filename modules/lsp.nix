@@ -76,40 +76,81 @@ in
     end
   '';
 
-  use.lspconfig.rnix.setup = callWith {
-    cmd = [ (getExe pkgs.rnix-lsp) ];
-    inherit capabilities;
-  };
+  lua = ''
+  local augroup_format = vim.api.nvim_create_augroup("my_lsp_format", { clear = true })
+local autocmd_format = function(async, filter)
+  vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
+  vim.api.nvim_create_autocmd("BufWritePre", {
+    buffer = 0,
+    callback = function()
+      vim.lsp.buf.format { async = async, filter = filter }
+    end,
+  })
+end
 
-  use.lspconfig.jsonls.setup = callWith {
-    cmd = [ (getExe pkgs.nodePackages.vscode-json-languageserver) "--stdio" ];
-    inherit capabilities;
-  };
+local filetype_attach = setmetatable({
+  nix = function()
+    autocmd_format(false)
+  end,
 
-  use.lspconfig.solargraph.setup = callWith {
-    cmd = [ "${pkgs.solargraph}/bin/solargraph" "stdio" ];
-    inherit capabilities;
+  typescript = function()
+    autocmd_format(false, function(clients)
+      return vim.tbl_filter(function(client)
+        return client.name ~= "tsserver"
+      end, clients)
+    end)
+  end,
+}, {
+  __index = function()
+    return function() end
+  end,
+})
+local custom_attach = function(client)
+  local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+   -- Attach any filetype specific options to the client
+  filetype_attach[filetype](client)
+end
+  '';
+
+  use.lspconfig.beancount.setup = callWith {
+    #cmd = [ "${pkgs.beancount-language-server}/bin/beancount-language-server" ];
+    cmd = [ "/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server" ];
+    init_options = {
+      journal_file = "/home/polar/repos/personal/beancount/main.beancount";
+    };
+    capabilities = rawLua
+      "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
   };
 
   use.lspconfig.clangd.setup = callWith {
     cmd = [ "${pkgs.clang-tools}/bin/clangd" ];
-    inherit capabilities;
+    capabilities = rawLua
+      "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
   };
 
   use.lspconfig.gopls.setup = callWith {
     cmd = [ "${pkgs.gopls}/bin/gopls" ];
-    inherit capabilities;
+    capabilities = rawLua
+      "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+  };
+
+  use.lspconfig.jsonls.setup = callWith {
+    cmd = [ (getExe pkgs.nodePackages.vscode-json-languageserver) "--stdio" ];
+    capabilities = rawLua
+      "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
   };
 
   use.lspconfig.pyright.setup = callWith {
     cmd = [ "${pkgs.pyright}/bin/pyright-langserver" "--stdio" ];
-    inherit capabilities;
+    capabilities = rawLua
+      "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
   };
 
-  use.lspconfig.terraformls.setup = callWith {
-    cmd = [ "${pkgs.terraform-ls}/bin/terraform-lsp" ];
-    inherit capabilities;
+  use.lspconfig.rnix.setup = callWith {
+    cmd = [ (getExe pkgs.rnix-lsp) ];
+    capabilities = rawLua
+      "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+      on_attach = rawLua "custom_attach";
   };
-
 
 }

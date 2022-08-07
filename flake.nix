@@ -169,7 +169,7 @@
     , ...
     }:
     let
-      overlay = final: prev: rec {};
+      overlay = final: prev: rec { };
     in
     {
       #inherit overlay;
@@ -198,20 +198,20 @@
       };
       neovim-polar = pkgs.neovimBuilder {
         package = pkgs.neovim-git;
-          enableViAlias = true;
-          enableVimAlias = true;
-          withNodeJs = true;
-          withPython3 = true;
-          imports = [
+        enableViAlias = true;
+        enableVimAlias = true;
+        withNodeJs = true;
+        withPython3 = true;
+        imports = [
+          ./modules/aesthetics.nix
           ./modules/essentials.nix
-            ./modules/git.nix
-            ./modules/lsp.nix
-            ./modules/styling.nix
-            ./modules/treesitter.nix
-            ./modules/telescope.nix
-            ./modules/which-key.nix
-          ];
-        };
+          ./modules/git.nix
+          ./modules/lsp.nix
+          ./modules/treesitter.nix
+          ./modules/telescope.nix
+          ./modules/which-key.nix
+        ];
+      };
     in
     {
       packages.default = neovim-polar;

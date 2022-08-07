@@ -1,23 +1,25 @@
 { pkgs, ... }: {
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     colorizer
-    dracula-vim
+    kanagawa-nvim
     lualine-nvim
-    nvim-web-devicons
-    tabline-nvim
+    #nvim-web-devicons
+    #tabline-nvim
   ];
 
-  vimscript = ''
-    colorscheme dracula
-    highlight TelescopeNormal guibg=#1b1f27
-    highlight TelescopeBorder guibg=#1b1f27 guifg=#1b1f27
-    highlight TelescopePromptBorder guibg=#242930 guifg=#242930
-    highlight TelescopePromptNormal guibg=#242930
-    highlight TelescopePromptTitle guibg=#242930 guifg=#FFFFFF
-  '';
+lua = ''
+-- load the colorscheme
+local default_colors = require("kanagawa.colors").setup()
+      local my_colors = {};
+      local overrides = {
+        diffAdded = { fg = default_colors.springGreen };
+      };
+      require'kanagawa'.setup({ overrides = overrides, colors = my_colors })
+      vim.cmd[[colorscheme kanagawa]]
+'';
 
-  setup.tabline.show_index = false;
+  #setup.tabline.show_index = false;
 
   setup.lualine = {
     options = {
