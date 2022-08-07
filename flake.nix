@@ -10,8 +10,13 @@
     polar-nur = {
       url = "github:polarmutex/nur";
     };
+    neovim = { url = "github:neovim/neovim?dir=contrib"; };
     tree-sitter-beancount = {
       url = "github:polarmutex/tree-sitter-beancount";
+    };
+    nix2vim = {
+      url = "github:gytis-ivaskevicius/nix2vim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     beancount-nvim-src = {
@@ -156,84 +161,65 @@
     inputs@{ self
     , nixpkgs
     , polar-nur
+    , neovim
     , tree-sitter-beancount
     , flake-utils
     , rnix-lsp
+    , nix2vim
     , ...
     }:
     let
-
-      dsl = import ./lib/dsl.nix { inherit (nixpkgs) lib; };
-
-      # Function to override the source of a package
-      withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
-
-      overlay = final: prev: rec {
-
-        nix2luaUtils = prev.callPackage ./lib/utils.nix { inherit nixpkgs; };
-
-        luaConfigBuilder = import ./lib/lua-config-builder.nix {
-          pkgs = final;
-          lib = prev.lib;
-        };
-
-        neovimBuilder = import ./lib/neovim-builder.nix {
-          pkgs = final;
-          lib = prev.lib;
-        };
-
-        tree-sitter = prev.tree-sitter.override {
-          extraGrammars = {
-            tree-sitter-astro = {
-              src = prev.fetchFromGitHub {
-                owner = "virchau13";
-                repo = "tree-sitter-astro";
-                rev = "master";
-                sha256 = "sha256-brBbBmkHn0N9wu5Y6hatJhntZRVfBOwK4hIczPHVF6w=";
-              };
-            };
-          };
-        };
-      };
+      overlay = final: prev: rec {};
     in
     {
-      inherit overlay;
-      home-managerModule =
-        { config
-        , lib
-        , pkgs
-        , ...
-        }:
-        import ./home-manager.nix {
-          inherit config lib pkgs dsl inputs;
-        };
+      #inherit overlay;
+      #home-managerModule =
+      #  { config
+      #  , lib
+      #  , pkgs
+      #  , ...
+      #  }:
+      #  import ./home-manager.nix {
+      #    inherit config lib pkgs dsl inputs;
+      #  };
     } //
     flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
+          neovim.overlay
           polar-nur.overlays.default
           tree-sitter-beancount.overlays.default
-          (final: prev: {
-            neovim = polar-nur.packages.${final.system}.neovim-git;
-          })
           (import ./plugins.nix inputs)
-          overlay
+          nix2vim.overlay
+          #overlay
         ];
       };
-      neovim-polar = pkgs.neovimBuilder
-        {
-          imports = [
-            ./modules/init.nix
-            ./modules/plugins.nix
-          ];
+      neovim-polar = pkgs.neovimBuilder {
+        package = pkgs.neovim-git;
           enableViAlias = true;
           enableVimAlias = true;
+          withNodeJs = true;
+          withPython3 = true;
+          imports = [
+          ./modules/essentials.nix
+            ./modules/git.nix
+            ./modules/lsp.nix
+            ./modules/styling.nix
+            ./modules/treesitter.nix
+            ./modules/telescope.nix
+            ./modules/which-key.nix
+          ];
         };
     in
     {
-      #packages.default = neovim-polar;
+      packages.default = neovim-polar;
+
+      apps.defaultApp = {
+        type = "app";
+        program = "${neovim-polar}/bin/nvim";
+      };
 
       # check to see if any config errors ars displayed
       # TODO need to have version with all the config
