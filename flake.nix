@@ -235,10 +235,27 @@
 
       # check to see if any config errors ars displayed
       # TODO need to have version with all the config
-      #checks.neovim = pkgs.runCommand "neovim-config-check" { } ''
-      #  got=$(${neovim-polar}/bin/nvim --headless -c q)
-      #  $($got | grep -q "")
-      #'';
+      checks = {
+        neovim-check-config = pkgs.runCommand "neovim-check-config"
+          {
+            buildInputs = [
+              pkgs.git
+            ];
+          } ''
+          # We *must* create some output, usually contains test logs for checks
+          mkdir -p "$out"
+
+          # Probably want to do something to ensure your config file is read, too
+          # need git in path
+          export HOME=$TMPDIR
+          ${self.packages."${system}".default}/bin/nvim --headless -c "q" 2> "$out/nvim.log"
+
+          if [ -n "$(cat "$out/nvim.log")" ]; then
+            echo "output: "$(cat "$out/nvim.log")""
+            exit 1
+          fi
+        '';
+      };
 
       devShells.default = pkgs.mkShell { };
 
