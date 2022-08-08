@@ -19,11 +19,10 @@ with inputs; {
     cmp-nvim-lua = withSrc prev.vimPlugins.cmp-nvim-lua cmp-nvim-lua-src;
     cmp-path = (withSrc prev.vimPlugins.cmp-path cmp-path-src);
     crates-nvim = plugin "crates-nvim" crates-nvim-src;
-    colorizer = plugin "colorizer" colorizer-src;
     comment-nvim = plugin "comment-nvim" comment-nvim-src;
     conceal = plugin "conceal" conceal-src;
     diffview-nvim = plugin "diffview-nvim" diffview-nvim-src;
-    fidget = plugin "fidget" fidget-src;
+    fidget-nvim = plugin "fidget-nvim" fidget-nvim-src;
     gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
     kanagawa-nvim = plugin "kanagawa-nvim" kanagawa-nvim-src;
     lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
@@ -31,6 +30,7 @@ with inputs; {
     neogit = plugin "neogit" neogit-src;
     null-ls-nvim = plugin "null-ls-nvim" null-ls-nvim-src;
     nvim-cmp = (withSrc prev.vimPlugins.nvim-cmp nvim-cmp-src);
+    nvim-colorizer = plugin "nvim-colorizer" nvim-colorizer-src;
     nvim-dap = (withSrc prev.vimPlugins.nvim-dap nvim-dap-src);
     nvim-dap-ui = (withSrc prev.vimPlugins.nvim-dap-ui nvim-dap-ui-src);
     nvim-dap-virtual-text = (withSrc prev.vimPlugins.nvim-dap-virtual-text nvim-dap-virtual-text-src);

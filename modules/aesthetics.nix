@@ -1,9 +1,9 @@
 { pkgs, ... }: {
 
   plugins = with pkgs.neovimPlugins; [
-    colorizer
     kanagawa-nvim
     lualine-nvim
+    nvim-colorizer
     #nvim-web-devicons
     #tabline-nvim
   ];

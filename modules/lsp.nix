@@ -25,7 +25,7 @@ in
     # snippets lists
     #friendly-snippets
     # for showing lsp progress
-    fidget
+    fidget-nvim
     trouble-nvim
   ];
 

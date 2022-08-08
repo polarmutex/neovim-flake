@@ -47,23 +47,15 @@
       url = "github:saecki/crates.nvim";
       flake = false;
     };
-    colorizer-src = {
-      url = "github:norcalli/nvim-colorizer.lua";
-      flake = false;
-    };
     comment-nvim-src = {
       url = "github:numToStr/Comment.nvim";
-      flake = false;
-    };
-    conceal-src = {
-      url = "github:ticki/rust-cute-vim";
       flake = false;
     };
     diffview-nvim-src = {
       url = "github:sindrets/diffview.nvim";
       flake = false;
     };
-    fidget-src = {
+    fidget-nvim-src = {
       url = "github:j-hui/fidget.nvim";
       flake = false;
     };
@@ -89,6 +81,10 @@
     };
     null-ls-nvim-src = {
       url = "github:jose-elias-alvarez/null-ls.nvim";
+      flake = false;
+    };
+    nvim-colorizer-src = {
+      url = "github:norcalli/nvim-colorizer.lua";
       flake = false;
     };
     nvim-cmp-src = {

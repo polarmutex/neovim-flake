@@ -180,22 +180,6 @@
         "type": "github"
       }
     },
-    "colorizer-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1591879145,
-        "narHash": "sha256-6YrnItxExL2C8pNIdLd+hXCjsB2MbZANwWkah6dreD8=",
-        "owner": "norcalli",
-        "repo": "nvim-colorizer.lua",
-        "rev": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "norcalli",
-        "repo": "nvim-colorizer.lua",
-        "type": "github"
-      }
-    },
     "comment-nvim-src": {
       "flake": false,
       "locked": {
@@ -209,22 +193,6 @@
       "original": {
         "owner": "numToStr",
         "repo": "Comment.nvim",
-        "type": "github"
-      }
-    },
-    "conceal-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1478179438,
-        "narHash": "sha256-yeId7EXZZl3n/icngGgsj0Db3Gxgq53daby6iq4MpvU=",
-        "owner": "ticki",
-        "repo": "rust-cute-vim",
-        "rev": "ad22be8aece24a792f274e521107fe49c41f9751",
-        "type": "github"
-      },
-      "original": {
-        "owner": "ticki",
-        "repo": "rust-cute-vim",
         "type": "github"
       }
     },
@@ -260,7 +228,7 @@
         "type": "github"
       }
     },
-    "fidget-src": {
+    "fidget-nvim-src": {
       "flake": false,
       "locked": {
         "lastModified": 1658719305,
@@ -745,6 +713,22 @@
         "type": "github"
       }
     },
+    "nvim-colorizer-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1591879145,
+        "narHash": "sha256-6YrnItxExL2C8pNIdLd+hXCjsB2MbZANwWkah6dreD8=",
+        "owner": "norcalli",
+        "repo": "nvim-colorizer.lua",
+        "rev": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "norcalli",
+        "repo": "nvim-colorizer.lua",
+        "type": "github"
+      }
+    },
     "nvim-dap-src": {
       "flake": false,
       "locked": {
@@ -986,12 +970,10 @@
         "cmp-nvim-lsp-src": "cmp-nvim-lsp-src",
         "cmp-nvim-lua-src": "cmp-nvim-lua-src",
         "cmp-path-src": "cmp-path-src",
-        "colorizer-src": "colorizer-src",
         "comment-nvim-src": "comment-nvim-src",
-        "conceal-src": "conceal-src",
         "crates-nvim-src": "crates-nvim-src",
         "diffview-nvim-src": "diffview-nvim-src",
-        "fidget-src": "fidget-src",
+        "fidget-nvim-src": "fidget-nvim-src",
         "flake-utils": "flake-utils",
         "gitsigns-nvim-src": "gitsigns-nvim-src",
         "kanagawa-nvim-src": "kanagawa-nvim-src",
@@ -1003,6 +985,7 @@
         "nixpkgs": "nixpkgs_2",
         "null-ls-nvim-src": "null-ls-nvim-src",
         "nvim-cmp-src": "nvim-cmp-src",
+        "nvim-colorizer-src": "nvim-colorizer-src",
         "nvim-dap-src": "nvim-dap-src",
         "nvim-dap-ui-src": "nvim-dap-ui-src",
         "nvim-dap-virtual-text-src": "nvim-dap-virtual-text-src",
