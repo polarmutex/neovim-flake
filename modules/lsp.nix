@@ -26,9 +26,13 @@ in
     #friendly-snippets
     # for showing lsp progress
     fidget
+    trouble-nvim
   ];
 
   setup.fidget = { };
+
+  use.trouble.setup = callWith { };
+
 
   #setup.lsp_signature = {
   #  bind = true;

@@ -53,12 +53,12 @@
         transitive = " ~ %s ";
       };
     };
-    #cmp = {
-    #  text = {
-    #    prerelease = " pre-release ";
-    #    yanked = " yanked ";
-    #  };
-    #};
+    cmp = {
+      text = {
+        prerelease = " pre-release ";
+        yanked = " yanked ";
+      };
+    };
   };
 
   use.lspconfig.rust_analyzer.setup = callWith {

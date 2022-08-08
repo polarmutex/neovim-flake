@@ -1021,6 +1021,7 @@
         "telescope-ui-select-src": "telescope-ui-select-src",
         "tokyonight-nvim-src": "tokyonight-nvim-src",
         "tree-sitter-beancount": "tree-sitter-beancount",
+        "trouble-nvim-src": "trouble-nvim-src",
         "which-key-nvim-src": "which-key-nvim-src"
       }
     },
@@ -1137,6 +1138,22 @@
       "original": {
         "owner": "polarmutex",
         "repo": "tree-sitter-beancount",
+        "type": "github"
+      }
+    },
+    "trouble-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1652074521,
+        "narHash": "sha256-YfhujgR+EGtvBVAk7VSIWudyUIXVv+LQVPBV9FMuRKk=",
+        "owner": "folke",
+        "repo": "trouble.nvim",
+        "rev": "da61737d860ddc12f78e638152834487eabf0ee5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "trouble.nvim",
         "type": "github"
       }
     },

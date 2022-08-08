@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 
   plugins = with pkgs.neovimPlugins; [
+    blamer-nvim
     diffview-nvim
     gitsigns-nvim
     neogit
@@ -10,6 +11,7 @@
   setup.gitsigns = { };
 
   setup.neogit = {
+    kind = "split";
     signs = {
       section = [ "" "" ];
       item = [ "" "" ];

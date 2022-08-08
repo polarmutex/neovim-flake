@@ -159,6 +159,10 @@
       url = "github:folke/tokyonight.nvim";
       flake = false;
     };
+    trouble-nvim-src = {
+      url = "github:folke/trouble.nvim";
+      flake = false;
+    };
     which-key-nvim-src = {
       url = "github:folke/which-key.nvim";
       flake = false;

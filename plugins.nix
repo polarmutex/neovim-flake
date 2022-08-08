@@ -13,6 +13,7 @@ with inputs; {
 
   neovimPlugins = {
     beancount-nvim = plugin "beancount-nvim" beancount-nvim-src;
+    blamer-nvim = plugin "blamer-nvim" blamer-nvim-src;
     cmp-buffer = (withSrc prev.vimPlugins.cmp-buffer cmp-buffer-src);
     cmp-nvim-lsp = withSrc prev.vimPlugins.cmp-nvim-lsp cmp-nvim-lsp-src;
     cmp-nvim-lua = withSrc prev.vimPlugins.cmp-nvim-lua cmp-nvim-lua-src;
@@ -44,6 +45,7 @@ with inputs; {
     telescope-nvim = plugin "telescope-nvim" telescope-nvim-src;
     telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
     tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
+    trouble-nvim = plugin "trouble-nvim" trouble-nvim-src;
     which-key-nvim = plugin "which-key-nvim" which-key-nvim-src;
   };
 }

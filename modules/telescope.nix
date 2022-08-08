@@ -2,6 +2,7 @@
 
   plugins = with pkgs.neovimPlugins; [
     telescope-nvim
+    telescope-ui-select
   ];
 
   setup.telescope = {

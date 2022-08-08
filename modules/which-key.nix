@@ -81,7 +81,15 @@ in
       rm = cmdLua "require'rust-tools.expand_macro'.expand_macro()" "Expand macro";
       rpm = cmdLua "require'rust-tools.parent_module'.parent_module()" "Go to parent module";
 
-
+      # trouble keybinds
+      "xx" = [ "<cmd>TroubleToggle<CR>" "Toggle trouble diagnostics" ];
+      "xw" = [ "<cmd>TroubleToggle workspace_diagnostics<CR>" "Toggle trouble workspace diagnostics" ];
+      "xd" = [ "<cmd>TroubleToggle document_diagnostics<CR>" "Toggle trouble document diagnostics" ];
+      "xq" = [ "<cmd>TroubleToggle quickfix<CR>" "Toggle trouble quickfix list" ];
+      "xl" = [ "<cmd>TroubleToggle loclist<CR>" "Toggle trouble local list" ];
+      "xr" = [ "<cmd>TroubleToggle lsp_references<CR>" "Toggle trouble lsp references" ];
+      "xn" = [ "cmd lua require(\"trouble\").next({skip_groups = true, jump = true})<CR>" "Jump next diagnostic" ];
+      "xp" = [ "cmd lua require(\"trouble\").previous({skip_groups = true, jump = true})<CR>" "Jump next diagnostic" ];
 
     };
   };
