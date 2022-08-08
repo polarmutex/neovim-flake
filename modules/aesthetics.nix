@@ -8,16 +8,16 @@
     #tabline-nvim
   ];
 
-lua = ''
--- load the colorscheme
-local default_colors = require("kanagawa.colors").setup()
-      local my_colors = {};
-      local overrides = {
-        diffAdded = { fg = default_colors.springGreen };
-      };
-      require'kanagawa'.setup({ overrides = overrides, colors = my_colors })
-      vim.cmd[[colorscheme kanagawa]]
-'';
+  lua = ''
+    -- load the colorscheme
+    local default_colors = require("kanagawa.colors").setup()
+          local my_colors = {};
+          local overrides = {
+            diffAdded = { fg = default_colors.springGreen };
+          };
+          require'kanagawa'.setup({ overrides = overrides, colors = my_colors })
+          vim.cmd[[colorscheme kanagawa]]
+  '';
 
   #setup.tabline.show_index = false;
 
@@ -31,7 +31,7 @@ local default_colors = require("kanagawa.colors").setup()
       lualine_a = [ "mode" ];
       lualine_b = [ "branch" "diff" "diagnostics" ];
       lualine_c = [ "filename" ];
-      lualine_x = [ "encoding" "fileformat" ];
+      lualine_x = [ "encoding" "fileformat" "filetype" ];
       lualine_z = [ "location" ];
     };
     tabline = { };

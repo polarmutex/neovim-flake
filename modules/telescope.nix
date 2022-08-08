@@ -1,6 +1,6 @@
 { pkgs, dsl, ... }: with dsl; {
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     telescope-nvim
   ];
 

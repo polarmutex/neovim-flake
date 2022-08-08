@@ -43,6 +43,10 @@
       url = "github:hrsh7th/cmp-path";
       flake = false;
     };
+    crates-nvim-src = {
+      url = "github:saecki/crates.nvim";
+      flake = false;
+    };
     colorizer-src = {
       url = "github:norcalli/nvim-colorizer.lua";
       flake = false;
@@ -53,6 +57,10 @@
     };
     conceal-src = {
       url = "github:ticki/rust-cute-vim";
+      flake = false;
+    };
+    diffview-nvim-src = {
+      url = "github:sindrets/diffview.nvim";
       flake = false;
     };
     fidget-src = {
@@ -224,7 +232,8 @@
       # check to see if any config errors ars displayed
       # TODO need to have version with all the config
       #checks.neovim = pkgs.runCommand "neovim-config-check" { } ''
-      #  ${pkgs.neovim}/bin/nvim --headless -c q > $out
+      #  got=$(${neovim-polar}/bin/nvim --headless -c q)
+      #  $($got | grep -q "")
       #'';
 
       devShells.default = pkgs.mkShell { };

@@ -5,7 +5,7 @@ let
 in
 {
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     # command discover
     which-key-nvim
   ];

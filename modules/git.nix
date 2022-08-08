@@ -1,7 +1,6 @@
-
 { pkgs, ... }: {
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     diffview-nvim
     gitsigns-nvim
     neogit

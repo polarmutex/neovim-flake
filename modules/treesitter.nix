@@ -1,12 +1,10 @@
 { lib, pkgs, ... }: {
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.passthru.allGrammars))
     nvim-treesitter-context
-    nvim-ts-autotag
-    nvim-ts-context-commentstring
-    nvim-ts-rainbow
-    vim-matchup
+    #nvim-ts-context-commentstring
+    #nvim-ts-rainbow
   ];
 
   setup.treesitter-context.setup = { };
@@ -32,13 +30,6 @@
     };
     indent.enable = true;
 
-    rainbow = {
-      enable = true;
-      disable = [ ];
-      extended_mode = true;
-      max_file_lines = 10000;
-      colors = [ "#bd93f9" "#6272a4" "#8be9fd" "#50fa7b" "#f1fa8c" "#ffb86c" "#ff5555" ];
-    };
     textobjects = {
       select = {
         enable = true;
@@ -52,7 +43,5 @@
         };
       };
     };
-    matchup.enable = true;
-    autotag.enable = true;
   };
 }

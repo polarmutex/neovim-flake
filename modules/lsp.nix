@@ -9,13 +9,13 @@ in
     ./rust.nix
   ];
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     # completion framework
     cmp-nvim-lsp
     nvim-cmp
     cmp-buffer
     # lsp things
-    lsp_signature-nvim
+    #lsp_signature-nvim
     lspkind-nvim
     nvim-lspconfig
     # utility functions for lsp
@@ -23,19 +23,19 @@ in
     # popout for documentation
     popup-nvim
     # snippets lists
-    friendly-snippets
+    #friendly-snippets
     # for showing lsp progress
-    fidget-nvim
+    fidget
   ];
 
   setup.fidget = { };
 
-  setup.lsp_signature = {
-    bind = true;
-    hint_enable = false;
-    hi_parameter = "Visual";
-    handler_opts.border = "single";
-  };
+  #setup.lsp_signature = {
+  #  bind = true;
+  #  hint_enable = false;
+  #  hi_parameter = "Visual";
+  #  handler_opts.border = "single";
+  #};
 
   setup.cmp = {
     mapping = {
@@ -55,11 +55,25 @@ in
     };
     sources = [
       { name = "nvim_lsp"; }
-      { name = "buffer"; }
       { name = "vsnip"; }
       { name = "crates"; }
       { name = "path"; }
+      { name = "buffer"; keyword_length = 5; }
     ];
+    formatting = {
+      # Youtube: How to set up nice formatting for your sources.
+      #format = rawLua "lspkind.cmp_format({
+      #      with_text = true,
+      #      menu = {
+      #          buffer = '[buf]',
+      #          nvim_lsp = '[LSP]',
+      #          nvim_lua = '[api]',
+      #          path = '[path]',
+      #          --luasnip = '[snip]',
+      #          gh_issues = '[issues]',
+      #      },
+      #  })";
+    };
     snippet.expand = rawLua ''function(args) vim.fn["vsnip#anonymous"](args.body) end '';
   };
 
@@ -77,39 +91,43 @@ in
   '';
 
   lua = ''
-  local augroup_format = vim.api.nvim_create_augroup("my_lsp_format", { clear = true })
-local autocmd_format = function(async, filter)
-  vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    buffer = 0,
-    callback = function()
-      vim.lsp.buf.format { async = async, filter = filter }
-    end,
-  })
-end
+    local augroup_format = vim.api.nvim_create_augroup("my_lsp_format", { clear = true })
+    local autocmd_format = function(async, filter)
+      vim.api.nvim_clear_autocmds { buffer = 0, group = augroup_format }
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = 0,
+        callback = function()
+          vim.lsp.buf.format { async = async, filter = filter }
+        end,
+      })
+    end
 
-local filetype_attach = setmetatable({
-  nix = function()
-    autocmd_format(false)
-  end,
+    local filetype_attach = setmetatable({
+      beancount = function()
+        autocmd_format(false)
+      end,
 
-  typescript = function()
-    autocmd_format(false, function(clients)
-      return vim.tbl_filter(function(client)
-        return client.name ~= "tsserver"
-      end, clients)
-    end)
-  end,
-}, {
-  __index = function()
-    return function() end
-  end,
-})
-local custom_attach = function(client)
-  local filetype = vim.api.nvim_buf_get_option(0, "filetype")
-   -- Attach any filetype specific options to the client
-  filetype_attach[filetype](client)
-end
+      nix = function()
+        autocmd_format(false)
+      end,
+
+      typescript = function()
+        autocmd_format(false, function(clients)
+          return vim.tbl_filter(function(client)
+            return client.name ~= "tsserver"
+          end, clients)
+        end)
+      end,
+    }, {
+      __index = function()
+        return function() end
+      end,
+    })
+    local custom_attach = function(client)
+      local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+       -- Attach any filetype specific options to the client
+      filetype_attach[filetype](client)
+    end
   '';
 
   use.lspconfig.beancount.setup = callWith {
@@ -120,37 +138,42 @@ end
     };
     capabilities = rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+    on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.clangd.setup = callWith {
     cmd = [ "${pkgs.clang-tools}/bin/clangd" ];
     capabilities = rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+    on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.gopls.setup = callWith {
     cmd = [ "${pkgs.gopls}/bin/gopls" ];
     capabilities = rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+    on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.jsonls.setup = callWith {
     cmd = [ (getExe pkgs.nodePackages.vscode-json-languageserver) "--stdio" ];
     capabilities = rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+    on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.pyright.setup = callWith {
     cmd = [ "${pkgs.pyright}/bin/pyright-langserver" "--stdio" ];
     capabilities = rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
+    on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.rnix.setup = callWith {
     cmd = [ (getExe pkgs.rnix-lsp) ];
     capabilities = rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
-      on_attach = rawLua "custom_attach";
+    on_attach = rawLua "custom_attach";
   };
 
 }

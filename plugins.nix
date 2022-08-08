@@ -17,9 +17,11 @@ with inputs; {
     cmp-nvim-lsp = withSrc prev.vimPlugins.cmp-nvim-lsp cmp-nvim-lsp-src;
     cmp-nvim-lua = withSrc prev.vimPlugins.cmp-nvim-lua cmp-nvim-lua-src;
     cmp-path = (withSrc prev.vimPlugins.cmp-path cmp-path-src);
+    crates-nvim = plugin "crates-nvim" crates-nvim-src;
     colorizer = plugin "colorizer" colorizer-src;
     comment-nvim = plugin "comment-nvim" comment-nvim-src;
     conceal = plugin "conceal" conceal-src;
+    diffview-nvim = plugin "diffview-nvim" diffview-nvim-src;
     fidget = plugin "fidget" fidget-src;
     gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
     kanagawa-nvim = plugin "kanagawa-nvim" kanagawa-nvim-src;
@@ -34,13 +36,14 @@ with inputs; {
     nvim-jdtls = plugin "nvim-jdtls" nvim-jdtls-src;
     nvim-lspconfig = (withSrc prev.vimPlugins.nvim-lspconfig nvim-lspconfig-src);
     nvim-treesitter = (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
+    nvim-treesitter-context = plugin "nvim-treesitter-context" nvim-treesitter-context-src;
     nvim-treesitter-playground = (withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
     plenary-nvim = (withSrc prev.vimPlugins.plenary-nvim plenary-nvim-src);
     popup-nvim = (withSrc prev.vimPlugins.popup-nvim popup-nvim-src);
-    rust-tools = plugin "rust-tools" rust-tools-src;
+    rust-tools-nvim = plugin "rust-tools" rust-tools-nvim-src;
     telescope-nvim = plugin "telescope-nvim" telescope-nvim-src;
     telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
     tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
-    which-key = plugin "which-key" which-key-src;
+    which-key-nvim = plugin "which-key-nvim" which-key-nvim-src;
   };
 }

@@ -228,6 +228,38 @@
         "type": "github"
       }
     },
+    "crates-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659455711,
+        "narHash": "sha256-K+aN9KOnci+f31+VEgP9zSwGCNOe0HT4HuoguJsiFlI=",
+        "owner": "saecki",
+        "repo": "crates.nvim",
+        "rev": "55edca6d86a5ed421fb240b2bb418ed551f318cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saecki",
+        "repo": "crates.nvim",
+        "type": "github"
+      }
+    },
+    "diffview-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1658321004,
+        "narHash": "sha256-xALU8TaU6SsQXTwFC4vxrGrXC61LNFhWS3ZDTEeL5m4=",
+        "owner": "sindrets",
+        "repo": "diffview.nvim",
+        "rev": "a45163cb9ee65742cf26b940c2b24cc652f295c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sindrets",
+        "repo": "diffview.nvim",
+        "type": "github"
+      }
+    },
     "fidget-src": {
       "flake": false,
       "locked": {
@@ -957,6 +989,8 @@
         "colorizer-src": "colorizer-src",
         "comment-nvim-src": "comment-nvim-src",
         "conceal-src": "conceal-src",
+        "crates-nvim-src": "crates-nvim-src",
+        "diffview-nvim-src": "diffview-nvim-src",
         "fidget-src": "fidget-src",
         "flake-utils": "flake-utils",
         "gitsigns-nvim-src": "gitsigns-nvim-src",

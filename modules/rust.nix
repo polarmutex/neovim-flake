@@ -1,6 +1,6 @@
 { pkgs, dsl, ... }: with dsl; {
 
-  plugins = with pkgs.vimPlugins; [
+  plugins = with pkgs.neovimPlugins; [
     rust-tools-nvim
     # for updating rust crates
     crates-nvim
@@ -53,12 +53,12 @@
         transitive = " ~ %s ";
       };
     };
-    cmp = {
-      text = {
-        prerelease = " pre-release ";
-        yanked = " yanked ";
-      };
-    };
+    #cmp = {
+    #  text = {
+    #    prerelease = " pre-release ";
+    #    yanked = " yanked ";
+    #  };
+    #};
   };
 
   use.lspconfig.rust_analyzer.setup = callWith {
