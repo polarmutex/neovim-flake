@@ -191,69 +191,136 @@
       #    inherit config lib pkgs dsl inputs;
       #  };
     } //
-    flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = import nixpkgs {
-        inherit system;
-        overlays = [
-          neovim.overlay
-          polar-nur.overlays.default
-          tree-sitter-beancount.overlays.default
-          (import ./plugins.nix inputs)
-          nix2vim.overlay
-          #overlay
-        ];
-      };
-      neovim-polar = pkgs.neovimBuilder {
-        package = pkgs.neovim-git;
-        enableViAlias = true;
-        enableVimAlias = true;
-        withNodeJs = true;
-        withPython3 = true;
-        imports = [
-          ./modules/aesthetics.nix
-          ./modules/essentials.nix
-          ./modules/git.nix
-          ./modules/lsp.nix
-          ./modules/treesitter.nix
-          ./modules/telescope.nix
-          ./modules/which-key.nix
-        ];
-      };
-    in
-    {
-      packages.default = neovim-polar;
+    flake-utils.lib.eachDefaultSystem
+      (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            neovim.overlay
+            polar-nur.overlays.default
+            tree-sitter-beancount.overlays.default
+            (import ./plugins.nix inputs)
+            nix2vim.overlay
+            #overlay
+          ];
+        };
+        neovim-polar = pkgs.neovimBuilder {
+          package = pkgs.neovim-git;
+          enableViAlias = true;
+          enableVimAlias = true;
+          withNodeJs = true;
+          withPython3 = true;
+          imports = [
+            ./modules/aesthetics.nix
+            ./modules/essentials.nix
+            ./modules/git.nix
+            ./modules/lsp.nix
+            ./modules/treesitter.nix
+            ./modules/telescope.nix
+            ./modules/which-key.nix
+          ];
+        };
+      in
+      {
+        packages = {
+          default = neovim-polar;
 
-      apps.defaultApp = {
-        type = "app";
-        program = "${neovim-polar}/bin/nvim";
-      };
+          neovim-polar-config = pkgs.stdenv.mkDerivation rec {
+            pname = "neovim-configuration";
+            version = "1.0";
+            src = ./dotfiles;
+            installPhase = ''
+              cp -r . $out
+            '';
+            meta = with pkgs.lib; {
+              homepage = "";
+              description = "polarmutex configuration";
+              license = licenses.mit;
+              maintainers = [ maintainers.polarmutex ];
+            };
+          };
 
-      # check to see if any config errors ars displayed
-      # TODO need to have version with all the config
-      checks = {
-        neovim-check-config = pkgs.runCommand "neovim-check-config"
-          {
-            buildInputs = [
-              pkgs.git
-            ];
-          } ''
-          # We *must* create some output, usually contains test logs for checks
-          mkdir -p "$out"
+          neovim-polar-legacy =
+            pkgs.wrapNeovim pkgs.neovim {
 
-          # Probably want to do something to ensure your config file is read, too
-          # need git in path
-          export HOME=$TMPDIR
-          ${self.packages."${system}".default}/bin/nvim --headless -c "q" 2> "$out/nvim.log"
+              # will wrapRc if configure != {}
 
-          if [ -n "$(cat "$out/nvim.log")" ]; then
-            echo "output: "$(cat "$out/nvim.log")""
-            exit 1
-          fi
-        '';
-      };
+              #extraMakeWrapperArgs = "--cmd 'set runtimepath^=${self.packages."${system}".neovim-polar-config}' --cmd 'set packpath^=${self.packages."${system}".neovim-polar-config}/' -u ${self.packages."${system}".neovim-polar-config}/init.lua";
+              configure = {
+                customRC = ''
+                  lua << EOF
+                  vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-polar-config}')
+                  EOF
+                  luafile ${self.packages."${system}".neovim-polar-config}/init.lua
+                '';
+                packages.myNeovimPackage = with pkgs.neovimPlugins; {
+                  start = [
+                    telescope-nvim
+                  ];
+                  opt = [ ];
+                };
+              };
+            };
 
-      devShells.default = pkgs.mkShell { };
+          neovim-polar-unstable =
+            pkgs.wrapNeovimUnstable pkgs.neovim {
+              wrapperArgs = [
+                "--add-flags"
+                "--cmd 'set runtimepath^=${self.packages."${system}".neovim-polar-config}'"
+                "--add-flags"
+                "--cmd 'set packpath^=${self.packages."${system}".neovim-polar-config}/'"
+                "--add-flags"
+                "-u ${self.packages."${system}".neovim-polar-config}/init.lua"
+              ];
+              wrapRc = false;
+              #configure = {
+              #  customRC = ''
+              #    lua << EOF
+              #    vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-polar-config}')
+              #    EOF
+              #    luafile ${self.packages."${system}".neovim-polar-config}/init.lua
+              #  '';
+              #  packages.myNeovimPackage = with pkgs.neovimPlugins; {
+              #    start = [
+              #      telescope-nvim
+              #    ];
+              #    opt = [ ];
+              #  };
+              #};
+            };
+        };
 
-    });
+        apps.defaultApp = {
+          type = "app";
+          program = "${self.packages."${system}".default}/bin/nvim";
+        };
+
+        # check to see if any config errors ars displayed
+        # TODO need to have version with all the config
+        checks = {
+          neovim-check-config = pkgs.runCommand "neovim-check-config"
+            {
+              buildInputs = [
+                pkgs.git
+              ];
+            } ''
+            # We *must* create some output, usually contains test logs for checks
+            mkdir -p "$out"
+
+            # Probably want to do something to ensure your config file is read, too
+            # need git in path
+            export HOME=$TMPDIR
+            ${self.packages."${system}".default}/bin/nvim --headless -c "q" 2> "$out/nvim.log"
+
+            if [ -n "$(cat "$out/nvim.log")" ]; then
+              echo "output: "$(cat "$out/nvim.log")""
+              exit 1
+            fi
+          '';
+        };
+
+        devShells.default = pkgs.mkShell { };
+
+      });
 }
