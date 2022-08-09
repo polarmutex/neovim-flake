@@ -400,11 +400,11 @@
     "lualine-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1659973948,
-        "narHash": "sha256-XluaQKuDqxOsGcbmQThmvMn0W7vYa99iwUO7DzgHIew=",
+        "lastModified": 1660028903,
+        "narHash": "sha256-/i4waAemZRTjahr8d9vBP9VCIv3TJBcCoMplD9nzV0w=",
         "owner": "nvim-lualine",
         "repo": "lualine.nvim",
-        "rev": "03bcf015d1131b64e13e97344e8f456f2af4e60d",
+        "rev": "c0510ddec86070dbcacbd291736de27aabbf3bfe",
         "type": "github"
       },
       "original": {
