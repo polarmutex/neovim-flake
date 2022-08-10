@@ -288,8 +288,11 @@
                 packages.myNeovimPackage = with pkgs.neovimPlugins; {
                   start = [
                     blamer-nvim
+		    cmp-buffer
                     cmp-nvim-lsp
+		    cmp-path
                     diffview-nvim
+		    fidget-nvim
                     gitsigns-nvim
                     heirline-nvim
                     kanagawa-nvim
@@ -298,6 +301,7 @@
                     nvim-cmp
                     nvim-lspconfig
                     plenary-nvim
+		    popup-nvim
                     telescope-nvim
                     (nvim-treesitter.withPlugins
                       (plugins:
@@ -313,6 +317,7 @@
                           tree-sitter-python
                           tree-sitter-rust
                         ]))
+		trouble-nvim
                   ];
                   opt = [ ];
                 };

@@ -18,9 +18,9 @@ cmp.setup({
     sources = {
         { name = "nvim_lsp" },
         --{ name = "vsnip"; }
-        --{ name = "crates"; }
-        --{ name = "path"; }
-        --{ name = "buffer"; keyword_length = 5; }
+        { name = "crates" },
+        { name = "path" },
+        { name = "buffer", keyword_length = 5 },
     },
     formatting = {
         -- Youtube: How to set up nice formatting for your sources.
