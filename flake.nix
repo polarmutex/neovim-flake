@@ -287,9 +287,13 @@
                 '';
                 packages.myNeovimPackage = with pkgs.neovimPlugins; {
                   start = [
+                    blamer-nvim
                     cmp-nvim-lsp
+                    diffview-nvim
+                    gitsigns-nvim
                     heirline-nvim
                     kanagawa-nvim
+                    neogit
                     null-ls-nvim
                     nvim-cmp
                     nvim-lspconfig
