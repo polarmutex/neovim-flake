@@ -1027,11 +1027,11 @@
     "rust-tools-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1660001879,
-        "narHash": "sha256-EFRZd0Oxm6YEF0A2T0kS0AzEIABM+qUnHj6IC2K+tIY=",
+        "lastModified": 1660092167,
+        "narHash": "sha256-KjXWfPOmrDPkVYosc+HwTsWNQQN8TtL93nfczxPdSKQ=",
         "owner": "simrat39",
         "repo": "rust-tools.nvim",
-        "rev": "2b478ca08f5386edafde2eca5b478ca198136682",
+        "rev": "06c9361a0e750a44f8f489c071bf3424ae733d5e",
         "type": "github"
       },
       "original": {
