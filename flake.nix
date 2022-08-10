@@ -196,7 +196,12 @@
       #    inherit config lib pkgs dsl inputs;
       #  };
     } //
-    flake-utils.lib.eachDefaultSystem
+    #flake-utils.lib.eachDefaultSystem
+    # awesome fails on arch darwin
+    flake-utils.lib.eachSystem [
+      "x86_64-linux"
+      "aarch64-linux"
+    ]
       (system:
       let
         pkgs = import nixpkgs {
@@ -288,11 +293,11 @@
                 packages.myNeovimPackage = with pkgs.neovimPlugins; {
                   start = [
                     blamer-nvim
-		    cmp-buffer
+                    cmp-buffer
                     cmp-nvim-lsp
-		    cmp-path
+                    cmp-path
                     diffview-nvim
-		    fidget-nvim
+                    fidget-nvim
                     gitsigns-nvim
                     heirline-nvim
                     kanagawa-nvim
@@ -301,7 +306,7 @@
                     nvim-cmp
                     nvim-lspconfig
                     plenary-nvim
-		    popup-nvim
+                    popup-nvim
                     telescope-nvim
                     (nvim-treesitter.withPlugins
                       (plugins:
@@ -317,8 +322,8 @@
                           tree-sitter-python
                           tree-sitter-rust
                         ]))
-		trouble-nvim
-		which-key-nvim
+                    trouble-nvim
+                    which-key-nvim
                   ];
                   opt = [ ];
                 };
