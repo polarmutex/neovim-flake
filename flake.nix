@@ -11,9 +11,6 @@
       url = "github:polarmutex/nur";
     };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
-    tree-sitter-beancount = {
-      url = "github:polarmutex/tree-sitter-beancount";
-    };
     nix2vim = {
       url = "github:gytis-ivaskevicius/nix2vim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -174,7 +171,6 @@
     , nixpkgs
     , polar-nur
     , neovim
-    , tree-sitter-beancount
     , flake-utils
     , rnix-lsp
     , nix2vim
@@ -208,7 +204,6 @@
           overlays = [
             neovim.overlay
             polar-nur.overlays.default
-            tree-sitter-beancount.overlays.default
             (import ./plugins.nix inputs)
             nix2vim.overlay
             overlay
@@ -300,6 +295,20 @@
                     nvim-lspconfig
                     plenary-nvim
                     telescope-nvim
+                    (nvim-treesitter.withPlugins
+                      (plugins:
+                        with plugins; [
+                          tree-sitter-beancount
+                          tree-sitter-c
+                          tree-sitter-cpp
+                          tree-sitter-go
+                          tree-sitter-java
+                          tree-sitter-json
+                          tree-sitter-lua
+                          tree-sitter-nix
+                          tree-sitter-python
+                          tree-sitter-rust
+                        ]))
                   ];
                   opt = [ ];
                 };
