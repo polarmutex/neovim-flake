@@ -1,7 +1,7 @@
 { pkgs, lib, dsl, ... }:
 with dsl;{
   lua = ''
-    local nls = require("null-ls")
+       local nls = require("null-ls")
     local h = require("null-ls.helpers")
 
     nls.setup({

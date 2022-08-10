@@ -27,6 +27,7 @@ function M.has_formatter(ft)
 end
 
 function M.setup(client, buf)
+    print("start: " .. client.name)
     local filetype = vim.api.nvim_buf_get_option(0, "filetype")
 
     local augroup_format = vim.api.nvim_create_augroup("my_lsp_format", { clear = true })
@@ -67,11 +68,12 @@ function M.setup(client, buf)
     })
 
     local enable = false
-    if M.has_formatter(ft) then
+    if M.has_formatter(filetype) then
         enable = client.name == "null-ls"
     else
         enable = not (client.name == "null-ls")
     end
+    print(enable)
 
     client.server_capabilities.document_formatting = enable
     -- format on save
