@@ -15,7 +15,6 @@ end
 
 function M.format()
     if M.autoformat then
-        print("FORMATTING on M")
         vim.lsp.buf.format()
     end
 end
@@ -27,7 +26,6 @@ function M.has_formatter(ft)
 end
 
 function M.setup(client, buf)
-    print("start: " .. client.name)
     local filetype = vim.api.nvim_buf_get_option(0, "filetype")
 
     local augroup_format = vim.api.nvim_create_augroup("my_lsp_format", { clear = true })
@@ -36,7 +34,6 @@ function M.setup(client, buf)
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = 0,
             callback = function()
-                print("FORMATTING")
                 vim.lsp.buf.format({ async = async, filter = filter })
             end,
         })
@@ -73,12 +70,10 @@ function M.setup(client, buf)
     else
         enable = not (client.name == "null-ls")
     end
-    print(enable)
 
     client.server_capabilities.document_formatting = enable
     -- format on save
     if client.server_capabilities.document_formatting then
-        print("setup format: " .. client.name)
         --filetype_attach[filetype](client)
         vim.cmd([[
 	  augroup LspFormat
