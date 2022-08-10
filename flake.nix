@@ -124,6 +124,10 @@
       url = "github:nvim-treesitter/playground";
       flake = false;
     };
+    nvim-web-devicons-src = {
+      url = "github:kyazdani42/nvim-web-devicons";
+      flake = false;
+    };
     plenary-nvim-src = {
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
@@ -305,6 +309,7 @@
                     null-ls-nvim
                     nvim-cmp
                     nvim-lspconfig
+                    nvim-web-devicons
                     plenary-nvim
                     popup-nvim
                     telescope-nvim

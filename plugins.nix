@@ -40,6 +40,7 @@ with inputs; {
     nvim-treesitter = (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
     nvim-treesitter-context = plugin "nvim-treesitter-context" nvim-treesitter-context-src;
     nvim-treesitter-playground = (withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
+    nvim-web-devicons = plugin "nvim-web-devicons" nvim-web-devicons-src;
     plenary-nvim = (withSrc prev.vimPlugins.plenary-nvim plenary-nvim-src);
     popup-nvim = (withSrc prev.vimPlugins.popup-nvim popup-nvim-src);
     rust-tools-nvim = plugin "rust-tools" rust-tools-nvim-src;
