@@ -365,6 +365,22 @@
         "type": "github"
       }
     },
+    "heirline-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659912288,
+        "narHash": "sha256-QAkaiVh+OZCIU+JH02o3S3aF/w0LGLl+T0LcVylHr9Q=",
+        "owner": "rebelot",
+        "repo": "heirline.nvim",
+        "rev": "d2767b3678069a5be31f0783b5309016f4720d59",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rebelot",
+        "repo": "heirline.nvim",
+        "type": "github"
+      }
+    },
     "kanagawa-nvim-src": {
       "flake": false,
       "locked": {
@@ -976,6 +992,7 @@
         "fidget-nvim-src": "fidget-nvim-src",
         "flake-utils": "flake-utils",
         "gitsigns-nvim-src": "gitsigns-nvim-src",
+        "heirline-nvim-src": "heirline-nvim-src",
         "kanagawa-nvim-src": "kanagawa-nvim-src",
         "lspkind-nvim-src": "lspkind-nvim-src",
         "lualine-nvim-src": "lualine-nvim-src",

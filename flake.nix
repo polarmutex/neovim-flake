@@ -63,6 +63,10 @@
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
     };
+    heirline-nvim-src = {
+      url = "github:rebelot/heirline.nvim";
+      flake = false;
+    };
     kanagawa-nvim-src = {
       url = "github:rebelot/kanagawa.nvim";
       flake = false;
@@ -177,7 +181,12 @@
     , ...
     }:
     let
-      overlay = final: prev: rec { };
+      overlay = final: prev: rec {
+        lua-config-builder = prev.callPackage ./lib/lua-config-builder.nix {
+          pkgs = final;
+          lib = prev.lib;
+        };
+      };
     in
     {
       #inherit overlay;
@@ -202,7 +211,7 @@
             tree-sitter-beancount.overlays.default
             (import ./plugins.nix inputs)
             nix2vim.overlay
-            #overlay
+            overlay
           ];
         };
         neovim-polar = pkgs.neovimBuilder {
@@ -224,23 +233,50 @@
       in
       {
         packages = {
-          default = neovim-polar;
+          default = self.packages."${system}".neovim-polar-legacy;
 
-          neovim-polar-config = pkgs.stdenv.mkDerivation rec {
-            pname = "neovim-configuration";
-            version = "1.0";
-            src = ./dotfiles;
-            installPhase = ''
-              cp -r . $out
-            '';
-            meta = with pkgs.lib; {
-              homepage = "";
-              description = "polarmutex configuration";
-              license = licenses.mit;
-              maintainers = [ maintainers.polarmutex ];
+          #
+          # Neovim Config DEr
+          #
+          neovim-polar-config =
+            let
+              lsp_config = pkgs.lua-config-builder {
+                imports = [ ./dotfiles/lua/polarmutex/lsp/lspconfig.nix ];
+              };
+              lsp_config_file = pkgs.writeText "lspconfig.lua" lsp_config.lua;
+              nullls_config = pkgs.lua-config-builder {
+                imports = [ ./dotfiles/plugin/null-ls.nix ];
+              };
+              nullls_config_file = pkgs.writeText "null-ls.lua" nullls_config.lua;
+            in
+            pkgs.stdenv.mkDerivation rec {
+              pname = "neovim-configuration";
+              version = "1.0";
+              src = ./dotfiles;
+              buildInputs = with pkgs; [
+                #lua-config-builder
+              ];
+              buildPhase = ''
+              '';
+              installPhase = ''
+                cp -r . $out
+                rm -rf $out/lua/polarmutex/lsp/lspconfig.nix
+                rm -rf $out/plugin/null-ls.nix
+                cp ${lsp_config_file} $out/lua/polarmutex/lsp/lspconfig.lua
+                cp ${nullls_config_file} $out/plugin/null-ls.lua
+              '';
+              meta = with pkgs.lib; {
+                homepage = "";
+                description = "polarmutex configuration";
+                license = licenses.mit;
+                maintainers = [ maintainers.polarmutex ];
+              };
             };
-          };
 
+          #
+          # Using legacy wrapper in nixpkgs
+          # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/neovim/wrapper.nix
+          #
           neovim-polar-legacy =
             pkgs.wrapNeovim pkgs.neovim {
 
@@ -256,6 +292,13 @@
                 '';
                 packages.myNeovimPackage = with pkgs.neovimPlugins; {
                   start = [
+                    cmp-nvim-lsp
+                    heirline-nvim
+                    kanagawa-nvim
+                    null-ls-nvim
+                    nvim-cmp
+                    nvim-lspconfig
+                    plenary-nvim
                     telescope-nvim
                   ];
                   opt = [ ];
@@ -263,7 +306,11 @@
               };
             };
 
-          neovim-polar-unstable =
+          #
+          # Using current wrapper in nixpkgs
+          # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/neovim/wrapper.nix
+          #
+          neovim-polar-current =
             pkgs.wrapNeovimUnstable pkgs.neovim {
               wrapperArgs = [
                 "--add-flags"
@@ -293,7 +340,7 @@
 
         apps.defaultApp = {
           type = "app";
-          program = "${self.packages."${system}".default}/bin/nvim";
+          program = "${self.packages."${system}".neovim-polar-current}/bin/nvim";
         };
 
         # check to see if any config errors ars displayed

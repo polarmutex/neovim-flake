@@ -1,0 +1,1 @@
+require('polarmutex.lsp.lspconfig')

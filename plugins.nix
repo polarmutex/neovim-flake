@@ -24,6 +24,7 @@ with inputs; {
     diffview-nvim = plugin "diffview-nvim" diffview-nvim-src;
     fidget-nvim = plugin "fidget-nvim" fidget-nvim-src;
     gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
+    heirline-nvim = plugin "heirline-nvim" heirline-nvim-src;
     kanagawa-nvim = plugin "kanagawa-nvim" kanagawa-nvim-src;
     lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
     lualine-nvim = (withSrc prev.vimPlugins.lualine-nvim lualine-nvim-src);
