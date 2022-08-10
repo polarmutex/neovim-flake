@@ -218,64 +218,138 @@
             overlay
           ];
         };
-        neovim-polar = pkgs.neovimBuilder {
-          package = pkgs.neovim-git;
-          enableViAlias = true;
-          enableVimAlias = true;
-          withNodeJs = true;
-          withPython3 = true;
-          imports = [
-            ./modules/aesthetics.nix
-            ./modules/essentials.nix
-            ./modules/git.nix
-            ./modules/lsp.nix
-            ./modules/treesitter.nix
-            ./modules/telescope.nix
-            ./modules/which-key.nix
+        # nix2vim
+        #neovim-polar = pkgs.neovimBuilder {
+        #  package = pkgs.neovim-git;
+        #  enableViAlias = true;
+        #  enableVimAlias = true;
+        #  withNodeJs = true;
+        #  withPython3 = true;
+        #  imports = [
+        #    ./modules/aesthetics.nix
+        #    ./modules/essentials.nix
+        #    ./modules/git.nix
+        #    ./modules/lsp.nix
+        #    ./modules/treesitter.nix
+        #    ./modules/telescope.nix
+        #    ./modules/which-key.nix
+        #  ];
+        #};
+        buildLuaConfig = { configDir, moduleName, vars ? null, replacements ? null, excludeFiles ? [ ] }:
+          let
+            pname = "lua-config-${moduleName}";
+            luaSrc = builtins.filterSource
+              (path: type:
+                (pkgs.lib.hasSuffix ".lua" path) &&
+                ! (pkgs.lib.lists.any (x: baseNameOf path == x) excludeFiles))
+              configDir;
+          in
+          (pkgs.stdenv.mkDerivation {
+            inherit pname;
+            version = "dev";
+            #srcs = [ luaSrc ];
+            src = configDir;
+            #unpackPhase = ''
+            #  for _src in $srcs; do
+            #    cp -v $_src/* .
+            #  done
+            #'';
+            installPhase =
+              let
+                subs =
+                  pkgs.lib.concatStringsSep " "
+                    (pkgs.lib.lists.zipListsWith (f: t: "--subst-var-by ${f} ${t}") vars replacements);
+
+                # lua-builder-from-nix2vim
+                # TODO replace with above
+                #lsp_config = pkgs.lua-config-builder {
+                #  imports = [ ./dotfiles/lua/polarmutex/lsp/lspconfig.nix ];
+                #};
+                #lsp_config_file = pkgs.writeText "lspconfig.lua" lsp_config.lua;
+                nullls_config = pkgs.lua-config-builder {
+                  imports = [ ./dotfiles/plugin/null-ls.nix ];
+                };
+                nullls_config_file = pkgs.writeText "null-ls.lua" nullls_config.lua;
+              in
+              #''
+                #  target=$out/lua/${moduleName}
+                #  mkdir -p $target
+                #  cp -r *.lua $target
+                #''
+                #+
+              ''
+                cp -r . $out
+                rm -rf $out/plugin/null-ls.nix
+                cp ${nullls_config_file} $out/plugin/null-ls.lua
+              ''
+              +
+              pkgs.lib.optionalString (vars != null)
+                ''
+                  #for filename in $out/*
+                  #do
+                  #  substituteInPlace $filename ${subs}
+                  #done
+                  for filename in $(find $out -type f -print)
+                  do
+                    substituteInPlace $filename ${subs}
+                  done
+                  #find $out -type f -exec substituteInPlace {} ${subs} \;
+                '';
+            meta = with pkgs.lib; {
+              homepage = "";
+              description = "polarmutex neovim configuration";
+              license = licenses.mit;
+              maintainers = [ maintainers.polarmutex ];
+            };
+          });
+        lua-config-polar = (buildLuaConfig {
+          configDir = ./dotfiles;
+          moduleName = "polarmutex";
+          excludeFiles = [ ]; #if builtins.isNull config then [ ] else [ "user.lua" ];
+          vars = [
+            "beancount.beancount-language-server"
+            "cpp.clangd"
+            "go.gopls"
+            "json.jsonls"
+            "java.debug.plugin"
+            "java.jdt-language-server"
+            "lua.sumneko-lua-language-server"
+            "nix.rnix"
+            "python.pyright"
+            "rust.rustup"
+            "svelte.svelte-language-server"
+            "typescript.typescript-language-server"
           ];
-        };
+          replacements = [
+            (pkgs.beancount-language-server)
+            (pkgs.clang-tools)
+            (pkgs.gopls)
+            (pkgs.lib.getExe pkgs.nodePackages.vscode-json-languageserver)
+            (pkgs.fetchMavenArtifact
+              {
+                groupId = "com.microsoft.java";
+                artifactId = "com.microsoft.java.debug.plugin";
+                version = "0.34.0";
+                sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
+              }).jar
+            (pkgs.jdt-language-server)
+            (pkgs.sumneko-lua-language-server)
+            (pkgs.lib.getExe pkgs.rnix-lsp)
+            (pkgs.pyright)
+            (pkgs.rustup)
+            (pkgs.lib.getExe pkgs.nodePackages.svelte-language-server)
+            (pkgs.lib.getExe pkgs.nodePackages.typescript-language-server)
+          ];
+        });
       in
       {
         packages = {
           default = self.packages."${system}".neovim-polar-legacy;
 
           #
-          # Neovim Config DEr
+          # Neovim Config
           #
-          neovim-polar-config =
-            let
-              lsp_config = pkgs.lua-config-builder {
-                imports = [ ./dotfiles/lua/polarmutex/lsp/lspconfig.nix ];
-              };
-              lsp_config_file = pkgs.writeText "lspconfig.lua" lsp_config.lua;
-              nullls_config = pkgs.lua-config-builder {
-                imports = [ ./dotfiles/plugin/null-ls.nix ];
-              };
-              nullls_config_file = pkgs.writeText "null-ls.lua" nullls_config.lua;
-            in
-            pkgs.stdenv.mkDerivation rec {
-              pname = "neovim-configuration";
-              version = "1.0";
-              src = ./dotfiles;
-              buildInputs = with pkgs; [
-                #lua-config-builder
-              ];
-              buildPhase = ''
-              '';
-              installPhase = ''
-                cp -r . $out
-                rm -rf $out/lua/polarmutex/lsp/lspconfig.nix
-                rm -rf $out/plugin/null-ls.nix
-                cp ${lsp_config_file} $out/lua/polarmutex/lsp/lspconfig.lua
-                cp ${nullls_config_file} $out/plugin/null-ls.lua
-              '';
-              meta = with pkgs.lib; {
-                homepage = "";
-                description = "polarmutex configuration";
-                license = licenses.mit;
-                maintainers = [ maintainers.polarmutex ];
-              };
-            };
+          neovim-config-polar = lua-config-polar;
 
           #
           # Using legacy wrapper in nixpkgs
@@ -290,9 +364,9 @@
               configure = {
                 customRC = ''
                   lua << EOF
-                  vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-polar-config}')
+                  vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-config-polar}')
                   EOF
-                  luafile ${self.packages."${system}".neovim-polar-config}/init.lua
+                  luafile ${self.packages."${system}".neovim-config-polar}/init.lua
                 '';
                 packages.myNeovimPackage = with pkgs.neovimPlugins; {
                   start = [
@@ -311,6 +385,7 @@
                     nvim-dap
                     nvim-dap-ui
                     nvim-dap-virtual-text
+                    nvim-jdtls
                     nvim-lspconfig
                     nvim-web-devicons
                     plenary-nvim
@@ -347,11 +422,11 @@
             pkgs.wrapNeovimUnstable pkgs.neovim {
               wrapperArgs = [
                 "--add-flags"
-                "--cmd 'set runtimepath^=${self.packages."${system}".neovim-polar-config}'"
+                "--cmd 'set runtimepath^=${self.packages."${system}".neovim-config-polar}'"
                 "--add-flags"
-                "--cmd 'set packpath^=${self.packages."${system}".neovim-polar-config}/'"
+                "--cmd 'set packpath^=${self.packages."${system}".neovim-config-polar}/'"
                 "--add-flags"
-                "-u ${self.packages."${system}".neovim-polar-config}/init.lua"
+                "-u ${self.packages."${system}".neovim-config-polar}/init.lua"
               ];
               wrapRc = false;
               #configure = {
