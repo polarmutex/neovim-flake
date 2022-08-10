@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.completeopt = "menu,menuone,noselect"
+
 vim.opt.hidden = true
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true

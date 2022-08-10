@@ -318,6 +318,7 @@
                           tree-sitter-rust
                         ]))
 		trouble-nvim
+		which-key-nvim
                   ];
                   opt = [ ];
                 };
