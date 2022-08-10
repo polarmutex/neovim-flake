@@ -32,3 +32,5 @@ vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 
 vim.opt.cursorline = true
+
+vim.opt.laststatus = 3
