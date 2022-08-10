@@ -842,6 +842,22 @@
         "type": "github"
       }
     },
+    "nvim-web-devicons-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1657021684,
+        "narHash": "sha256-+t6EVhQ7iC9BZOtVeQwrzkmpmUtc/WWBcUohoX4/+Tg=",
+        "owner": "kyazdani42",
+        "repo": "nvim-web-devicons",
+        "rev": "2d02a56189e2bde11edd4712fea16f08a6656944",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kyazdani42",
+        "repo": "nvim-web-devicons",
+        "type": "github"
+      }
+    },
     "plenary-nvim-src": {
       "flake": false,
       "locked": {
@@ -955,6 +971,7 @@
         "nvim-treesitter-context-src": "nvim-treesitter-context-src",
         "nvim-treesitter-playground-src": "nvim-treesitter-playground-src",
         "nvim-treesitter-src": "nvim-treesitter-src",
+        "nvim-web-devicons-src": "nvim-web-devicons-src",
         "plenary-nvim-src": "plenary-nvim-src",
         "polar-nur": "polar-nur",
         "popup-nvim-src": "popup-nvim-src",

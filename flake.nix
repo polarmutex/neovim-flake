@@ -308,11 +308,15 @@
                     neogit
                     null-ls-nvim
                     nvim-cmp
+                    nvim-dap
+                    nvim-dap-ui
+                    nvim-dap-virtual-text
                     nvim-lspconfig
                     nvim-web-devicons
                     plenary-nvim
                     popup-nvim
                     telescope-nvim
+                    telescope-dap-nvim
                     (nvim-treesitter.withPlugins
                       (plugins:
                         with plugins; [

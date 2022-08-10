@@ -45,6 +45,7 @@ with inputs; {
     popup-nvim = (withSrc prev.vimPlugins.popup-nvim popup-nvim-src);
     rust-tools-nvim = plugin "rust-tools" rust-tools-nvim-src;
     telescope-nvim = plugin "telescope-nvim" telescope-nvim-src;
+    telescope-dap-nvim = plugin "telescope-dap-nvim" telescope-dap-nvim-src;
     telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
     tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
     trouble-nvim = plugin "trouble-nvim" trouble-nvim-src;

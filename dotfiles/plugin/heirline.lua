@@ -364,7 +364,7 @@ local DefaultStatusline = {
     Diagnostics,
 
     Align,
-    --DAPMessages,
+    DAPMessages,
 
     Align,
 
