@@ -416,6 +416,12 @@
             let
               neovimConfig =
                 pkgs.neovimUtils.makeNeovimConfig {
+                  customRC = ''
+                    lua << EOF
+                    vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-config-polar}')
+                    EOF
+                    luafile ${self.packages."${system}".neovim-config-polar}/init.lua
+                  '';
                   plugins = with pkgs.neovimPlugins; [
                     { plugin = blamer-nvim; optional = false; }
                     { plugin = cmp-buffer; optional = false; }
@@ -463,15 +469,15 @@
             pkgs.wrapNeovimUnstable pkgs.neovim
               (neovimConfig // {
                 #extraName = "-polar";
-                wrapperArgs = [
-                  #"--add-flags"
-                  #"--cmd 'set runtimepath^=${lua-config-polar}'"
-                  #  "--add-flags"
-                  #  "--cmd 'set packpath^=${self.packages."${system}".neovim-config-polar}/'"
-                  "--add-flags"
-                  "-u ${self.packages."${system}".neovim-config-polar}/init.lua"
-                ];
-                wrapRc = false;
+                #wrapperArgs = [
+                #"--add-flags"
+                #"--cmd 'set runtimepath^=${lua-config-polar}'"
+                #  "--add-flags"
+                #  "--cmd 'set packpath^=${self.packages."${system}".neovim-config-polar}/'"
+                #"--add-flags"
+                #"-u ${self.packages."${system}".neovim-config-polar}/init.lua"
+                #];
+                wrapRc = true;
                 #configure = {
                 #  customRC = ''
                 #    lua << EOF
