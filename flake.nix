@@ -419,31 +419,81 @@
           # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/neovim/wrapper.nix
           #
           neovim-polar-current =
-            pkgs.wrapNeovimUnstable pkgs.neovim {
-              wrapperArgs = [
-                "--add-flags"
-                "--cmd 'set runtimepath^=${self.packages."${system}".neovim-config-polar}'"
-                "--add-flags"
-                "--cmd 'set packpath^=${self.packages."${system}".neovim-config-polar}/'"
-                "--add-flags"
-                "-u ${self.packages."${system}".neovim-config-polar}/init.lua"
-              ];
-              wrapRc = false;
-              #configure = {
-              #  customRC = ''
-              #    lua << EOF
-              #    vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-polar-config}')
-              #    EOF
-              #    luafile ${self.packages."${system}".neovim-polar-config}/init.lua
-              #  '';
-              #  packages.myNeovimPackage = with pkgs.neovimPlugins; {
-              #    start = [
-              #      telescope-nvim
-              #    ];
-              #    opt = [ ];
-              #  };
-              #};
-            };
+            let
+              neovimConfig =
+                pkgs.neovimUtils.makeNeovimConfig {
+                  plugins = with pkgs.neovimPlugins; [
+                    { plugin = blamer-nvim; optional = false; }
+                    { plugin = cmp-buffer; optional = false; }
+                    { plugin = cmp-nvim-lsp; optional = false; }
+                    { plugin = cmp-path; optional = false; }
+                    { plugin = diffview-nvim; optional = false; }
+                    { plugin = fidget-nvim; optional = false; }
+                    { plugin = gitsigns-nvim; optional = false; }
+                    { plugin = heirline-nvim; optional = false; }
+                    { plugin = kanagawa-nvim; optional = false; }
+                    { plugin = neogit; optional = false; }
+                    { plugin = null-ls-nvim; optional = false; }
+                    { plugin = nvim-cmp; optional = false; }
+                    { plugin = nvim-dap; optional = false; }
+                    { plugin = nvim-dap-ui; optional = false; }
+                    { plugin = nvim-dap-virtual-text; optional = false; }
+                    { plugin = nvim-jdtls; optional = false; }
+                    { plugin = nvim-lspconfig; optional = false; }
+                    { plugin = nvim-web-devicons; optional = false; }
+                    { plugin = plenary-nvim; optional = false; }
+                    { plugin = popup-nvim; optional = false; }
+                    { plugin = telescope-nvim; optional = false; }
+                    { plugin = telescope-dap-nvim; optional = false; }
+                    {
+                      plugin = (nvim-treesitter.withPlugins
+                        (plugins:
+                          with plugins; [
+                            tree-sitter-beancount
+                            tree-sitter-c
+                            tree-sitter-cpp
+                            tree-sitter-go
+                            tree-sitter-java
+                            tree-sitter-json
+                            tree-sitter-lua
+                            tree-sitter-nix
+                            tree-sitter-python
+                            tree-sitter-rust
+                          ]));
+                      optional = false;
+                    }
+                    { plugin = trouble-nvim; optional = false; }
+                    { plugin = which-key-nvim; optional = false; }
+                  ];
+                };
+            in
+            pkgs.wrapNeovimUnstable pkgs.neovim
+              (neovimConfig // {
+                #extraName = "-polar";
+                wrapperArgs = [
+                  #"--add-flags"
+                  #"--cmd 'set runtimepath^=${lua-config-polar}'"
+                  #  "--add-flags"
+                  #  "--cmd 'set packpath^=${self.packages."${system}".neovim-config-polar}/'"
+                  "--add-flags"
+                  "-u ${self.packages."${system}".neovim-config-polar}/init.lua"
+                ];
+                wrapRc = false;
+                #configure = {
+                #  customRC = ''
+                #    lua << EOF
+                #    vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-polar-config}')
+                #    EOF
+                #    luafile ${self.packages."${system}".neovim-polar-config}/init.lua
+                #  '';
+                #  packages.myNeovimPackage = with pkgs.neovimPlugins; {
+                #    start = [
+                #      telescope-nvim
+                #    ];
+                #    opt = [ ];
+                #  };
+                #};
+              });
         };
 
         apps.defaultApp = {
@@ -475,7 +525,8 @@
           '';
         };
 
-        devShells.default = pkgs.mkShell { };
+        devShells.default = pkgs.mkShell
+          { };
 
       });
 }
