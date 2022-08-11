@@ -4,7 +4,7 @@
 
   # Input source for our derivation
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:teto/nixpkgs/vim-merge-cmds";
     flake-utils.url = "github:numtide/flake-utils";
 
     polar-nur = {
@@ -164,10 +164,6 @@
       url = "github:folke/trouble.nvim";
       flake = false;
     };
-    which-key-nvim-src = {
-      url = "github:folke/which-key.nvim";
-      flake = false;
-    };
   };
 
   outputs =
@@ -232,7 +228,6 @@
         #    ./modules/lsp.nix
         #    ./modules/treesitter.nix
         #    ./modules/telescope.nix
-        #    ./modules/which-key.nix
         #  ];
         #};
         buildLuaConfig = { configDir, moduleName, vars ? null, replacements ? null, excludeFiles ? [ ] }:
@@ -407,7 +402,6 @@
                           tree-sitter-rust
                         ]))
                     trouble-nvim
-                    which-key-nvim
                   ];
                   opt = [ ];
                 };
@@ -463,7 +457,6 @@
                       optional = false;
                     }
                     { plugin = trouble-nvim; optional = false; }
-                    { plugin = which-key-nvim; optional = false; }
                   ];
                 };
             in

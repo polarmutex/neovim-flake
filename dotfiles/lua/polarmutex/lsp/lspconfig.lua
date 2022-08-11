@@ -18,6 +18,22 @@ updated_capabilities.textDocument.completion.completionItem.insertReplaceSupport
 
 local custom_attach = function(client, buf)
     local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: jump to definition", buffer = buf })
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "LSP: jump to declaration", buffer = buf })
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "LSP: jump to implementation", buffer = buf })
+    vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { desc = "LSP: get type definition", buffer = buf })
+    vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "LSP: rename function/variable", buffer = buf })
+    --vim.keymap.set("n", "<leader>ca", vim.lsp.buf.codeaction, { desc = "LSP: perform code action", buffer = buf })
+    vim.keymap.set(
+        "n",
+        "<leader>dp",
+        vim.diagnostic.goto_prev,
+        { desc = "LSP: goto to previous diagnostic", buffer = buf }
+    )
+    vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "LSP: goto to next diagnostic", buffer = buf })
+    vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float, { desc = "LSP: open float diagnostic", buffer = buf })
+
     -- Set autocommands conditional on server_capabilities
     if client.server_capabilities.documentHighlightProvider then
         vim.cmd([[
