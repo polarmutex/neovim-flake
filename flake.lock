@@ -568,16 +568,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1659868656,
-        "narHash": "sha256-LINDS957FYzOb412t/Zha44LQqGniMpUIUz4Pi+fvSs=",
-        "owner": "nixos",
+        "lastModified": 1660054919,
+        "narHash": "sha256-vrjYJ+Q0PkF0BXmw584/shoj4AJtQmZH4di+UW8q8Og=",
+        "owner": "teto",
         "repo": "nixpkgs",
-        "rev": "80fc83ad314fe701766ee66ac8286307d65b39e3",
+        "rev": "cc0ff183c6afe9951c8fdbf468ea26a9f6920f52",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
+        "owner": "teto",
+        "ref": "vim-merge-cmds",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -981,8 +981,7 @@
         "telescope-nvim-src": "telescope-nvim-src",
         "telescope-ui-select-src": "telescope-ui-select-src",
         "tokyonight-nvim-src": "tokyonight-nvim-src",
-        "trouble-nvim-src": "trouble-nvim-src",
-        "which-key-nvim-src": "which-key-nvim-src"
+        "trouble-nvim-src": "trouble-nvim-src"
       }
     },
     "rubato-git": {
@@ -1129,22 +1128,6 @@
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"
-      }
-    },
-    "which-key-nvim-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1651651877,
-        "narHash": "sha256-UoV9H3oVJL1BPmuG+/eU4cG1s7thOrcrPyat9npBxm0=",
-        "owner": "folke",
-        "repo": "which-key.nvim",
-        "rev": "bd4411a2ed4dd8bb69c125e339d837028a6eea71",
-        "type": "github"
-      },
-      "original": {
-        "owner": "folke",
-        "repo": "which-key.nvim",
-        "type": "github"
       }
     }
   },
