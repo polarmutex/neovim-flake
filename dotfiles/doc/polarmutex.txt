@@ -1,4 +1,6 @@
 ================================================================================
+INTRODUCTION                                                        *polarmutex*
+
 This is PolarMutex's neovim config
 
 

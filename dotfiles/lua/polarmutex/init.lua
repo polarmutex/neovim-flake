@@ -1,6 +1,8 @@
 ---@brief [[
 --- This is PolarMutex's neovim config
 ---@brief ]]
+---@tag polarmutex
+---@config { ["name"] = "INTRODUCTION" }
 
 require("polarmutex.options")
 require("polarmutex.lsp")
