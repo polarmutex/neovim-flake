@@ -51,11 +51,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_MSG: |
-            [docgen] Update doc/polarmutex.txt
+            docs(docgen): Update doc/polarmutex.txt
             skip-checks: true
         run: |
-          git config user.email "actions@github"
-          git config user.name "Github Actions"
+          git config user.email "polarmutex[bot]@users.noreply.github.com"
+          git config user.name "polarmutex[bot]"
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git add dotfiles/doc
           # Only commit and push if we have changes
