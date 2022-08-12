@@ -339,7 +339,7 @@
       in
       {
         packages = {
-          default = self.packages."${system}".neovim-polar-legacy;
+          default = self.packages."${system}".neovim-polar-current;
 
           #
           # Neovim Config
