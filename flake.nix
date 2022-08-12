@@ -252,18 +252,10 @@
                 subs =
                   pkgs.lib.concatStringsSep " "
                     (pkgs.lib.lists.zipListsWith (f: t: "--subst-var-by ${f} ${t}") vars replacements);
-
-                nullls_config = pkgs.lua-config-builder {
-                  imports = [ ./dotfiles/after/plugin/null-ls.nix ];
-                };
-                nullls_config_file = pkgs.writeText "null-ls.lua" nullls_config.lua;
               in
-              ''
-                rm -rf $target/after/plugin/null-ls.nix
-                cp ${nullls_config_file} $target/after/plugin/null-ls.lua
-              ''
-              +
-              pkgs.lib.optionalString (vars != null)
+              '''' +
+              pkgs.lib.optionalString
+                (vars != null)
                 ''
                   #for filename in $out/*
                   #do
@@ -296,6 +288,7 @@
             "java.debug.plugin"
             "java.jdt-language-server"
             "lua.sumneko-lua-language-server"
+            "lua.stylua"
             "nix.rnix"
             "python.pyright"
             "rust.rustup"
@@ -316,6 +309,7 @@
               }).jar
             (pkgs.jdt-language-server)
             (pkgs.sumneko-lua-language-server)
+            (pkgs.stylua)
             (pkgs.lib.getExe pkgs.rnix-lsp)
             (pkgs.pyright)
             (pkgs.rustup)
