@@ -1,5 +1,8 @@
 ---@brief [[
 --- This is PolarMutex's neovim config
+---
+--- TODO
+--- - add nix check for nivm-treesiter and lspconfig
 ---@brief ]]
 ---@tag polarmutex
 ---@config { ["name"] = "INTRODUCTION" }
