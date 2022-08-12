@@ -326,7 +326,7 @@
       in
       {
         packages = {
-          default = self.packages."${system}".neovim-polar-current;
+          default = self.packages."${system}".neovim-polar;
 
           #
           # Neovim Config
@@ -334,82 +334,20 @@
           neovim-config-polar = lua-config-polar;
 
           #
-          # Using legacy wrapper in nixpkgs
-          # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/neovim/wrapper.nix
-          #
-          neovim-polar-legacy =
-            pkgs.wrapNeovim pkgs.neovim {
-
-              # will wrapRc if configure != {}
-
-              #extraMakeWrapperArgs = "--cmd 'set runtimepath^=${self.packages."${system}".neovim-polar-config}' --cmd 'set packpath^=${self.packages."${system}".neovim-polar-config}/' -u ${self.packages."${system}".neovim-polar-config}/init.lua";
-              configure = {
-                customRC = ''
-                  lua << EOF
-                  vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-config-polar}')
-                  EOF
-                  luafile ${self.packages."${system}".neovim-config-polar}/init.lua
-                '';
-                packages.myNeovimPackage = with pkgs.neovimPlugins; {
-                  start = [
-                    blamer-nvim
-                    cmp-buffer
-                    cmp-nvim-lsp
-                    cmp-path
-                    diffview-nvim
-                    fidget-nvim
-                    gitsigns-nvim
-                    heirline-nvim
-                    kanagawa-nvim
-                    neogit
-                    null-ls-nvim
-                    nvim-cmp
-                    nvim-dap
-                    nvim-dap-ui
-                    nvim-dap-virtual-text
-                    nvim-jdtls
-                    nvim-lspconfig
-                    nvim-web-devicons
-                    plenary-nvim
-                    popup-nvim
-                    telescope-nvim
-                    telescope-dap-nvim
-                    (nvim-treesitter.withPlugins
-                      (plugins:
-                        with plugins; [
-                          tree-sitter-beancount
-                          tree-sitter-c
-                          tree-sitter-cpp
-                          tree-sitter-go
-                          tree-sitter-java
-                          tree-sitter-json
-                          tree-sitter-lua
-                          tree-sitter-nix
-                          tree-sitter-python
-                          tree-sitter-rust
-                        ]))
-                    trouble-nvim
-                  ];
-                  opt = [ ];
-                };
-              };
-            };
-
-          #
           # Using current wrapper in nixpkgs
           # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/neovim/wrapper.nix
           #
-          neovim-polar-current =
+          neovim-polar =
             let
               neovimConfig =
                 pkgs.neovimUtils.makeNeovimConfig {
                   customRC = ''
                     lua << EOF
-                    vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-config-polar}')
+                    require('polarmutex.init')
                     EOF
-                    luafile ${self.packages."${system}".neovim-config-polar}/init.lua
                   '';
                   plugins = with pkgs.neovimPlugins; [
+                    { plugin = lua-config-polar; optional = false; }
                     { plugin = blamer-nvim; optional = false; }
                     { plugin = cmp-buffer; optional = false; }
                     { plugin = cmp-nvim-lsp; optional = false; }
@@ -436,16 +374,30 @@
                       plugin = (nvim-treesitter.withPlugins
                         (plugins:
                           with plugins; [
+                            tree-sitter-bash
                             tree-sitter-beancount
                             tree-sitter-c
+                            tree-sitter-comment
                             tree-sitter-cpp
+                            tree-sitter-dockerfile
                             tree-sitter-go
+                            tree-sitter-html
                             tree-sitter-java
+                            tree-sitter-javascript
                             tree-sitter-json
+                            tree-sitter-json5
+                            tree-sitter-latex
                             tree-sitter-lua
+                            tree-sitter-make
+                            tree-sitter-markdown
                             tree-sitter-nix
                             tree-sitter-python
+                            tree-sitter-query
                             tree-sitter-rust
+                            tree-sitter-sql
+                            tree-sitter-svelte
+                            tree-sitter-toml
+                            tree-sitter-yaml
                           ]));
                       optional = false;
                     }
