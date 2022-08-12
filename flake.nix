@@ -16,6 +16,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    #
+    # Neovim plugins
+    #
     beancount-nvim-src = {
       url = "github:polarmutex/beancount.nvim";
       flake = false;
@@ -502,7 +505,7 @@
 
         apps.defaultApp = {
           type = "app";
-          program = "${self.packages."${system}".neovim-polar-current}/bin/nvim";
+          program = "${self.packages."${system}".neovim-polar}/bin/nvim";
         };
 
         # check to see if any config errors ars displayed
