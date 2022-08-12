@@ -981,6 +981,7 @@
         "telescope-nvim-src": "telescope-nvim-src",
         "telescope-ui-select-src": "telescope-ui-select-src",
         "tokyonight-nvim-src": "tokyonight-nvim-src",
+        "tree-sitter-lua-src": "tree-sitter-lua-src",
         "trouble-nvim-src": "trouble-nvim-src"
       }
     },
@@ -1077,6 +1078,22 @@
       "original": {
         "owner": "folke",
         "repo": "tokyonight.nvim",
+        "type": "github"
+      }
+    },
+    "tree-sitter-lua-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1657611258,
+        "narHash": "sha256-oGcJnEguBo+8sBQUTf++8NKoVkmGKiBXs3KEntl5DZw=",
+        "owner": "tjdevries",
+        "repo": "tree-sitter-lua",
+        "rev": "cf0869b9898a2fecb7520c07b2c7335c80538a78",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tjdevries",
+        "repo": "tree-sitter-lua",
         "type": "github"
       }
     },

@@ -48,6 +48,7 @@ with inputs; {
     telescope-dap-nvim = plugin "telescope-dap-nvim" telescope-dap-nvim-src;
     telescope-ui-select = plugin "telescope-ui-select" telescope-ui-select-src;
     tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
+    tree-sitter-lua = plugin "tree-sitter-lua" tree-sitter-lua-src;
     trouble-nvim = plugin "trouble-nvim" trouble-nvim-src;
     which-key-nvim = plugin "which-key-nvim" which-key-nvim-src;
   };

@@ -5,7 +5,7 @@ local docs = {}
 docs.test = function()
     -- TODO: Fix the other files so that we can add them here.
     local input_files = {
-        "./dotfiles/init.lua",
+        "./dotfiles/lua/polarmutex/init.lua",
     }
 
     local output_file = "./dotfiles/doc/polarmutex.txt"
