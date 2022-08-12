@@ -5,10 +5,6 @@ nls.setup({
     debounce = 150,
     --save_after_format = false,
     sources = {
-        --nls.builtins.formatting.stylua.with({
-        --    args = { "--config-path", vim.fn.stdpath("config") .. "lua/stylua.toml", "-" },
-        --}),
-        --nls.builtins.formatting.stylua
         nls.builtins.formatting.stylua.with({
             generator_opts = {
                 command = "@lua.stylua@/bin/stylua",
@@ -20,7 +16,7 @@ nls.setup({
                 }, "--range-start", "--range-end", { row_offset = -1, col_offset = -1 }),
                 to_stdin = true,
             },
-            extra_args = { "--indent_type", "Spaces", "indent_width", "2", "column_width", "120" },
+            extra_args = { "--indent-type", "Spaces", "--indent-width", "4", "--column-width", "120" },
         }),
         --nls.builtins.formatting.google_java_format,
         --nls.builtins.diagnostics.eslint_d,
@@ -47,5 +43,5 @@ nls.setup({
     },
     on_attach = require("polarmutex.lsp.attach").on_attach,
     root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".nvim.settings.json", ".git"),
-    debug = true,
+    debug = false,
 })
