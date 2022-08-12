@@ -388,7 +388,7 @@
                             tree-sitter-python
                             tree-sitter-query
                             tree-sitter-rust
-                            tree-sitter-sql
+                            #tree-sitter-sql #TODO broken
                             tree-sitter-svelte
                             tree-sitter-toml
                             tree-sitter-yaml
@@ -520,11 +520,34 @@
             # Probably want to do something to ensure your config file is read, too
             # need git in path
             export HOME=$TMPDIR
-            ${self.packages."${system}".default}/bin/nvim --headless -c "q" 2> "$out/nvim.log"
+            ${self.packages."${system}".default}/bin/nvim --headless -c "q" 2> "$out/nvim-config.log"
 
-            if [ -n "$(cat "$out/nvim.log")" ]; then
-              echo "output: "$(cat "$out/nvim.log")""
-              exit 1
+            if [ -n "$(cat "$out/nvim-config.log")" ]; then
+                while IFS= read -r line; do
+                    echo "$line"
+                done < "$out/nvim-config.log"
+                exit 1
+            fi
+          '';
+          neovim-check-health = pkgs.runCommand "neovim-check-health"
+            {
+              buildInputs = [
+                pkgs.git
+              ];
+            } ''
+            # We *must* create some output, usually contains test logs for checks
+            mkdir -p "$out"
+
+            # Probably want to do something to ensure your config file is read, too
+            # need git in path
+            export HOME=$TMPDIR
+            ${self.packages."${system}".default}/bin/nvim --headless -c "lua require('polarmutex.health').nix_check()" -c "q" 2> "$out/nvim-health.log"
+
+            if [ -n "$(cat "$out/nvim-health.log")" ]; then
+                while IFS= read -r line; do
+                    echo "$line"
+                done < "$out/nvim-health.log"
+                exit 1
             fi
           '';
         };
