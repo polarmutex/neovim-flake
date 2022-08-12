@@ -1,5 +1,5 @@
 require("neogit").setup({
-    kind = "split",
+    kind = "floating",
     signs = {
         section = { "", "" },
         item = { "", "" },
