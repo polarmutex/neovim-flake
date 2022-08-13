@@ -13,7 +13,6 @@
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
     nix2vim = {
       url = "github:gytis-ivaskevicius/nix2vim";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     #
@@ -183,157 +182,120 @@
     , nix2vim
     , ...
     }:
-    let
-      overlay = final: prev: rec {
-        lua-config-builder = prev.callPackage ./lib/lua-config-builder.nix {
-          pkgs = final;
-          lib = prev.lib;
-        };
-      };
-    in
     {
-      #inherit overlay;
-      #home-managerModule =
-      #  { config
-      #  , lib
-      #  , pkgs
-      #  , ...
-      #  }:
-      #  import ./home-manager.nix {
-      #    inherit config lib pkgs dsl inputs;
-      #  };
-    } //
-    #flake-utils.lib.eachDefaultSystem
-    # awesome fails on arch darwin
-    flake-utils.lib.eachSystem [
-      "x86_64-linux"
-      "aarch64-linux"
-    ]
-      (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [
-            neovim.overlay
-            polar-nur.overlays.default
-            (import ./plugins.nix inputs)
-            nix2vim.overlay
-            overlay
-          ];
-        };
-        # nix2vim
-        #neovim-polar = pkgs.neovimBuilder {
-        #  package = pkgs.neovim-git;
-        #  enableViAlias = true;
-        #  enableVimAlias = true;
-        #  withNodeJs = true;
-        #  withPython3 = true;
-        #  imports = [
-        #    ./modules/aesthetics.nix
-        #    ./modules/essentials.nix
-        #    ./modules/git.nix
-        #    ./modules/lsp.nix
-        #    ./modules/treesitter.nix
-        #    ./modules/telescope.nix
-        #  ];
-        #};
-        buildLuaConfig = { configDir, moduleName, vars ? null, replacements ? null, excludeFiles ? [ ] }:
-          let
-            pname = "${moduleName}";
-            luaSrc = builtins.filterSource
-              (path: type:
-                (pkgs.lib.hasSuffix ".lua" path) &&
-                ! (pkgs.lib.lists.any (x: baseNameOf path == x) excludeFiles))
-              configDir;
-          in
-          (pkgs.vimUtils.buildVimPluginFrom2Nix {
-            inherit pname;
-            version = "dev";
-            src = configDir;
-            postInstall =
-              let
-                subs =
-                  pkgs.lib.concatStringsSep " "
-                    (pkgs.lib.lists.zipListsWith (f: t: "--subst-var-by ${f} ${t}") vars replacements);
-              in
-              '''' +
-              pkgs.lib.optionalString
-                (vars != null)
-                ''
-                  #for filename in $out/*
-                  #do
-                  #  substituteInPlace $filename ${subs}
-                  #done
-                  for filename in $(find $out -type f -print)
-                  do
-                    substituteInPlace $filename ${subs}
-                  done
-                  #find $target -type f -exec substituteInPlace {} ${subs} \;
-                '';
-            #fixupPhase = pkgs.lib.optionalString pkgs.stdenv.isLinux ''
-            #'';
-            meta = with pkgs.lib; {
-              homepage = "";
-              description = "polarmutex neovim configuration";
-              license = licenses.mit;
-              maintainers = [ maintainers.polarmutex ];
-            };
+      overlays.default = final: prev:
+        let
+          pkgs = import nixpkgs {
+            system = prev.system;
+            allowBroken = false;
+            allowUnfree = false;
+            overlays = [
+              neovim.overlay
+              polar-nur.overlays.default
+              (import ./plugins.nix inputs)
+              nix2vim.overlay
+            ];
+          };
+
+
+          buildLuaConfigPlugin = { configDir, moduleName, vars ? null, replacements ? null, excludeFiles ? [ ] }:
+            let
+              pname = "${moduleName}";
+              luaSrc = builtins.filterSource
+                (path: type:
+                  (prev.lib.hasSuffix ".lua" path) &&
+                  ! (prev.lib.lists.any (x: baseNameOf path == x) excludeFiles))
+                configDir;
+            in
+            (prev.vimUtils.buildVimPluginFrom2Nix {
+              inherit pname;
+              version = "dev";
+              src = configDir;
+              postInstall =
+                let
+                  subs =
+                    pkgs.lib.concatStringsSep " "
+                      (pkgs.lib.lists.zipListsWith (f: t: "--subst-var-by ${f} ${t}") vars replacements);
+                in
+                '''' +
+                prev.lib.optionalString
+                  (vars != null)
+                  ''
+                    for filename in $(find $out -type f -print)
+                    do
+                      substituteInPlace $filename ${subs}
+                    done
+                  '';
+              meta = with prev.lib; {
+                homepage = "";
+                description = "polarmutex neovim configuration";
+                license = licenses.mit;
+                maintainers = [ maintainers.polarmutex ];
+              };
+            });
+
+        in
+        rec  {
+
+          neovim-lua-config-polar = (buildLuaConfigPlugin {
+            configDir = ./dotfiles;
+            moduleName = "polarmutex";
+            excludeFiles = [ ]; #if builtins.isNull config then [ ] else [ "user.lua" ];
+            vars = [
+              "beancount.beancount-language-server"
+              "cpp.clangd"
+              "go.gopls"
+              "json.jsonls"
+              "java.debug.plugin"
+              "java.jdt-language-server"
+              "lua.sumneko-lua-language-server"
+              "lua.stylua"
+              "nix.rnix"
+              "python.pyright"
+              "rust.rustup"
+              "svelte.svelte-language-server"
+              "typescript.typescript-language-server"
+            ];
+            replacements = [
+              (pkgs.beancount-language-server)
+              (pkgs.clang-tools)
+              (pkgs.gopls)
+              (pkgs.lib.getExe pkgs.nodePackages.vscode-json-languageserver)
+              (pkgs.fetchMavenArtifact
+                {
+                  groupId = "com.microsoft.java";
+                  artifactId = "com.microsoft.java.debug.plugin";
+                  version = "0.34.0";
+                  sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
+                }).jar
+              (pkgs.jdt-language-server)
+              (pkgs.sumneko-lua-language-server)
+              (pkgs.stylua)
+              (pkgs.lib.getExe pkgs.rnix-lsp)
+              (pkgs.pyright)
+              (pkgs.rustup)
+              (pkgs.lib.getExe pkgs.nodePackages.svelte-language-server)
+              (pkgs.lib.getExe pkgs.nodePackages.typescript-language-server)
+            ];
           });
-        lua-config-polar = (buildLuaConfig {
-          configDir = ./dotfiles;
-          moduleName = "polarmutex";
-          excludeFiles = [ ]; #if builtins.isNull config then [ ] else [ "user.lua" ];
-          vars = [
-            "beancount.beancount-language-server"
-            "cpp.clangd"
-            "go.gopls"
-            "json.jsonls"
-            "java.debug.plugin"
-            "java.jdt-language-server"
-            "lua.sumneko-lua-language-server"
-            "lua.stylua"
-            "nix.rnix"
-            "python.pyright"
-            "rust.rustup"
-            "svelte.svelte-language-server"
-            "typescript.typescript-language-server"
-          ];
-          replacements = [
-            (pkgs.beancount-language-server)
-            (pkgs.clang-tools)
-            (pkgs.gopls)
-            (pkgs.lib.getExe pkgs.nodePackages.vscode-json-languageserver)
-            (pkgs.fetchMavenArtifact
-              {
-                groupId = "com.microsoft.java";
-                artifactId = "com.microsoft.java.debug.plugin";
-                version = "0.34.0";
-                sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
-              }).jar
-            (pkgs.jdt-language-server)
-            (pkgs.sumneko-lua-language-server)
-            (pkgs.stylua)
-            (pkgs.lib.getExe pkgs.rnix-lsp)
-            (pkgs.pyright)
-            (pkgs.rustup)
-            (pkgs.lib.getExe pkgs.nodePackages.svelte-language-server)
-            (pkgs.lib.getExe pkgs.nodePackages.typescript-language-server)
-          ];
-        });
-      in
-      {
-        packages = {
-          default = self.packages."${system}".neovim-polar;
 
-          #
-          # Neovim Config
-          #
-          neovim-config-polar = lua-config-polar;
+          # neeeds updated
+          #neovim-server = pkgs.neovimBuilder {
+          #  package = pkgs.neovim-git;
+          #  enableViAlias = true;
+          #  enableVimAlias = true;
+          #  withNodeJs = true;
+          #  withPython3 = true;
+          #  imports = [
+          #    ./modules/aesthetics.nix
+          #    ./modules/essentials.nix
+          #    ./modules/git.nix
+          #    ./modules/lsp.nix
+          #    ./modules/treesitter.nix
+          #    ./modules/telescope.nix
+          #  ];
+          #};
 
-          #
-          # Using current wrapper in nixpkgs
-          # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/neovim/wrapper.nix
-          #
           neovim-polar =
             let
               neovimConfig =
@@ -344,7 +306,7 @@
                     EOF
                   '';
                   plugins = with pkgs.neovimPlugins; [
-                    { plugin = lua-config-polar; optional = false; }
+                    { plugin = self.packages."${prev.system}".neovim-lua-config-polar; optional = false; }
                     { plugin = blamer-nvim; optional = false; }
                     { plugin = cmp-buffer; optional = false; }
                     { plugin = cmp-nvim-lsp; optional = false; }
@@ -404,33 +366,9 @@
             in
             pkgs.wrapNeovimUnstable pkgs.neovim
               (neovimConfig // {
-                #extraName = "-polar";
-                #wrapperArgs = [
-                #"--add-flags"
-                #"--cmd 'set runtimepath^=${lua-config-polar}'"
-                #  "--add-flags"
-                #  "--cmd 'set packpath^=${self.packages."${system}".neovim-config-polar}/'"
-                #"--add-flags"
-                #"-u ${self.packages."${system}".neovim-config-polar}/init.lua"
-                #];
                 wrapRc = true;
-                #configure = {
-                #  customRC = ''
-                #    lua << EOF
-                #    vim.opt.runtimepath:prepend('${self.packages."${system}".neovim-polar-config}')
-                #    EOF
-                #    luafile ${self.packages."${system}".neovim-polar-config}/init.lua
-                #  '';
-                #  packages.myNeovimPackage = with pkgs.neovimPlugins; {
-                #    start = [
-                #      telescope-nvim
-                #    ];
-                #    opt = [ ];
-                #  };
-                #};
               });
 
-          #
           # Neovim instance to generate docs
           neovim-docgen =
             let
@@ -502,10 +440,32 @@
                 wrapRc = true;
               });
         };
+    } //
+    #flake-utils.lib.eachDefaultSystem
+    # awesome fails on arch darwin
+    flake-utils.lib.eachSystem [
+      "x86_64-linux"
+      "aarch64-linux"
+    ]
+      (system:
+      let
+        pkgs = import nixpkgs
+          {
+            inherit system;
+            overlays = [
+              self.overlays.default
+            ];
+          };
+      in
+      rec {
+        packages = with pkgs; {
+          default = pkgs.neovim-polar;
+          inherit neovim-lua-config-polar neovim-docgen neovim-polar;
+        };
 
         apps.defaultApp = {
           type = "app";
-          program = "${self.packages."${system}".neovim-polar}/bin/nvim";
+          program = "${pkgs.neovim-polar}/bin/nvim";
         };
 
         # check to see if any config errors ars displayed
@@ -523,7 +483,7 @@
             # Probably want to do something to ensure your config file is read, too
             # need git in path
             export HOME=$TMPDIR
-            ${self.packages."${system}".default}/bin/nvim --headless -c "q" 2> "$out/nvim-config.log"
+            ${pkgs.neovim-polar}/bin/nvim --headless -c "q" 2> "$out/nvim-config.log"
 
             if [ -n "$(cat "$out/nvim-config.log")" ]; then
                 while IFS= read -r line; do
@@ -544,7 +504,7 @@
             # Probably want to do something to ensure your config file is read, too
             # need git in path
             export HOME=$TMPDIR
-            ${self.packages."${system}".default}/bin/nvim --headless -c "lua require('polarmutex.health').nix_check()" -c "q" 2> "$out/nvim-health.log"
+            ${pkgs.neovim-polar}/bin/nvim --headless -c "lua require('polarmutex.health').nix_check()" -c "q" 2> "$out/nvim-health.log"
 
             if [ -n "$(cat "$out/nvim-health.log")" ]; then
                 while IFS= read -r line; do
