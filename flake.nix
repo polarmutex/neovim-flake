@@ -311,6 +311,7 @@
                     { plugin = cmp-buffer; optional = false; }
                     { plugin = cmp-nvim-lsp; optional = false; }
                     { plugin = cmp-path; optional = false; }
+                    { plugin = crates-nvim; optional = false; }
                     { plugin = diffview-nvim; optional = false; }
                     { plugin = fidget-nvim; optional = false; }
                     { plugin = gitsigns-nvim; optional = false; }
@@ -327,6 +328,7 @@
                     { plugin = nvim-web-devicons; optional = false; }
                     { plugin = plenary-nvim; optional = false; }
                     { plugin = popup-nvim; optional = false; }
+                    { plugin = rust-tools-nvim; optional = false; }
                     { plugin = telescope-nvim; optional = false; }
                     { plugin = telescope-dap-nvim; optional = false; }
                     {
