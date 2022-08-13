@@ -252,7 +252,7 @@
               "lua.stylua"
               "nix.rnix"
               "python.pyright"
-              "rust.rustup"
+              "rust.analyzer"
               "svelte.svelte-language-server"
               "typescript.typescript-language-server"
             ];
@@ -273,7 +273,7 @@
               (pkgs.stylua)
               (pkgs.lib.getExe pkgs.rnix-lsp)
               (pkgs.pyright)
-              (pkgs.rustup)
+              (pkgs.lib.getExe pkgs.rust-analyzer)
               (pkgs.lib.getExe pkgs.nodePackages.svelte-language-server)
               (pkgs.lib.getExe pkgs.nodePackages.typescript-language-server)
             ];

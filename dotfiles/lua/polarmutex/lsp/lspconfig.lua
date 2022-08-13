@@ -97,7 +97,7 @@ local servers = {
         cmd = { "@nix.rnix@" },
     },
     rust_analyzer = {
-        cmd = { "@rust.rustup@", "run", "nightly", "rust-analyzer" },
+        cmd = { "@rust.analyzer@" },
     },
     svelte = {
         cmd = { "@svelte.svelte-language-server@" },
