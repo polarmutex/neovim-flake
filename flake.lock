@@ -535,11 +535,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1659938613,
-        "narHash": "sha256-xQEglbatbfWB3f3PY7JOFCmk7rf7pj6SEkF5mGZhxFo=",
+        "lastModified": 1660420875,
+        "narHash": "sha256-pDX/c1Rq/fr4oVNmwLs2cl0JGnxqX8X2tpuHcYc9aHs=",
         "owner": "gytis-ivaskevicius",
         "repo": "nix2vim",
-        "rev": "28a289f4cd523aec1c680eab5cddb941086e8573",
+        "rev": "b52f028f5d0d7aea646fbdd5389d887b81c025e6",
         "type": "github"
       },
       "original": {
