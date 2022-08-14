@@ -55,6 +55,10 @@ function M.setup(client, buf)
             autocmd_format(false)
         end,
 
+        rust = function()
+            autocmd_format(false)
+        end,
+
         typescript = function()
             autocmd_format(false, function(clients)
                 return vim.tbl_filter(function(client)
@@ -78,13 +82,13 @@ function M.setup(client, buf)
     client.server_capabilities.document_formatting = enable
     -- format on save
     if client.server_capabilities.document_formatting then
-        --filetype_attach[filetype](client)
-        vim.cmd([[
-	  augroup LspFormat
-	    autocmd! * <buffer>
-	    autocmd BufWritePre <buffer> lua require("polarmutex.lsp.formatting").format()
-	  augroup END
-	]])
+        filetype_attach[filetype](client)
+        --vim.cmd([[
+        --augroup LspFormat
+        --autocmd! * <buffer>
+        --autocmd BufWritePre <buffer> lua require("polarmutex.lsp.formatting").format()
+        --augroup END
+        --]])
     end
 end
 

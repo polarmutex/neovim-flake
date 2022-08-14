@@ -3,6 +3,7 @@
 ---
 --- TODO
 --- - add nix check for nivm-treesiter and lspconfig
+--- - add spellcheck
 ---@brief ]]
 ---@tag polarmutex
 ---@config { ["name"] = "INTRODUCTION" }

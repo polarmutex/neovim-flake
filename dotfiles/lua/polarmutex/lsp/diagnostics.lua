@@ -5,10 +5,10 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSig
 
 vim.diagnostic.config({
     float = { source = "always" }, --TODO borders ?
-    virtual_text = false, -- , source = 'always'},
+    virtual_text = true, -- , source = 'always'},
     underline = true,
     signs = true,
-    update_in_insert = false,
+    update_in_insert = true,
     severity_sort = true,
 })
 
