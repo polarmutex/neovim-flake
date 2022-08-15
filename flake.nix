@@ -308,6 +308,7 @@
                   plugins = with pkgs.neovimPlugins; [
                     { plugin = self.packages."${prev.system}".neovim-lua-config-polar; optional = false; }
                     { plugin = blamer-nvim; optional = false; }
+                    { plugin = beancount-nvim; optional = false; }
                     { plugin = cmp-buffer; optional = false; }
                     { plugin = cmp-nvim-lsp; optional = false; }
                     { plugin = cmp-path; optional = false; }

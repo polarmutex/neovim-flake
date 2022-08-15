@@ -1,5 +1,6 @@
+local map = vim.keymap.set
 -- keymaps
-vim.keymap.set("n", "<leader><leader>", require("telescope.builtin").find_files, { desc = "Telescope: find_files" })
+map("n", "<leader><leader>", require("telescope.builtin").find_files, { desc = "Telescope: find_files" })
 --bb = cmd "Telescope buffers" "Get buffer list";
 --fb = cmd "Telescope file_browser" "Get buffer list";
 --gf = cmd "lua require('telescope.builtins').live_grep {default_text='function'}" "grep for functions only";
@@ -61,3 +62,5 @@ require("telescope").setup({
         --buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker;
     },
 })
+
+_ = require("telescope").load_extension("beancount")

@@ -6,6 +6,7 @@ docs.test = function()
     -- TODO: Fix the other files so that we can add them here.
     local input_files = {
         "./dotfiles/lua/polarmutex/init.lua",
+        "./dotfiles/after/plugin/beancount.lua",
     }
 
     local output_file = "./dotfiles/doc/polarmutex.txt"

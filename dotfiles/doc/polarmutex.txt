@@ -5,6 +5,15 @@ This is PolarMutex's neovim config
 
 TODO
 - add nix check for nivm-treesiter and lspconfig
+- add spellcheck
+
+
+================================================================================
+BEANCOUNT                                                 *polarmutex.beancount*
+
+keymaps:
+
+
 
 
  vim:tw=78:ts=8:ft=help:norl:
