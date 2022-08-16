@@ -2,6 +2,7 @@ local M = {}
 
 --- Run by checkhealt
 -- TODO
+local health = vim.health or require("health")
 function M.check()
     local report_info = vim.fn["health#report_info"]
     print("active clients")
@@ -11,6 +12,7 @@ function M.check()
         vim.fn["health#report_start"]("State of " .. config.name)
         report_info("Working directory: " .. config.root_dir)
     end
+    health.report_ok("OK")
 end
 
 function M.nix_check()

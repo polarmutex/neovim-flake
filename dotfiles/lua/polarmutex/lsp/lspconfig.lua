@@ -212,7 +212,8 @@ rt.setup({
 
         -- Whether to show hover actions inside the hover window
         -- This overrides the default hover handler
-        hover_with_actions = true,
+        -- TODO hover_with_actions is deprecated, please setup a keybind to :RustHoverActions in on_attach instead
+        --hover_with_actions = true,
 
         runnables = {
             -- whether to use telescope for selection menu or not
