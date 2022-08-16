@@ -4,7 +4,7 @@
 
   # Input source for our derivation
   inputs = {
-    nixpkgs.url = "github:teto/nixpkgs/vim-merge-cmds";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
 
     polar-nur = {

@@ -581,16 +581,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1660054919,
-        "narHash": "sha256-vrjYJ+Q0PkF0BXmw584/shoj4AJtQmZH4di+UW8q8Og=",
-        "owner": "teto",
+        "lastModified": 1660485612,
+        "narHash": "sha256-sSLW1KaB1adKTJn9+Ja3h3AaS7QCZyhUKiSUStcLg80=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "cc0ff183c6afe9951c8fdbf468ea26a9f6920f52",
+        "rev": "6512b21eabb4d52e87ea2edcf31a288e67b2e4f8",
         "type": "github"
       },
       "original": {
-        "owner": "teto",
-        "ref": "vim-merge-cmds",
+        "owner": "nixos",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
