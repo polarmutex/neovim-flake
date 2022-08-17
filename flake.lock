@@ -515,11 +515,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1660620229,
-        "narHash": "sha256-8M3eIbDfwJ5khzxKU06zWNfCN8NJd7dIRowg1oT4/cU=",
+        "lastModified": 1660711471,
+        "narHash": "sha256-KcSufGje9D2EWAFq5EkPQoDqzQsfNsSg/m5gIkS7IKU=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "d5d6ed311b001c8e11dc8d69f9be421d6a7e286e",
+        "rev": "bccb5de89da452d9136b3c813be584f15d3018ba",
         "type": "github"
       },
       "original": {
@@ -619,11 +619,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1660607161,
-        "narHash": "sha256-wFM5Jcu+y2Rd07b4D9xwiVG/9snF64es8uu82MAysqs=",
+        "lastModified": 1660639432,
+        "narHash": "sha256-2WDiboOCfB0LhvnDVMXOAr8ZLDfm3WdO54CkoDPwN1A=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a093c35beee0a64ad68312d747a4c49eaa5b1105",
+        "rev": "6c6409e965a6c883677be7b9d87a95fab6c3472e",
         "type": "github"
       },
       "original": {
@@ -649,11 +649,11 @@
     },
     "nixpkgs_8": {
       "locked": {
-        "lastModified": 1660607161,
-        "narHash": "sha256-wFM5Jcu+y2Rd07b4D9xwiVG/9snF64es8uu82MAysqs=",
+        "lastModified": 1660639432,
+        "narHash": "sha256-2WDiboOCfB0LhvnDVMXOAr8ZLDfm3WdO54CkoDPwN1A=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "a093c35beee0a64ad68312d747a4c49eaa5b1105",
+        "rev": "6c6409e965a6c883677be7b9d87a95fab6c3472e",
         "type": "github"
       },
       "original": {
@@ -902,11 +902,11 @@
         "wezterm-git-src": "wezterm-git-src"
       },
       "locked": {
-        "lastModified": 1660627403,
-        "narHash": "sha256-Xqxv9oyjFK4exntMyizHQ5kRcwlAyWJCVFgpmMVwRRM=",
+        "lastModified": 1660715005,
+        "narHash": "sha256-+zWbeYO0nezBL+BLU3d53q21HnuMiLLEWEfhqSfXS4Y=",
         "owner": "polarmutex",
         "repo": "nur",
-        "rev": "d23599d62dc61b6f5571fcedb1e5a4fca4993825",
+        "rev": "c6e952b088650957c42adc51d661d00094569d25",
         "type": "github"
       },
       "original": {
@@ -1001,11 +1001,11 @@
     "rubato-git": {
       "flake": false,
       "locked": {
-        "lastModified": 1660508762,
-        "narHash": "sha256-vZwNYsxSRp9+3vqT3lPXVNcEy9ETTQ/j4wB7HwRIB5c=",
+        "lastModified": 1660661904,
+        "narHash": "sha256-xYeZXLp6pIkArhp4n17snv4E46uwgTyJ0hiTGqMJ+BY=",
         "owner": "andOrlando",
         "repo": "rubato",
-        "rev": "d0a99a2d83cd18c725f3ac26c5b40c76fdd4e500",
+        "rev": "d486ee33a8b96ba76a4d948e341c7e89ba0554a5",
         "type": "github"
       },
       "original": {
