@@ -19,11 +19,11 @@
     "awesome-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1657641214,
-        "narHash": "sha256-SxydaQScu0kvBn3VOnT29/Sji0Y+7my+tO46mpMggAQ=",
+        "lastModified": 1660850536,
+        "narHash": "sha256-OBCUbkWEcWHokYNjfz4aRRkxr9rwGNkaKnovzoliFwU=",
         "owner": "awesomeWM",
         "repo": "awesome",
-        "rev": "b7bac1dc761f7e231355e76351500a97b27b6803",
+        "rev": "05a405b38bbcb8fa3b344d45d94d4f56b83c74df",
         "type": "github"
       },
       "original": {
@@ -39,11 +39,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1657572283,
-        "narHash": "sha256-tI9hFuum8P34x5ne1ewAuos4HMLyv2KmoigTE52FOus=",
+        "lastModified": 1660877432,
+        "narHash": "sha256-2Csu1BkiGQf0OVCheOF80onPQb/f6K0c8e51As+tknE=",
         "owner": "polarmutex",
         "repo": "beancount-language-server",
-        "rev": "34e5c9486428c122fc50fcf7a906ca97303671eb",
+        "rev": "d792236234b89cbd96fae95f3b1281ea95e0a662",
         "type": "github"
       },
       "original": {
@@ -515,11 +515,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1660774348,
-        "narHash": "sha256-P4sesAlXXx014fKwHqe+mxhKPxuOMRCdcWfUEVkyd4k=",
+        "lastModified": 1660832212,
+        "narHash": "sha256-uWp00IZPLQkagB2bp78zdT2iqf0uejjLesyz9kDiRp0=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "02e9b5a8eeaf2a4696dd68ab21b33b9fa7bd6a16",
+        "rev": "a5ed89c972a23c46eb3988fe8c2c8ae0d7ed844f",
         "type": "github"
       },
       "original": {
@@ -902,11 +902,11 @@
         "wezterm-git-src": "wezterm-git-src"
       },
       "locked": {
-        "lastModified": 1660801088,
-        "narHash": "sha256-E8EDZ6I8LxxDM5iN9qU+8ISGAKVsfnhGdmsQq0K3LXY=",
+        "lastModified": 1660887132,
+        "narHash": "sha256-IGk3mwK1bMX+D+6mC6c+9igfeYWh5XssvLS20L1EIUQ=",
         "owner": "polarmutex",
         "repo": "nur",
-        "rev": "b6041b3df5623308c37a2804f9a7be7bb5cfbcf8",
+        "rev": "3482861d813d17aad71608d8def94e42e39b1914",
         "type": "github"
       },
       "original": {
@@ -1001,11 +1001,11 @@
     "rubato-git": {
       "flake": false,
       "locked": {
-        "lastModified": 1660661904,
-        "narHash": "sha256-xYeZXLp6pIkArhp4n17snv4E46uwgTyJ0hiTGqMJ+BY=",
+        "lastModified": 1660831387,
+        "narHash": "sha256-1PBZlVlYhXo1JnrK4FUSDpWgNjnuJD85mj6efuCd/nI=",
         "owner": "andOrlando",
         "repo": "rubato",
-        "rev": "d486ee33a8b96ba76a4d948e341c7e89ba0554a5",
+        "rev": "41ef1ddedec79eba153f801ad2011fefc41784c6",
         "type": "github"
       },
       "original": {
@@ -1144,11 +1144,11 @@
     "wezterm-git-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1660745952,
-        "narHash": "sha256-Dz/gRO1o1Pcc5OO1ux/j4GNY+k3QbTDcIq1IWYtUtQU=",
+        "lastModified": 1660855800,
+        "narHash": "sha256-DJN6LP0Ie3mhqDwS3ozXRBWDkiyv7CMCOCECHWv54sY=",
         "ref": "main",
-        "rev": "0048209bcf1801f6e671307ea11615c992a6ca2e",
-        "revCount": 6150,
+        "rev": "eb65b5fb63412b6ec7ea66863018a2be799db083",
+        "revCount": 6151,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"
