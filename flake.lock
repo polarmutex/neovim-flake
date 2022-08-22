@@ -682,11 +682,11 @@
     "null-ls-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661174802,
-        "narHash": "sha256-Yih2zlphJSWDVaoWj98UrfN0l7jyyiaTD7WawW+hL3k=",
+        "lastModified": 1661176339,
+        "narHash": "sha256-X745qEBnxeacbe3pqB1XHbXVmbD1noKy80C0y+OWEE8=",
         "owner": "jose-elias-alvarez",
         "repo": "null-ls.nvim",
-        "rev": "349ec17344455f46b3468be7187fd82da2c5e7b5",
+        "rev": "753ad51790a966b42997ac935e26573fb6d5864a",
         "type": "github"
       },
       "original": {
