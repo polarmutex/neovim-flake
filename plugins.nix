@@ -37,6 +37,7 @@ with inputs; {
     nvim-dap-virtual-text = (withSrc prev.vimPlugins.nvim-dap-virtual-text nvim-dap-virtual-text-src);
     nvim-jdtls = plugin "nvim-jdtls" nvim-jdtls-src;
     nvim-lspconfig = (withSrc prev.vimPlugins.nvim-lspconfig nvim-lspconfig-src);
+    nvim-notify = plugin "nvim-notify" nvim-notify-src;
     nvim-treesitter = (withSrc prev.vimPlugins.nvim-treesitter nvim-treesitter-src);
     nvim-treesitter-context = plugin "nvim-treesitter-context" nvim-treesitter-context-src;
     nvim-treesitter-playground = (withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);

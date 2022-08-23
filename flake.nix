@@ -114,6 +114,10 @@
       url = "github:neovim/nvim-lspconfig";
       flake = false;
     };
+    nvim-notify-src = {
+      url = "github:rcarriga/nvim-notify";
+      flake = false;
+    };
     nvim-treesitter-src = {
       url = "github:nvim-treesitter/nvim-treesitter";
       flake = false;
@@ -326,6 +330,7 @@
                     { plugin = nvim-dap-virtual-text; optional = false; }
                     { plugin = nvim-jdtls; optional = false; }
                     { plugin = nvim-lspconfig; optional = false; }
+                    { plugin = nvim-notify; optional = false; }
                     { plugin = nvim-web-devicons; optional = false; }
                     { plugin = plenary-nvim; optional = false; }
                     { plugin = popup-nvim; optional = false; }

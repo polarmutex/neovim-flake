@@ -807,6 +807,22 @@
         "type": "github"
       }
     },
+    "nvim-notify-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659428375,
+        "narHash": "sha256-rYSObGmtJ2D+OyhhUjHhHYGyQxC04y4tudP74ROYnhs=",
+        "owner": "rcarriga",
+        "repo": "nvim-notify",
+        "rev": "60bb6bfd6992549ee5336bbb761705b62797ce1d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rcarriga",
+        "repo": "nvim-notify",
+        "type": "github"
+      }
+    },
     "nvim-treesitter-context-src": {
       "flake": false,
       "locked": {
@@ -981,6 +997,7 @@
         "nvim-dap-virtual-text-src": "nvim-dap-virtual-text-src",
         "nvim-jdtls-src": "nvim-jdtls-src",
         "nvim-lspconfig-src": "nvim-lspconfig-src",
+        "nvim-notify-src": "nvim-notify-src",
         "nvim-treesitter-context-src": "nvim-treesitter-context-src",
         "nvim-treesitter-playground-src": "nvim-treesitter-playground-src",
         "nvim-treesitter-src": "nvim-treesitter-src",
