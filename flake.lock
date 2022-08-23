@@ -1050,6 +1050,38 @@
         "type": "github"
       }
     },
+    "gitworktree-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1640376288,
+        "narHash": "sha256-pkJkdt2XC1w0s1VpnxJFnoYiEgD01MZ7a5i2AlU1hMw=",
+        "owner": "ThePrimeagen",
+        "repo": "git-worktree.nvim",
+        "rev": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThePrimeagen",
+        "repo": "git-worktree.nvim",
+        "type": "github"
+      }
+    },
+    "harpoon-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1660098996,
+        "narHash": "sha256-y1jkMa/EkYfHsGXoZgvO4o6NVzWDRXVMCWP02UhLzEk=",
+        "owner": "ThePrimeagen",
+        "repo": "harpoon",
+        "rev": "f4aff5bf9b512f5a85fe20eb1dcf4a87e512d971",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThePrimeagen",
+        "repo": "harpoon",
+        "type": "github"
+      }
+    },
     "heirline-nvim-src": {
       "flake": false,
       "locked": {
@@ -3045,6 +3077,8 @@
         "fidget-nvim-src": "fidget-nvim-src",
         "flake-utils": "flake-utils",
         "gitsigns-nvim-src": "gitsigns-nvim-src",
+        "gitworktree-nvim-src": "gitworktree-nvim-src",
+        "harpoon-src": "harpoon-src",
         "heirline-nvim-src": "heirline-nvim-src",
         "kanagawa-nvim-src": "kanagawa-nvim-src",
         "lspkind-nvim-src": "lspkind-nvim-src",
@@ -3076,7 +3110,8 @@
         "telescope-ui-select-src": "telescope-ui-select-src_3",
         "tokyonight-nvim-src": "tokyonight-nvim-src_3",
         "tree-sitter-lua-src": "tree-sitter-lua-src_3",
-        "trouble-nvim-src": "trouble-nvim-src_3"
+        "trouble-nvim-src": "trouble-nvim-src_3",
+        "vim-be-good-src": "vim-be-good-src"
       }
     },
     "rubato-git": {
@@ -3505,6 +3540,22 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "vim-be-good-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1615893947,
+        "narHash": "sha256-ed/k5xwhFvzWYG4KEZu8GdbABPqH481cMT8aEu3C1ag=",
+        "owner": "ThePrimeagen",
+        "repo": "vim-be-good",
+        "rev": "bc499a06c14c729b22a6cc7e730a9fbc44d4e737",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ThePrimeagen",
+        "repo": "vim-be-good",
         "type": "github"
       }
     },

@@ -62,6 +62,14 @@
       url = "github:lewis6991/gitsigns.nvim";
       flake = false;
     };
+    gitworktree-nvim-src = {
+      url = "github:ThePrimeagen/git-worktree.nvim";
+      flake = false;
+    };
+    harpoon-src = {
+      url = "github:ThePrimeagen/harpoon";
+      flake = false;
+    };
     heirline-nvim-src = {
       url = "github:rebelot/heirline.nvim";
       flake = false;
@@ -172,6 +180,10 @@
     };
     trouble-nvim-src = {
       url = "github:folke/trouble.nvim";
+      flake = false;
+    };
+    vim-be-good-src = {
+      url = "github:ThePrimeagen/vim-be-good";
       flake = false;
     };
   };
@@ -320,6 +332,8 @@
                     { plugin = diffview-nvim; optional = false; }
                     { plugin = fidget-nvim; optional = false; }
                     { plugin = gitsigns-nvim; optional = false; }
+                    { plugin = gitworktree-nvim; optional = false; }
+                    { plugin = harpoon; optional = false; }
                     { plugin = heirline-nvim; optional = false; }
                     { plugin = kanagawa-nvim; optional = false; }
                     { plugin = neogit; optional = false; }
@@ -337,6 +351,7 @@
                     { plugin = rust-tools-nvim; optional = false; }
                     { plugin = telescope-nvim; optional = false; }
                     { plugin = telescope-dap-nvim; optional = false; }
+                    { plugin = vim-be-good; optional = false; }
                     {
                       plugin = (nvim-treesitter.withPlugins
                         (plugins:

@@ -24,6 +24,8 @@ with inputs; {
     diffview-nvim = plugin "diffview-nvim" diffview-nvim-src;
     fidget-nvim = plugin "fidget-nvim" fidget-nvim-src;
     gitsigns-nvim = plugin "gitsigns-nvim" gitsigns-nvim-src;
+    gitworktree-nvim = plugin "gitworktree-nvim" gitworktree-nvim-src;
+    harpoon = plugin "harpoon" harpoon-src;
     heirline-nvim = plugin "heirline-nvim" heirline-nvim-src;
     kanagawa-nvim = plugin "kanagawa-nvim" kanagawa-nvim-src;
     lspkind-nvim = (withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
@@ -51,6 +53,6 @@ with inputs; {
     tokyonight-nvim = plugin "tokyonight-nvim" tokyonight-nvim-src;
     tree-sitter-lua = plugin "tree-sitter-lua" tree-sitter-lua-src;
     trouble-nvim = plugin "trouble-nvim" trouble-nvim-src;
-    which-key-nvim = plugin "which-key-nvim" which-key-nvim-src;
+    vim-be-good = plugin "vim-be-good" vim-be-good-src;
   };
 }
