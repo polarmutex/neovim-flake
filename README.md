@@ -93,3 +93,4 @@
 
 ## Reference
 - [nixos vim plugins](https://github.com/NixOS/nixpkgs/blob/nixos-21.11/pkgs/misc/vim-plugins/generated.nix)
+- [help example](https://github.com/ecosse3/nvim/blob/master/lua/plugins/git/worktree.lua)
