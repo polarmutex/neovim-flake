@@ -1531,11 +1531,11 @@
     "kanagawa-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661108356,
-        "narHash": "sha256-XRBcUi5B17hR1heYD6RmtWn3YznCd63Ycmd6rRuagdY=",
+        "lastModified": 1661358116,
+        "narHash": "sha256-3ddH8InjNuhyFneJNVD1j8dtP3ImOLql7HQbreLcBDQ=",
         "owner": "rebelot",
         "repo": "kanagawa.nvim",
-        "rev": "97b96c6d740161cb624ee8eae466b1e35782540e",
+        "rev": "ec3b133414388b0bfea3f33ca0bff10538aef8ac",
         "type": "github"
       },
       "original": {
