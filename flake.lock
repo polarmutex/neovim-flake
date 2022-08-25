@@ -3429,11 +3429,11 @@
     "nvim-lspconfig-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661331141,
-        "narHash": "sha256-WACTeB3cmptsNQu9FBibNsNCo6T7fNtukpua2yH+mik=",
+        "lastModified": 1661382490,
+        "narHash": "sha256-cfOzQ89jyEBexEiIEyOyr7oj8W8o8Mo+vXAi5Ms6jE4=",
         "owner": "neovim",
         "repo": "nvim-lspconfig",
-        "rev": "4b5ed82dd0fe59fef15ce183978f2597a03237f1",
+        "rev": "4d61f9ecce8309331f71317b13e574a27916f54b",
         "type": "github"
       },
       "original": {
