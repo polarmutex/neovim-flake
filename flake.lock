@@ -5797,11 +5797,11 @@
     "plenary-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1659369288,
-        "narHash": "sha256-G84JTsj06vwidfEyaNIUvLLaKM9HB5zNAexCDWbGfu4=",
+        "lastModified": 1661514868,
+        "narHash": "sha256-5cuFW8HaPR/vx0P13CrTXi1WBxSSJK/mxDxbE7vtIFk=",
         "owner": "nvim-lua",
         "repo": "plenary.nvim",
-        "rev": "31807eef4ed574854b8a53ae40ea3292033a78ea",
+        "rev": "a3dafaa937921a4eb2ae65820c3479ab561e9ba3",
         "type": "github"
       },
       "original": {
