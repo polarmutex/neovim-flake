@@ -47,6 +47,10 @@ function M.setup(client, buf)
             autocmd_format(false)
         end,
 
+        json = function()
+            autocmd_format(false)
+        end,
+
         lua = function()
             autocmd_format(false)
         end,
@@ -56,6 +60,10 @@ function M.setup(client, buf)
         end,
 
         rust = function()
+            autocmd_format(false)
+        end,
+
+        svelte = function()
             autocmd_format(false)
         end,
 

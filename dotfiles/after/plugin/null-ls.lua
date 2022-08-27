@@ -1,5 +1,7 @@
 local nls = require("null-ls")
 local h = require("null-ls.helpers")
+local cmd_resolver = require("null-ls.helpers.command_resolver")
+local u = require("null-ls.utils")
 
 nls.setup({
     debounce = 150,
@@ -20,19 +22,46 @@ nls.setup({
         }),
         --nls.builtins.formatting.google_java_format,
         --nls.builtins.diagnostics.eslint_d,
-        --nls.builtins.formatting.prettier_d_slim.with({
-        --    filetypes = {
-        --        "astro",
-        --        "svelte",
-        --        "javascript",
-        --        "typescript",
-        --        "css",
-        --        "html",
-        --        "json",
-        --        "yaml",
-        --        --        "markdown",
-        --    },
-        --}),
+        nls.builtins.formatting.prettier_d_slim.with({
+            generator_opts = {
+                command = "@js.prettier_d_slim@/bin/prettier_d_slim",
+                args = h.range_formatting_args_factory(
+                    { "--stdin", "--stdin-filepath", "$FILENAME" },
+                    "--range-start",
+                    "--range-end",
+                    { row_offset = -1, col_offset = -1 }
+                ),
+                to_stdin = true,
+                dynamic_command = cmd_resolver.from_node_modules,
+                cwd = h.cache.by_bufnr(function(params)
+                    return u.root_pattern(
+                        -- https://prettier.io/docs/en/configuration.html
+                        ".prettierrc",
+                        ".prettierrc.json",
+                        ".prettierrc.yml",
+                        ".prettierrc.yaml",
+                        ".prettierrc.json5",
+                        ".prettierrc.js",
+                        ".prettierrc.cjs",
+                        ".prettier.config.js",
+                        ".prettier.config.cjs",
+                        ".prettierrc.toml",
+                        "package.json"
+                    )(params.bufname)
+                end),
+            },
+            filetypes = {
+                "astro",
+                "svelte",
+                "javascript",
+                "typescript",
+                "css",
+                "html",
+                "json",
+                "yaml",
+                --        "markdown",
+            },
+        }),
         --nls.builtins.diagnostics.shellcheck,
         --nls.builtins.diagnostics.markdownlint,
         --nls.builtins.diagnostics.selene,

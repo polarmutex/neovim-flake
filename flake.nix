@@ -264,6 +264,7 @@
               "json.jsonls"
               "java.debug.plugin"
               "java.jdt-language-server"
+              "js.prettier_d_slim"
               "lua.sumneko-lua-language-server"
               "lua.stylua"
               "nix.rnix"
@@ -285,6 +286,7 @@
                   sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
                 }).jar
               (pkgs.jdt-language-server)
+              (pkgs.nodePackages.prettier_d_slim)
               (pkgs.sumneko-lua-language-server)
               (pkgs.stylua)
               (pkgs.lib.getExe pkgs.rnix-lsp)
