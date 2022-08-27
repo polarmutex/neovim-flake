@@ -101,7 +101,7 @@ local servers = {
     --    cmd = { "@rust.analyzer@" },
     --},
     svelte = {
-        cmd = { "@svelte.svelte-language-server@" },
+        cmd = { "@svelte.svelte-language-server@", "--stdio" },
         settings = {
             svelte = {
                 plugin = {
