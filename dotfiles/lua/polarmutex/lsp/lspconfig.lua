@@ -88,7 +88,7 @@ local servers = {
         cmd = { "@go.gopls@/bin/gopls" },
     },
     jsonls = {
-        cmd = { "@json.jsonls@" },
+        cmd = { "@json.jsonls@", "--stdio" },
     },
     pyright = {
         cmd = { "@python.pyright@/bin/pyright-langserver", "--stdio" },
