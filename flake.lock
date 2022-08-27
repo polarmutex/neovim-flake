@@ -1083,11 +1083,11 @@
     "comment-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661319142,
-        "narHash": "sha256-7pKxiE49VbgJnQFhYiMVVbObxmg1wxUwFXeoqWXwFAY=",
+        "lastModified": 1661581033,
+        "narHash": "sha256-npc6f3rw2UQbe2qX21RrOzIRDggem83ZQPQE8Z2iVmk=",
         "owner": "numToStr",
         "repo": "Comment.nvim",
-        "rev": "728f38ef5b9d77f310fc9d56f87582c24111f793",
+        "rev": "80e7746e42fa685077a7941e9022308c7ad6adf8",
         "type": "github"
       },
       "original": {
