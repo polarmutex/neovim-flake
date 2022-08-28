@@ -7405,11 +7405,11 @@
     "nvim-treesitter-playground-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661630663,
-        "narHash": "sha256-PfDoAlGy/dMyEQlHPMS3c8Ce4/5Lhx78wdqXifTyfOs=",
+        "lastModified": 1661677553,
+        "narHash": "sha256-LW+iNnT2dV6Lk95xFzMix++E1szbDOSqbArY3wRI8bA=",
         "owner": "nvim-treesitter",
         "repo": "playground",
-        "rev": "a0aeb6af82b087b37aeed359b68df3e8f594967f",
+        "rev": "90d2b3e1729363f96ce2c23f16129534df893bbf",
         "type": "github"
       },
       "original": {
