@@ -68,10 +68,8 @@ function M.setup(client, buf)
         end,
 
         typescript = function()
-            autocmd_format(false, function(clients)
-                return vim.tbl_filter(function(client)
-                    return client.name ~= "tsserver"
-                end, clients)
+            autocmd_format(false, function(client)
+                return client.name ~= "tsserver"
             end)
         end,
     }, {
