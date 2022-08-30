@@ -1911,11 +1911,11 @@
     "diffview-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661107237,
-        "narHash": "sha256-spSyywNEz1XCKI4h41Jj8HzIM3fMqaykzHCgZBSlUwI=",
+        "lastModified": 1661802712,
+        "narHash": "sha256-pAQbHjb6VOWyCihy1WrbUQkYqk9Bs8h5kYgGNwNpNME=",
         "owner": "sindrets",
         "repo": "diffview.nvim",
-        "rev": "04cdfafee557c84e01724de8c6a4f24d40f7414f",
+        "rev": "f4931669d2cfe16c2bff6443fd7b12c9aa8687a5",
         "type": "github"
       },
       "original": {
