@@ -8680,11 +8680,11 @@
     "nvim-cmp-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661235692,
-        "narHash": "sha256-EzjqblEgeu3K7TajXpR/WE4Ns3OxfevkDGco7KJxPfA=",
+        "lastModified": 1661917363,
+        "narHash": "sha256-yL9f6gKW3IVH1PNQeZPxXEJqJwLq4iuCOnZXABNZZpc=",
         "owner": "hrsh7th",
         "repo": "nvim-cmp",
-        "rev": "058100d81316239f3874064064f0f0c5d43c2103",
+        "rev": "b5885696b1f2cbdc9f523cc09c2a786919de07d5",
         "type": "github"
       },
       "original": {
