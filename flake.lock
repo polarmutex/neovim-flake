@@ -9493,11 +9493,11 @@
     "nvim-cmp-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661917363,
-        "narHash": "sha256-yL9f6gKW3IVH1PNQeZPxXEJqJwLq4iuCOnZXABNZZpc=",
+        "lastModified": 1662085773,
+        "narHash": "sha256-dOuedHmd8YIBuY6S+RV6dby39lhX7TH0XUk7de+rWa4=",
         "owner": "hrsh7th",
         "repo": "nvim-cmp",
-        "rev": "b5885696b1f2cbdc9f523cc09c2a786919de07d5",
+        "rev": "33fbb2c3d2c512bd79ea03cf11fea405cbe618a9",
         "type": "github"
       },
       "original": {
