@@ -439,7 +439,7 @@ local StatusLines = {
         end,
     },
 
-    init = utils.pick_child_on_condition,
+    fallback = false,
 
     GitStatusline,
     SpecialStatusline,
@@ -447,7 +447,7 @@ local StatusLines = {
 }
 
 local WinBar = {
-    init = utils.pick_child_on_condition,
+    fallback = false,
     {
         condition = function()
             return conditions.buffer_matches({
