@@ -13813,11 +13813,11 @@
     "plenary-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661514868,
-        "narHash": "sha256-5cuFW8HaPR/vx0P13CrTXi1WBxSSJK/mxDxbE7vtIFk=",
+        "lastModified": 1662196864,
+        "narHash": "sha256-qIfsQScKdwrVXUYry+RDjoMoKLuhlsw1GHOVoeOphfo=",
         "owner": "nvim-lua",
         "repo": "plenary.nvim",
-        "rev": "a3dafaa937921a4eb2ae65820c3479ab561e9ba3",
+        "rev": "4b66054e75356ac0b909bbfee9c682e703f535c2",
         "type": "github"
       },
       "original": {
