@@ -14050,11 +14050,11 @@
         "wezterm-git-src": "wezterm-git-src_14"
       },
       "locked": {
-        "lastModified": 1662183351,
-        "narHash": "sha256-WPGQLW0RnIowMqurhsRtxo49NRxwg83iCAyN7ZcTMSc=",
+        "lastModified": 1662236149,
+        "narHash": "sha256-5pYSZAeKMrwcN4UoKpvla8dcmr8wLbD2H2V3Nhovb2g=",
         "owner": "polarmutex",
         "repo": "nur",
-        "rev": "d2e1a415112cd6259275b9a43d2781f057a03753",
+        "rev": "1583e639e2a160f332a9fdff97241f60d6fbb33c",
         "type": "github"
       },
       "original": {
