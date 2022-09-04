@@ -2703,11 +2703,11 @@
     "comment-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661581033,
-        "narHash": "sha256-npc6f3rw2UQbe2qX21RrOzIRDggem83ZQPQE8Z2iVmk=",
+        "lastModified": 1662294177,
+        "narHash": "sha256-3oC/gFRLBRs3O74JNiRxhdTnSQ8s5U1uKzV4siQ3Jts=",
         "owner": "numToStr",
         "repo": "Comment.nvim",
-        "rev": "80e7746e42fa685077a7941e9022308c7ad6adf8",
+        "rev": "30d23aa2e1ba204a74d5dfb99777e9acbe9dd2d6",
         "type": "github"
       },
       "original": {
