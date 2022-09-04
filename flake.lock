@@ -12664,11 +12664,11 @@
     "nvim-dap-ui-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1659473372,
-        "narHash": "sha256-sn7h7ScgFEBb1ZeLAq5YPK+b8T3h2AxEGfFRv6SGhPM=",
+        "lastModified": 1662286240,
+        "narHash": "sha256-pIciPUGhAHpNsN4/k6wZxB1QN5XiepB7EZKNcJ5f3Ac=",
         "owner": "rcarriga",
         "repo": "nvim-dap-ui",
-        "rev": "225115ae986b39fdaffaf715e571dd43b3ac9670",
+        "rev": "01ddba4b12d8e29d8909aa6b0237c48f062d22cb",
         "type": "github"
       },
       "original": {
