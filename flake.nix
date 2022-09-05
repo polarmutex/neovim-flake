@@ -4,7 +4,8 @@
 
   # Input source for our derivation
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:polarmutex/nixpkgs/rplugin-issue";
     flake-utils.url = "github:numtide/flake-utils";
 
     polar-nur = {
