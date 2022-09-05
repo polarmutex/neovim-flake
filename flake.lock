@@ -6051,11 +6051,11 @@
     "heirline-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662236982,
-        "narHash": "sha256-/B6Lz0xpuk8Z92CUqeMRvf2x/QUE2gQFWuQ4cwCOEQ0=",
+        "lastModified": 1662402658,
+        "narHash": "sha256-BbAxCoyVNxZ9fJZkF9yN0Ti4b5ACtM0g9dX6Jd/G3KA=",
         "owner": "rebelot",
         "repo": "heirline.nvim",
-        "rev": "7d8817abbb7aea98bffd831062f933d997056481",
+        "rev": "0197b6529d26dc94c97349cde408b00eb8d0d440",
         "type": "github"
       },
       "original": {
