@@ -4031,11 +4031,11 @@
     "diffview-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662550078,
-        "narHash": "sha256-DkxoMBdRZNlFWpKBidYYDaSiFjeht43Q5ud5iQ1Hd0c=",
+        "lastModified": 1662637988,
+        "narHash": "sha256-7+ZT9DPdYoMtc45OeHt9l+7I3lFMbor5u9Ww3LgEQeM=",
         "owner": "sindrets",
         "repo": "diffview.nvim",
-        "rev": "a4796a82e4da4c66476641012648c29e0b62a4ae",
+        "rev": "be476758db1126632a62c8ef64113c931d763fbc",
         "type": "github"
       },
       "original": {
