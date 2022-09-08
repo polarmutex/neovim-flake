@@ -3727,11 +3727,11 @@
     "crates-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662624456,
-        "narHash": "sha256-TGEC9BHNXsePKENmQjRxc3MTjhJGxu7afH0qR8/gJC4=",
+        "lastModified": 1662650787,
+        "narHash": "sha256-qlJ9AOZHt81XwOXLPbTovSmQhUeokwXiwEvlZ4VSSrE=",
         "owner": "saecki",
         "repo": "crates.nvim",
-        "rev": "49808e2c03516d7f6290f033b004d57494c824d2",
+        "rev": "003442e2448870f6f2fab6ec7ac7b4de21e6d1d4",
         "type": "github"
       },
       "original": {
