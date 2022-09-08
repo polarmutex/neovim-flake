@@ -10146,11 +10146,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1662641487,
-        "narHash": "sha256-RBkh1e6+Ld3QUwXlbGjjPiAVR/lGh13uCwGDr4eB+l0=",
+        "lastModified": 1662659200,
+        "narHash": "sha256-F5heU45zp86sEunTppgg6gc8D1uH6x77EGSOEtO2f1I=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "bb35422659bdc619d95cb87554632018a5a15636",
+        "rev": "79a9b0067131d264d79cf15ce50e04ff14c2c816",
         "type": "github"
       },
       "original": {
