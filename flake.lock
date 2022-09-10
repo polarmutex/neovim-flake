@@ -4455,11 +4455,11 @@
     "diffview-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662637988,
-        "narHash": "sha256-7+ZT9DPdYoMtc45OeHt9l+7I3lFMbor5u9Ww3LgEQeM=",
+        "lastModified": 1662832056,
+        "narHash": "sha256-3nmHFY6SsSBUhz6Gz43NhlHgh6cbriozOcESeEN7C8w=",
         "owner": "sindrets",
         "repo": "diffview.nvim",
-        "rev": "be476758db1126632a62c8ef64113c931d763fbc",
+        "rev": "6da7a472366c4fb3bcb81ab3ab809ec33a1a7634",
         "type": "github"
       },
       "original": {
