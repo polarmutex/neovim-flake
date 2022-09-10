@@ -10922,11 +10922,11 @@
     "neogit-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1661064465,
-        "narHash": "sha256-ZjoAvIHiIWze0H8mcJAj2mDyAONYikJI39Vbkvx10qg=",
+        "lastModified": 1662795802,
+        "narHash": "sha256-ddXbjLCq0m10U437lmIg8iw12J1AsPDkNREL55RZ86E=",
         "owner": "TimUntersberger",
         "repo": "neogit",
-        "rev": "1843330963cc0299fd453145248681f3d33862b3",
+        "rev": "64245bb7f577bad0308d77dc1116ce7d8428f27f",
         "type": "github"
       },
       "original": {
