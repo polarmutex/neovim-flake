@@ -1,7 +1,7 @@
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+vim.fn.sign_define("DiagnosticError", { text = "", texthl = "DiagnostinError" })
+vim.fn.sign_define("DiagnosticWarn", { text = "", texthl = "DiagnosticWarn" })
+vim.fn.sign_define("DiagnosticInfo", { text = "", texthl = "DiagnosticInfo" })
+vim.fn.sign_define("DiagnosticHint", { text = "", texthl = "DiagnosticHint" })
 
 vim.diagnostic.config({
     float = { source = "always" }, --TODO borders ?
