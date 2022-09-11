@@ -354,6 +354,7 @@
                     { plugin = rust-tools-nvim; optional = false; }
                     { plugin = telescope-nvim; optional = false; }
                     { plugin = telescope-dap-nvim; optional = false; }
+                    { plugin = tokyonight-nvim; optional = false; }
                     { plugin = vim-be-good; optional = false; }
                     {
                       plugin = (nvim-treesitter.withPlugins

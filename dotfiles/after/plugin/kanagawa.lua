@@ -9,4 +9,4 @@ require("kanagawa").setup({
     overrides = overrides,
     colors = my_colors,
 })
-vim.cmd([[colorscheme kanagawa]])
+--vim.cmd([[colorscheme kanagawa]])

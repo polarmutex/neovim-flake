@@ -24571,11 +24571,11 @@
     "tokyonight-nvim-src_21": {
       "flake": false,
       "locked": {
-        "lastModified": 1640940199,
-        "narHash": "sha256-EUiuGaX//mqv8v+UWfOQwxvV6UaQq1ZjdlqOpQAE7+c=",
+        "lastModified": 1662841127,
+        "narHash": "sha256-goR/Ty99dhygrNYAIuhWdujaVzoPz8LOwP+o03/Jpuw=",
         "owner": "folke",
         "repo": "tokyonight.nvim",
-        "rev": "8223c970677e4d88c9b6b6d81bda23daf11062bb",
+        "rev": "ffa77681c36755bfc727b759dd4ec17b708ffabf",
         "type": "github"
       },
       "original": {

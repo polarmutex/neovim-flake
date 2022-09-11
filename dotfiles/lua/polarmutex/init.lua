@@ -14,9 +14,20 @@ require("polarmutex.lsp")
 local api = vim.api
 
 --- Remove all trailing whitespace on save
+--function Trim()
+-- Save cursor position
+--    local _, lnum, col, off, _ = unpack(vim.fn.getcurpos())
+-- Trim trailing whitespace
+--    vim.cmd([[keeppatterns %s#\s\+$##e]])
+-- Trim trailing blank lines
+--vim.cmd [[keeppatterns vg#\_s*\S#d]]
+-- Restore cursor position
+--    vim.fn.cursor(lnum, col, off)
+--end
 local TrimWhiteSpaceGrp = api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })
 api.nvim_create_autocmd("BufWritePre", {
     command = [[:%s/\s\+$//e]],
+    --callback = Trim(),
     group = TrimWhiteSpaceGrp,
 })
 
