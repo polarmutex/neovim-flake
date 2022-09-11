@@ -18789,11 +18789,11 @@
     "nvim-dap-ui-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662493219,
-        "narHash": "sha256-aT8AH7+yS8tK7XixYq9BLg2leCm3ctQl76yYmzAwlJQ=",
+        "lastModified": 1662893068,
+        "narHash": "sha256-JFbXTl1JtT0Z1MWWyA6DpD19N/mORDguc+d864WWU4w=",
         "owner": "rcarriga",
         "repo": "nvim-dap-ui",
-        "rev": "ce8894c586e904ce0d00fcae1a7124132810a206",
+        "rev": "ebebd429f88bcf656d4c78dec201a8be73a76156",
         "type": "github"
       },
       "original": {
