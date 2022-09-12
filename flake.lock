@@ -9461,11 +9461,11 @@
     "lspkind-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1650298271,
-        "narHash": "sha256-0103K5lnzWCyuT/qwiBUo5PJ7lUX7fo+zNeEnQClI7A=",
+        "lastModified": 1662982341,
+        "narHash": "sha256-ftbGVJR/e42B66BF9WoN7Uo7CJ+NmxoSjG/Yy9g/Flo=",
         "owner": "onsails",
         "repo": "lspkind-nvim",
-        "rev": "57e5b5dfbe991151b07d272a06e365a77cc3d0e7",
+        "rev": "7a41b9830dd97b6b56829ca3ba8f11ad1751da45",
         "type": "github"
       },
       "original": {
