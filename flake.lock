@@ -8019,11 +8019,11 @@
     "gitsigns-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1662037601,
-        "narHash": "sha256-kyiQoboYq4iNLOj1iKA2cfXQ9FFiRYdvf55bX5Xvj8A=",
+        "lastModified": 1663058277,
+        "narHash": "sha256-pbH1s6OntOJvM9BwIy34yHdmltp0zIF6Q3ytBOt3Rv8=",
         "owner": "lewis6991",
         "repo": "gitsigns.nvim",
-        "rev": "d7e0bcbe45bd9d5d106a7b2e11dc15917d272c7a",
+        "rev": "e1748ae89a3b5ac0125122a3037028dfead2031f",
         "type": "github"
       },
       "original": {
