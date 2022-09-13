@@ -23365,11 +23365,11 @@
         "wezterm-git-src": "wezterm-git-src_23"
       },
       "locked": {
-        "lastModified": 1662963652,
-        "narHash": "sha256-1AHLYcWR5Ziu8bR7EETqXQ21RFLCzYsKpvKeXbOPomU=",
+        "lastModified": 1663015024,
+        "narHash": "sha256-gTzG9qreYATy7dyCf8WrXclBWJEnlW1a2Gh5mztMcmQ=",
         "owner": "polarmutex",
         "repo": "nur",
-        "rev": "42fe888b1c68842c30c07581a2cafc3a8ecd078b",
+        "rev": "4a9a95e657aed1676fea30ba8cd22a40bd94a2dd",
         "type": "github"
       },
       "original": {
