@@ -19021,11 +19021,11 @@
     "null-ls-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1663092901,
-        "narHash": "sha256-hY+fQs5WoI1hGQXTpWgn9Uq1BJvHYwfx7b0845rmvGE=",
+        "lastModified": 1663099327,
+        "narHash": "sha256-80fpgTxfGfszoosb9ZKcpnMyNQTYcp2aeLY1QMoD1wM=",
         "owner": "jose-elias-alvarez",
         "repo": "null-ls.nvim",
-        "rev": "43cf6d732b4e7e550ce8f9f46570e5eb25a19025",
+        "rev": "e755b1c20396ebb0762985142dfc04690663201f",
         "type": "github"
       },
       "original": {
