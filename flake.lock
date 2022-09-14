@@ -5091,11 +5091,11 @@
     "diffview-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1663076585,
-        "narHash": "sha256-eDvXpAs0hme0N9Pk7Bqn58NqbFDKWbmyaNOnOfccKDg=",
+        "lastModified": 1663102627,
+        "narHash": "sha256-MScNsx2EiBiK/R8U7tHncUwe8FAuEaGzhw2VDTktFeU=",
         "owner": "sindrets",
         "repo": "diffview.nvim",
-        "rev": "9874907375d5192d87986c9e712dd6037c8eb6b3",
+        "rev": "b31fafb71f35e4f2a4bd95481ff7d59b1caae387",
         "type": "github"
       },
       "original": {
