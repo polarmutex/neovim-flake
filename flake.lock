@@ -8687,11 +8687,11 @@
     "gitsigns-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1663152135,
-        "narHash": "sha256-afu7mn9z9sl4nVJqp+jwDudXHe/9ft9pBD6Ij7Za4E8=",
+        "lastModified": 1663226758,
+        "narHash": "sha256-yj1x1Kf/lto0zuZYgShR5LA7X8iogpkOlPu+Zgl7Ouw=",
         "owner": "lewis6991",
         "repo": "gitsigns.nvim",
-        "rev": "facca89a95aa5e492505270a60a30825be576d14",
+        "rev": "231fa923fbc2797eef92b24860ab882cebf645b2",
         "type": "github"
       },
       "original": {
