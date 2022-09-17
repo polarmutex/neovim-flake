@@ -15231,11 +15231,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1663381206,
-        "narHash": "sha256-2onZnyDG4+JpHTMhkWn8m6bY1wFUqsuL1TUk1gNlUJA=",
+        "lastModified": 1663402671,
+        "narHash": "sha256-16myWLN5LJzkiyNM/7Th1E4Hfp2v3VVzmXEpEXWonac=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "72e1041429565c3a592dedc36e8b3004a24cdcc4",
+        "rev": "3c3f3e7353ba2cb9071183cd05036ca2a98d3672",
         "type": "github"
       },
       "original": {
