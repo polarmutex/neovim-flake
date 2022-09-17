@@ -8,9 +8,6 @@
     nixpkgs.url = "github:polarmutex/nixpkgs/rplugin-issue";
     flake-utils.url = "github:numtide/flake-utils";
 
-    polar-nur = {
-      url = "github:polarmutex/nur";
-    };
     neovim = { url = "github:neovim/neovim?dir=contrib"; };
     nix2vim = {
       url = "github:gytis-ivaskevicius/nix2vim";
@@ -192,7 +189,6 @@
   outputs =
     inputs@{ self
     , nixpkgs
-    , polar-nur
     , neovim
     , flake-utils
     , rnix-lsp
@@ -208,7 +204,6 @@
             allowUnfree = false;
             overlays = [
               neovim.overlay
-              polar-nur.overlays.default
               (import ./plugins.nix inputs)
               nix2vim.overlay
             ];
