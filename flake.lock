@@ -897,11 +897,11 @@
     "vim-be-good-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1663289956,
-        "narHash": "sha256-4JgTqPboijqQ7IgkGXRi51+y/uK7IcLS+bsOt6Rta1Q=",
+        "lastModified": 1663606799,
+        "narHash": "sha256-PhCtYf8UBK070qxteAV03hbKv9qaBAhnZZfHvN3Ai+c=",
         "owner": "ThePrimeagen",
         "repo": "vim-be-good",
-        "rev": "3711f889fa3637f8ba2885c46e378caac9f0567e",
+        "rev": "6eee41138feb055fe51b742d86af5542b1782c8b",
         "type": "github"
       },
       "original": {
