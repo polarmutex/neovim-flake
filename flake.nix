@@ -4,8 +4,7 @@
 
   # Input source for our derivation
   inputs = {
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:polarmutex/nixpkgs/rplugin-issue";
+    nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
 
     neovim = { url = "github:neovim/neovim?dir=contrib"; };

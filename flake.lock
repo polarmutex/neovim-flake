@@ -427,16 +427,15 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1663793918,
-        "narHash": "sha256-QwJ92xVeZNAxlqRSY/dsCAFaGIMvdMi1Okiwao4bwaE=",
-        "owner": "polarmutex",
+        "lastModified": 1663808879,
+        "narHash": "sha256-BT8PDcbamqX4F2kz+lc7mtkgTsNCJsFbyOKcbM6Sgw8=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7590ee1020692d8057a57ba02e35809a5c0adb80",
+        "rev": "3b5ee8a0baec8d8a3552b7d2098256af93d551e9",
         "type": "github"
       },
       "original": {
-        "owner": "polarmutex",
-        "ref": "rplugin-issue",
+        "owner": "nixos",
         "repo": "nixpkgs",
         "type": "github"
       }
