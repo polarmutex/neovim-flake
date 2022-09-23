@@ -587,11 +587,11 @@
     "nvim-notify-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1663831270,
-        "narHash": "sha256-OyeKZYnGV+dNsuGWj9I1xrJPSSrYUHYF4z50fP9X9Ws=",
+        "lastModified": 1663876714,
+        "narHash": "sha256-fkLzqMX17oxZPacjPcHO3NoAAuKeFW2eFvH+xyP7PQI=",
         "owner": "rcarriga",
         "repo": "nvim-notify",
-        "rev": "70f27719d330be56940a912c5e1e327d0e50334e",
+        "rev": "3a8ec89e1918ea2acbb9b22c5ac2006d31773052",
         "type": "github"
       },
       "original": {
