@@ -445,19 +445,27 @@
                 prev.neovimUtils.makeNeovimConfig {
                   customRC = ''
                   '';
-                  plugins = with final.neovimPlugins; [
-                    { plugin = plenary-nvim; optional = false; }
-                    { plugin = tree-sitter-lua; optional = false; }
-                    #{ plugin = tree-sitter-lua-grammar; optional = false; }
-                    {
-                      plugin = (nvim-treesitter.withPlugins
-                        (plugins:
-                          with plugins; [
-                            tree-sitter-lua-grammar
-                          ]));
-                      optional = false;
-                    }
-                  ];
+                  plugins =
+                    let
+                      withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
+                      plugin = pname: src: prev.vimUtils.buildVimPluginFrom2Nix {
+                        inherit pname src;
+                        version = "master";
+                      };
+                    in
+                    [
+                      { plugin = (withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src); optional = false; }
+                      { plugin = plugin "tree-sitter-lua" inputs.tree-sitter-lua-src; optional = false; }
+                      #{ plugin = tree-sitter-lua-grammar; optional = false; }
+                      {
+                        plugin = ((withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
+                          (plugins:
+                            with plugins; [
+                              tree-sitter-lua-grammar
+                            ]));
+                        optional = false;
+                      }
+                    ];
                 };
             in
             prev.wrapNeovimUnstable final.neovim
