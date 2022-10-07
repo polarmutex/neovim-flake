@@ -59,6 +59,10 @@ function M.setup(client, buf)
             autocmd_format(false)
         end,
 
+        python = function()
+            autocmd_format(false)
+        end,
+
         rust = function()
             autocmd_format(false)
         end,
