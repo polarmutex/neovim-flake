@@ -801,11 +801,11 @@
     "telescope-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1664558965,
-        "narHash": "sha256-Dea+65ZTvItjr/sP7uARYdmIvl9s/Gxns1XIX7sMvTg=",
+        "lastModified": 1665207968,
+        "narHash": "sha256-jdfRLadi0EmcsfpjFKvCAUkctXyMqeKMRFhc65kakBQ=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "76ea9a898d3307244dce3573392dcf2cc38f340f",
+        "rev": "3a29c1e89d6c489dd8b08d7738ba679bfecee5c4",
         "type": "github"
       },
       "original": {
