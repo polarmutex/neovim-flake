@@ -316,7 +316,7 @@
                       };
                     in
                     [
-                      { plugin = self.packages."${prev.system}".neovim-lua-config-polar; optional = false; }
+                      { plugin = neovim-lua-config-polar; optional = false; }
                       { plugin = plugin "blamer-nvim" inputs.blamer-nvim-src; optional = false; }
                       { plugin = plugin "beancount-nvim" inputs.beancount-nvim-src; optional = false; }
                       { plugin = (withSrc prev.vimPlugins.cmp-buffer inputs.cmp-buffer-src); optional = false; }
