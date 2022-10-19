@@ -13,6 +13,13 @@
       url = "github:gytis-ivaskevicius/nix2vim";
     };
 
+    crane.url = "github:ipetkov/crane";
+    crane.inputs.nixpkgs.follows = "nixpkgs";
+    lemmy-help-src = {
+      url = "github:numToStr/lemmy-help";
+      flake = false;
+    };
+
     #
     # Neovim plugins
     #
@@ -191,6 +198,7 @@
     , nixpkgs
     , neovim
     , flake-utils
+    , crane
     , rnix-lsp
     , nix2vim
     , ...
@@ -577,7 +585,23 @@
         };
 
         devShells.default = pkgs.mkShell
-          { };
+          {
+            buildInputs =
+              let
+                lemmy-help = crane.lib."${system}".buildPackage {
+                  src = inputs.lemmy-help-src;
+                  cargoExtraArgs = "--features=cli";
+
+                  # Add extra inputs here or any other derivation settings
+                  # doCheck = true;
+                  # buildInputs = [];
+                  # nativeBuildInputs = [];
+                };
+              in
+              [
+                lemmy-help
+              ];
+          };
 
       });
 }
