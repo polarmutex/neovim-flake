@@ -5,7 +5,7 @@ on:
     paths:
       - "**.lua"
     branches:
-      - master
+      - main
 
 env:
   PLUGIN_NAME: polarmutex
