@@ -10,7 +10,6 @@ Beancount···································�
 ================================================================================
 TODO                                                           *polarmutex.todo*
 
-                                                               *polarmutex.todo*
  - add nix check for nivm-treesiter and lspconfig
  - add spellcheck
 
