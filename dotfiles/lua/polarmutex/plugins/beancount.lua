@@ -1,10 +1,10 @@
+---@mod polarmutex.plugins.beancount Beancount
 ---@brief [[
 --- keymaps:
 ---
 ---
 ---@brief ]]
 ---@tag polarmutex.beancount
----@config { ["name"] = "Beancount" }
 
 local map = vim.keymap.set
 
