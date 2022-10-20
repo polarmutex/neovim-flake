@@ -5,7 +5,6 @@
 ---@toc polarmutex.contents
 
 ---@mod polarmutex.todo TODO
----@tag polarmutex.todo
 ---@brief [[
 --- - add nix check for nivm-treesiter and lspconfig
 --- - add spellcheck
