@@ -312,7 +312,7 @@
                 prev.neovimUtils.makeNeovimConfig {
                   customRC = ''
                     lua << EOF
-                    require('polarmutex.init')
+                    require('polarmutex').setup()
                     EOF
                   '';
                   plugins =

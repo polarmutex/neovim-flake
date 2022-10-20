@@ -5,4 +5,10 @@
 --  gp = { "<cmd>Gitsigns prev_hunk", "Prev hunk" },
 --  gs = { "<cmd>Gitsigns preview_hunk", "Preview hunk" },
 
-require("gitsigns").setup({})
+local M = {}
+
+function M.setup()
+    require("gitsigns").setup({})
+end
+
+return M
