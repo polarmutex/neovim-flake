@@ -87,10 +87,6 @@
       url = "github:onsails/lspkind-nvim";
       flake = false;
     };
-    lualine-nvim-src = {
-      url = "github:nvim-lualine/lualine.nvim";
-      flake = false;
-    };
     neogit-src = {
       url = "github:TimUntersberger/neogit";
       flake = false;

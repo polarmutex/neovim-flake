@@ -371,22 +371,6 @@
         "type": "github"
       }
     },
-    "lualine-nvim-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1666170441,
-        "narHash": "sha256-0HX0tSbuI2xGG7bbOpQv2t0i6/rmGWU2iMGVjXmEnNM=",
-        "owner": "nvim-lualine",
-        "repo": "lualine.nvim",
-        "rev": "abb03129e0b0b7f4c992b1b4c98245cd4422e7d5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-lualine",
-        "repo": "lualine.nvim",
-        "type": "github"
-      }
-    },
     "naersk": {
       "inputs": {
         "nixpkgs": [
@@ -807,7 +791,6 @@
         "kanagawa-nvim-src": "kanagawa-nvim-src",
         "lemmy-help-src": "lemmy-help-src",
         "lspkind-nvim-src": "lspkind-nvim-src",
-        "lualine-nvim-src": "lualine-nvim-src",
         "neogit-src": "neogit-src",
         "neovim": "neovim",
         "nix2vim": "nix2vim",
