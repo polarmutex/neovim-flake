@@ -1,7 +1,8 @@
 local M = {}
 
 function M.setup()
-    vim.notify = require("notify")
+    -- TODO not need due to noice
+    --vim.notify = require("notify")
 end
 
 return M

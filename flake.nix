@@ -91,6 +91,15 @@
       url = "github:TimUntersberger/neogit";
       flake = false;
     };
+    noice-nvim-src = {
+      url = "github:folke/noice.nvim";
+      flake = false;
+    };
+    nui-nvim-src = {
+      # required by noice
+      url = "github:MunifTanjim/nui.nvim";
+      flake = false;
+    };
     null-ls-nvim-src = {
       url = "github:jose-elias-alvarez/null-ls.nvim";
       flake = false;
@@ -338,6 +347,8 @@
                       { plugin = plugin "kanagawa-nvim" inputs.kanagawa-nvim-src; optional = false; }
                       #(withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
                       { plugin = plugin "neogit" inputs.neogit-src; optional = false; }
+                      { plugin = plugin "noice" inputs.noice-nvim-src; optional = false; }
+                      { plugin = plugin "nui" inputs.nui-nvim-src; optional = false; }
                       { plugin = plugin "null-ls-nvim" inputs.null-ls-nvim-src; optional = false; }
                       { plugin = (withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp-src); optional = false; }
                       #plugin "nvim-colorizer" inputs.nvim-colorizer-src;

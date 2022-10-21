@@ -510,6 +510,38 @@
         "type": "github"
       }
     },
+    "noice-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1666306124,
+        "narHash": "sha256-L5qk6gSYSimoZ7Og6KMLx7f2sVv7ixjqfUR8fgd+mr4=",
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "rev": "1279720b17e144f39f0327e633a6b510c6550586",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "noice.nvim",
+        "type": "github"
+      }
+    },
+    "nui-nvim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1666206614,
+        "narHash": "sha256-INqutIZjPUFSIwMlIY5NeeYaRI95kSmrRR3/DGp6lA0=",
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "rev": "35758e946a64376e0e9625a27469410b3d1f9223",
+        "type": "github"
+      },
+      "original": {
+        "owner": "MunifTanjim",
+        "repo": "nui.nvim",
+        "type": "github"
+      }
+    },
     "null-ls-nvim-src": {
       "flake": false,
       "locked": {
@@ -795,6 +827,8 @@
         "neovim": "neovim",
         "nix2vim": "nix2vim",
         "nixpkgs": "nixpkgs_3",
+        "noice-nvim-src": "noice-nvim-src",
+        "nui-nvim-src": "nui-nvim-src",
         "null-ls-nvim-src": "null-ls-nvim-src",
         "nvim-cmp-src": "nvim-cmp-src",
         "nvim-colorizer-src": "nvim-colorizer-src",
