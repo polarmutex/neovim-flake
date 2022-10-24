@@ -963,11 +963,11 @@
     "tree-sitter-lua-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1657611258,
-        "narHash": "sha256-oGcJnEguBo+8sBQUTf++8NKoVkmGKiBXs3KEntl5DZw=",
+        "lastModified": 1666620015,
+        "narHash": "sha256-RqKUiyyH2BGQzC+6BZl+vycJOJDYWl4iJGkrufnKg+8=",
         "owner": "tjdevries",
         "repo": "tree-sitter-lua",
-        "rev": "cf0869b9898a2fecb7520c07b2c7335c80538a78",
+        "rev": "86f74dfb69c570f0749b241f8f5489f8f50adbea",
         "type": "github"
       },
       "original": {
