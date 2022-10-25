@@ -513,11 +513,11 @@
     "noice-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666645343,
-        "narHash": "sha256-PMuU2MzDRpNv6HO91mftCTO9cLJj9oDw/SPfTjozvSM=",
+        "lastModified": 1666680280,
+        "narHash": "sha256-AzQjqQJ2QfKgn6mLUCNKI1OxnXZx1nP9pvL8SKg7I74=",
         "owner": "folke",
         "repo": "noice.nvim",
-        "rev": "0b0e8cf85ab5fcb891b7cfd44c0c4908c0e1ef46",
+        "rev": "e76af89368ce365f61ff736af2fd002e3dce6894",
         "type": "github"
       },
       "original": {
