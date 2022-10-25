@@ -342,11 +342,11 @@
     "lemmy-help-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666186006,
-        "narHash": "sha256-BuE51D4XjcokotZseV1udHlZ+lLpZY26rCI+416vo7c=",
+        "lastModified": 1666707882,
+        "narHash": "sha256-YkWyo/kEdU6Lf+pgUQHmf92wdELQ+6nuF4Uvjc1MwS8=",
         "owner": "numToStr",
         "repo": "lemmy-help",
-        "rev": "e78c359eaebbfbe2d5344de6ba3f9f60abe1cfb2",
+        "rev": "3bd37b536f8c8b2a9018fa7541cf30738f6e11cf",
         "type": "github"
       },
       "original": {
