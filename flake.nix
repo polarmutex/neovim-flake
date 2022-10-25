@@ -394,6 +394,7 @@
                               #tree-sitter-sql #TODO broken
                               tree-sitter-svelte
                               tree-sitter-toml
+                              tree-sitter-vim
                               tree-sitter-yaml
                             ]));
                         optional = false;
