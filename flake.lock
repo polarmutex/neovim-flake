@@ -609,11 +609,11 @@
     "nvim-dap-ui-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666250138,
-        "narHash": "sha256-L4eE4E2b6r/AmxxaB4Z5+IIijpq+QX5Irck8lIjznOs=",
+        "lastModified": 1666807563,
+        "narHash": "sha256-4M7zLMMF03DmK2mp65bfu/RLmSiaqUpP2Te/uEcn7/8=",
         "owner": "rcarriga",
         "repo": "nvim-dap-ui",
-        "rev": "0a63115d72e071223e1711ce630e9e7b5737c948",
+        "rev": "31a0668b343b231898ab6641ce4a6f42f01c631e",
         "type": "github"
       },
       "original": {
