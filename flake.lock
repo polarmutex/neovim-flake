@@ -326,11 +326,11 @@
     "kanagawa-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666166010,
-        "narHash": "sha256-igZGLjI/EH4di6Qh14Nq3+xKZLV+l/2L/EewINZXvSA=",
+        "lastModified": 1666813838,
+        "narHash": "sha256-rOUJV61VnRsz/KyjFQ50u0+B6XwFnnOEE88/9Im94jA=",
         "owner": "rebelot",
         "repo": "kanagawa.nvim",
-        "rev": "a6f8ea10900e8d891f9c93e0ed258f118010fb24",
+        "rev": "eddb85efc3db7fa0a346ab46f7d3c6fc1aa3a5cc",
         "type": "github"
       },
       "original": {
