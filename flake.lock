@@ -947,11 +947,11 @@
     "tokyonight-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666558747,
-        "narHash": "sha256-hZufHQkI2M0I4mEqV9qs6PkL74aqScKJ3RA5QOulX+0=",
+        "lastModified": 1666897232,
+        "narHash": "sha256-I9OlFvwhQioBy087VPTC2qlsmqz9HAGPiYskvb8b8rw=",
         "owner": "folke",
         "repo": "tokyonight.nvim",
-        "rev": "16a294bea92dc8f16ad205c71ce61bf05e79deb3",
+        "rev": "8756c99d08f3605534600e70f9fae64035a287dc",
         "type": "github"
       },
       "original": {
