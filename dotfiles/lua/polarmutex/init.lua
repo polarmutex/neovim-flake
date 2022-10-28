@@ -18,6 +18,9 @@ function M.setup()
     require("polarmutex.lsp")
     require("polarmutex.plugins")
 
+    -- how to test local plugins
+    --vim.o.runtimepath = "~/repos/personal/vim-be-good/intermediate"
+
     local api = vim.api
 
     --- Remove all trailing whitespace on save
