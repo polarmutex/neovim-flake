@@ -51,11 +51,11 @@
     "cmp-nvim-lsp-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1665863036,
-        "narHash": "sha256-4pppdlVJdn75/faaP3N+o7HgEHxyR1nvkHncnFXGDFA=",
+        "lastModified": 1667026972,
+        "narHash": "sha256-amY87Q2HQseMoEFJW8YFf6k5UUWru52498EoDs4m9r8=",
         "owner": "hrsh7th",
         "repo": "cmp-nvim-lsp",
-        "rev": "3cf38d9c957e95c397b66f91967758b31be4abe6",
+        "rev": "78924d1d677b29b3d1fe429864185341724ee5a2",
         "type": "github"
       },
       "original": {
