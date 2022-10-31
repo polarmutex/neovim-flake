@@ -366,12 +366,12 @@
                       { plugin = plugin "telescope-dap-nvim" inputs.telescope-dap-nvim-src; optional = false; }
                       #plugin "telescope-ui-select" inputs.telescope-ui-select-src;
                       { plugin = plugin "tokyonight-nvim" inputs.tokyonight-nvim-src; optional = false; }
-                      { plugin = plugin "vim-be-good" inputs.vim-be-good-src; optional = false; }
+                      #{ plugin = plugin "vim-be-good" inputs.vim-be-good-src; optional = false; }
                       {
                         plugin = ((withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
                           (plugins:
                             with plugins; [
-                              tree-sitter-bash
+                              #tree-sitter-bash # TODO error
                               tree-sitter-beancount
                               tree-sitter-c
                               tree-sitter-comment
