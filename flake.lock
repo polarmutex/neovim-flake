@@ -641,11 +641,11 @@
     "nvim-jdtls-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666946588,
-        "narHash": "sha256-wXIKj0j2gg8pqfz/Bdw40zjlAZ9P2cZBCUL/dh7e+PM=",
+        "lastModified": 1667297177,
+        "narHash": "sha256-NUm4JvfkzVxhSxVrc6F0msJYVrVaG4Tq4bYH1lkANYM=",
         "owner": "mfussenegger",
         "repo": "nvim-jdtls",
-        "rev": "f39efa0e823bcc876d18a7b44d3b61191c42e61c",
+        "rev": "7bc572fc357d7dec8d3ca620b53e763776472582",
         "type": "github"
       },
       "original": {
