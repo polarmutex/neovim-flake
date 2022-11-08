@@ -1010,11 +1010,11 @@
     "vim-be-good-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1664830745,
-        "narHash": "sha256-5A0+Hv0oH0CgMm+M+Nm9BMR/KHr+JQ5LusY/52EFYsI=",
+        "lastModified": 1667916364,
+        "narHash": "sha256-lJNY/5dONZLkxSEegrwtZ6PHYsgMD3nZkbxm6fFq3vY=",
         "owner": "ThePrimeagen",
         "repo": "vim-be-good",
-        "rev": "a48bb60ea07cb4fd8a13506b15293cd2f55583b1",
+        "rev": "c290810728a4f75e334b07dc0f3a4cdea908d351",
         "type": "github"
       },
       "original": {
