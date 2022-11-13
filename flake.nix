@@ -16,7 +16,8 @@
     crane.url = "github:ipetkov/crane";
     crane.inputs.nixpkgs.follows = "nixpkgs";
     lemmy-help-src = {
-      url = "github:numToStr/lemmy-help";
+      # pull this version since current requires rust 1.65
+      url = "github:numToStr/lemmy-help?rev=0300c3e7bdfd860de5f0626a9e3e1d6dd6b97a14";
       flake = false;
     };
 
@@ -339,7 +340,7 @@
                       #plugin "comment-nvim" comment-nvim-src;
                       { plugin = plugin "crates-nvim" inputs.crates-nvim-src; optional = false; }
                       { plugin = plugin "diffview-nvim" inputs.diffview-nvim-src; optional = false; }
-                      { plugin = plugin "fidget-nvim" inputs.fidget-nvim-src; optional = false; }
+                      #{ plugin = plugin "fidget-nvim" inputs.fidget-nvim-src; optional = false; }
                       { plugin = plugin "gitsigns-nvim" inputs.gitsigns-nvim-src; optional = false; }
                       { plugin = plugin "gitworktree-nvim" inputs.gitworktree-nvim-src; optional = false; }
                       { plugin = plugin "harpoon" inputs.harpoon-src; optional = false; }
