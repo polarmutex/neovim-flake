@@ -352,7 +352,7 @@
                       { plugin = plugin "nui" inputs.nui-nvim-src; optional = false; }
                       { plugin = plugin "null-ls-nvim" inputs.null-ls-nvim-src; optional = false; }
                       { plugin = (withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp-src); optional = false; }
-                      #plugin "nvim-colorizer" inputs.nvim-colorizer-src;
+                      { plugin = plugin "nvim-colorizer" inputs.nvim-colorizer-src; optional = false; }
                       { plugin = (withSrc prev.vimPlugins.nvim-dap inputs.nvim-dap-src); optional = false; }
                       { plugin = (withSrc prev.vimPlugins.nvim-dap-ui inputs.nvim-dap-ui-src); optional = false; }
                       { plugin = (withSrc prev.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src); optional = false; }
