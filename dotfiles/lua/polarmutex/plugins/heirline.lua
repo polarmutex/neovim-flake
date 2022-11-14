@@ -118,15 +118,17 @@ function M.setup()
         end,
         hl = "Directory",
 
-        utils.make_flexible_component(2, {
+        flexible = 2,
+        {
             provider = function(self)
                 return self.lfilename
             end,
-        }, {
+        },
+        {
             provider = function(self)
                 return vim.fn.pathshorten(self.lfilename)
             end,
-        }),
+        },
     }
 
     local FileFlags = {
@@ -205,20 +207,23 @@ function M.setup()
         end,
         hl = { fg = "blue", bold = true },
 
-        utils.make_flexible_component(1, {
+        flexible = 1,
+        {
             provider = function(self)
                 local trail = self.cwd:sub(-1) == "/" and "" or "/"
                 return self.icon .. self.cwd .. trail .. " "
             end,
-        }, {
+        },
+        {
             provider = function(self)
                 local cwd = vim.fn.pathshorten(self.cwd)
                 local trail = self.cwd:sub(-1) == "/" and "" or "/"
                 return self.icon .. cwd .. trail .. " "
             end,
-        }, {
+        },
+        {
             provider = "",
-        }),
+        },
     }
 
     local Git = {
