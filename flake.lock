@@ -722,11 +722,11 @@
     "nvim-treesitter-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1669290426,
-        "narHash": "sha256-XWtAA2NjzQs9YAz0q8i/TRBfa50C2S+qahP1y8EUR9Y=",
+        "lastModified": 1669307262,
+        "narHash": "sha256-ZMdYFeYOzj4pRV5a53P9LDckm9urpRuDlp2eqmw8BjU=",
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter",
-        "rev": "54028a819af7e08095fcff9418f2bafe1e8a5c4c",
+        "rev": "1b3f93dcb90e1c282fe9259e5a15f34d504fd5a1",
         "type": "github"
       },
       "original": {
