@@ -658,11 +658,11 @@
     "nvim-lspconfig-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1669447443,
-        "narHash": "sha256-ikrkXhzkn4nYqJd9WaG61UGYWRdY2cbzKQIR+kDcYqE=",
+        "lastModified": 1669597652,
+        "narHash": "sha256-041QlcH6X3Pd0Y/HvtMWujUp4WyQg552cq5K7QVajXg=",
         "owner": "neovim",
         "repo": "nvim-lspconfig",
-        "rev": "abe6c99c7489de2c317869cf5dea57a9595a0cca",
+        "rev": "a2817c9d9500079a0340286a88653b41707a92eb",
         "type": "github"
       },
       "original": {
