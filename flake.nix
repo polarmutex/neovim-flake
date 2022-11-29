@@ -401,6 +401,7 @@
                         optional = false;
                       }
                       #(withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
+                      { plugin = plugin "nvim-treesitter-playground" inputs.nvim-treesitter-playground-src; optional = false; }
                       { plugin = plugin "trouble-nvim" inputs.trouble-nvim-src; optional = false; }
 
                     ];
