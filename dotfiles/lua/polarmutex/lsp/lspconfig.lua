@@ -310,16 +310,19 @@ rt.setup({
         },
         settings = {
             ["rust-analyzer"] = {
-                assist = {
-                    importGranularity = "module",
-                    importPrefix = "by_self",
+                --assist = {
+                --    importGranularity = "module",
+                --    importPrefix = "by_self",
+                --},
+                --cargo = {
+                --    loadOutDirsFromCheck = true,
+                --},
+                checkOnSave = {
+                    command = "clippy",
                 },
-                cargo = {
-                    loadOutDirsFromCheck = true,
-                },
-                procMacro = {
-                    enable = true,
-                },
+                --procMacro = {
+                --    enable = true,
+                --},
             },
         },
     },

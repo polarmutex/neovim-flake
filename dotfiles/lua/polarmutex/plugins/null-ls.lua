@@ -68,7 +68,6 @@ function M.setup()
             nls.builtins.formatting.black,
             nls.builtins.diagnostics.flake8,
             nls.builtins.diagnostics.mypy,
-            nls.builtins.diagnostics.clippy,
         },
         on_attach = require("polarmutex.lsp.attach").on_attach,
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".nvim.settings.json", ".git"),

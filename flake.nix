@@ -268,6 +268,7 @@
               "nix.rnix"
               "python.pyright"
               "rust.analyzer"
+              "rust.clippy"
               "svelte.svelte-language-server"
               "typescript.typescript-language-server"
             ];
@@ -290,6 +291,7 @@
               (prev.lib.getExe final.rnix-lsp)
               (prev.pyright)
               (prev.lib.getExe final.rust-analyzer)
+              (final.clippy)
               (prev.lib.getExe final.nodePackages.svelte-language-server)
               (prev.lib.getExe final.nodePackages.typescript-language-server)
             ];
