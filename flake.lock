@@ -310,11 +310,11 @@
     "heirline-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1668515611,
-        "narHash": "sha256-rDWimAMMN62XWJRQOHgRxCPwohxkVueb5QvuRMtAgAE=",
+        "lastModified": 1670157815,
+        "narHash": "sha256-hhwegFhrj6mpEZRFVO6nRGJjV7ZHo76ehf3Df7RJyAw=",
         "owner": "rebelot",
         "repo": "heirline.nvim",
-        "rev": "a94390e0e8509944bfbd8265a5b4bb231d2d2954",
+        "rev": "8ddf297a190dbeb7c86ecc57de3ea9227ed56d4b",
         "type": "github"
       },
       "original": {
