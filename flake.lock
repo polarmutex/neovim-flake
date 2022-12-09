@@ -530,11 +530,11 @@
     "nui-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1666860078,
-        "narHash": "sha256-Xs7QSwxPgxxwoqmWvGVqSPlr5IZPm5oaFHBqseVEEr4=",
+        "lastModified": 1670585698,
+        "narHash": "sha256-wiHVsuOnqDvYxL485SYkmTwDP4ObyTb3CO4b3W9rKCM=",
         "owner": "MunifTanjim",
         "repo": "nui.nvim",
-        "rev": "d12a6977846b2fa978bff89b439e509320854e10",
+        "rev": "2a6533fb798efad7dd783311315bab8dc5eb381b",
         "type": "github"
       },
       "original": {
