@@ -594,11 +594,11 @@
     "nvim-dap-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1671644977,
-        "narHash": "sha256-Ffco2880tH8NaoQcvvJj5qDeMCNT6tFvHvYU2zfHXy4=",
+        "lastModified": 1672497584,
+        "narHash": "sha256-xKVtOnIv2gV2+i38fSJXWEBp4TcZtj1DqAfOoVNOW48=",
         "owner": "mfussenegger",
         "repo": "nvim-dap",
-        "rev": "6f2ea9e33b48a51849ec93c6c38148a5372018e4",
+        "rev": "69b7c684cd42e60b48875c580e616a70bccfdbe7",
         "type": "github"
       },
       "original": {
