@@ -980,11 +980,11 @@
     "trouble-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1668579978,
-        "narHash": "sha256-8IJB4cIT85GkManiRSelGEMGudnGwZ5Vr+CJwTv40SY=",
+        "lastModified": 1672860967,
+        "narHash": "sha256-U9P5WgUsZjer2AekfrDeYDIpmcj0Hp4NEvX0Q5VqFlw=",
         "owner": "folke",
         "repo": "trouble.nvim",
-        "rev": "897542f90050c3230856bc6e45de58b94c700bbf",
+        "rev": "83ec606e7065adf134d17f4af6bae510e3c491c1",
         "type": "github"
       },
       "original": {
