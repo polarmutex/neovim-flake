@@ -67,11 +67,11 @@
     "cmp-nvim-lua-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1633919304,
-        "narHash": "sha256-/xUfw5adjXu8ySZBBFrLVJ1FCNJzfh79wf+wJsW6sIY=",
+        "lastModified": 1672931929,
+        "narHash": "sha256-/LzHwDeeUDL15ErUFvCQ2dd7N3bORBA+PMFl9dyrzWM=",
         "owner": "hrsh7th",
         "repo": "cmp-nvim-lua",
-        "rev": "d276254e7198ab7d00f117e88e223b4bd8c02d21",
+        "rev": "f3491638d123cfd2c8048aefaf66d246ff250ca6",
         "type": "github"
       },
       "original": {
