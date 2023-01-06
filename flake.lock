@@ -754,11 +754,11 @@
     "plenary-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1673008237,
-        "narHash": "sha256-jhlv3VVh1hYZRFMejlMgKERuPIQkz9LY1G4vTz0Nf9s=",
+        "lastModified": 1673030871,
+        "narHash": "sha256-7EsquOLB7gfN2itfGFJZYKwEXBmP0xMKEOdyyjOweHg=",
         "owner": "nvim-lua",
         "repo": "plenary.nvim",
-        "rev": "10ce2635b74122f47f2da4b27ec895877eed5760",
+        "rev": "9d81624fbcedd3dd43b38d7e13a1e7b3f873d8cd",
         "type": "github"
       },
       "original": {
