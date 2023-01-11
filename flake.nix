@@ -1,14 +1,13 @@
 {
   description = "Tutorial Flake accompanying vimconf talk.";
 
-
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
 
     #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
-    neovim = { url = "github:neovim/neovim?dir=contrib"; };
+    neovim = {url = "github:neovim/neovim?dir=contrib";};
     nix2vim = {
       url = "github:gytis-ivaskevicius/nix2vim";
     };
@@ -169,8 +168,7 @@
       flake = false;
     };
     telescope-nvim-src = {
-      url =
-        "github:nvim-telescope/telescope.nvim";
+      url = "github:nvim-telescope/telescope.nvim";
       flake = false;
     };
     telescope-dap-nvim-src = {
@@ -199,365 +197,474 @@
     };
   };
 
-  outputs =
-    inputs@{ self
-    , nixpkgs
-    , neovim
-    , flake-utils
-    , crane
-    , rnix-lsp
-    , nix2vim
-    , ...
-    }:
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    neovim,
+    flake-utils,
+    crane,
+    rnix-lsp,
+    nix2vim,
+    ...
+  }:
     {
-      overlays.default = final: prev:
-        let
-          buildLuaConfigPlugin = { configDir, moduleName, vars ? null, replacements ? null, excludeFiles ? [ ] }:
-            let
-              pname = "${moduleName}";
-              luaSrc = builtins.filterSource
-                (path: type:
-                  (prev.lib.hasSuffix ".lua" path) &&
-                  ! (prev.lib.lists.any (x: baseNameOf path == x) excludeFiles))
-                configDir;
-            in
-            (prev.vimUtils.buildVimPluginFrom2Nix {
-              inherit pname;
-              version = "dev";
-              src = configDir;
-              postInstall =
-                let
-                  subs =
-                    prev.lib.concatStringsSep " "
-                      (prev.lib.lists.zipListsWith (f: t: "--subst-var-by ${f} ${t}") vars replacements);
-                in
-                '''' +
-                prev.lib.optionalString
-                  (vars != null)
-                  ''
-                    for filename in $(find $out -type f -print)
-                    do
-                      substituteInPlace $filename ${subs}
-                    done
-                  '';
-              meta = with prev.lib; {
-                homepage = "";
-                description = "polarmutex neovim configuration";
-                license = licenses.mit;
-                maintainers = [ maintainers.polarmutex ];
-              };
+      overlays.default = final: prev: let
+        buildLuaConfigPlugin = {
+          configDir,
+          moduleName,
+          vars ? null,
+          replacements ? null,
+          excludeFiles ? [],
+        }: let
+          pname = "${moduleName}";
+          luaSrc =
+            builtins.filterSource
+            (path: type:
+              (prev.lib.hasSuffix ".lua" path)
+              && ! (prev.lib.lists.any (x: baseNameOf path == x) excludeFiles))
+            configDir;
+        in (prev.vimUtils.buildVimPluginFrom2Nix {
+          inherit pname;
+          version = "dev";
+          src = configDir;
+          postInstall = let
+            subs =
+              prev.lib.concatStringsSep " "
+              (prev.lib.lists.zipListsWith (f: t: "--subst-var-by ${f} ${t}") vars replacements);
+          in
+            ''''
+            + prev.lib.optionalString
+            (vars != null)
+            ''
+              for filename in $(find $out -type f -print)
+              do
+                substituteInPlace $filename ${subs}
+              done
+            '';
+          meta = with prev.lib; {
+            homepage = "";
+            description = "polarmutex neovim configuration";
+            license = licenses.mit;
+            maintainers = [maintainers.polarmutex];
+          };
+        });
+      in rec {
+        neovim-lua-config-polar = buildLuaConfigPlugin {
+          configDir = ./dotfiles;
+          moduleName = "polarmutex";
+          excludeFiles = []; #if builtins.isNull config then [ ] else [ "user.lua" ];
+          vars = [
+            "beancount.beancount-language-server"
+            "cpp.clangd"
+            "go.gopls"
+            "json.jsonls"
+            "java.debug.plugin"
+            "java.jdt-language-server"
+            "js.prettier_d_slim"
+            "lua.sumneko-lua-language-server"
+            "lua.stylua"
+            "nix.rnix"
+            "nix.alejandra"
+            "python.pyright"
+            "rust.analyzer"
+            "rust.clippy"
+            "svelte.svelte-language-server"
+            "typescript.typescript-language-server"
+          ];
+          replacements = [
+            (final.beancount-language-server)
+            (final.clang-tools)
+            (final.gopls)
+            (prev.lib.getExe final.nodePackages.vscode-json-languageserver)
+            (final.fetchMavenArtifact
+              {
+                groupId = "com.microsoft.java";
+                artifactId = "com.microsoft.java.debug.plugin";
+                version = "0.34.0";
+                sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
+              })
+            .jar
+            (final.jdt-language-server)
+            (final.nodePackages.prettier_d_slim)
+            (final.sumneko-lua-language-server)
+            (final.stylua)
+            (prev.lib.getExe final.rnix-lsp)
+            (final.alejandra)
+            (prev.pyright)
+            (prev.lib.getExe final.rust-analyzer)
+            (final.clippy)
+            (prev.lib.getExe final.nodePackages.svelte-language-server)
+            (prev.lib.getExe final.nodePackages.typescript-language-server)
+          ];
+        };
+
+        # neeeds updated
+        #neovim-server = pkgs.neovimBuilder {
+        #  package = pkgs.neovim-git;
+        #  enableViAlias = true;
+        #  enableVimAlias = true;
+        #  withNodeJs = true;
+        #  withPython3 = true;
+        #  imports = [
+        #    ./modules/aesthetics.nix
+        #    ./modules/essentials.nix
+        #    ./modules/git.nix
+        #    ./modules/lsp.nix
+        #    ./modules/treesitter.nix
+        #    ./modules/telescope.nix
+        #  ];
+        #};
+
+        neovim-polar = let
+          neovimConfig = prev.neovimUtils.makeNeovimConfig {
+            customRC = ''
+              lua << EOF
+              require('polarmutex').setup()
+              EOF
+            '';
+            plugins = let
+              withSrc = pkg: src: pkg.overrideAttrs (_: {inherit src;});
+              plugin = pname: src:
+                prev.vimUtils.buildVimPluginFrom2Nix {
+                  inherit pname src;
+                  version = "master";
+                };
+            in [
+              {
+                plugin = neovim-lua-config-polar;
+                optional = false;
+              }
+              {
+                plugin = plugin "blamer-nvim" inputs.blamer-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "beancount-nvim" inputs.beancount-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.cmp-buffer inputs.cmp-buffer-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.cmp-nvim-lsp inputs.cmp-nvim-lsp-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.cmp-path inputs.cmp-path-src;
+                optional = false;
+              }
+              #plugin "conceal" conceal-src;
+              #plugin "comment-nvim" comment-nvim-src;
+              {
+                plugin = plugin "crates-nvim" inputs.crates-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "diffview-nvim" inputs.diffview-nvim-src;
+                optional = false;
+              }
+              #{ plugin = plugin "fidget-nvim" inputs.fidget-nvim-src; optional = false; }
+              {
+                plugin = plugin "gitsigns-nvim" inputs.gitsigns-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "gitworktree-nvim" inputs.gitworktree-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "harpoon" inputs.harpoon-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "heirline-nvim" inputs.heirline-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "kanagawa-nvim" inputs.kanagawa-nvim-src;
+                optional = false;
+              }
+              #(withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
+              {
+                plugin = plugin "neogit" inputs.neogit-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "noice" inputs.noice-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "nui" inputs.nui-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "null-ls-nvim" inputs.null-ls-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "nvim-colorizer" inputs.nvim-colorizer-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.nvim-dap inputs.nvim-dap-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.nvim-dap-ui inputs.nvim-dap-ui-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "nvim-jdtls" inputs.nvim-jdtls-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "nvim-notify" inputs.nvim-notify-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "nvim-web-devicons" inputs.nvim-web-devicons-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = withSrc prev.vimPlugins.popup-nvim inputs.popup-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "rust-tools" inputs.rust-tools-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "telescope-nvim" inputs.telescope-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "telescope-dap-nvim" inputs.telescope-dap-nvim-src;
+                optional = false;
+              }
+              #plugin "telescope-ui-select" inputs.telescope-ui-select-src;
+              {
+                plugin = plugin "tokyonight-nvim" inputs.tokyonight-nvim-src;
+                optional = false;
+              }
+              #{ plugin = plugin "vim-be-good" inputs.vim-be-good-src; optional = false; }
+              {
+                plugin =
+                  (withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
+                  (plugins:
+                    with plugins; [
+                      #tree-sitter-bash # TODO error
+                      tree-sitter-beancount
+                      tree-sitter-c
+                      tree-sitter-comment
+                      tree-sitter-cpp
+                      tree-sitter-dockerfile
+                      tree-sitter-go
+                      tree-sitter-html
+                      tree-sitter-java
+                      tree-sitter-javascript
+                      tree-sitter-json
+                      tree-sitter-json5
+                      tree-sitter-latex
+                      tree-sitter-lua
+                      tree-sitter-make
+                      tree-sitter-markdown
+                      tree-sitter-nix
+                      tree-sitter-python
+                      tree-sitter-query
+                      tree-sitter-rust
+                      #tree-sitter-sql #TODO broken
+                      tree-sitter-svelte
+                      tree-sitter-toml
+                      tree-sitter-vim
+                      tree-sitter-yaml
+                    ]);
+                optional = false;
+              }
+              #(withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
+              {
+                plugin = plugin "nvim-treesitter-playground" inputs.nvim-treesitter-playground-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "trouble-nvim" inputs.trouble-nvim-src;
+                optional = false;
+              }
+            ];
+          };
+        in
+          prev.wrapNeovimUnstable neovim.packages.${prev.system}.default
+          (neovimConfig
+            // {
+              wrapRc = true;
             });
 
+        # Neovim instance to generate docs
+        neovim-docgen = let
+          tree-sitter-lua-grammar = prev.stdenv.mkDerivation rec {
+            pname = "tree-sitter-lua-grammar";
+            version = "master-2022-07-12";
+
+            src = inputs.tree-sitter-lua-src;
+
+            buildInputs = [final.tree-sitter];
+
+            dontUnpack = true;
+            dontConfigure = true;
+
+            CFLAGS = ["-I${src}/src" "-O2"];
+            CXXFLAGS = ["-I${src}/src" "-O2"];
+
+            # When both scanner.{c,cc} exist, we should not link both since they may be the same but in
+            # different languages. Just randomly prefer C++ if that happens.
+            buildPhase = ''
+              runHook preBuild
+              if [[ -e "$src/src/scanner.cc" ]]; then
+                $CXX -c "$src/src/scanner.cc" -o scanner.o $CXXFLAGS
+              elif [[ -e "$src/src/scanner.c" ]]; then
+                $CC -c "$src/src/scanner.c" -o scanner.o $CFLAGS
+              fi
+              $CC -c "$src/src/parser.c" -o parser.o $CFLAGS
+              $CXX -shared -o parser *.o
+              runHook postBuild
+            '';
+
+            installPhase = ''
+              runHook preInstall
+              mkdir $out
+              mv parser $out/
+              runHook postInstall
+            '';
+
+            # Strip failed on darwin: strip: error: symbols referenced by indirect symbol table entries that can't be stripped
+            fixupPhase = prev.lib.optionalString prev.stdenv.isLinux ''
+              runHook preFixup
+              $STRIP $out/parser
+              runHook postFixup
+            '';
+          };
+
+          neovimConfig = prev.neovimUtils.makeNeovimConfig {
+            customRC = ''
+            '';
+            plugins = let
+              withSrc = pkg: src: pkg.overrideAttrs (_: {inherit src;});
+              plugin = pname: src:
+                prev.vimUtils.buildVimPluginFrom2Nix {
+                  inherit pname src;
+                  version = "master";
+                };
+            in [
+              {
+                plugin = withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src;
+                optional = false;
+              }
+              {
+                plugin = plugin "tree-sitter-lua" inputs.tree-sitter-lua-src;
+                optional = false;
+              }
+              #{ plugin = tree-sitter-lua-grammar; optional = false; }
+              {
+                plugin =
+                  (withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
+                  (plugins:
+                    with plugins; [
+                      tree-sitter-lua-grammar
+                    ]);
+                optional = false;
+              }
+            ];
+          };
         in
-        rec  {
-
-          neovim-lua-config-polar = (buildLuaConfigPlugin {
-            configDir = ./dotfiles;
-            moduleName = "polarmutex";
-            excludeFiles = [ ]; #if builtins.isNull config then [ ] else [ "user.lua" ];
-            vars = [
-              "beancount.beancount-language-server"
-              "cpp.clangd"
-              "go.gopls"
-              "json.jsonls"
-              "java.debug.plugin"
-              "java.jdt-language-server"
-              "js.prettier_d_slim"
-              "lua.sumneko-lua-language-server"
-              "lua.stylua"
-              "nix.rnix"
-              "python.pyright"
-              "rust.analyzer"
-              "rust.clippy"
-              "svelte.svelte-language-server"
-              "typescript.typescript-language-server"
-            ];
-            replacements = [
-              (final.beancount-language-server)
-              (final.clang-tools)
-              (final.gopls)
-              (prev.lib.getExe final.nodePackages.vscode-json-languageserver)
-              (final.fetchMavenArtifact
-                {
-                  groupId = "com.microsoft.java";
-                  artifactId = "com.microsoft.java.debug.plugin";
-                  version = "0.34.0";
-                  sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
-                }).jar
-              (final.jdt-language-server)
-              (final.nodePackages.prettier_d_slim)
-              (final.sumneko-lua-language-server)
-              (final.stylua)
-              (prev.lib.getExe final.rnix-lsp)
-              (prev.pyright)
-              (prev.lib.getExe final.rust-analyzer)
-              (final.clippy)
-              (prev.lib.getExe final.nodePackages.svelte-language-server)
-              (prev.lib.getExe final.nodePackages.typescript-language-server)
-            ];
-          });
-
-          # neeeds updated
-          #neovim-server = pkgs.neovimBuilder {
-          #  package = pkgs.neovim-git;
-          #  enableViAlias = true;
-          #  enableVimAlias = true;
-          #  withNodeJs = true;
-          #  withPython3 = true;
-          #  imports = [
-          #    ./modules/aesthetics.nix
-          #    ./modules/essentials.nix
-          #    ./modules/git.nix
-          #    ./modules/lsp.nix
-          #    ./modules/treesitter.nix
-          #    ./modules/telescope.nix
-          #  ];
-          #};
-
-          neovim-polar =
-            let
-              neovimConfig =
-                prev.neovimUtils.makeNeovimConfig {
-                  customRC = ''
-                    lua << EOF
-                    require('polarmutex').setup()
-                    EOF
-                  '';
-                  plugins =
-                    let
-                      withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
-                      plugin = pname: src: prev.vimUtils.buildVimPluginFrom2Nix {
-                        inherit pname src;
-                        version = "master";
-                      };
-                    in
-                    [
-                      { plugin = neovim-lua-config-polar; optional = false; }
-                      { plugin = plugin "blamer-nvim" inputs.blamer-nvim-src; optional = false; }
-                      { plugin = plugin "beancount-nvim" inputs.beancount-nvim-src; optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.cmp-buffer inputs.cmp-buffer-src); optional = false; }
-                      { plugin = withSrc prev.vimPlugins.cmp-nvim-lsp inputs.cmp-nvim-lsp-src; optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.cmp-path inputs.cmp-path-src); optional = false; }
-                      #plugin "conceal" conceal-src;
-                      #plugin "comment-nvim" comment-nvim-src;
-                      { plugin = plugin "crates-nvim" inputs.crates-nvim-src; optional = false; }
-                      { plugin = plugin "diffview-nvim" inputs.diffview-nvim-src; optional = false; }
-                      #{ plugin = plugin "fidget-nvim" inputs.fidget-nvim-src; optional = false; }
-                      { plugin = plugin "gitsigns-nvim" inputs.gitsigns-nvim-src; optional = false; }
-                      { plugin = plugin "gitworktree-nvim" inputs.gitworktree-nvim-src; optional = false; }
-                      { plugin = plugin "harpoon" inputs.harpoon-src; optional = false; }
-                      { plugin = plugin "heirline-nvim" inputs.heirline-nvim-src; optional = false; }
-                      { plugin = plugin "kanagawa-nvim" inputs.kanagawa-nvim-src; optional = false; }
-                      #(withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
-                      { plugin = plugin "neogit" inputs.neogit-src; optional = false; }
-                      { plugin = plugin "noice" inputs.noice-nvim-src; optional = false; }
-                      { plugin = plugin "nui" inputs.nui-nvim-src; optional = false; }
-                      { plugin = plugin "null-ls-nvim" inputs.null-ls-nvim-src; optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp-src); optional = false; }
-                      { plugin = plugin "nvim-colorizer" inputs.nvim-colorizer-src; optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.nvim-dap inputs.nvim-dap-src); optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.nvim-dap-ui inputs.nvim-dap-ui-src); optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src); optional = false; }
-                      { plugin = plugin "nvim-jdtls" inputs.nvim-jdtls-src; optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src); optional = false; }
-                      { plugin = plugin "nvim-notify" inputs.nvim-notify-src; optional = false; }
-                      { plugin = plugin "nvim-web-devicons" inputs.nvim-web-devicons-src; optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src); optional = false; }
-                      { plugin = (withSrc prev.vimPlugins.popup-nvim inputs.popup-nvim-src); optional = false; }
-                      { plugin = plugin "rust-tools" inputs.rust-tools-nvim-src; optional = false; }
-                      { plugin = plugin "telescope-nvim" inputs.telescope-nvim-src; optional = false; }
-                      { plugin = plugin "telescope-dap-nvim" inputs.telescope-dap-nvim-src; optional = false; }
-                      #plugin "telescope-ui-select" inputs.telescope-ui-select-src;
-                      { plugin = plugin "tokyonight-nvim" inputs.tokyonight-nvim-src; optional = false; }
-                      #{ plugin = plugin "vim-be-good" inputs.vim-be-good-src; optional = false; }
-                      {
-                        plugin = ((withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
-                          (plugins:
-                            with plugins; [
-                              #tree-sitter-bash # TODO error
-                              tree-sitter-beancount
-                              tree-sitter-c
-                              tree-sitter-comment
-                              tree-sitter-cpp
-                              tree-sitter-dockerfile
-                              tree-sitter-go
-                              tree-sitter-html
-                              tree-sitter-java
-                              tree-sitter-javascript
-                              tree-sitter-json
-                              tree-sitter-json5
-                              tree-sitter-latex
-                              tree-sitter-lua
-                              tree-sitter-make
-                              tree-sitter-markdown
-                              tree-sitter-nix
-                              tree-sitter-python
-                              tree-sitter-query
-                              tree-sitter-rust
-                              #tree-sitter-sql #TODO broken
-                              tree-sitter-svelte
-                              tree-sitter-toml
-                              tree-sitter-vim
-                              tree-sitter-yaml
-                            ]));
-                        optional = false;
-                      }
-                      #(withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
-                      { plugin = plugin "nvim-treesitter-playground" inputs.nvim-treesitter-playground-src; optional = false; }
-                      { plugin = plugin "trouble-nvim" inputs.trouble-nvim-src; optional = false; }
-
-                    ];
-                };
-            in
-            prev.wrapNeovimUnstable neovim.packages.${prev.system}.default
-              (neovimConfig // {
-                wrapRc = true;
-              });
-
-          # Neovim instance to generate docs
-          neovim-docgen =
-            let
-              tree-sitter-lua-grammar = prev.stdenv.mkDerivation rec {
-
-                pname = "tree-sitter-lua-grammar";
-                version = "master-2022-07-12";
-
-                src = inputs.tree-sitter-lua-src;
-
-                buildInputs = [ final.tree-sitter ];
-
-                dontUnpack = true;
-                dontConfigure = true;
-
-                CFLAGS = [ "-I${src}/src" "-O2" ];
-                CXXFLAGS = [ "-I${src}/src" "-O2" ];
-
-                # When both scanner.{c,cc} exist, we should not link both since they may be the same but in
-                # different languages. Just randomly prefer C++ if that happens.
-                buildPhase = ''
-                  runHook preBuild
-                  if [[ -e "$src/src/scanner.cc" ]]; then
-                    $CXX -c "$src/src/scanner.cc" -o scanner.o $CXXFLAGS
-                  elif [[ -e "$src/src/scanner.c" ]]; then
-                    $CC -c "$src/src/scanner.c" -o scanner.o $CFLAGS
-                  fi
-                  $CC -c "$src/src/parser.c" -o parser.o $CFLAGS
-                  $CXX -shared -o parser *.o
-                  runHook postBuild
-                '';
-
-                installPhase = ''
-                  runHook preInstall
-                  mkdir $out
-                  mv parser $out/
-                  runHook postInstall
-                '';
-
-                # Strip failed on darwin: strip: error: symbols referenced by indirect symbol table entries that can't be stripped
-                fixupPhase = prev.lib.optionalString prev.stdenv.isLinux ''
-                  runHook preFixup
-                  $STRIP $out/parser
-                  runHook postFixup
-                '';
-              };
-
-              neovimConfig =
-                prev.neovimUtils.makeNeovimConfig {
-                  customRC = ''
-                  '';
-                  plugins =
-                    let
-                      withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
-                      plugin = pname: src: prev.vimUtils.buildVimPluginFrom2Nix {
-                        inherit pname src;
-                        version = "master";
-                      };
-                    in
-                    [
-                      { plugin = (withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src); optional = false; }
-                      { plugin = plugin "tree-sitter-lua" inputs.tree-sitter-lua-src; optional = false; }
-                      #{ plugin = tree-sitter-lua-grammar; optional = false; }
-                      {
-                        plugin = ((withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
-                          (plugins:
-                            with plugins; [
-                              tree-sitter-lua-grammar
-                            ]));
-                        optional = false;
-                      }
-                    ];
-                };
-            in
-            prev.wrapNeovimUnstable final.neovim
-              (neovimConfig // {
-                wrapRc = true;
-              });
-        };
-    } //
+          prev.wrapNeovimUnstable final.neovim
+          (neovimConfig
+            // {
+              wrapRc = true;
+            });
+      };
+    }
+    //
     #flake-utils.lib.eachDefaultSystem
     # awesome fails on arch darwin
     flake-utils.lib.eachSystem
-      [
-        "x86_64-linux"
-        "aarch64-linux"
-      ]
-      (system:
-      let
-        pkgs = import nixpkgs
-          {
-            inherit system;
-            overlays = [
-              self.overlays.default
-            ];
-            config = {
-              permittedInsecurePackages = [
-                # jdt-language-server
-                "openjdk-headless-16+36"
-                "openjdk-headless-15.0.1-ga"
-                "openjdk-headless-14.0.2-ga"
-                "openjdk-headless-13.0.2-ga"
-                "openjdk-headless-12.0.2-ga"
-              ];
+    [
+      "x86_64-linux"
+      "aarch64-linux"
+    ]
+    (system: let
+      pkgs =
+        import nixpkgs
+        {
+          inherit system;
+          overlays = [
+            self.overlays.default
+          ];
+          config = {
+            permittedInsecurePackages = [
               # jdt-language-server
-              allowUnsupportedSystem = true;
-            };
+              "openjdk-headless-16+36"
+              "openjdk-headless-15.0.1-ga"
+              "openjdk-headless-14.0.2-ga"
+              "openjdk-headless-13.0.2-ga"
+              "openjdk-headless-12.0.2-ga"
+            ];
+            # jdt-language-server
+            allowUnsupportedSystem = true;
           };
-        neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
-          #extraPython3Packages = [ ];
-          withPython3 = true;
-          withRuby = true;
-          viAlias = true;
-          vimAlias = true;
-          withNodeJs = true;
-          plugins = [ ];
-          customRC = '''';
         };
-      in
-      rec {
-        packages = with pkgs; {
-          default = pkgs.neovim-polar;
-          inherit neovim-lua-config-polar neovim-docgen neovim-polar;
-          neovim-test = pkgs.wrapNeovimUnstable neovim.packages.${system}.default
-            (neovimConfig // {
+      neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
+        #extraPython3Packages = [ ];
+        withPython3 = true;
+        withRuby = true;
+        viAlias = true;
+        vimAlias = true;
+        withNodeJs = true;
+        plugins = [];
+        customRC = '''';
+      };
+    in rec {
+      packages = with pkgs; {
+        default = pkgs.neovim-polar;
+        inherit neovim-lua-config-polar neovim-docgen neovim-polar;
+        neovim-test =
+          pkgs.wrapNeovimUnstable neovim.packages.${system}.default
+          (neovimConfig
+            // {
               wrapRc = false;
             });
+      };
 
-        };
+      apps.defaultApp = {
+        type = "app";
+        program = "${pkgs.neovim-polar}/bin/nvim";
+      };
 
-        apps.defaultApp = {
-          type = "app";
-          program = "${pkgs.neovim-polar}/bin/nvim";
-        };
-
-        # check to see if any config errors ars displayed
-        # TODO need to have version with all the config
-        checks = {
-          neovim-check-config = pkgs.runCommand "neovim-check-config"
-            {
-              buildInputs = [
-                pkgs.git
-              ];
-            } ''
+      # check to see if any config errors ars displayed
+      # TODO need to have version with all the config
+      checks = {
+        neovim-check-config =
+          pkgs.runCommand "neovim-check-config"
+          {
+            buildInputs = [
+              pkgs.git
+            ];
+          } ''
             # We *must* create some output, usually contains test logs for checks
             mkdir -p "$out"
 
@@ -573,12 +680,13 @@
                 exit 1
             fi
           '';
-          neovim-check-health = pkgs.runCommand "neovim-check-health"
-            {
-              buildInputs = [
-                pkgs.git
-              ];
-            } ''
+        neovim-check-health =
+          pkgs.runCommand "neovim-check-health"
+          {
+            buildInputs = [
+              pkgs.git
+            ];
+          } ''
             # We *must* create some output, usually contains test logs for checks
             mkdir -p "$out"
 
@@ -594,26 +702,24 @@
                 exit 1
             fi
           '';
+      };
+
+      devShells.default =
+        pkgs.mkShell
+        {
+          buildInputs = let
+            lemmy-help = crane.lib."${system}".buildPackage {
+              src = inputs.lemmy-help-src;
+              cargoExtraArgs = "--features=cli";
+
+              # Add extra inputs here or any other derivation settings
+              # doCheck = true;
+              # buildInputs = [];
+              # nativeBuildInputs = [];
+            };
+          in [
+            lemmy-help
+          ];
         };
-
-        devShells.default = pkgs.mkShell
-          {
-            buildInputs =
-              let
-                lemmy-help = crane.lib."${system}".buildPackage {
-                  src = inputs.lemmy-help-src;
-                  cargoExtraArgs = "--features=cli";
-
-                  # Add extra inputs here or any other derivation settings
-                  # doCheck = true;
-                  # buildInputs = [];
-                  # nativeBuildInputs = [];
-                };
-              in
-              [
-                lemmy-help
-              ];
-          };
-
-      });
+    });
 }

@@ -56,7 +56,9 @@ function M.setup(client, buf)
         end,
 
         nix = function()
-            autocmd_format(false)
+            autocmd_format(false, function(client)
+                return client.name ~= "rnix"
+            end)
         end,
 
         python = function()

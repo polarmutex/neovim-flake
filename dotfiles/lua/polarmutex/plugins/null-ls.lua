@@ -68,6 +68,13 @@ function M.setup()
             nls.builtins.formatting.black,
             nls.builtins.diagnostics.flake8,
             nls.builtins.diagnostics.mypy,
+            nls.builtins.formatting.alejandra.with({
+                generator_opts = {
+                    command = "@nix.alejandra@/bin/alejandra",
+                    args = { "--quiet" },
+                    to_stdin = true,
+                },
+            }),
         },
         on_attach = require("polarmutex.lsp.attach").on_attach,
         root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".nvim.settings.json", ".git"),

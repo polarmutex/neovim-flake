@@ -64,7 +64,10 @@ local servers = {
     beancount = {
         cmd = {
             --"@beancount.beancount-language-server@/bin/beancount-language-server"
+            --"/home/polar/repos/personal/beancount-language-server/develop/target/master/beancount-language-server",
             "/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server",
+            "--log",
+            "temp",
         },
         init_options = {
             journal_file = "/home/polar/repos/personal/beancount/main.beancount",
