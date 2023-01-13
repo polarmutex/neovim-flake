@@ -138,11 +138,11 @@
     "crates-nvim-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1672633959,
-        "narHash": "sha256-mkHvgCqNjkrJ5AfofB67gnfXw3wfhrsP57te0Vmtg2g=",
+        "lastModified": 1673621548,
+        "narHash": "sha256-WtwmsCl0KZLtsYyFEFPq2aRiZwJX9UJfg+XSHQ6yp9k=",
         "owner": "saecki",
         "repo": "crates.nvim",
-        "rev": "d8657ee78e0c5cb47d4ed87aae11047af03491b9",
+        "rev": "707ed7d6f8927a5ec0c241aa793f694f1b05f731",
         "type": "github"
       },
       "original": {
