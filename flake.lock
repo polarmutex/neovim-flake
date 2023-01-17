@@ -626,11 +626,11 @@
     "nvim-dap-virtual-text-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1673706592,
-        "narHash": "sha256-fKT8UW/cbEhjGqsZFyvZRiUTzlYfmWMiv9xT6zMFpXQ=",
+        "lastModified": 1673910094,
+        "narHash": "sha256-CUsXwVty3uyenqh9ZcdEYCRhiDGoyVk2+0xqTEa+MBc=",
         "owner": "theHamsta",
         "repo": "nvim-dap-virtual-text",
-        "rev": "6d3da4b786d33e35526e089d85b238c08ce78def",
+        "rev": "191345947a92a5188d791e9786a5b4f205dcaca3",
         "type": "github"
       },
       "original": {
