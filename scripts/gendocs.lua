@@ -5,11 +5,10 @@ local docs = {}
 docs.test = function()
     -- TODO: Fix the other files so that we can add them here.
     local input_files = {
-        "./dotfiles/lua/polarmutex/init.lua",
-        "./dotfiles/after/plugin/beancount.lua",
+        "./lua/polarmutex/init.lua",
     }
 
-    local output_file = "./dotfiles/doc/polarmutex.txt"
+    local output_file = "./doc/polarmutex.txt"
     local output_file_handle = io.open(output_file, "w")
 
     for _, input_file in ipairs(input_files) do

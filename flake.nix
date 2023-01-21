@@ -20,180 +20,8 @@
       flake = false;
     };
 
-    #
-    # Neovim plugins
-    #
-    beancount-nvim-src = {
-      url = "github:polarmutex/beancount.nvim";
-      flake = false;
-    };
-    blamer-nvim-src = {
-      url = "github:APZelos/blamer.nvim";
-      flake = false;
-    };
-    cmp-nvim-lsp-src = {
-      url = "github:hrsh7th/cmp-nvim-lsp";
-      flake = false;
-    };
-    cmp-buffer-src = {
-      url = "github:hrsh7th/cmp-buffer";
-      flake = false;
-    };
-    cmp-nvim-lua-src = {
-      url = "github:hrsh7th/cmp-nvim-lua";
-      flake = false;
-    };
-    cmp-path-src = {
-      url = "github:hrsh7th/cmp-path";
-      flake = false;
-    };
-    crates-nvim-src = {
-      url = "github:saecki/crates.nvim";
-      flake = false;
-    };
-    comment-nvim-src = {
-      url = "github:numToStr/Comment.nvim";
-      flake = false;
-    };
-    diffview-nvim-src = {
-      url = "github:sindrets/diffview.nvim";
-      flake = false;
-    };
-    fidget-nvim-src = {
-      url = "github:j-hui/fidget.nvim";
-      flake = false;
-    };
-    gitsigns-nvim-src = {
-      url = "github:lewis6991/gitsigns.nvim";
-      flake = false;
-    };
-    gitworktree-nvim-src = {
-      url = "github:ThePrimeagen/git-worktree.nvim";
-      flake = false;
-    };
-    harpoon-src = {
-      url = "github:ThePrimeagen/harpoon";
-      flake = false;
-    };
-    heirline-nvim-src = {
-      url = "github:rebelot/heirline.nvim";
-      flake = false;
-    };
-    kanagawa-nvim-src = {
-      url = "github:rebelot/kanagawa.nvim";
-      flake = false;
-    };
-    lspkind-nvim-src = {
-      url = "github:onsails/lspkind-nvim";
-      flake = false;
-    };
-    neogit-src = {
-      url = "github:TimUntersberger/neogit";
-      flake = false;
-    };
-    noice-nvim-src = {
-      url = "github:folke/noice.nvim";
-      flake = false;
-    };
-    nui-nvim-src = {
-      # required by noice
-      url = "github:MunifTanjim/nui.nvim";
-      flake = false;
-    };
-    null-ls-nvim-src = {
-      url = "github:jose-elias-alvarez/null-ls.nvim";
-      flake = false;
-    };
-    nvim-colorizer-src = {
-      url = "github:norcalli/nvim-colorizer.lua";
-      flake = false;
-    };
-    nvim-cmp-src = {
-      url = "github:hrsh7th/nvim-cmp";
-      flake = false;
-    };
-    nvim-dap-src = {
-      url = "github:mfussenegger/nvim-dap";
-      flake = false;
-    };
-    nvim-dap-ui-src = {
-      url = "github:rcarriga/nvim-dap-ui";
-      flake = false;
-    };
-    nvim-dap-virtual-text-src = {
-      url = "github:theHamsta/nvim-dap-virtual-text";
-      flake = false;
-    };
-    nvim-jdtls-src = {
-      url = "github:mfussenegger/nvim-jdtls";
-      flake = false;
-    };
-    nvim-lspconfig-src = {
-      url = "github:neovim/nvim-lspconfig";
-      flake = false;
-    };
-    nvim-notify-src = {
-      url = "github:rcarriga/nvim-notify";
-      flake = false;
-    };
-    nvim-treesitter-src = {
-      url = "github:nvim-treesitter/nvim-treesitter";
-      flake = false;
-    };
-    nvim-treesitter-context-src = {
-      url = "github:romgrk/nvim-treesitter-context";
-      flake = false;
-    };
-    nvim-treesitter-playground-src = {
-      url = "github:nvim-treesitter/playground";
-      flake = false;
-    };
-    nvim-web-devicons-src = {
-      url = "github:kyazdani42/nvim-web-devicons";
-      flake = false;
-    };
-    plenary-nvim-src = {
-      url = "github:nvim-lua/plenary.nvim";
-      flake = false;
-    };
-    popup-nvim-src = {
-      url = "github:nvim-lua/popup.nvim";
-      flake = false;
-    };
     rnix-lsp = {
       url = "github:Ma27/rnix-lsp";
-    };
-    rust-tools-nvim-src = {
-      url = "github:simrat39/rust-tools.nvim";
-      flake = false;
-    };
-    telescope-nvim-src = {
-      url = "github:nvim-telescope/telescope.nvim";
-      flake = false;
-    };
-    telescope-dap-nvim-src = {
-      url = "github:nvim-telescope/telescope-dap.nvim";
-      flake = false;
-    };
-    telescope-ui-select-src = {
-      url = "github:nvim-telescope/telescope-ui-select.nvim";
-      flake = false;
-    };
-    tokyonight-nvim-src = {
-      url = "github:folke/tokyonight.nvim";
-      flake = false;
-    };
-    tree-sitter-lua-src = {
-      url = "github:tjdevries/tree-sitter-lua";
-      flake = false;
-    };
-    trouble-nvim-src = {
-      url = "github:folke/trouble.nvim";
-      flake = false;
-    };
-    vim-be-good-src = {
-      url = "github:ThePrimeagen/vim-be-good";
-      flake = false;
     };
   };
 
@@ -227,6 +55,10 @@
           inherit pname;
           version = "dev";
           src = configDir;
+          postUnpack = ''
+            mkdir -p $sourceRoot/lua
+            mv $sourceRoot/polarmutex $sourceRoot/lua
+          '';
           postInstall = let
             subs =
               prev.lib.concatStringsSep " "
@@ -248,9 +80,28 @@
             maintainers = [maintainers.polarmutex];
           };
         });
+
+        sources = prev.callPackage ./_sources/generated.nix {};
+        buildPlugin = source:
+          prev.vimUtils.buildVimPluginFrom2Nix {
+            inherit (source) pname version src;
+          };
+
+        generatedPluginSources = with prev.lib;
+          mapAttrs'
+          (n:
+            nameValuePair
+            (removePrefix "'plugin-" (removeSuffix "'" n)))
+          (filterAttrs (n: _: hasPrefix "'plugin-" n)
+            sources);
+
+        generatedPlugins = with prev.lib;
+          mapAttrs (_: buildPlugin) generatedPluginSources;
+
+        withSrc = pkg: src: pkg.overrideAttrs (_: {inherit src;});
       in rec {
         neovim-lua-config-polar = buildLuaConfigPlugin {
-          configDir = ./dotfiles;
+          configDir = ./lua;
           moduleName = "polarmutex";
           excludeFiles = []; #if builtins.isNull config then [ ] else [ "user.lua" ];
           vars = [
@@ -270,6 +121,40 @@
             "rust.clippy"
             "svelte.svelte-language-server"
             "typescript.typescript-language-server"
+
+            "neovimPlugin.beancount-nvim"
+            "neovimPlugin.cmp-nvim-lsp"
+            "neovimPlugin.cmp-path"
+            "neovimPlugin.cmp-omni"
+            "neovimPlugin.cmp-calc"
+            "neovimPlugin.cmp-buffer"
+            "neovimPlugin.cmp-cmdline"
+            "neovimPlugin.cmp-dap"
+            "neovimPlugin.crates-nvim"
+            "neovimPlugin.diffview-nvim"
+            "neovimPlugin.gitsigns-nvim"
+            "neovimPlugin.heirline-nvim"
+            "neovimPlugin.lazy-nvim"
+            "neovimPlugin.lspkind-nvim"
+            "neovimPlugin.lspformat-nvim"
+            "neovimPlugin.neodev-nvim"
+            "neovimPlugin.neogit"
+            "neovimPlugin.noice-nvim"
+            "neovimPlugin.nui-nvim"
+            "neovimPlugin.null-ls-nvim"
+            "neovimPlugin.nvim-cmp"
+            "neovimPlugin.nvim-colorizer"
+            "neovimPlugin.nvim-dap"
+            "neovimPlugin.nvim-dap-python"
+            "neovimPlugin.nvim-dap-ui"
+            "neovimPlugin.nvim-dap-virtual-text"
+            "neovimPlugin.nvim-lspconfig"
+            "neovimPlugin.nvim-treesitter"
+            "neovimPlugin.one-small-step-for-vimkind"
+            "neovimPlugin.rust-tools-nvim"
+            "neovimPlugin.telescope-nvim"
+            "neovimPlugin.tokyonight-nvim"
+            "neovimPlugin.nvim-web-devicons"
           ];
           replacements = [
             (final.beancount-language-server)
@@ -295,6 +180,68 @@
             (final.clippy)
             (prev.lib.getExe final.nodePackages.svelte-language-server)
             (prev.lib.getExe final.nodePackages.typescript-language-server)
+
+            (buildPlugin sources.plugin-beancount-nvim)
+            (buildPlugin sources.plugin-cmp-nvim-lsp)
+            (buildPlugin sources.plugin-cmp-path)
+            (buildPlugin sources.plugin-cmp-omni)
+            (buildPlugin sources.plugin-cmp-calc)
+            (buildPlugin sources.plugin-cmp-buffer)
+            (buildPlugin sources.plugin-cmp-cmdline)
+            (buildPlugin sources.plugin-cmp-dap)
+            (buildPlugin sources.plugin-crates-nvim)
+            (buildPlugin sources.plugin-diffview-nvim)
+            (buildPlugin sources.plugin-gitsigns-nvim)
+            (buildPlugin sources.plugin-heirline-nvim)
+            (buildPlugin sources.plugin-lazy-nvim)
+            (buildPlugin sources.plugin-lspkind-nvim)
+            (buildPlugin sources.plugin-lspformat-nvim)
+            (buildPlugin sources.plugin-neodev-nvim)
+            (buildPlugin sources.plugin-neogit)
+            (buildPlugin sources.plugin-noice-nvim)
+            (buildPlugin sources.plugin-nui-nvim)
+            (buildPlugin sources.plugin-null-ls-nvim)
+            (buildPlugin sources.plugin-nvim-cmp)
+            (buildPlugin sources.plugin-nvim-colorizer)
+            (buildPlugin sources.plugin-nvim-dap)
+            (buildPlugin sources.plugin-nvim-dap-python)
+            (buildPlugin sources.plugin-nvim-dap-ui)
+            (buildPlugin sources.plugin-nvim-dap-virtual-text)
+            (buildPlugin sources.plugin-nvim-lspconfig)
+            ((withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withPlugins
+              (plugins:
+                with plugins; [
+                  #tree-sitter-bash # TODO error
+                  tree-sitter-beancount
+                  tree-sitter-c
+                  tree-sitter-comment
+                  tree-sitter-cpp
+                  tree-sitter-dockerfile
+                  tree-sitter-go
+                  tree-sitter-html
+                  tree-sitter-java
+                  tree-sitter-javascript
+                  tree-sitter-json
+                  tree-sitter-json5
+                  tree-sitter-latex
+                  tree-sitter-lua
+                  tree-sitter-make
+                  tree-sitter-markdown
+                  tree-sitter-nix
+                  tree-sitter-python
+                  tree-sitter-query
+                  tree-sitter-rust
+                  #tree-sitter-sql #TODO broken
+                  tree-sitter-svelte
+                  tree-sitter-toml
+                  tree-sitter-vim
+                  tree-sitter-yaml
+                ]))
+            (buildPlugin sources.plugin-one-small-step-for-vimkind)
+            (buildPlugin sources.plugin-rust-tools-nvim)
+            (buildPlugin sources.plugin-telescope-nvim)
+            (buildPlugin sources.plugin-tokyonight-nvim)
+            (buildPlugin sources.plugin-nvim-web-devicons)
           ];
         };
 
@@ -319,7 +266,8 @@
           neovimConfig = prev.neovimUtils.makeNeovimConfig {
             customRC = ''
               lua << EOF
-              require('polarmutex').setup()
+              -- bootstrap lazy.nvim, LazyVim and your plugins
+              require('polarmutex.config.lazy')
               EOF
             '';
             plugins = let
@@ -334,178 +282,154 @@
                 plugin = neovim-lua-config-polar;
                 optional = false;
               }
-              {
-                plugin = plugin "blamer-nvim" inputs.blamer-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "beancount-nvim" inputs.beancount-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.cmp-buffer inputs.cmp-buffer-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.cmp-nvim-lsp inputs.cmp-nvim-lsp-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.cmp-path inputs.cmp-path-src;
-                optional = false;
-              }
+              #{
+              #  #plugin = plugin "lazy-nvim" inputs.lazy-nvim-src;
+              #  plugin = buildPlugin sources.plugin-lazy-nvim;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "blamer-nvim" inputs.blamer-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "beancount-nvim" inputs.beancount-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.cmp-buffer inputs.cmp-buffer-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.cmp-nvim-lsp inputs.cmp-nvim-lsp-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.cmp-path inputs.cmp-path-src;
+              #  optional = false;
+              #}
               #plugin "conceal" conceal-src;
               #plugin "comment-nvim" comment-nvim-src;
-              {
-                plugin = plugin "crates-nvim" inputs.crates-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "diffview-nvim" inputs.diffview-nvim-src;
-                optional = false;
-              }
+              #{
+              #  plugin = plugin "crates-nvim" inputs.crates-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "diffview-nvim" inputs.diffview-nvim-src;
+              #  optional = false;
+              #}
               #{ plugin = plugin "fidget-nvim" inputs.fidget-nvim-src; optional = false; }
-              {
-                plugin = plugin "gitsigns-nvim" inputs.gitsigns-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "gitworktree-nvim" inputs.gitworktree-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "harpoon" inputs.harpoon-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "heirline-nvim" inputs.heirline-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "kanagawa-nvim" inputs.kanagawa-nvim-src;
-                optional = false;
-              }
+              #{
+              #  plugin = plugin "gitsigns-nvim" inputs.gitsigns-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "gitworktree-nvim" inputs.gitworktree-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "harpoon" inputs.harpoon-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "heirline-nvim" inputs.heirline-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "kanagawa-nvim" inputs.kanagawa-nvim-src;
+              #  optional = false;
+              #}
               #(withSrc prev.vimPlugins.lspkind-nvim lspkind-nvim-src);
-              {
-                plugin = plugin "neogit" inputs.neogit-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "noice" inputs.noice-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "nui" inputs.nui-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "null-ls-nvim" inputs.null-ls-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "nvim-colorizer" inputs.nvim-colorizer-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.nvim-dap inputs.nvim-dap-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.nvim-dap-ui inputs.nvim-dap-ui-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "nvim-jdtls" inputs.nvim-jdtls-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "nvim-notify" inputs.nvim-notify-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "nvim-web-devicons" inputs.nvim-web-devicons-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = withSrc prev.vimPlugins.popup-nvim inputs.popup-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "rust-tools" inputs.rust-tools-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "telescope-nvim" inputs.telescope-nvim-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "telescope-dap-nvim" inputs.telescope-dap-nvim-src;
-                optional = false;
-              }
+              #{
+              #  plugin = plugin "neogit" inputs.neogit-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "noice" inputs.noice-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "nui" inputs.nui-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "null-ls-nvim" inputs.null-ls-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.nvim-cmp inputs.nvim-cmp-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "nvim-colorizer" inputs.nvim-colorizer-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.nvim-dap inputs.nvim-dap-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.nvim-dap-ui inputs.nvim-dap-ui-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.nvim-dap-virtual-text inputs.nvim-dap-virtual-text-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "nvim-jdtls" inputs.nvim-jdtls-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "nvim-notify" inputs.nvim-notify-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "nvim-web-devicons" inputs.nvim-web-devicons-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = withSrc prev.vimPlugins.popup-nvim inputs.popup-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "rust-tools" inputs.rust-tools-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "telescope-nvim" inputs.telescope-nvim-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "telescope-dap-nvim" inputs.telescope-dap-nvim-src;
+              #  optional = false;
+              #}
               #plugin "telescope-ui-select" inputs.telescope-ui-select-src;
-              {
-                plugin = plugin "tokyonight-nvim" inputs.tokyonight-nvim-src;
-                optional = false;
-              }
+              #{
+              #  plugin = plugin "tokyonight-nvim" inputs.tokyonight-nvim-src;
+              #  optional = false;
+              #}
               #{ plugin = plugin "vim-be-good" inputs.vim-be-good-src; optional = false; }
-              {
-                plugin =
-                  (withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
-                  (plugins:
-                    with plugins; [
-                      #tree-sitter-bash # TODO error
-                      tree-sitter-beancount
-                      tree-sitter-c
-                      tree-sitter-comment
-                      tree-sitter-cpp
-                      tree-sitter-dockerfile
-                      tree-sitter-go
-                      tree-sitter-html
-                      tree-sitter-java
-                      tree-sitter-javascript
-                      tree-sitter-json
-                      tree-sitter-json5
-                      tree-sitter-latex
-                      tree-sitter-lua
-                      tree-sitter-make
-                      tree-sitter-markdown
-                      tree-sitter-nix
-                      tree-sitter-python
-                      tree-sitter-query
-                      tree-sitter-rust
-                      #tree-sitter-sql #TODO broken
-                      tree-sitter-svelte
-                      tree-sitter-toml
-                      tree-sitter-vim
-                      tree-sitter-yaml
-                    ]);
-                optional = false;
-              }
+              #{
+              #  plugin =
+              #  optional = false;
+              #}
               #(withSrc prev.vimPlugins.playground nvim-treesitter-playground-src);
-              {
-                plugin = plugin "nvim-treesitter-playground" inputs.nvim-treesitter-playground-src;
-                optional = false;
-              }
-              {
-                plugin = plugin "trouble-nvim" inputs.trouble-nvim-src;
-                optional = false;
-              }
+              #{
+              #  plugin = plugin "nvim-treesitter-playground" inputs.nvim-treesitter-playground-src;
+              #  optional = false;
+              #}
+              #{
+              #  plugin = plugin "trouble-nvim" inputs.trouble-nvim-src;
+              #  optional = false;
+              #}
             ];
           };
         in
@@ -719,6 +643,7 @@
             };
           in [
             lemmy-help
+            pkgs.nvfetcher
           ];
         };
     });
