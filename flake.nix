@@ -104,6 +104,73 @@
             mapAttrs (_: buildPlugin) generatedPluginSources;
 
           withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
+
+          treesitter-all = (withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withAllGrammars.overrideAttrs (_:
+            let
+              treesitter-parser-paths = prev.symlinkJoin {
+                name = "treesitter-parsers";
+                paths = treesitter.dependencies;
+              };
+            in
+            {
+              postPatch = ''
+                mkdir -p parser
+                cp -r ${treesitter-parser-paths.outPath}/parser/*.so parser
+              '';
+            });
+
+          nvim-treesitter-plugin = (withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withPlugins (
+            p:
+              with p; [
+                astro
+                bash
+                beancount
+                c
+                cmake
+                cpp
+                diff
+                dockerfile
+                fish
+                gitcommit
+                gitignore
+                go
+                help
+                html
+                java
+                javascript
+                json
+                lua
+                make
+                markdown
+                mermaid
+                nix
+                proto
+                python
+                tree-sitter-query
+                rust
+                svelte
+                teal
+                toml
+                typescript
+                yaml
+              ]
+          );
+
+          treesitter =
+            nvim-treesitter-plugin.overrideAttrs
+              (_:
+                let
+                  treesitter-parser-paths = prev.symlinkJoin {
+                    name = "treesitter-parsers";
+                    paths = nvim-treesitter-plugin.dependencies;
+                  };
+                in
+                {
+                  postPatch = ''
+                    mkdir -p parser
+                    cp -r ${treesitter-parser-paths.outPath}/parser/*.so parser
+                  '';
+                });
         in
         rec {
           neovim-lua-config-polar = buildLuaConfigPlugin {
@@ -213,35 +280,7 @@
               (buildPlugin sources.plugin-nvim-dap-ui)
               (buildPlugin sources.plugin-nvim-dap-virtual-text)
               (buildPlugin sources.plugin-nvim-lspconfig)
-              ((withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withPlugins
-                (plugins:
-                  with plugins; [
-                    #tree-sitter-bash # TODO error
-                    tree-sitter-beancount
-                    tree-sitter-c
-                    tree-sitter-comment
-                    tree-sitter-cpp
-                    tree-sitter-dockerfile
-                    tree-sitter-go
-                    tree-sitter-html
-                    tree-sitter-java
-                    tree-sitter-javascript
-                    tree-sitter-json
-                    tree-sitter-json5
-                    tree-sitter-latex
-                    tree-sitter-lua
-                    tree-sitter-make
-                    tree-sitter-markdown
-                    tree-sitter-nix
-                    tree-sitter-python
-                    tree-sitter-query
-                    tree-sitter-rust
-                    #tree-sitter-sql #TODO broken
-                    tree-sitter-svelte
-                    tree-sitter-toml
-                    tree-sitter-vim
-                    tree-sitter-yaml
-                  ]))
+              treesitter
               (buildPlugin sources.plugin-one-small-step-for-vimkind)
               (buildPlugin sources.plugin-rust-tools-nvim)
               (buildPlugin sources.plugin-telescope-nvim)
