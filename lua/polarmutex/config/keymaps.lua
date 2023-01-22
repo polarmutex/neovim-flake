@@ -9,8 +9,8 @@ map("n", "<Leader>mc", "<cmd>%s/txn/*/gc<CR>", {
     silent = true,
 })
 
---map("n", "<Leader>mt", require("telescope").extensions.beancount.copy_transactions, {
---    desc = "Telescope: beancount: copy beancount transactions",
---    noremap = true,
---    silent = true,
---})
+map("n", "<Leader>mt", require("telescope").extensions.beancount.copy_transactions, {
+    desc = "Telescope: beancount: copy beancount transactions",
+    noremap = true,
+    silent = true,
+})
