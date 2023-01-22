@@ -12,6 +12,7 @@ local treesitter_spec = {
 }
 treesitter_spec.config = function()
     require("nvim-treesitter.configs").setup({
+        parser_install_dir = "@neovimPlugin.nvim-treesitter@" .. "/parser",
         highlight = {
             enable = true,
             use_languagetree = true,
