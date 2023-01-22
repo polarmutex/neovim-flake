@@ -738,11 +738,11 @@
     "nvim-web-devicons-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1674259300,
-        "narHash": "sha256-w6f3sg0omTEU5bh7e5p8ubtxz35zobyVDR0NFkmmkXM=",
+        "lastModified": 1674342727,
+        "narHash": "sha256-Go8s+SucEIj7TjgzJPdrvN6auTR9VRIoQd63QM3vER8=",
         "owner": "kyazdani42",
         "repo": "nvim-web-devicons",
-        "rev": "9ca185ed23cc47bef66d97332f0694be568121e8",
+        "rev": "13d06d74afad093d8312fe051633b55f24049c16",
         "type": "github"
       },
       "original": {
