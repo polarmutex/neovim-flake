@@ -38,8 +38,6 @@ telescope_spec.config = function()
             },
         },
     })
-
-    _ = require("telescope").load_extension("beancount")
 end
 
 return {
