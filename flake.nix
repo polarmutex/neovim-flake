@@ -14,11 +14,6 @@
 
     crane.url = "github:ipetkov/crane";
     crane.inputs.nixpkgs.follows = "nixpkgs";
-    lemmy-help-src = {
-      # pull this version since current requires rust 1.65
-      url = "github:numToStr/lemmy-help?rev=0300c3e7bdfd860de5f0626a9e3e1d6dd6b97a14";
-      flake = false;
-    };
 
     rnix-lsp = {
       url = "github:Ma27/rnix-lsp";
@@ -62,6 +57,10 @@
               postUnpack = ''
                 mkdir -p $sourceRoot/lua
                 mv $sourceRoot/polarmutex $sourceRoot/lua
+                mkdir -p $sourceRoot/doc
+                ${prev.lemmy-help}/bin/lemmy-help -fact \
+                    $sourceRoot/lua/polarmutex/config/lazy.lua \
+                    > $sourceRoot/doc/polarmutex.txt
               '';
               postInstall =
                 let
@@ -312,7 +311,7 @@
                 customRC = ''
                   lua << EOF
                   -- bootstrap lazy.nvim, LazyVim and your plugins
-                  require('polarmutex.config.lazy')
+                  require('polarmutex.config.lazy').setup()
                   EOF
                 '';
                 plugins =
@@ -535,22 +534,11 @@
         devShells.default =
           pkgs.mkShell
             {
-              buildInputs =
-                let
-                  lemmy-help = crane.lib."${system}".buildPackage {
-                    src = inputs.lemmy-help-src;
-                    cargoExtraArgs = "--features=cli";
-
-                    # Add extra inputs here or any other derivation settings
-                    # doCheck = true;
-                    # buildInputs = [];
-                    # nativeBuildInputs = [];
-                  };
-                in
-                [
-                  lemmy-help
-                  pkgs.nvfetcher
-                ];
+              buildInputs = [
+                pkgs.lemmy-help
+                pkgs.pandoc
+                pkgs.nvfetcher
+              ];
             };
       });
 }

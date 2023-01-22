@@ -1,33 +1,17 @@
  This is PolarMutex's neovim config
 
-================================================================================
+==============================================================================
 Table of Contents                                          *polarmutex.contents*
 
-TODO···························································|polarmutex.todo|
-init···························································|polarmutex.init|
-Beancount·········································|polarmutex.plugins.beancount|
+TODO ························································· |polarmutex.todo|
 
-================================================================================
+==============================================================================
 TODO                                                           *polarmutex.todo*
 
  - add nix check for nivm-treesiter and lspconfig
  - add spellcheck
 
-================================================================================
-init                                                           *polarmutex.init*
-
-M.setup()                                                *polarmutex.init.setup*
-
-
-================================================================================
-Beancount                                         *polarmutex.plugins.beancount*
-
- keymaps:
-
-
-
-                                                          *polarmutex.beancount*
-M.setup()                                   *polarmutex.plugins.beancount.setup*
+M.setup()                                                *polarmutex.todo.setup*
 
 
 vim:tw=78:ts=8:noet:ft=help:norl:
