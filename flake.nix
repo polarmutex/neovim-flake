@@ -60,6 +60,7 @@
                 mkdir -p $sourceRoot/doc
                 ${prev.lemmy-help}/bin/lemmy-help -fact \
                     $sourceRoot/lua/polarmutex/config/lazy.lua \
+                    $sourceRoot/lua/polarmutex/config/keymaps.lua \
                     > $sourceRoot/doc/polarmutex.txt
               '';
               postInstall =

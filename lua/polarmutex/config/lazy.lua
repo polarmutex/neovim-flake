@@ -22,9 +22,11 @@ M.setup = function()
     }
 
     for _, module in ipairs(modules) do
-        local ok = pcall(require, "polarmutex.config." .. module)
+        local ok, mod = pcall(require, "polarmutex.config." .. module)
         if not ok then
             print("Uh oh! The " .. module .. " module failed to load.")
+        else
+            mod.setup()
         end
     end
 
