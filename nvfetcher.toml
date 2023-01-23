@@ -153,6 +153,11 @@ src.git = "https://github.com/jbyuki/one-small-step-for-vimkind"
 fetch.github = "jbyuki/one-small-step-for-vimkind"
 git.leaveDotGit = true
 
+[plugin-plenary-nvim]
+src.git = "https://github.com/nvim-lua/plenary.nvim"
+fetch.github = "nvim-lua/plenary.nvim"
+git.leaveDotGit = true
+
 [plugin-rust-tools-nvim]
 src.git = "https://github.com/simrat39/rust-tools.nvim"
 fetch.github = "simrat39/rust-tools.nvim"

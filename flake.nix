@@ -223,6 +223,7 @@
               "neovimPlugin.nvim-lspconfig"
               "neovimPlugin.nvim-treesitter"
               "neovimPlugin.one-small-step-for-vimkind"
+              "neovimPlugin.plenary-nvim"
               "neovimPlugin.rust-tools-nvim"
               "neovimPlugin.telescope-nvim"
               "neovimPlugin.tokyonight-nvim"
@@ -281,6 +282,7 @@
               (buildPlugin sources.plugin-nvim-lspconfig)
               treesitter
               (buildPlugin sources.plugin-one-small-step-for-vimkind)
+              (buildPlugin sources.plugin-plenary-nvim)
               (buildPlugin sources.plugin-rust-tools-nvim)
               (buildPlugin sources.plugin-telescope-nvim)
               (buildPlugin sources.plugin-tokyonight-nvim)
@@ -396,24 +398,24 @@
                       };
                   in
                   [
-                    {
-                      plugin = withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src;
-                      optional = false;
-                    }
-                    {
-                      plugin = plugin "tree-sitter-lua" inputs.tree-sitter-lua-src;
-                      optional = false;
-                    }
+                    #{
+                    #  plugin = withSrc prev.vimPlugins.plenary-nvim inputs.plenary-nvim-src;
+                    #  optional = false;
+                    #}
+                    #{
+                    #  plugin = plugin "tree-sitter-lua" inputs.tree-sitter-lua-src;
+                    #  optional = false;
+                    #}
                     #{ plugin = tree-sitter-lua-grammar; optional = false; }
-                    {
-                      plugin =
-                        (withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
-                          (plugins:
-                            with plugins; [
-                              tree-sitter-lua-grammar
-                            ]);
-                      optional = false;
-                    }
+                    #{
+                    #  plugin =
+                    #    (withSrc prev.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src).withPlugins
+                    #      (plugins:
+                    #        with plugins; [
+                    #          tree-sitter-lua-grammar
+                    #        ]);
+                    #  optional = false;
+                    #}
                   ];
               };
             in
