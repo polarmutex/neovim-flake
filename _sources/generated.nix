@@ -151,7 +151,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-4G0vYwomeRFmrmHZB+p1vpzdAAjAfeyH3EDdg7n/pyQ=";
+      sha256 = "sha256-OJT2I3GUlebxRPWLqOhxjQX6EiqCsnode4RCth7dspM=";
     });
     date = "2023-01-13";
   };
@@ -179,7 +179,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-lwIzxHBQ3rZqmwWKyJY9bJ8vAnt6jn5SOX+SugwAc2E=";
+      sha256 = "sha256-hN+BodTsNQROpvPMp2QyFD/53MZDKargniNr+QA4MLM=";
     });
     date = "2023-01-20";
   };
@@ -431,7 +431,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-OC86x1GlQuXQECwkwoxW4G77sB9xe3H1lyZvddkJ2+M=";
+      sha256 = "sha256-hlmchPynk+JpKgC7XinGF01I5S91r0uuLR4aNI2c6+4=";
     });
     date = "2023-01-23";
   };
@@ -501,7 +501,7 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-YcDKqxdo336ZU3ZE8P4kawzkQO9RK3E9uZd3CgJJvik=";
+      sha256 = "sha256-Gq3MFAYd65sNJU7Lb926ZPYqdUWsyLQAPZ04Zxoc/1U=";
     });
     date = "2023-01-22";
   };
@@ -515,8 +515,22 @@
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-SYNqm+6oefwRObN8QK84RSAKFtBi2ob9u24EwkPbgjk=";
+      sha256 = "sha256-2J3bLtzzUZpGHkP31F5QNRZaJtqZWRPD24XGx8+9d8I=";
     });
     date = "2023-01-18";
+  };
+  plugin-vim-be-good = {
+    pname = "plugin-vim-be-good";
+    version = "c290810728a4f75e334b07dc0f3a4cdea908d351";
+    src = fetchFromGitHub ({
+      owner = "ThePrimeagen";
+      repo = "vim-be-good";
+      rev = "c290810728a4f75e334b07dc0f3a4cdea908d351";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = true;
+      sha256 = "sha256-eWKJrKb80YxNPCLuWdMAuiUrVy6R3Dua1hRw8SzCTfQ=";
+    });
+    date = "2022-11-08";
   };
 }

@@ -229,6 +229,7 @@
               "neovimPlugin.rust-tools-nvim"
               "neovimPlugin.telescope-nvim"
               "neovimPlugin.tokyonight-nvim"
+              "neovimPlugin.vim-be-good"
               "neovimPlugin.nvim-web-devicons"
             ];
             replacements = [
@@ -289,6 +290,7 @@
               (buildPlugin sources.plugin-rust-tools-nvim)
               (buildPlugin sources.plugin-telescope-nvim)
               (buildPlugin sources.plugin-tokyonight-nvim)
+              (buildPlugin sources.plugin-vim-be-good)
               (buildPlugin sources.plugin-nvim-web-devicons)
             ];
           };
