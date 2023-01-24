@@ -279,6 +279,26 @@
         },
         "version": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458"
     },
+    "plugin-harpoon": {
+        "cargoLocks": null,
+        "date": "2023-01-23",
+        "extract": null,
+        "name": "plugin-harpoon",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "ThePrimeagen",
+            "repo": "harpoon",
+            "rev": "8c0bb0a328e57278f4783bb0e2ea32f296d36db1",
+            "sha256": "sha256-DsyMDITtDXdnr5wtHa99ek4yPA2aP6KclOyxBRdJjQ0=",
+            "type": "github"
+        },
+        "version": "8c0bb0a328e57278f4783bb0e2ea32f296d36db1"
+    },
     "plugin-heirline-nvim": {
         "cargoLocks": null,
         "date": "2023-01-11",

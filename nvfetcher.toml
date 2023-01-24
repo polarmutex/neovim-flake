@@ -68,6 +68,11 @@ src.git = "https://github.com/ThePrimeagen/git-worktree.nvim"
 fetch.github = "ThePrimeagen/git-worktree.nvim"
 git.leaveDotGit = true
 
+[plugin-harpoon]
+src.git = "https://github.com/ThePrimeagen/harpoon"
+fetch.github = "ThePrimeagen/harpoon"
+git.leaveDotGit = true
+
 [plugin-heirline-nvim]
 src.git = "https://github.com/rebelot/heirline.nvim"
 fetch.github = "rebelot/heirline.nvim"

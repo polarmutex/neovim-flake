@@ -197,6 +197,20 @@
     });
     date = "2021-12-24";
   };
+  plugin-harpoon = {
+    pname = "plugin-harpoon";
+    version = "8c0bb0a328e57278f4783bb0e2ea32f296d36db1";
+    src = fetchFromGitHub ({
+      owner = "ThePrimeagen";
+      repo = "harpoon";
+      rev = "8c0bb0a328e57278f4783bb0e2ea32f296d36db1";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = true;
+      sha256 = "sha256-DsyMDITtDXdnr5wtHa99ek4yPA2aP6KclOyxBRdJjQ0=";
+    });
+    date = "2023-01-23";
+  };
   plugin-heirline-nvim = {
     pname = "plugin-heirline-nvim";
     version = "b07ae7e499fecc263f38d1db7feeb2da227df370";
