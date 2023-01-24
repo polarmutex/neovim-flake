@@ -28,6 +28,17 @@ gitsigns_spec.config = function()
     require("gitsigns").setup({})
 end
 
+local gitworktree_spec = {
+    name = "gitworktree.nvim",
+    dir = "@neovimPlugin.gitworktree-nvim@",
+    event = "BufRead",
+}
+
+gitworktree_spec.config = function()
+    require("git-worktree").setup({})
+    require("telescope").load_extension("git_worktree")
+end
+
 local neogit_spec = {
     name = "neogit",
     dir = "@neovimPlugin.neogit@",
@@ -52,5 +63,6 @@ end
 return {
     diffview_spec,
     gitsigns_spec,
+    gitworktree_spec,
     neogit_spec,
 }

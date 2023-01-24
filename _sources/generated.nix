@@ -183,6 +183,20 @@
     });
     date = "2023-01-20";
   };
+  plugin-gitworktree-nvim = {
+    pname = "plugin-gitworktree-nvim";
+    version = "d7f4e2584e81670154f07ca9fa5dd791d9c1b458";
+    src = fetchFromGitHub ({
+      owner = "ThePrimeagen";
+      repo = "git-worktree.nvim";
+      rev = "d7f4e2584e81670154f07ca9fa5dd791d9c1b458";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = true;
+      sha256 = "sha256-LWL5hNqUNhzqeEWlpagTjNM7Tu17fybmtD4DrPdSrbI=";
+    });
+    date = "2021-12-24";
+  };
   plugin-heirline-nvim = {
     pname = "plugin-heirline-nvim";
     version = "b07ae7e499fecc263f38d1db7feeb2da227df370";

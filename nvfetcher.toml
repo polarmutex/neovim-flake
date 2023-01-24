@@ -63,6 +63,11 @@ src.git = "https://github.com/lewis6991/gitsigns.nvim"
 fetch.github = "lewis6991/gitsigns.nvim"
 git.leaveDotGit = true
 
+[plugin-gitworktree-nvim]
+src.git = "https://github.com/ThePrimeagen/git-worktree.nvim"
+fetch.github = "ThePrimeagen/git-worktree.nvim"
+git.leaveDotGit = true
+
 [plugin-heirline-nvim]
 src.git = "https://github.com/rebelot/heirline.nvim"
 fetch.github = "rebelot/heirline.nvim"

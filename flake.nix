@@ -206,6 +206,7 @@
               "neovimPlugin.crates-nvim"
               "neovimPlugin.diffview-nvim"
               "neovimPlugin.gitsigns-nvim"
+              "neovimPlugin.gitworktree-nvim"
               "neovimPlugin.heirline-nvim"
               "neovimPlugin.lazy-nvim"
               "neovimPlugin.lspkind-nvim"
@@ -265,6 +266,7 @@
               (buildPlugin sources.plugin-crates-nvim)
               (buildPlugin sources.plugin-diffview-nvim)
               (buildPlugin sources.plugin-gitsigns-nvim)
+              (buildPlugin sources.plugin-gitworktree-nvim)
               (buildPlugin sources.plugin-heirline-nvim)
               (buildPlugin sources.plugin-lazy-nvim)
               (buildPlugin sources.plugin-lspkind-nvim)

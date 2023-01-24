@@ -214,7 +214,7 @@
             "owner": "Saecki",
             "repo": "crates.nvim",
             "rev": "707ed7d6f8927a5ec0c241aa793f694f1b05f731",
-            "sha256": "sha256-4G0vYwomeRFmrmHZB+p1vpzdAAjAfeyH3EDdg7n/pyQ=",
+            "sha256": "sha256-OJT2I3GUlebxRPWLqOhxjQX6EiqCsnode4RCth7dspM=",
             "type": "github"
         },
         "version": "707ed7d6f8927a5ec0c241aa793f694f1b05f731"
@@ -254,10 +254,30 @@
             "owner": "lewis6991",
             "repo": "gitsigns.nvim",
             "rev": "7b37bd5c2dd4d7abc86f2af096af79120608eeca",
-            "sha256": "sha256-lwIzxHBQ3rZqmwWKyJY9bJ8vAnt6jn5SOX+SugwAc2E=",
+            "sha256": "sha256-hN+BodTsNQROpvPMp2QyFD/53MZDKargniNr+QA4MLM=",
             "type": "github"
         },
         "version": "7b37bd5c2dd4d7abc86f2af096af79120608eeca"
+    },
+    "plugin-gitworktree-nvim": {
+        "cargoLocks": null,
+        "date": "2021-12-24",
+        "extract": null,
+        "name": "plugin-gitworktree-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "ThePrimeagen",
+            "repo": "git-worktree.nvim",
+            "rev": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458",
+            "sha256": "sha256-LWL5hNqUNhzqeEWlpagTjNM7Tu17fybmtD4DrPdSrbI=",
+            "type": "github"
+        },
+        "version": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458"
     },
     "plugin-heirline-nvim": {
         "cargoLocks": null,
@@ -594,7 +614,7 @@
             "owner": "nvim-treesitter",
             "repo": "nvim-treesitter",
             "rev": "6c9f3d03e50f9d218d913e4ad1c812054a0ba61b",
-            "sha256": "sha256-OC86x1GlQuXQECwkwoxW4G77sB9xe3H1lyZvddkJ2+M=",
+            "sha256": "sha256-hlmchPynk+JpKgC7XinGF01I5S91r0uuLR4aNI2c6+4=",
             "type": "github"
         },
         "version": "6c9f3d03e50f9d218d913e4ad1c812054a0ba61b"
@@ -694,7 +714,7 @@
             "owner": "nvim-telescope",
             "repo": "telescope.nvim",
             "rev": "dce1156ca103b8222e4abbfc63f9c6887abf5ec6",
-            "sha256": "sha256-YcDKqxdo336ZU3ZE8P4kawzkQO9RK3E9uZd3CgJJvik=",
+            "sha256": "sha256-Gq3MFAYd65sNJU7Lb926ZPYqdUWsyLQAPZ04Zxoc/1U=",
             "type": "github"
         },
         "version": "dce1156ca103b8222e4abbfc63f9c6887abf5ec6"
@@ -714,7 +734,7 @@
             "owner": "folke",
             "repo": "tokyonight.nvim",
             "rev": "4071f7fa984859c5de7a1fd27069b99c3a0d802a",
-            "sha256": "sha256-SYNqm+6oefwRObN8QK84RSAKFtBi2ob9u24EwkPbgjk=",
+            "sha256": "sha256-2J3bLtzzUZpGHkP31F5QNRZaJtqZWRPD24XGx8+9d8I=",
             "type": "github"
         },
         "version": "4071f7fa984859c5de7a1fd27069b99c3a0d802a"
