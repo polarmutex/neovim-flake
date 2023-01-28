@@ -158,6 +158,11 @@ src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 fetch.github = "nvim-treesitter/nvim-treesitter"
 git.leaveDotGit = true
 
+[plugin-nvim-treesitter-playground]
+src.git = "https://github.com/nvim-treesitter/playground"
+fetch.github = "nvim-treesitter/playground"
+git.leaveDotGit = true
+
 [plugin-one-small-step-for-vimkind]
 src.git = "https://github.com/jbyuki/one-small-step-for-vimkind"
 fetch.github = "jbyuki/one-small-step-for-vimkind"
@@ -192,3 +197,9 @@ git.leaveDotGit = true
 src.git = "https://github.com/nvim-tree/nvim-web-devicons"
 fetch.github = "nvim-tree/nvim-web-devicons"
 git.leaveDotGit = true
+
+[tree-sitter-beancount]
+src.git = "https://github.com/polarmutex/tree-sitter-beancount"
+src.branch = "devel"
+fetch.github = "polarmutex/tree-sitter-beancount"
+

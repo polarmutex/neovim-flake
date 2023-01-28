@@ -105,6 +105,20 @@
 
           withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
 
+          # Grammar builder function
+          buildGrammar = prev.callPackage "${inputs.nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" { };
+
+          # Build grammars that were fetched using nvfetcher
+          generatedGrammars = with prev.lib;
+            mapAttrs
+              (n: v:
+                buildGrammar {
+                  language = removePrefix "tree-sitter-" n;
+                  inherit (v) version;
+                  src = v.src;
+                })
+              (filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources);
+
           treesitter-all = (withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withAllGrammars.overrideAttrs (_:
             let
               treesitter-parser-paths = prev.symlinkJoin {
@@ -124,7 +138,7 @@
               with p; [
                 astro
                 bash
-                beancount
+                generatedGrammars.tree-sitter-beancount
                 c
                 cmake
                 cpp
@@ -225,6 +239,7 @@
               "neovimPlugin.nvim-dap-virtual-text"
               "neovimPlugin.nvim-lspconfig"
               "neovimPlugin.nvim-treesitter"
+              "neovimPlugin.nvim-treesitter-playground"
               "neovimPlugin.one-small-step-for-vimkind"
               "neovimPlugin.plenary-nvim"
               "neovimPlugin.rust-tools-nvim"
@@ -287,6 +302,7 @@
               (buildPlugin sources.plugin-nvim-dap-virtual-text)
               (buildPlugin sources.plugin-nvim-lspconfig)
               treesitter
+              (buildPlugin sources.plugin-nvim-treesitter-playground)
               (buildPlugin sources.plugin-one-small-step-for-vimkind)
               (buildPlugin sources.plugin-plenary-nvim)
               (buildPlugin sources.plugin-rust-tools-nvim)

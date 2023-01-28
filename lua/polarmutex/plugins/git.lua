@@ -30,7 +30,8 @@ end
 
 local gitworktree_spec = {
     name = "gitworktree.nvim",
-    dir = "@neovimPlugin.gitworktree-nvim@",
+    --dir = "@neovimPlugin.gitworktree-nvim@",
+    dir = "~/repos/personal/git-worktree-nvim/master",
     event = "BufRead",
 }
 
