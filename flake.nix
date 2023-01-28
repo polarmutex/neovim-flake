@@ -12,9 +12,6 @@
       url = "github:gytis-ivaskevicius/nix2vim";
     };
 
-    crane.url = "github:ipetkov/crane";
-    crane.inputs.nixpkgs.follows = "nixpkgs";
-
     rnix-lsp = {
       url = "github:Ma27/rnix-lsp";
     };
@@ -25,7 +22,6 @@
     , nixpkgs
     , neovim
     , flake-utils
-    , crane
     , rnix-lsp
     , nix2vim
     , ...
@@ -87,7 +83,9 @@
             });
 
           sources = prev.callPackage ./_sources/generated.nix { };
+
           buildPlugin = source:
+            # TODO build neovim plugin
             prev.vimUtils.buildVimPluginFrom2Nix {
               inherit (source) pname version src;
             };
@@ -133,12 +131,13 @@
               '';
             });
 
-          nvim-treesitter-plugin = (withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withPlugins (
+          nvim-treesitter-plugin = prev.vimPlugins.nvim-treesitter.withPlugins (
             p:
               with p; [
                 astro
                 bash
-                generatedGrammars.tree-sitter-beancount
+                #generatedGrammars.tree-sitter-beancount
+                beancount
                 c
                 cmake
                 cpp
