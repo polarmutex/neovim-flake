@@ -156,16 +156,19 @@
                 lua
                 make
                 markdown
+                markdown_inline
                 mermaid
                 nix
                 proto
                 python
                 tree-sitter-query
+                regex
                 rust
                 svelte
                 teal
                 toml
                 typescript
+                vim
                 yaml
               ]
           );
