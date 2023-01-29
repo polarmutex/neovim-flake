@@ -18,7 +18,7 @@ M.setup = function()
         "autocmds",
         "keymaps",
         --"commands",
-        "filetypes",
+        --"filetypes",
     }
 
     for _, module in ipairs(modules) do
