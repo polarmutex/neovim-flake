@@ -21,7 +21,9 @@
       {
         systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
 
-        imports = [ ];
+        imports = [
+          ./checks
+        ];
 
         flake = {
           overlays.default = final: prev:
@@ -79,30 +81,30 @@
                   };
                 });
 
-              sources = prev.callPackage ./_sources/generated.nix { };
+              #sources = prev.callPackage ./_sources/generated.nix { };
 
-              buildPlugin = source:
-                # TODO build neovim plugin
-                prev.vimUtils.buildVimPluginFrom2Nix {
-                  inherit (source) pname version src;
-                };
-              buildPluginNew = pname: src:
+              #buildPlugin = source:
+              #  # TODO build neovim plugin
+              #  prev.vimUtils.buildVimPluginFrom2Nix {
+              #    inherit (source) pname version src;
+              #  };
+              buildPlugin = pname: src:
                 # TODO build neovim plugin
                 prev.vimUtils.buildVimPluginFrom2Nix {
                   inherit pname src;
                   version = src.revision;
                 };
 
-              generatedPluginSources = with prev.lib;
-                mapAttrs'
-                  (n:
-                    nameValuePair
-                      (removePrefix "'plugin-" (removeSuffix "'" n)))
-                  (filterAttrs (n: _: hasPrefix "'plugin-" n)
-                    sources);
+              #generatedPluginSources = with prev.lib;
+              #  mapAttrs'
+              #    (n:
+              #      nameValuePair
+              #        (removePrefix "'plugin-" (removeSuffix "'" n)))
+              #    (filterAttrs (n: _: hasPrefix "'plugin-" n)
+              #      sources);
 
-              generatedPlugins = with prev.lib;
-                mapAttrs (_: buildPlugin) generatedPluginSources;
+              #generatedPlugins = with prev.lib;
+              #  mapAttrs (_: buildPlugin) generatedPluginSources;
 
               withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
 
@@ -120,7 +122,7 @@
                     })
                   (filterAttrs (n: _: hasPrefix "tree-sitter-" n) sources);
 
-              treesitter-all = (withSrc prev.vimPlugins.nvim-treesitter sources.plugin-nvim-treesitter).withAllGrammars.overrideAttrs (_:
+              treesitter-all = (withSrc prev.vimPlugins.nvim-treesitter final.neovimPlugins.nvim-treesitter).withAllGrammars.overrideAttrs (_:
                 let
                   treesitter-parser-paths = prev.symlinkJoin {
                     name = "treesitter-parsers";
@@ -139,8 +141,8 @@
                   with p; [
                     astro
                     bash
-                    generatedGrammars.tree-sitter-beancount
-                    #beancount
+                    #generatedGrammars.tree-sitter-beancount
+                    beancount
                     c
                     cmake
                     cpp
@@ -277,45 +279,44 @@
                   (prev.lib.getExe final.nodePackages.svelte-language-server)
                   (prev.lib.getExe final.nodePackages.typescript-language-server)
 
-                  #(buildPlugin sources.plugin-beancount-nvim)
-                  (buildPluginNew "beancount-nvim" final.neovimPlugins.beancount-nvim)
-                  (buildPlugin sources.plugin-cmp-nvim-lsp)
-                  (buildPlugin sources.plugin-cmp-path)
-                  (buildPlugin sources.plugin-cmp-omni)
-                  (buildPlugin sources.plugin-cmp-calc)
-                  (buildPlugin sources.plugin-cmp-buffer)
-                  (buildPlugin sources.plugin-cmp-cmdline)
-                  (buildPlugin sources.plugin-cmp-dap)
-                  (buildPlugin sources.plugin-crates-nvim)
-                  (buildPlugin sources.plugin-diffview-nvim)
-                  (buildPlugin sources.plugin-gitsigns-nvim)
-                  (buildPlugin sources.plugin-gitworktree-nvim)
-                  (buildPlugin sources.plugin-harpoon)
-                  (buildPlugin sources.plugin-heirline-nvim)
-                  (buildPlugin sources.plugin-lazy-nvim)
-                  (buildPlugin sources.plugin-lspkind-nvim)
-                  (buildPlugin sources.plugin-lspformat-nvim)
-                  (buildPlugin sources.plugin-neodev-nvim)
-                  (buildPlugin sources.plugin-neogit)
-                  (buildPlugin sources.plugin-noice-nvim)
-                  (buildPlugin sources.plugin-nui-nvim)
-                  (buildPlugin sources.plugin-null-ls-nvim)
-                  (buildPlugin sources.plugin-nvim-cmp)
-                  (buildPlugin sources.plugin-nvim-colorizer)
-                  (buildPlugin sources.plugin-nvim-dap)
-                  (buildPlugin sources.plugin-nvim-dap-python)
-                  (buildPlugin sources.plugin-nvim-dap-ui)
-                  (buildPlugin sources.plugin-nvim-dap-virtual-text)
-                  (buildPlugin sources.plugin-nvim-lspconfig)
+                  (buildPlugin "beancount-nvim" final.neovimPlugins.beancount-nvim)
+                  (buildPlugin "cmp-nvim-lsp" final.neovimPlugins.cmp-nvim-lsp)
+                  (buildPlugin "cmp-path" final.neovimPlugins.cmp-path)
+                  (buildPlugin "cmp-omni" final.neovimPlugins.cmp-omni)
+                  (buildPlugin "cmp-calc" final.neovimPlugins.cmp-calc)
+                  (buildPlugin "cmp-buffer" final.neovimPlugins.cmp-buffer)
+                  (buildPlugin "cmp-cmdine" final.neovimPlugins.cmp-cmdline)
+                  (buildPlugin "cmp-dap" final.neovimPlugins.cmp-dap)
+                  (buildPlugin "crates-nvim" final.neovimPlugins.crates-nvim)
+                  (buildPlugin "diffview-nvim" final.neovimPlugins.diffview-nvim)
+                  (buildPlugin "gitsigns-nvim" final.neovimPlugins.gitsigns-nvim)
+                  (buildPlugin "git-worktree-nvim" final.neovimPlugins.git-worktree-nvim)
+                  (buildPlugin "harpoon" final.neovimPlugins.harpoon)
+                  (buildPlugin "heirline-nvim" final.neovimPlugins.heirline-nvim)
+                  (buildPlugin "lazy-nvim" final.neovimPlugins.lazy-nvim)
+                  (buildPlugin "lspkind-nvim" final.neovimPlugins.lspkind-nvim)
+                  (buildPlugin "lsp-format-nvim" final.neovimPlugins.lsp-format-nvim)
+                  (buildPlugin "neodev-nvim" final.neovimPlugins.neodev-nvim)
+                  (buildPlugin "neogit" final.neovimPlugins.neogit)
+                  (buildPlugin "noice-nvim" final.neovimPlugins.noice-nvim)
+                  (buildPlugin "nui-nvim" final.neovimPlugins.nui-nvim)
+                  (buildPlugin "null-ls" final.neovimPlugins.null-ls-nvim)
+                  (buildPlugin "nvim-cmp" final.neovimPlugins.nvim-cmp)
+                  (buildPlugin "nvim-colorizer" final.neovimPlugins.nvim-colorizer)
+                  (buildPlugin "nvim-dap" final.neovimPlugins.nvim-dap)
+                  (buildPlugin "nvim-dap-python" final.neovimPlugins.nvim-dap-python)
+                  (buildPlugin "nvim-dap-ui" final.neovimPlugins.nvim-dap-ui)
+                  (buildPlugin "nvim-dap-virtual-text" final.neovimPlugins.nvim-dap-virtual-text)
+                  (buildPlugin "nvim-lspconfig" final.neovimPlugins.nvim-lspconfig)
                   treesitter
-                  (buildPlugin sources.plugin-nvim-treesitter-playground)
-                  (buildPlugin sources.plugin-one-small-step-for-vimkind)
-                  (buildPlugin sources.plugin-plenary-nvim)
-                  (buildPlugin sources.plugin-rust-tools-nvim)
-                  (buildPlugin sources.plugin-telescope-nvim)
-                  (buildPlugin sources.plugin-tokyonight-nvim)
-                  (buildPlugin sources.plugin-vim-be-good)
-                  (buildPlugin sources.plugin-nvim-web-devicons)
+                  (buildPlugin "nvim-treesitter-playground" final.neovimPlugins.nvim-treesitter-playground)
+                  (buildPlugin "one-small-step-for-vimkind" final.neovimPlugins.one-small-step-for-vimkind)
+                  (buildPlugin "plenary-nvim" final.neovimPlugins.plenary-nvim)
+                  (buildPlugin "rust-tools-nvim" final.neovimPlugins.rust-tools-nvim)
+                  (buildPlugin "telescope-nvim" final.neovimPlugins.telescope-nvim)
+                  (buildPlugin "tokyonight-nvim" final.neovimPlugins.tokyonight-nvim)
+                  (buildPlugin "vim-be-good" final.neovimPlugins.vim-be-good)
+                  (buildPlugin "nvim-web-devicons" final.neovimPlugins.nvim-web-devicons)
                 ];
               };
 
@@ -490,54 +491,6 @@
               type = "app";
               program = "${pkgs.neovim-polar}/bin/nvim";
             };
-
-            # check to see if any config errors ars displayed
-            # TODO need to have version with all the config
-            checks =
-              let
-              in
-              {
-                neovim-check-config =
-                  pkgs.runCommand "neovim-check-config"
-                    {
-                      buildInputs = [
-                        pkgs.git
-                      ];
-                    } ''
-                    # We *must* create some output, usually contains test logs for checks
-                    mkdir -p "$out"
-                    # Probably want to do something to ensure your config file is read, too
-                    # need git in path
-                    export HOME=$TMPDIR
-                    ${pkgs.neovim-polar}/bin/nvim --headless -c "q" 2> "$out/nvim-config.log"
-                    if [ -n "$(cat "$out/nvim-config.log")" ]; then
-                        while IFS= read -r line; do
-                            echo "$line"
-                        done < "$out/nvim-config.log"
-                        exit 1
-                    fi
-                  '';
-                neovim-check-health =
-                  pkgs.runCommand "neovim-check-health"
-                    {
-                      buildInputs = [
-                        pkgs.git
-                      ];
-                    } ''
-                    # We *must* create some output, usually contains test logs for checks
-                    mkdir -p "$out"
-                    # Probably want to do something to ensure your config file is read, too
-                    # need git in path
-                    export HOME=$TMPDIR
-                    ${pkgs.neovim-polar}/bin/nvim --headless -c "lua require('polarmutex.health').nix_check()" -c "q" 2> "$out/nvim-health.log"
-                    if [ -n "$(cat "$out/nvim-health.log")" ]; then
-                        while IFS= read -r line; do
-                            echo "$line"
-                        done < "$out/nvim-health.log"
-                        exit 1
-                    fi
-                  '';
-              };
 
             devShells = {
               default = pkgs.mkShell {

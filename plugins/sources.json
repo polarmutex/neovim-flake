@@ -408,7 +408,7 @@
       "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/fa14721ce80de5be132a099d98fe9a994432abf3.tar.gz",
       "hash": "07977zly0mpgn9fkp0rmy7d7f5gmdii7lxl7pbhm65wqp1wwjxqr"
     },
-    "playground": {
+    "nvim-treesitter-playground": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
@@ -456,7 +456,7 @@
       "url": "https://github.com/nvim-telescope/telescope.nvim/archive/dce1156ca103b8222e4abbfc63f9c6887abf5ec6.tar.gz",
       "hash": "194jkn7a4xh5733n8n1n8n9mwibvadkxj6vw44xvwd01w0db6zhx"
     },
-    "tokyonigh-nvim": {
+    "tokyonight-nvim": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
