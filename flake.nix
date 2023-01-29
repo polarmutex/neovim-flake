@@ -86,6 +86,12 @@
                 prev.vimUtils.buildVimPluginFrom2Nix {
                   inherit (source) pname version src;
                 };
+              buildPluginNew = pname: src:
+                # TODO build neovim plugin
+                prev.vimUtils.buildVimPluginFrom2Nix {
+                  inherit pname src;
+                  version = src.revision;
+                };
 
               generatedPluginSources = with prev.lib;
                 mapAttrs'
@@ -271,7 +277,8 @@
                   (prev.lib.getExe final.nodePackages.svelte-language-server)
                   (prev.lib.getExe final.nodePackages.typescript-language-server)
 
-                  (buildPlugin sources.plugin-beancount-nvim)
+                  #(buildPlugin sources.plugin-beancount-nvim)
+                  (buildPluginNew "beancount-nvim" final.neovimPlugins.beancount-nvim)
                   (buildPlugin sources.plugin-cmp-nvim-lsp)
                   (buildPlugin sources.plugin-cmp-path)
                   (buildPlugin sources.plugin-cmp-omni)
@@ -462,9 +469,9 @@
               self.overlays.default
               # Keeping this out of the exposed overlay, I don't want to
               # expose nvfetcher-generated stuff, that's annoying.
-              #(_final: _prev: {
-              #  sources = pkgs.callPackage ./pkgs/_sources/generated.nix {};
-              #})
+              (_final: _prev: {
+                neovimPlugins = import ./plugins;
+              })
             ];
           in
           {

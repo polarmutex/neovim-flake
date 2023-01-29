@@ -1,0 +1,17 @@
+{
+  "pins": {
+    "tree-sitter-beancount": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "polarmutex",
+        "repo": "tree-sitter-beancount"
+      },
+      "branch": "devel",
+      "revision": "d52c7e33be77e49ccf976d82216f67b7d4436769",
+      "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/d52c7e33be77e49ccf976d82216f67b7d4436769.tar.gz",
+      "hash": "02aw89scrrvk53sc3dfldnjarsjq2jg9hhjxf3fy9xl971cvsdk4"
+    }
+  },
+  "version": 3
+}
