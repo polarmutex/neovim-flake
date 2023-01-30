@@ -209,18 +209,17 @@ stdenv.mkDerivation {
 
   inherit src;
 
-  installPhase = lib.concatStringsSep "\n" (lib.lists.flatten ([
-    "mkdir $out"
-    "cp -r {autoload,doc,lua,parser-info,parser,plugin,queries} $out"
-  ]
-  ++ (map
-    (drv: ''
-      cp ${drv}/parser $out/parser/${drv.parserName}.so
-      for f in ${drv}/queries/*.scm; do
-        cp $f $out/queries/${drv.parserName}/$(basename $f)
-      done
-    '')
-    generatedGrammars)));
+  installPhase = lib.concatStringsSep "\n" (lib.lists.flatten (
+    [
+      "mkdir $out"
+      "cp -r {autoload,doc,lua,parser-info,parser,plugin,queries,lockfile.json} $out"
+    ]
+    ++ (map
+      (drv: ''
+        cp ${drv}/parser $out/parser/${drv.parserName}.so
+      '')
+      generatedGrammars)
+  ));
 
   dontFixup = true;
 

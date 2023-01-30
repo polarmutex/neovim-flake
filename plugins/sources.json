@@ -260,9 +260,9 @@
         "repo": "noice.nvim"
       },
       "branch": "main",
-      "revision": "20f47dcebd24c84650bb8ed57d8349cc53dffd3f",
-      "url": "https://github.com/folke/noice.nvim/archive/20f47dcebd24c84650bb8ed57d8349cc53dffd3f.tar.gz",
-      "hash": "05ph9hrxl6k6ic6kpghcpygq7pzm4dgzvhr6f0r9ar3b8fanz1n3"
+      "revision": "34f7cf628666c6eb0c93fbe8a0490e977ac78b7b",
+      "url": "https://github.com/folke/noice.nvim/archive/34f7cf628666c6eb0c93fbe8a0490e977ac78b7b.tar.gz",
+      "hash": "0nkk0zji3fdjzjhd5l2lmqb5208mkw08xkgvvxbddsjwgxx3jbg4"
     },
     "nui-nvim": {
       "type": "Git",
@@ -384,6 +384,18 @@
       "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/cda8b291ef6fc4e04036e2ea6cf0de8aa84c2656.tar.gz",
       "hash": "0dmb7kcw8s9bxmxnr85r1rblan5168k8j3n35lq14kgdgxyybb49"
     },
+    "nvim-treesitter-playground": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-treesitter",
+        "repo": "playground"
+      },
+      "branch": "master",
+      "revision": "c19bcfd6a3681bc876e1b861f6685bfc04972d0d",
+      "url": "https://github.com/nvim-treesitter/playground/archive/c19bcfd6a3681bc876e1b861f6685bfc04972d0d.tar.gz",
+      "hash": "07vhiknf5gfd8rp6ynp9xq3rlc17b1sh322mlhg3976hl62lgs4f"
+    },
     "nvim-web-devicons": {
       "type": "Git",
       "repository": {
@@ -404,21 +416,9 @@
         "repo": "one-small-step-for-vimkind"
       },
       "branch": "main",
-      "revision": "fa14721ce80de5be132a099d98fe9a994432abf3",
-      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/fa14721ce80de5be132a099d98fe9a994432abf3.tar.gz",
-      "hash": "07977zly0mpgn9fkp0rmy7d7f5gmdii7lxl7pbhm65wqp1wwjxqr"
-    },
-    "nvim-treesitter-playground": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-treesitter",
-        "repo": "playground"
-      },
-      "branch": "master",
-      "revision": "c19bcfd6a3681bc876e1b861f6685bfc04972d0d",
-      "url": "https://github.com/nvim-treesitter/playground/archive/c19bcfd6a3681bc876e1b861f6685bfc04972d0d.tar.gz",
-      "hash": "07vhiknf5gfd8rp6ynp9xq3rlc17b1sh322mlhg3976hl62lgs4f"
+      "revision": "aef1bdbb8347e6daaf33d5109002f3df243ebfe9",
+      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/aef1bdbb8347e6daaf33d5109002f3df243ebfe9.tar.gz",
+      "hash": "1q0ypqij5qmpzgg551cs24kzdv7akspx9rc8zv4yhsmlidv87w6j"
     },
     "plenary-nvim": {
       "type": "Git",
