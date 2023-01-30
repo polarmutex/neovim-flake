@@ -58,7 +58,7 @@ function M.setup(client, buf)
 
         nix = function()
             autocmd_format(false, function(client)
-                return client.name ~= "rnix"
+                return client.name ~= "nil_ls"
             end)
         end,
 

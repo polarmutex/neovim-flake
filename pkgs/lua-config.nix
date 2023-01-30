@@ -62,63 +62,6 @@ let
       inherit pname src;
       version = src.revision;
     };
-
-  nvim-treesitter-plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (
-    p:
-      with p; [
-        astro
-        bash
-        #generatedGrammars.tree-sitter-beancount
-        beancount
-        c
-        cmake
-        cpp
-        diff
-        dockerfile
-        fish
-        gitcommit
-        gitignore
-        go
-        help
-        html
-        java
-        javascript
-        json
-        lua
-        make
-        markdown
-        markdown_inline
-        mermaid
-        nix
-        proto
-        python
-        tree-sitter-query
-        regex
-        rust
-        svelte
-        teal
-        toml
-        typescript
-        vim
-        yaml
-      ]
-  );
-
-  treesitter =
-    nvim-treesitter-plugin.overrideAttrs
-      (_:
-        let
-          treesitter-parser-paths = pkgs.symlinkJoin {
-            name = "treesitter-parsers";
-            paths = nvim-treesitter-plugin.dependencies;
-          };
-        in
-        {
-          postPatch = ''
-            mkdir -p parser
-            cp -r ${treesitter-parser-paths.outPath}/parser/*.so parser
-          '';
-        });
 in
 buildLuaConfigPlugin {
   configDir = ../lua;
@@ -134,7 +77,7 @@ buildLuaConfigPlugin {
     "js.prettier_d_slim"
     "lua.sumneko-lua-language-server"
     "lua.stylua"
-    "nix.rnix"
+    "nix.nil"
     "nix.alejandra"
     "python.pyright"
     "rust.analyzer"
@@ -197,7 +140,7 @@ buildLuaConfigPlugin {
     (pkgs.nodePackages.prettier_d_slim)
     (pkgs.sumneko-lua-language-server)
     (pkgs.stylua)
-    (lib.getExe pkgs.rnix-lsp)
+    (lib.getExe pkgs.nil)
     (pkgs.alejandra)
     (pkgs.pyright)
     (pkgs.lib.getExe pkgs.rust-analyzer)

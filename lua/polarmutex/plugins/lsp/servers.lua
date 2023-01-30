@@ -53,8 +53,8 @@ local servers = {
     pyright = {
         cmd = { "@python.pyright@/bin/pyright-langserver", "--stdio" },
     },
-    rnix = {
-        cmd = { "@nix.rnix@" },
+    nil_ls = {
+        cmd = { "@nix.nil@" },
     },
     -- handled by rust-tools
     --rust_analyzer = {

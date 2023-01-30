@@ -2,7 +2,7 @@ local lsp_format = require("lsp-format")
 
 local disable_format_cap = {
     "sumneko_lua",
-    "rnix",
+    "nil_ls",
 }
 
 local on_attach = function(client, bufnr)
