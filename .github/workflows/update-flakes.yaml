@@ -64,11 +64,18 @@ jobs:
       #    git config user.name "Git Bot"
       - name: Update the flake
         run: nix flake update
-      - name: Store flake.lock
+      - name: Update the neovim plugins
+        run: nix develop && npins -d plugins update
+      - name: Update the neovim tree-sitter grammars
+        run: nix run .#update-treesitter-parsers
+      - name: Store flake.lock, npins dependencies
         uses: actions/upload-artifact@v3
         with:
           name: flake_lock
-          path: flake.lock
+          path: |
+            flake.lock
+            plugins/*
+            tree-sitter-grammars/*
 
   build_flake:
     runs-on: ubuntu-20.04
@@ -99,7 +106,7 @@ jobs:
           name: polarmutex
           authToken: "${{ secrets.CACHIX_KEY }}"
           pathsToPush: result
-      - name: Restore flake.lock
+      - name: Restore flake.lock and dependencies
         uses: actions/download-artifact@v3
         with:
           name: flake_lock
@@ -161,7 +168,7 @@ jobs:
             substituters = https://cache.nixos.org/ https://nix-community.cachix.org
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
           install_url: https://releases.nixos.org/nix/nix-2.12.0/install
-      - name: Restore flake.lock
+      - name: Restore flake.lock and dependencies
         uses: actions/download-artifact@v3
         with:
           name: flake_lock
