@@ -1,0 +1,124 @@
+name: Build and test
+
+on:
+  pull_request:
+
+jobs:
+
+  generate_matrix:
+    runs-on: ubuntu-20.04
+    outputs:
+      packages: ${{ steps.gen_packages.outputs.packages }}
+      checks: ${{ steps.gen_checks.outputs.checks }}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Install nix
+        uses: cachix/install-nix-action@v18
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+          install_url: https://releases.nixos.org/nix/nix-2.12.0/install
+      - name: Generate flake.json
+        run: |
+          nix flake show --json > flake.json
+      - id: gen_packages
+        run: |
+          packages=$(jq -c '.packages."x86_64-linux" | keys' < flake.json)
+          printf "::set-output name=packages::%s" "$packages"
+      - id: gen_checks
+        run: |
+          checks=$(jq -c '.checks."x86_64-linux" | keys' < flake.json)
+          printf "::set-output name=checks::%s" "$checks"
+
+  build_flake:
+    runs-on: ubuntu-20.04
+    needs: [generate_matrix]
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        package: ${{fromJson(needs.generate_matrix.outputs.packages)}}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Install nix
+        uses: cachix/install-nix-action@v18
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+          install_url: https://releases.nixos.org/nix/nix-2.12.0/install
+      - name: Set up cachix
+        uses: cachix/cachix-action@master # pathsToPush, please update once we have v11!
+        with:
+          name: polarmutex
+          authToken: "${{ secrets.CACHIX_KEY }}"
+          pathsToPush: result
+      - name: Build everything
+        run: nix build .#${{ matrix.package }}
+
+  build_checks:
+    runs-on: ubuntu-20.04
+    needs: [generate_matrix]
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        check: ${{fromJson(needs.generate_matrix.outputs.checks)}}
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Install nix
+        uses: cachix/install-nix-action@v18
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+          install_url: https://releases.nixos.org/nix/nix-2.12.0/install
+      - name: Set up cachix
+        uses: cachix/cachix-action@master # pathsToPush, please update once we have v11!
+        with:
+          name: polarmutex
+          authToken: "${{ secrets.CACHIX_KEY }}"
+          skipPush: true
+      - name: Build everything
+        run: nix build .#checks.x86_64-linux.${{ matrix.check }} --no-link
+
+  check_flake:
+    runs-on: ubuntu-20.04
+    continue-on-error: true
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Install nix
+        uses: cachix/install-nix-action@v18
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+          install_url: https://releases.nixos.org/nix/nix-2.12.0/install
+      - name: Build everything
+        run: |
+          nix flake check --keep-going
