@@ -65,7 +65,7 @@ jobs:
       - name: Update the flake
         run: nix flake update
       - name: Update the neovim plugins
-        run: nix develop -c npins -d plugins update
+        run: nix-shell -p npins --run "npins -d plugins update"
       - name: Update the neovim tree-sitter grammars
         run: nix run .#update-treesitter-parsers
       - name: Store flake.lock, npins dependencies
