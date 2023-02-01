@@ -73,6 +73,16 @@
             type = "app";
             program = "${pkgs.neovim-polar}/bin/nvim";
           };
+          update-neovim-plugins = {
+            type = "app";
+            program = pkgs.writeShellApplication {
+              name = "update-plugins.sh";
+              runtimeInputs = [pkgs.npins];
+              text = ''
+                ${pkgs.npins}/bin/npins -d plugins update
+              '';
+            };
+          };
           update-treesitter-parsers = {
             type = "app";
             program = pkgs.nvim-treesitter-master.update-grammars;

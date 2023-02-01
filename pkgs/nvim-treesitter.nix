@@ -1,12 +1,12 @@
-{ pkgs
-, lib
-, nvim-treesitter-git
-, stdenv
-, nixpkgs
-, treesitterGrammars
-, ...
-}:
-let
+{
+  pkgs,
+  lib,
+  nvim-treesitter-git,
+  stdenv,
+  nixpkgs,
+  treesitterGrammars,
+  ...
+}: let
   src = pkgs.neovimPlugins.nvim-treesitter;
 
   lockfile = lib.importJSON "${src}/lockfile.json";
@@ -130,30 +130,30 @@ let
 
   allGrammars =
     builtins.mapAttrs
-      (name: value: rec {
-        inherit (value) owner;
-        repo =
-          if value ? "repo"
-          then value.repo
-          else "tree-sitter-${name}";
-        rev =
-          if value ? "rev"
-          then value.rev
-          else lockfile."${name}".revision;
-        branch =
-          if value ? "branch"
-          then value.branch
-          else "master";
-      })
-      grammars;
+    (name: value: rec {
+      inherit (value) owner;
+      repo =
+        if value ? "repo"
+        then value.repo
+        else "tree-sitter-${name}";
+      rev =
+        if value ? "rev"
+        then value.rev
+        else lockfile."${name}".revision;
+      branch =
+        if value ? "branch"
+        then value.branch
+        else "master";
+    })
+    grammars;
 
   foreachSh = attrs: f:
     lib.concatMapStringsSep "\n" f
-      (lib.mapAttrsToList (k: v: { name = k; } // v) attrs);
+    (lib.mapAttrsToList (k: v: {name = k;} // v) attrs);
 
   update-grammars = pkgs.writeShellApplication {
     name = "update-grammars.sh";
-    runtimeInputs = [ pkgs.npins ];
+    runtimeInputs = [pkgs.npins];
     text = ''
        rm -rf tree-sitter-grammars/*
       ${pkgs.npins}/bin/npins -d tree-sitter-grammars init --bare
@@ -182,48 +182,48 @@ let
     '';
   };
 
-  buildGrammar = pkgs.callPackage "${nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" { };
+  buildGrammar = pkgs.callPackage "${nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" {};
 
   # Build grammars that were fetched using nvfetcher
   generatedGrammars = with lib;
     mapAttrsToList
-      (n: v:
-        buildGrammar {
-          #language = removePrefix "tree-sitter-" n;
-          language = n;
-          version = treesitterGrammars."tree-sitter-${n}".revision;
-          src = treesitterGrammars."tree-sitter-${n}";
-          name = "tree-sitter-${n}-grammar";
-          location =
-            if v ? "location"
-            then v.location
-            else null;
+    (n: v:
+      buildGrammar {
+        #language = removePrefix "tree-sitter-" n;
+        language = n;
+        version = treesitterGrammars."tree-sitter-${n}".revision;
+        src = treesitterGrammars."tree-sitter-${n}";
+        name = "tree-sitter-${n}-grammar";
+        location =
+          if v ? "location"
+          then v.location
+          else null;
 
-          #passthru.parserName = "${lib.strings.replaceStrings ["-"] ["_"] (lib.strings.removePrefix "tree-sitter-" n)}";
-          passthru.parserName = n;
-        })
-      grammars;
+        #passthru.parserName = "${lib.strings.replaceStrings ["-"] ["_"] (lib.strings.removePrefix "tree-sitter-" n)}";
+        passthru.parserName = n;
+      })
+    grammars;
 in
-stdenv.mkDerivation {
-  name = "nvim-treesitter";
+  stdenv.mkDerivation {
+    name = "nvim-treesitter";
 
-  inherit src;
+    inherit src;
 
-  installPhase = lib.concatStringsSep "\n" (lib.lists.flatten (
-    [
-      "mkdir $out"
-      "cp -r {autoload,doc,lua,parser-info,parser,plugin,queries,lockfile.json} $out"
-    ]
-    ++ (map
-      (drv: ''
-        cp ${drv}/parser $out/parser/${drv.parserName}.so
-      '')
-      generatedGrammars)
-  ));
+    installPhase = lib.concatStringsSep "\n" (lib.lists.flatten (
+      [
+        "mkdir $out"
+        "cp -r {autoload,doc,lua,parser-info,parser,plugin,queries,lockfile.json} $out"
+      ]
+      ++ (map
+        (drv: ''
+          cp ${drv}/parser $out/parser/${drv.parserName}.so
+        '')
+        generatedGrammars)
+    ));
 
-  dontFixup = true;
+    dontFixup = true;
 
-  passthru = {
-    inherit update-grammars;
-  };
-}
+    passthru = {
+      inherit update-grammars;
+    };
+  }
