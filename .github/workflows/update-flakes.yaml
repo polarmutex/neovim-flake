@@ -175,6 +175,61 @@ jobs:
       - name: Build everything
         run: |
           nix flake check --keep-going
+
+  push_update:
+    runs-on: ubuntu-20.04
+    permissions: write-all
+    needs: [update_flake, build_flake, build_checks, check_flake]
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Restore flake.lock and dependencies
+        uses: actions/download-artifact@v3
+        with:
+          name: flake_lock
+
+      - name: Create a pull request to update dependencies
+        id: create_pr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: "chore(dependencies): update"
+          branch: "update_flake_dependencies"
+          delete-branch: true
+          author: "polarmutex[bot] <polarmutex[bot]@users.noreply.github.com>"
+          signoff: false
+          title: "chore(dependencies): Update dependencies"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: ""
+          labels: dependencies,autorebase:opt-in
+      - name: Set the PR to automerge
+        if: ${{ steps.create_pr.outputs.pull-request-operation == 'created' }}
+        uses: peter-evans/enable-pull-request-automerge@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.create_pr.outputs.pull-request-number }}
+          merge-method: "rebase"
+      #- name: Set up git
+      #  run: |
+      #    git config user.email gitbot@nobbz.dev
+      #    git config user.name "Git Bot"
+      #- name: Create and merge PR
+      #  run: |
+      #    git switch -c updates-${{ github.run_id }}
+      #    git commit -am "flake.lock: Update"
+      #    git push -u origin updates-${{ github.run_id }}
+      #    PR=$(gh pr create \
+      #      --assignee NobbZ \
+      #      --base main \
+      #      --body "Automatic flake update on $(date -I)" \
+      #      --fill \
+      #      --label bot \
+      #      --title "Auto update $(date -I)")
+      #    gh pr merge $PR --merge --delete-branch
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   #get-flakes:
   #  runs-on: ubuntu-latest
   #  outputs:
