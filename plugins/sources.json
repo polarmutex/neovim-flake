@@ -380,9 +380,9 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
-      "revision": "0e6d4b4172f30c4aa44a9adc9ea5719723a1fac3",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/0e6d4b4172f30c4aa44a9adc9ea5719723a1fac3.tar.gz",
-      "hash": "1n98salqvdh23yxkx1m490sf6hvjqjzpyxm459sk33znj2j7nzvv"
+      "revision": "bd7b4b6eff2dcb4a8a65f55d51398e79fa3d4ec6",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/bd7b4b6eff2dcb4a8a65f55d51398e79fa3d4ec6.tar.gz",
+      "hash": "08amxr13yfqi2301lrdb0swl6wfjkbi3i7cq5r5ypyw7xaj1nbqb"
     },
     "nvim-treesitter-playground": {
       "type": "Git",
@@ -440,9 +440,9 @@
         "repo": "rust-tools.nvim"
       },
       "branch": "master",
-      "revision": "b297167d9e01accc9b9afe872ce91e791df2dde0",
-      "url": "https://github.com/simrat39/rust-tools.nvim/archive/b297167d9e01accc9b9afe872ce91e791df2dde0.tar.gz",
-      "hash": "1fwjykp6gaafniflb3816z2nkfkpwa9pkxdcs6l2ka06ngr3xdih"
+      "revision": "bd1aa99ffb911a1cf99b3fcf3b44c0391c57e3ef",
+      "url": "https://github.com/simrat39/rust-tools.nvim/archive/bd1aa99ffb911a1cf99b3fcf3b44c0391c57e3ef.tar.gz",
+      "hash": "0sja04sgpaa30v3ndnffh8n2lx0igicjpmddc7h5v2n62il5z1a8"
     },
     "telescope-nvim": {
       "type": "Git",
