@@ -68,9 +68,9 @@
         "repo": "tree-sitter-cmake"
       },
       "branch": "master",
-      "revision": "a32265307aa2d31941056d69e8b6633e61750b2f",
-      "url": "https://github.com/uyha/tree-sitter-cmake/archive/a32265307aa2d31941056d69e8b6633e61750b2f.tar.gz",
-      "hash": "19pzhi6kgclf2fccn7vylwik2d0m8jbp8kppmxcxrmd6qx47f5rc"
+      "revision": "399605a02bcd5daa309ce63a6459c600dce3473f",
+      "url": "https://github.com/uyha/tree-sitter-cmake/archive/399605a02bcd5daa309ce63a6459c600dce3473f.tar.gz",
+      "hash": "00zs5s2dvyqki7ghmhp5n9ssrjbsaklzvzg5rvh6fikxyk4wm77f"
     },
     "tree-sitter-cpp": {
       "type": "Git",
@@ -248,9 +248,9 @@
         "repo": "tree-sitter-markdown"
       },
       "branch": "split_parser",
-      "revision": "abea13b86c404564991244b69b7afc4ca362d0c0",
-      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/abea13b86c404564991244b69b7afc4ca362d0c0.tar.gz",
-      "hash": "1xg8707ga8hslmaj9kb3i6jjal0ab189zqbzffimh6nj6kx6bm41"
+      "revision": "7e7aa9a25ca9729db9fe22912f8f47bdb403a979",
+      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/7e7aa9a25ca9729db9fe22912f8f47bdb403a979.tar.gz",
+      "hash": "0z9m7f5m86abn1v2v93ac8sdyqrnyk92by8xh5mgbyn3ijhkvh9a"
     },
     "tree-sitter-markdown_inline": {
       "type": "Git",
@@ -260,9 +260,9 @@
         "repo": "tree-sitter-markdown"
       },
       "branch": "split_parser",
-      "revision": "abea13b86c404564991244b69b7afc4ca362d0c0",
-      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/abea13b86c404564991244b69b7afc4ca362d0c0.tar.gz",
-      "hash": "1xg8707ga8hslmaj9kb3i6jjal0ab189zqbzffimh6nj6kx6bm41"
+      "revision": "7e7aa9a25ca9729db9fe22912f8f47bdb403a979",
+      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/7e7aa9a25ca9729db9fe22912f8f47bdb403a979.tar.gz",
+      "hash": "0z9m7f5m86abn1v2v93ac8sdyqrnyk92by8xh5mgbyn3ijhkvh9a"
     },
     "tree-sitter-mermaid": {
       "type": "Git",
@@ -380,9 +380,9 @@
         "repo": "tree-sitter-viml"
       },
       "branch": "master",
-      "revision": "55ff1b080c09edeced9b748cf4c16d0b49d17fb9",
-      "url": "https://github.com/vigoux/tree-sitter-viml/archive/55ff1b080c09edeced9b748cf4c16d0b49d17fb9.tar.gz",
-      "hash": "080vimv12rrvfc9qkfzs8bsa1asdrab9mgy4j16kmyzlyd27mj3c"
+      "revision": "e39a7bbcfdcfc7900629962b785c7e14503ae590",
+      "url": "https://github.com/vigoux/tree-sitter-viml/archive/e39a7bbcfdcfc7900629962b785c7e14503ae590.tar.gz",
+      "hash": "0p9vkl4z0kvyl3mv71rq57zghddvl2ghxbir2amjgrwb00gh0xbz"
     },
     "tree-sitter-yaml": {
       "type": "Git",
