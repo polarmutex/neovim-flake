@@ -41,6 +41,7 @@ null_ls.setup({
                 end),
             },
             filetypes = {
+                "astro",
                 "javascript",
                 "typescript",
                 "css",
