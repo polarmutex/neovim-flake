@@ -12,41 +12,16 @@ null_ls.setup({
     sources = {
         --null_ls.builtins.formatting.asmfmt,
         --null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.prettier_d_slim.with({
-            generator_opts = {
-                command = "@js.prettier_d_slim@/bin/prettier_d_slim",
-                args = h.range_formatting_args_factory(
-                    { "--stdin", "--stdin-filepath", "$FILENAME" },
-                    "--range-start",
-                    "--range-end",
-                    { row_offset = -1, col_offset = -1 }
-                ),
-                to_stdin = true,
-                dynamic_command = cmd_resolver.from_node_modules,
-                cwd = h.cache.by_bufnr(function(params)
-                    return u.root_pattern(
-                        -- https://prettier.io/docs/en/configuration.html
-                        ".prettierrc",
-                        ".prettierrc.json",
-                        ".prettierrc.yml",
-                        ".prettierrc.yaml",
-                        ".prettierrc.json5",
-                        ".prettierrc.js",
-                        ".prettierrc.cjs",
-                        ".prettier.config.js",
-                        ".prettier.config.cjs",
-                        ".prettierrc.toml",
-                        "package.json"
-                    )(params.bufname)
-                end),
-            },
+        null_ls.builtins.formatting.prettier.with({
             filetypes = {
                 "astro",
-                "javascript",
-                "typescript",
                 "css",
                 "html",
+                "javascript",
                 "json",
+                "markdown",
+                "markdown.mdx",
+                "typescript",
                 "yaml",
             },
         }),
