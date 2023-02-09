@@ -12,17 +12,24 @@ null_ls.setup({
     sources = {
         --null_ls.builtins.formatting.asmfmt,
         --null_ls.builtins.formatting.black,
-        null_ls.builtins.formatting.prettier.with({
+        null_ls.builtins.formatting.dprint.with({
+            generator_opts = {
+                command = "@rust.dprint@/bin/dprint",
+                args = {
+                    "fmt",
+                    "--stdin",
+                    "$FILENAME",
+                },
+                to_stdin = true,
+            },
             filetypes = {
-                "astro",
-                "css",
-                "html",
                 "javascript",
                 "json",
                 "markdown",
-                "markdown.mdx",
+                --"markdown.mdx",
                 "typescript",
                 "yaml",
+                "toml",
             },
         }),
         null_ls.builtins.formatting.alejandra.with({

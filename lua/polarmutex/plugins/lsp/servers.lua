@@ -18,6 +18,9 @@ updated_capabilities = require("cmp_nvim_lsp").default_capabilities(updated_capa
 updated_capabilities.textDocument.completion.completionItem.insertReplaceSupport = false
 
 local servers = {
+    astro = {
+        cmd = { "@astro.language-server@", "--stdio" },
+    },
     beancount = {
         cmd = {
             --"@beancount.beancount-language-server@/bin/beancount-language-server"
