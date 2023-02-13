@@ -16,7 +16,7 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Install nix
-        uses: cachix/install-nix-action@v18
+        uses: cachix/install-nix-action@v19
         with:
           extra_nix_config: |
             auto-optimise-store = true
@@ -51,7 +51,7 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Install nix
-        uses: cachix/install-nix-action@v18
+        uses: cachix/install-nix-action@v19
         with:
           extra_nix_config: |
             auto-optimise-store = true
@@ -83,7 +83,7 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Install nix
-        uses: cachix/install-nix-action@v18
+        uses: cachix/install-nix-action@v19
         with:
           extra_nix_config: |
             auto-optimise-store = true
@@ -110,7 +110,7 @@ jobs:
         with:
           token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Install nix
-        uses: cachix/install-nix-action@v18
+        uses: cachix/install-nix-action@v19
         with:
           extra_nix_config: |
             auto-optimise-store = true
