@@ -92,9 +92,9 @@
         "repo": "tree-sitter-diff"
       },
       "branch": "main",
-      "revision": "1d63cd49529ef3153393cf8f620718b274bba715",
-      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/1d63cd49529ef3153393cf8f620718b274bba715.tar.gz",
-      "hash": "0j88140ma256gimpai6azvp4jyr5in51d77xqyhcmi9calh3f1cw"
+      "revision": "f69bde8e56f431863eba2fe4bab23e7d9692855f",
+      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/f69bde8e56f431863eba2fe4bab23e7d9692855f.tar.gz",
+      "hash": "00h9w9p0cvlpkhiz8s36bs5hiw5vl0l74g66pdm6p63iff35fm9h"
     },
     "tree-sitter-dockerfile": {
       "type": "Git",
