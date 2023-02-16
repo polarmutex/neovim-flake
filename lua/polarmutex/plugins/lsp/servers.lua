@@ -75,7 +75,7 @@ local servers = {
             },
         },
     },
-    sumneko_lua = {
+    lua_ls = {
         cmd = { "@lua.sumneko-lua-language-server@/bin/lua-language-server" },
         settings = {
             -- Do not send telemetry data containing a randomized but unique identifier
