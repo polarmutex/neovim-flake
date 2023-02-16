@@ -137,7 +137,7 @@ in
       .jar
       (pkgs.jdt-language-server)
       (pkgs.dprint)
-      (pkgs.sumneko-lua-language-server)
+      (pkgs.lua-language-server)
       (pkgs.stylua)
       (lib.getExe pkgs.nil)
       (pkgs.alejandra)

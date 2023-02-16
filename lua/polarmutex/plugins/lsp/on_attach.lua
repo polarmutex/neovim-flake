@@ -1,7 +1,7 @@
 local lsp_format = require("lsp-format")
 
 local disable_format_cap = {
-    "sumneko_lua",
+    "lua_ls",
     "nil_ls",
 }
 
