@@ -116,9 +116,9 @@
         "repo": "tree-sitter-git-rebase"
       },
       "branch": "master",
-      "revision": "127f5b56c1ad3e8a449a7d6e0c7412ead7f7724c",
-      "url": "https://github.com/the-mikedavis/tree-sitter-git-rebase/archive/127f5b56c1ad3e8a449a7d6e0c7412ead7f7724c.tar.gz",
-      "hash": "1lg7c0bjrjga2abyi4hk5w8wbakp2aj83nrmarqynmz5nx790wg1"
+      "revision": "d8a4207ebbc47bd78bacdf48f883db58283f9fd8",
+      "url": "https://github.com/the-mikedavis/tree-sitter-git-rebase/archive/d8a4207ebbc47bd78bacdf48f883db58283f9fd8.tar.gz",
+      "hash": "16g3i69jxq7fm2nis2d61bcj1r84sbr1drbmjd6zwm8rxkdnxd4r"
     },
     "tree-sitter-gitcommit": {
       "type": "Git",
