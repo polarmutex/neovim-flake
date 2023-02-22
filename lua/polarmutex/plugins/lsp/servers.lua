@@ -277,9 +277,10 @@ rt.setup({
                 --    importGranularity = "module",
                 --    importPrefix = "by_self",
                 --},
-                --cargo = {
-                --    loadOutDirsFromCheck = true,
-                --},
+                cargo = {
+                    features = { "ssr" },
+                    --    loadOutDirsFromCheck = true,
+                },
                 checkOnSave = {
                     command = "clippy",
                 },
