@@ -43,10 +43,6 @@
       owner = "gbprod";
       branch = "main";
     };
-    gitignore = {
-      owner = "shunsambongi";
-      branch = "main";
-    };
     git_rebase = {
       owner = "the-mikedavis";
       repo = "tree-sitter-git-rebase";
