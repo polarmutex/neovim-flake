@@ -236,9 +236,9 @@
         "repo": "tree-sitter-markdown"
       },
       "branch": "split_parser",
-      "revision": "7e7aa9a25ca9729db9fe22912f8f47bdb403a979",
-      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/7e7aa9a25ca9729db9fe22912f8f47bdb403a979.tar.gz",
-      "hash": "0z9m7f5m86abn1v2v93ac8sdyqrnyk92by8xh5mgbyn3ijhkvh9a"
+      "revision": "6138ee0c0d0ddafc4bf0e25728b73f902bbf2c98",
+      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/6138ee0c0d0ddafc4bf0e25728b73f902bbf2c98.tar.gz",
+      "hash": "1rx6m2qj9a08qzzaxrkij68pcw7m1rl78qggg6k93caskjab461z"
     },
     "tree-sitter-markdown_inline": {
       "type": "Git",
@@ -248,9 +248,9 @@
         "repo": "tree-sitter-markdown"
       },
       "branch": "split_parser",
-      "revision": "7e7aa9a25ca9729db9fe22912f8f47bdb403a979",
-      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/7e7aa9a25ca9729db9fe22912f8f47bdb403a979.tar.gz",
-      "hash": "0z9m7f5m86abn1v2v93ac8sdyqrnyk92by8xh5mgbyn3ijhkvh9a"
+      "revision": "6138ee0c0d0ddafc4bf0e25728b73f902bbf2c98",
+      "url": "https://github.com/MDeiml/tree-sitter-markdown/archive/6138ee0c0d0ddafc4bf0e25728b73f902bbf2c98.tar.gz",
+      "hash": "1rx6m2qj9a08qzzaxrkij68pcw7m1rl78qggg6k93caskjab461z"
     },
     "tree-sitter-mermaid": {
       "type": "Git",
@@ -284,9 +284,9 @@
         "repo": "tree-sitter-python"
       },
       "branch": "master",
-      "revision": "528855eee2665210e1bf5556de48b8d8dacb8932",
-      "url": "https://github.com/tree-sitter/tree-sitter-python/archive/528855eee2665210e1bf5556de48b8d8dacb8932.tar.gz",
-      "hash": "0nmdvmhc4cxpc875az2i3w86mvvciaa0pk7l3zgwc86anqqmcr0z"
+      "revision": "62827156d01c74dc1538266344e788da74536b8a",
+      "url": "https://github.com/tree-sitter/tree-sitter-python/archive/62827156d01c74dc1538266344e788da74536b8a.tar.gz",
+      "hash": "038l9zdn821s2igwfiwxq2ajkc1d66iri4zj9afazbma7kh5fnw5"
     },
     "tree-sitter-query": {
       "type": "Git",
