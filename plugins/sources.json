@@ -248,9 +248,9 @@
         "repo": "neogit"
       },
       "branch": "master",
-      "revision": "bddb2323aa45873eb15eca8a9368ac725a174855",
-      "url": "https://github.com/TimUntersberger/neogit/archive/bddb2323aa45873eb15eca8a9368ac725a174855.tar.gz",
-      "hash": "0xzxc19x54j0lx475pbk3id3kij00r8p5s1xj14kdzqml6bmpgw5"
+      "revision": "85380916cec322b1351785cac4f4e3f24de36b2a",
+      "url": "https://github.com/TimUntersberger/neogit/archive/85380916cec322b1351785cac4f4e3f24de36b2a.tar.gz",
+      "hash": "0pyykjbwih2zswigqrganm9aaw6brdpxacy8vyr2p9xkv2nsli1k"
     },
     "noice-nvim": {
       "type": "Git",
@@ -260,9 +260,9 @@
         "repo": "noice.nvim"
       },
       "branch": "main",
-      "revision": "f148923300b9fc4609d76867f1f95410ab1442e8",
-      "url": "https://github.com/folke/noice.nvim/archive/f148923300b9fc4609d76867f1f95410ab1442e8.tar.gz",
-      "hash": "1h0l037jkdmpmqpz7f906vz3xrlr9pivmnymll6ps420qxbrpw0g"
+      "revision": "c22651651da01239fc4afac4cdb7261797d5f02e",
+      "url": "https://github.com/folke/noice.nvim/archive/c22651651da01239fc4afac4cdb7261797d5f02e.tar.gz",
+      "hash": "01zbk00di167npblpf126dqcsyc97k2w72nn88mkkhvhsna28x6x"
     },
     "nui-nvim": {
       "type": "Git",
@@ -320,9 +320,9 @@
         "repo": "nvim-dap"
       },
       "branch": "master",
-      "revision": "1cedf6895308dc553ef23115df40ebc5208e5f98",
-      "url": "https://github.com/mfussenegger/nvim-dap/archive/1cedf6895308dc553ef23115df40ebc5208e5f98.tar.gz",
-      "hash": "08h4m0dhd10rn8q7b7ywr34fpwilxfsgbhm7cd1z6fhnssqpjy09"
+      "revision": "c1bfcd89ef440a44d02ade7e71befb1e5aa358ca",
+      "url": "https://github.com/mfussenegger/nvim-dap/archive/c1bfcd89ef440a44d02ade7e71befb1e5aa358ca.tar.gz",
+      "hash": "151xls5s4zg3w0sia0wbypaqxfwyw4zmzifjvs9z9g53anb7zffv"
     },
     "nvim-dap-python": {
       "type": "Git",
@@ -380,9 +380,9 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
-      "revision": "8894d78f63a589b7fca609e42d682e32067b2448",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/8894d78f63a589b7fca609e42d682e32067b2448.tar.gz",
-      "hash": "17ic2jrm584mgyrv6fb4q6a4899xkd36rzd9v6i8kxn2zdk33hnk"
+      "revision": "28f84d69e3b6c26f1f7a2ef3f248a7242f36d620",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/28f84d69e3b6c26f1f7a2ef3f248a7242f36d620.tar.gz",
+      "hash": "0iws7g74rakdi1lfzy9mg81z3kgvqbksq92lzzsqmzvaymzrvnip"
     },
     "nvim-treesitter-playground": {
       "type": "Git",
@@ -404,9 +404,9 @@
         "repo": "nvim-web-devicons"
       },
       "branch": "master",
-      "revision": "c2c2317f356c8b7da0252f5da758f71bb60bb6b2",
-      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/c2c2317f356c8b7da0252f5da758f71bb60bb6b2.tar.gz",
-      "hash": "0q6qcq8d4lpimmfwv7nkw74529dqw7zx0v5w9vwbylk10faacz2q"
+      "revision": "c3c1dc4e36969370ff589b7025df8ec2e5c881a2",
+      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/c3c1dc4e36969370ff589b7025df8ec2e5c881a2.tar.gz",
+      "hash": "1zjvscgd1xcr0dihsswnxv9v6zjxy9iicq6dz9si7lamgfvn1g38"
     },
     "one-small-step-for-vimkind": {
       "type": "Git",
@@ -464,9 +464,9 @@
         "repo": "tokyonight.nvim"
       },
       "branch": "main",
-      "revision": "1bbba3609ef69b652184710383f47e4b66ed1d3f",
-      "url": "https://github.com/folke/tokyonight.nvim/archive/1bbba3609ef69b652184710383f47e4b66ed1d3f.tar.gz",
-      "hash": "0qpxs2m16k9kgsby60namvk70y1c8ybm1zq1kvjkqwcka7ygmm7s"
+      "revision": "a0d5034fd6c26d997cd050a2f7d7083a20d2c94b",
+      "url": "https://github.com/folke/tokyonight.nvim/archive/a0d5034fd6c26d997cd050a2f7d7083a20d2c94b.tar.gz",
+      "hash": "0yrbk3pf065cc761jrknjpxhdfisim5qr5vs79wfdsk9f1pw4yxw"
     },
     "vim-be-good": {
       "type": "Git",
