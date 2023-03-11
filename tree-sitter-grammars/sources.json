@@ -296,9 +296,9 @@
         "repo": "tree-sitter-query"
       },
       "branch": "main",
-      "revision": "0717de07078a20a8608c98ad5f26c208949d0e15",
-      "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/0717de07078a20a8608c98ad5f26c208949d0e15.tar.gz",
-      "hash": "19025zagdmimqixd25gh2rwn5hr9jfr7s08fvil3n5fqr9zshrbm"
+      "revision": "e97504446f14f529d5a8e649667d3d60391e4dfd",
+      "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/e97504446f14f529d5a8e649667d3d60391e4dfd.tar.gz",
+      "hash": "0xd00idgmyr55yd10xaxma1pwahlvn7gqy78zf8zknfbqvd3rzqs"
     },
     "tree-sitter-regex": {
       "type": "Git",
