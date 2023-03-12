@@ -140,9 +140,9 @@
         "repo": "diffview.nvim"
       },
       "branch": "main",
-      "revision": "ecaa0f3ec11f4e826d17d347c929d9e54a035db8",
-      "url": "https://github.com/sindrets/diffview.nvim/archive/ecaa0f3ec11f4e826d17d347c929d9e54a035db8.tar.gz",
-      "hash": "1asa8inc6nm8nk6z9y28d3q0dvdxgryms6vp3m6j8fwwlxi7x1yx"
+      "revision": "e783ed49acc6b210b295af5c792de811f99559be",
+      "url": "https://github.com/sindrets/diffview.nvim/archive/e783ed49acc6b210b295af5c792de811f99559be.tar.gz",
+      "hash": "0xngir0bsg9p9hkqk0sjhrarjrynd5vmyxx32ckdsvccxlqqiwqf"
     },
     "git-worktree-nvim": {
       "type": "Git",
@@ -380,9 +380,9 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
-      "revision": "98d63d0da4293741dce5d3136a8243de9c24eae9",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/98d63d0da4293741dce5d3136a8243de9c24eae9.tar.gz",
-      "hash": "0a3ls1mbm3wv3mgfk6wryz3i2fpb7wpp7lmg67bs9419kgdd3ddd"
+      "revision": "079a50f66ea9f2d3b9827bdba82ba3b255155621",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/079a50f66ea9f2d3b9827bdba82ba3b255155621.tar.gz",
+      "hash": "18cwmc7wci6l7wl9jrb9qrdbvim8svdzkwl4fmfbznzcq6liv9hz"
     },
     "nvim-treesitter-playground": {
       "type": "Git",
