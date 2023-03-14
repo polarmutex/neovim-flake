@@ -356,9 +356,9 @@
         "repo": "tree-sitter-typescript"
       },
       "branch": "master",
-      "revision": "c6e56d44c686a67c89e29e773e662567285d610f",
-      "url": "https://github.com/tree-sitter/tree-sitter-typescript/archive/c6e56d44c686a67c89e29e773e662567285d610f.tar.gz",
-      "hash": "1vdqmna7zqs8aw7a87z4pn3ivplbgbn8jqjpyaxx6k5czmnl1ims"
+      "revision": "b66d19b9b6ec3edf3d8aff0c20646acbdaa0afb3",
+      "url": "https://github.com/tree-sitter/tree-sitter-typescript/archive/b66d19b9b6ec3edf3d8aff0c20646acbdaa0afb3.tar.gz",
+      "hash": "0zngmyli4i2mlij1x2hpmvwg36mhbxyyfnkv9i3lb6lm9p2y76k0"
     },
     "tree-sitter-vim": {
       "type": "Git",
