@@ -278,7 +278,7 @@ rt.setup({
                 --    importPrefix = "by_self",
                 --},
                 cargo = {
-                    features = { "ssr" },
+                    --features = { "ssr" },
                     --    loadOutDirsFromCheck = true,
                 },
                 checkOnSave = {
