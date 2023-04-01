@@ -41,7 +41,7 @@ treesitter_spec.config = function()
     --local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
     --ft_to_parser.xml = "html"
 
-    require("vim.treesitter.query").set_query(
+    require("vim.treesitter.query").set(
         "beancount",
         "highlights",
         [[
