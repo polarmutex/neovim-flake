@@ -50,10 +50,10 @@
     go = {
       owner = "tree-sitter";
     };
-    help = {
-      owner = "neovim";
-      repo = "tree-sitter-vimdoc";
-    };
+    # fixme help = {
+    #  owner = "neovim";
+    #  repo = "tree-sitter-vimdoc";
+    #};
     html = {
       owner = "tree-sitter";
     };
