@@ -272,9 +272,9 @@
         "repo": "nui.nvim"
       },
       "branch": "main",
-      "revision": "1f43b13d133eb4b4f53a4485379d9afa58808389",
-      "url": "https://github.com/MunifTanjim/nui.nvim/archive/1f43b13d133eb4b4f53a4485379d9afa58808389.tar.gz",
-      "hash": "03vvpqdg88vz3amq62bfdzslsykbm7nafvq6cf6ggazd01rc1zsj"
+      "revision": "bf5900f1b60bf6499755ac92315181a24a87a577",
+      "url": "https://github.com/MunifTanjim/nui.nvim/archive/bf5900f1b60bf6499755ac92315181a24a87a577.tar.gz",
+      "hash": "0rs8i095ppkllvk6hacgvwsbmmiwaj2m57xwg5jd7mxyvy40zr4j"
     },
     "null-ls-nvim": {
       "type": "Git",
@@ -404,9 +404,9 @@
         "repo": "nvim-web-devicons"
       },
       "branch": "master",
-      "revision": "f16ec8f6e5d23e4349501dae46e0a661918e086e",
-      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/f16ec8f6e5d23e4349501dae46e0a661918e086e.tar.gz",
-      "hash": "08c76ps667wkyh8lzkjszpfhjr22cdxz7p30bkps42i71vq12d4n"
+      "revision": "defb7da4d3d313bf31982c52fd78e414f02840c9",
+      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/defb7da4d3d313bf31982c52fd78e414f02840c9.tar.gz",
+      "hash": "1qwcr82yd2jdfds6r6s0pfkixpk0dydnl1l9vqg092l6vkx6v30v"
     },
     "one-small-step-for-vimkind": {
       "type": "Git",
