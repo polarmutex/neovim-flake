@@ -3,8 +3,7 @@
 
   # Input source for our derivation
   inputs = {
-    nixpkgs.url = "github:GaetanLepage/nixpkgs/neovim"; # temp till neovim 0.9 merged in
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
 
     #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };

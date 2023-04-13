@@ -58,16 +58,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1680989818,
-        "narHash": "sha256-Rh9QXLXIPa1Zj3PBtRrDrOcQ4JWthm8Ae1+bYJUiGgo=",
-        "owner": "GaetanLepage",
+        "lastModified": 1681347147,
+        "narHash": "sha256-B+hTioRc3Jdf4SJyeCiO0fW5ShIznJk2OTiW2vOV+mc=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8eb9ed0cd532e776c7cba121c1f900b75980391f",
+        "rev": "1a9d9175ecc48ecd033062fa09b1834d13ae9c69",
         "type": "github"
       },
       "original": {
-        "owner": "GaetanLepage",
-        "ref": "neovim",
+        "owner": "nixos",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -90,28 +90,11 @@
         "type": "github"
       }
     },
-    "nixpkgs-master": {
-      "locked": {
-        "lastModified": 1681199163,
-        "narHash": "sha256-j+R5BCer4YBXK8x2SYsLu1Fp2QZa4Ix+8+zkX3e07ME=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "152a7b64ae22d2b0c5f6043868d2c98b74390517",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
         "neovim": "neovim",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-master": "nixpkgs-master"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
