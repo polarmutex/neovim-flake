@@ -128,9 +128,9 @@
         "repo": "tree-sitter-gitcommit"
       },
       "branch": "main",
-      "revision": "17235998809be904892f14ee57730d96795e9323",
-      "url": "https://github.com/gbprod/tree-sitter-gitcommit/archive/17235998809be904892f14ee57730d96795e9323.tar.gz",
-      "hash": "0zy259ssccav4h2sly8j9isk1hp45ppskhjkm5rll1ffm48ya4sj"
+      "revision": "04dcb2cb9a4cf638252b8bd4a829f9acadf2cc4c",
+      "url": "https://github.com/gbprod/tree-sitter-gitcommit/archive/04dcb2cb9a4cf638252b8bd4a829f9acadf2cc4c.tar.gz",
+      "hash": "0xywh8ja3izcg16hj1r6rw60pmb0k6py4l5am79cgg0z6fmvanx6"
     },
     "tree-sitter-go": {
       "type": "Git",
