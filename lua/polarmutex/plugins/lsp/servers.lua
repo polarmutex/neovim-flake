@@ -24,8 +24,9 @@ local servers = {
     beancount = {
         cmd = {
             --"@beancount.beancount-language-server@/bin/beancount-language-server"
-            "/home/polar/repos/personal/beancount-language-server/master/target/distrib/beancount-language-server-v1.3.0-x86_64-unknown-linux-gnu/beancount-language-server",
+            --"/home/polar/repos/personal/beancount-language-server/master/target/distrib/beancount-language-server-v1.3.0-x86_64-unknown-linux-gnu/beancount-language-server",
             --"/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server",
+            "/home/polar/repos/personal/beancount-language-server/master/target/release/beancount-language-server",
             --"--log",
             --"temp",
         },
