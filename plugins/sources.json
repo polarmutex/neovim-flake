@@ -236,9 +236,9 @@
         "repo": "neodev.nvim"
       },
       "branch": "main",
-      "revision": "3d14bd6cb967741b9705cd06f05bfd0e1ef141e8",
-      "url": "https://github.com/folke/neodev.nvim/archive/3d14bd6cb967741b9705cd06f05bfd0e1ef141e8.tar.gz",
-      "hash": "1kvam1n64a1bd3jmvn67rzdmqwvf20vfr3a759ivvpnf64cf7wp6"
+      "revision": "fe48362be179b5705edcbcb947c1d84b263d5698",
+      "url": "https://github.com/folke/neodev.nvim/archive/fe48362be179b5705edcbcb947c1d84b263d5698.tar.gz",
+      "hash": "18asyqpqdnp5whw51dy4qlhkw9npzq2yra05lr6xv221ylrrwrbf"
     },
     "neogit": {
       "type": "Git",
@@ -284,9 +284,9 @@
         "repo": "null-ls.nvim"
       },
       "branch": "main",
-      "revision": "920947793ce6e59616644cb4766d442121508bf3",
-      "url": "https://github.com/jose-elias-alvarez/null-ls.nvim/archive/920947793ce6e59616644cb4766d442121508bf3.tar.gz",
-      "hash": "0mywm7q01xgqyimswlcr2pc33rvpvpa4v9aq5svchz11wgkdakjp"
+      "revision": "63e1ab06f362c7fcd8a1b6f95665b55814190986",
+      "url": "https://github.com/jose-elias-alvarez/null-ls.nvim/archive/63e1ab06f362c7fcd8a1b6f95665b55814190986.tar.gz",
+      "hash": "1xd68wsgsxwbh8d9s2v6yclgr1yn52h5hcgg6707zd7cp07iijf0"
     },
     "nvim-cmp": {
       "type": "Git",
@@ -380,9 +380,9 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
-      "revision": "87faf372eb517077cc600c4e653e4fb3252d02ac",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/87faf372eb517077cc600c4e653e4fb3252d02ac.tar.gz",
-      "hash": "0ag2cymxx2q5cc0ws5i0hny40zcdybnp6r85hhxg8vi0s8011f4q"
+      "revision": "0d7da3bd7d59ffacc2fac6a52a1ba16d820f882c",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/0d7da3bd7d59ffacc2fac6a52a1ba16d820f882c.tar.gz",
+      "hash": "0dd125zxggjxkdv8lpshm9w0fm0m1w7k2r1i5ar1rhgzbb4v0b3y"
     },
     "nvim-treesitter-playground": {
       "type": "Git",
@@ -452,9 +452,9 @@
         "repo": "telescope.nvim"
       },
       "branch": "master",
-      "revision": "f2645c13205abb9ee3dbcee68416645c69b863c8",
-      "url": "https://github.com/nvim-telescope/telescope.nvim/archive/f2645c13205abb9ee3dbcee68416645c69b863c8.tar.gz",
-      "hash": "0kayab5maqjw9dq1dvila2si6j79rrbimfmj7az718msz20fp35z"
+      "revision": "713d26b98583b160b50fb827adb751f768238ed3",
+      "url": "https://github.com/nvim-telescope/telescope.nvim/archive/713d26b98583b160b50fb827adb751f768238ed3.tar.gz",
+      "hash": "0g9ac5wp9vnj2qmwc4v6ix0pjsaqg0q5vk42wbyjjnkxa17f2y1b"
     },
     "tokyonight-nvim": {
       "type": "Git",
