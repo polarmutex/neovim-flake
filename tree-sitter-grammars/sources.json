@@ -104,9 +104,9 @@
         "repo": "tree-sitter-dockerfile"
       },
       "branch": "main",
-      "revision": "8ee3a0f7587b2bd8c45c8cb7d28bd414604aec62",
-      "url": "https://github.com/camdencheek/tree-sitter-dockerfile/archive/8ee3a0f7587b2bd8c45c8cb7d28bd414604aec62.tar.gz",
-      "hash": "0izv8fryh7vivh9nbpzqpxb74fanrnd21bbq8xzazz4dvgfd7g93"
+      "revision": "fd30df68c4178964ed012ef7f745055db76f8ebf",
+      "url": "https://github.com/camdencheek/tree-sitter-dockerfile/archive/fd30df68c4178964ed012ef7f745055db76f8ebf.tar.gz",
+      "hash": "13qvh2dc22j0zy87fqn55fw3n1nrn8bd6904fvdfbgfkcz8914lk"
     },
     "tree-sitter-git_rebase": {
       "type": "Git",
@@ -200,9 +200,9 @@
         "repo": "tree-sitter-lua"
       },
       "branch": "main",
-      "revision": "0fc89962b7ff5c7d676b8592c1cbce1ceaa806fd",
-      "url": "https://github.com/MunifTanjim/tree-sitter-lua/archive/0fc89962b7ff5c7d676b8592c1cbce1ceaa806fd.tar.gz",
-      "hash": "07mj9jydnxmp2dr7ssj58qlwrjx3gp6jnri79wa2jxaaygblzcri"
+      "revision": "4e94980e52f81f713d09be104ba32bf050000031",
+      "url": "https://github.com/MunifTanjim/tree-sitter-lua/archive/4e94980e52f81f713d09be104ba32bf050000031.tar.gz",
+      "hash": "1qzszsxc12sbv8m7pjylnggknjsna2p3xhaplrzlggs8nkdzmfq2"
     },
     "tree-sitter-make": {
       "type": "Git",
