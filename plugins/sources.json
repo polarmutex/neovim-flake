@@ -248,9 +248,9 @@
         "repo": "neogit"
       },
       "branch": "master",
-      "revision": "efc1764060e64cc8e81687319d5223b3246e5871",
-      "url": "https://github.com/TimUntersberger/neogit/archive/efc1764060e64cc8e81687319d5223b3246e5871.tar.gz",
-      "hash": "136md6cxjdm3byd18ic80bla4i1ciw3hhc6731c11nv12dgxsm33"
+      "revision": "d7c66e5e8752e0cc76336a78c4432648cf3102e1",
+      "url": "https://github.com/TimUntersberger/neogit/archive/d7c66e5e8752e0cc76336a78c4432648cf3102e1.tar.gz",
+      "hash": "0h5q4i8q2nz4a4lwr9gkrllqmn2dz4b14yazdyvq2ljjaqziv03q"
     },
     "noice-nvim": {
       "type": "Git",
@@ -296,9 +296,9 @@
         "repo": "nvim-cmp"
       },
       "branch": "main",
-      "revision": "c7189282199d6f92d3becb91d4f44fc734f75f98",
-      "url": "https://github.com/hrsh7th/nvim-cmp/archive/c7189282199d6f92d3becb91d4f44fc734f75f98.tar.gz",
-      "hash": "0088wfzxbjbgf9rlw3d7xnjx072dwb5922a5x018ywklz04ffckc"
+      "revision": "8d2f190506013064775ec328377e196ab343ad61",
+      "url": "https://github.com/hrsh7th/nvim-cmp/archive/8d2f190506013064775ec328377e196ab343ad61.tar.gz",
+      "hash": "0kmssdy3hq6zfs8sq8pdh6b1ywvxwqvnpj6cj5p3wlrigj1a0ri1"
     },
     "nvim-colorizer": {
       "type": "Git",
@@ -380,9 +380,9 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
-      "revision": "1e9e1492eef63a9d7280d6324d02cf3c9d195ee5",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/1e9e1492eef63a9d7280d6324d02cf3c9d195ee5.tar.gz",
-      "hash": "16zxm8gqyx18j2bws306cz2nnnbzfpsh1an07iyiv5svin3wk9wi"
+      "revision": "01c23a8036340af45cd90fa5b771ba16bd6eb152",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/01c23a8036340af45cd90fa5b771ba16bd6eb152.tar.gz",
+      "hash": "0vn6v1cw9xq53awzhpd31pd5s2a6ar5by5p5g7ddfxcm1141vcx3"
     },
     "nvim-treesitter-playground": {
       "type": "Git",
