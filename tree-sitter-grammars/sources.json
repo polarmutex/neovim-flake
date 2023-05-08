@@ -8,9 +8,9 @@
         "repo": "tree-sitter-astro"
       },
       "branch": "master",
-      "revision": "a1f66bf72ed68b87f779bce9a52e5c6521fc867e",
-      "url": "https://github.com/virchau13/tree-sitter-astro/archive/a1f66bf72ed68b87f779bce9a52e5c6521fc867e.tar.gz",
-      "hash": "155khx6zvhlilpzkd3pxlqki7bgjfx475mf33zran7h000jwxsa3"
+      "revision": "d111ae5ebbd30ffeaf58a3bebd2eb99682c0f6a3",
+      "url": "https://github.com/virchau13/tree-sitter-astro/archive/d111ae5ebbd30ffeaf58a3bebd2eb99682c0f6a3.tar.gz",
+      "hash": "0a05wcwqa2wq3qscy3b56wjc935kp5061qaagj34nkx86b5q16l4"
     },
     "tree-sitter-bash": {
       "type": "Git",
@@ -56,9 +56,9 @@
         "repo": "tree-sitter-c"
       },
       "branch": "master",
-      "revision": "f35789006ccbe5be8db21d1a2dd4cc0b5a1286f2",
-      "url": "https://github.com/tree-sitter/tree-sitter-c/archive/f35789006ccbe5be8db21d1a2dd4cc0b5a1286f2.tar.gz",
-      "hash": "0dhl0vz0x0s64n4nq2chnncq89j7xsbg0s73cavpjdq4ajiamdjc"
+      "revision": "735716c926837d9e39e4effb3fdc28cee81a7e5e",
+      "url": "https://github.com/tree-sitter/tree-sitter-c/archive/735716c926837d9e39e4effb3fdc28cee81a7e5e.tar.gz",
+      "hash": "1p49dw556l7d7qlxfcw3wpqmkxbbqzlry7zasw54v1jwsicn2h7c"
     },
     "tree-sitter-cmake": {
       "type": "Git",
