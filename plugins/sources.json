@@ -360,6 +360,20 @@
       "url": "https://github.com/theHamsta/nvim-dap-virtual-text/archive/10f858c402eb985739627b7e69a38f5b2d79076b.tar.gz",
       "hash": "17yr0d7djvwv7rdjqhzki0ibj2i3anjg2pw6jfjz96lfcci4c17m"
     },
+    "nvim-jdtls": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "mfussenegger",
+        "repo": "nvim-jdtls"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "version": "0.2.0",
+      "revision": "50a0b2330884ed2e1ede21cc7396ea95373e421e",
+      "url": "https://api.github.com/repos/mfussenegger/nvim-jdtls/tarball/0.2.0",
+      "hash": "1fdyb3cxqyj9iws54nhm76wnfadwhwd3ld0m3vpjyl6p85ss7iqa"
+    },
     "nvim-lspconfig": {
       "type": "Git",
       "repository": {

@@ -111,6 +111,7 @@ in
       "neovimPlugin.nvim-dap-ui"
       "neovimPlugin.nvim-dap-virtual-text"
       "neovimPlugin.nvim-lspconfig"
+      "neovimPlugin.nvim-jdtls"
       "neovimPlugin.nvim-treesitter"
       "neovimPlugin.nvim-treesitter-playground"
       "neovimPlugin.one-small-step-for-vimkind"
@@ -176,7 +177,7 @@ in
       (buildPlugin "nvim-dap-ui" pkgs.neovimPlugins.nvim-dap-ui)
       (buildPlugin "nvim-dap-virtual-text" pkgs.neovimPlugins.nvim-dap-virtual-text)
       (buildPlugin "nvim-lspconfig" pkgs.neovimPlugins.nvim-lspconfig)
-      #treesitter
+      (buildPlugin "nvim-jdtls" pkgs.neovimPlugins.nvim-jdtls)
       pkgs.nvim-treesitter-master
       (buildPlugin "nvim-treesitter-playground" pkgs.neovimPlugins.nvim-treesitter-playground)
       (buildPlugin "one-small-step-for-vimkind" pkgs.neovimPlugins.one-small-step-for-vimkind)

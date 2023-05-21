@@ -56,10 +56,16 @@ local rust_tools_spec = {
     dir = "@neovimPlugin.rust-tools-nvim@",
 }
 
+local jdtls_spec = {
+    name = "jdtls.nvim",
+    dir = "@neovimPlugin.nvim-jdtls@",
+}
+
 return {
     lspconfig_spec,
     cmp_spec,
     null_ls_spec,
     lsp_format_spec,
     rust_tools_spec,
+    jdtls_spec,
 }
