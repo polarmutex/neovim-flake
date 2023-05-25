@@ -56,9 +56,9 @@
         "repo": "tree-sitter-c"
       },
       "branch": "master",
-      "revision": "cac392ac3d7d365c469971b117e92a0df3bc8305",
-      "url": "https://github.com/tree-sitter/tree-sitter-c/archive/cac392ac3d7d365c469971b117e92a0df3bc8305.tar.gz",
-      "hash": "0nchzww08d9xaf6c37zwb7r5mp6mxqifn5jxjya1fib37498wkkj"
+      "revision": "a015709e7d1bb4f823a2fc53175e0cbee96c1c3e",
+      "url": "https://github.com/tree-sitter/tree-sitter-c/archive/a015709e7d1bb4f823a2fc53175e0cbee96c1c3e.tar.gz",
+      "hash": "086cz0ky1f0ds14v9m8nif57cil9ssvqym8c51la7qv4329dgs5b"
     },
     "tree-sitter-cmake": {
       "type": "Git",
