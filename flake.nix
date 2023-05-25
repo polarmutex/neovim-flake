@@ -1,18 +1,6 @@
 {
   description = "Tutorial Flake accompanying vimconf talk.";
 
-  # Input source for our derivation
-  inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
-    flake-parts.url = "github:hercules-ci/flake-parts";
-
-    #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
-    neovim = {
-      url = "github:neovim/neovim?dir=contrib";
-      #inputs.nixpkgs.follows = "nixpkgs";
-    };
-  };
-
   outputs = {
     self,
     nixpkgs,
@@ -101,28 +89,16 @@
         };
       };
     };
+
+  # Input source for our derivation
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/master";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
+    neovim = {
+      url = "github:neovim/neovim?dir=contrib";
+      #inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 }
-#//
-#flake-utils.lib.eachDefaultSystem
-# awesome fails on arch darwin
-#(system: let
-#  pkgs =
-#    import nixpkgs
-#    {
-#      inherit system;
-#      overlays = [
-#        self.overlays.default
-#      ];
-#      config = {
-#        permittedInsecurePackages = [
-#          # jdt-language-server
-#          "openjdk-headless-16+36"
-#          "openjdk-headless-15.0.1-ga"
-#          "openjdk-headless-14.0.2-ga"
-#          "openjdk-headless-13.0.2-ga"
-#          "openjdk-headless-12.0.2-ga"
-#        ];
-#        # jdt-language-server
-#        allowUnsupportedSystem = true;
-#      };
-#    };
