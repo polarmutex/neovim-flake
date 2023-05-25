@@ -36,7 +36,7 @@ local servers = {
     },
     clangd = {
         cmd = {
-            "@cpp.clangd@",
+            "@cpp.clangd@/bin/clangd",
             "--background-index",
             "--suggest-missing-includes",
             "--clang-tidy",
