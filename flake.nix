@@ -1,6 +1,11 @@
 {
   description = "Tutorial Flake accompanying vimconf talk.";
 
+  nixConfig = {
+    extra-substituters = "https://polarmutex.cachix.org";
+    extra-trusted-public-keys = "polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=";
+  };
+
   outputs = {
     self,
     nixpkgs,
