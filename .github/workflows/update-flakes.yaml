@@ -25,6 +25,11 @@ jobs:
           install_url: https://releases.nixos.org/nix/nix-2.12.0/install
 
       - name: Update the flake
+        env:
+          GIT_AUTHOR_NAME: "polarmutex[bot]"
+          GIT_AUTHOR_EMAIL: "polarmutex[bot]@users.noreply.github.com"
+          GIT_COMMITTER_NAME: "polarmutex[bot]"
+          GIT_COMMITTER_EMAIL: "polarmutex[bot]@users.noreply.github.com"
         run: |
           nix flake update --commit-lock-file --commit-lockfile-summary "chore(dependencies): update nix flake inputs"
 
