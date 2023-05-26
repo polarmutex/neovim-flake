@@ -29,8 +29,6 @@ jobs:
       #    git config user.name "Git Bot"
       - name: Update the flake
         run: nix flake update
-      - name: Update the neovim plugins
-        run: nix run .#update-neovim-plugins
       - name: Update the neovim tree-sitter grammars
         run: nix run .#update-treesitter-parsers
       - name: Store flake.lock, npins dependencies
@@ -39,7 +37,6 @@ jobs:
           name: flake_lock
           path: |
             flake.lock
-            plugins/*
             tree-sitter-grammars/*
 
   push_update:
