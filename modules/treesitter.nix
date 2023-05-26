@@ -1,5 +1,8 @@
-{ lib, pkgs, ... }: {
-
+{
+  lib,
+  pkgs,
+  ...
+}: {
   plugins = with pkgs.neovimPlugins; [
     (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.passthru.allGrammars))
     nvim-treesitter-context
@@ -7,7 +10,7 @@
     #nvim-ts-rainbow
   ];
 
-  setup.treesitter-context.setup = { };
+  setup.treesitter-context.setup = {};
 
   setup."nvim-treesitter.configs" = {
     #ensure_installed = "all";

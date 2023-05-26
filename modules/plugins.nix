@@ -1,7 +1,10 @@
-{ pkgs, dsl, ... }:
+{
+  pkgs,
+  dsl,
+  ...
+}:
 with dsl; {
   plugins = with pkgs.neovimPlugins; [
-
     beancount-nvim
     colorizer
     # completion

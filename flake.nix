@@ -88,6 +88,7 @@
             packages = builtins.attrValues {
               inherit (pkgs) lemmy-help npins;
             };
+            inherit (self.checks.${system}.pre-commit-check) shellHook;
           };
         };
       };
@@ -97,6 +98,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
     neovim = {

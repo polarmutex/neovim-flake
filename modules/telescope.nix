@@ -1,5 +1,9 @@
-{ pkgs, dsl, ... }: with dsl; {
-
+{
+  pkgs,
+  dsl,
+  ...
+}:
+with dsl; {
   plugins = with pkgs.neovimPlugins; [
     telescope-nvim
     telescope-ui-select
@@ -44,22 +48,19 @@
         preview_cutoff = 120;
       };
       #file_sorter = require ("telescope.sorters").get_fuzzy_file;
-      file_ignore_patterns = [ "node_modules" ];
+      file_ignore_patterns = ["node_modules"];
       #generic_sorter = require ("telescope.sorters").get_generic_fuzzy_sorter;
-      path_display = [ "truncate" ];
+      path_display = ["truncate"];
       winblend = 0;
-      border = { };
-      borderchars = [ "─" "│" "─" "│" "╭" "╮" "╯" "╰" ];
+      border = {};
+      borderchars = ["─" "│" "─" "│" "╭" "╮" "╯" "╰"];
       color_devicons = true;
       use_less = true;
-      set_env = { "COLORTERM" = "truecolor"; };
+      set_env = {"COLORTERM" = "truecolor";};
       #file_previewer = require("telescope.previewers").vim_buffer_cat.new;
       #grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new;
       #qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new;
       #buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker;
     };
-
-
   };
-
 }

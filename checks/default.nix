@@ -1,5 +1,8 @@
-{self, ...}: let
-in {
+{
+  self,
+  inputs,
+  ...
+}: {
   perSystem = {
     config,
     pkgs,
@@ -7,12 +10,20 @@ in {
     self',
     system,
     ...
-  }: let
-  in {
+  }: {
     # check to see if any config errors ars displayed
     # TODO need to have version with all the config
     checks = let
+      pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
+        src = self;
+        hooks = {
+          alejandra.enable = true;
+          stylua.enable = true;
+          #TODO luacheck.enable = true;
+        };
+      };
     in {
+      inherit pre-commit-check;
       neovim-check-config =
         pkgs.runCommand "neovim-check-config"
         {

@@ -1,5 +1,9 @@
-{ pkgs, dsl, ... }: with dsl; {
-
+{
+  pkgs,
+  dsl,
+  ...
+}:
+with dsl; {
   plugins = with pkgs.neovimPlugins; [
     rust-tools-nvim
     # for updating rust crates
@@ -29,7 +33,7 @@
         highlight = "DiagnosticSignWarn";
       };
     };
-    server.cmd = [ "${pkgs.rust-analyzer}/bin/rust-analyzer" ];
+    server.cmd = ["${pkgs.rust-analyzer}/bin/rust-analyzer"];
   };
 
   setup.crates = {
@@ -62,8 +66,8 @@
   };
 
   use.lspconfig.rust_analyzer.setup = callWith {
-    cmd = [ "${pkgs.rust-analyzer}/bin/rust-analyzer" ];
+    cmd = ["${pkgs.rust-analyzer}/bin/rust-analyzer"];
     capabilities = rawLua "capabilities";
-    settings."['rust-analyzer']" = { procMacro.enable = true; };
+    settings."['rust-analyzer']" = {procMacro.enable = true;};
   };
 }

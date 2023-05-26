@@ -1,10 +1,13 @@
-{ pkgs, lib, dsl, ... }: with dsl;
-let
+{
+  pkgs,
+  lib,
+  dsl,
+  ...
+}:
+with dsl; let
   inherit (lib) getExe;
   capabilities = rawLua "capabilities";
-in
-{
-
+in {
   imports = [
     ./rust.nix
   ];
@@ -29,10 +32,9 @@ in
     trouble-nvim
   ];
 
-  setup.fidget = { };
+  setup.fidget = {};
 
-  use.trouble.setup = callWith { };
-
+  use.trouble.setup = callWith {};
 
   #setup.lsp_signature = {
   #  bind = true;
@@ -58,11 +60,14 @@ in
       "['<CR>']" = rawLua "cmp.mapping.confirm({ behavior = require('cmp').ConfirmBehavior.Replace, select = true, })";
     };
     sources = [
-      { name = "nvim_lsp"; }
-      { name = "vsnip"; }
-      { name = "crates"; }
-      { name = "path"; }
-      { name = "buffer"; keyword_length = 5; }
+      {name = "nvim_lsp";}
+      {name = "vsnip";}
+      {name = "crates";}
+      {name = "path";}
+      {
+        name = "buffer";
+        keyword_length = 5;
+      }
     ];
     formatting = {
       # Youtube: How to set up nice formatting for your sources.
@@ -136,48 +141,53 @@ in
 
   use.lspconfig.beancount.setup = callWith {
     #cmd = [ "${pkgs.beancount-language-server}/bin/beancount-language-server" ];
-    cmd = [ "/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server" ];
+    cmd = ["/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server"];
     init_options = {
       journal_file = "/home/polar/repos/personal/beancount/main.beancount";
     };
-    capabilities = rawLua
+    capabilities =
+      rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.clangd.setup = callWith {
-    cmd = [ "${pkgs.clang-tools}/bin/clangd" ];
-    capabilities = rawLua
+    cmd = ["${pkgs.clang-tools}/bin/clangd"];
+    capabilities =
+      rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.gopls.setup = callWith {
-    cmd = [ "${pkgs.gopls}/bin/gopls" ];
-    capabilities = rawLua
+    cmd = ["${pkgs.gopls}/bin/gopls"];
+    capabilities =
+      rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.jsonls.setup = callWith {
-    cmd = [ (getExe pkgs.nodePackages.vscode-json-languageserver) "--stdio" ];
-    capabilities = rawLua
+    cmd = [(getExe pkgs.nodePackages.vscode-json-languageserver) "--stdio"];
+    capabilities =
+      rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.pyright.setup = callWith {
-    cmd = [ "${pkgs.pyright}/bin/pyright-langserver" "--stdio" ];
-    capabilities = rawLua
+    cmd = ["${pkgs.pyright}/bin/pyright-langserver" "--stdio"];
+    capabilities =
+      rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "custom_attach";
   };
 
   use.lspconfig.rnix.setup = callWith {
-    cmd = [ (getExe pkgs.rnix-lsp) ];
-    capabilities = rawLua
+    cmd = [(getExe pkgs.rnix-lsp)];
+    capabilities =
+      rawLua
       "require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())";
     on_attach = rawLua "custom_attach";
   };
-
 }

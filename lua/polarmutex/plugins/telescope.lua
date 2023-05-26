@@ -3,8 +3,8 @@ local telescope_spec = {
     dir = "@neovimPlugin.telescope-nvim@",
     event = "CursorHold",
     dependencies = {
-    {name="plenary.nvim", dir = "@neovimPlugin.plenary-nvim@"}
-    };
+        { name = "plenary.nvim", dir = "@neovimPlugin.plenary-nvim@" },
+    },
 }
 
 telescope_spec.config = function()

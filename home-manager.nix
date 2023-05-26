@@ -1,48 +1,43 @@
-{ config
-, pkgs
-, lib
-, dsl
-, inputs
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  dsl,
+  inputs,
+  ...
 }:
-with lib;
-let
+with lib; let
   dot = path: "${config.home.homeDirectory}/repos/personal/neovim-flake/${path}";
 
-  link = path:
-    let
-      fullpath = dot path;
-    in
+  link = path: let
+    fullpath = dot path;
+  in
     config.lib.file.mkOutOfStoreSymlink fullpath;
 
-  link-one = from: to: path:
-    let
-      paths = builtins.attrNames { "${path}" = "directory"; };
-      mkPath = path:
-        let
-          orig = "${from}/${path}";
-        in
-        {
-          name = "${to}/${path}";
-          value = {
-            source = link orig;
-          };
-        };
-    in
+  link-one = from: to: path: let
+    paths = builtins.attrNames {"${path}" = "directory";};
+    mkPath = path: let
+      orig = "${from}/${path}";
+    in {
+      name = "${to}/${path}";
+      value = {
+        source = link orig;
+      };
+    };
+  in
     builtins.listToAttrs (
       map mkPath paths
     );
 
-  withSrc = pkg: src: pkg.overrideAttrs (_: { inherit src; });
-  plugin = pname: src: pkgs.vimUtils.buildVimPluginFrom2Nix {
-    inherit pname src;
-    version = "master";
-  };
+  withSrc = pkg: src: pkg.overrideAttrs (_: {inherit src;});
+  plugin = pname: src:
+    pkgs.vimUtils.buildVimPluginFrom2Nix {
+      inherit pname src;
+      version = "master";
+    };
 
   cfg = config.polar.programs.neovim;
-in
-{
-
+in {
   imports = [
     ./config/lsp
     ./config/treesitter
@@ -60,9 +55,7 @@ in
   ];
 
   options = {
-
     polar.programs.neovim = {
-
       enable = mkOption {
         type = types.bool;
         default = false;
@@ -109,17 +102,18 @@ in
         (withSrc pkgs.vimPlugins.nvim-lspconfig inputs.nvim-lspconfig-src)
         #(withSrc pkgs.vimPlugins.nvim-treesitter inputs.nvim-treesitter-src)
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (
-          plugins: with plugins; [
-            tree-sitter-bash
-            tree-sitter-beancount
-            tree-sitter-c
-            tree-sitter-java
-            tree-sitter-lua
-            tree-sitter-json
-            tree-sitter-nix
-            tree-sitter-python
-            tree-sitter-rust
-          ]
+          plugins:
+            with plugins; [
+              tree-sitter-bash
+              tree-sitter-beancount
+              tree-sitter-c
+              tree-sitter-java
+              tree-sitter-lua
+              tree-sitter-json
+              tree-sitter-nix
+              tree-sitter-python
+              tree-sitter-rust
+            ]
         ))
         (withSrc pkgs.vimPlugins.playground inputs.nvim-treesitter-playground-src)
         (withSrc pkgs.vimPlugins.plenary-nvim inputs.plenary-nvim-src)
@@ -143,7 +137,5 @@ in
     xdg.configFile."nvim/lua/polarmutex/options.lua".source = link "config/options.lua";
     xdg.configFile."nvim/lua/polarmutex/mappings.lua".source = link "config/mappings.lua";
     xdg.configFile."nvim/filetype.lua".source = link "config/filetype.lua";
-
   };
-
 }

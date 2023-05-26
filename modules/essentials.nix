@@ -1,5 +1,9 @@
-{ pkgs, dsl, ... }: with dsl;{
-
+{
+  pkgs,
+  dsl,
+  ...
+}:
+with dsl; {
   plugins = with pkgs.neovimPlugins; [
     #surround-nvim
     #guess-indent
@@ -61,7 +65,6 @@
   nmap."<C-k>" = "<C-w>k";
   nmap."<C-l>" = "<C-w>l";
 
-
   # q to quit, Q to record macro
   nnoremap.Q = "q";
   nnoremap.q = ":q<cr>";
@@ -80,7 +83,6 @@
   # Ctrl+Backspace to delete previous word. https://vi.stackexchange.com/questions/16139/s-bs-and-c-bs-mappings-not-working
   inoremap."<C-BS>" = "<C-W>";
 
-
   vimscript = ''
     autocmd FileType nix setlocal shiftwidth=2 tabstop=2
     " Function to clean trailing Spaces on save
@@ -98,5 +100,4 @@
       \   exe "normal! g`\"" |
       \ endif
   '';
-
 }

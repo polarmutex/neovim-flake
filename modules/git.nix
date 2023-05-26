@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-
+{pkgs, ...}: {
   plugins = with pkgs.neovimPlugins; [
     blamer-nvim
     diffview-nvim
@@ -8,16 +7,15 @@
     plenary-nvim
   ];
 
-  setup.gitsigns = { };
+  setup.gitsigns = {};
 
   setup.neogit = {
     kind = "split";
     signs = {
-      section = [ "" "" ];
-      item = [ "" "" ];
+      section = ["" ""];
+      item = ["" ""];
     };
 
     integrations.diffview = true;
   };
-
 }

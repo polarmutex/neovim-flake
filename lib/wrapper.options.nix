@@ -1,10 +1,12 @@
-{ lib, pkgs, config, ... }:
-
-let
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}: let
   cfg = config;
   inherit (lib) types mkEnableOption mkOption literalExpression;
-in
-{
+in {
   options = {
     withNodeJs = mkEnableOption "Node.js";
     withRuby = mkEnableOption "Ruby";
@@ -41,7 +43,7 @@ in
 
     extraPython3Packages = mkOption {
       type = types.functionTo (types.listOf types.package);
-      default = _: [ ];
+      default = _: [];
       description = "The function you would have passed to python.withPackages";
       example = literalExpression ''
         it: [ it.requests ]
@@ -50,7 +52,7 @@ in
 
     extraLuaPackages = mkOption {
       type = types.functionTo (types.listOf types.package);
-      default = _: [ ];
+      default = _: [];
       description = "The function you would have passed to lua.withPackages";
       example = literalExpression ''
         it: [ it.cjson ]
@@ -59,7 +61,7 @@ in
 
     plugins = mkOption {
       type = types.listOf types.package;
-      default = [ ];
+      default = [];
       description = "Plugins to be autoloaded";
       example = literalExpression ''
         with pkgs.vimPlugins; [ dracula-vim ]
@@ -68,7 +70,7 @@ in
 
     optionalPlugins = mkOption {
       type = types.listOf types.package;
-      default = [ ];
+      default = [];
       description = "Optional plugins";
       example = literalExpression ''
         with pkgs.vimPlugins; [ dracula-vim ]
@@ -76,10 +78,10 @@ in
     };
 
     packages = mkOption {
-      type = types.attrsOf (types.submodule ({
+      type = types.attrsOf (types.submodule {
         options.start = mkOption {
           type = types.listOf types.package;
-          default = [ ];
+          default = [];
           description = "Plugins to be autoloaded";
           example = literalExpression ''
             with pkgs.vimPlugins; [ dracula-vim ]
@@ -88,14 +90,14 @@ in
 
         options.opt = mkOption {
           type = types.listOf types.package;
-          default = [ ];
+          default = [];
           description = "Optional plugins";
           example = literalExpression ''
             with pkgs.vimPlugins; [ dracula-vim ]
           '';
         };
-      }));
-      default = { };
+      });
+      default = {};
       description = "Attributes gets passed to 'configure.packages'";
       example = literalExpression ''
         with pkgs.vimPlugins; {
@@ -104,19 +106,19 @@ in
         };
       '';
     };
-
   };
 
-
   config = {
-    packages.nix2vim = { start = config.plugins; opt = config.optionalPlugins; };
+    packages.nix2vim = {
+      start = config.plugins;
+      opt = config.optionalPlugins;
+    };
 
     drv = pkgs.wrapNeovim cfg.package {
       inherit (cfg) withNodeJs withPython3 withRuby extraMakeWrapperArgs;
       withPython = false;
       viAlias = cfg.enableViAlias;
       vimAlias = cfg.enableVimAlias;
-
 
       configure = {
         #plugins = []; # expects { plugin=far-vim; config = "let g:far#source='rg'"; optional = false; }
@@ -127,8 +129,5 @@ in
         '';
       };
     };
-
-
   };
-
 }

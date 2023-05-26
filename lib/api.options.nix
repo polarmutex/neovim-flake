@@ -1,19 +1,23 @@
-{ lib, config, ... }:
-
-with lib;
-let
-  mkMappingOption = description: mkOption {
-    inherit description;
-    example = { abc = ":FZF<CR>"; C-p = ":FZF<CR>"; }; # Probably should be overwritten per option basis
-    default = { };
-    type = with types; attrsOf (nullOr str);
-  };
-in
 {
+  lib,
+  config,
+  ...
+}:
+with lib; let
+  mkMappingOption = description:
+    mkOption {
+      inherit description;
+      example = {
+        abc = ":FZF<CR>";
+        C-p = ":FZF<CR>";
+      }; # Probably should be overwritten per option basis
+      default = {};
+      type = with types; attrsOf (nullOr str);
+    };
+in {
   options = {
-
     vim = mkOption {
-      default = { };
+      default = {};
       example = {
         vim.opt.termguicolors = true;
         vim.opt.clipboard = "unnamed,unnamedplus";
@@ -27,21 +31,21 @@ in
         set.termguicolors = true;
         set.clipboard = "unnamed,unnamedplus";
       };
-      default = { };
+      default = {};
       description = "'vim.opt' alias. Acts same as vimscript 'set' command";
-      type = with types; attrsOf (oneOf [ bool float int str ]);
+      type = with types; attrsOf (oneOf [bool float int str]);
     };
 
     use = mkOption {
       description = ''Allows requiring modules. Gets parset to "require('<name>').<attrs>"'';
       type = with types; attrsOf attrs;
-      default = { };
+      default = {};
     };
 
     setup = mkOption {
       description = ''Results in 'require(<name>).setup(<attrs>)'.'';
       type = with types; attrsOf attrs;
-      default = { };
+      default = {};
     };
 
     lua = mkOption {
@@ -75,59 +79,59 @@ in
     tmap = mkMappingOption "Defines 'Terminal mode' mappings";
   };
 
-  config =
-    let
-      trace = it: builtins.trace (builtins.toJSON it) it;
-      dsl = import ./dsl.nix { inherit lib; };
+  config = let
+    trace = it: builtins.trace (builtins.toJSON it) it;
+    dsl = import ./dsl.nix {inherit lib;};
 
-      filterNonNull = mappings: filterAttrs (name: value: value != null) mappings;
+    filterNonNull = mappings: filterAttrs (name: value: value != null) mappings;
 
-      mapping = mode: lhs: rhs: { ... }@args: "map('${mode}', '${lhs}', '${rhs}', ${dsl.nix2lua args})\n";
-      remap = mode: lhs: rhs: "map('${mode}', '${lhs}', '${rhs}', {})\n";
-      noremap = mode: lhs: rhs: mapping mode lhs rhs { noremap = true; };
+    mapping = mode: lhs: rhs: {...} @ args: "map('${mode}', '${lhs}', '${rhs}', ${dsl.nix2lua args})\n";
+    remap = mode: lhs: rhs: "map('${mode}', '${lhs}', '${rhs}', {})\n";
+    noremap = mode: lhs: rhs: mapping mode lhs rhs {noremap = true;};
 
-      attrsToStr = f: it: concatStringsSep "" (filter (it: it != [ ]) (attrValues (mapAttrs f it)));
+    attrsToStr = f: it: concatStringsSep "" (filter (it: it != []) (attrValues (mapAttrs f it)));
 
-      aggregateMappings = mapingFunction: { ... }@args: attrsToStr
-        (mode: bindings:
+    aggregateMappings = mapingFunction: {...} @ args:
+      attrsToStr
+      (
+        mode: bindings:
           attrsToStr (lhs: rhs: mapingFunction mode lhs rhs) bindings
-        )
-        args;
+      )
+      args;
 
-      noremaps = aggregateMappings noremap {
-        n = config.nnoremap;
-        i = config.inoremap;
-        v = config.vnoremap;
-        x = config.xnoremap;
-        s = config.snoremap;
-        c = config.cnoremap;
-        o = config.onoremap;
-        t = config.tnoremap;
-      };
-
-      remaps = aggregateMappings remap {
-        n = config.nmap;
-        i = config.imap;
-        v = config.vmap;
-        x = config.xmap;
-        s = config.smap;
-        c = config.cmap;
-        o = config.omap;
-        t = config.tmap;
-      };
-
-      require = flatten (mapAttrsToList (name: value: mapAttrsToList (name_inner: value_inner: "require('${name}').${dsl.attrs2Lua {${name_inner} = value_inner; }}") value) config.use);
-    in
-    {
-      vim.opt = config.set;
-      use = mapAttrs (_: it: { setup = dsl.callWith it; }) config.setup;
-
-      lua = ''
-        ${dsl.attrs2Lua { inherit (config) vim; }}
-        ${concatStringsSep "" require}
-        local map = vim.api.nvim_set_keymap
-        ${noremaps}
-        ${remaps}
-      '';
+    noremaps = aggregateMappings noremap {
+      n = config.nnoremap;
+      i = config.inoremap;
+      v = config.vnoremap;
+      x = config.xnoremap;
+      s = config.snoremap;
+      c = config.cnoremap;
+      o = config.onoremap;
+      t = config.tnoremap;
     };
+
+    remaps = aggregateMappings remap {
+      n = config.nmap;
+      i = config.imap;
+      v = config.vmap;
+      x = config.xmap;
+      s = config.smap;
+      c = config.cmap;
+      o = config.omap;
+      t = config.tmap;
+    };
+
+    require = flatten (mapAttrsToList (name: value: mapAttrsToList (name_inner: value_inner: "require('${name}').${dsl.attrs2Lua {${name_inner} = value_inner;}}") value) config.use);
+  in {
+    vim.opt = config.set;
+    use = mapAttrs (_: it: {setup = dsl.callWith it;}) config.setup;
+
+    lua = ''
+      ${dsl.attrs2Lua {inherit (config) vim;}}
+      ${concatStringsSep "" require}
+      local map = vim.api.nvim_set_keymap
+      ${noremaps}
+      ${remaps}
+    '';
+  };
 }

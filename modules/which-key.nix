@@ -1,17 +1,18 @@
-{ pkgs, dsl, ... }: with dsl;
-let
-  cmd = command: desc: [ "<cmd>${command}<cr>" desc ];
-  cmdLua = command: (cmd "lua ${command}");
-in
 {
-
+  pkgs,
+  dsl,
+  ...
+}:
+with dsl; let
+  cmd = command: desc: ["<cmd>${command}<cr>" desc];
+  cmdLua = command: (cmd "lua ${command}");
+in {
   plugins = with pkgs.neovimPlugins; [
     # command discover
     which-key-nvim
   ];
 
-
-  use.which-key.setup = callWith { };
+  use.which-key.setup = callWith {};
   use.which-key.register = dsl.callWith {
     K = cmdLua "show_documentation()" "Get Type Information";
 
@@ -42,7 +43,7 @@ in
       dp = cmdLua "vim.diagnostic.goto_prev()" "prev diag";
       f = cmdLua "vim.lsp.buf.formatting()" "Format buffer";
 
-      "['<leader>']" = [ "<cmd>Telescope find_files<cr>" "search files" ];
+      "['<leader>']" = ["<cmd>Telescope find_files<cr>" "search files"];
       bb = cmd "Telescope buffers" "Get buffer list";
       fb = cmd "Telescope file_browser" "Get buffer list";
       gf = cmd "lua require('telescope.builtins').live_grep {default_text='function'}" "grep for functions only";
@@ -65,8 +66,6 @@ in
       ws = cmd "sp" "Split window horizontally";
       wv = cmd "vs" "Split window vertically";
 
-
-
       c = {
         name = "Crates";
         U = cmdLua "require('crates').upgrade_crate()" "upgrade a crate";
@@ -75,23 +74,20 @@ in
         ua = cmdLua "require('crates').update_all_crates()" "update all crates";
       };
 
-
       rJ = cmdLua "require'rust-tools.join_lines'.join_lines()" "Join lines rust";
       rh = cmdLua "require('rust-tools.inlay_hints').toggle_inlay_hints()" "Toggle inlay type hints";
       rm = cmdLua "require'rust-tools.expand_macro'.expand_macro()" "Expand macro";
       rpm = cmdLua "require'rust-tools.parent_module'.parent_module()" "Go to parent module";
 
       # trouble keybinds
-      "xx" = [ "<cmd>TroubleToggle<CR>" "Toggle trouble diagnostics" ];
-      "xw" = [ "<cmd>TroubleToggle workspace_diagnostics<CR>" "Toggle trouble workspace diagnostics" ];
-      "xd" = [ "<cmd>TroubleToggle document_diagnostics<CR>" "Toggle trouble document diagnostics" ];
-      "xq" = [ "<cmd>TroubleToggle quickfix<CR>" "Toggle trouble quickfix list" ];
-      "xl" = [ "<cmd>TroubleToggle loclist<CR>" "Toggle trouble local list" ];
-      "xr" = [ "<cmd>TroubleToggle lsp_references<CR>" "Toggle trouble lsp references" ];
-      "xn" = [ "cmd lua require(\"trouble\").next({skip_groups = true, jump = true})<CR>" "Jump next diagnostic" ];
-      "xp" = [ "cmd lua require(\"trouble\").previous({skip_groups = true, jump = true})<CR>" "Jump next diagnostic" ];
-
+      "xx" = ["<cmd>TroubleToggle<CR>" "Toggle trouble diagnostics"];
+      "xw" = ["<cmd>TroubleToggle workspace_diagnostics<CR>" "Toggle trouble workspace diagnostics"];
+      "xd" = ["<cmd>TroubleToggle document_diagnostics<CR>" "Toggle trouble document diagnostics"];
+      "xq" = ["<cmd>TroubleToggle quickfix<CR>" "Toggle trouble quickfix list"];
+      "xl" = ["<cmd>TroubleToggle loclist<CR>" "Toggle trouble local list"];
+      "xr" = ["<cmd>TroubleToggle lsp_references<CR>" "Toggle trouble lsp references"];
+      "xn" = ["cmd lua require(\"trouble\").next({skip_groups = true, jump = true})<CR>" "Jump next diagnostic"];
+      "xp" = ["cmd lua require(\"trouble\").previous({skip_groups = true, jump = true})<CR>" "Jump next diagnostic"];
     };
   };
-
 }
