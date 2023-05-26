@@ -148,44 +148,44 @@ in
       (pkgs.lib.getExe pkgs.nodePackages.svelte-language-server)
       (lib.getExe pkgs.nodePackages.typescript-language-server)
 
-      (buildPlugin "beancount-nvim" pkgs.neovimPlugins.beancount-nvim)
-      (buildPlugin "cmp-nvim-lsp" pkgs.neovimPlugins.cmp-nvim-lsp)
-      (buildPlugin "cmp-path" pkgs.neovimPlugins.cmp-path)
-      (buildPlugin "cmp-omni" pkgs.neovimPlugins.cmp-omni)
-      (buildPlugin "cmp-calc" pkgs.neovimPlugins.cmp-calc)
-      (buildPlugin "cmp-buffer" pkgs.neovimPlugins.cmp-buffer)
-      (buildPlugin "cmp-cmdine" pkgs.neovimPlugins.cmp-cmdline)
-      (buildPlugin "cmp-dap" pkgs.neovimPlugins.cmp-dap)
-      (buildPlugin "crates-nvim" pkgs.neovimPlugins.crates-nvim)
-      (buildPlugin "diffview-nvim" pkgs.neovimPlugins.diffview-nvim)
-      (buildPlugin "gitsigns-nvim" pkgs.neovimPlugins.gitsigns-nvim)
-      (buildPlugin "git-worktree-nvim" pkgs.neovimPlugins.git-worktree-nvim)
-      (buildPlugin "harpoon" pkgs.neovimPlugins.harpoon)
-      (buildPlugin "heirline-nvim" pkgs.neovimPlugins.heirline-nvim)
-      (buildPlugin "lazy-nvim" pkgs.neovimPlugins.lazy-nvim)
-      (buildPlugin "lspkind-nvim" pkgs.neovimPlugins.lspkind-nvim)
-      (buildPlugin "lsp-format-nvim" pkgs.neovimPlugins.lsp-format-nvim)
-      (buildPlugin "neodev-nvim" pkgs.neovimPlugins.neodev-nvim)
-      (buildPlugin "neogit" pkgs.neovimPlugins.neogit)
-      (buildPlugin "noice-nvim" pkgs.neovimPlugins.noice-nvim)
-      (buildPlugin "nui-nvim" pkgs.neovimPlugins.nui-nvim)
-      (buildPlugin "null-ls" pkgs.neovimPlugins.null-ls-nvim)
-      (buildPlugin "nvim-cmp" pkgs.neovimPlugins.nvim-cmp)
-      (buildPlugin "nvim-colorizer" pkgs.neovimPlugins.nvim-colorizer)
-      (buildPlugin "nvim-dap" pkgs.neovimPlugins.nvim-dap)
-      (buildPlugin "nvim-dap-python" pkgs.neovimPlugins.nvim-dap-python)
-      (buildPlugin "nvim-dap-ui" pkgs.neovimPlugins.nvim-dap-ui)
-      (buildPlugin "nvim-dap-virtual-text" pkgs.neovimPlugins.nvim-dap-virtual-text)
-      (buildPlugin "nvim-lspconfig" pkgs.neovimPlugins.nvim-lspconfig)
-      (buildPlugin "nvim-jdtls" pkgs.neovimPlugins.nvim-jdtls)
+      pkgs.neovimPlugins.beancount-nvim
+      pkgs.neovimPlugins.cmp-nvim-lsp
+      pkgs.neovimPlugins.cmp-path
+      pkgs.neovimPlugins.cmp-omni
+      pkgs.neovimPlugins.cmp-calc
+      pkgs.neovimPlugins.cmp-buffer
+      pkgs.neovimPlugins.cmp-cmdline
+      pkgs.neovimPlugins.cmp-dap
+      pkgs.neovimPlugins.crates-nvim
+      pkgs.neovimPlugins.diffview-nvim
+      pkgs.neovimPlugins.gitsigns-nvim
+      pkgs.neovimPlugins.git-worktree-nvim
+      pkgs.neovimPlugins.harpoon
+      pkgs.neovimPlugins.heirline-nvim
+      pkgs.neovimPlugins.lazy-nvim
+      pkgs.neovimPlugins.lspkind-nvim
+      pkgs.neovimPlugins.lsp-format-nvim
+      pkgs.neovimPlugins.neodev-nvim
+      pkgs.neovimPlugins.neogit
+      pkgs.neovimPlugins.noice-nvim
+      pkgs.neovimPlugins.nui-nvim
+      pkgs.neovimPlugins.null-ls-nvim
+      pkgs.neovimPlugins.nvim-cmp
+      pkgs.neovimPlugins.nvim-colorizer
+      pkgs.neovimPlugins.nvim-dap
+      pkgs.neovimPlugins.nvim-dap-python
+      pkgs.neovimPlugins.nvim-dap-ui
+      pkgs.neovimPlugins.nvim-dap-virtual-text
+      pkgs.neovimPlugins.nvim-lspconfig
+      (pkgs.neovimPlugins.nvim-jdtls)
       pkgs.nvim-treesitter-master
-      (buildPlugin "nvim-treesitter-playground" pkgs.neovimPlugins.nvim-treesitter-playground)
-      (buildPlugin "one-small-step-for-vimkind" pkgs.neovimPlugins.one-small-step-for-vimkind)
-      (buildPlugin "plenary-nvim" pkgs.neovimPlugins.plenary-nvim)
-      (buildPlugin "rust-tools-nvim" pkgs.neovimPlugins.rust-tools-nvim)
-      (buildPlugin "telescope-nvim" pkgs.neovimPlugins.telescope-nvim)
-      (buildPlugin "tokyonight-nvim" pkgs.neovimPlugins.tokyonight-nvim)
-      (buildPlugin "vim-be-good" pkgs.neovimPlugins.vim-be-good)
-      (buildPlugin "nvim-web-devicons" pkgs.neovimPlugins.nvim-web-devicons)
+      pkgs.neovimPlugins.nvim-treesitter-playground
+      pkgs.neovimPlugins.one-small-step-for-vimkind
+      pkgs.neovimPlugins.plenary-nvim
+      pkgs.neovimPlugins.rust-tools-nvim
+      pkgs.neovimPlugins.telescope-nvim
+      pkgs.neovimPlugins.tokyonight-nvim
+      pkgs.neovimPlugins.vim-be-good
+      pkgs.neovimPlugins.nvim-web-devicons
     ];
   }
