@@ -21,6 +21,9 @@
           stylua.enable = true;
           #TODO luacheck.enable = true;
         };
+        settings = {
+          alejandra.exclude = ["./tree-sitter-grammars"];
+        };
       };
     in {
       inherit pre-commit-check;
