@@ -40,6 +40,7 @@
             neovim-git = self'.packages.neovim-git;
             nvim-treesitter-master = self'.packages.nvim-treesitter-master;
             neovim-lua-config-polar = self'.packages.neovim-lua-config-polar;
+            nil-git = inputs'.nil.packages.default;
           })
           plugin-overlay
           self.overlays.default
@@ -127,6 +128,12 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Lsp
+    nil = {
+      url = "github:oxalica/nil";
+    };
+
+    # plugins
     beancount-nvim = {
       url = "github:polarmutex/beancount.nvim";
       flake = false;

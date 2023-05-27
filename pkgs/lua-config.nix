@@ -79,7 +79,7 @@ in
       "lua.stylua" =
         pkgs.stylua;
       "nix.nil" =
-        lib.getExe pkgs.nil;
+        lib.getExe pkgs.nil-git;
       "nix.alejandra" =
         pkgs.alejandra;
       "python.pyright" =
