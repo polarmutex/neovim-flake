@@ -1,8 +1,6 @@
 local null_ls = require("null-ls")
 local lsp_format = require("lsp-format")
 local h = require("null-ls.helpers")
-local cmd_resolver = require("null-ls.helpers.command_resolver")
-local u = require("null-ls.utils")
 
 null_ls.setup({
     on_attach = function(client)
@@ -39,8 +37,35 @@ null_ls.setup({
                 to_stdin = true,
             },
         }),
-        --null_ls.builtins.formatting.rustfmt,
         --null_ls.builtins.formatting.shfmt,
+        null_ls.builtins.diagnostics.luacheck.with({
+            generator_opts = {
+                command = "@lua.luacheck@/bin/luacheck",
+                to_stdin = true,
+                from_stderr = true,
+                args = {
+                    "--formatter",
+                    "plain",
+                    "--codes",
+                    "--ranges",
+                    "--filename",
+                    "$FILENAME",
+                    "-",
+                },
+                format = "line",
+                on_output = h.diagnostics.from_pattern(
+                    [[:(%d+):(%d+)-(%d+): %((%a)(%d+)%) (.*)]],
+                    { "row", "col", "end_col", "severity", "code", "message" },
+                    {
+                        severities = {
+                            E = h.diagnostics.severities["error"],
+                            W = h.diagnostics.severities["warning"],
+                        },
+                        offsets = { end_col = 1 },
+                    }
+                ),
+            },
+        }),
         null_ls.builtins.formatting.stylua.with({
             generator_opts = {
                 command = "@lua.stylua@/bin/stylua",

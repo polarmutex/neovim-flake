@@ -6,7 +6,7 @@ local health = vim.health or require("health")
 function M.check()
     local report_info = vim.fn["health#report_info"]
     print("active clients")
-    for key, client in pairs(vim.lsp.get_active_clients()) do
+    for _, client in pairs(vim.lsp.get_active_clients()) do
         -- print("loading key "..key)
         local config = client.config
         vim.fn["health#report_start"]("State of " .. config.name)

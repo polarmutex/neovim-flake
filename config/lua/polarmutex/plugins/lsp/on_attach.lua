@@ -6,7 +6,7 @@ local disable_format_cap = {
 }
 
 local on_attach = function(client, bufnr)
-    local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+    --local filetype = vim.api.nvim_buf_get_option(0, "filetype")
 
     --set keymaps
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP: jump to definition", buffer = bufnr })

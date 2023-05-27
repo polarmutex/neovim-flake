@@ -1,5 +1,3 @@
-local dap = require("dap")
-
 local signs = {
     Breakpoint = "",
     BreakpointCondition = "",

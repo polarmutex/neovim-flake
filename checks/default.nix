@@ -19,7 +19,7 @@
         hooks = {
           alejandra.enable = true;
           stylua.enable = true;
-          #TODO luacheck.enable = true;
+          luacheck.enable = true;
         };
         settings = {
           alejandra.exclude = ["tree-sitter-grammars"];

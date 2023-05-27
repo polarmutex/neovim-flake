@@ -40,12 +40,12 @@ local filter_by_severity_limit = function(severity_limit, diagnostics)
 end
 
 -- Keep it as a global so it stays between reloads, caches and exposed to view.
-_LspExtensionsWorkspaceCache = _LspExtensionsWorkspaceCache or {}
+--_LspExtensionsWorkspaceCache = _LspExtensionsWorkspaceCache or {}
 
 local M = {}
 
 -- { client: stuff }
-M.diagnostic_cache = _LspExtensionsWorkspaceCache
+--M.diagnostic_cache = _LspExtensionsWorkspaceCache
 
 M.handler = function(err, method, result, client_id, bufnr, config)
     vim.lsp.diagnostic.on_publish_diagnostics(err, method, result, client_id, bufnr, config)

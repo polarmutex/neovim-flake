@@ -184,27 +184,6 @@ statusline_spec.config = function()
         hl = "Type",
     }
 
-    local FileSize = {
-        provider = function()
-            -- stackoverflow, compute human readable file size
-            local suffix = { "b", "k", "M", "G", "T", "P", "E" }
-            local fsize = vim.fn.getfsize(vim.api.nvim_buf_get_name(0))
-            fsize = (fsize < 0 and 0) or fsize
-            if fsize <= 0 then
-                return "0" .. suffix[1]
-            end
-            local i = math.floor((math.log(fsize) / math.log(1024)))
-            return string.format("%.2g%s", fsize / math.pow(1024, i), suffix[i])
-        end,
-    }
-
-    local FileLastModified = {
-        provider = function()
-            local ftime = vim.fn.getftime(vim.api.nvim_buf_get_name(0))
-            return (ftime > 0) and os.date("%c", ftime)
-        end,
-    }
-
     local Ruler = {
         -- %l = current line number
         -- %L = number of lines in the buffer
@@ -269,9 +248,9 @@ statusline_spec.config = function()
 
         -- Or complicate things a bit and get the servers names
         -- TODO get name from null-ls
-        provider = function(self)
+        provider = function()
             local names = {}
-            for i, server in ipairs(vim.lsp.buf_get_clients(0)) do
+            for _, server in ipairs(vim.lsp.buf_get_clients(0)) do
                 table.insert(names, server.name)
             end
             return " [" .. table.concat(names, " ") .. "]"
@@ -368,13 +347,13 @@ statusline_spec.config = function()
         hl = "Directory",
     }
 
-    local Spell = {
-        condition = function()
-            return vim.wo.spell
-        end,
-        provider = "SPELL ",
-        hl = { bold = true, fg = "orange" },
-    }
+    --local Spell = {
+    --    condition = function()
+    --        return vim.wo.spell
+    --    end,
+    --    provider = "SPELL ",
+    --    hl = { bold = true, fg = "orange" },
+    --}
 
     local Align = { provider = "%=" }
     local Space = { provider = " " }
@@ -510,19 +489,19 @@ statusline_spec.config = function()
                 end,
 
                 handlers = {
-                    ["GitSigns.*"] = function(args)
+                    ["GitSigns.*"] = function(_)
                         require("gitsigns").preview_hunk_inline()
                     end,
-                    ["Dap.*"] = function(args)
+                    ["Dap.*"] = function(_)
                         require("dap").toggle_breakpoint()
                     end,
-                    ["Diagnostic.*"] = function(args)
+                    ["Diagnostic.*"] = function(_)
                         vim.diagnostic.open_float() -- { pos = args.mousepos.line - 1, relative = "mouse" })
                     end,
                 },
             },
             on_click = {
-                callback = function(self, ...)
+                callback = function(self)
                     local mousepos = vim.fn.getmousepos()
                     vim.api.nvim_win_set_cursor(0, { mousepos.line, mousepos.column })
                     local sign_at_cursor = vim.fn.screenstring(mousepos.screenrow, mousepos.screencol)
