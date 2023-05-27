@@ -22,7 +22,7 @@
           #TODO luacheck.enable = true;
         };
         settings = {
-          alejandra.exclude = ["./tree-sitter-grammars"];
+          alejandra.exclude = ["tree-sitter-grammars"];
         };
       };
     in {
