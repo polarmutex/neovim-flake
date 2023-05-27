@@ -32,7 +32,7 @@ jobs:
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - name: Build everything
         run: |
-          nix flake check -L
+          nix flake check -L --accept-flake-config
 
   build:
     name: ${{matrix.attribute }} / ${{ matrix.os }}
@@ -63,4 +63,4 @@ jobs:
       with:
         name: mrcjkb
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build "${{matrix.attribute}}" -L
+    - run: nix build "${{matrix.attribute}}" -L  --accept-flake-config

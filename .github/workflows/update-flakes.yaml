@@ -31,7 +31,7 @@ jobs:
           GIT_COMMITTER_NAME: "polarmutex[bot]"
           GIT_COMMITTER_EMAIL: "polarmutex[bot]@users.noreply.github.com"
         run: |
-          nix flake update --commit-lock-file --commit-lockfile-summary "chore(dependencies): update nix flake inputs"
+          nix flake update --accept-flake-config --commit-lock-file --commit-lockfile-summary "chore(dependencies): update nix flake inputs"
 
       - name: Save PR Body as file
         uses: DamianReeves/write-file-action@v1.2
@@ -78,7 +78,7 @@ jobs:
         run: rm -f pr_body.txt pr_body.template
 
       - name: Update the neovim tree-sitter grammars
-        run: nix run .#update-treesitter-parsers
+        run: nix run --accept-flake-config .#update-treesitter-parsers
 
       - uses: tibdex/github-app-token@v1
         id: generate-token
