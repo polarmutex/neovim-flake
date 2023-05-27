@@ -68,6 +68,12 @@ in
             sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
           })
         .jar;
+      "java.jdk8" =
+        pkgs.jdk8;
+      "java.jdk11" =
+        pkgs.jdk11;
+      "java.jdk17" =
+        pkgs.jdk17;
       "java.jdt-language-server" =
         pkgs.jdt-language-server;
       "rust.dprint" =

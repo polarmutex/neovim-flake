@@ -66,7 +66,16 @@ local settings = {
             runtimes = {
                 {
                     name = "JavaSE-1.8",
-                    path = "/usr/lib/jvm/java-8-openjdk-amd64/jre",
+                    path = "@java.jdk8@",
+                },
+                {
+                    name = "JavaSE-11",
+                    path = "@java.jdk11@/lib/openjdk",
+                    default = true,
+                },
+                {
+                    name = "JavaSE-17",
+                    path = "@java.jdk17@/lib/openjdk",
                 },
             },
         },
