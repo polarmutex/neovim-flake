@@ -33,6 +33,50 @@ jobs:
         run: |
           nix flake update --commit-lock-file --commit-lockfile-summary "chore(dependencies): update nix flake inputs"
 
+      - name: Save PR Body as file
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          path: pr_body.template
+          contents: |
+            Automated changes by the [update-flake-lock](https://github.com/DeterminateSystems/update-flake-lock) GitHub Action.
+
+            ```
+            {{ env.GIT_COMMIT_MESSAGE }}
+            ```
+
+            ### Running GitHub Actions on this PR
+
+            GitHub Actions will not run workflows on pull requests which are opened by a GitHub Action.
+
+            To run GitHub Actions workflows on this PR, run:
+        env: {}
+
+      - name: Set additional env variables (GIT_COMMIT_MESSAGE)
+        shell: bash
+        run: |
+          DELIMITER=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          COMMIT_MESSAGE="$(git log --format=%b -n 1)"
+          echo "GIT_COMMIT_MESSAGE<<$DELIMITER" >> $GITHUB_ENV
+          echo "$COMMIT_MESSAGE" >> $GITHUB_ENV
+          echo "$DELIMITER" >> $GITHUB_ENV
+          echo "GIT_COMMIT_MESSAGE is: ${COMMIT_MESSAGE}"
+
+      - name: Interpolate PR Body
+        uses: pedrolamas/handlebars-action@v2.2.0
+        with:
+          files: 'pr_body.template'
+          output-filename: 'pr_body.txt'
+
+      - name: Read pr_body.txt
+        id: pr_body
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: "pr_body.txt"
+
+      - name: Remove PR body template files
+        shell: bash
+        run: rm -f pr_body.txt pr_body.template
+
       - name: Update the neovim tree-sitter grammars
         run: nix run .#update-treesitter-parsers
 
@@ -53,7 +97,7 @@ jobs:
           signoff: false
           title: "chore(dependencies): Update dependencies"
           token: ${{ steps.generate-token.outputs.token }}
-          body: ""
+          body: ${{ steps.pr_body.outputs.content }}
           labels: dependencies,autorebase:opt-in
 
       - name: Set the PR to automerge
