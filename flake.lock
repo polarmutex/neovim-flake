@@ -421,18 +421,20 @@
         "type": "github"
       }
     },
-    "neovim": {
+    "neovim-flake": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1685130678,
-        "narHash": "sha256-uw/FUT5sqIpOaW7uv3uRV4lm16M/xDBgOb+rD+wU/w4=",
+        "lastModified": 1685153631,
+        "narHash": "sha256-OoFYG8264K3Xca3kpcsCaDFYDVIZOhy9KenF0v3ubw4=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "44d4ae448d0ab357a3aade773ea58c66c3c969cc",
+        "rev": "8e6971695383047ee5ba2921c91d98acb18c6d7a",
         "type": "github"
       },
       "original": {
@@ -444,16 +446,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1681465517,
-        "narHash": "sha256-EasJh15/jcJNAHtq2SGbiADRXteURAnQbj1NqBoKkzU=",
+        "lastModified": 1685149434,
+        "narHash": "sha256-QyTrf+sSvPM1MFegJ3yF4f3vQyYEGfuPXiQITfhQ0JQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "abe7316dd51a313ce528972b104f4f04f56eefc4",
+        "rev": "d6a1aea19bddac079efbfde6c373dff8709739cd",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -488,22 +490,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-22.11",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1685149434,
-        "narHash": "sha256-QyTrf+sSvPM1MFegJ3yF4f3vQyYEGfuPXiQITfhQ0JQ=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "d6a1aea19bddac079efbfde6c373dff8709739cd",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -812,8 +798,8 @@
         "lspkind-nvim": "lspkind-nvim",
         "neodev-nvim": "neodev-nvim",
         "neogit": "neogit",
-        "neovim": "neovim",
-        "nixpkgs": "nixpkgs_2",
+        "neovim-flake": "neovim-flake",
+        "nixpkgs": "nixpkgs",
         "noice-nvim": "noice-nvim",
         "nui-nvim": "nui-nvim",
         "null-ls-nvim": "null-ls-nvim",

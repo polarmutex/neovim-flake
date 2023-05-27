@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  neovim,
-  ...
-}: let
+{pkgs, ...}: let
   neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
     viAlias = true;
     vimAlias = true;
@@ -26,7 +21,7 @@
     ];
   };
 in
-  pkgs.wrapNeovimUnstable neovim.packages.${pkgs.system}.default
+  pkgs.wrapNeovimUnstable pkgs.neovim-git
   (neovimConfig
     // {
       wrapRc = true;

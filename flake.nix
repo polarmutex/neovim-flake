@@ -9,7 +9,7 @@
   outputs = {
     self,
     nixpkgs,
-    neovim,
+    neovim-flake,
     flake-parts,
     ...
   } @ inputs:
@@ -23,13 +23,6 @@
 
       flake = {
         overlays.default = final: prev: {
-          neovim-lua-config-polar = final.callPackage ./pkgs/lua-config.nix {};
-          neovim-polar = final.callPackage ./pkgs/neovim-polar.nix {inherit neovim;};
-          nvim-treesitter-master = final.callPackage ./pkgs/nvim-treesitter.nix {
-            inherit nixpkgs;
-            nvim-treesitter-git = prev.neovimPlugins.nvim-treesitter;
-            treesitterGrammars = final.treesitterGrammars;
-          };
         };
       };
       perSystem = {
@@ -43,7 +36,11 @@
         overlays = let
           plugin-overlay = import ./nix/plugin-overlay.nix {inherit inputs;};
         in [
-          neovim.overlay
+          (_final: _prev: {
+            neovim-git = self'.packages.neovim-git;
+            nvim-treesitter-master = self'.packages.nvim-treesitter-master;
+            neovim-lua-config-polar = self'.packages.neovim-lua-config-polar;
+          })
           plugin-overlay
           self.overlays.default
           # Keeping this out of the exposed overlay, I don't want to
@@ -62,9 +59,25 @@
           };
         };
 
-        packages = with pkgs; {
-          default = pkgs.neovim-polar;
-          inherit neovim-lua-config-polar neovim-polar nvim-treesitter-master;
+        packages = {
+          default = config.packages.neovim-git;
+          neovim-git = inputs'.neovim-flake.packages.neovim.overrideAttrs (o: {
+            patches = builtins.filter (p:
+              (
+                if builtins.typeOf p == "set"
+                then baseNameOf p.name
+                else baseNameOf
+              )
+              != "use-the-correct-replacement-args-for-gsub-directive.patch")
+            o.patches;
+          });
+          neovim-lua-config-polar = pkgs.callPackage ./pkgs/lua-config.nix {};
+          neovim-polar = pkgs.callPackage ./pkgs/neovim-polar.nix {inherit neovim-flake;};
+          nvim-treesitter-master = pkgs.callPackage ./pkgs/nvim-treesitter.nix {
+            inherit nixpkgs;
+            nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
+            treesitterGrammars = pkgs.treesitterGrammars;
+          };
         };
 
         apps = {
@@ -109,9 +122,9 @@
     };
 
     #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
-    neovim = {
+    neovim-flake = {
       url = "github:neovim/neovim?dir=contrib";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     beancount-nvim = {
       url = "github:polarmutex/beancount.nvim";
