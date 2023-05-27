@@ -61,6 +61,7 @@
 
         packages = {
           default = config.packages.neovim-git;
+          # from https://github.com/nix-community/neovim-nightly-overlay
           neovim-git = inputs'.neovim-flake.packages.neovim.overrideAttrs (o: {
             patches = builtins.filter (p:
               (
