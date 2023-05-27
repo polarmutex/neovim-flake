@@ -43,9 +43,9 @@ jobs:
           - ubuntu-latest
         attribute:
           - .#devShells.x86_64-linux.default
+          - .#neovim-git
           - .#neovim-lua-config-polar
           - .#neovim-polar
-          #- .#neovim-nightly
     steps:
     - uses: actions/checkout@v3
     - name: Install nix
