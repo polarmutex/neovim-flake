@@ -1,3 +1,5 @@
+local polutils = require("polarmutex.utils")
+
 local noice_spec = {
     name = "noice.nvim",
     dir = "@neovimPlugin.noice-nvim@",
@@ -250,8 +252,18 @@ statusline_spec.config = function()
         -- TODO get name from null-ls
         provider = function()
             local names = {}
-            for _, server in ipairs(vim.lsp.buf_get_clients(0)) do
-                table.insert(names, server.name)
+            for _, client in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+                if client.name == "null-ls" then
+                    local null_ls_sources = {}
+                    for _, type in ipairs({ "FORMATTING", "DIAGNOSTICS" }) do
+                        for _, source in ipairs(polutils.null_ls_sources(vim.bo.filetype, type)) do
+                            null_ls_sources[source] = true
+                        end
+                    end
+                    vim.list_extend(names, vim.tbl_keys(null_ls_sources))
+                else
+                    table.insert(names, client.name)
+                end
             end
             return " [" .. table.concat(names, " ") .. "]"
         end,
