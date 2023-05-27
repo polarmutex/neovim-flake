@@ -43,10 +43,10 @@ jobs:
         os:
           - ubuntu-latest
         attribute:
+          - .#devShells.x86_64-linux.default
           - .#neovim-lua-config-polar
           - .#neovim-polar
           #- .#neovim-nightly
-          #- .#devShells.x86_64-linux.default
     steps:
     - uses: actions/checkout@v3
     - name: Install nix
