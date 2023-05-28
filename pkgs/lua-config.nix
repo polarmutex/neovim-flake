@@ -55,6 +55,8 @@ in
       "astro.language-server" = lib.getExe pkgs.nodePackages."@astrojs/language-server";
       "beancount.beancount-language-server" = pkgs.beancount-language-server;
       "cpp.clangd" = pkgs.clang-tools;
+      "git.commitlint" =
+        pkgs.commitlint;
       "go.gopls" =
         pkgs.gopls;
       "json.jsonls" =
@@ -88,8 +90,16 @@ in
         lib.getExe pkgs.nil-git;
       "nix.alejandra" =
         pkgs.alejandra;
+      "nix.deadnix" =
+        pkgs.deadnix;
+      "nix.statix" =
+        pkgs.statix;
+      "python.black" =
+        pkgs.black;
       "python.pyright" =
         pkgs.pyright;
+      "python.ruff" =
+        pkgs.ruff;
       "rust.analyzer" =
         pkgs.lib.getExe pkgs.rust-analyzer;
       "rust.clippy" =
@@ -98,6 +108,10 @@ in
         pkgs.lib.getExe pkgs.nodePackages.svelte-language-server;
       "typescript.typescript-language-server" =
         lib.getExe pkgs.nodePackages.typescript-language-server;
+      "yaml.yamlfix" =
+        pkgs.yamlfix;
+      "yaml.yamllint" =
+        pkgs.yamllint;
 
       "neovimPlugin.beancount-nvim" =
         pkgs.neovimPlugins.beancount-nvim;

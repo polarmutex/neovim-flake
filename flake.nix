@@ -22,7 +22,7 @@
       ];
 
       flake = {
-        overlays.default = final: prev: {
+        overlays.default = _final: _prev: {
         };
       };
       perSystem = {
@@ -37,9 +37,9 @@
           plugin-overlay = import ./nix/plugin-overlay.nix {inherit inputs;};
         in [
           (_final: _prev: {
-            neovim-git = self'.packages.neovim-git;
-            nvim-treesitter-master = self'.packages.nvim-treesitter-master;
-            neovim-lua-config-polar = self'.packages.neovim-lua-config-polar;
+            inherit (self'.packages) neovim-git;
+            inherit (self'.packages) nvim-treesitter-master;
+            inherit (self'.packages) neovim-lua-config-polar;
             nil-git = inputs'.nil.packages.default;
           })
           plugin-overlay
@@ -78,7 +78,7 @@
           nvim-treesitter-master = pkgs.callPackage ./pkgs/nvim-treesitter.nix {
             inherit nixpkgs;
             nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
-            treesitterGrammars = pkgs.treesitterGrammars;
+            inherit (pkgs) treesitterGrammars;
           };
         };
 
