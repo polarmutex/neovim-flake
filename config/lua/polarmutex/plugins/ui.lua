@@ -1,4 +1,4 @@
-local polutils = require("polarmutex.utils.null-ls")
+local nullls_utils = require("polarmutex.utils.null-ls")
 
 local noice_spec = {
     name = "noice.nvim",
@@ -256,7 +256,7 @@ statusline_spec.config = function()
                 if client.name == "null-ls" then
                     local null_ls_sources = {}
                     for _, type in ipairs({ "FORMATTING", "DIAGNOSTICS" }) do
-                        for _, source in ipairs(polutils.null_ls_sources(vim.bo.filetype, type)) do
+                        for _, source in ipairs(nullls_utils.sources(vim.bo.filetype, type)) do
                             null_ls_sources[source] = true
                         end
                     end
