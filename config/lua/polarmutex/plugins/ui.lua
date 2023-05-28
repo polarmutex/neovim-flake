@@ -1,4 +1,4 @@
-local polutils = require("polarmutex.utils")
+local polutils = require("polarmutex.utils.null-ls")
 
 local noice_spec = {
     name = "noice.nvim",
