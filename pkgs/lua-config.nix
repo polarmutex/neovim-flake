@@ -86,6 +86,10 @@ in
         pkgs.lua-language-server;
       "lua.stylua" =
         pkgs.stylua;
+      "markdown.markdownlint" =
+        pkgs.nodePackages.markdownlint-cli;
+      "markdown.ltex" =
+        pkgs.ltex-ls;
       "nix.nil" =
         lib.getExe pkgs.nil-git;
       "nix.alejandra" =

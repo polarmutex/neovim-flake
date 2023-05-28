@@ -136,6 +136,20 @@ local servers = {
             --ts_util.setup_client(client)
         end,
     },
+    ltex = {
+        cmd = { "@markdown.ltex@/bin/ltex-ls" },
+        filetypes = { "markdown" },
+        settings = {
+            enabled = { "markdown" },
+            checkFrequency = "save",
+            language = "en-US",
+            diagnosticSeverity = "information",
+            setenceCacheSize = 5000,
+            additionalRules = {
+                enablePickyRules = true,
+            },
+        },
+    },
 }
 
 local setup_server = function(server, config)

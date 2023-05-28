@@ -21,6 +21,11 @@ null_ls.setup({
             command = "@lua.stylua@/bin/stylua",
         }),
 
+        -- markdown
+        null_ls.builtins.diagnostics.markdownlint.with({
+            command = "@markdown.markdownlint@/bin/markdownlint",
+        }),
+
         -- nix
         null_ls.builtins.diagnostics.deadnix.with({
             command = "@nix.deadnix@/bin/deadnix",
