@@ -25,6 +25,9 @@ null_ls.setup({
         null_ls.builtins.diagnostics.markdownlint.with({
             command = "@markdown.markdownlint@/bin/markdownlint",
         }),
+        null_ls.builtins.formatting.mdformat.with({
+            command = "@markdown.mdformat@/bin/mdformat",
+        }),
 
         -- nix
         null_ls.builtins.diagnostics.deadnix.with({

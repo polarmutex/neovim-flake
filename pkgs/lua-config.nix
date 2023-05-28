@@ -88,6 +88,8 @@ in
         pkgs.stylua;
       "markdown.markdownlint" =
         pkgs.nodePackages.markdownlint-cli;
+      "markdown.mdformat" =
+        pkgs.python311Packages.mdformat;
       "markdown.ltex" =
         pkgs.ltex-ls;
       "nix.nil" =

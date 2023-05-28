@@ -40,6 +40,8 @@
             inherit (self'.packages) neovim-git;
             inherit (self'.packages) nvim-treesitter-master;
             inherit (self'.packages) neovim-lua-config-polar;
+            inherit (self'.packages) mdformat-tables;
+            inherit (self'.packages) mdformat-gfm;
             nil-git = inputs'.nil.packages.default;
           })
           plugin-overlay
@@ -80,6 +82,8 @@
             nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
             inherit (pkgs) treesitterGrammars;
           };
+          mdformat-tables = pkgs.callPackage ./pkgs/mdformat-tables.nix {};
+          mdformat-gfm = pkgs.callPackage ./pkgs/mdformat-gfm.nix {};
         };
 
         apps = {
@@ -107,6 +111,7 @@
           default = pkgs.mkShell {
             packages = builtins.attrValues {
               inherit (pkgs) lemmy-help npins;
+              inherit (pkgs) mdformat-gfm;
             };
             inherit (self.checks.${system}.pre-commit-check) shellHook;
           };
