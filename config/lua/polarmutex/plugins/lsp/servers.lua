@@ -55,6 +55,15 @@ local servers = {
     },
     pyright = {
         cmd = { "@python.pyright@/bin/pyright-langserver", "--stdio" },
+        settings = {
+            python = {
+                analysis = {
+                    autoSearchPaths = true,
+                    useLibraryCodeForTypes = true,
+                    diagnosticMode = "openFilesOnly",
+                },
+            },
+        },
     },
     nil_ls = {
         cmd = { "@nix.nil@" },
