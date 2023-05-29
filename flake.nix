@@ -40,9 +40,13 @@
             inherit (self'.packages) neovim-git;
             inherit (self'.packages) nvim-treesitter-master;
             inherit (self'.packages) neovim-lua-config-polar;
-            inherit (self'.packages) mdformat-tables;
-            inherit (self'.packages) mdformat-gfm;
             nil-git = inputs'.nil.packages.default;
+          })
+          (_final: _prev: {
+            mdformat = import inputs.nixpkgs-mdformat {
+              inherit system;
+              config.allowUnfree = true;
+            };
           })
           plugin-overlay
           self.overlays.default
@@ -82,8 +86,7 @@
             nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
             inherit (pkgs) treesitterGrammars;
           };
-          mdformat-tables = pkgs.callPackage ./pkgs/mdformat-tables.nix {};
-          mdformat-gfm = pkgs.callPackage ./pkgs/mdformat-gfm.nix {};
+          mdformat-gfm = pkgs.mdformat.python310Packages.mdformat-gfm;
         };
 
         apps = {
@@ -111,7 +114,6 @@
           default = pkgs.mkShell {
             packages = builtins.attrValues {
               inherit (pkgs) lemmy-help npins;
-              inherit (pkgs) mdformat-gfm;
             };
             inherit (self.checks.${system}.pre-commit-check) shellHook;
           };
@@ -122,6 +124,7 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs-mdformat.url = "github:djacu/nixpkgs/feature/add-mdformat-gfm-to-python-modules";
     flake-parts.url = "github:hercules-ci/flake-parts";
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";

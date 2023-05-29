@@ -516,6 +516,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-mdformat": {
+      "locked": {
+        "lastModified": 1666892363,
+        "narHash": "sha256-F2rQ//EZwYBiiE77MOVYizeUtYYWgCNiKgtB72aIloU=",
+        "owner": "djacu",
+        "repo": "nixpkgs",
+        "rev": "056a217f08182464dc85142392b7b8c48df725af",
+        "type": "github"
+      },
+      "original": {
+        "owner": "djacu",
+        "ref": "feature/add-mdformat-gfm-to-python-modules",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1678872516,
@@ -855,6 +871,7 @@
         "neovim-flake": "neovim-flake",
         "nil": "nil",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-mdformat": "nixpkgs-mdformat",
         "noice-nvim": "noice-nvim",
         "nui-nvim": "nui-nvim",
         "null-ls-nvim": "null-ls-nvim",
