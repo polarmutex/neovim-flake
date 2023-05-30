@@ -40,7 +40,7 @@ jobs:
         attribute:
           - .#devShells.x86_64-linux.default
           - .#neovim-git
-          - .#mdformat-gfm
+          - .#mdformat-with-plugins
           - .#neovim-lua-config-polar
           - .#neovim-polar
     steps:
