@@ -462,6 +462,22 @@
         "type": "github"
       }
     },
+    "neovim-tasks": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1680114835,
+        "narHash": "sha256-xeWWQrcG5+E8M2l0A1Ht5XNwe0N9wyBwv9INzyV8Rv0=",
+        "owner": "Shatur",
+        "repo": "neovim-tasks",
+        "rev": "6e37ddc4702f100d18a4b4869ff89d275284b95b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Shatur",
+        "repo": "neovim-tasks",
+        "type": "github"
+      }
+    },
     "nil": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -869,6 +885,7 @@
         "neodev-nvim": "neodev-nvim",
         "neogit": "neogit",
         "neovim-flake": "neovim-flake",
+        "neovim-tasks": "neovim-tasks",
         "nil": "nil",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-mdformat": "nixpkgs-mdformat",

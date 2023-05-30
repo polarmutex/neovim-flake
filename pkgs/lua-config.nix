@@ -155,6 +155,8 @@ in
         pkgs.neovimPlugins.neodev-nvim;
       "neovimPlugin.neogit" =
         pkgs.neovimPlugins.neogit;
+      "neovimPlugin.neovim-tasks" =
+        pkgs.neovimPlugins.neovim-tasks;
       "neovimPlugin.noice-nvim" =
         pkgs.neovimPlugins.noice-nvim;
       "neovimPlugin.nui-nvim" =

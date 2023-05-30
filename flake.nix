@@ -235,6 +235,10 @@
       url = "github:TimUntersberger/neogit";
       flake = false;
     };
+    neovim-tasks = {
+      url = "github:Shatur/neovim-tasks";
+      flake = false;
+    };
     noice-nvim = {
       url = "github:folke/noice.nvim";
       flake = false;

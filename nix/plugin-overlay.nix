@@ -27,6 +27,7 @@ in {
     lspkind-nvim = mkNvimPlugin inputs.lspkind-nvim "lspkind.nvim";
     neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
     neogit = mkNvimPlugin inputs.neogit "neogit";
+    neovim-tasks = mkNvimPlugin inputs.neovim-tasks "neovim-tasks";
     noice-nvim = mkNvimPlugin inputs.noice-nvim "noice.nvim";
     nui-nvim = mkNvimPlugin inputs.nui-nvim "nui.nvim";
     null-ls-nvim = mkNvimPlugin inputs.null-ls-nvim "null-ls.nvim";
