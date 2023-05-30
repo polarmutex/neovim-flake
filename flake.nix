@@ -48,6 +48,15 @@
               config.allowUnfree = true;
             };
           })
+          (_final: _prev: {
+            mdformat-with-plugins = pkgs.mdformat.python310.withPackages (ps: [
+              ps.mdformat
+              ps.mdformat-gfm
+              ps.mdformat-frontmatter
+              ps.mdformat-toc
+            ]);
+          })
+
           plugin-overlay
           self.overlays.default
           # Keeping this out of the exposed overlay, I don't want to
@@ -86,7 +95,7 @@
             nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
             inherit (pkgs) treesitterGrammars;
           };
-          mdformat-gfm = pkgs.mdformat.python310Packages.mdformat-gfm;
+          inherit (pkgs) mdformat-with-plugins;
         };
 
         apps = {
@@ -124,7 +133,7 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
-    nixpkgs-mdformat.url = "github:djacu/nixpkgs/feature/add-mdformat-gfm-to-python-modules";
+    nixpkgs-mdformat.url = "github:polarmutex/nixpkgs/mdformat-plugins";
     flake-parts.url = "github:hercules-ci/flake-parts";
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";

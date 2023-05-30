@@ -49,11 +49,6 @@ null_ls.setup({
         }),
         --null_ls.builtins.diagnostics.mypy,
 
-        -- rust
-        null_ls.builtins.formatting.dprint.with({
-            command = "@rust.dprint@/bin/dprint",
-        }),
-
         -- yaml
         null_ls.builtins.diagnostics.yamllint.with({
             command = "@yaml.yamllint@/bin/yamllint",

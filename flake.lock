@@ -518,16 +518,16 @@
     },
     "nixpkgs-mdformat": {
       "locked": {
-        "lastModified": 1666892363,
-        "narHash": "sha256-F2rQ//EZwYBiiE77MOVYizeUtYYWgCNiKgtB72aIloU=",
-        "owner": "djacu",
+        "lastModified": 1685407640,
+        "narHash": "sha256-OqyMUDMvJGfJAjllKFXrb/8uc28W7/C01Y12simMQ1U=",
+        "owner": "polarmutex",
         "repo": "nixpkgs",
-        "rev": "056a217f08182464dc85142392b7b8c48df725af",
+        "rev": "7beeeec4f194fd7f3ba1b6a9c212b0af84486a22",
         "type": "github"
       },
       "original": {
-        "owner": "djacu",
-        "ref": "feature/add-mdformat-gfm-to-python-modules",
+        "owner": "polarmutex",
+        "ref": "mdformat-plugins",
         "repo": "nixpkgs",
         "type": "github"
       }

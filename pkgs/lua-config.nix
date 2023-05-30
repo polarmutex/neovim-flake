@@ -78,8 +78,6 @@ in
         pkgs.jdk17;
       "java.jdt-language-server" =
         pkgs.jdt-language-server;
-      "rust.dprint" =
-        pkgs.dprint;
       "lua.luacheck" =
         pkgs.luajitPackages.luacheck;
       "lua.sumneko-lua-language-server" =
@@ -89,7 +87,7 @@ in
       "markdown.markdownlint" =
         pkgs.nodePackages.markdownlint-cli;
       "markdown.mdformat" =
-        pkgs.python310Packages.mdformat;
+        pkgs.mdformat-with-plugins;
       "markdown.ltex" =
         pkgs.ltex-ls;
       "nix.nil" =
