@@ -2,15 +2,15 @@
 
 ## Language Support
 
-| Language  | LSP | Treesitter | Formatter | Lint | Debug | Test |
-| --------- | --- | ---------- | --------- | ---- | ----- | ---- |
-| Beancount |     |            |           |      |       |      |
-| Cpp       |     |            |           |      |       |      |
-| Lua       |     |            |           |      |       |      |
-| Java      |     |            |           |      |       |      |
-| Nix       |     |            |           |      |       |      |
-| Python    |     |            |           |      |       |      |
-| Rust      |     |            |           |      |       |      |
+| Language  | LSP    | Treesitter | Formatter | Lint | Debug  | Test |
+| --------- | ------ | ---------- | --------- | ---- | ------ | ---- |
+| Beancount |        |            |           |      |        |      |
+| Cpp       | :star: | :star:     | :star:    |      |        |      |
+| Lua       |        |            |           |      |        |      |
+| Java      | :star: | :star:     | :star:    |      | :star: |      |
+| Nix       |        |            |           |      |        |      |
+| Python    |        |            |           |      |        |      |
+| Rust      |        |            |           |      |        |      |
 
 ## TODO
 
