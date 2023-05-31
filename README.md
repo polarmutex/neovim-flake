@@ -49,3 +49,10 @@
 
 - [nixvim](https://github.com/pta2002/nixvim)
 - [awesome neovim plugins](https://awesomeopensource.com/project/rockerBOO/awesome-neovim)
+
+## Conan
+
+RUN conan install .. -s build_type=Release -pr:h default -pr:b default
+RUN cmake -B . -S .. -DCMAKE_TOOLCHAIN_FILE=Release/generators/conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/rs
+RUN make -j
+RUN make install

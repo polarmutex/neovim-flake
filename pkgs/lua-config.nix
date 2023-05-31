@@ -155,8 +155,6 @@ in
         pkgs.neovimPlugins.neodev-nvim;
       "neovimPlugin.neogit" =
         pkgs.neovimPlugins.neogit;
-      "neovimPlugin.neovim-tasks" =
-        pkgs.neovimPlugins.neovim-tasks;
       "neovimPlugin.noice-nvim" =
         pkgs.neovimPlugins.noice-nvim;
       "neovimPlugin.nui-nvim" =
@@ -185,6 +183,8 @@ in
         pkgs.neovimPlugins.nvim-treesitter-playground;
       "neovimPlugin.one-small-step-for-vimkind" =
         pkgs.neovimPlugins.one-small-step-for-vimkind;
+      "neovimPlugin.overseer-nvim" =
+        pkgs.neovimPlugins.overseer-nvim;
       "neovimPlugin.plenary-nvim" =
         pkgs.neovimPlugins.plenary-nvim;
       "neovimPlugin.rust-tools-nvim" =

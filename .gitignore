@@ -2,3 +2,5 @@
 result
 .direnv
 .pre-commit-config.yaml
+tests/conan/.cache/clangd/index
+tests/conan/build

@@ -235,10 +235,6 @@
       url = "github:TimUntersberger/neogit";
       flake = false;
     };
-    neovim-tasks = {
-      url = "github:Shatur/neovim-tasks";
-      flake = false;
-    };
     noice-nvim = {
       url = "github:folke/noice.nvim";
       flake = false;
@@ -297,6 +293,10 @@
     };
     one-small-step-for-vimkind = {
       url = "github:jbyuki/one-small-step-for-vimkind";
+      flake = false;
+    };
+    overseer-nvim = {
+      url = "github:stevearc/overseer.nvim";
       flake = false;
     };
     plenary-nvim = {

@@ -27,7 +27,6 @@ in {
     lspkind-nvim = mkNvimPlugin inputs.lspkind-nvim "lspkind.nvim";
     neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
     neogit = mkNvimPlugin inputs.neogit "neogit";
-    neovim-tasks = mkNvimPlugin inputs.neovim-tasks "neovim-tasks";
     noice-nvim = mkNvimPlugin inputs.noice-nvim "noice.nvim";
     nui-nvim = mkNvimPlugin inputs.nui-nvim "nui.nvim";
     null-ls-nvim = mkNvimPlugin inputs.null-ls-nvim "null-ls.nvim";
@@ -43,6 +42,7 @@ in {
     nvim-treesitter-playground = mkNvimPlugin inputs.nvim-treesitter-playground "playground";
     nvim-web-devicons = mkNvimPlugin inputs.nvim-web-devicons "nvim-web-devicons";
     one-small-step-for-vimkind = mkNvimPlugin inputs.one-small-step-for-vimkind "one-small-step-for-vimkind";
+    overseer-nvim = mkNvimPlugin inputs.overseer-nvim "overseer.nvim";
     plenary-nvim = mkNvimPlugin inputs.plenary-nvim "plenary.nvim";
     rust-tools-nvim = mkNvimPlugin inputs.rust-tools-nvim "rust-tools.nvim";
     telescope-nvim = mkNvimPlugin inputs.telescope-nvim "telescope.nvim";
