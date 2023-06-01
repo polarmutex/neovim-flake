@@ -40,6 +40,7 @@
             inherit (self'.packages) neovim-git;
             inherit (self'.packages) nvim-treesitter-master;
             inherit (self'.packages) neovim-lua-config-polar;
+            inherit (self'.packages) docgen;
             nil-git = inputs'.nil.packages.default;
           })
           (_final: _prev: {
@@ -89,6 +90,7 @@
             o.patches;
           });
           neovim-lua-config-polar = pkgs.callPackage ./pkgs/lua-config.nix {};
+          docgen = pkgs.callPackage ./pkgs/docgen.nix {};
           neovim-polar = pkgs.callPackage ./pkgs/neovim-polar.nix {inherit neovim-flake;};
           nvim-treesitter-master = pkgs.callPackage ./pkgs/nvim-treesitter.nix {
             inherit nixpkgs;

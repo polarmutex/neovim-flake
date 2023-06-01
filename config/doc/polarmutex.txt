@@ -1,0 +1,29 @@
+ This is PolarMutex's neovim config
+
+==============================================================================
+Table of Contents                                          *polarmutex.contents*
+
+TODO ························································· |polarmutex.todo|
+overseer-nvim ···································· |polarmutex.plugins.overseer|
+
+==============================================================================
+TODO                                                           *polarmutex.todo*
+
+ - add nix check for nivm-treesiter and lspconfig
+ - add spellcheck
+
+M.setup()                                                *polarmutex.todo.setup*
+
+
+==============================================================================
+overseer-nvim                                      *polarmutex.plugins.overseer*
+
+                                  *polarmutex.plugins.overseer.AddDapConfigOpts*
+AddDapConfigOpts
+
+    Fields: ~
+        {autodetect}             (boolean)  Whether ta automatically detect launch configurations for the project
+        {settings_file_pattern}  (string)   File name or pattern to search for. Defaults to 'launch.json'
+
+
+vim:tw=78:ts=8:noet:ft=help:norl:

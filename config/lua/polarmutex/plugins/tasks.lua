@@ -1,3 +1,4 @@
+---@mod polarmutex.plugins.overseer overseer-nvim
 local overseer_nvim_spec = {
     name = "overseer-nvim",
     dir = "@neovimPlugin.overseer-nvim@",
@@ -15,6 +16,7 @@ overseer_nvim_spec.config = function()
     })
 end
 
-return {
+local M = {
     overseer_nvim_spec,
 }
+return M
