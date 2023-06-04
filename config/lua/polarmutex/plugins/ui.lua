@@ -550,6 +550,13 @@ statusline_spec.config = function()
         winbar = WinBar,
         statuscolumn = Stc,
         --tabline
+        opts = {
+            disable_winbar_cb = function(args)
+                return conditions.buffer_matches({
+                    filetype = { "noice" },
+                }, args.buf)
+            end,
+        },
     })
     vim.o.statuscolumn = "%=%{v:virtnum < 1 ? (v:relnum ? v:relnum : v:lnum < 10 ? v:lnum . '  ' : v:lnum) : ''}%=%s" --require("heirline").eval_statuscolumn()
 
