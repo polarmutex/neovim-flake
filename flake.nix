@@ -57,7 +57,6 @@
               ps.mdformat-toc
             ]);
           })
-
           plugin-overlay
           self.overlays.default
           # Keeping this out of the exposed overlay, I don't want to
@@ -297,10 +296,6 @@
       url = "github:jbyuki/one-small-step-for-vimkind";
       flake = false;
     };
-    overseer-nvim = {
-      url = "github:stevearc/overseer.nvim";
-      flake = false;
-    };
     plenary-nvim = {
       url = "github:nvim-lua/plenary.nvim";
       flake = false;
@@ -308,6 +303,10 @@
     rust-tools-nvim = {
       url = "github:simrat39/rust-tools.nvim";
       flake = false;
+    };
+    tasks-nvim = {
+      #url = "github:polarmutex/tasks.nvim";
+      url = "path:///home/polar/repos/personal/tasks.nvim/main";
     };
     telescope-nvim = {
       url = "github:nvim-telescope/telescope.nvim";
