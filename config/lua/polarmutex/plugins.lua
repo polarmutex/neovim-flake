@@ -84,7 +84,7 @@ local M = {
         name = "nvim-dap-ui",
         dir = "@neovimPlugin.nvim-dap-ui@",
         event = "CursorHold",
-        dependencies = { { dir = "mfussenegger/nvim-dap" } },
+        dependencies = { "nvim-dap" },
         config = function()
             require("polarmutex.config.dap-ui").config()
         end,
@@ -93,6 +93,7 @@ local M = {
         name = "nvim-dap-virtual-text",
         dir = "@neovimPlugin.nvim-dap-virtual-text@",
         event = "CursorHold",
+        dependencies = { "nvim-dap" },
         config = function()
             require("polarmutex.config.dap-virt-text").config()
         end,
@@ -100,7 +101,7 @@ local M = {
     {
         name = "one-small-step-for-vimkind",
         dir = "@neovimPlugin.one-small-step-for-vimkind@",
-        dependencies = { { dir = "@neovimPlugin.nvim-dap" } },
+        dependencies = { "nvim-dap" },
         config = function()
             require("polarmutex.config.dap-lua").config()
         end,
@@ -109,9 +110,7 @@ local M = {
     {
         name = "nvim-dap-python",
         dir = "@neovimPlugin.nvim-dap-python@",
-        dependencies = {
-            { dir = "@neovimPlugin.nvim-dap@" },
-        },
+        dependencies = { "nvim-dap" },
         config = function()
             if vim.fn.executable("python3") then
                 require("dap-python").setup(vim.fn.exepath("python3"))
@@ -160,7 +159,6 @@ local M = {
     {
         name = "tasks.nvim",
         dir = "@neovimPlugin.tasks-nvim@",
-        --dir = "/home/polar/repos/personal/tasks.nvim/main",
         dependencies = {},
         lazy = false,
         config = function()
@@ -228,6 +226,7 @@ local M = {
 
     -- lua
     {
+        name = "neodev.nvim",
         dir = "@neovimPlugin.neodev-nvim@",
         module = "neodev",
         ft = "lua",
@@ -235,12 +234,14 @@ local M = {
 
     -- rust
     {
+        name = "rust-tools",
         dir = "@neovimPlugin.rust-tools-nvim@",
         -- dependencies = { use("neovim/nvim-lspconfig") },
         ft = "rust",
         config = function() end,
     },
     {
+        name = "crates.nvim",
         dir = "@neovimPlugin.crates-nvim@",
         ft = "rust",
         config = function()
