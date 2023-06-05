@@ -159,6 +159,7 @@ local M = {
     {
         name = "tasks.nvim",
         dir = "@neovimPlugin.tasks-nvim@",
+        --dir = "/home/polar/repos/personal/tasks.nvim/main",
         dependencies = {},
         lazy = false,
         config = function()

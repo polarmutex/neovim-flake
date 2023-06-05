@@ -305,8 +305,7 @@
       flake = false;
     };
     tasks-nvim = {
-      #url = "github:polarmutex/tasks.nvim";
-      url = "path:///home/polar/repos/personal/tasks.nvim/main";
+      url = "github:polarmutex/tasks.nvim";
     };
     telescope-nvim = {
       url = "github:nvim-telescope/telescope.nvim";

@@ -1163,14 +1163,17 @@
         "telescope-nvim": "telescope-nvim"
       },
       "locked": {
-        "lastModified": 1685820334,
-        "narHash": "sha256-sOCXZmyzai0Th/X7ecx2K3GhW87oRPB6w8KgXpKRd7M=",
-        "path": "/home/polar/repos/personal/tasks.nvim/main",
-        "type": "path"
+        "lastModified": 1685850676,
+        "narHash": "sha256-kpiVBFQKOzSUUnH4KPY52ESf0Fl6YKvPJmRC1l78W/c=",
+        "owner": "polarmutex",
+        "repo": "tasks.nvim",
+        "rev": "e04ccd86dc4cdf855eeffb6c87020559005b2ef4",
+        "type": "github"
       },
       "original": {
-        "path": "/home/polar/repos/personal/tasks.nvim/main",
-        "type": "path"
+        "owner": "polarmutex",
+        "repo": "tasks.nvim",
+        "type": "github"
       }
     },
     "telescope-nvim": {
