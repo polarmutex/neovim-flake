@@ -1,5 +1,5 @@
 local lspconfig = require("lspconfig")
-local on_attach = require("polarmutex.plugins.lsp.on_attach")
+local on_attach = require("polarmutex.config.lsp.on_attach")
 
 local custom_init = function(client)
     client.config.flags = client.config.flags or {}

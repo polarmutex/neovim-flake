@@ -12,10 +12,10 @@ lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_pub
 })
 
 local signs = {
-    Error = "",
+    Error = "",
     Warn = "",
     Info = "",
-    Hint = "",
+    Hint = "󰌵",
 }
 
 for type, icon in pairs(signs) do
