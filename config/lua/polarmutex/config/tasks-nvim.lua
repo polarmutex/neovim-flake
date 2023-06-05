@@ -1,13 +1,6 @@
----@mod polarmutex.plugins.overseer overseer-nvim
-local tasks_nvim_spec = {
-    name = "tasks.nvim",
-    --dir = "@neovimPlugin.tasks-nvim@",
-    dir = "/home/polar/repos/personal/tasks.nvim/main",
-    dependencies = {},
-    lazy = false,
-}
+local M = {}
 
-tasks_nvim_spec.config = function()
+M.config = function()
     --local Path = require("plenary.path")
     require("tasks").setup({
         default_params = {},
@@ -23,7 +16,4 @@ tasks_nvim_spec.config = function()
     })
 end
 
-local M = {
-    tasks_nvim_spec,
-}
 return M

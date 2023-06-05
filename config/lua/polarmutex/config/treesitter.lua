@@ -1,16 +1,6 @@
-local treesitter_spec = {
-    name = "nvim-treesitter",
-    dir = "@neovimPlugin.nvim-treesitter@",
-    dependencies = {
-        --{ "nvim-treesitter/nvim-treesitter-textobjects", {} },
-        --{ "nvim-treesitter/nvim-treesitter-refactor", {} },
-        --{ "windwp/nvim-ts-autotag", {} },
-        --{ "JoosepAlviste/nvim-ts-context-commentstring", {} },
-        --{ "nvim-treesitter/playground", {} },
-    },
-    lazy = false,
-}
-treesitter_spec.config = function()
+local M = {}
+
+M.config = function()
     require("nvim-treesitter.configs").setup({
         parser_install_dir = "@neovimPlugin.nvim-treesitter@" .. "/parser",
         highlight = {
@@ -45,7 +35,6 @@ treesitter_spec.config = function()
         "beancount",
         "highlights",
         [[
-
 (date) @field
 (txn) @attribute
 
@@ -78,13 +67,4 @@ treesitter_spec.config = function()
     )
 end
 
-local treesitter_playground_spec = {
-    name = "nvim-treesitter-playground",
-    dir = "@neovimPlugin.nvim-treesitter-playground@",
-    lazy = false,
-}
-
-return {
-    treesitter_spec,
-    treesitter_playground_spec,
-}
+return M

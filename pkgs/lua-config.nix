@@ -21,7 +21,7 @@
       mkdir -p $sourceRoot/doc
       ${pkgs.lemmy-help}/bin/lemmy-help -fact \
           $sourceRoot/lua/polarmutex/config/lazy.lua \
-          $sourceRoot/lua/polarmutex/config/keymaps.lua \
+          $sourceRoot/lua/polarmutex/keymaps.lua \
           > $sourceRoot/doc/polarmutex.txt
     '';
     postInstall = let

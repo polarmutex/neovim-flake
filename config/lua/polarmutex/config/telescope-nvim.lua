@@ -1,13 +1,6 @@
-local telescope_spec = {
-    name = "telescope.nvim",
-    dir = "@neovimPlugin.telescope-nvim@",
-    event = "CursorHold",
-    dependencies = {
-        { name = "plenary.nvim", dir = "@neovimPlugin.plenary-nvim@" },
-    },
-}
+local M = {}
 
-telescope_spec.config = function()
+M.config = function()
     local map = vim.keymap.set
     -- keymaps
     map("n", "<leader><leader>", require("telescope.builtin").find_files, { desc = "Telescope: find_files" })
@@ -43,6 +36,4 @@ telescope_spec.config = function()
     })
 end
 
-return {
-    telescope_spec,
-}
+return M

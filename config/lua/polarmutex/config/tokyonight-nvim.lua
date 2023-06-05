@@ -1,11 +1,6 @@
-local tokyonight_spec = {
-    name = "tokyonight-nvim",
-    dir = "@neovimPlugin.tokyonight-nvim@",
-    lazy = false,
-    priority = 1000,
-}
+local M = {}
 
-tokyonight_spec.config = function()
+M.config = function()
     require("tokyonight").setup({
         style = "moon",
         transparent = false,
@@ -27,15 +22,4 @@ tokyonight_spec.config = function()
     vim.cmd([[colorscheme tokyonight]])
 end
 
-local colorizer_spec = {
-    dir = "@neovimPlugin.nvim-colorizer@",
-    event = "CursorHold",
-    config = function()
-        require("colorizer").setup()
-    end,
-}
-
-return {
-    colorizer_spec,
-    tokyonight_spec,
-}
+return M

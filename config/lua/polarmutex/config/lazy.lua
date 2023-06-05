@@ -22,7 +22,7 @@ M.setup = function()
     }
 
     for _, module in ipairs(modules) do
-        local ok, mod = pcall(require, "polarmutex.config." .. module)
+        local ok, mod = pcall(require, "polarmutex." .. module)
         if not ok then
             print("Uh oh! The " .. module .. " module failed to load.")
         else
@@ -35,7 +35,6 @@ M.setup = function()
 
     require("lazy").setup({
         spec = {
-            --{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
             { import = "polarmutex.plugins" },
         },
         defaults = {

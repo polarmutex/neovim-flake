@@ -1,18 +1,6 @@
----@mod polarmutex.plugins.beancount Beancount
----@brief [[
---- keymaps:
----
----
----@brief ]]
----@tag polarmutex.beancount
+local M = {}
 
-local beancount_nvim_spec = {
-    name = "beancount.nvim",
-    dir = "@neovimPlugin.beancount-nvim@",
-    ft = "beancount",
-}
-
-beancount_nvim_spec.config = function()
+M.config = function()
     require("telescope").load_extension("beancount")
 
     local map = vim.keymap.set
@@ -28,9 +16,6 @@ beancount_nvim_spec.config = function()
         noremap = true,
         silent = true,
     })
-    --require("beancount").setup({})
 end
 
-return {
-    beancount_nvim_spec,
-}
+return M

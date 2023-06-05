@@ -1,25 +1,8 @@
 local nullls_utils = require("polarmutex.utils.null-ls")
 
-local noice_spec = {
-    name = "noice.nvim",
-    dir = "@neovimPlugin.noice-nvim@",
-    dependencies = {
-        { name = "nui.nvim", dir = "@neovimPlugin.nui-nvim@" },
-    },
-    lazy = false,
-}
+local M = {}
 
-noice_spec.config = function()
-    require("noice").setup()
-end
-
-local statusline_spec = {
-    name = "heirline.nvim",
-    dir = "@neovimPlugin.heirline-nvim@",
-    lazy = false,
-}
-
-statusline_spec.config = function()
+M.config = function()
     local conditions = require("heirline.conditions")
     local utils = require("heirline.utils")
 
@@ -586,14 +569,4 @@ statusline_spec.config = function()
     })
 end
 
-local web_devicons_spec = {
-    name = "nvim-web-devicons",
-    dir = "@neovimPlugin.nvim-web-devicons@",
-    lazy = false,
-}
-
-return {
-    noice_spec,
-    statusline_spec,
-    web_devicons_spec,
-}
+return M
