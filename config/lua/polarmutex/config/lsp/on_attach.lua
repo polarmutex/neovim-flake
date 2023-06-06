@@ -65,6 +65,7 @@ local on_attach = function(client, bufnr)
     end
 
     lsp_format.on_attach(client)
+    require("lsp-inlayhints").on_attach(client, bufnr)
 end
 
 return on_attach

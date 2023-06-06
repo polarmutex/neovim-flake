@@ -224,7 +224,12 @@
       url = "github:lukas-reineke/lsp-format.nvim";
       flake = false;
     };
-    lspkind-nvim = {
+    lsp-inlayhints-nvim = {
+      # TODO  watch when it goes into master
+      url = "github:lvimuser/lsp-inlayhints.nvim/anticonceal";
+      flake = false;
+    };
+    lsp-kind-nvim = {
       url = "github:onsails/lspkind.nvim";
       flake = false;
     };

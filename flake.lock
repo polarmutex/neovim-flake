@@ -477,7 +477,24 @@
         "type": "github"
       }
     },
-    "lspkind-nvim": {
+    "lsp-inlayhints-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1685142391,
+        "narHash": "sha256-Jio1la318cuqKoT1i9+BwUwCJpgggLH4eqZ8o80gCWs=",
+        "owner": "lvimuser",
+        "repo": "lsp-inlayhints.nvim",
+        "rev": "0fb3b5ef16f2d7e85963cb0b1beacf573ade35de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lvimuser",
+        "ref": "anticonceal",
+        "repo": "lsp-inlayhints.nvim",
+        "type": "github"
+      }
+    },
+    "lsp-kind-nvim": {
       "flake": false,
       "locked": {
         "lastModified": 1683275543,
@@ -1066,7 +1083,8 @@
         "heirline-nvim": "heirline-nvim",
         "lazy-nvim": "lazy-nvim",
         "lsp-format-nvim": "lsp-format-nvim",
-        "lspkind-nvim": "lspkind-nvim",
+        "lsp-inlayhints-nvim": "lsp-inlayhints-nvim",
+        "lsp-kind-nvim": "lsp-kind-nvim",
         "neodev-nvim": "neodev-nvim",
         "neogit": "neogit",
         "neovim-flake": "neovim-flake",

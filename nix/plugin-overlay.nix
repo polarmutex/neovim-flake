@@ -24,7 +24,8 @@ in {
     heirline-nvim = mkNvimPlugin inputs.heirline-nvim "heirline.nvim";
     lazy-nvim = mkNvimPlugin inputs.lazy-nvim "lazy.nvim";
     lsp-format-nvim = mkNvimPlugin inputs.lsp-format-nvim "lsp-format.nvim";
-    lspkind-nvim = mkNvimPlugin inputs.lspkind-nvim "lspkind.nvim";
+    lsp-inlayhints-nvim = mkNvimPlugin inputs.lsp-inlayhints-nvim "lsp-inlayhints.nvim";
+    lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
     neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
     neogit = mkNvimPlugin inputs.neogit "neogit";
     noice-nvim = mkNvimPlugin inputs.noice-nvim "noice.nvim";

@@ -54,7 +54,7 @@ in
     vars = {
       "astro.language-server" = lib.getExe pkgs.nodePackages."@astrojs/language-server";
       "beancount.beancount-language-server" = pkgs.beancount-language-server;
-      "cpp.clangd" = pkgs.clang-tools;
+      "cpp.clangd" = pkgs.clang-tools_16;
       "git.commitlint" =
         pkgs.commitlint;
       "go.gopls" =
@@ -147,10 +147,12 @@ in
         pkgs.neovimPlugins.heirline-nvim;
       "neovimPlugin.lazy-nvim" =
         pkgs.neovimPlugins.lazy-nvim;
-      "neovimPlugin.lspkind-nvim" =
-        pkgs.neovimPlugins.lspkind-nvim;
-      "neovimPlugin.lspformat-nvim" =
+      "neovimPlugin.lsp-kind-nvim" =
+        pkgs.neovimPlugins.lsp-kind-nvim;
+      "neovimPlugin.lsp-format-nvim" =
         pkgs.neovimPlugins.lsp-format-nvim;
+      "neovimPlugin.lsp-inlayhints-nvim" =
+        pkgs.neovimPlugins.lsp-inlayhints-nvim;
       "neovimPlugin.neodev-nvim" =
         pkgs.neovimPlugins.neodev-nvim;
       "neovimPlugin.neogit" =

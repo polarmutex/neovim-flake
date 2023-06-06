@@ -27,16 +27,37 @@ local M = {
             { name = "cmp-dap", dir = "@neovimPlugin.cmp-dap@" },
             --{ dir = "saadparwaiz1/cmp_luasnip" },
             --{ dir = "rafamadriz/friendly-snippets" },
-            { name = "lspkind.nvim", dir = "@neovimPlugin.lspkind-nvim@" },
+            { name = "lspkind.nvim", dir = "@neovimPlugin.lsp-kind-nvim@" },
         },
     },
     {
         name = "lspformat.nvim",
-        dir = "@neovimPlugin.lspformat-nvim@",
+        dir = "@neovimPlugin.lsp-format-nvim@",
+        event = "LspAttach",
         config = function()
             require("lsp-format").setup({})
             -- to handle :wq
             vim.cmd([[cabbrev wq execute "Format sync" <bar> wq]])
+        end,
+    },
+    {
+        name = "lsp-inlayhints.nvim",
+        dir = "@neovimPlugin.lsp-inlayhints-nvim@",
+        event = "LspAttach",
+        config = function()
+            require("lsp-inlayhints").setup()
+            --local group = vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+            --vim.api.nvim_create_autocmd("LspAttach", {
+            --    group = "LspAttach_inlayhints",
+            --    callback = function(args)
+            --        if not (args.data and args.data.client_id) then
+            --            return
+            --        end
+
+            --        local client = vim.lsp.get_client_by_id(args.data.client_id)
+            --        require("lsp-inlayhints").on_attach(client, args.buf)
+            --    end,
+            --})
         end,
     },
     {
