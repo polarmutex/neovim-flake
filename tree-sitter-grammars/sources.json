@@ -140,9 +140,9 @@
         "repo": "tree-sitter-go"
       },
       "branch": "master",
-      "revision": "7cccc30535a40da07092626031120ae6b36202d7",
-      "url": "https://github.com/tree-sitter/tree-sitter-go/archive/7cccc30535a40da07092626031120ae6b36202d7.tar.gz",
-      "hash": "00d5fr72jk6q1s88ijwcfnlwi2pa5l62nvk3h0xja4zqcgjzgpkg"
+      "revision": "3a3a8ee53777eaa6cbfc032afd11af407ee1f7fe",
+      "url": "https://github.com/tree-sitter/tree-sitter-go/archive/3a3a8ee53777eaa6cbfc032afd11af407ee1f7fe.tar.gz",
+      "hash": "1ymc7j69sm85r6190l4h0d1xjj11vjvxk19zahkmhbj22gax1ily"
     },
     "tree-sitter-html": {
       "type": "Git",
@@ -200,9 +200,9 @@
         "repo": "tree-sitter-lua"
       },
       "branch": "main",
-      "revision": "dcc44f7473ecec4d7b99af0a9529705d98a769f1",
-      "url": "https://github.com/MunifTanjim/tree-sitter-lua/archive/dcc44f7473ecec4d7b99af0a9529705d98a769f1.tar.gz",
-      "hash": "13rmng6y6q653s0yk1ahbppjmxwcbr80h5kgr53q43bq9khjrjxx"
+      "revision": "092f32a3d58e37a40bbc8e83b44740e1f23719fb",
+      "url": "https://github.com/MunifTanjim/tree-sitter-lua/archive/092f32a3d58e37a40bbc8e83b44740e1f23719fb.tar.gz",
+      "hash": "068bgh1q3lsrga5rl407d7hhj54zqg36k980iifj1zdgqy3gj5nj"
     },
     "tree-sitter-make": {
       "type": "Git",
