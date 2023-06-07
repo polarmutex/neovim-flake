@@ -56,9 +56,9 @@ M.config = function()
             null_ls.builtins.diagnostics.yamllint.with({
                 command = "@yaml.yamllint@/bin/yamllint",
             }),
-            null_ls.builtins.formatting.yamlfix.with({
-                command = "@yaml.yamlfix@/bin/yamlfix",
-            }),
+            --null_ls.builtins.formatting.yamlfix.with({
+            --    command = "@yaml.yamlfix@/bin/yamlfix",
+            --}),
 
             --null_ls.builtins.formatting.asmfmt,
             --null_ls.builtins.formatting.shfmt,
