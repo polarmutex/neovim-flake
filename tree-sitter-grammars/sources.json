@@ -68,9 +68,9 @@
         "repo": "tree-sitter-cmake"
       },
       "branch": "master",
-      "revision": "399605a02bcd5daa309ce63a6459c600dce3473f",
-      "url": "https://github.com/uyha/tree-sitter-cmake/archive/399605a02bcd5daa309ce63a6459c600dce3473f.tar.gz",
-      "hash": "00zs5s2dvyqki7ghmhp5n9ssrjbsaklzvzg5rvh6fikxyk4wm77f"
+      "revision": "24ed4fd565cd95fcba4f42e995cf186cab180ccb",
+      "url": "https://github.com/uyha/tree-sitter-cmake/archive/24ed4fd565cd95fcba4f42e995cf186cab180ccb.tar.gz",
+      "hash": "1jf5qjic9xv0mfngm4dhhc6bnp93vqdihippa85wdbz9whpmjb6j"
     },
     "tree-sitter-cpp": {
       "type": "Git",
