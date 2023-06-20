@@ -80,9 +80,9 @@
         "repo": "tree-sitter-cpp"
       },
       "branch": "master",
-      "revision": "d63acf7c2ae9599a2f01c8e8beb7d333e54956e4",
-      "url": "https://github.com/tree-sitter/tree-sitter-cpp/archive/d63acf7c2ae9599a2f01c8e8beb7d333e54956e4.tar.gz",
-      "hash": "08rsi5p9cyf8i8lwl5d4wb0jdic5gyh0047y3km0cbd5dbnib7d5"
+      "revision": "2e29f23abcb5f92ddffb22de8b292f09ed78db01",
+      "url": "https://github.com/tree-sitter/tree-sitter-cpp/archive/2e29f23abcb5f92ddffb22de8b292f09ed78db01.tar.gz",
+      "hash": "0hxn0c0jlgign6bf77rqcmq2xickvh2vli7yxvbdfh190nmyb1m8"
     },
     "tree-sitter-diff": {
       "type": "Git",
