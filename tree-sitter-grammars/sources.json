@@ -152,9 +152,9 @@
         "repo": "tree-sitter-html"
       },
       "branch": "master",
-      "revision": "86c253e675e7fdd1c0482efe0706f24bafbc3a7d",
-      "url": "https://github.com/tree-sitter/tree-sitter-html/archive/86c253e675e7fdd1c0482efe0706f24bafbc3a7d.tar.gz",
-      "hash": "12brygy11q1gkbpj9m4alg91jji6avc5j71lwv3m773c94jpbqlq"
+      "revision": "ff48883eb679bbb71b7ac08c8023c8defbf9e234",
+      "url": "https://github.com/tree-sitter/tree-sitter-html/archive/ff48883eb679bbb71b7ac08c8023c8defbf9e234.tar.gz",
+      "hash": "0180hjry46xm2gm32890zc85al0rqcawvpj9xgin3i1cbaq91353"
     },
     "tree-sitter-java": {
       "type": "Git",
