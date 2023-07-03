@@ -32,21 +32,9 @@
         "repo": "tree-sitter-beancount"
       },
       "branch": "master",
-      "revision": "f3741a3a68ade59ec894ed84a64673494d2ba8f3",
-      "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/f3741a3a68ade59ec894ed84a64673494d2ba8f3.tar.gz",
-      "hash": "04dlhffhzg6gaj6i5ias20zshhrapm98lryrdv5f6sfx54b7gmjs"
-    },
-    "tree-sitter-beancount-devel": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "polarmutex",
-        "repo": "tree-sitter-beancount"
-      },
-      "branch": "devel",
-      "revision": "d52c7e33be77e49ccf976d82216f67b7d4436769",
-      "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/d52c7e33be77e49ccf976d82216f67b7d4436769.tar.gz",
-      "hash": "02aw89scrrvk53sc3dfldnjarsjq2jg9hhjxf3fy9xl971cvsdk4"
+      "revision": "358e5ecbb87109eef7fd596ea518a4ff74cb9b31",
+      "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/358e5ecbb87109eef7fd596ea518a4ff74cb9b31.tar.gz",
+      "hash": "1pa673dzsv41rxlqb2a5w7r31rw9z3m6a54yx22wm75cwr9hagxz"
     },
     "tree-sitter-c": {
       "type": "Git",

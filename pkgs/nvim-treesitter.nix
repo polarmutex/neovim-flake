@@ -174,7 +174,8 @@
             --at "${rev}"
         '')
       }
-      ${pkgs.npins}/bin/npins -d tree-sitter-grammars add --name tree-sitter-beancount-devel github polarmutex tree-sitter-beancount -b devel
+      # update beancount to latest in repo for testing
+      ${pkgs.npins}/bin/npins -d tree-sitter-grammars update tree-sitter-beancount
     '';
   };
 
