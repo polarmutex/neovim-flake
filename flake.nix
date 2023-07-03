@@ -44,18 +44,13 @@
             nil-git = inputs'.nil.packages.default;
           })
           (_final: _prev: {
-            mdformat = import inputs.nixpkgs-mdformat {
-              inherit system;
-              config.allowUnfree = true;
-            };
-          })
-          (_final: _prev: {
-            mdformat-with-plugins = pkgs.mdformat.python310.withPackages (ps: [
-              ps.mdformat
-              ps.mdformat-gfm
-              ps.mdformat-frontmatter
-              ps.mdformat-toc
-            ]);
+            mdformat-with-plugins =
+              pkgs.python311Packages.mdformat.withPlugins
+              (with pkgs.python311Packages; [
+                mdformat-gfm
+                mdformat-frontmatter
+                mdformat-toc
+              ]);
           })
           plugin-overlay
           self.overlays.default
@@ -96,7 +91,6 @@
             nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
             inherit (pkgs) treesitterGrammars;
           };
-          inherit (pkgs) mdformat-with-plugins;
         };
 
         apps = {
@@ -134,7 +128,6 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
-    nixpkgs-mdformat.url = "github:polarmutex/nixpkgs/mdformat-plugins";
     flake-parts.url = "github:hercules-ci/flake-parts";
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";

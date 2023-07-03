@@ -667,22 +667,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-mdformat": {
-      "locked": {
-        "lastModified": 1685407640,
-        "narHash": "sha256-OqyMUDMvJGfJAjllKFXrb/8uc28W7/C01Y12simMQ1U=",
-        "owner": "polarmutex",
-        "repo": "nixpkgs",
-        "rev": "7beeeec4f194fd7f3ba1b6a9c212b0af84486a22",
-        "type": "github"
-      },
-      "original": {
-        "owner": "polarmutex",
-        "ref": "mdformat-plugins",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1685801374,
@@ -717,11 +701,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1688283702,
-        "narHash": "sha256-G96xJjYVp4mA3pOcH6WBDSCGbkKlvzw7ofw2JRB6pJY=",
+        "lastModified": 1688417265,
+        "narHash": "sha256-OddjGM32Vk/GLh1OQQYPePt2Z2j/fwNUqb4X6aDPkxQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "a34d3c15d97c214ad9ce41f349abf7e46d7330bd",
+        "rev": "77d0269595488cf2fae06c5a8c3f63ebc94e7f13",
         "type": "github"
       },
       "original": {
@@ -1096,7 +1080,6 @@
         "neovim-flake": "neovim-flake",
         "nil": "nil",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-mdformat": "nixpkgs-mdformat",
         "noice-nvim": "noice-nvim",
         "nui-nvim": "nui-nvim",
         "null-ls-nvim": "null-ls-nvim",
