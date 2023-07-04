@@ -1,0 +1,12 @@
+diff --git a/lua/neogit.lua b/lua/neogit.lua
+index 6b7b1a8..41d328d 100644
+--- a/lua/neogit.lua
++++ b/lua/neogit.lua
+@@ -98,7 +98,6 @@ local neogit = {
+   refresh_viml_compat = status.refresh_viml_compat,
+   close = status.close,
+   setup = function(opts)
+-    notify_move()
+     if opts ~= nil then
+       config.values = vim.tbl_deep_extend("force", config.values, opts)
+     end

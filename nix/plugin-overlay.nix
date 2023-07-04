@@ -27,7 +27,11 @@ in {
     lsp-inlayhints-nvim = mkNvimPlugin inputs.lsp-inlayhints-nvim "lsp-inlayhints.nvim";
     lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
     neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
-    neogit = mkNvimPlugin inputs.neogit "neogit";
+    neogit = (mkNvimPlugin inputs.neogit "neogit").overrideAttrs (_: {
+      patches = [
+        ../patches/neogit.patch
+      ];
+    });
     noice-nvim = mkNvimPlugin inputs.noice-nvim "noice.nvim";
     nui-nvim = mkNvimPlugin inputs.nui-nvim "nui.nvim";
     null-ls-nvim = mkNvimPlugin inputs.null-ls-nvim "null-ls.nvim";
