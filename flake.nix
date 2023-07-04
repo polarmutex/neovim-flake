@@ -231,7 +231,7 @@
       flake = false;
     };
     neogit = {
-      url = "github:TimUntersberger/neogit";
+      url = "github:NeogitOrg/neogit";
       flake = false;
     };
     noice-nvim = {
