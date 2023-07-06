@@ -236,9 +236,9 @@
         "repo": "tree-sitter-mermaid"
       },
       "branch": "master",
-      "revision": "d787c66276e7e95899230539f556e8b83ee16f6d",
-      "url": "https://github.com/monaqa/tree-sitter-mermaid/archive/d787c66276e7e95899230539f556e8b83ee16f6d.tar.gz",
-      "hash": "106w00y6l1fnjakaz9biqk546h2xy0yzr3wmg0yz6fihzj6kf117"
+      "revision": "e26a5f8898a8174f02b4cc9a9050eb3ccfb799f3",
+      "url": "https://github.com/monaqa/tree-sitter-mermaid/archive/e26a5f8898a8174f02b4cc9a9050eb3ccfb799f3.tar.gz",
+      "hash": "1vqp74312f88b22x9fp073c4hy6a77rq8bn2jw7priz98gd74cm8"
     },
     "tree-sitter-nix": {
       "type": "Git",
