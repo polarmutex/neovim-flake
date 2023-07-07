@@ -92,9 +92,9 @@
         "repo": "tree-sitter-dockerfile"
       },
       "branch": "main",
-      "revision": "fd30df68c4178964ed012ef7f745055db76f8ebf",
-      "url": "https://github.com/camdencheek/tree-sitter-dockerfile/archive/fd30df68c4178964ed012ef7f745055db76f8ebf.tar.gz",
-      "hash": "13qvh2dc22j0zy87fqn55fw3n1nrn8bd6904fvdfbgfkcz8914lk"
+      "revision": "c0a9d694d9bf8ab79a919f5f9c7bc9c169caf321",
+      "url": "https://github.com/camdencheek/tree-sitter-dockerfile/archive/c0a9d694d9bf8ab79a919f5f9c7bc9c169caf321.tar.gz",
+      "hash": "1v6xxyr2z4dggw7amzi9h15fb5052kkcg62a87m748rps71wpnkl"
     },
     "tree-sitter-git_rebase": {
       "type": "Git",
