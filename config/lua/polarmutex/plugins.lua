@@ -178,13 +178,12 @@ local M = {
 
     -- tasks / dev
     {
-        name = "tasks.nvim",
-        dir = "@neovimPlugin.tasks-nvim@",
-        --dir = "/home/polar/repos/personal/tasks.nvim/main",
+        name = "overseer.nvim",
+        dir = "@neovimPlugin.overseer-nvim@",
         dependencies = {},
         lazy = false,
         config = function()
-            require("polarmutex.config.tasks-nvim").config()
+            require("polarmutex.config.overseer-nvim").config()
         end,
     },
     {

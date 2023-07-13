@@ -187,12 +187,12 @@ in
         pkgs.neovimPlugins.nvim-treesitter-playground;
       "neovimPlugin.one-small-step-for-vimkind" =
         pkgs.neovimPlugins.one-small-step-for-vimkind;
+      "neovimPlugin.overseer-nvim" =
+        pkgs.neovimPlugins.overseer-nvim;
       "neovimPlugin.plenary-nvim" =
         pkgs.neovimPlugins.plenary-nvim;
       "neovimPlugin.rust-tools-nvim" =
         pkgs.neovimPlugins.rust-tools-nvim;
-      "neovimPlugin.tasks-nvim" =
-        pkgs.neovimPlugins.tasks-nvim;
       "neovimPlugin.telescope-nvim" =
         pkgs.neovimPlugins.telescope-nvim;
       "neovimPlugin.tokyonight-nvim" =

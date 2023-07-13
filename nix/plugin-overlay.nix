@@ -44,9 +44,9 @@ in {
     nvim-treesitter-playground = mkNvimPlugin inputs.nvim-treesitter-playground "playground";
     nvim-web-devicons = mkNvimPlugin inputs.nvim-web-devicons "nvim-web-devicons";
     one-small-step-for-vimkind = mkNvimPlugin inputs.one-small-step-for-vimkind "one-small-step-for-vimkind";
+    overseer-nvim = mkNvimPlugin inputs.overseer-nvim "overseer-nvim";
     plenary-nvim = mkNvimPlugin inputs.plenary-nvim "plenary.nvim";
     rust-tools-nvim = mkNvimPlugin inputs.rust-tools-nvim "rust-tools.nvim";
-    tasks-nvim = inputs.tasks-nvim.packages.${final.system}.default;
     telescope-nvim = mkNvimPlugin inputs.telescope-nvim "telescope.nvim";
     tokyonight-nvim = mkNvimPlugin inputs.tokyonight-nvim "tokyonight.nvim";
     vim-be-good = mkNvimPlugin inputs.vim-be-good "vim-be-good";
