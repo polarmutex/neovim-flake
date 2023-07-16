@@ -226,13 +226,22 @@ local M = {
     },
 
     -- colorscheme
+    --{
+    --    name = "tokyonight-nvim",
+    --    dir = "@neovimPlugin.tokyonight-nvim@",
+    --    lazy = false,
+    --    priority = 1000,
+    --    config = function()
+    --        require("polarmutex.config.tokyonight-nvim").config()
+    --    end,
+    --},
     {
-        name = "tokyonight-nvim",
-        dir = "@neovimPlugin.tokyonight-nvim@",
+        name = "kanagawa-nvim",
+        dir = "@neovimPlugin.kanagawa-nvim@",
         lazy = false,
         priority = 1000,
         config = function()
-            require("polarmutex.config.tokyonight-nvim").config()
+            require("polarmutex.config.kanagawa-nvim").config()
         end,
     },
 

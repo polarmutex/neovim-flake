@@ -226,6 +226,10 @@
       url = "github:onsails/lspkind.nvim";
       flake = false;
     };
+    kanagawa-nvim = {
+      url = "github:rebelot/kanagawa.nvim";
+      flake = false;
+    };
     neodev-nvim = {
       url = "github:folke/neodev.nvim";
       flake = false;

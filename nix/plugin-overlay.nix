@@ -26,6 +26,7 @@ in {
     lsp-format-nvim = mkNvimPlugin inputs.lsp-format-nvim "lsp-format.nvim";
     lsp-inlayhints-nvim = mkNvimPlugin inputs.lsp-inlayhints-nvim "lsp-inlayhints.nvim";
     lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
+    kanagawa-nvim = mkNvimPlugin inputs.kanagawa-nvim "kanagawa.nvim";
     neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
     neogit = mkNvimPlugin inputs.neogit "neogit";
     noice-nvim = mkNvimPlugin inputs.noice-nvim "noice.nvim";
