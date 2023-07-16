@@ -154,6 +154,8 @@ in
       "neovimPlugin.lsp-inlayhints-nvim" =
         pkgs.neovimPlugins.lsp-inlayhints-nvim;
       "neovimPlugin.neodev-nvim" =
+        pkgs.neovimPlugins.kanagawa-nvim;
+      "neovimPlugin.kanagawa-nvim" =
         pkgs.neovimPlugins.neodev-nvim;
       "neovimPlugin.neogit" =
         pkgs.neovimPlugins.neogit;

@@ -451,6 +451,22 @@
         "type": "github"
       }
     },
+    "kanagawa-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1687334928,
+        "narHash": "sha256-3iyPIvwjfrXkVvCO02CAiTshM19kCF9cTliN+ZS+nnk=",
+        "owner": "rebelot",
+        "repo": "kanagawa.nvim",
+        "rev": "1749cea392acb7d1548a946fcee1e6f1304cd3cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rebelot",
+        "repo": "kanagawa.nvim",
+        "type": "github"
+      }
+    },
     "lazy-nvim": {
       "flake": false,
       "locked": {
@@ -1071,6 +1087,7 @@
         "gitsigns-nvim": "gitsigns-nvim",
         "harpoon": "harpoon",
         "heirline-nvim": "heirline-nvim",
+        "kanagawa-nvim": "kanagawa-nvim",
         "lazy-nvim": "lazy-nvim",
         "lsp-format-nvim": "lsp-format-nvim",
         "lsp-inlayhints-nvim": "lsp-inlayhints-nvim",
