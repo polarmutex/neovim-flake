@@ -4,3 +4,5 @@ result
 .pre-commit-config.yaml
 tests/conan/.cache/clangd/index
 tests/conan/build
+/tests/netbeans-test/application/target/
+/tests/netbeans-test/branding/target/
