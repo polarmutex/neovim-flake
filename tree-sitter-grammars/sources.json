@@ -80,9 +80,9 @@
         "repo": "tree-sitter-diff"
       },
       "branch": "main",
-      "revision": "f69bde8e56f431863eba2fe4bab23e7d9692855f",
-      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/f69bde8e56f431863eba2fe4bab23e7d9692855f.tar.gz",
-      "hash": "00h9w9p0cvlpkhiz8s36bs5hiw5vl0l74g66pdm6p63iff35fm9h"
+      "revision": "c165725c28e69b36c5799ff0e458713a844f1aaf",
+      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/c165725c28e69b36c5799ff0e458713a844f1aaf.tar.gz",
+      "hash": "1pzfwja3d4i7125vh9i6gjic22cf52z8yda27frgm6y01yivk2xa"
     },
     "tree-sitter-dockerfile": {
       "type": "Git",
@@ -152,9 +152,9 @@
         "repo": "tree-sitter-java"
       },
       "branch": "master",
-      "revision": "6c8329e2da78fae78e87c3c6f5788a2b005a4afc",
-      "url": "https://github.com/tree-sitter/tree-sitter-java/archive/6c8329e2da78fae78e87c3c6f5788a2b005a4afc.tar.gz",
-      "hash": "167za768zaqhmkgmqw5i6dpiglydrjprxz7r0zb6hbb5i22ks2m4"
+      "revision": "e8d1bc4043c1d2326f7ce3aa7b8833c7b18d0560",
+      "url": "https://github.com/tree-sitter/tree-sitter-java/archive/e8d1bc4043c1d2326f7ce3aa7b8833c7b18d0560.tar.gz",
+      "hash": "076qydgbwx3bybn4s8nplbzsxs04jbxxkfd71l8ndj2fpr8w8x2i"
     },
     "tree-sitter-javascript": {
       "type": "Git",
