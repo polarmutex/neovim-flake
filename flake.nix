@@ -205,10 +205,6 @@
       url = "github:ThePrimeagen/harpoon";
       flake = false;
     };
-    heirline-nvim = {
-      url = "github:rebelot/heirline.nvim";
-      flake = false;
-    };
     lazy-nvim = {
       url = "github:folke/lazy.nvim";
       flake = false;
@@ -224,6 +220,10 @@
     };
     lsp-kind-nvim = {
       url = "github:onsails/lspkind.nvim";
+      flake = false;
+    };
+    lualine-nvim = {
+      url = "github:nvim-lualine/lualine.nvim";
       flake = false;
     };
     kanagawa-nvim = {

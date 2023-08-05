@@ -349,22 +349,6 @@
         "type": "github"
       }
     },
-    "heirline-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1690195197,
-        "narHash": "sha256-MPzBYvjAEIFu/kSpg//vM4cdawcXB/WhgG3u9CckkMA=",
-        "owner": "rebelot",
-        "repo": "heirline.nvim",
-        "rev": "1840fe27dbb38efa13c8af4614acafe6efa41988",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rebelot",
-        "repo": "heirline.nvim",
-        "type": "github"
-      }
-    },
     "kanagawa-nvim": {
       "flake": false,
       "locked": {
@@ -443,6 +427,22 @@
       "original": {
         "owner": "onsails",
         "repo": "lspkind.nvim",
+        "type": "github"
+      }
+    },
+    "lualine-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1683213422,
+        "narHash": "sha256-ltHE8UIquGo07BSlFGM1l3wmTNN43i8kx6QY7Fj2CNo=",
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
+        "rev": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-lualine",
+        "repo": "lualine.nvim",
         "type": "github"
       }
     },
@@ -901,12 +901,12 @@
         "git-worktree-nvim": "git-worktree-nvim",
         "gitsigns-nvim": "gitsigns-nvim",
         "harpoon": "harpoon",
-        "heirline-nvim": "heirline-nvim",
         "kanagawa-nvim": "kanagawa-nvim",
         "lazy-nvim": "lazy-nvim",
         "lsp-format-nvim": "lsp-format-nvim",
         "lsp-inlayhints-nvim": "lsp-inlayhints-nvim",
         "lsp-kind-nvim": "lsp-kind-nvim",
+        "lualine-nvim": "lualine-nvim",
         "neodev-nvim": "neodev-nvim",
         "neogit": "neogit",
         "neovim-flake": "neovim-flake",

@@ -143,8 +143,6 @@ in
         pkgs.neovimPlugins.git-worktree-nvim;
       "neovimPlugin.harpoon" =
         pkgs.neovimPlugins.harpoon;
-      "neovimPlugin.heirline-nvim" =
-        pkgs.neovimPlugins.heirline-nvim;
       "neovimPlugin.lazy-nvim" =
         pkgs.neovimPlugins.lazy-nvim;
       "neovimPlugin.lsp-kind-nvim" =
@@ -153,6 +151,8 @@ in
         pkgs.neovimPlugins.lsp-format-nvim;
       "neovimPlugin.lsp-inlayhints-nvim" =
         pkgs.neovimPlugins.lsp-inlayhints-nvim;
+      "neovimPlugin.lualine-nvim" =
+        pkgs.neovimPlugins.lualine-nvim;
       "neovimPlugin.neodev-nvim" =
         pkgs.neovimPlugins.kanagawa-nvim;
       "neovimPlugin.kanagawa-nvim" =

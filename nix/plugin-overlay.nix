@@ -21,11 +21,11 @@ in {
     git-worktree-nvim = mkNvimPlugin inputs.git-worktree-nvim "git-worktree.nvim";
     gitsigns-nvim = mkNvimPlugin inputs.gitsigns-nvim "gitsigns.nvim";
     harpoon = mkNvimPlugin inputs.harpoon "harpoon";
-    heirline-nvim = mkNvimPlugin inputs.heirline-nvim "heirline.nvim";
     lazy-nvim = mkNvimPlugin inputs.lazy-nvim "lazy.nvim";
     lsp-format-nvim = mkNvimPlugin inputs.lsp-format-nvim "lsp-format.nvim";
     lsp-inlayhints-nvim = mkNvimPlugin inputs.lsp-inlayhints-nvim "lsp-inlayhints.nvim";
     lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
+    lualine-nvim = mkNvimPlugin inputs.lualine-nvim "lualine.nvim";
     kanagawa-nvim = mkNvimPlugin inputs.kanagawa-nvim "kanagawa.nvim";
     neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
     neogit = mkNvimPlugin inputs.neogit "neogit";

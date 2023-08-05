@@ -200,11 +200,11 @@ local M = {
 
     -- ui
     {
-        name = "heirline.nvim",
-        dir = "@neovimPlugin.heirline-nvim@",
-        lazy = false,
+        name = "lualine.nvim",
+        dir = "@neovimPlugin.lualine-nvim@",
+        event = "VeryLazy",
         config = function()
-            require("polarmutex.config.heirline-nvim").config()
+            require("polarmutex.config.lualine").config()
         end,
     },
     {

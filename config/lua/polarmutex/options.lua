@@ -9,6 +9,14 @@ M.setup = function()
     vim.opt.ignorecase = true
     vim.opt.list = true
     vim.opt.listchars = "tab:→→,trail:●,nbsp:○"
+    --vim.opt.fillchars = {
+    --    foldopen = "",
+    --    foldclose = "",
+    --    fold = " ",
+    --    foldsep = " ",
+    --    diff = "╱",
+    --    eob = " ",
+    --}
     vim.opt.matchpairs = "(:),{:},[:],<:>"
     vim.opt.mouse = "a"
     vim.opt.number = true
@@ -44,6 +52,8 @@ M.setup = function()
 
     vim.opt.cmdheight = 0
     vim.opt.splitkeep = "screen"
+
+    require("polarmutex.config.statuscolumn").setup()
 end
 
 return M
