@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function()
+M.setup = function()
     local map = vim.keymap.set
     -- keymaps
     map("n", "<leader><leader>", require("telescope.builtin").find_files, { desc = "Telescope: find_files" })

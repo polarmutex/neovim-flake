@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function()
+M.setup = function()
     require("kanagawa").setup({
         commentStyle = { italic = true },
         theme = "wave",

@@ -153,14 +153,6 @@
       url = "github:hrsh7th/cmp-buffer";
       flake = false;
     };
-    cmp-calc = {
-      url = "github:hrsh7th/cmp-calc";
-      flake = false;
-    };
-    cmp-cmdline = {
-      url = "github:hrsh7th/cmp-cmdline";
-      flake = false;
-    };
     cmp-dap = {
       url = "github:rcarriga/cmp-dap";
       flake = false;
@@ -171,14 +163,6 @@
     };
     cmp-nvim-lsp = {
       url = "github:hrsh7th/cmp-nvim-lsp";
-      flake = false;
-    };
-    cmp-nvim-lsp-signature-help = {
-      url = "github:hrsh7th/cmp-nvim-lsp-signature-help";
-      flake = false;
-    };
-    cmp-omni = {
-      url = "github:hrsh7th/cmp-omni";
       flake = false;
     };
     cmp-path = {
@@ -207,19 +191,6 @@
     };
     lazy-nvim = {
       url = "github:folke/lazy.nvim";
-      flake = false;
-    };
-    lsp-format-nvim = {
-      url = "github:lukas-reineke/lsp-format.nvim";
-      flake = false;
-    };
-    lsp-inlayhints-nvim = {
-      # TODO  watch when it goes into master
-      url = "github:lvimuser/lsp-inlayhints.nvim/anticonceal";
-      flake = false;
-    };
-    lsp-kind-nvim = {
-      url = "github:onsails/lspkind.nvim";
       flake = false;
     };
     lualine-nvim = {
@@ -320,6 +291,10 @@
     };
     vim-be-good = {
       url = "github:ThePrimeagen/vim-be-good";
+      flake = false;
+    };
+    which-key-nvim = {
+      url = "github:folke/which-key.nvim";
       flake = false;
     };
   };

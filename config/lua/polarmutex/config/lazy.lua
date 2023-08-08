@@ -49,8 +49,6 @@ M.setup = function()
         install = {
             -- install missing plugins on startup. This doesn't increase startup time.
             missing = false,
-            -- try to load one of these colorschemes when starting an installation during startup
-            colorscheme = { "tokyonight" },
         },
         checker = { enabled = false }, -- automatically check for plugin updates
         performance = {
@@ -58,11 +56,11 @@ M.setup = function()
             rtp = {
                 -- disable some rtp plugins
                 disabled_plugins = {
-                    "gzip",
-                    "matchit",
-                    "matchparen",
+                    --"gzip",
+                    --"matchit",
+                    --"matchparen",
                     "netrwPlugin",
-                    "tarPlugin",
+                    --"tarPlugin",
                     "tohtml",
                     "tutor",
                     "zipPlugin",

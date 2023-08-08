@@ -22,7 +22,6 @@ in {
     gitsigns-nvim = mkNvimPlugin inputs.gitsigns-nvim "gitsigns.nvim";
     harpoon = mkNvimPlugin inputs.harpoon "harpoon";
     lazy-nvim = mkNvimPlugin inputs.lazy-nvim "lazy.nvim";
-    lsp-format-nvim = mkNvimPlugin inputs.lsp-format-nvim "lsp-format.nvim";
     lsp-inlayhints-nvim = mkNvimPlugin inputs.lsp-inlayhints-nvim "lsp-inlayhints.nvim";
     lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
     lualine-nvim = mkNvimPlugin inputs.lualine-nvim "lualine.nvim";
@@ -50,5 +49,6 @@ in {
     telescope-nvim = mkNvimPlugin inputs.telescope-nvim "telescope.nvim";
     tokyonight-nvim = mkNvimPlugin inputs.tokyonight-nvim "tokyonight.nvim";
     vim-be-good = mkNvimPlugin inputs.vim-be-good "vim-be-good";
+    which-key-nvim = mkNvimPlugin inputs.which-key-nvim "whick-key.nvim";
   };
 }

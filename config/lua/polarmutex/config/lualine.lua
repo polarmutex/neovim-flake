@@ -62,7 +62,7 @@ local lsp_active_section = {
     color = { gui = "bold" },
 }
 
-M.config = function()
+M.setup = function()
     require("lualine").setup({
         options = {
             theme = "auto",
