@@ -898,6 +898,7 @@
         "rust-tools-nvim": "rust-tools-nvim",
         "telescope-nvim": "telescope-nvim",
         "tokyonight-nvim": "tokyonight-nvim",
+        "trouble-nvim": "trouble-nvim",
         "vim-be-good": "vim-be-good",
         "vim-illuminate": "vim-illuminate",
         "which-key-nvim": "which-key-nvim"
@@ -1018,6 +1019,22 @@
       "original": {
         "owner": "folke",
         "repo": "tokyonight.nvim",
+        "type": "github"
+      }
+    },
+    "trouble-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690614197,
+        "narHash": "sha256-Ee0AM8S/A8DU0hyOnZoKC1hkW0fvk0A+c3WGvPqmKcU=",
+        "owner": "folke",
+        "repo": "trouble.nvim",
+        "rev": "40aad004f53ae1d1ba91bcc5c29d59f07c5f01d3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "trouble.nvim",
         "type": "github"
       }
     },

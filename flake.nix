@@ -105,6 +105,7 @@
               rust-tools-nvim = mkNvimPlugin inputs.rust-tools-nvim "rust-tools.nvim";
               telescope-nvim = mkNvimPlugin inputs.telescope-nvim "telescope.nvim";
               tokyonight-nvim = mkNvimPlugin inputs.tokyonight-nvim "tokyonight.nvim";
+              trouble-nvim = mkNvimPlugin inputs.trouble-nvim "trouble.nvim";
               vim-be-good = mkNvimPlugin inputs.vim-be-good "vim-be-good";
               vim-illuminate = mkNvimPlugin inputs.vim-illuminate "vim-illuminate";
               which-key-nvim = mkNvimPlugin inputs.which-key-nvim "whick-key.nvim";
@@ -364,6 +365,10 @@
     };
     tokyonight-nvim = {
       url = "github:folke/tokyonight.nvim";
+      flake = false;
+    };
+    trouble-nvim = {
+      url = "github:folke/trouble.nvim";
       flake = false;
     };
     vim-be-good = {

@@ -377,6 +377,12 @@
         config = rawLua "function() require('polarmutex.config.telescope-nvim').setup() end";
       }
       {
+        name = "trouble.nvim";
+        dir = "${trouble-nvim.outPath}";
+        cmd = ["TroubleToggle" "Trouble"];
+        opts = {use_diagnostic_signs = true;};
+      }
+      {
         name = "nvim-treesitter";
         dir = "${pkgs.nvim-treesitter-master.outPath}";
         event = ["BufReadPre" "BufNewFile"];
