@@ -456,6 +456,29 @@
         '';
       }
       {
+        name = "mini.indentscope";
+        dir = "${mini-indentscope.outPath}";
+        event = ["BufReadPre" "BufNewFile"];
+        opts = {
+          symbol = "│";
+          options = {try_as_border = true;};
+        };
+        init = rawLua ''
+          function()
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = {
+                    "help",
+                    "lazy",
+                    "Trouble",
+                },
+                callback = function()
+                    vim.b.miniindentscope_disable = true
+                end,
+            })
+          end
+        '';
+      }
+      {
         name = "which-key-nvim";
         dir = "${which-key-nvim.outPath}";
         event = "VeryLazy";

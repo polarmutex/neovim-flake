@@ -79,6 +79,7 @@
               lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
               lualine-nvim = mkNvimPlugin inputs.lualine-nvim "lualine.nvim";
               kanagawa-nvim = mkNvimPlugin inputs.kanagawa-nvim "kanagawa.nvim";
+              mini-indentscope = mkNvimPlugin inputs.mini-indentscope "mini.indentscope";
               neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
               neogit = mkNvimPlugin inputs.neogit "neogit";
               noice-nvim = mkNvimPlugin inputs.noice-nvim "noice.nvim";
@@ -255,6 +256,10 @@
     };
     kanagawa-nvim = {
       url = "github:rebelot/kanagawa.nvim";
+      flake = false;
+    };
+    mini-indentscope = {
+      url = "github:echasnovski/mini.indentscope";
       flake = false;
     };
     neodev-nvim = {

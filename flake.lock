@@ -349,6 +349,22 @@
         "type": "github"
       }
     },
+    "mini-indentscope": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1683192076,
+        "narHash": "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA=",
+        "owner": "echasnovski",
+        "repo": "mini.indentscope",
+        "rev": "f60e9b51a6214c73a170ffc5445ce91560981031",
+        "type": "github"
+      },
+      "original": {
+        "owner": "echasnovski",
+        "repo": "mini.indentscope",
+        "type": "github"
+      }
+    },
     "neodev-nvim": {
       "flake": false,
       "locked": {
@@ -804,6 +820,7 @@
         "kanagawa-nvim": "kanagawa-nvim",
         "lazy-nvim": "lazy-nvim",
         "lualine-nvim": "lualine-nvim",
+        "mini-indentscope": "mini-indentscope",
         "neodev-nvim": "neodev-nvim",
         "neogit": "neogit",
         "neovim-flake": "neovim-flake",
