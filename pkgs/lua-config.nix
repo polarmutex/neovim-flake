@@ -284,11 +284,25 @@
     ];
     coding = [
       {
+        name = "luasnip";
+        dir = "${luasnip.outPath}";
+        dependencies = [
+          {
+            name = "friendly-snippets";
+            dir = "${friendly-snippets.outPath}";
+            config = rawLua ''function() require("luasnip.loaders.from_vscode").lazy_load() end'';
+          }
+        ];
+        opts = {
+          history = true;
+          delete_check_events = "TextChanged";
+        };
+      }
+      {
         name = "nvim-cmp";
         dir = "${nvim-cmp.outPath}";
         event = "InsertEnter";
         dependencies = [
-          #{ dir = "L3MON4D3/LuaSnip" },
           {
             name = "cmp-nvim-lsp";
             dir = "${cmp-nvim-lsp.outPath}";
@@ -343,6 +357,19 @@
       }
     ];
     editor = [
+      {
+        name = "vim-illuminate";
+        dir = "${vim-illuminate.outPath}";
+        event = ["BufReadPost" "BufNewFile"];
+        opts = {
+          delay = 200;
+          large_file_cutoff = 2000;
+          large_file_overrides = {
+            providers = ["lsp"];
+          };
+        };
+        config = rawLua "function(_, opts) require('polarmutex.config.vim-illuminate').setup(opts) end";
+      }
       {
         name = "telescope-nvim";
         dir = "${telescope-nvim.outPath}";

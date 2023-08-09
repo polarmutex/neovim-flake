@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function()
+M.setup = function()
     require("neogit").setup({
         kind = "split",
         disable_builtin_notifications = true,

@@ -1,6 +1,6 @@
 local M = {}
 
-M.config = function()
+M.setup = function()
     require("telescope").load_extension("beancount")
 
     local map = vim.keymap.set

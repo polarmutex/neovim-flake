@@ -71,6 +71,7 @@
               crates-nvim = mkNvimPlugin inputs.crates-nvim "crates.nvim";
               diffview-nvim = mkNvimPlugin inputs.diffview-nvim "diffview.nvim";
               dressing-nvim = mkNvimPlugin inputs.dressing-nvim "dressing.nvim";
+              friendly-snippets = mkNvimPlugin inputs.friendly-snippets "friendly-snippets";
               git-worktree-nvim = mkNvimPlugin inputs.git-worktree-nvim "git-worktree.nvim";
               gitsigns-nvim = mkNvimPlugin inputs.gitsigns-nvim "gitsigns.nvim";
               harpoon = mkNvimPlugin inputs.harpoon "harpoon";
@@ -78,6 +79,7 @@
               lsp-inlayhints-nvim = mkNvimPlugin inputs.lsp-inlayhints-nvim "lsp-inlayhints.nvim";
               lsp-kind-nvim = mkNvimPlugin inputs.lsp-kind-nvim "lspkind.nvim";
               lualine-nvim = mkNvimPlugin inputs.lualine-nvim "lualine.nvim";
+              luasnip = mkNvimPlugin inputs.luasnip "luasnip";
               kanagawa-nvim = mkNvimPlugin inputs.kanagawa-nvim "kanagawa.nvim";
               mini-indentscope = mkNvimPlugin inputs.mini-indentscope "mini.indentscope";
               neodev-nvim = mkNvimPlugin inputs.neodev-nvim "neodev.nvim";
@@ -104,6 +106,7 @@
               telescope-nvim = mkNvimPlugin inputs.telescope-nvim "telescope.nvim";
               tokyonight-nvim = mkNvimPlugin inputs.tokyonight-nvim "tokyonight.nvim";
               vim-be-good = mkNvimPlugin inputs.vim-be-good "vim-be-good";
+              vim-illuminate = mkNvimPlugin inputs.vim-illuminate "vim-illuminate";
               which-key-nvim = mkNvimPlugin inputs.which-key-nvim "whick-key.nvim";
             };
           })
@@ -235,6 +238,10 @@
       url = "github:stevearc/dressing.nvim";
       flake = false;
     };
+    friendly-snippets = {
+      url = "github:rafamadriz/friendly-snippets";
+      flake = false;
+    };
     git-worktree-nvim = {
       url = "github:ThePrimeagen/git-worktree.nvim";
       flake = false;
@@ -253,6 +260,10 @@
     };
     lualine-nvim = {
       url = "github:nvim-lualine/lualine.nvim";
+      flake = false;
+    };
+    luasnip = {
+      url = "github:L3MON4D3/LuaSnip";
       flake = false;
     };
     kanagawa-nvim = {
@@ -357,6 +368,10 @@
     };
     vim-be-good = {
       url = "github:ThePrimeagen/vim-be-good";
+      flake = false;
+    };
+    vim-illuminate = {
+      url = "github:RRethy/vim-illuminate";
       flake = false;
     };
     which-key-nvim = {

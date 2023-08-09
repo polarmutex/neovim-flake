@@ -6,11 +6,11 @@ M.setup = function()
     local defaults = require("cmp.config.default")()
 
     cmp.setup({
-        --snippet = {
-        --  expand = function(args)
-        --    require("luasnip").lsp_expand(args.body)
-        --  end,
-        --},
+        snippet = {
+            expand = function(args)
+                require("luasnip").lsp_expand(args.body)
+            end,
+        },
         completion = {
             completeopt = "menu,menuone,noinsert",
         },
@@ -29,7 +29,7 @@ M.setup = function()
         }),
         sources = cmp.config.sources({
             { name = "nvim_lsp" },
-            --{ name = "luasnip" },
+            { name = "luasnip" },
             { name = "buffer" },
             { name = "path" },
         }),

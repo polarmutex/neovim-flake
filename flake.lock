@@ -232,6 +232,22 @@
         "type": "github"
       }
     },
+    "friendly-snippets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690173889,
+        "narHash": "sha256-9RCxASS46MRI6FAjdN0V2qFRymM8dK+25J5NrSX/TNA=",
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "rev": "bc38057e513458cb2486b6cd82d365fa294ee398",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rafamadriz",
+        "repo": "friendly-snippets",
+        "type": "github"
+      }
+    },
     "git-worktree-nvim": {
       "flake": false,
       "locked": {
@@ -346,6 +362,22 @@
       "original": {
         "owner": "nvim-lualine",
         "repo": "lualine.nvim",
+        "type": "github"
+      }
+    },
+    "luasnip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691137852,
+        "narHash": "sha256-x2+z540X7w7PguVjheTGT02py0GzFQidf5a1UN8EjCw=",
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
+        "rev": "99a94cc35ec99bf06263d0346128e908a204575c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
         "type": "github"
       }
     },
@@ -830,12 +862,14 @@
         "diffview-nvim": "diffview-nvim",
         "dressing-nvim": "dressing-nvim",
         "flake-parts": "flake-parts",
+        "friendly-snippets": "friendly-snippets",
         "git-worktree-nvim": "git-worktree-nvim",
         "gitsigns-nvim": "gitsigns-nvim",
         "harpoon": "harpoon",
         "kanagawa-nvim": "kanagawa-nvim",
         "lazy-nvim": "lazy-nvim",
         "lualine-nvim": "lualine-nvim",
+        "luasnip": "luasnip",
         "mini-indentscope": "mini-indentscope",
         "neodev-nvim": "neodev-nvim",
         "neogit": "neogit",
@@ -865,6 +899,7 @@
         "telescope-nvim": "telescope-nvim",
         "tokyonight-nvim": "tokyonight-nvim",
         "vim-be-good": "vim-be-good",
+        "vim-illuminate": "vim-illuminate",
         "which-key-nvim": "which-key-nvim"
       }
     },
@@ -999,6 +1034,22 @@
       "original": {
         "owner": "ThePrimeagen",
         "repo": "vim-be-good",
+        "type": "github"
+      }
+    },
+    "vim-illuminate": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690914526,
+        "narHash": "sha256-qB9u5b0N4/x1qxzuSXQR5HDqbaun1+LQEouuhwbwCoU=",
+        "owner": "RRethy",
+        "repo": "vim-illuminate",
+        "rev": "5ed17582a8e97bf0a0c617c3cf762e98f87b9859",
+        "type": "github"
+      },
+      "original": {
+        "owner": "RRethy",
+        "repo": "vim-illuminate",
         "type": "github"
       }
     },
