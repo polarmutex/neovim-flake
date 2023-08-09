@@ -21,22 +21,6 @@ return {
         ft = "python",
     },
 
-    -- tasks / dev
-    {
-        name = "overseer.nvim",
-        dir = "@neovimPlugin.overseer-nvim@",
-        dependencies = {},
-        lazy = false,
-        config = function()
-            require("polarmutex.config.overseer-nvim").config()
-        end,
-    },
-    {
-        name = "nvim-web-devicons",
-        dir = "@neovimPlugin.nvim-web-devicons@",
-        lazy = false,
-    },
-
     -- rust
     {
         name = "rust-tools",

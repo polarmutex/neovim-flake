@@ -322,6 +322,11 @@
         module = "neodev";
         ft = "lua";
       }
+      {
+        name = "overseer-nvim";
+        dir = "${overseer-nvim.outPath}";
+        config = rawLua "function() require('polarmutex.config.overseer-nvim').setup() end";
+      }
     ];
     dap = [
       {
@@ -393,6 +398,10 @@
         name = "vim-be-good";
         dir = "${vim-be-good.outPath}";
         command = "VimBeGood";
+      }
+      {
+        name = "nvim-web-devicons";
+        dir = "${nvim-web-devicons.outPath}";
       }
     ];
     ui = [
