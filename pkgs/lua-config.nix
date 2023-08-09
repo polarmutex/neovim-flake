@@ -391,7 +391,7 @@
           {
             name = "nvim-treesitter-playground";
             dir = "${nvim-treesitter-playground.outPath}";
-            command = "TSPlaygroundToggle";
+            cmd = "TSPlaygroundToggle";
           }
         ];
         #opts = {
@@ -412,25 +412,23 @@
       {
         name = "neogit";
         dir = "${neogit.outPath}";
-        command = "Neogit";
+        cmd = "Neogit";
         config = rawLua "function()  require('polarmutex.config.neogit').setup() end";
       }
       {
         name = "diffview-nvim";
         dir = "${diffview-nvim.outPath}";
-        #command = "Neogit";
         config = rawLua "function()  require('diffview').setup() end";
       }
       {
         name = "harpoon";
         dir = "${harpoon.outPath}";
-        #command = "Neogit";
         config = rawLua "function()  require('harpoon').setup({}) require('telescope').load_extension('harpoon') end";
       }
       {
         name = "vim-be-good";
         dir = "${vim-be-good.outPath}";
-        command = "VimBeGood";
+        cmd = "VimBeGood";
       }
       {
         name = "nvim-web-devicons";
