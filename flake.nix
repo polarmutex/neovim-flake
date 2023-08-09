@@ -104,12 +104,14 @@
               overseer-nvim = mkNvimPlugin inputs.overseer-nvim "overseer-nvim";
               plenary-nvim = mkNvimPlugin inputs.plenary-nvim "plenary.nvim";
               rust-tools-nvim = mkNvimPlugin inputs.rust-tools-nvim "rust-tools.nvim";
+              sqlite-lua = mkNvimPlugin inputs.sqlite-lua "sqlite.lua";
               telescope-nvim = mkNvimPlugin inputs.telescope-nvim "telescope.nvim";
               tokyonight-nvim = mkNvimPlugin inputs.tokyonight-nvim "tokyonight.nvim";
               trouble-nvim = mkNvimPlugin inputs.trouble-nvim "trouble.nvim";
               vim-be-good = mkNvimPlugin inputs.vim-be-good "vim-be-good";
               vim-illuminate = mkNvimPlugin inputs.vim-illuminate "vim-illuminate";
               which-key-nvim = mkNvimPlugin inputs.which-key-nvim "whick-key.nvim";
+              yanky-nvim = mkNvimPlugin inputs.yanky-nvim "yanky.nvim";
             };
           })
           self.overlays.default
@@ -364,6 +366,10 @@
       url = "github:simrat39/rust-tools.nvim";
       flake = false;
     };
+    sqlite-lua = {
+      url = "github:kkharji/sqlite.lua";
+      flake = false;
+    };
     telescope-nvim = {
       url = "github:nvim-telescope/telescope.nvim";
       flake = false;
@@ -386,6 +392,10 @@
     };
     which-key-nvim = {
       url = "github:folke/which-key.nvim";
+      flake = false;
+    };
+    yanky-nvim = {
+      url = "github:gbprod/yanky.nvim";
       flake = false;
     };
   };

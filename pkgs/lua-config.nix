@@ -400,7 +400,6 @@
       {
         name = "gitsigns-nvim";
         dir = "${gitsigns-nvim.outPath}";
-        event = ["BufReadPre" "BufNewFile"];
         config = rawLua "function() require('gitsigns').setup({}) end";
       }
       {
@@ -433,6 +432,33 @@
       {
         name = "nvim-web-devicons";
         dir = "${nvim-web-devicons.outPath}";
+      }
+      {
+        name = "yanky.nvim";
+        dir = "${yanky-nvim.outPath}";
+        dependencies = [
+          {
+            name = "sqlite.lua";
+            dir = "${sqlite-lua.outPath}";
+          }
+        ];
+        opts = rawLua ''
+          function()
+            local mapping = require("yanky.telescope.mapping")
+            local mappings = mapping.get_defaults()
+            mappings.i["<c-p>"] = nil
+            return {
+              highlight = { timer = 200 },
+              ring = { storage = "sqlite" },
+              picker = {
+                telescope = {
+                  use_default_mappings = false,
+                  mappings = mappings,
+                },
+              },
+            }
+          end,
+        '';
       }
     ];
     ui = [

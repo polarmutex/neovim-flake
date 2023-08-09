@@ -913,12 +913,14 @@
         "plenary-nvim": "plenary-nvim",
         "pre-commit-hooks": "pre-commit-hooks",
         "rust-tools-nvim": "rust-tools-nvim",
+        "sqlite-lua": "sqlite-lua",
         "telescope-nvim": "telescope-nvim",
         "tokyonight-nvim": "tokyonight-nvim",
         "trouble-nvim": "trouble-nvim",
         "vim-be-good": "vim-be-good",
         "vim-illuminate": "vim-illuminate",
-        "which-key-nvim": "which-key-nvim"
+        "which-key-nvim": "which-key-nvim",
+        "yanky-nvim": "yanky-nvim"
       }
     },
     "rust-overlay": {
@@ -959,6 +961,22 @@
       "original": {
         "owner": "simrat39",
         "repo": "rust-tools.nvim",
+        "type": "github"
+      }
+    },
+    "sqlite-lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1681923697,
+        "narHash": "sha256-XElCJGganIIh4T5K5kKZTbVYwVOXCtLF1fdc95NopDc=",
+        "owner": "kkharji",
+        "repo": "sqlite.lua",
+        "rev": "b7e28c8463254c46a8e61c52d27d6a2040492fc3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kkharji",
+        "repo": "sqlite.lua",
         "type": "github"
       }
     },
@@ -1100,6 +1118,22 @@
       "original": {
         "owner": "folke",
         "repo": "which-key.nvim",
+        "type": "github"
+      }
+    },
+    "yanky-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690032942,
+        "narHash": "sha256-Q7u5LsvlNtFELe+T82DrTmfLVYDw84Jc1oEPWZuML+4=",
+        "owner": "gbprod",
+        "repo": "yanky.nvim",
+        "rev": "95c2f006ea6eaed2b2d8b8b4943b8fcf13faf03f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gbprod",
+        "repo": "yanky.nvim",
         "type": "github"
       }
     }
