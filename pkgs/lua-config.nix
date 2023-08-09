@@ -412,6 +412,32 @@
         config = rawLua "function() require('polarmutex.config.lualine').setup() end";
       }
       {
+        name = "nvim-navic";
+        dir = "${nvim-navic.outPath}";
+        lazy = true;
+        init = rawLua ''
+          function()
+            vim.g.navic_silence = true
+            require("polarmutex.utils").on_attach(function(client, buffer)
+              if client.server_capabilities.documentSymbolProvider then
+                require("nvim-navic").attach(client, buffer)
+              end
+            end)
+          end
+        '';
+        opts = rawLua ''
+          function()
+            return {
+              separator = " ",
+              highlight = true,
+              depth_limit = 5,
+              icons = require("polarmutex.icons").kinds,
+            }
+          end,
+        '';
+        config = rawLua "function() require('polarmutex.config.lualine').setup() end";
+      }
+      {
         name = "noice-nvim";
         dir = "${noice-nvim.outPath}";
         event = "VeryLazy";
@@ -429,6 +455,19 @@
               ["vim.lsp.util.stylize_markdown"] = true,
               ["cmp.entry.get_documentation"] = true,},'';
           };
+          routes = [
+            {
+              filter = {
+                event = "msg_show";
+                any = [
+                  {find = "%d+L, %d+B";}
+                  {find = "; after #%d+";}
+                  {find = "; before #%d+";}
+                ];
+              };
+              view = "mini";
+            }
+          ];
           # you can enable a preset for easier configuration
           presets = {
             bottom_search = true; #use a classic bottom cmdline for search

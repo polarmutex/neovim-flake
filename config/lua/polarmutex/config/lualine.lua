@@ -63,6 +63,9 @@ local lsp_active_section = {
 }
 
 M.setup = function()
+    local icons = require("polarmutex.icons")
+    local Util = require("polarmutex.utils")
+
     require("lualine").setup({
         options = {
             theme = "auto",
@@ -84,12 +87,33 @@ M.setup = function()
             },
             lualine_c = {},
             lualine_x = {
+                {
+                    function()
+                        return require("noice").api.status.command.get()
+                    end,
+                    cond = function()
+                        return package.loaded["noice"] and require("noice").api.status.command.has()
+                    end,
+                    color = Util.fg("Statement"),
+                },
+            -- stylua: ignore
+            {
+              function() return require("noice").api.status.mode.get() end,
+              cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+              color = Util.fg("Constant"),
+            },
                 dap_section,
             },
             lualine_y = {
                 "searchcount",
                 {
                     "diagnostics",
+                    symbols = {
+                        error = icons.diagnostics.Error,
+                        warn = icons.diagnostics.Warn,
+                        info = icons.diagnostics.Info,
+                        hint = icons.diagnostics.Hint,
+                    },
                     sources = { "nvim_diagnostic" },
                 },
                 lsp_active_section,
@@ -103,7 +127,18 @@ M.setup = function()
         winbar = {
             lualine_a = {},
             lualine_b = {},
-            lualine_c = { "filename" },
+            lualine_c = {
+                { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+                { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+                {
+                    function()
+                        return require("nvim-navic").get_location()
+                    end,
+                    cond = function()
+                        return package.loaded["nvim-navic"] and require("nvim-navic").is_available()
+                    end,
+                },
+            },
             lualine_x = {},
             lualine_y = {},
             lualine_z = {},

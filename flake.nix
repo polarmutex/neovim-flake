@@ -93,6 +93,7 @@
               nvim-dap-virtual-text = mkNvimPlugin inputs.nvim-dap-virtual-text "nvim-dap-virtual-text";
               nvim-jdtls = mkNvimPlugin inputs.nvim-jdtls "nvim-jdtls";
               nvim-lspconfig = mkNvimPlugin inputs.nvim-lspconfig "nvim-lspconfig";
+              nvim-navic = mkNvimPlugin inputs.nvim-navic "nvim-navic";
               nvim-treesitter = mkNvimPlugin inputs.nvim-treesitter "nvim-treesitter";
               nvim-treesitter-playground = mkNvimPlugin inputs.nvim-treesitter-playground "playground";
               nvim-web-devicons = mkNvimPlugin inputs.nvim-web-devicons "nvim-web-devicons";
@@ -312,6 +313,10 @@
     };
     nvim-lspconfig = {
       url = "github:neovim/nvim-lspconfig";
+      flake = false;
+    };
+    nvim-navic = {
+      url = "github:SmiteshP/nvim-navic";
       flake = false;
     };
     nvim-treesitter = {

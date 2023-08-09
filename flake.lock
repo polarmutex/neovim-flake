@@ -682,6 +682,22 @@
         "type": "github"
       }
     },
+    "nvim-navic": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689944100,
+        "narHash": "sha256-M7BT1C9xHyLgr22JI3b+wyD+bYs6FgKc6PIqMrXnNr4=",
+        "owner": "SmiteshP",
+        "repo": "nvim-navic",
+        "rev": "9c89730da6a05acfeb6a197e212dfadf5aa60ca0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "SmiteshP",
+        "repo": "nvim-navic",
+        "type": "github"
+      }
+    },
     "nvim-treesitter": {
       "flake": false,
       "locked": {
@@ -837,6 +853,7 @@
         "nvim-dap-virtual-text": "nvim-dap-virtual-text",
         "nvim-jdtls": "nvim-jdtls",
         "nvim-lspconfig": "nvim-lspconfig",
+        "nvim-navic": "nvim-navic",
         "nvim-treesitter": "nvim-treesitter",
         "nvim-treesitter-playground": "nvim-treesitter-playground",
         "nvim-web-devicons": "nvim-web-devicons",
