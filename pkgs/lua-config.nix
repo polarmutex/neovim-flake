@@ -460,6 +460,12 @@
           end,
         '';
       }
+      {
+        name = "flash.nvim";
+        dir = "${flash-nvim.outPath}";
+        event = "VeryLazy";
+        opts = {};
+      }
     ];
     ui = [
       {

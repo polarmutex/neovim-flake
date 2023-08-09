@@ -72,6 +72,7 @@
               diffview-nvim = mkNvimPlugin inputs.diffview-nvim "diffview.nvim";
               dressing-nvim = mkNvimPlugin inputs.dressing-nvim "dressing.nvim";
               edgy-nvim = mkNvimPlugin inputs.edgy-nvim "edgy.nvim";
+              flash-nvim = mkNvimPlugin inputs.flash-nvim "flash.nvim";
               friendly-snippets = mkNvimPlugin inputs.friendly-snippets "friendly-snippets";
               git-worktree-nvim = mkNvimPlugin inputs.git-worktree-nvim "git-worktree.nvim";
               gitsigns-nvim = mkNvimPlugin inputs.gitsigns-nvim "gitsigns.nvim";
@@ -244,6 +245,10 @@
     };
     edgy-nvim = {
       url = "github:folke/edgy.nvim";
+      flake = false;
+    };
+    flash-nvim = {
+      url = "github:folke/flash.nvim";
       flake = false;
     };
     friendly-snippets = {

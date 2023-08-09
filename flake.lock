@@ -248,6 +248,22 @@
         "type": "github"
       }
     },
+    "flash-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1690011025,
+        "narHash": "sha256-1VisMxCH31Ss+SoMhjPeHUdi0l39JKe/8ErmyeOjh+Y=",
+        "owner": "folke",
+        "repo": "flash.nvim",
+        "rev": "967117690bd677cb7b6a87f0bc0077d2c0be3a27",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "flash.nvim",
+        "type": "github"
+      }
+    },
     "friendly-snippets": {
       "flake": false,
       "locked": {
@@ -879,6 +895,7 @@
         "dressing-nvim": "dressing-nvim",
         "edgy-nvim": "edgy-nvim",
         "flake-parts": "flake-parts",
+        "flash-nvim": "flash-nvim",
         "friendly-snippets": "friendly-snippets",
         "git-worktree-nvim": "git-worktree-nvim",
         "gitsigns-nvim": "gitsigns-nvim",
