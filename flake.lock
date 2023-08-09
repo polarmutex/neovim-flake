@@ -128,6 +128,22 @@
         "type": "github"
       }
     },
+    "dressing-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1691533805,
+        "narHash": "sha256-39Fm+T87wJzPd+n9HTFNJAc9bCe0QO1J6iuhvyEVgs0=",
+        "owner": "stevearc",
+        "repo": "dressing.nvim",
+        "rev": "c0b67f3e2950adc07b555d3e73e38275b4a585ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stevearc",
+        "repo": "dressing.nvim",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -780,6 +796,7 @@
         "cmp-path": "cmp-path",
         "crates-nvim": "crates-nvim",
         "diffview-nvim": "diffview-nvim",
+        "dressing-nvim": "dressing-nvim",
         "flake-parts": "flake-parts",
         "git-worktree-nvim": "git-worktree-nvim",
         "gitsigns-nvim": "gitsigns-nvim",

@@ -440,6 +440,22 @@
         config = rawLua "function(_, opts) require('noice').setup(opts) end";
       }
       {
+        name = "dressing-nvim";
+        dir = "${dressing-nvim.outPath}";
+        init = rawLua ''
+          function()
+              vim.ui.select = function(...)
+                require("lazy").load({ plugins = { "dressing-nvim" } })
+                return vim.ui.select(...)
+              end
+              vim.ui.input = function(...)
+                require("lazy").load({ plugins = { "dressing-nvim" } })
+                return vim.ui.input(...)
+              end
+          end
+        '';
+      }
+      {
         name = "which-key-nvim";
         dir = "${which-key-nvim.outPath}";
         event = "VeryLazy";

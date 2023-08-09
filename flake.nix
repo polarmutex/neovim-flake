@@ -70,6 +70,7 @@
               cmp-path = mkNvimPlugin inputs.cmp-path "cmp-path";
               crates-nvim = mkNvimPlugin inputs.crates-nvim "crates.nvim";
               diffview-nvim = mkNvimPlugin inputs.diffview-nvim "diffview.nvim";
+              dressing-nvim = mkNvimPlugin inputs.dressing-nvim "dressing.nvim";
               git-worktree-nvim = mkNvimPlugin inputs.git-worktree-nvim "git-worktree.nvim";
               gitsigns-nvim = mkNvimPlugin inputs.gitsigns-nvim "gitsigns.nvim";
               harpoon = mkNvimPlugin inputs.harpoon "harpoon";
@@ -226,6 +227,10 @@
     };
     diffview-nvim = {
       url = "github:sindrets/diffview.nvim";
+      flake = false;
+    };
+    dressing-nvim = {
+      url = "github:stevearc/dressing.nvim";
       flake = false;
     };
     git-worktree-nvim = {
