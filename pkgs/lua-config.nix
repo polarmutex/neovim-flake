@@ -129,18 +129,24 @@
               cmd = [
                 (lib.getExe pkgs.clang)
                 "--background-index"
-                "--suggest-missing-includes"
                 "--clang-tidy"
                 "--header-insertion=iwyu"
+                "--completion-style=detailed"
+                "--function-arg-placeholders"
+                "--fallback-style=llvm"
               ];
-              # Required for lsp-status
               init_options = {
+                usePlaceholders = true;
+                completeUnimported = true;
                 clangdFileStatus = true;
               };
             };
             #gopls = {
             #  cmd = [(lib.getExe pkgs.gopls)];
             #};
+            jdtls = {
+              cmd = [(lib.getExe pkgs.jdt-language-server)];
+            };
             ltex = {
               cmd = [(lib.getExe pkgs.ltex-ls)];
               filetypes = ["markdown"];
@@ -180,6 +186,9 @@
                   #};
                 };
               };
+              nil_ls = {
+                cmd = [(lib.getExe pkgs.nil-git)];
+              };
               pyright = {
                 cmd = [(lib.getExe pkgs.pyright) "--stdio"];
                 settings = {
@@ -193,10 +202,9 @@
                 };
               };
             };
-            nil_ls = {
-              cmd = [(lib.getExe pkgs.nil-git)];
+            ruff_lsp = {
+              cmd = [(lib.getExe pkgs.ruff-lsp)];
             };
-            #java = jdt-language-server;
             #rust = rust-analyzer;
           };
           # you can do any additional lsp server setup here
@@ -210,6 +218,19 @@
             # end,
             # Specify * to use this function as a fallback for any server
             # ["*"] = function(server, opts) end,
+            jdtls = let
+              cmd = lib.getExe pkgs.jdt-language-server;
+              java-debug =
+                (pkgs.fetchMavenArtifact
+                  {
+                    groupId = "com.microsoft.java";
+                    artifactId = "com.microsoft.java.debug.plugin";
+                    version = "0.48.0";
+                    sha256 = "sha256-vDKoN1MMZChTvt6jlNHl6C/t+F0p3FhMGcGSmI9V7sI=";
+                  })
+                .jar;
+            in
+              rawLua ''function() return require('polarmutex.config.lsp.java').setup("${cmd}","${java-debug}") end'';
           };
         };
         config = rawLua "function(_, opts) require('polarmutex.config.lsp').setup(opts) end";
@@ -230,6 +251,10 @@
               local nls = require("null-ls")
               return {
                   sources = {
+                      -- docker
+                      nls.builtins.diagnostics.hadolint.with({
+                          command = "${lib.getExe pkgs.hadolint}",
+                      }),
                       -- git
                       --nls.builtins.diagnostics.commitlint.with({
                       --    command = "${lib.getExe pkgs.commitlint}",
@@ -264,9 +289,9 @@
                       }),
 
                       -- python
-                      nls.builtins.diagnostics.ruff.with({
-                          command = "${lib.getExe pkgs.ruff}",
-                      }),
+                      --nls.builtins.diagnostics.ruff.with({
+                      --    command = "${lib.getExe pkgs.ruff}",
+                      --}),
                       nls.builtins.formatting.black.with({
                           command = "${lib.getExe pkgs.black}",
                       }),
