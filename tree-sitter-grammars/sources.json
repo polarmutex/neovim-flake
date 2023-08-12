@@ -68,9 +68,9 @@
         "repo": "tree-sitter-cpp"
       },
       "branch": "master",
-      "revision": "869f1be6ab4a384f649f4c6b374d0e4d7f0abab6",
-      "url": "https://github.com/tree-sitter/tree-sitter-cpp/archive/869f1be6ab4a384f649f4c6b374d0e4d7f0abab6.tar.gz",
-      "hash": "08ndcn77mj94z3z19r7gf36014wvf3z118qd0a92hg5p2gp2xmc8"
+      "revision": "77cecd88d28032bf4f54fd4ee68efb53a6c8c9a5",
+      "url": "https://github.com/tree-sitter/tree-sitter-cpp/archive/77cecd88d28032bf4f54fd4ee68efb53a6c8c9a5.tar.gz",
+      "hash": "14i0czlap4v24yldvsmzg7ai1dfziidhbxy5x33w49cw9arzn3pz"
     },
     "tree-sitter-diff": {
       "type": "Git",
@@ -344,9 +344,9 @@
         "repo": "tree-sitter-viml"
       },
       "branch": "master",
-      "revision": "26b1aea3b3a5dae31f784a1204205fd57f2b82b5",
-      "url": "https://github.com/vigoux/tree-sitter-viml/archive/26b1aea3b3a5dae31f784a1204205fd57f2b82b5.tar.gz",
-      "hash": "1rs2pqq7pjp37vvrabc304p4306sjxw7sbmlbg6vzywacyiq0bim"
+      "revision": "77e9e96c2ae5cff7343ce3dced263483acf95793",
+      "url": "https://github.com/vigoux/tree-sitter-viml/archive/77e9e96c2ae5cff7343ce3dced263483acf95793.tar.gz",
+      "hash": "1fsla42ck7pn625wac84m6phkc0x3qhz5kasx2d5y4ykksx3yqb0"
     },
     "tree-sitter-yaml": {
       "type": "Git",
