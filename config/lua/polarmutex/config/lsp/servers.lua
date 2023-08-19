@@ -30,7 +30,7 @@ local servers = {
             --"temp",
         },
         init_options = {
-            journal_file = "/home/polar/repos/personal/beancount/main.beancount",
+            journal_file = "/home/polar/repos/personal/beancount/main/main.beancount",
         },
     },
     clangd = {
