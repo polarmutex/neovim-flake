@@ -360,6 +360,7 @@
         name = "beancount-nvim";
         dir = "${beancount-nvim.outPath}";
         config = rawLua "function() require('polarmutex.config.beancount-nvim').setup() end";
+        ft = "beancount";
       }
       {
         name = "jdtls-nvim";
@@ -436,6 +437,7 @@
         name = "gitsigns-nvim";
         dir = "${gitsigns-nvim.outPath}";
         config = rawLua "function() require('gitsigns').setup({}) end";
+        event = ["BufReadPre" "BufNewFile"]; # what should this be?
       }
       {
         name = "gitworktree-nvim";
