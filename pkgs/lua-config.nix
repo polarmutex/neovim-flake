@@ -122,7 +122,7 @@
                 "/home/polar/repos/personal/beancount-language-server/master/target/release/beancount-language-server"
               ];
               init_options = {
-                journal_file = "/home/polar/repos/personal/beancount/main.beancount";
+                journal_file = "/home/polar/repos/personal/beancount/main/main.beancount";
               };
             };
             clangd = {
