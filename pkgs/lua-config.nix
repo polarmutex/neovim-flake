@@ -262,9 +262,9 @@
               return {
                   sources = {
                       -- docker
-                      nls.builtins.diagnostics.hadolint.with({
-                          command = "${lib.getExe pkgs.hadolint}",
-                      }),
+                      --nls.builtins.diagnostics.hadolint.with({
+                      --    command = "$<del me>{lib.getExe pkgs.hadolint}",
+                      --}),
                       -- git
                       --nls.builtins.diagnostics.commitlint.with({
                       --    command = "${lib.getExe pkgs.commitlint}",
