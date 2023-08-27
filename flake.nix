@@ -129,6 +129,9 @@
         _module.args = {
           pkgs = import nixpkgs {
             inherit system overlays;
+            config = {
+              allowBroken = true;
+            };
           };
         };
 
