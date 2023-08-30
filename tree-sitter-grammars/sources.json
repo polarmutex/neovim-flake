@@ -296,9 +296,9 @@
         "repo": "tree-sitter-rust"
       },
       "branch": "master",
-      "revision": "39eaeb41e17572c17e35bb050d6bf2da17568dbf",
-      "url": "https://github.com/tree-sitter/tree-sitter-rust/archive/39eaeb41e17572c17e35bb050d6bf2da17568dbf.tar.gz",
-      "hash": "17427yn0llij1yzggcn7zal824ig8ycrqkgasci72z3nmbnwnqyr"
+      "revision": "17a6b15562b09db1f27b8f5f26f17edbb2aac097",
+      "url": "https://github.com/tree-sitter/tree-sitter-rust/archive/17a6b15562b09db1f27b8f5f26f17edbb2aac097.tar.gz",
+      "hash": "00050anmajziw20iy1pz2m7rqc3qan55x53rmf19bv9ww0rairdi"
     },
     "tree-sitter-svelte": {
       "type": "Git",
