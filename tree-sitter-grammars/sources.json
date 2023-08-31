@@ -20,9 +20,9 @@
         "repo": "tree-sitter-bash"
       },
       "branch": "master",
-      "revision": "4798bc61410fcb3ae725bab24f96f5c4684cea71",
-      "url": "https://github.com/tree-sitter/tree-sitter-bash/archive/4798bc61410fcb3ae725bab24f96f5c4684cea71.tar.gz",
-      "hash": "1jfrsw0wdvizrybbqkn6wzz04nqd8hr2rkhrips78qrxjw2fcz2l"
+      "revision": "bdcd56c5a3896f7bbb7684e223c43d9f24380351",
+      "url": "https://github.com/tree-sitter/tree-sitter-bash/archive/bdcd56c5a3896f7bbb7684e223c43d9f24380351.tar.gz",
+      "hash": "04iyv0xmajndim5xlgvysw9q7clbdrf9inl4m6ig4xv4by9l4j6f"
     },
     "tree-sitter-beancount": {
       "type": "Git",
