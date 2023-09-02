@@ -202,46 +202,46 @@
                 };
               };
             };
-          };
-          ruff_lsp = {
-            cmd = [(lib.getExe' pkgs.ruff-lsp "ruff-lsp")];
-          };
-          rust_analyzer = {
-            cmd = [(lib.getExe pkgs.rust-analyzer)];
-            settings = rawLua ''
-              {
-                ["rust-analyzer"] = {
-                  checkOnSave = {
-                    command = "clippy";
-                  };
-                }
-              }'';
-          };
-        };
-        # you can do any additional lsp server setup here
-        # return true if you don't want this server to be setup with lspconfig
-        # @type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
-        setup = {
-          # example to setup with typescript.nvim
-          # tsserver = function(_, opts)
-          #   require("typescript").setup({ server = opts })
-          #  return true
-          # end,
-          # Specify * to use this function as a fallback for any server
-          # ["*"] = function(server, opts) end,
-          jdtls = let
-            cmd = lib.getExe' pkgs.jdt-language-server "jdt-language-server";
-            java-debug =
-              (pkgs.fetchMavenArtifact
+            ruff_lsp = {
+              cmd = [(lib.getExe' pkgs.ruff-lsp "ruff-lsp")];
+            };
+            rust_analyzer = {
+              cmd = [(lib.getExe pkgs.rust-analyzer)];
+              settings = rawLua ''
                 {
-                  groupId = "com.microsoft.java";
-                  artifactId = "com.microsoft.java.debug.plugin";
-                  version = "0.48.0";
-                  sha256 = "sha256-vDKoN1MMZChTvt6jlNHl6C/t+F0p3FhMGcGSmI9V7sI=";
-                })
-              .jar;
-          in
-            rawLua ''function() return require('polarmutex.config.lsp.java').setup("${cmd}","${java-debug}") end'';
+                  ["rust-analyzer"] = {
+                    checkOnSave = {
+                      command = "clippy";
+                    };
+                  }
+                }'';
+            };
+          };
+          # you can do any additional lsp server setup here
+          # return true if you don't want this server to be setup with lspconfig
+          # @type table<string, fun(server:string, opts:_.lspconfig.options):boolean?>
+          setup = {
+            # example to setup with typescript.nvim
+            # tsserver = function(_, opts)
+            #   require("typescript").setup({ server = opts })
+            #  return true
+            # end,
+            # Specify * to use this function as a fallback for any server
+            # ["*"] = function(server, opts) end,
+            jdtls = let
+              cmd = lib.getExe' pkgs.jdt-language-server "jdt-language-server";
+              java-debug =
+                (pkgs.fetchMavenArtifact
+                  {
+                    groupId = "com.microsoft.java";
+                    artifactId = "com.microsoft.java.debug.plugin";
+                    version = "0.48.0";
+                    sha256 = "sha256-vDKoN1MMZChTvt6jlNHl6C/t+F0p3FhMGcGSmI9V7sI=";
+                  })
+                .jar;
+            in
+              rawLua ''function() return require('polarmutex.config.lsp.java').setup("${cmd}","${java-debug}") end'';
+          };
         };
 
         config = rawLua "function(_, opts) require('polarmutex.config.lsp').setup(opts) end";

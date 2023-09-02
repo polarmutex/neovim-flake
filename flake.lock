@@ -3,11 +3,11 @@
     "beancount-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1674869317,
-        "narHash": "sha256-ZiGTiQoMyg2V5QtyuL4owZ4FL9RmJgfv/VtbJDMZTtU=",
+        "lastModified": 1693665893,
+        "narHash": "sha256-bEVi5GNqYZobYLzIbkvicTYs/Div8M7Gp6lS3nBcS5s=",
         "owner": "polarmutex",
         "repo": "beancount.nvim",
-        "rev": "067e6a26a828437ecd72a250a656bf63d5a33d32",
+        "rev": "52dcd779a7a15d0ff1f05054cf5a82ba6616d781",
         "type": "github"
       },
       "original": {
