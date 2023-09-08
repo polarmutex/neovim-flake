@@ -188,9 +188,9 @@
         "repo": "tree-sitter-lua"
       },
       "branch": "main",
-      "revision": "88e446476a1e97a8724dff7a23e2d709855077f2",
-      "url": "https://github.com/MunifTanjim/tree-sitter-lua/archive/88e446476a1e97a8724dff7a23e2d709855077f2.tar.gz",
-      "hash": "05irhg6gg11r9cnzh0h3691pnxjhd396sa1x8xrgqjz2fd09brf3"
+      "revision": "9668709211b2e683f27f414454a8b51bf0a6bda1",
+      "url": "https://github.com/MunifTanjim/tree-sitter-lua/archive/9668709211b2e683f27f414454a8b51bf0a6bda1.tar.gz",
+      "hash": "0iqqfncsli57ih5inllfzg5s8f9px7wdnddh6lkz4ycvmbq71pp6"
     },
     "tree-sitter-make": {
       "type": "Git",
