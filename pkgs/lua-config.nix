@@ -191,7 +191,7 @@
               cmd = [(lib.getExe' pkgs.nil-git "nil")];
             };
             pyright = {
-              cmd = [(lib.getExe' pkgs.pyright "pyright") "--stdio"];
+              cmd = [(lib.getExe' pkgs.pyright "pyright-langserver") "--stdio"];
               settings = {
                 python = {
                   analysis = {
@@ -202,9 +202,9 @@
                 };
               };
             };
-            ruff_lsp = {
-              cmd = [(lib.getExe' pkgs.ruff-lsp "ruff-lsp")];
-            };
+            #ruff_lsp = {
+            #  cmd = [(lib.getExe' pkgs.ruff-lsp "ruff-lsp")];
+            #};
             rust_analyzer = {
               cmd = [(lib.getExe pkgs.rust-analyzer)];
               settings = rawLua ''
@@ -300,9 +300,9 @@
                       }),
 
                       -- python
-                      --nls.builtins.diagnostics.ruff.with({
-                      --    command = "${lib.getExe pkgs.ruff}",
-                      --}),
+                      nls.builtins.diagnostics.ruff.with({
+                          command = "${lib.getExe pkgs.ruff}",
+                      }),
                       nls.builtins.formatting.black.with({
                           command = "${lib.getExe pkgs.black}",
                       }),
