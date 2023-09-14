@@ -57,6 +57,11 @@ M.setup = function()
         { "BufRead", "BufNewFile" },
         { pattern = { "*.txt", "*.md", "*.tex" }, command = "setlocal spell" }
     )
+
+    -- zellij
+    if vim.env.ZELLIJ ~= nil then
+        vim.fn.system({ "zellij", "action", "switch-mode", "locked" })
+    end
 end
 
 return M
