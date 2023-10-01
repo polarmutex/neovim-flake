@@ -344,9 +344,9 @@
         "repo": "tree-sitter-viml"
       },
       "branch": "master",
-      "revision": "77e9e96c2ae5cff7343ce3dced263483acf95793",
-      "url": "https://github.com/vigoux/tree-sitter-viml/archive/77e9e96c2ae5cff7343ce3dced263483acf95793.tar.gz",
-      "hash": "1fsla42ck7pn625wac84m6phkc0x3qhz5kasx2d5y4ykksx3yqb0"
+      "revision": "32c76f150347c1cd044e90b8e2bc73c00677fa55",
+      "url": "https://github.com/vigoux/tree-sitter-viml/archive/32c76f150347c1cd044e90b8e2bc73c00677fa55.tar.gz",
+      "hash": "1khm8cbd3m1l270rmkq4a8xn31rf6djrnkxypp7rc9krcsn692fp"
     },
     "tree-sitter-yaml": {
       "type": "Git",
