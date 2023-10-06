@@ -17,7 +17,10 @@
       pre-commit-check = inputs.pre-commit-hooks.lib.${system}.run {
         src = self;
         hooks = {
-          alejandra.enable = true;
+          alejandra = {
+            enable = true;
+            excludes = ["pkgs/plugins/.*/generated.*"];
+          };
           stylua.enable = true;
           luacheck.enable = true;
         };
