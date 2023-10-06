@@ -1,0 +1,22 @@
+{
+    "sqlite-lua": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "sqlite-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "kkharji",
+            "repo": "sqlite.lua",
+            "rev": "v1.2.2",
+            "sha256": "sha256-lBvHU3zKYmU99DhGhBRnOuLWOlG4LyXt+TtrpLsCOh8=",
+            "type": "github"
+        },
+        "version": "v1.2.2"
+    }
+}

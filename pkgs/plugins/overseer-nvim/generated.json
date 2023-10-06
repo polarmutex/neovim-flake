@@ -1,0 +1,22 @@
+{
+    "overseer-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "overseer-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "stevearc",
+            "repo": "overseer.nvim",
+            "rev": "v1.2.0",
+            "sha256": "sha256-EneT0l5FaruJElLTqH+cEKhKSNj+dvyvknhn+bsJr1U=",
+            "type": "github"
+        },
+        "version": "v1.2.0"
+    }
+}

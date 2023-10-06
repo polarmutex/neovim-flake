@@ -1,0 +1,5 @@
+[nvim-treesitter-playground]
+src.git = "https://github.com/nvim-treesitter/playground"
+fetch.github = "nvim-treesitter/playground"
+git.deepClone=true
+git.leaveDotGit=true

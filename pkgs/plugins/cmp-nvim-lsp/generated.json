@@ -1,0 +1,22 @@
+{
+    "cmp-nvim-lsp": {
+        "cargoLocks": null,
+        "date": "2023-06-23",
+        "extract": null,
+        "name": "cmp-nvim-lsp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "hrsh7th",
+            "repo": "cmp-nvim-lsp",
+            "rev": "44b16d11215dce86f253ce0c30949813c0a90765",
+            "sha256": "sha256-vQGO0V3A6t2mORNDLD0Jj4N5VaR4J9kuc4iRT7D2UxQ=",
+            "type": "github"
+        },
+        "version": "44b16d11215dce86f253ce0c30949813c0a90765"
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "vim-be-good": {
+        "cargoLocks": null,
+        "date": "2022-11-08",
+        "extract": null,
+        "name": "vim-be-good",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "ThePrimeagen",
+            "repo": "vim-be-good",
+            "rev": "c290810728a4f75e334b07dc0f3a4cdea908d351",
+            "sha256": "sha256-sFqUksXPjejd9rc2+3VPwFgr0bzYjIzlFLO9ziCBBag=",
+            "type": "github"
+        },
+        "version": "c290810728a4f75e334b07dc0f3a4cdea908d351"
+    }
+}

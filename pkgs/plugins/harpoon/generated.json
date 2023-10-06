@@ -1,0 +1,22 @@
+{
+    "harpoon": {
+        "cargoLocks": null,
+        "date": "2023-05-28",
+        "extract": null,
+        "name": "harpoon",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "ThePrimeagen",
+            "repo": "harpoon",
+            "rev": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc",
+            "sha256": "sha256-/aSa3+pU3rRYZGVjOIBTGT3HANhSZ/3bYedAADcq/0Y=",
+            "type": "github"
+        },
+        "version": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc"
+    }
+}

@@ -1,0 +1,5 @@
+[crates-nvim]
+src.github = "Saecki/crates.nvim"
+fetch.github = "Saecki/crates.nvim"
+git.deepClone=true
+git.leaveDotGit=true

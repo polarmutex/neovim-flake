@@ -1,0 +1,5 @@
+[beancount-nvim]
+src.git = "https://github.com/polarmutex/beancount.nvim"
+fetch.github = "polarmutex/beancount.nvim"
+git.deepClone=true
+git.leaveDotGit=true

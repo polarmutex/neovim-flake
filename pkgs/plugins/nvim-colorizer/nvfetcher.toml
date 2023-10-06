@@ -1,0 +1,5 @@
+[nvim-colorizer]
+src.git = "https://github.com/norcalli/nvim-colorizer.lua"
+fetch.github = "norcalli/nvim-colorizer.lua"
+git.deepClone=true
+git.leaveDotGit=true

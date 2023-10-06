@@ -1,0 +1,5 @@
+[overseer-nvim]
+src.github = "stevearc/overseer.nvim"
+fetch.github = "stevearc/overseer.nvim"
+git.deepClone=true
+git.leaveDotGit=true

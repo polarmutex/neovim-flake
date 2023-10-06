@@ -1,0 +1,22 @@
+{
+    "nui-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nui-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "MunifTanjim",
+            "repo": "nui.nvim",
+            "rev": "0.2.0",
+            "sha256": "sha256-DnU8Esan4znC9eCK5s9xZsHyd9SZFSq1ic9JHQ7Q0i8=",
+            "type": "github"
+        },
+        "version": "0.2.0"
+    }
+}

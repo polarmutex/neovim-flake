@@ -1,0 +1,22 @@
+{
+    "git-worktree-nvim": {
+        "cargoLocks": null,
+        "date": "2021-12-24",
+        "extract": null,
+        "name": "git-worktree-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "ThePrimeagen",
+            "repo": "git-worktree.nvim",
+            "rev": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458",
+            "sha256": "sha256-ll4NoDeYoAWKZnGExUPpomlj3fAlmigj5/DMQTPXs8E=",
+            "type": "github"
+        },
+        "version": "d7f4e2584e81670154f07ca9fa5dd791d9c1b458"
+    }
+}

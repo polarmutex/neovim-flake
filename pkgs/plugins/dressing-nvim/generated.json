@@ -1,0 +1,22 @@
+{
+    "dressing-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "dressing-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "stevearc",
+            "repo": "dressing.nvim",
+            "rev": "v2.0.1",
+            "sha256": "sha256-TukBtfUjjiGHMnl0GSt7D+gbIP0GAJAQXyxHltiYf/M=",
+            "type": "github"
+        },
+        "version": "v2.0.1"
+    }
+}

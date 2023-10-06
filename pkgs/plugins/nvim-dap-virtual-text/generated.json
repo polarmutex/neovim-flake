@@ -1,0 +1,22 @@
+{
+    "nvim-dap-virtual-text": {
+        "cargoLocks": null,
+        "date": "2023-05-25",
+        "extract": null,
+        "name": "nvim-dap-virtual-text",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "theHamsta",
+            "repo": "nvim-dap-virtual-text",
+            "rev": "57f1dbd0458dd84a286b27768c142e1567f3ce3b",
+            "sha256": "sha256-kBT62cNzXi3RbRUuE38SA2zjFzPU1uDNq+O+NSELhKE=",
+            "type": "github"
+        },
+        "version": "57f1dbd0458dd84a286b27768c142e1567f3ce3b"
+    }
+}

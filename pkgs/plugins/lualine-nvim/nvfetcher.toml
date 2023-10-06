@@ -1,0 +1,5 @@
+[lualine-nvim]
+src.git = "https://github.com/nvim-lualine/lualine.nvim"
+fetch.github = "nvim-lualine/lualine.nvim"
+git.deepClone=true
+git.leaveDotGit=true

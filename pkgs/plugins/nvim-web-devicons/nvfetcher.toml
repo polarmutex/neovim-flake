@@ -1,0 +1,5 @@
+[nvim-web-devicons]
+src.git = "https://github.com/nvim-tree/nvim-web-devicons"
+fetch.github = "nvim-tree/nvim-web-devicons"
+git.deepClone=true
+git.leaveDotGit=true

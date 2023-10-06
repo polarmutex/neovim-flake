@@ -1,0 +1,22 @@
+{
+    "kanagawa-nvim": {
+        "cargoLocks": null,
+        "date": "2023-10-02",
+        "extract": null,
+        "name": "kanagawa-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "rebelot",
+            "repo": "kanagawa.nvim",
+            "rev": "c19b9023842697ec92caf72cd3599f7dd7be4456",
+            "sha256": "sha256-PNFcYK4iD9DNNqBW1vo7lJt/PWpAOStfkMRosd7+QOY=",
+            "type": "github"
+        },
+        "version": "c19b9023842697ec92caf72cd3599f7dd7be4456"
+    }
+}

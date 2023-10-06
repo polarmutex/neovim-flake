@@ -1,0 +1,22 @@
+{
+    "which-key-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "which-key-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "folke",
+            "repo": "which-key.nvim",
+            "rev": "v1.5.1",
+            "sha256": "sha256-xcYsdKtCWotL505NE6sOnX0hrSDbDT55tTXTPpD03+Y=",
+            "type": "github"
+        },
+        "version": "v1.5.1"
+    }
+}

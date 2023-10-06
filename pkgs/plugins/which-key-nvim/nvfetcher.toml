@@ -1,0 +1,5 @@
+[which-key-nvim]
+src.github = "folke/which-key.nvim"
+fetch.github = "folke/which-key.nvim"
+git.deepClone=true
+git.leaveDotGit=true

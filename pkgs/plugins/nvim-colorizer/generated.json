@@ -1,0 +1,22 @@
+{
+    "nvim-colorizer": {
+        "cargoLocks": null,
+        "date": "2020-06-11",
+        "extract": null,
+        "name": "nvim-colorizer",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "norcalli",
+            "repo": "nvim-colorizer.lua",
+            "rev": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
+            "sha256": "sha256-BBR0v/Kezqp9p8iIwCvZvdcYQKASQY8efQVbcft7Rq4=",
+            "type": "github"
+        },
+        "version": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6"
+    }
+}

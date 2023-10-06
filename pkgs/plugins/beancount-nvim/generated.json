@@ -1,0 +1,22 @@
+{
+    "beancount-nvim": {
+        "cargoLocks": null,
+        "date": "2023-09-02",
+        "extract": null,
+        "name": "beancount-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "polarmutex",
+            "repo": "beancount.nvim",
+            "rev": "52dcd779a7a15d0ff1f05054cf5a82ba6616d781",
+            "sha256": "sha256-Dd+V+sw/qzXb6xaGRVLhlW3js9mjBX4iEum8/bogC2U=",
+            "type": "github"
+        },
+        "version": "52dcd779a7a15d0ff1f05054cf5a82ba6616d781"
+    }
+}

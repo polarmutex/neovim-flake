@@ -1,0 +1,5 @@
+[gitsigns-nvim]
+src.git = "https://github.com/lewis6991/gitsigns.nvim"
+fetch.github = "lewis6991/gitsigns.nvim"
+git.deepClone=true
+git.leaveDotGit=true

@@ -1,0 +1,22 @@
+{
+    "noice-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "noice-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "folke",
+            "repo": "noice.nvim",
+            "rev": "v1.16.0",
+            "sha256": "sha256-prKJnBjKc6PlNxy8ehaZbWS0dif3eGHfP7akBR63JbA=",
+            "type": "github"
+        },
+        "version": "v1.16.0"
+    }
+}

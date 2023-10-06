@@ -1,0 +1,22 @@
+{
+    "nvim-lspconfig": {
+        "cargoLocks": null,
+        "date": "2023-10-04",
+        "extract": null,
+        "name": "nvim-lspconfig",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "neovim",
+            "repo": "nvim-lspconfig",
+            "rev": "71b39616b14c152da34fcc787fa27f09bf280e72",
+            "sha256": "sha256-jjhi5JmqFUcz+PzLVnQ5HjykQQcQOeeRxJV7eDCFAjM=",
+            "type": "github"
+        },
+        "version": "71b39616b14c152da34fcc787fa27f09bf280e72"
+    }
+}

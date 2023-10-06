@@ -1,0 +1,22 @@
+{
+    "mini-indentscope": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "mini-indentscope",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "echasnovski",
+            "repo": "mini.indentscope",
+            "rev": "v0.10.0",
+            "sha256": "sha256-23ccTNVJ4sVy0VMBk8oIqFi0JfC6GBT/22m6lSdFDAM=",
+            "type": "github"
+        },
+        "version": "v0.10.0"
+    }
+}

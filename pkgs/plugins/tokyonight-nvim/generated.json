@@ -1,0 +1,22 @@
+{
+    "tokyonight-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tokyonight-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "folke",
+            "repo": "tokyonight.nvim",
+            "rev": "v2.4.0",
+            "sha256": "sha256-6tEZEla903GrM2GV4qmYFjXHX5dxiD3TpN/EgyvSn5o=",
+            "type": "github"
+        },
+        "version": "v2.4.0"
+    }
+}

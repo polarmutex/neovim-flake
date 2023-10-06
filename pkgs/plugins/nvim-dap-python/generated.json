@@ -1,0 +1,22 @@
+{
+    "nvim-dap-python": {
+        "cargoLocks": null,
+        "date": "2023-05-23",
+        "extract": null,
+        "name": "nvim-dap-python",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "mfussenegger",
+            "repo": "nvim-dap-python",
+            "rev": "37b4cba02e337a95cb62ad1609b3d1dccb2e5d42",
+            "sha256": "sha256-NVD2H3rMzEbhDRxurJYWuiQEno4VvvepkkLbyNoq5MA=",
+            "type": "github"
+        },
+        "version": "37b4cba02e337a95cb62ad1609b3d1dccb2e5d42"
+    }
+}

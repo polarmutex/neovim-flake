@@ -1,0 +1,22 @@
+{
+    "one-small-step-for-vimkind": {
+        "cargoLocks": null,
+        "date": "2023-09-09",
+        "extract": null,
+        "name": "one-small-step-for-vimkind",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "jbyuki",
+            "repo": "one-small-step-for-vimkind",
+            "rev": "edbb34ee779049f2071dc7becff0bbf51c865906",
+            "sha256": "sha256-aKDXes5GQiLbnGaCU1xHG4emK+5TzLcpNqwxIz1gKWs=",
+            "type": "github"
+        },
+        "version": "edbb34ee779049f2071dc7becff0bbf51c865906"
+    }
+}

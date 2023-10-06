@@ -1,0 +1,22 @@
+{
+    "luasnip": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "luasnip",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "L3MON4D3",
+            "repo": "LuaSnip",
+            "rev": "v2.0.0",
+            "sha256": "sha256-7dFKzIc1/+AbRIZF+nXyZ5KuRiTkmEykpeljI8ZajW4=",
+            "type": "github"
+        },
+        "version": "v2.0.0"
+    }
+}

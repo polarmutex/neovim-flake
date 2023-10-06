@@ -1,0 +1,22 @@
+{
+    "flash-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "flash-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "folke",
+            "repo": "flash.nvim",
+            "rev": "v1.17.3",
+            "sha256": "sha256-DxmDf7jwE5yvmbRG5Y6hkK+iRRHJIaCJ0IAM+vfwoHc=",
+            "type": "github"
+        },
+        "version": "v1.17.3"
+    }
+}

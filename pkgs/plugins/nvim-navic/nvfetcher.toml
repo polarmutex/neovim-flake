@@ -1,0 +1,5 @@
+[nvim-navic]
+src.git = "https://github.com/SmiteshP/nvim-navic"
+fetch.github = "SmiteshP/nvim-navic"
+git.deepClone=true
+git.leaveDotGit=true

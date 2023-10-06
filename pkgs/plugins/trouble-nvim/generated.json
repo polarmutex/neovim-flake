@@ -1,0 +1,22 @@
+{
+    "trouble-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "trouble-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "folke",
+            "repo": "trouble.nvim",
+            "rev": "v2.8.0",
+            "sha256": "sha256-a+Hi+fbo/JEX/CjZRsvC3RCYuApz6PeBzZmSG0Gznp8=",
+            "type": "github"
+        },
+        "version": "v2.8.0"
+    }
+}

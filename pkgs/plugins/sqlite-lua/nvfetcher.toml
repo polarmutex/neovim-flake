@@ -1,0 +1,5 @@
+[sqlite-lua]
+src.github = "kkharji/sqlite.lua"
+fetch.github = "kkharji/sqlite.lua"
+git.deepClone=true
+git.leaveDotGit=true

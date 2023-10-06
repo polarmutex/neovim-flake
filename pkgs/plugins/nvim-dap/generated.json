@@ -1,0 +1,22 @@
+{
+    "nvim-dap": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nvim-dap",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "mfussenegger",
+            "repo": "nvim-dap",
+            "rev": "0.6.0",
+            "sha256": "sha256-1tFgtvuMxjdlTuq/pzOx6ldGm3/6Hz6aXo6GrSmFFlo=",
+            "type": "github"
+        },
+        "version": "0.6.0"
+    }
+}

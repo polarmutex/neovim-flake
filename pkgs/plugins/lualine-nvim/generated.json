@@ -1,0 +1,22 @@
+{
+    "lualine-nvim": {
+        "cargoLocks": null,
+        "date": "2023-08-03",
+        "extract": null,
+        "name": "lualine-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "nvim-lualine",
+            "repo": "lualine.nvim",
+            "rev": "45e27ca739c7be6c49e5496d14fcf45a303c3a63",
+            "sha256": "sha256-oJ3jXb9qvViaIpiyKkTaXuye2BxiOp7kKtNw9igERVg=",
+            "type": "github"
+        },
+        "version": "45e27ca739c7be6c49e5496d14fcf45a303c3a63"
+    }
+}

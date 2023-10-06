@@ -1,0 +1,22 @@
+{
+    "crates-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "crates-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "Saecki",
+            "repo": "crates.nvim",
+            "rev": "v0.3.0",
+            "sha256": "sha256-cvdZK+LlRs4GAy/0gOy49sV9Dp/5H3DhMZ8m76/f1Zo=",
+            "type": "github"
+        },
+        "version": "v0.3.0"
+    }
+}

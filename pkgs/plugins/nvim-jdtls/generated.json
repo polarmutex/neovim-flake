@@ -1,0 +1,22 @@
+{
+    "nvim-jdtls": {
+        "cargoLocks": null,
+        "date": "2023-09-19",
+        "extract": null,
+        "name": "nvim-jdtls",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "mfussenegger",
+            "repo": "nvim-jdtls",
+            "rev": "3ca419c52a7c20a2565237db2c110ed68fc7e6f1",
+            "sha256": "sha256-aLvO6/mjLn+FM1z6PGQo0RmTlauLoYvIELzaDNwY3Gc=",
+            "type": "github"
+        },
+        "version": "3ca419c52a7c20a2565237db2c110ed68fc7e6f1"
+    }
+}

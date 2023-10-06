@@ -1,0 +1,22 @@
+{
+    "telescope-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "telescope-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "nvim-telescope",
+            "repo": "telescope.nvim",
+            "rev": "0.1.3",
+            "sha256": "sha256-GgDrPRi9uLE2FGgbODph8UOSHwHmkPAYrBwYWH5Ek6M=",
+            "type": "github"
+        },
+        "version": "0.1.3"
+    }
+}

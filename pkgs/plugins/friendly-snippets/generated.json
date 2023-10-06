@@ -1,0 +1,22 @@
+{
+    "friendly-snippets": {
+        "cargoLocks": null,
+        "date": "2023-10-01",
+        "extract": null,
+        "name": "friendly-snippets",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "rafamadriz",
+            "repo": "friendly-snippets",
+            "rev": "43727c2ff84240e55d4069ec3e6158d74cb534b6",
+            "sha256": "sha256-oK0QCTiwGJwfzTIGQ0Tm1+F4tuFRfcoZq4PuPnVVAQk=",
+            "type": "github"
+        },
+        "version": "43727c2ff84240e55d4069ec3e6158d74cb534b6"
+    }
+}

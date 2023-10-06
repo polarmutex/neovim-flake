@@ -1,0 +1,22 @@
+{
+    "nvim-dap-ui": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nvim-dap-ui",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": true,
+            "fetchSubmodules": false,
+            "leaveDotGit": true,
+            "name": null,
+            "owner": "rcarriga",
+            "repo": "nvim-dap-ui",
+            "rev": "v3.9.1",
+            "sha256": "sha256-0hszbz1GTKU7ijNZx/ZbiwDdPuhjulDGjBJ4n2EaNJI=",
+            "type": "github"
+        },
+        "version": "v3.9.1"
+    }
+}

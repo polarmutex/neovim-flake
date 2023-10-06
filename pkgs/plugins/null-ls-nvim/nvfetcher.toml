@@ -1,0 +1,5 @@
+[null-ls-nvim]
+src.git = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+fetch.github = "jose-elias-alvarez/null-ls.nvim"
+git.deepClone=true
+git.leaveDotGit=true
