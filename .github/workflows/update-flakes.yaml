@@ -28,7 +28,7 @@ jobs:
       id: matrix
       run: |
         set -ex
-        nix develop
+        nix profile install .#jq .#fd
         paths="$(fd 'nvfetcher.toml|sources.toml' | jq -ncR '[inputs]')"
         echo "paths=$paths" >> $GITHUB_OUTPUT
 

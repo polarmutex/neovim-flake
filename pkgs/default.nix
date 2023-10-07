@@ -50,9 +50,10 @@ in {
       ];
     };
 
+    legacyPackages = pkgs;
+
     packages = {
       default = config.packages.neovim-git;
-      nvfetcher = pkgs.nvfetcher;
       # from https://github.com/nix-community/neovim-nightly-overlay
       neovim-git = inputs'.neovim-flake.packages.neovim;
 
