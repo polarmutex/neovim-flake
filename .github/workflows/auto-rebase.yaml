@@ -15,4 +15,4 @@ jobs:
     steps:
       - uses: Label305/AutoRebase@v0.1
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
+          github_token: ${{ secrets.PAT }}
