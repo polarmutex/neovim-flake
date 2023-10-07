@@ -1,22 +1,22 @@
 {
     "gitsigns-nvim": {
         "cargoLocks": null,
-        "date": "2023-10-04",
+        "date": "2023-10-06",
         "extract": null,
         "name": "gitsigns-nvim",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "lewis6991",
             "repo": "gitsigns.nvim",
-            "rev": "7f6f1565ac0d9f4e26d87135c6cbe0b9fdcf70b3",
-            "sha256": "sha256-GNtq2SzfO3W3nvR9ErCTWo0BJn5ENF/yGNE5F1Ntp/A=",
+            "rev": "ff01d34daaed72f271a8ffa088a7e839a60c640f",
+            "sha256": "sha256-yQ1nJRpL/yB9dka2cWIo4pLcUmVm4gSt2FPwZHBCp3o=",
             "type": "github"
         },
-        "version": "7f6f1565ac0d9f4e26d87135c6cbe0b9fdcf70b3"
+        "version": "ff01d34daaed72f271a8ffa088a7e839a60c640f"
     }
 }

@@ -1,5 +1,5 @@
 [neodev-nvim]
 src.git = "https://github.com/folke/neodev.nvim"
 fetch.github = "folke/neodev.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

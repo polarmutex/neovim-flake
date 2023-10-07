@@ -9,9 +9,9 @@
       repo = "which-key.nvim";
       rev = "v1.5.1";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-xcYsdKtCWotL505NE6sOnX0hrSDbDT55tTXTPpD03+Y=";
+      sha256 = "sha256-92vhOZwJIaqmeHGSSpN9bMzyqz/iGFI8lqaQEdB7zro=";
     };
   };
 }

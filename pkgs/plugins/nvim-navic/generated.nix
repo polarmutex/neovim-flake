@@ -9,9 +9,9 @@
       repo = "nvim-navic";
       rev = "0ffa7ffe6588f3417e680439872f5049e38a24db";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-73HqDWz67YLJxLCxJqJKri8YrajtcdvXw4aO7/lTs8A=";
+      sha256 = "sha256-ndNHJDu7XaEp9RzrwYkbRgSWgoNXwOjAtjVu2lhmAc4=";
     };
     date = "2023-09-18";
   };

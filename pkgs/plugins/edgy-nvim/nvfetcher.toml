@@ -1,5 +1,5 @@
 [edgy-nvim]
 src.github = "folke/edgy.nvim"
 fetch.github = "folke/edgy.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

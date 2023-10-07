@@ -9,9 +9,9 @@
       repo = "nvim-web-devicons";
       rev = "45d0237c427baba8cd05e0ab26d30e2ee58c2c82";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-spEQWTWY5oYL+Ugu1ebirzum9tNxZKPbUl/LbZB1GVs=";
+      sha256 = "sha256-InGptVQy9OChHFP+fJj4MFQkaJz9PLeToqPs04Li4Ng=";
     };
     date = "2023-09-25";
   };

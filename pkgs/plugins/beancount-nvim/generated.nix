@@ -9,9 +9,9 @@
       repo = "beancount.nvim";
       rev = "52dcd779a7a15d0ff1f05054cf5a82ba6616d781";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-Dd+V+sw/qzXb6xaGRVLhlW3js9mjBX4iEum8/bogC2U=";
+      sha256 = "sha256-D9FbcaIMLPoumlfxtz3mTWLZLtxgLgLHPzDEl4DMMaE=";
     };
     date = "2023-09-02";
   };

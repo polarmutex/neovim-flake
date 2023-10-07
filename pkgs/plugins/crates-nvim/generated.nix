@@ -3,15 +3,15 @@
 {
   crates-nvim = {
     pname = "crates-nvim";
-    version = "v0.3.0";
+    version = "v0.4.0";
     src = fetchFromGitHub {
       owner = "Saecki";
       repo = "crates.nvim";
-      rev = "v0.3.0";
+      rev = "v0.4.0";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-cvdZK+LlRs4GAy/0gOy49sV9Dp/5H3DhMZ8m76/f1Zo=";
+      sha256 = "sha256-NBU7oNnACKhRA767fHMZB/xNKg0S2BsqJPg2Wjvx9z0=";
     };
   };
 }

@@ -1,4 +1,9 @@
-{pkgs, ...}: let
+{
+  neovim-git,
+  pkgs,
+  polar-lua-config,
+  ...
+}: let
   neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
     viAlias = true;
     vimAlias = true;
@@ -15,13 +20,13 @@
     '';
     plugins = [
       {
-        plugin = pkgs.neovim-lua-config-polar;
+        plugin = polar-lua-config;
         optional = false;
       }
     ];
   };
 in
-  pkgs.wrapNeovimUnstable pkgs.neovim-git
+  pkgs.wrapNeovimUnstable neovim-git
   (neovimConfig
     // {
       wrapRc = true;

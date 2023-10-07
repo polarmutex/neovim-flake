@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "nvim-tree",
             "repo": "nvim-web-devicons",
             "rev": "45d0237c427baba8cd05e0ab26d30e2ee58c2c82",
-            "sha256": "sha256-spEQWTWY5oYL+Ugu1ebirzum9tNxZKPbUl/LbZB1GVs=",
+            "sha256": "sha256-InGptVQy9OChHFP+fJj4MFQkaJz9PLeToqPs04Li4Ng=",
             "type": "github"
         },
         "version": "45d0237c427baba8cd05e0ab26d30e2ee58c2c82"

@@ -9,9 +9,9 @@
       repo = "yanky.nvim";
       rev = "v1.0.1";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-IkOO/iUdbKMFYkK8sxPjOww6BwHU7I/o+c1nPK/c8xk=";
+      sha256 = "sha256-Z/tCdqH/tbwPnXMRlEAIdH+DKqkHHL136hoIcVz+etI=";
     };
   };
 }

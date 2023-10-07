@@ -9,9 +9,9 @@
       repo = "friendly-snippets";
       rev = "43727c2ff84240e55d4069ec3e6158d74cb534b6";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-oK0QCTiwGJwfzTIGQ0Tm1+F4tuFRfcoZq4PuPnVVAQk=";
+      sha256 = "sha256-nn21WPUQUNhwJathgXw8GjQz1hI8U+RnnKDMST/IIXk=";
     };
     date = "2023-10-01";
   };

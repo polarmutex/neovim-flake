@@ -3,15 +3,15 @@
 {
   flash-nvim = {
     pname = "flash-nvim";
-    version = "v1.17.3";
+    version = "v1.18.0";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "flash.nvim";
-      rev = "v1.17.3";
+      rev = "v1.18.0";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-DxmDf7jwE5yvmbRG5Y6hkK+iRRHJIaCJ0IAM+vfwoHc=";
+      sha256 = "sha256-/WvWX8njr+ad464ifs7LPqTIuqtbM4Zjr/RP0U0k+Zw=";
     };
   };
 }

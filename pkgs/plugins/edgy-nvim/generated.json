@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "folke",
             "repo": "edgy.nvim",
             "rev": "v1.8.1",
-            "sha256": "sha256-Rz0pujXYK9mdqXX2HVIqRMMCWgxoElf50kYLmOcvck4=",
+            "sha256": "sha256-u628vtF5qRHx20qCAuC+pRbBdshJ/eclOi/XsxZFmGE=",
             "type": "github"
         },
         "version": "v1.8.1"

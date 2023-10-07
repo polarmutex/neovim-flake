@@ -9,9 +9,9 @@
       repo = "cmp-dap";
       rev = "d16f14a210cd28988b97ca8339d504533b7e09a4";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-KfMEBkzYKUzofHXjfbYeV18KZMNfmigzGWmAH8TREfA=";
+      sha256 = "sha256-tumnAAPImLQGKJ3yaQm1xVF1prZo1pZ81hsYlfkRtfc=";
     };
     date = "2022-11-13";
   };

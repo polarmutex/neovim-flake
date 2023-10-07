@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "norcalli",
             "repo": "nvim-colorizer.lua",
             "rev": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6",
-            "sha256": "sha256-BBR0v/Kezqp9p8iIwCvZvdcYQKASQY8efQVbcft7Rq4=",
+            "sha256": "sha256-AZveV57JRp+S330jWarDtNxW0seTefmhxfYysVxEsco=",
             "type": "github"
         },
         "version": "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6"

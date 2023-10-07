@@ -9,9 +9,9 @@
       repo = "noice.nvim";
       rev = "v1.16.0";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-prKJnBjKc6PlNxy8ehaZbWS0dif3eGHfP7akBR63JbA=";
+      sha256 = "sha256-bI0187Uj3rWYU8GYeoiPCXZ6ct4KWmIXKb4mhUcTeAo=";
     };
   };
 }

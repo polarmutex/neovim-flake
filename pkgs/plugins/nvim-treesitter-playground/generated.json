@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "nvim-treesitter",
             "repo": "playground",
             "rev": "ba48c6a62a280eefb7c85725b0915e021a1a0749",
-            "sha256": "sha256-MZUnNTJN1m9IrVq2Hhitrk675HrZr5Y4nvPVbIYTyf4=",
+            "sha256": "sha256-f7Td00G4lyNsOy4S7iwueoEPA6edqH/crhIkO8Lq+P8=",
             "type": "github"
         },
         "version": "ba48c6a62a280eefb7c85725b0915e021a1a0749"

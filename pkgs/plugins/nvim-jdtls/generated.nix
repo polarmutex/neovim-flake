@@ -9,9 +9,9 @@
       repo = "nvim-jdtls";
       rev = "3ca419c52a7c20a2565237db2c110ed68fc7e6f1";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-aLvO6/mjLn+FM1z6PGQo0RmTlauLoYvIELzaDNwY3Gc=";
+      sha256 = "sha256-NS3Xep93C0rp3ePYYDKAJ7biU9VyXLb9QAPP4qsYYf4=";
     };
     date = "2023-09-19";
   };

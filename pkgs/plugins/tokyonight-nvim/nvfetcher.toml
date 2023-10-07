@@ -1,5 +1,5 @@
 [tokyonight-nvim]
 src.github = "folke/tokyonight.nvim"
 fetch.github = "folke/tokyonight.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

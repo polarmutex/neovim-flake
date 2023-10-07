@@ -1,12 +1,11 @@
 {
-  date,
+  #date,
   pname,
   src,
-  #version,
+  version,
   #
   vimUtils,
 }:
 vimUtils.buildVimPlugin {
-  inherit pname src;
-  version = date;
+  inherit pname src version;
 }

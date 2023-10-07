@@ -9,9 +9,9 @@
       repo = "dressing.nvim";
       rev = "v2.0.1";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-TukBtfUjjiGHMnl0GSt7D+gbIP0GAJAQXyxHltiYf/M=";
+      sha256 = "sha256-+/Zt5HkpHGYSV4aC8kVjLKz9ga4+FdxkJGOjnIsIye4=";
     };
   };
 }

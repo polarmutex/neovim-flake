@@ -1,5 +1,109 @@
 [nvim-treesitter]
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 fetch.github = "nvim-treesitter/nvim-treesitter"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true
+
+[tree-sitter-bash]
+src.manual = "1479a4030f1a399c253aee02097576d4af46f23a"
+fetch.github = "tree-sitter/tree-sitter-bash"
+
+[tree-sitter-beancount]
+src.manual = "358e5ecbb87109eef7fd596ea518a4ff74cb9b31"
+fetch.github = "polarmutex/tree-sitter-beancount"
+
+[tree-sitter-c]
+src.manual = "f1075f2d65ecb62725821fd8a34ce68c1fa8ae51"
+fetch.github = "tree-sitter/tree-sitter-c"
+
+[tree-sitter-cmake]
+src.manual = "73ab4b8e9522f014a67f87f585e820d36fa47408"
+fetch.github = "uyha/tree-sitter-cmake"
+
+[tree-sitter-cpp]
+src.manual = "a90f170f92d5d70e7c2d4183c146e61ba5f3a457"
+fetch.github = "tree-sitter/tree-sitter-cpp"
+
+#[tree-sitter-csv]
+#src.manual = "6c1957405bd6f7751b050f61367f1094fab91444"
+#fetch.github = "amaanq/tree-sitter-csv"
+
+[tree-sitter-diff]
+src.manual = "c165725c28e69b36c5799ff0e458713a844f1aaf"
+fetch.github = "the-mikedavis/tree-sitter-diff"
+
+[tree-sitter-dockerfile]
+src.manual = "1800d5a06789797065ba5e7d80712b6bbf5483d7"
+fetch.github = "camdencheek/tree-sitter-dockerfile"
+
+[tree-sitter-gitcommit]
+src.manual = "6856a5fd0ffeff17d83325a8ce4e57811010eff1"
+fetch.github = "gbprod/tree-sitter-gitcommit"
+
+[tree-sitter-git-config]
+src.manual = "9c2a1b7894e6d9eedfe99805b829b4ecd871375e"
+fetch.github = "the-mikedavis/tree-sitter-git-config"
+
+[tree-sitter-gitignore]
+src.manual = "f4685bf11ac466dd278449bcfe5fd014e94aa504"
+fetch.github = "shunsambongi/tree-sitter-gitignore"
+
+[tree-sitter-go]
+src.manual = "bbaa67a180cfe0c943e50c55130918be8efb20bd"
+fetch.github = "tree-sitter/tree-sitter-go"
+
+[tree-sitter-html]
+src.manual = "d742025fa2d8e6100f134a6ea990443aa1f074b3"
+fetch.github = "tree-sitter/tree-sitter-html"
+
+[tree-sitter-java]
+src.manual = "83044af4950e9f1adb46a20f616d10934930ce7e"
+fetch.github = "tree-sitter/tree-sitter-java"
+
+[tree-sitter-json]
+src.manual = "3fef30de8aee74600f25ec2e319b62a1a870d51e"
+fetch.github = "tree-sitter/tree-sitter-json"
+
+[tree-sitter-lua]
+src.manual = "9668709211b2e683f27f414454a8b51bf0a6bda1"
+fetch.github = "MunifTanjim/tree-sitter-lua"
+
+[tree-sitter-make]
+src.manual = "a4b9187417d6be349ee5fd4b6e77b4172c6827dd"
+fetch.github = "alemuller/tree-sitter-make"
+
+#[tree-sitter-markdown]
+#src.manual = ""
+#fetch.github = "MDeiml/tree-sitter-markdown"
+
+[tree-sitter-mermaid]
+src.manual = "e26a5f8898a8174f02b4cc9a9050eb3ccfb799f3"
+fetch.github = "monaqa/tree-sitter-mermaid"
+
+[tree-sitter-nix]
+src.manual = "66e3e9ce9180ae08fc57372061006ef83f0abde7"
+fetch.github = "cstrahan/tree-sitter-nix"
+
+[tree-sitter-proto]
+src.manual = "e9f6b43f6844bd2189b50a422d4e2094313f6aa3"
+fetch.github = "treywood/tree-sitter-proto"
+
+[tree-sitter-python]
+src.manual = "a901729099257aac932d79c60adb5e8a53fa7e6c"
+fetch.github = "tree-sitter/tree-sitter-python"
+
+[tree-sitter-query]
+src.manual = "3a9808b22742d5bd906ef5d1a562f2f1ae57406d"
+fetch.github = "nvim-treesitter/tree-sitter-query"
+
+[tree-sitter-rust]
+src.manual = "48e053397b587de97790b055a1097b7c8a4ef846"
+fetch.github = "tree-sitter/tree-sitter-rust"
+
+[tree-sitter-toml]
+src.manual = "8bd2056818b21860e3d756b5a58c4f6e05fb744e"
+fetch.github = "ikatyang/tree-sitter-toml"
+
+#[tree-sitter-xml]
+#src.manual = "9deacbfb79cb3527a0396255beb17e1bba3f2052"
+#fetch.github = "ObserverOfTime/tree-sitter-xml"

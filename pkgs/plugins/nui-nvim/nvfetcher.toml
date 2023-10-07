@@ -1,5 +1,5 @@
 [nui-nvim]
 src.github = "MunifTanjim/nui.nvim"
 fetch.github = "MunifTanjim/nui.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

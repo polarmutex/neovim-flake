@@ -1,5 +1,5 @@
 [trouble-nvim]
 src.github_tag = "folke/trouble.nvim"
 fetch.github = "folke/trouble.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

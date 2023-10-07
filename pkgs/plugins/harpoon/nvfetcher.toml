@@ -1,5 +1,5 @@
 [harpoon]
 src.git = "https://github.com/ThePrimeagen/harpoon"
 fetch.github = "ThePrimeagen/harpoon"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

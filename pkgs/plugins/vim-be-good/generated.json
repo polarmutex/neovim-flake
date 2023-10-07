@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "ThePrimeagen",
             "repo": "vim-be-good",
             "rev": "c290810728a4f75e334b07dc0f3a4cdea908d351",
-            "sha256": "sha256-sFqUksXPjejd9rc2+3VPwFgr0bzYjIzlFLO9ziCBBag=",
+            "sha256": "sha256-eWKJrKb80YxNPCLuWdMAuiUrVy6R3Dua1hRw8SzCTfQ=",
             "type": "github"
         },
         "version": "c290810728a4f75e334b07dc0f3a4cdea908d351"

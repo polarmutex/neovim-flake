@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "gbprod",
             "repo": "yanky.nvim",
             "rev": "v1.0.1",
-            "sha256": "sha256-IkOO/iUdbKMFYkK8sxPjOww6BwHU7I/o+c1nPK/c8xk=",
+            "sha256": "sha256-Z/tCdqH/tbwPnXMRlEAIdH+DKqkHHL136hoIcVz+etI=",
             "type": "github"
         },
         "version": "v1.0.1"

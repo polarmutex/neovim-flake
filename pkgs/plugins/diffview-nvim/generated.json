@@ -1,22 +1,22 @@
 {
     "diffview-nvim": {
         "cargoLocks": null,
-        "date": "2023-09-17",
+        "date": "2023-10-05",
         "extract": null,
         "name": "diffview-nvim",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "sindrets",
             "repo": "diffview.nvim",
-            "rev": "a111d19ccceac6530448d329c63f998f77b5626e",
-            "sha256": "sha256-4PqgjD7qNWFJmMxOqxu6AEXF3A4jcZBx0uHoRSUi2dc=",
+            "rev": "0437ef8bfdd67156d87140d692840a3c2824fa20",
+            "sha256": "sha256-3cfz+AhY+buTRth++ZQGeu/wauo9vmqG2FO/reUbM8A=",
             "type": "github"
         },
-        "version": "a111d19ccceac6530448d329c63f998f77b5626e"
+        "version": "0437ef8bfdd67156d87140d692840a3c2824fa20"
     }
 }

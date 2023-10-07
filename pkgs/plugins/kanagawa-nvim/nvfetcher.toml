@@ -1,5 +1,5 @@
 [kanagawa-nvim]
 src.git = "https://github.com/rebelot/kanagawa.nvim"
 fetch.github = "rebelot/kanagawa.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

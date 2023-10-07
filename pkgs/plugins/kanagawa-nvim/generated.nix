@@ -9,9 +9,9 @@
       repo = "kanagawa.nvim";
       rev = "c19b9023842697ec92caf72cd3599f7dd7be4456";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-PNFcYK4iD9DNNqBW1vo7lJt/PWpAOStfkMRosd7+QOY=";
+      sha256 = "sha256-ogoZ8BsWz7aWUx3z36j2DdLqzv/KKog38KyNAOS51I8=";
     };
     date = "2023-10-02";
   };

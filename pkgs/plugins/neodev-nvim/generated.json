@@ -1,22 +1,22 @@
 {
     "neodev-nvim": {
         "cargoLocks": null,
-        "date": "2023-10-04",
+        "date": "2023-10-05",
         "extract": null,
         "name": "neodev-nvim",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "folke",
             "repo": "neodev.nvim",
-            "rev": "7e1e64744bf1701a173e80c8577caeb3bf04053e",
-            "sha256": "sha256-g8n4zs1IQZpje7ZWY8I9zB5WHWt8BJS7KZ3O24JCZhE=",
+            "rev": "ee960afffdb95472f719a72a1edb494ffea09c92",
+            "sha256": "sha256-J/YHj/yVhg+YGqDAfhUEK0q2mQIuN6Nfp1yeOKPo4p0=",
             "type": "github"
         },
-        "version": "7e1e64744bf1701a173e80c8577caeb3bf04053e"
+        "version": "ee960afffdb95472f719a72a1edb494ffea09c92"
     }
 }

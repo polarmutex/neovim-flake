@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "hrsh7th",
             "repo": "cmp-buffer",
             "rev": "3022dbc9166796b644a841a02de8dd1cc1d311fa",
-            "sha256": "sha256-v4rZnDfVnJNkANTDttlg1diCXLy8tePEdkdA5opZxqY=",
+            "sha256": "sha256-mJgNij0eTnAM3vIbuECF9mZ/J42v6k441z/vUNJRGSc=",
             "type": "github"
         },
         "version": "3022dbc9166796b644a841a02de8dd1cc1d311fa"

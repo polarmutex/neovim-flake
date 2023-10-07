@@ -9,9 +9,9 @@
       repo = "plenary.nvim";
       rev = "9ce85b0f7dcfe5358c0be937ad23e456907d410b";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-nWzIgV1iIRUp+xXkhfcz2OnaRkACNxcu4LV+T36x04c=";
+      sha256 = "sha256-5+KVKUHMPhJzY9YuBOxB5qB3aCx+tKm9+JRw4cwvAuM=";
     };
     date = "2023-09-12";
   };

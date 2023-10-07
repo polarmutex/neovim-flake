@@ -3,15 +3,15 @@
 {
   lazy-nvim = {
     pname = "lazy-nvim";
-    version = "v10.5.1";
+    version = "v10.7.1";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "lazy.nvim";
-      rev = "v10.5.1";
+      rev = "v10.7.1";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-UvDm8OAGOPXfssvuT6OhWnMMTN5D0RkRs45Xt4YXDPI=";
+      sha256 = "sha256-+NZ21sUbjvtG6P41e9QZCfRR5RwZl/C05V/5/IZZnJg=";
     };
   };
 }

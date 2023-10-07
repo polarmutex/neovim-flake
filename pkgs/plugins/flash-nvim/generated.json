@@ -7,16 +7,16 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "folke",
             "repo": "flash.nvim",
-            "rev": "v1.17.3",
-            "sha256": "sha256-DxmDf7jwE5yvmbRG5Y6hkK+iRRHJIaCJ0IAM+vfwoHc=",
+            "rev": "v1.18.0",
+            "sha256": "sha256-/WvWX8njr+ad464ifs7LPqTIuqtbM4Zjr/RP0U0k+Zw=",
             "type": "github"
         },
-        "version": "v1.17.3"
+        "version": "v1.18.0"
     }
 }

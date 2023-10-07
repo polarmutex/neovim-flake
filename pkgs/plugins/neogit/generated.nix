@@ -9,9 +9,9 @@
       repo = "neogit";
       rev = "ed99c59d7fda3ba5e2ce9a3adc0a8eb5ebfa6c8f";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-bAFmfgLOosUbC6aoXEjzsjeNHfP1R1BUggD4xMA7+r8=";
+      sha256 = "sha256-TtJBBg+5MJO2gXO1FOvwBlGftn6SIU2FpzwDytNG6Po=";
     };
     date = "2023-10-02";
   };

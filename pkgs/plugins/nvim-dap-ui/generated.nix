@@ -9,9 +9,9 @@
       repo = "nvim-dap-ui";
       rev = "v3.9.1";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-0hszbz1GTKU7ijNZx/ZbiwDdPuhjulDGjBJ4n2EaNJI=";
+      sha256 = "sha256-k06UhT31j4peEv9dKLlVIKbXLBFHQSWIIQY/74Pti6U=";
     };
   };
 }

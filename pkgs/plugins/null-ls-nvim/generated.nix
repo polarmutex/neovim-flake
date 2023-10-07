@@ -9,9 +9,9 @@
       repo = "null-ls.nvim";
       rev = "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-IzIRcZncRcEBAj+a9ttuXebjVL7L+vpohVO2eXPSz78=";
+      sha256 = "sha256-V4jsqvhuGhsHTrcdFqyXcYOSxtYMS5YYArNpHGm1Rvw=";
     };
     date = "2023-08-11";
   };

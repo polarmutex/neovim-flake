@@ -1,22 +1,482 @@
 {
     "nvim-treesitter": {
         "cargoLocks": null,
-        "date": "2023-10-04",
+        "date": "2023-10-07",
         "extract": null,
         "name": "nvim-treesitter",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "nvim-treesitter",
             "repo": "nvim-treesitter",
-            "rev": "f51d56c261990581289916322005e83446cf49ad",
-            "sha256": "sha256-ZMSC99ozm58nFDCp3JPQ23Q/JdsftcFLBauWCnAQigg=",
+            "rev": "3a2cc3161e01455d619a8076f0aa7fcd3e930090",
+            "sha256": "sha256-myzMt5+xH2Sjz1XgJPBzHyo9zrxRZnSG6t4IfNYNvd8=",
             "type": "github"
         },
-        "version": "f51d56c261990581289916322005e83446cf49ad"
+        "version": "3a2cc3161e01455d619a8076f0aa7fcd3e930090"
+    },
+    "tree-sitter-bash": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-bash",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-bash",
+            "rev": "1479a4030f1a399c253aee02097576d4af46f23a",
+            "sha256": "sha256-4ikQGyi8VZQpR5U0RzBkfzvEsSu9PcDOABnyHW/1Ugc=",
+            "type": "github"
+        },
+        "version": "1479a4030f1a399c253aee02097576d4af46f23a"
+    },
+    "tree-sitter-beancount": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-beancount",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "polarmutex",
+            "repo": "tree-sitter-beancount",
+            "rev": "358e5ecbb87109eef7fd596ea518a4ff74cb9b31",
+            "sha256": "sha256-vz8FU+asnMqF6J4UZer4iecw8uFFiYVpz4Fs/ds4Rt0=",
+            "type": "github"
+        },
+        "version": "358e5ecbb87109eef7fd596ea518a4ff74cb9b31"
+    },
+    "tree-sitter-c": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-c",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-c",
+            "rev": "f1075f2d65ecb62725821fd8a34ce68c1fa8ae51",
+            "sha256": "sha256-mj4jWqe4iV311eMjfaeqQ+82ULew50hvlopdrhwsFVc=",
+            "type": "github"
+        },
+        "version": "f1075f2d65ecb62725821fd8a34ce68c1fa8ae51"
+    },
+    "tree-sitter-cmake": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-cmake",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "uyha",
+            "repo": "tree-sitter-cmake",
+            "rev": "73ab4b8e9522f014a67f87f585e820d36fa47408",
+            "sha256": "sha256-5X4ho6tqPZFQWqoQ6WBsfuA+RbxTX5XzX7xzyFSTifw=",
+            "type": "github"
+        },
+        "version": "73ab4b8e9522f014a67f87f585e820d36fa47408"
+    },
+    "tree-sitter-cpp": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-cpp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-cpp",
+            "rev": "a90f170f92d5d70e7c2d4183c146e61ba5f3a457",
+            "sha256": "sha256-e9Mz84lssaPR80hlogyjXx+jA8gD8YVp4T06qC6gRVI=",
+            "type": "github"
+        },
+        "version": "a90f170f92d5d70e7c2d4183c146e61ba5f3a457"
+    },
+    "tree-sitter-diff": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-diff",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "the-mikedavis",
+            "repo": "tree-sitter-diff",
+            "rev": "c165725c28e69b36c5799ff0e458713a844f1aaf",
+            "sha256": "sha256-qou5ow/Am/qyO0I1j74ojgnBonwmJriLCCeSNpTk7t8=",
+            "type": "github"
+        },
+        "version": "c165725c28e69b36c5799ff0e458713a844f1aaf"
+    },
+    "tree-sitter-dockerfile": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-dockerfile",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "camdencheek",
+            "repo": "tree-sitter-dockerfile",
+            "rev": "1800d5a06789797065ba5e7d80712b6bbf5483d7",
+            "sha256": "sha256-qt626fHCZkHkl8yrEtDbJ+l7wwmU0XMcP0oPwrCYNgI=",
+            "type": "github"
+        },
+        "version": "1800d5a06789797065ba5e7d80712b6bbf5483d7"
+    },
+    "tree-sitter-git-config": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-git-config",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "the-mikedavis",
+            "repo": "tree-sitter-git-config",
+            "rev": "9c2a1b7894e6d9eedfe99805b829b4ecd871375e",
+            "sha256": "sha256-O0w0BhhPPwhnKfniAFSPMWfBsZUTrijifAsmFiAncWg=",
+            "type": "github"
+        },
+        "version": "9c2a1b7894e6d9eedfe99805b829b4ecd871375e"
+    },
+    "tree-sitter-gitcommit": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-gitcommit",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "gbprod",
+            "repo": "tree-sitter-gitcommit",
+            "rev": "6856a5fd0ffeff17d83325a8ce4e57811010eff1",
+            "sha256": "sha256-OD+lGLsMRFRPHwnXoM78t95QvjO0OQN4ae3z3wy5DO4=",
+            "type": "github"
+        },
+        "version": "6856a5fd0ffeff17d83325a8ce4e57811010eff1"
+    },
+    "tree-sitter-gitignore": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-gitignore",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "shunsambongi",
+            "repo": "tree-sitter-gitignore",
+            "rev": "f4685bf11ac466dd278449bcfe5fd014e94aa504",
+            "sha256": "sha256-MjoY1tlVZgN6JqoTjhhg0zSdHzc8yplMr8824sfIKp8=",
+            "type": "github"
+        },
+        "version": "f4685bf11ac466dd278449bcfe5fd014e94aa504"
+    },
+    "tree-sitter-go": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-go",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-go",
+            "rev": "bbaa67a180cfe0c943e50c55130918be8efb20bd",
+            "sha256": "sha256-G7d8CHCyKDAb9j6ijRfHk/HlgPqSI+uvkuRIRRvjkHI=",
+            "type": "github"
+        },
+        "version": "bbaa67a180cfe0c943e50c55130918be8efb20bd"
+    },
+    "tree-sitter-html": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-html",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-html",
+            "rev": "d742025fa2d8e6100f134a6ea990443aa1f074b3",
+            "sha256": "sha256-ZpUruxwi9S+gUy/k0DkhDGWLc65XppUhD0NeVVItYg4=",
+            "type": "github"
+        },
+        "version": "d742025fa2d8e6100f134a6ea990443aa1f074b3"
+    },
+    "tree-sitter-java": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-java",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-java",
+            "rev": "83044af4950e9f1adb46a20f616d10934930ce7e",
+            "sha256": "sha256-i3j55vAQV5TaMR7IsUkh0OrLCP95Xos0UCI0SoY5phI=",
+            "type": "github"
+        },
+        "version": "83044af4950e9f1adb46a20f616d10934930ce7e"
+    },
+    "tree-sitter-json": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-json",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-json",
+            "rev": "3fef30de8aee74600f25ec2e319b62a1a870d51e",
+            "sha256": "sha256-Msnct7JzPBIR9+PIBZCJTRdVMUzhaDTKkl3JaDUKAgo=",
+            "type": "github"
+        },
+        "version": "3fef30de8aee74600f25ec2e319b62a1a870d51e"
+    },
+    "tree-sitter-lua": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-lua",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "MunifTanjim",
+            "repo": "tree-sitter-lua",
+            "rev": "9668709211b2e683f27f414454a8b51bf0a6bda1",
+            "sha256": "sha256-5t5w8KqbefInNbA12/jpNzmky/uOUhsLjKdEqpl1GEc=",
+            "type": "github"
+        },
+        "version": "9668709211b2e683f27f414454a8b51bf0a6bda1"
+    },
+    "tree-sitter-make": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-make",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "alemuller",
+            "repo": "tree-sitter-make",
+            "rev": "a4b9187417d6be349ee5fd4b6e77b4172c6827dd",
+            "sha256": "sha256-qQqapnKKH5X8rkxbZG5PjnyxvnpyZHpFVi/CLkIn/x0=",
+            "type": "github"
+        },
+        "version": "a4b9187417d6be349ee5fd4b6e77b4172c6827dd"
+    },
+    "tree-sitter-mermaid": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-mermaid",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "monaqa",
+            "repo": "tree-sitter-mermaid",
+            "rev": "e26a5f8898a8174f02b4cc9a9050eb3ccfb799f3",
+            "sha256": "sha256-qDJy2kPpx3wPl8IuhPM5ynhI2DjgutSFWAg5EQY5F+8=",
+            "type": "github"
+        },
+        "version": "e26a5f8898a8174f02b4cc9a9050eb3ccfb799f3"
+    },
+    "tree-sitter-nix": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-nix",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cstrahan",
+            "repo": "tree-sitter-nix",
+            "rev": "66e3e9ce9180ae08fc57372061006ef83f0abde7",
+            "sha256": "sha256-+o+f1TlhcrcCB3TNw1RyCjVZ+37e11nL+GWBPo0Mxxg=",
+            "type": "github"
+        },
+        "version": "66e3e9ce9180ae08fc57372061006ef83f0abde7"
+    },
+    "tree-sitter-proto": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-proto",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "treywood",
+            "repo": "tree-sitter-proto",
+            "rev": "e9f6b43f6844bd2189b50a422d4e2094313f6aa3",
+            "sha256": "sha256-Ue6w6HWy+NTJt+AKTFfJIUf3HXHTwkUkDk4UdDMSD+U=",
+            "type": "github"
+        },
+        "version": "e9f6b43f6844bd2189b50a422d4e2094313f6aa3"
+    },
+    "tree-sitter-python": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-python",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-python",
+            "rev": "a901729099257aac932d79c60adb5e8a53fa7e6c",
+            "sha256": "sha256-gRhD3M1DkmwYQDDnyRq6QMTWUJUY0vbetGnN+pBTd84=",
+            "type": "github"
+        },
+        "version": "a901729099257aac932d79c60adb5e8a53fa7e6c"
+    },
+    "tree-sitter-query": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-query",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nvim-treesitter",
+            "repo": "tree-sitter-query",
+            "rev": "3a9808b22742d5bd906ef5d1a562f2f1ae57406d",
+            "sha256": "sha256-5N7FT0HTK3xzzhAlk3wBOB9xlEpKSNIfakgFnsxEi18=",
+            "type": "github"
+        },
+        "version": "3a9808b22742d5bd906ef5d1a562f2f1ae57406d"
+    },
+    "tree-sitter-rust": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-rust",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tree-sitter",
+            "repo": "tree-sitter-rust",
+            "rev": "48e053397b587de97790b055a1097b7c8a4ef846",
+            "sha256": "sha256-ht0l1a3esvBbVHNbUosItmqxwL7mDp+QyhIU6XTUiEk=",
+            "type": "github"
+        },
+        "version": "48e053397b587de97790b055a1097b7c8a4ef846"
+    },
+    "tree-sitter-toml": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "tree-sitter-toml",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "ikatyang",
+            "repo": "tree-sitter-toml",
+            "rev": "8bd2056818b21860e3d756b5a58c4f6e05fb744e",
+            "sha256": "sha256-z9MWNOBxLHBd/pVs5/QiSSGtaW+DUd7y3wZXcl3hWnk=",
+            "type": "github"
+        },
+        "version": "8bd2056818b21860e3d756b5a58c4f6e05fb744e"
     }
 }

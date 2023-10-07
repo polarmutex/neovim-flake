@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "jbyuki",
             "repo": "one-small-step-for-vimkind",
             "rev": "edbb34ee779049f2071dc7becff0bbf51c865906",
-            "sha256": "sha256-aKDXes5GQiLbnGaCU1xHG4emK+5TzLcpNqwxIz1gKWs=",
+            "sha256": "sha256-tTMgATXrIbaebiKJjcO0mnlQVIzsVl2TdznWGBF100c=",
             "type": "github"
         },
         "version": "edbb34ee779049f2071dc7becff0bbf51c865906"

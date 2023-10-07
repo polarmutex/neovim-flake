@@ -7,16 +7,16 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "Saecki",
             "repo": "crates.nvim",
-            "rev": "v0.3.0",
-            "sha256": "sha256-cvdZK+LlRs4GAy/0gOy49sV9Dp/5H3DhMZ8m76/f1Zo=",
+            "rev": "v0.4.0",
+            "sha256": "sha256-NBU7oNnACKhRA767fHMZB/xNKg0S2BsqJPg2Wjvx9z0=",
             "type": "github"
         },
-        "version": "v0.3.0"
+        "version": "v0.4.0"
     }
 }

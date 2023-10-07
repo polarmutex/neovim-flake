@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "folke",
             "repo": "noice.nvim",
             "rev": "v1.16.0",
-            "sha256": "sha256-prKJnBjKc6PlNxy8ehaZbWS0dif3eGHfP7akBR63JbA=",
+            "sha256": "sha256-bI0187Uj3rWYU8GYeoiPCXZ6ct4KWmIXKb4mhUcTeAo=",
             "type": "github"
         },
         "version": "v1.16.0"

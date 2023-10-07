@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "folke",
             "repo": "which-key.nvim",
             "rev": "v1.5.1",
-            "sha256": "sha256-xcYsdKtCWotL505NE6sOnX0hrSDbDT55tTXTPpD03+Y=",
+            "sha256": "sha256-92vhOZwJIaqmeHGSSpN9bMzyqz/iGFI8lqaQEdB7zro=",
             "type": "github"
         },
         "version": "v1.5.1"

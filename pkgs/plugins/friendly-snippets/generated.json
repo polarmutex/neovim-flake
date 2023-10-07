@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "rafamadriz",
             "repo": "friendly-snippets",
             "rev": "43727c2ff84240e55d4069ec3e6158d74cb534b6",
-            "sha256": "sha256-oK0QCTiwGJwfzTIGQ0Tm1+F4tuFRfcoZq4PuPnVVAQk=",
+            "sha256": "sha256-nn21WPUQUNhwJathgXw8GjQz1hI8U+RnnKDMST/IIXk=",
             "type": "github"
         },
         "version": "43727c2ff84240e55d4069ec3e6158d74cb534b6"

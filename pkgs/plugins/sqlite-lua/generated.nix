@@ -9,9 +9,9 @@
       repo = "sqlite.lua";
       rev = "v1.2.2";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-lBvHU3zKYmU99DhGhBRnOuLWOlG4LyXt+TtrpLsCOh8=";
+      sha256 = "sha256-iesXkECK++iD2aCwe8nwqmG24a4wU/+iQpEKvl75NiE=";
     };
   };
 }

@@ -24,6 +24,8 @@
     _callPackage path (nvfetcherOverrides // extraOverrides);
 in {
   perSystem = {
+    config,
+    inputs',
     pkgs,
     system,
     ...
@@ -35,17 +37,37 @@ in {
       config.allowUnfree = true;
       overlays = [
         inputs.nvfetcher.overlays.default
+        (_final: _prev: {
+          mdformat-with-plugins =
+            pkgs.python311Packages.mdformat.withPlugins
+            (with pkgs.python311Packages; [
+              mdformat-gfm
+              mdformat-frontmatter
+              mdformat-toc
+            ]);
+          nil-git = inputs'.nil.packages.default;
+        })
       ];
     };
 
-    legacyPackages = pkgs;
-
     packages = {
+      default = config.packages.neovim-git;
+      nvfetcher = pkgs.nvfetcher;
+      # from https://github.com/nix-community/neovim-nightly-overlay
+      neovim-git = inputs'.neovim-flake.packages.neovim;
+
+      polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {inherit (config) packages;};
+      neovim-polar = pkgs.callPackage ./neovim-polar.nix {
+        inherit (inputs) neovim-flake;
+        inherit (config.packages) neovim-git polar-lua-config;
+      };
+
       neovim-plugin-beancount-nvim = w pkgs.callPackage ./plugins/beancount-nvim {};
       neovim-plugin-cmp-buffer = w pkgs.callPackage ./plugins/cmp-buffer {};
       neovim-plugin-cmp-dap = w pkgs.callPackage ./plugins/cmp-dap {};
       neovim-plugin-cmp-emoji = w pkgs.callPackage ./plugins/cmp-emoji {};
       neovim-plugin-cmp-nvim-lsp = w pkgs.callPackage ./plugins/cmp-nvim-lsp {};
+      neovim-plugin-cmp-path = w pkgs.callPackage ./plugins/cmp-path {};
       neovim-plugin-crates-nvim = w pkgs.callPackage ./plugins/crates-nvim {};
       neovim-plugin-diffview-nvim = w pkgs.callPackage ./plugins/diffview-nvim {};
       neovim-plugin-dressing-nvim = w pkgs.callPackage ./plugins/dressing-nvim {};
@@ -54,7 +76,7 @@ in {
       neovim-plugin-friendly-snippets = w pkgs.callPackage ./plugins/friendly-snippets {};
       neovim-plugin-git-worktree-nvim = w pkgs.callPackage ./plugins/git-worktree-nvim {};
       neovim-plugin-gitsigns-nvim = w pkgs.callPackage ./plugins/gitsigns-nvim {};
-      neovim-plugin-harpoon = w pkgs.harpoon ./plugins/cmp-path {};
+      neovim-plugin-harpoon = w pkgs.callPackage ./plugins/harpoon {};
       neovim-plugin-lazy-nvim = w pkgs.callPackage ./plugins/lazy-nvim {};
       neovim-plugin-lualine-nvim = w pkgs.callPackage ./plugins/lualine-nvim {};
       neovim-plugin-luasnip = w pkgs.callPackage ./plugins/luasnip {};
@@ -74,7 +96,7 @@ in {
       neovim-plugin-nvim-jdtls = w pkgs.callPackage ./plugins/nvim-jdtls {};
       neovim-plugin-nvim-lspconfig = w pkgs.callPackage ./plugins/nvim-lspconfig {};
       neovim-plugin-nvim-navic = w pkgs.callPackage ./plugins/nvim-navic {};
-      neovim-plugin-nvim-treesitter = w pkgs.callPackage ./plugins/nvim-treesitter {};
+      neovim-plugin-nvim-treesitter = w pkgs.callPackage ./plugins/nvim-treesitter {inherit (inputs) nixpkgs;};
       neovim-plugin-nvim-treesitter-playground = w pkgs.callPackage ./plugins/nvim-treesitter-playground {};
       neovim-plugin-nvim-web-devicons = w pkgs.callPackage ./plugins/nvim-web-devicons {};
       neovim-plugin-one-small-step-for-vimkind = w pkgs.callPackage ./plugins/one-small-step-for-vimkind {};

@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "folke",
             "repo": "trouble.nvim",
             "rev": "v2.8.0",
-            "sha256": "sha256-a+Hi+fbo/JEX/CjZRsvC3RCYuApz6PeBzZmSG0Gznp8=",
+            "sha256": "sha256-bDUFU6QD96lU5brr+ED/jHeiOm8vkq7gh1qqB10xP6I=",
             "type": "github"
         },
         "version": "v2.8.0"

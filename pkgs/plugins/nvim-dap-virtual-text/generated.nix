@@ -9,9 +9,9 @@
       repo = "nvim-dap-virtual-text";
       rev = "57f1dbd0458dd84a286b27768c142e1567f3ce3b";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-kBT62cNzXi3RbRUuE38SA2zjFzPU1uDNq+O+NSELhKE=";
+      sha256 = "sha256-38A4WOHpYoCkcLhPs55tPupLvybvNPNLx9G7D5PkYls=";
     };
     date = "2023-05-25";
   };

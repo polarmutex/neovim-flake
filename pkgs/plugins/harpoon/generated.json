@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "ThePrimeagen",
             "repo": "harpoon",
             "rev": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc",
-            "sha256": "sha256-/aSa3+pU3rRYZGVjOIBTGT3HANhSZ/3bYedAADcq/0Y=",
+            "sha256": "sha256-zPIktiBy0sf7Q2kax3pz+3GA3OQa5mFvh6gxpoJX/qY=",
             "type": "github"
         },
         "version": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc"

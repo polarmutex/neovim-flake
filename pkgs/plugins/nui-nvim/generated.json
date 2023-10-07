@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "MunifTanjim",
             "repo": "nui.nvim",
             "rev": "0.2.0",
-            "sha256": "sha256-DnU8Esan4znC9eCK5s9xZsHyd9SZFSq1ic9JHQ7Q0i8=",
+            "sha256": "sha256-FS/PudH8XKD1hZnp1meXmxog23uHd0kHAZCFfkpAOrE=",
             "type": "github"
         },
         "version": "0.2.0"

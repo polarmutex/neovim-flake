@@ -3,15 +3,15 @@
 {
   overseer-nvim = {
     pname = "overseer-nvim";
-    version = "v1.2.0";
+    version = "v1.3.0";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "overseer.nvim";
-      rev = "v1.2.0";
+      rev = "v1.3.0";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-EneT0l5FaruJElLTqH+cEKhKSNj+dvyvknhn+bsJr1U=";
+      sha256 = "sha256-FpaRDF8flv83MCqvm/XaEBQYd+A9ARAn/Z/RW7hDm+Q=";
     };
   };
 }

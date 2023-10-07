@@ -9,9 +9,9 @@
       repo = "harpoon";
       rev = "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc";
       fetchSubmodules = false;
-      deepClone = true;
+      deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-/aSa3+pU3rRYZGVjOIBTGT3HANhSZ/3bYedAADcq/0Y=";
+      sha256 = "sha256-zPIktiBy0sf7Q2kax3pz+3GA3OQa5mFvh6gxpoJX/qY=";
     };
     date = "2023-05-28";
   };

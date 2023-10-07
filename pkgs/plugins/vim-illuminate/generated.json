@@ -1,22 +1,22 @@
 {
     "vim-illuminate": {
         "cargoLocks": null,
-        "date": "2023-09-26",
+        "date": "2023-10-06",
         "extract": null,
         "name": "vim-illuminate",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "RRethy",
             "repo": "vim-illuminate",
-            "rev": "1b5d70332a51a1de05f281069851865a2bb1e6d7",
-            "sha256": "sha256-QAUz3EY0QS6yBzUO29nclmQOj1tZDSI1qp6oTGhIb9s=",
+            "rev": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86",
+            "sha256": "sha256-Bva4h5FFSAKM/z6nS1Mpb1D10dzHsDse22uqjkEmaw4=",
             "type": "github"
         },
-        "version": "1b5d70332a51a1de05f281069851865a2bb1e6d7"
+        "version": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86"
     }
 }

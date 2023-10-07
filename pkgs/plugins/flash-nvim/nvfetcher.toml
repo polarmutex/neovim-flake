@@ -1,5 +1,5 @@
 [flash-nvim]
 src.github = "folke/flash.nvim"
 fetch.github = "folke/flash.nvim"
-git.deepClone=true
+git.deepClone=false
 git.leaveDotGit=true

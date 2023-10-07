@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "nvim-lualine",
             "repo": "lualine.nvim",
             "rev": "45e27ca739c7be6c49e5496d14fcf45a303c3a63",
-            "sha256": "sha256-oJ3jXb9qvViaIpiyKkTaXuye2BxiOp7kKtNw9igERVg=",
+            "sha256": "sha256-rHuCcd+FiF2yrUGmeK/chc1Nq+w7vAEsaDKROKl/EY0=",
             "type": "github"
         },
         "version": "45e27ca739c7be6c49e5496d14fcf45a303c3a63"

@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "rcarriga",
             "repo": "nvim-dap-ui",
             "rev": "v3.9.1",
-            "sha256": "sha256-0hszbz1GTKU7ijNZx/ZbiwDdPuhjulDGjBJ4n2EaNJI=",
+            "sha256": "sha256-k06UhT31j4peEv9dKLlVIKbXLBFHQSWIIQY/74Pti6U=",
             "type": "github"
         },
         "version": "v3.9.1"

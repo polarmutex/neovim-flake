@@ -1,4 +1,5 @@
 {
+  packages,
   pkgs,
   lib,
   ...
@@ -73,13 +74,13 @@
   toTable = content: mkCustomType "table" content;
   rawLua = content: mkCustomType "rawLua" content;
 
-  lazyPlugins = with pkgs.neovimPlugins; let
+  lazyPlugins = with packages; let
     core = [
     ];
     lsp = [
       {
         name = "nvim-lspconfig";
-        dir = "${nvim-lspconfig.outPath}";
+        dir = "${neovim-plugin-nvim-lspconfig.outPath}";
         event = ["BufReadPre" "BufNewFile"];
         opts = {
           diagnostics = {
@@ -248,12 +249,12 @@
       }
       {
         name = "null-ls";
-        dir = "${null-ls-nvim.outPath}";
+        dir = "${neovim-plugin-null-ls-nvim.outPath}";
         event = ["BufReadPre" "BufNewFile"];
         dependencies = [
           {
             name = "plenary.nvim";
-            dir = "${plenary-nvim.outPath}";
+            dir = "${neovim-plugin-plenary-nvim.outPath}";
           }
         ];
 
@@ -321,11 +322,11 @@
     coding = [
       {
         name = "luasnip";
-        dir = "${luasnip.outPath}";
+        dir = "${neovim-plugin-luasnip.outPath}";
         dependencies = [
           {
             name = "friendly-snippets";
-            dir = "${friendly-snippets.outPath}";
+            dir = "${neovim-plugin-friendly-snippets.outPath}";
             config = rawLua ''function() require("luasnip.loaders.from_vscode").lazy_load() end'';
           }
         ];
@@ -336,20 +337,20 @@
       }
       {
         name = "nvim-cmp";
-        dir = "${nvim-cmp.outPath}";
+        dir = "${neovim-plugin-nvim-cmp.outPath}";
         event = "InsertEnter";
         dependencies = [
           {
             name = "cmp-nvim-lsp";
-            dir = "${cmp-nvim-lsp.outPath}";
+            dir = "${neovim-plugin-cmp-nvim-lsp.outPath}";
           }
           {
             name = "cmp-path";
-            dir = "${cmp-path.outPath}";
+            dir = "${neovim-plugin-cmp-path.outPath}";
           }
           {
             name = "cmp-buffer";
-            dir = "${cmp-buffer.outPath}";
+            dir = "${neovim-plugin-cmp-buffer.outPath}";
           }
           #{ name = "cmp-dap", dir = "@neovimPlugin.cmp-dap@" },
           #{ dir = "saadparwaiz1/cmp_luasnip" },
@@ -359,44 +360,44 @@
       }
       {
         name = "beancount-nvim";
-        dir = "${beancount-nvim.outPath}";
+        dir = "${neovim-plugin-beancount-nvim.outPath}";
         config = rawLua "function() require('polarmutex.config.beancount-nvim').setup() end";
         ft = "beancount";
       }
       {
         name = "jdtls-nvim";
-        dir = "${nvim-jdtls.outPath}";
+        dir = "${neovim-plugin-nvim-jdtls.outPath}";
       }
       {
         name = "neodev-nvim";
-        dir = "${neodev-nvim.outPath}";
+        dir = "${neovim-plugin-neodev-nvim.outPath}";
         module = "neodev";
         ft = "lua";
       }
       {
         name = "overseer-nvim";
-        dir = "${overseer-nvim.outPath}";
+        dir = "${neovim-plugin-overseer-nvim.outPath}";
         config = rawLua "function() require('polarmutex.config.overseer-nvim').setup() end";
       }
     ];
     dap = [
       {
         name = "nvim-dap";
-        dir = "${nvim-dap.outPath}";
+        dir = "${neovim-plugin-nvim-dap.outPath}";
       }
       {
         name = "nvim-dap-ui";
-        dir = "${nvim-dap-ui}";
+        dir = "${neovim-plugin-nvim-dap-ui}";
       }
       {
         name = "nvim-dap-virtual-text";
-        dir = "${nvim-dap-virtual-text}";
+        dir = "${neovim-plugin-nvim-dap-virtual-text}";
       }
     ];
     editor = [
       {
         name = "vim-illuminate";
-        dir = "${vim-illuminate.outPath}";
+        dir = "${neovim-plugin-vim-illuminate.outPath}";
         event = ["BufReadPost" "BufNewFile"];
         opts = {
           delay = 200;
@@ -409,25 +410,25 @@
       }
       {
         name = "telescope-nvim";
-        dir = "${telescope-nvim.outPath}";
+        dir = "${neovim-plugin-telescope-nvim.outPath}";
         event = "CursorHold";
         config = rawLua "function() require('polarmutex.config.telescope-nvim').setup() end";
       }
       {
         name = "trouble.nvim";
-        dir = "${trouble-nvim.outPath}";
+        dir = "${neovim-plugin-trouble-nvim.outPath}";
         cmd = ["TroubleToggle" "Trouble"];
         opts = {use_diagnostic_signs = true;};
       }
       {
         name = "nvim-treesitter";
-        dir = "${pkgs.nvim-treesitter-master.outPath}";
+        dir = "${neovim-plugin-nvim-treesitter.outPath}";
         event = ["BufReadPre" "BufNewFile"];
         config = rawLua "function() require('polarmutex.config.treesitter').setup() end";
         dependencies = [
           {
             name = "nvim-treesitter-playground";
-            dir = "${nvim-treesitter-playground.outPath}";
+            dir = "${neovim-plugin-nvim-treesitter-playground.outPath}";
             cmd = "TSPlaygroundToggle";
           }
         ];
@@ -436,48 +437,48 @@
       }
       {
         name = "gitsigns-nvim";
-        dir = "${gitsigns-nvim.outPath}";
+        dir = "${neovim-plugin-gitsigns-nvim.outPath}";
         config = rawLua "function() require('gitsigns').setup({}) end";
         event = ["BufReadPre" "BufNewFile"]; # what should this be?
       }
       {
         name = "gitworktree-nvim";
-        dir = "${git-worktree-nvim.outPath}";
+        dir = "${neovim-plugin-git-worktree-nvim.outPath}";
         event = ["BufReadPre" "BufNewFile"]; # what should this be?
         config = rawLua "function()  require('git-worktree').setup({}) require('telescope').load_extension('git_worktree') end";
       }
       {
         name = "neogit";
-        dir = "${neogit.outPath}";
+        dir = "${neovim-plugin-neogit.outPath}";
         cmd = "Neogit";
         config = rawLua "function()  require('polarmutex.config.neogit').setup() end";
       }
       {
         name = "diffview-nvim";
-        dir = "${diffview-nvim.outPath}";
+        dir = "${neovim-plugin-diffview-nvim.outPath}";
         config = rawLua "function()  require('diffview').setup() end";
       }
       {
         name = "harpoon";
-        dir = "${harpoon.outPath}";
+        dir = "${neovim-plugin-harpoon.outPath}";
         config = rawLua "function()  require('harpoon').setup({}) require('telescope').load_extension('harpoon') end";
       }
       {
         name = "vim-be-good";
-        dir = "${vim-be-good.outPath}";
+        dir = "${neovim-plugin-vim-be-good.outPath}";
         cmd = "VimBeGood";
       }
       {
         name = "nvim-web-devicons";
-        dir = "${nvim-web-devicons.outPath}";
+        dir = "${neovim-plugin-nvim-web-devicons.outPath}";
       }
       {
         name = "yanky.nvim";
-        dir = "${yanky-nvim.outPath}";
+        dir = "${neovim-plugin-yanky-nvim.outPath}";
         dependencies = [
           {
             name = "sqlite.lua";
-            dir = "${sqlite-lua.outPath}";
+            dir = "${neovim-plugin-sqlite-lua.outPath}";
           }
         ];
         opts = rawLua ''
@@ -500,7 +501,7 @@
       }
       {
         name = "flash.nvim";
-        dir = "${flash-nvim.outPath}";
+        dir = "${neovim-plugin-flash-nvim.outPath}";
         event = "VeryLazy";
         opts = {};
       }
@@ -508,13 +509,13 @@
     ui = [
       {
         name = "lualine-nvim";
-        dir = "${lualine-nvim.outPath}";
+        dir = "${neovim-plugin-lualine-nvim.outPath}";
         event = "VeryLazy";
         config = rawLua "function() require('polarmutex.config.lualine').setup() end";
       }
       {
         name = "nvim-navic";
-        dir = "${nvim-navic.outPath}";
+        dir = "${neovim-plugin-nvim-navic.outPath}";
         lazy = true;
         init = rawLua ''
           function()
@@ -540,12 +541,12 @@
       }
       {
         name = "noice-nvim";
-        dir = "${noice-nvim.outPath}";
+        dir = "${neovim-plugin-noice-nvim.outPath}";
         event = "VeryLazy";
         dependencies = [
           {
             name = "nui.nvim";
-            dir = "${nui-nvim.outPath}";
+            dir = "${neovim-plugin-nui-nvim.outPath}";
           }
         ];
         opts = {
@@ -581,7 +582,7 @@
       }
       {
         name = "dressing-nvim";
-        dir = "${dressing-nvim.outPath}";
+        dir = "${neovim-plugin-dressing-nvim.outPath}";
         init = rawLua ''
           function()
               vim.ui.select = function(...)
@@ -597,7 +598,7 @@
       }
       {
         name = "mini.indentscope";
-        dir = "${mini-indentscope.outPath}";
+        dir = "${neovim-plugin-mini-indentscope.outPath}";
         event = ["BufReadPre" "BufNewFile"];
         opts = {
           symbol = "│";
@@ -621,7 +622,7 @@
       {
         name = "edgy.nvim";
 
-        dir = "${edgy-nvim.outPath}";
+        dir = "${neovim-plugin-edgy-nvim.outPath}";
         event = "VeryLazy";
         opts = {
           top = [
@@ -668,7 +669,7 @@
       }
       {
         name = "which-key-nvim";
-        dir = "${which-key-nvim.outPath}";
+        dir = "${neovim-plugin-which-key-nvim.outPath}";
         event = "VeryLazy";
         config = rawLua ''
           function(_, opts)
@@ -682,7 +683,7 @@
     colorschemes = [
       {
         name = "kanagawa-nvim";
-        dir = "${kanagawa-nvim.outPath}";
+        dir = "${neovim-plugin-kanagawa-nvim.outPath}";
         lazy = false;
         config = rawLua "function() require('polarmutex.config.kanagawa-nvim').setup() end";
       }
@@ -690,158 +691,11 @@
   in
     core ++ lsp ++ dap ++ coding ++ editor ++ ui ++ colorschemes;
   vars = {
-    #  "astro.language-server" = lib.getExe pkgs.nodePackages."@astrojs/language-server";
-    #  "beancount.beancount-language-server" = pkgs.beancount-language-server;
-    #  "cpp.clangd" = pkgs.clang-tools_16;
-    #  "git.commitlint" =
-    #    pkgs.commitlint;
-    #  "go.gopls" =
-    #    pkgs.gopls;
-    #  "json.jsonls" =
-    #    lib.getExe pkgs.nodePackages.vscode-json-languageserver;
-    #  "java.debug.plugin" =
-    #    (pkgs.fetchMavenArtifact
-    #      {
-    #        groupId = "com.microsoft.java";
-    #        artifactId = "com.microsoft.java.debug.plugin";
-    #        version = "0.34.0";
-    #        sha256 = "sha256-vKvTHA17KPhvxCwI6XdQX3Re2z7vyMhObM9l3QOcrAM=";
-    #      })
-    #    .jar;
-    #  "java.jdk8" =
-    #    pkgs.jdk8;
-    #  "java.jdk11" =
-    #    pkgs.jdk11;
-    #  "java.jdk17" =
-    #    pkgs.jdk17;
-    #  "java.jdt-language-server" =
-    #    pkgs.jdt-language-server;
-    #  "lua.luacheck" =
-    #    pkgs.luajitPackages.luacheck;
-    #  "lua.sumneko-lua-language-server" =
-    #    pkgs.lua-language-server;
-    #  "lua.stylua" =
-    #    pkgs.stylua;
-    #  "markdown.markdownlint" =
-    #    pkgs.nodePackages.markdownlint-cli;
-    #  "markdown.mdformat" =
-    #    pkgs.mdformat-with-plugins;
-    #  "markdown.ltex" =
-    #    pkgs.ltex-ls;
-    #  "nix.nil" =
-    #    lib.getExe pkgs.nil-git;
-    #  "nix.alejandra" =
-    #    pkgs.alejandra;
-    #  "nix.deadnix" =
-    #    pkgs.deadnix;
-    #  "nix.statix" =
-    #    pkgs.statix;
-    #  "python.black" =
-    #    pkgs.black;
-    #  "python.pyright" =
-    #    pkgs.pyright;
-    #  "python.ruff" =
-    #    pkgs.ruff;
-    #  "rust.analyzer" =
-    #    pkgs.lib.getExe pkgs.rust-analyzer;
-    #  "rust.clippy" =
-    #    pkgs.clippy;
-    #  "svelte.svelte-language-server" =
-    #    pkgs.lib.getExe pkgs.nodePackages.svelte-language-server;
-    #  "typescript.typescript-language-server" =
-    #    lib.getExe pkgs.nodePackages.typescript-language-server;
-    #  "yaml.yamlfix" =
-    #    pkgs.yamlfix;
-    #  "yaml.yamllint" =
-    #    pkgs.yamllint;
-
-    #  "neovimPlugin.beancount-nvim" =
-    #    pkgs.neovimPlugins.beancount-nvim;
-    #  "neovimPlugin.cmp-nvim-lsp" =
-    #    pkgs.neovimPlugins.cmp-nvim-lsp;
-    #  "neovimPlugin.cmp-path" =
-    #    pkgs.neovimPlugins.cmp-path;
-    #  "neovimPlugin.cmp-omni" =
-    #    pkgs.neovimPlugins.cmp-omni;
-    #  "neovimPlugin.cmp-calc" =
-    #    pkgs.neovimPlugins.cmp-calc;
-    #  "neovimPlugin.cmp-buffer" =
-    #    pkgs.neovimPlugins.cmp-buffer;
-    #  "neovimPlugin.cmp-cmdline" =
-    #    pkgs.neovimPlugins.cmp-cmdline;
-    #  "neovimPlugin.cmp-dap" =
-    #    pkgs.neovimPlugins.cmp-dap;
-    #  "neovimPlugin.crates-nvim" =
-    #    pkgs.neovimPlugins.crates-nvim;
-    #  "neovimPlugin.diffview-nvim" =
-    #    pkgs.neovimPlugins.diffview-nvim;
-    #  "neovimPlugin.gitsigns-nvim" =
-    #    pkgs.neovimPlugins.gitsigns-nvim;
-    #  "neovimPlugin.gitworktree-nvim" =
-    #    pkgs.neovimPlugins.git-worktree-nvim;
-    #  "neovimPlugin.harpoon" =
-    #    pkgs.neovimPlugins.harpoon;
     "neovimPlugin.lazy-nvim" =
-      pkgs.neovimPlugins.lazy-nvim;
-    #  "neovimPlugin.lsp-kind-nvim" =
-    #    pkgs.neovimPlugins.lsp-kind-nvim;
-    #  "neovimPlugin.lsp-format-nvim" =
-    #    pkgs.neovimPlugins.lsp-format-nvim;
-    #  "neovimPlugin.lsp-inlayhints-nvim" =
-    #    pkgs.neovimPlugins.lsp-inlayhints-nvim;
-    #  "neovimPlugin.lualine-nvim" =
-    #    pkgs.neovimPlugins.lualine-nvim;
-    #  "neovimPlugin.neodev-nvim" =
-    #    pkgs.neovimPlugins.kanagawa-nvim;
-    #  "neovimPlugin.kanagawa-nvim" =
-    #    pkgs.neovimPlugins.neodev-nvim;
-    #  "neovimPlugin.neogit" =
-    #    pkgs.neovimPlugins.neogit;
-    #  "neovimPlugin.noice-nvim" =
-    #    pkgs.neovimPlugins.noice-nvim;
-    #  "neovimPlugin.nui-nvim" =
-    #    pkgs.neovimPlugins.nui-nvim;
-    #  "neovimPlugin.null-ls-nvim" =
-    #    pkgs.neovimPlugins.null-ls-nvim;
-    #  "neovimPlugin.nvim-cmp" =
-    #    pkgs.neovimPlugins.nvim-cmp;
-    #  "neovimPlugin.nvim-colorizer" =
-    #    pkgs.neovimPlugins.nvim-colorizer;
-    #  "neovimPlugin.nvim-dap" =
-    #    pkgs.neovimPlugins.nvim-dap;
-    #  "neovimPlugin.nvim-dap-python" =
-    #    pkgs.neovimPlugins.nvim-dap-python;
-    #  "neovimPlugin.nvim-dap-ui" =
-    #    pkgs.neovimPlugins.nvim-dap-ui;
-    #  "neovimPlugin.nvim-dap-virtual-text" =
-    #    pkgs.neovimPlugins.nvim-dap-virtual-text;
-    #  "neovimPlugin.nvim-lspconfig" =
-    #    pkgs.neovimPlugins.nvim-lspconfig;
-    #  "neovimPlugin.nvim-jdtls" =
-    #    pkgs.neovimPlugins.nvim-jdtls;
-    #  "neovimPlugin.nvim-treesitter" =
-    #    pkgs.nvim-treesitter-master;
-    #  "neovimPlugin.nvim-treesitter-playground" =
-    #    pkgs.neovimPlugins.nvim-treesitter-playground;
-    #  "neovimPlugin.one-small-step-for-vimkind" =
-    #    pkgs.neovimPlugins.one-small-step-for-vimkind;
-    #  "neovimPlugin.overseer-nvim" =
-    #    pkgs.neovimPlugins.overseer-nvim;
-    #  "neovimPlugin.plenary-nvim" =
-    #    pkgs.neovimPlugins.plenary-nvim;
-    #  "neovimPlugin.rust-tools-nvim" =
-    #    pkgs.neovimPlugins.rust-tools-nvim;
-    #  "neovimPlugin.telescope-nvim" =
-    #    pkgs.neovimPlugins.telescope-nvim;
-    #  "neovimPlugin.tokyonight-nvim" =
-    #    pkgs.neovimPlugins.tokyonight-nvim;
-    #  "neovimPlugin.vim-be-good" =
-    #    pkgs.neovimPlugins.vim-be-good;
-    #  "neovimPlugin.nvim-web-devicons" =
-    #    pkgs.neovimPlugins.nvim-web-devicons;
+      packages.neovim-plugin-lazy-nvim;
   };
 in
-  pkgs.vimUtils.buildVimPluginFrom2Nix {
+  pkgs.vimUtils.buildVimPlugin {
     pname = "polarmutex";
     version = "dev";
     src = ../config;

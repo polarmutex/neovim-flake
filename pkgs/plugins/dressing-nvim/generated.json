@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
             "leaveDotGit": true,
             "name": null,
             "owner": "stevearc",
             "repo": "dressing.nvim",
             "rev": "v2.0.1",
-            "sha256": "sha256-TukBtfUjjiGHMnl0GSt7D+gbIP0GAJAQXyxHltiYf/M=",
+            "sha256": "sha256-+/Zt5HkpHGYSV4aC8kVjLKz9ga4+FdxkJGOjnIsIye4=",
             "type": "github"
         },
         "version": "v2.0.1"
