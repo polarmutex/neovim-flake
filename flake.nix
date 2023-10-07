@@ -32,29 +32,6 @@
         system,
         ...
       }: {
-        packages = {
-          #default = config.packages.neovim-git;
-          # from https://github.com/nix-community/neovim-nightly-overlay
-          #neovim-git = inputs'.neovim-flake.packages.neovim.overrideAttrs (o: {
-          #  patches = builtins.filter (p:
-          #    (
-          #      if builtins.typeOf p == "set"
-          #      then baseNameOf p.name
-          #      else baseNameOf
-          #    )
-          #    != "use-the-correct-replacement-args-for-gsub-directive.patch")
-          #  o.patches;
-          #});
-          #neovim-lua-config-polar = pkgs.callPackage ./pkgs/lua-config.nix {};
-          #docgen = pkgs.callPackage ./pkgs/docgen.nix {};
-          #neovim-polar = pkgs.callPackage ./pkgs/neovim-polar.nix {inherit neovim-flake;};
-          #nvim-treesitter-master = pkgs.callPackage ./pkgs/nvim-treesitter.nix {
-          #  inherit nixpkgs;
-          #  nvim-treesitter-git = pkgs.neovimPlugins.nvim-treesitter;
-          #  inherit (pkgs) treesitterGrammars;
-          #};
-        };
-
         apps = {
           defaultApp = {
             type = "app";
@@ -79,7 +56,10 @@
         devShells = {
           default = pkgs.mkShell {
             packages = builtins.attrValues {
+              inherit (pkgs) fd;
+              inherit (pkgs) jq;
               inherit (pkgs) lemmy-help;
+              inherit (pkgs) nvfetcher;
             };
             inherit (self.checks.${system}.pre-commit-check) shellHook;
           };
@@ -89,15 +69,11 @@
 
   # Input source for our derivation
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
+    #nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1.0.tar.gz";
+    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-    };
+    flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
     nvfetcher = {
       url = "github:berberman/nvfetcher/0.6.2";
       inputs = {
