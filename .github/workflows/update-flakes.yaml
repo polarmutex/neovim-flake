@@ -1,108 +1,132 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: update-flakes
 on:
-  schedule:
-    - cron: "50 7 * * *"
   workflow_dispatch:
+  schedule:
+    - cron: "0 4 1 * *"
+    - cron: "0 4 15 * *"
 
 jobs:
-
-  update_flake:
-    runs-on: ubuntu-20.04
+  nvfetcher_matrix:
+    name: Generate nvfetcher update matrix
+    runs-on: ubuntu-latest
+    outputs:
+      paths: ${{ steps.matrix.outputs.paths }}
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v4
-        with:
-          token: "${{ secrets.GITHUB_TOKEN }}"
-      - name: Install nix
-        uses: cachix/install-nix-action@v23
-        with:
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Install nix
+      uses: cachix/install-nix-action@v23
+      with:
+        extra_nix_config: |
+          auto-optimise-store = true
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+          experimental-features = nix-command flakes
+          substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+    - name: Generate matrix
+      id: matrix
+      run: |
+        set -ex
+        nix develop
+        paths="$(fd 'nvfetcher.toml|sources.toml' | jq -ncR '[inputs]')"
+        echo "paths=$paths" >> $GITHUB_OUTPUT
 
-      - name: Update the flake
-        env:
-          GIT_AUTHOR_NAME: "polarmutex[bot]"
-          GIT_AUTHOR_EMAIL: "polarmutex[bot]@users.noreply.github.com"
-          GIT_COMMITTER_NAME: "polarmutex[bot]"
-          GIT_COMMITTER_EMAIL: "polarmutex[bot]@users.noreply.github.com"
-        run: |
-          nix flake update --accept-flake-config --commit-lock-file --commit-lockfile-summary "chore(dependencies): update nix flake inputs"
+  nvfetcher_update:
+    runs-on: ubuntu-latest
+    needs: [nvfetcher_matrix]
+    if: ${{ needs.nvfetcher_matrix.outputs.paths != '[]' && needs.nvfetcher_matrix.outputs.paths != '' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        path: ${{ fromJson(needs.nvfetcher_matrix.outputs.paths )}}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Install nix
+      uses: cachix/install-nix-action@v23
+      with:
+        extra_nix_config: |
+          auto-optimise-store = true
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+          experimental-features = nix-command flakes
+          substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+    - name: Update element
+      run: |
+        nix run .#nvfetcher -- \
+          --build-dir $(dirname ${{ matrix.path }}) \
+          --config ${{ matrix.path }}
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: '${{ secrets.PAT }}'
+        title: 'ci: bump ${{ matrix.path }}'
+        commit-message: |
+          chore: Bump ${{ matrix.path }}
 
-      - name: Save PR Body as file
-        uses: DamianReeves/write-file-action@v1.2
-        with:
-          path: pr_body.template
-          contents: |
-            Automated changes by the [update-flake-lock](https://github.com/DeterminateSystems/update-flake-lock) GitHub Action.
 
-            ```
-            {{ env.GIT_COMMIT_MESSAGE }}
-            ```
+          Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        author: GitHub <noreply@github.com>
+        branch: update/${{ matrix.path }}
+        delete-branch: true
+  main:
+    name: Update flake inputs
+    runs-on: ubuntu-latest
+    outputs:
+      paths: ${{ steps.matrix.outputs.paths }}
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Install nix
+      uses: cachix/install-nix-action@v23
+      with:
+        extra_nix_config: |
+          auto-optimise-store = true
+          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+          experimental-features = nix-command flakes
+          substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+    - name: Update flake.lock
+      run: nix flake update
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: '${{ secrets.PAT }}'
+        title: 'ci: bump flake'
+        commit-message: |
+          chore: Bump flake
 
-            ### Running GitHub Actions on this PR
 
-            GitHub Actions will not run workflows on pull requests which are opened by a GitHub Action.
+          Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        author: GitHub <noreply@github.com>
+        branch: update/flake
+        delete-branch: true
 
-            To run GitHub Actions workflows on this PR, run:
-        env: {}
+  #    - uses: tibdex/github-app-token@v2
+  #      id: generate-token
+  #      with:
+  #        app_id: ${{ secrets.APP_ID }}
+  #        private_key: ${{ secrets.APP_KEY }}
 
-      - name: Set additional env variables (GIT_COMMIT_MESSAGE)
-        shell: bash
-        run: |
-          DELIMITER=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
-          COMMIT_MESSAGE="$(git log --format=%b -n 1)"
-          echo "GIT_COMMIT_MESSAGE<<$DELIMITER" >> $GITHUB_ENV
-          echo "$COMMIT_MESSAGE" >> $GITHUB_ENV
-          echo "$DELIMITER" >> $GITHUB_ENV
-          echo "GIT_COMMIT_MESSAGE is: ${COMMIT_MESSAGE}"
+  #    - name: Create a pull request to update dependencies
+  #      id: create_pr
+  #      uses: peter-evans/create-pull-request@v5
+  #      with:
+  #        commit-message: "chore(dependencies): updates"
+  #        branch: "update_flake_dependencies"
+  #        delete-branch: true
+  #        author: "polarmutex[bot] <polarmutex[bot]@users.noreply.github.com>"
+  #        signoff: false
+  #        title: "chore(dependencies): Update dependencies"
+  #        token: ${{ steps.generate-token.outputs.token }}
+  #        body: ${{ steps.pr_body.outputs.content }}
+  #        labels: dependencies,autorebase:opt-in
 
-      - name: Interpolate PR Body
-        uses: pedrolamas/handlebars-action@v2.2.0
-        with:
-          files: 'pr_body.template'
-          output-filename: 'pr_body.txt'
-
-      - name: Read pr_body.txt
-        id: pr_body
-        uses: juliangruber/read-file-action@v1
-        with:
-          path: "pr_body.txt"
-
-      - name: Remove PR body template files
-        shell: bash
-        run: rm -f pr_body.txt pr_body.template
-
-      - name: Update the neovim tree-sitter grammars
-        run: nix run --accept-flake-config .#update-treesitter-parsers
-
-      - uses: tibdex/github-app-token@v2
-        id: generate-token
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_KEY }}
-
-      - name: Create a pull request to update dependencies
-        id: create_pr
-        uses: peter-evans/create-pull-request@v5
-        with:
-          commit-message: "chore(dependencies): updates"
-          branch: "update_flake_dependencies"
-          delete-branch: true
-          author: "polarmutex[bot] <polarmutex[bot]@users.noreply.github.com>"
-          signoff: false
-          title: "chore(dependencies): Update dependencies"
-          token: ${{ steps.generate-token.outputs.token }}
-          body: ${{ steps.pr_body.outputs.content }}
-          labels: dependencies,autorebase:opt-in
-
-      - name: Set the PR to automerge
-        if: ${{ steps.create_pr.outputs.pull-request-operation == 'created' }}
-        uses: peter-evans/enable-pull-request-automerge@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.create_pr.outputs.pull-request-number }}
-          merge-method: "rebase"
+  #    - name: Set the PR to automerge
+  #      if: ${{ steps.create_pr.outputs.pull-request-operation == 'created' }}
+  #      uses: peter-evans/enable-pull-request-automerge@v3
+  #      with:
+  #        token: ${{ secrets.GITHUB_TOKEN }}
+  #        pull-request-number: ${{ steps.create_pr.outputs.pull-request-number }}
+  #        merge-method: "rebase"
