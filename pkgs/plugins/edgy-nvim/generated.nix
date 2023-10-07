@@ -9,9 +9,7 @@
       repo = "edgy.nvim";
       rev = "v1.8.1";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-u628vtF5qRHx20qCAuC+pRbBdshJ/eclOi/XsxZFmGE=";
+      sha256 = "sha256-qjpNNcWUx9nVv4P6iaSRZsG7GxheEkjk3OJHjscVlX0=";
     };
   };
 }

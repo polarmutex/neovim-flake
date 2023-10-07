@@ -7,14 +7,14 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": true,
+            "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "hrsh7th",
             "repo": "nvim-cmp",
             "rev": "5dce1b778b85c717f6614e3f4da45e9f19f54435",
-            "sha256": "sha256-fzTj1TCbnUVy5YeNlxtw49tm4g24BVHy+90LSbV/AxY=",
+            "sha256": "sha256-WGck3By9GhnBUmzLGi2wnKjDreQx5kBOmHCbC5BZhfo=",
             "type": "github"
         },
         "version": "5dce1b778b85c717f6614e3f4da45e9f19f54435"

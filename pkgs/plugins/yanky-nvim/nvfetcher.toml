@@ -1,5 +1,3 @@
 [yanky-nvim]
 src.github = "gbprod/yanky.nvim"
 fetch.github = "gbprod/yanky.nvim"
-git.deepClone=false
-git.leaveDotGit=true

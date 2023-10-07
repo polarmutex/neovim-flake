@@ -9,9 +9,7 @@
       repo = "mini.indentscope";
       rev = "v0.10.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-23ccTNVJ4sVy0VMBk8oIqFi0JfC6GBT/22m6lSdFDAM=";
+      sha256 = "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA=";
     };
   };
 }

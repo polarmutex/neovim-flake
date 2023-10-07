@@ -9,9 +9,7 @@
       repo = "flash.nvim";
       rev = "v1.18.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-/WvWX8njr+ad464ifs7LPqTIuqtbM4Zjr/RP0U0k+Zw=";
+      sha256 = "sha256-5MRiIS2wXZuDCcRdhbH5hPbJ9j5BIHDYdE1IlE6uf5Q=";
     };
   };
 }

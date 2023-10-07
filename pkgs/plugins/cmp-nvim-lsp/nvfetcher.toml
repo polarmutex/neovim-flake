@@ -1,5 +1,3 @@
 [cmp-nvim-lsp]
 src.git = "https://github.com/hrsh7th/cmp-nvim-lsp"
 fetch.github = "hrsh7th/cmp-nvim-lsp"
-git.deepClone=false
-git.leaveDotGit=true

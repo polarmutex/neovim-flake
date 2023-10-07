@@ -9,9 +9,7 @@
       repo = "vim-illuminate";
       rev = "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-Bva4h5FFSAKM/z6nS1Mpb1D10dzHsDse22uqjkEmaw4=";
+      sha256 = "sha256-KdF52Ho4c8VKt3qBgBIxYnDK8upXqlUj+YnL2IaJdHQ=";
     };
     date = "2023-10-06";
   };

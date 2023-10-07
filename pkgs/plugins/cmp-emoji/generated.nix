@@ -9,9 +9,7 @@
       repo = "cmp-emoji";
       rev = "19075c36d5820253d32e2478b6aaf3734aeaafa0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-YE9dV+WI08gzbcyA18dufwFoHP7BeWFyLTvj9VCKWPc=";
+      sha256 = "sha256-zc5GNkwdVHaeEoCer9tz40F2Xc8qTzPw6NbgkMjjWQI=";
     };
     date = "2021-09-28";
   };

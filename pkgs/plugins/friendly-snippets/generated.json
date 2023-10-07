@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "rafamadriz",
             "repo": "friendly-snippets",
             "rev": "43727c2ff84240e55d4069ec3e6158d74cb534b6",
-            "sha256": "sha256-nn21WPUQUNhwJathgXw8GjQz1hI8U+RnnKDMST/IIXk=",
+            "sha256": "sha256-qKY2UEUToOLkAgTNvKb7SSstOX/KydkIUiqFZN8JU+o=",
             "type": "github"
         },
         "version": "43727c2ff84240e55d4069ec3e6158d74cb534b6"

@@ -9,9 +9,7 @@
       repo = "telescope.nvim";
       rev = "0.1.3";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-AY6Q5xWuLDkM6abS+BkFO1ZIv9XKuvsw/Vzhc+hkG9g=";
+      sha256 = "sha256-G5g5qE/VHJd5XRHnLC0tpDRAD1F3bAu4a9bjHd8GBlk=";
     };
   };
 }

@@ -9,9 +9,7 @@
       repo = "one-small-step-for-vimkind";
       rev = "edbb34ee779049f2071dc7becff0bbf51c865906";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-tTMgATXrIbaebiKJjcO0mnlQVIzsVl2TdznWGBF100c=";
+      sha256 = "sha256-Esy9VjG9J86vDJjjLtlLChTc2710ynwcDxgnMc9gizs=";
     };
     date = "2023-09-09";
   };

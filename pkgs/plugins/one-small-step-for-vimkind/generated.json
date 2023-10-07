@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "jbyuki",
             "repo": "one-small-step-for-vimkind",
             "rev": "edbb34ee779049f2071dc7becff0bbf51c865906",
-            "sha256": "sha256-tTMgATXrIbaebiKJjcO0mnlQVIzsVl2TdznWGBF100c=",
+            "sha256": "sha256-Esy9VjG9J86vDJjjLtlLChTc2710ynwcDxgnMc9gizs=",
             "type": "github"
         },
         "version": "edbb34ee779049f2071dc7becff0bbf51c865906"

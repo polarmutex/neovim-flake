@@ -9,9 +9,7 @@
       repo = "nui.nvim";
       rev = "0.2.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-FS/PudH8XKD1hZnp1meXmxog23uHd0kHAZCFfkpAOrE=";
+      sha256 = "sha256-nSUs9zAX7hQ3PuFrH4zQblMfTY6ALDNggmqaQnkbR5E=";
     };
   };
 }

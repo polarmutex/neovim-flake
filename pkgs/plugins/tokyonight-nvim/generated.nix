@@ -9,9 +9,7 @@
       repo = "tokyonight.nvim";
       rev = "v2.4.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-sxWdvy6jHEnqrlWk2cu7+Ia0NZMjGsa19ArLSOQ5JdM=";
+      sha256 = "sha256-CdbUX1XH29n/G+vy3UuO5m6YdHI4wPMhQ02s30pLJ8Q=";
     };
   };
 }

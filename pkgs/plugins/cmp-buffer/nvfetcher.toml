@@ -1,5 +1,3 @@
 [cmp-buffer]
 src.git = "https://github.com/hrsh7th/cmp-buffer"
 fetch.github = "hrsh7th/cmp-buffer"
-git.deepClone=false
-git.leaveDotGit=true

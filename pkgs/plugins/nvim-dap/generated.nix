@@ -9,9 +9,7 @@
       repo = "nvim-dap";
       rev = "0.6.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-1tFgtvuMxjdlTuq/pzOx6ldGm3/6Hz6aXo6GrSmFFlo=";
+      sha256 = "sha256-7pPMW09KFZzLoDoV6NxAyQccwLSFL5GT6Hnlf3xjm0A=";
     };
   };
 }

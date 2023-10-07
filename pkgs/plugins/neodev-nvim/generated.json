@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "folke",
             "repo": "neodev.nvim",
             "rev": "ee960afffdb95472f719a72a1edb494ffea09c92",
-            "sha256": "sha256-J/YHj/yVhg+YGqDAfhUEK0q2mQIuN6Nfp1yeOKPo4p0=",
+            "sha256": "sha256-Q5/DfSASjTm2Gecjm0uTJ/WOjg5OQrnGR0XCdZE0yGw=",
             "type": "github"
         },
         "version": "ee960afffdb95472f719a72a1edb494ffea09c92"

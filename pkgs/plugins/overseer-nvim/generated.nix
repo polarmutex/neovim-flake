@@ -9,9 +9,7 @@
       repo = "overseer.nvim";
       rev = "v1.3.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-FpaRDF8flv83MCqvm/XaEBQYd+A9ARAn/Z/RW7hDm+Q=";
+      sha256 = "sha256-CIMzdwGUZ5+/NFm+NoF2BypHVYG++KVrBXqxmETKXQ4=";
     };
   };
 }

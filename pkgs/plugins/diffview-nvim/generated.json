@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "sindrets",
             "repo": "diffview.nvim",
             "rev": "0437ef8bfdd67156d87140d692840a3c2824fa20",
-            "sha256": "sha256-3cfz+AhY+buTRth++ZQGeu/wauo9vmqG2FO/reUbM8A=",
+            "sha256": "sha256-91HUTtHEE5+8pPSpI73/WbZ507x7Y7xrBBQnjmN3Eyc=",
             "type": "github"
         },
         "version": "0437ef8bfdd67156d87140d692840a3c2824fa20"

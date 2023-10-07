@@ -1,8 +1,6 @@
 [nvim-treesitter]
 src.git = "https://github.com/nvim-treesitter/nvim-treesitter"
 fetch.github = "nvim-treesitter/nvim-treesitter"
-git.deepClone=false
-git.leaveDotGit=true
 
 [tree-sitter-bash]
 src.manual = "1479a4030f1a399c253aee02097576d4af46f23a"

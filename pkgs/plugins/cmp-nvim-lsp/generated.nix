@@ -9,9 +9,7 @@
       repo = "cmp-nvim-lsp";
       rev = "44b16d11215dce86f253ce0c30949813c0a90765";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-Jk9x6sAlw+Kg0F9E4r+gHjv4PpL/uBG28usEYNeNbqY=";
+      sha256 = "sha256-mU0soCz79erJXMMqD/FyrJZ0mu2n6fE0deymPzQlxts=";
     };
     date = "2023-06-23";
   };

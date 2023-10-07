@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "stevearc",
             "repo": "overseer.nvim",
             "rev": "v1.3.0",
-            "sha256": "sha256-FpaRDF8flv83MCqvm/XaEBQYd+A9ARAn/Z/RW7hDm+Q=",
+            "sha256": "sha256-CIMzdwGUZ5+/NFm+NoF2BypHVYG++KVrBXqxmETKXQ4=",
             "type": "github"
         },
         "version": "v1.3.0"

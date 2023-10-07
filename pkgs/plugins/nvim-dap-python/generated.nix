@@ -9,9 +9,7 @@
       repo = "nvim-dap-python";
       rev = "37b4cba02e337a95cb62ad1609b3d1dccb2e5d42";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-nq6SAtIv5g+SMc++4hijIDS9PwLxcn1B3VYS/SFIyZE=";
+      sha256 = "sha256-wT1OLg4gpKaeqcrSgef/aKmB3+IFPB5fF0OOUtVuyqA=";
     };
     date = "2023-05-23";
   };

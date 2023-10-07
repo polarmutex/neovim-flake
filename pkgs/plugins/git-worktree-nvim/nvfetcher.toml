@@ -1,5 +1,3 @@
 [git-worktree-nvim]
 src.git = "https://github.com/ThePrimeagen/git-worktree.nvim"
 fetch.github = "ThePrimeagen/git-worktree.nvim"
-git.deepClone=false
-git.leaveDotGit=true

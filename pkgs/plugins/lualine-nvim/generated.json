@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "nvim-lualine",
             "repo": "lualine.nvim",
             "rev": "45e27ca739c7be6c49e5496d14fcf45a303c3a63",
-            "sha256": "sha256-rHuCcd+FiF2yrUGmeK/chc1Nq+w7vAEsaDKROKl/EY0=",
+            "sha256": "sha256-v8finXk+sLNaFMA7pSHhEu0WF5mhPYWHEKhl0IKBv8c=",
             "type": "github"
         },
         "version": "45e27ca739c7be6c49e5496d14fcf45a303c3a63"

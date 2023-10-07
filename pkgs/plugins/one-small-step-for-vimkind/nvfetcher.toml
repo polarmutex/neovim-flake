@@ -1,5 +1,3 @@
 [one-small-step-for-vimkind]
 src.git = "https://github.com/jbyuki/one-small-step-for-vimkind"
 fetch.github = "jbyuki/one-small-step-for-vimkind"
-git.deepClone=false
-git.leaveDotGit=true

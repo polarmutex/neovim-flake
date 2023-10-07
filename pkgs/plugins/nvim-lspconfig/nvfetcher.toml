@@ -1,5 +1,3 @@
 [nvim-lspconfig]
 src.git = "https://github.com/neovim/nvim-lspconfig"
 fetch.github = "neovim/nvim-lspconfig"
-git.deepClone=false
-git.leaveDotGit=true

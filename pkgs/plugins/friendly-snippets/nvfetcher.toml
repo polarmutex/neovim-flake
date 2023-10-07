@@ -1,5 +1,3 @@
 [friendly-snippets]
 src.git = "https://github.com/rafamadriz/friendly-snippets"
 fetch.github = "rafamadriz/friendly-snippets"
-git.deepClone=false
-git.leaveDotGit=true

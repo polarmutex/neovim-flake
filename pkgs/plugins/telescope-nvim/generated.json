@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "nvim-telescope",
             "repo": "telescope.nvim",
             "rev": "0.1.3",
-            "sha256": "sha256-AY6Q5xWuLDkM6abS+BkFO1ZIv9XKuvsw/Vzhc+hkG9g=",
+            "sha256": "sha256-G5g5qE/VHJd5XRHnLC0tpDRAD1F3bAu4a9bjHd8GBlk=",
             "type": "github"
         },
         "version": "0.1.3"

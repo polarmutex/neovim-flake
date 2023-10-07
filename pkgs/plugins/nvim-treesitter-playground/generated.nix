@@ -9,9 +9,7 @@
       repo = "playground";
       rev = "ba48c6a62a280eefb7c85725b0915e021a1a0749";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-f7Td00G4lyNsOy4S7iwueoEPA6edqH/crhIkO8Lq+P8=";
+      sha256 = "sha256-gOQr61Y3bVa6EAb0P924X9SJmg9lOmGiLcFTMdgu8u0=";
     };
     date = "2023-09-15";
   };

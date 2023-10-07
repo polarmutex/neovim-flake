@@ -9,9 +9,7 @@
       repo = "LuaSnip";
       rev = "v2.0.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-4+zNNCG6acb8HOXI3PkH45+vdO9HQg2JPhBXIlRcgJo=";
+      sha256 = "sha256-bgQMU9hjqymzoIg+Ov+Ks18WrJPhwMIVCL3nDQkIdkM=";
     };
   };
 }

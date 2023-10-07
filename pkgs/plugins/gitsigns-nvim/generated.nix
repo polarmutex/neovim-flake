@@ -9,9 +9,7 @@
       repo = "gitsigns.nvim";
       rev = "ff01d34daaed72f271a8ffa088a7e839a60c640f";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-yQ1nJRpL/yB9dka2cWIo4pLcUmVm4gSt2FPwZHBCp3o=";
+      sha256 = "sha256-J9j2OeoEvhl1V8Pzr7i/usVZ2LGI4emlpRGDX+uznjI=";
     };
     date = "2023-10-06";
   };

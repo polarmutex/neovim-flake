@@ -1,5 +1,3 @@
 [mini-indentscope]
 src.github_tag = "echasnovski/mini.indentscope"
 fetch.github = "echasnovski/mini.indentscope"
-git.deepClone=false
-git.leaveDotGit=true

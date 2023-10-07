@@ -1,5 +1,3 @@
 [vim-illuminate]
 src.git = "https://github.com/RRethy/vim-illuminate"
 fetch.github = "RRethy/vim-illuminate"
-git.deepClone=false
-git.leaveDotGit=true

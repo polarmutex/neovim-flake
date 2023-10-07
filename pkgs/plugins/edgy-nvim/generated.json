@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "folke",
             "repo": "edgy.nvim",
             "rev": "v1.8.1",
-            "sha256": "sha256-u628vtF5qRHx20qCAuC+pRbBdshJ/eclOi/XsxZFmGE=",
+            "sha256": "sha256-qjpNNcWUx9nVv4P6iaSRZsG7GxheEkjk3OJHjscVlX0=",
             "type": "github"
         },
         "version": "v1.8.1"

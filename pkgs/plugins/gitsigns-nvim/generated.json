@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "lewis6991",
             "repo": "gitsigns.nvim",
             "rev": "ff01d34daaed72f271a8ffa088a7e839a60c640f",
-            "sha256": "sha256-yQ1nJRpL/yB9dka2cWIo4pLcUmVm4gSt2FPwZHBCp3o=",
+            "sha256": "sha256-J9j2OeoEvhl1V8Pzr7i/usVZ2LGI4emlpRGDX+uznjI=",
             "type": "github"
         },
         "version": "ff01d34daaed72f271a8ffa088a7e839a60c640f"

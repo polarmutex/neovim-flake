@@ -9,9 +9,7 @@
       repo = "neodev.nvim";
       rev = "ee960afffdb95472f719a72a1edb494ffea09c92";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-J/YHj/yVhg+YGqDAfhUEK0q2mQIuN6Nfp1yeOKPo4p0=";
+      sha256 = "sha256-Q5/DfSASjTm2Gecjm0uTJ/WOjg5OQrnGR0XCdZE0yGw=";
     };
     date = "2023-10-05";
   };

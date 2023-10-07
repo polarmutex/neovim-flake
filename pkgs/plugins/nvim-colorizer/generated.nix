@@ -9,9 +9,7 @@
       repo = "nvim-colorizer.lua";
       rev = "36c610a9717cc9ec426a07c8e6bf3b3abcb139d6";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-AZveV57JRp+S330jWarDtNxW0seTefmhxfYysVxEsco=";
+      sha256 = "sha256-6YrnItxExL2C8pNIdLd+hXCjsB2MbZANwWkah6dreD8=";
     };
     date = "2020-06-11";
   };

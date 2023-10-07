@@ -3,15 +3,13 @@
 {
   noice-nvim = {
     pname = "noice-nvim";
-    version = "v1.16.0";
+    version = "v1.16.1";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "noice.nvim";
-      rev = "v1.16.0";
+      rev = "v1.16.1";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-bI0187Uj3rWYU8GYeoiPCXZ6ct4KWmIXKb4mhUcTeAo=";
+      sha256 = "sha256-TBiUpYgYXskSkq/Camxttxop300H0s22j5yfkvvpDDY=";
     };
   };
 }

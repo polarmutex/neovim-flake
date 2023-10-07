@@ -1,5 +1,3 @@
 [neogit]
 src.git = "https://github.com/NeogitOrg/neogit"
 fetch.github = "NeogitOrg/neogit"
-git.deepClone=false
-git.leaveDotGit=true

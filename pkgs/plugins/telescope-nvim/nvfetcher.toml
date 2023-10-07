@@ -1,5 +1,3 @@
 [telescope-nvim]
 src.github = "nvim-telescope/telescope.nvim"
 fetch.github = "nvim-telescope/telescope.nvim"
-git.deepClone=false
-git.leaveDotGit=true

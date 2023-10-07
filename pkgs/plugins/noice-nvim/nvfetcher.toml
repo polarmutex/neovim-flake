@@ -1,5 +1,3 @@
 [noice-nvim]
 src.github = "folke/noice.nvim"
 fetch.github = "folke/noice.nvim"
-git.deepClone=false
-git.leaveDotGit=true

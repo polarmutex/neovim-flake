@@ -9,9 +9,7 @@
       repo = "nvim-lspconfig";
       rev = "2b361e043810d5587d9af0787f8ce40da92ec5e9";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-nnIOgZYV7XTBmgXxDnA26oHpj9nq0X1g5B1OdKPp7Zw=";
+      sha256 = "sha256-i3lDsFwoMddpN1I4t3Fj+Dthyxq7twCgpYuNtlvfI5Y=";
     };
     date = "2023-10-06";
   };

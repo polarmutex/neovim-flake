@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "hrsh7th",
             "repo": "cmp-nvim-lsp",
             "rev": "44b16d11215dce86f253ce0c30949813c0a90765",
-            "sha256": "sha256-Jk9x6sAlw+Kg0F9E4r+gHjv4PpL/uBG28usEYNeNbqY=",
+            "sha256": "sha256-mU0soCz79erJXMMqD/FyrJZ0mu2n6fE0deymPzQlxts=",
             "type": "github"
         },
         "version": "44b16d11215dce86f253ce0c30949813c0a90765"

@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "SmiteshP",
             "repo": "nvim-navic",
             "rev": "0ffa7ffe6588f3417e680439872f5049e38a24db",
-            "sha256": "sha256-ndNHJDu7XaEp9RzrwYkbRgSWgoNXwOjAtjVu2lhmAc4=",
+            "sha256": "sha256-X4CFFihI5PFIiHlwQt6VoUIxhm5oBuUvIQxCo9k7zRE=",
             "type": "github"
         },
         "version": "0ffa7ffe6588f3417e680439872f5049e38a24db"

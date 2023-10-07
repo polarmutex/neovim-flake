@@ -1,5 +1,3 @@
 [cmp-dap]
 src.git = "https://github.com/rcarriga/cmp-dap"
 fetch.github = "rcarriga/cmp-dap"
-git.deepClone=false
-git.leaveDotGit=true

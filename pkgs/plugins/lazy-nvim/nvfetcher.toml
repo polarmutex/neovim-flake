@@ -1,5 +1,3 @@
 [lazy-nvim]
 src.github = "folke/lazy.nvim"
 fetch.github = "folke/lazy.nvim"
-git.deepClone=false
-git.leaveDotGit=true

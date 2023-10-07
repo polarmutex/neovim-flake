@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "jose-elias-alvarez",
             "repo": "null-ls.nvim",
             "rev": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7",
-            "sha256": "sha256-V4jsqvhuGhsHTrcdFqyXcYOSxtYMS5YYArNpHGm1Rvw=",
+            "sha256": "sha256-cWA0rzkOp/ekVKaFee7iea1lhnqKtWUIU+fW5M950wI=",
             "type": "github"
         },
         "version": "0010ea927ab7c09ef0ce9bf28c2b573fc302f5a7"

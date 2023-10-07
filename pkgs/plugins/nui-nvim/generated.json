@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "MunifTanjim",
             "repo": "nui.nvim",
             "rev": "0.2.0",
-            "sha256": "sha256-FS/PudH8XKD1hZnp1meXmxog23uHd0kHAZCFfkpAOrE=",
+            "sha256": "sha256-nSUs9zAX7hQ3PuFrH4zQblMfTY6ALDNggmqaQnkbR5E=",
             "type": "github"
         },
         "version": "0.2.0"

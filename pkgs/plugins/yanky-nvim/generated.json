@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "gbprod",
             "repo": "yanky.nvim",
             "rev": "v1.0.1",
-            "sha256": "sha256-Z/tCdqH/tbwPnXMRlEAIdH+DKqkHHL136hoIcVz+etI=",
+            "sha256": "sha256-ZRU01wItbsbMFMCU7kTxEdLuk42WvOOqkkL/vXuDTho=",
             "type": "github"
         },
         "version": "v1.0.1"

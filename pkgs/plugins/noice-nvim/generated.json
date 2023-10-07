@@ -9,14 +9,14 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "folke",
             "repo": "noice.nvim",
-            "rev": "v1.16.0",
-            "sha256": "sha256-bI0187Uj3rWYU8GYeoiPCXZ6ct4KWmIXKb4mhUcTeAo=",
+            "rev": "v1.16.1",
+            "sha256": "sha256-TBiUpYgYXskSkq/Camxttxop300H0s22j5yfkvvpDDY=",
             "type": "github"
         },
-        "version": "v1.16.0"
+        "version": "v1.16.1"
     }
 }
