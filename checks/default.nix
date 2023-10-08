@@ -70,6 +70,25 @@
               exit 1
           fi
         '';
+      neovim-check-treesitter-queries =
+        pkgs.runCommand "neovim-check-treesitter-queries"
+        {
+          buildInputs = [
+            pkgs.git
+          ];
+        }
+        ''
+          touch $out
+          export HOME=$(mktemp -d)
+          ln -s ${self'.packages.neovim-plugin-nvim-treesitter}/CONTRIBUTING.md .
+
+          ${self'.packages.neovim-polar}/bin/nvim --headless "+luafile ${self'.packages.neovim-plugin-nvim-treesitter}/scripts/check-queries.lua" # | tee log
+
+          #if grep -q Warning log; then
+          #  echo "Error: warnings were emitted by the check"
+          #  exit 1
+          #fi
+        '';
     };
   };
 }
