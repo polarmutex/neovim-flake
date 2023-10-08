@@ -120,7 +120,7 @@
             beancount = {
               cmd = [
                 #(lib.getExe beancount-language-server)
-                "/home/polar/repos/personal/beancount-language-server/master/target/release/beancount-language-server"
+                "/home/polar/repos/personal/beancount-language-server/main/target/release/beancount-language-server"
               ];
               init_options = {
                 journal_file = "/home/polar/repos/personal/beancount/main/main.beancount";
