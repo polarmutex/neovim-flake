@@ -13,10 +13,10 @@
             "name": null,
             "owner": "folke",
             "repo": "tokyonight.nvim",
-            "rev": "v2.4.0",
-            "sha256": "sha256-CdbUX1XH29n/G+vy3UuO5m6YdHI4wPMhQ02s30pLJ8Q=",
+            "rev": "v2.7.0",
+            "sha256": "sha256-zAypYXIPdH8y9XzENhtTO1wHWkV4tV9ihb6LfrxlhdQ=",
             "type": "github"
         },
-        "version": "v2.4.0"
+        "version": "v2.7.0"
     }
 }
