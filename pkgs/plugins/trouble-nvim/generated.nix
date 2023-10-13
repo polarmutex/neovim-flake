@@ -3,15 +3,15 @@
 {
   trouble-nvim = {
     pname = "trouble-nvim";
-    version = "v2.8.0";
+    version = "v2.9.1";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "trouble.nvim";
-      rev = "v2.8.0";
+      rev = "v2.9.1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = true;
-      sha256 = "sha256-bDUFU6QD96lU5brr+ED/jHeiOm8vkq7gh1qqB10xP6I=";
+      sha256 = "sha256-F4Gs/hMAdD0l16iePeoECqsmFYOk0UqryftAfHQMVLI=";
     };
   };
 }
