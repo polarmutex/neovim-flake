@@ -13,10 +13,10 @@
             "name": null,
             "owner": "folke",
             "repo": "lazy.nvim",
-            "rev": "v10.7.3",
-            "sha256": "sha256-xXxC7r3bZPZEH0275EVjgw31zQXbKiyrwb7/25bzRbk=",
+            "rev": "v10.13.1",
+            "sha256": "sha256-3S76f64l+Iot87Kwg6GwPbWO0IjcUy37RLrW4lJ/AQk=",
             "type": "github"
         },
-        "version": "v10.7.3"
+        "version": "v10.13.1"
     }
 }
