@@ -1,7 +1,7 @@
 {
     "plenary-nvim": {
         "cargoLocks": null,
-        "date": "2023-09-12",
+        "date": "2023-10-11",
         "extract": null,
         "name": "plenary-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "nvim-lua",
             "repo": "plenary.nvim",
-            "rev": "9ce85b0f7dcfe5358c0be937ad23e456907d410b",
-            "sha256": "sha256-s3qsKf05X5W1VdZT1vYXGQNK0UaiI+umWUf06Spe4hw=",
+            "rev": "50012918b2fc8357b87cff2a7f7f0446e47da174",
+            "sha256": "sha256-zR44d9MowLG1lIbvrRaFTpO/HXKKrO6lbtZfvvTdx+o=",
             "type": "github"
         },
-        "version": "9ce85b0f7dcfe5358c0be937ad23e456907d410b"
+        "version": "50012918b2fc8357b87cff2a7f7f0446e47da174"
     }
 }
