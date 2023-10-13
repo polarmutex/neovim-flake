@@ -3,13 +3,13 @@
 {
   yanky-nvim = {
     pname = "yanky-nvim";
-    version = "v1.0.1";
+    version = "v1.0.2";
     src = fetchFromGitHub {
       owner = "gbprod";
       repo = "yanky.nvim";
-      rev = "v1.0.1";
+      rev = "v1.0.2";
       fetchSubmodules = false;
-      sha256 = "sha256-ZRU01wItbsbMFMCU7kTxEdLuk42WvOOqkkL/vXuDTho=";
+      sha256 = "sha256-HB/MXPzfUH5tTLHSQIQRo0dafBeTs2SPczPbvHWBfFc=";
     };
   };
 }
