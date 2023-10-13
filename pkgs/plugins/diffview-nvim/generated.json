@@ -1,7 +1,7 @@
 {
     "diffview-nvim": {
         "cargoLocks": null,
-        "date": "2023-10-05",
+        "date": "2023-10-11",
         "extract": null,
         "name": "diffview-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "sindrets",
             "repo": "diffview.nvim",
-            "rev": "0437ef8bfdd67156d87140d692840a3c2824fa20",
-            "sha256": "sha256-91HUTtHEE5+8pPSpI73/WbZ507x7Y7xrBBQnjmN3Eyc=",
+            "rev": "d38c1b5266850f77f75e006bcc26213684e1e141",
+            "sha256": "sha256-ZlEF5VZaE2LIfynaAzbcN9LP++0eAvyGzMF70Qds2K8=",
             "type": "github"
         },
-        "version": "0437ef8bfdd67156d87140d692840a3c2824fa20"
+        "version": "d38c1b5266850f77f75e006bcc26213684e1e141"
     }
 }
