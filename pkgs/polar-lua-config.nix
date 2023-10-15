@@ -121,6 +121,8 @@
               cmd = [
                 #(lib.getExe beancount-language-server)
                 "/home/polar/repos/personal/beancount-language-server/main/target/release/beancount-language-server"
+                #"/home/polar/repos/personal/beancount-language-server/develop/target/release/beancount-language-server"
+                #"--log"
               ];
               init_options = {
                 journal_file = "/home/polar/repos/personal/beancount/main/main.beancount";
@@ -347,10 +349,6 @@
           {
             name = "cmp-path";
             dir = "${neovim-plugin-cmp-path.outPath}";
-          }
-          {
-            name = "cmp-buffer";
-            dir = "${neovim-plugin-cmp-buffer.outPath}";
           }
           #{ name = "cmp-dap", dir = "@neovimPlugin.cmp-dap@" },
           #{ dir = "saadparwaiz1/cmp_luasnip" },

@@ -64,7 +64,6 @@ in {
       };
 
       neovim-plugin-beancount-nvim = w pkgs.callPackage ./plugins/beancount-nvim {};
-      neovim-plugin-cmp-buffer = w pkgs.callPackage ./plugins/cmp-buffer {};
       neovim-plugin-cmp-dap = w pkgs.callPackage ./plugins/cmp-dap {};
       neovim-plugin-cmp-emoji = w pkgs.callPackage ./plugins/cmp-emoji {};
       neovim-plugin-cmp-nvim-lsp = w pkgs.callPackage ./plugins/cmp-nvim-lsp {};
