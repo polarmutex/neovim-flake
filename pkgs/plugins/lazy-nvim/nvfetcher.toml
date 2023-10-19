@@ -1,3 +1,0 @@
-[lazy-nvim]
-src.github = "folke/lazy.nvim"
-fetch.github = "folke/lazy.nvim"

@@ -60,7 +60,7 @@ in {
       polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {inherit (config) packages;};
       neovim-polar = pkgs.callPackage ./neovim-polar.nix {
         inherit (inputs) neovim-flake;
-        inherit (config.packages) neovim-git polar-lua-config;
+        inherit (config) packages;
       };
 
       neovim-plugin-beancount-nvim = w pkgs.callPackage ./plugins/beancount-nvim {};
@@ -77,7 +77,6 @@ in {
       neovim-plugin-git-worktree-nvim = w pkgs.callPackage ./plugins/git-worktree-nvim {};
       neovim-plugin-gitsigns-nvim = w pkgs.callPackage ./plugins/gitsigns-nvim {};
       neovim-plugin-harpoon = w pkgs.callPackage ./plugins/harpoon {};
-      neovim-plugin-lazy-nvim = w pkgs.callPackage ./plugins/lazy-nvim {};
       neovim-plugin-lualine-nvim = w pkgs.callPackage ./plugins/lualine-nvim {};
       neovim-plugin-luasnip = w pkgs.callPackage ./plugins/luasnip {};
       neovim-plugin-kanagawa-nvim = w pkgs.callPackage ./plugins/kanagawa-nvim {};
