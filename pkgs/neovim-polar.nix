@@ -82,6 +82,9 @@
     ruff
     black
 
+    # rust
+    rust-analyzer
+
     # yaml
     nodePackages_latest.yaml-language-server
   ];

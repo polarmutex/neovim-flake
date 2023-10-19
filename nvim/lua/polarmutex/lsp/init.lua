@@ -1,3 +1,5 @@
+local Util = require("polarmutex.utils")
+
 local M = {}
 ---Gets a 'ClientCapabilities' object, describing the LSP client capabilities
 ---Extends the object with capabilities provided by plugins.
@@ -68,6 +70,16 @@ M.setup = function()
     require("polarmutex.lsp.format").setup({
         autoformat = true,
     })
+
+    local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
+
+    if true and inlay_hint then
+        Util.on_attach(function(client, buffer)
+            if client.supports_method("textDocument/inlayHint") then
+                inlay_hint(buffer, true)
+            end
+        end)
+    end
 end
 
 return M
