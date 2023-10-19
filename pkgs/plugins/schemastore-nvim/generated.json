@@ -1,0 +1,22 @@
+{
+    "schemastore-nvim": {
+        "cargoLocks": null,
+        "date": "2023-10-18",
+        "extract": null,
+        "name": "schemastore-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "b0o",
+            "repo": "SchemaStore.nvim",
+            "rev": "a8fa6a36f09f00d32577fae0b3cee2f25ffc5c74",
+            "sha256": "sha256-Xq+Ar+hMhiQQuTHsl/hHMeNnvGIMfVPd7cl8p3Qolv0=",
+            "type": "github"
+        },
+        "version": "a8fa6a36f09f00d32577fae0b3cee2f25ffc5c74"
+    }
+}

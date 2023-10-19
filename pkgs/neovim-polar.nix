@@ -48,6 +48,7 @@
     neovim-plugin-one-small-step-for-vimkind
     neovim-plugin-overseer-nvim
     neovim-plugin-plenary-nvim
+    neovim-plugin-schemastore-nvim
     neovim-plugin-sqlite-lua
     neovim-plugin-telescope-nvim
     neovim-plugin-tokyonight-nvim
@@ -80,6 +81,9 @@
     # python
     ruff
     black
+
+    # yaml
+    nodePackages_latest.yaml-language-server
   ];
   # Additional python 3 packages
   extraPython3Packages = p: [];

@@ -101,6 +101,7 @@ in {
       neovim-plugin-one-small-step-for-vimkind = w pkgs.callPackage ./plugins/one-small-step-for-vimkind {};
       neovim-plugin-overseer-nvim = w pkgs.callPackage ./plugins/overseer-nvim {};
       neovim-plugin-plenary-nvim = w pkgs.callPackage ./plugins/plenary-nvim {};
+      neovim-plugin-schemastore-nvim = w pkgs.callPackage ./plugins/schemastore-nvim {};
       neovim-plugin-sqlite-lua = w pkgs.callPackage ./plugins/sqlite-lua {};
       neovim-plugin-telescope-nvim = w pkgs.callPackage ./plugins/telescope-nvim {};
       neovim-plugin-tokyonight-nvim = w pkgs.callPackage ./plugins/tokyonight-nvim {};

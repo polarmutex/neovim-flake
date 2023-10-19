@@ -1,0 +1,3 @@
+[schemastore-nvim]
+src.git = "https://github.com/b0o/SchemaStore.nvim"
+fetch.github = "b0o/SchemaStore.nvim"
