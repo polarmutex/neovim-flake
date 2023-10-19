@@ -24,11 +24,6 @@ null_ls.setup({
         null_ls.builtins.diagnostics.statix,
         null_ls.builtins.formatting.alejandra,
 
-        -- python
-        null_ls.builtins.diagnostics.ruff,
-        null_ls.builtins.formatting.black,
-        --nls.builtins.diagnostics.mypy,
-
         -- yaml
         --nls.builtins.diagnostics.yamllint.with({
         --    command = "@yaml.yamllint@/bin/yamllint",
