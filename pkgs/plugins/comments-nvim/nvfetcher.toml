@@ -1,0 +1,3 @@
+[comments-nvim]
+src.git = "https://github.com/numToStr/Comment.nvim"
+fetch.github = "numToStr/Comment.nvim"

@@ -68,6 +68,7 @@ in {
       neovim-plugin-cmp-emoji = w pkgs.callPackage ./plugins/cmp-emoji {};
       neovim-plugin-cmp-nvim-lsp = w pkgs.callPackage ./plugins/cmp-nvim-lsp {};
       neovim-plugin-cmp-path = w pkgs.callPackage ./plugins/cmp-path {};
+      neovim-plugin-comments-nvim = w pkgs.callPackage ./plugins/comments-nvim {};
       neovim-plugin-crates-nvim = w pkgs.callPackage ./plugins/crates-nvim {};
       neovim-plugin-diffview-nvim = w pkgs.callPackage ./plugins/diffview-nvim {};
       neovim-plugin-dressing-nvim = w pkgs.callPackage ./plugins/dressing-nvim {};

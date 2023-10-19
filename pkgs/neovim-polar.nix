@@ -15,6 +15,7 @@
     neovim-plugin-cmp-emoji
     neovim-plugin-cmp-nvim-lsp
     neovim-plugin-cmp-path
+    neovim-plugin-comments-nvim
     neovim-plugin-crates-nvim
     neovim-plugin-diffview-nvim
     neovim-plugin-dressing-nvim
