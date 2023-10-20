@@ -13,10 +13,10 @@
             "name": null,
             "owner": "folke",
             "repo": "edgy.nvim",
-            "rev": "v1.8.1",
-            "sha256": "sha256-qjpNNcWUx9nVv4P6iaSRZsG7GxheEkjk3OJHjscVlX0=",
+            "rev": "v1.8.2",
+            "sha256": "sha256-4lE+Uo1uxrqxEzx4lDyH35FNQbE95htSV2IDuJJkgLs=",
             "type": "github"
         },
-        "version": "v1.8.1"
+        "version": "v1.8.2"
     }
 }
