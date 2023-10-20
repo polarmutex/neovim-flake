@@ -13,10 +13,10 @@
             "name": null,
             "owner": "folke",
             "repo": "which-key.nvim",
-            "rev": "v1.5.1",
-            "sha256": "sha256-UAtr/XH08bh10QH/r0UuoTB39dgKGQV7NtTuKpZsPqk=",
+            "rev": "v1.6.0",
+            "sha256": "sha256-EVGIe8wUoKdND40vuyqT6+EOY6aUFBpY8PXivvL3ZZM=",
             "type": "github"
         },
-        "version": "v1.5.1"
+        "version": "v1.6.0"
     }
 }
