@@ -3,13 +3,13 @@
 {
   tokyonight-nvim = {
     pname = "tokyonight-nvim";
-    version = "v2.7.0";
+    version = "v2.9.0";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "tokyonight.nvim";
-      rev = "v2.7.0";
+      rev = "v2.9.0";
       fetchSubmodules = false;
-      sha256 = "sha256-zAypYXIPdH8y9XzENhtTO1wHWkV4tV9ihb6LfrxlhdQ=";
+      sha256 = "sha256-NOKzXsY+DLNrykyy2Fr1eiSpYDiBIBNHL/7PPvbgbSo=";
     };
   };
 }
