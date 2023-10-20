@@ -41,6 +41,7 @@
     neovim-plugin-nvim-dap-ui
     neovim-plugin-nvim-dap-virtual-text
     neovim-plugin-nvim-jdtls
+    neovim-plugin-nvim-lint
     neovim-plugin-nvim-lspconfig
     neovim-plugin-nvim-navic
     neovim-plugin-nvim-treesitter

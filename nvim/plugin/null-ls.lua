@@ -12,16 +12,16 @@ null_ls.setup({
         --}),
 
         -- lua
-        null_ls.builtins.diagnostics.luacheck,
-        null_ls.builtins.formatting.stylua,
+        --null_ls.builtins.diagnostics.luacheck,
+        --null_ls.builtins.formatting.stylua,
 
         -- markdown
-        null_ls.builtins.diagnostics.markdownlint,
+        --null_ls.builtins.diagnostics.markdownlint,
         null_ls.builtins.formatting.mdformat,
 
         -- nix
-        null_ls.builtins.diagnostics.deadnix,
-        null_ls.builtins.diagnostics.statix,
+        --null_ls.builtins.diagnostics.deadnix,
+        --null_ls.builtins.diagnostics.statix,
         null_ls.builtins.formatting.alejandra,
 
         -- yaml

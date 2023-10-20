@@ -94,6 +94,7 @@ in {
       neovim-plugin-nvim-dap-ui = w pkgs.callPackage ./plugins/nvim-dap-ui {};
       neovim-plugin-nvim-dap-virtual-text = w pkgs.callPackage ./plugins/nvim-dap-virtual-text {};
       neovim-plugin-nvim-jdtls = w pkgs.callPackage ./plugins/nvim-jdtls {};
+      neovim-plugin-nvim-lint = w pkgs.callPackage ./plugins/nvim-lint {};
       neovim-plugin-nvim-lspconfig = w pkgs.callPackage ./plugins/nvim-lspconfig {};
       neovim-plugin-nvim-navic = w pkgs.callPackage ./plugins/nvim-navic {};
       neovim-plugin-nvim-treesitter = w pkgs.callPackage ./plugins/nvim-treesitter {inherit (inputs) nixpkgs;};
