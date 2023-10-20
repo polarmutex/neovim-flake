@@ -3,13 +3,13 @@
 {
   which-key-nvim = {
     pname = "which-key-nvim";
-    version = "v1.5.1";
+    version = "v1.6.0";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "which-key.nvim";
-      rev = "v1.5.1";
+      rev = "v1.6.0";
       fetchSubmodules = false;
-      sha256 = "sha256-UAtr/XH08bh10QH/r0UuoTB39dgKGQV7NtTuKpZsPqk=";
+      sha256 = "sha256-EVGIe8wUoKdND40vuyqT6+EOY6aUFBpY8PXivvL3ZZM=";
     };
   };
 }
