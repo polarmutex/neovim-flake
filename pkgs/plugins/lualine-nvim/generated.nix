@@ -3,14 +3,14 @@
 {
   lualine-nvim = {
     pname = "lualine-nvim";
-    version = "45e27ca739c7be6c49e5496d14fcf45a303c3a63";
+    version = "2248ef254d0a1488a72041cfb45ca9caada6d994";
     src = fetchFromGitHub {
       owner = "nvim-lualine";
       repo = "lualine.nvim";
-      rev = "45e27ca739c7be6c49e5496d14fcf45a303c3a63";
+      rev = "2248ef254d0a1488a72041cfb45ca9caada6d994";
       fetchSubmodules = false;
-      sha256 = "sha256-v8finXk+sLNaFMA7pSHhEu0WF5mhPYWHEKhl0IKBv8c=";
+      sha256 = "sha256-jV+6mV0dyuhiHGei1UqE2r2GoiKJLtdZI2AMNexbi7E=";
     };
-    date = "2023-08-03";
+    date = "2023-10-20";
   };
 }
