@@ -1,7 +1,7 @@
 {
     "neodev-nvim": {
         "cargoLocks": null,
-        "date": "2023-10-18",
+        "date": "2023-10-26",
         "extract": null,
         "name": "neodev-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "folke",
             "repo": "neodev.nvim",
-            "rev": "b094a663ccb71733543d8254b988e6bebdbdaca4",
-            "sha256": "sha256-CLEzl03DNIQlLvrf+shTJH0R5mhU9nnTJMMdMpPy6Og=",
+            "rev": "7b46fd0f81c9c9ef5d5898879e86ae271152c79f",
+            "sha256": "sha256-mbdKwnk4i1q+J9/gPAHrqDagNrPMMlPH0+kKDfPYeZc=",
             "type": "github"
         },
-        "version": "b094a663ccb71733543d8254b988e6bebdbdaca4"
+        "version": "7b46fd0f81c9c9ef5d5898879e86ae271152c79f"
     }
 }
