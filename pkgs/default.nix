@@ -55,7 +55,10 @@ in {
     packages = {
       default = config.packages.neovim-git;
       # from https://github.com/nix-community/neovim-nightly-overlay
-      neovim-git = inputs'.neovim-flake.packages.neovim;
+      neovim-git = inputs'.neovim-flake.packages.neovim.override {
+        # TODO remove on the next staging -> master update
+        inherit ((builtins.getFlake "github:NixOS/nixpkgs/d4758c3f27804693ebb6ddce2e9f6624b3371b08").legacyPackages.${system}) libvterm-neovim;
+      };
 
       polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {inherit (config) packages;};
       neovim-polar = pkgs.callPackage ./neovim-polar.nix {
