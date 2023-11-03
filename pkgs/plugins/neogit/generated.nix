@@ -3,14 +3,14 @@
 {
   neogit = {
     pname = "neogit";
-    version = "01dc0a7e237a4d6d053cea2503f5dd1a81c1e310";
+    version = "5a2d4688a80d67dc224375c78e62ffd7dc1e79e6";
     src = fetchFromGitHub {
       owner = "NeogitOrg";
       repo = "neogit";
-      rev = "01dc0a7e237a4d6d053cea2503f5dd1a81c1e310";
+      rev = "5a2d4688a80d67dc224375c78e62ffd7dc1e79e6";
       fetchSubmodules = false;
-      sha256 = "sha256-paXJlXcrDSfq743tEwdFThUnY0OQI45ubftY2iIWpyw=";
+      sha256 = "sha256-SxgXD0b0obNRpOX/R8+zIUS2kG//ryLMdGTrf1apwFU=";
     };
-    date = "2023-10-24";
+    date = "2023-10-31";
   };
 }
