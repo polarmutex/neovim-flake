@@ -88,11 +88,20 @@
     # python
     (python311.withPackages (ps:
       with ps; [
+        black
         python-lsp-server
         python-lsp-black
-        python-lsp-ruff
+        (python-lsp-ruff.overridePythonAttrs (old: rec {
+          version = "1.6.0";
+          src = pkgs.fetchPypi {
+            inherit (old) pname;
+            inherit version;
+            sha256 = "sha256-vf3ZNZyen1W29qk4ST1sus5VTcys9F3067NlUr406bg=";
+          };
+        }))
         pydocstyle
       ]))
+    ruff
 
     # rust
     rust-analyzer
