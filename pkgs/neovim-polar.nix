@@ -22,7 +22,6 @@
     neovim-plugin-edgy-nvim
     neovim-plugin-flash-nvim
     neovim-plugin-friendly-snippets
-    dev
     neovim-plugin-git-worktree-nvim
     neovim-plugin-gitsigns-nvim
     neovim-plugin-harpoon
