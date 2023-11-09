@@ -22,7 +22,7 @@
     neovim-plugin-edgy-nvim
     neovim-plugin-flash-nvim
     neovim-plugin-friendly-snippets
-    neovim-plugin-git-worktree-nvim
+    #dev neovim-plugin-git-worktree-nvim
     neovim-plugin-gitsigns-nvim
     neovim-plugin-harpoon
     neovim-plugin-lualine-nvim
@@ -61,7 +61,12 @@
     neovim-plugin-yanky-nvim
   ];
   # List of dev plugins (will be bootstrapped)
-  devPlugins = [];
+  devPlugins = [
+    {
+      name = "git-worktree.nvim";
+      path = "~/repos/personal/git-worktree-nvim/v2";
+    }
+  ];
 
   # Extra runtime dependencies (e.g. ripgrep, ...
   externalPackages = with pkgs; [
@@ -145,7 +150,8 @@
         dev_plugin_path = dev_plugins_dir .. '/${plugin.name}'
         if vim.fn.empty(vim.fn.glob(dev_plugin_path)) > 0 then
           vim.notify('Bootstrapping dev plugin ${plugin.name} ...', vim.log.levels.INFO)
-          vim.cmd('!${pkgs.git}/bin/git clone ${plugin.url} ' .. dev_plugin_path)
+          vim.notify('path: ' .. dev_plugin_path, vim.log.levels.INFO)
+          vim.cmd('!ln -s  ${plugin.path} ' .. dev_plugin_path)
         end
         vim.cmd('packadd! ${plugin.name}')
       '')
