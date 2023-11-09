@@ -22,7 +22,8 @@
     neovim-plugin-edgy-nvim
     neovim-plugin-flash-nvim
     neovim-plugin-friendly-snippets
-    #dev neovim-plugin-git-worktree-nvim
+    dev
+    neovim-plugin-git-worktree-nvim
     neovim-plugin-gitsigns-nvim
     neovim-plugin-harpoon
     neovim-plugin-lualine-nvim
@@ -62,10 +63,10 @@
   ];
   # List of dev plugins (will be bootstrapped)
   devPlugins = [
-    {
-      name = "git-worktree.nvim";
-      path = "~/repos/personal/git-worktree-nvim/v2";
-    }
+    # {
+    #   name = "git-worktree.nvim";
+    #   path = "~/repos/personal/git-worktree-nvim/v2";
+    # }
   ];
 
   # Extra runtime dependencies (e.g. ripgrep, ...
