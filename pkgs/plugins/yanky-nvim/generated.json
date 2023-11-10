@@ -13,10 +13,10 @@
             "name": null,
             "owner": "gbprod",
             "repo": "yanky.nvim",
-            "rev": "v1.0.2",
-            "sha256": "sha256-HB/MXPzfUH5tTLHSQIQRo0dafBeTs2SPczPbvHWBfFc=",
+            "rev": "v2.0.0",
+            "sha256": "sha256-wpsTA9G/WK/mnm5gZHCXcmWgAGLSqeHLbDhITc2MdB0=",
             "type": "github"
         },
-        "version": "v1.0.2"
+        "version": "v2.0.0"
     }
 }
