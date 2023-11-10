@@ -1,7 +1,7 @@
 {
     "one-small-step-for-vimkind": {
         "cargoLocks": null,
-        "date": "2023-09-09",
+        "date": "2023-11-09",
         "extract": null,
         "name": "one-small-step-for-vimkind",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "jbyuki",
             "repo": "one-small-step-for-vimkind",
-            "rev": "edbb34ee779049f2071dc7becff0bbf51c865906",
-            "sha256": "sha256-Esy9VjG9J86vDJjjLtlLChTc2710ynwcDxgnMc9gizs=",
+            "rev": "94b06d81209627d0098c4c5a14714e42a792bf0b",
+            "sha256": "sha256-cMLffhfncH/3Qfb0RsMLumZOrDTmARUV2W+1xyDPzQE=",
             "type": "github"
         },
-        "version": "edbb34ee779049f2071dc7becff0bbf51c865906"
+        "version": "94b06d81209627d0098c4c5a14714e42a792bf0b"
     }
 }
