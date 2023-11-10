@@ -1,7 +1,7 @@
 {
     "nvim-cmp": {
         "cargoLocks": null,
-        "date": "2023-10-25",
+        "date": "2023-11-06",
         "extract": null,
         "name": "nvim-cmp",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "hrsh7th",
             "repo": "nvim-cmp",
-            "rev": "51260c02a8ffded8e16162dcf41a23ec90cfba62",
-            "sha256": "sha256-f+ZpSOhBNHW5SgPFQ1ciJnv5Ntm5tX3CErlvMvREtkA=",
+            "rev": "0b751f6beef40fd47375eaf53d3057e0bfa317e4",
+            "sha256": "sha256-auUHEjUDOaDkMI9loN6T+/whDDNzPl04bf+nqqLQ5+I=",
             "type": "github"
         },
-        "version": "51260c02a8ffded8e16162dcf41a23ec90cfba62"
+        "version": "0b751f6beef40fd47375eaf53d3057e0bfa317e4"
     }
 }
