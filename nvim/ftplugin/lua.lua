@@ -52,6 +52,9 @@ vim.lsp.start({
             hint = { -- inlay hints (supported in Neovim >= 0.10)
                 enable = true,
             },
+            format = {
+                enable = false,
+            },
         },
     },
 })
