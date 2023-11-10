@@ -43,5 +43,6 @@ local opts = {
         --        ft = "neotest-summary";
         --      }
     },
+    exit_when_last = true,
 }
 require("edgy").setup(opts)
