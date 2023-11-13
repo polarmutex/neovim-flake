@@ -101,6 +101,7 @@
           };
         }))
         pydocstyle
+        debugpy
       ]))
     ruff
 

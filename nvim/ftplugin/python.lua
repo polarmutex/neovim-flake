@@ -30,3 +30,5 @@ vim.lsp.start(config, {
         return client.name == conf.name and client.config.root_dir == conf.root_dir
     end,
 })
+
+require("dap-python").setup()
