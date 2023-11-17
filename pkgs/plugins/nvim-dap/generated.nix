@@ -3,13 +3,13 @@
 {
   nvim-dap = {
     pname = "nvim-dap";
-    version = "0.6.0";
+    version = "0.7.0";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap";
-      rev = "0.6.0";
+      rev = "0.7.0";
       fetchSubmodules = false;
-      sha256 = "sha256-7pPMW09KFZzLoDoV6NxAyQccwLSFL5GT6Hnlf3xjm0A=";
+      sha256 = "sha256-ICnaELHfRhJ3hFTv55Vxpy2C7+tTreX/v3xUCQErlt8=";
     };
   };
 }
