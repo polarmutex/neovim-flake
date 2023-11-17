@@ -3,14 +3,14 @@
 {
   nvim-dap-python = {
     pname = "nvim-dap-python";
-    version = "37b4cba02e337a95cb62ad1609b3d1dccb2e5d42";
+    version = "e0be843877e7ae756ef1ee7a441ca0b9e1677da9";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-dap-python";
-      rev = "37b4cba02e337a95cb62ad1609b3d1dccb2e5d42";
+      rev = "e0be843877e7ae756ef1ee7a441ca0b9e1677da9";
       fetchSubmodules = false;
-      sha256 = "sha256-wT1OLg4gpKaeqcrSgef/aKmB3+IFPB5fF0OOUtVuyqA=";
+      sha256 = "sha256-dNkSpHyiQERy7bLNa0sJgah/oWr9tHxANsnZ7FUXK3Y=";
     };
-    date = "2023-05-23";
+    date = "2023-11-15";
   };
 }
