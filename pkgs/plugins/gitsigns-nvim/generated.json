@@ -1,7 +1,7 @@
 {
     "gitsigns-nvim": {
         "cargoLocks": null,
-        "date": "2023-10-26",
+        "date": "2023-11-16",
         "extract": null,
         "name": "gitsigns-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "lewis6991",
             "repo": "gitsigns.nvim",
-            "rev": "af0f583cd35286dd6f0e3ed52622728703237e50",
-            "sha256": "sha256-BslnNUYAv73YVDMGsgaMuiElGYGKa2nAcDo7huoHGRM=",
+            "rev": "37d26d718f8120a8c5c107c580c8c98cf89fdf1f",
+            "sha256": "sha256-Fze+hyyqryx5mKZrAmBM6bhagu15HOqOvFwHfcHshAs=",
             "type": "github"
         },
-        "version": "af0f583cd35286dd6f0e3ed52622728703237e50"
+        "version": "37d26d718f8120a8c5c107c580c8c98cf89fdf1f"
     }
 }
