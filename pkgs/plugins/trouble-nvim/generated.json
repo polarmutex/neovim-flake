@@ -9,12 +9,12 @@
         "src": {
             "deepClone": false,
             "fetchSubmodules": false,
-            "leaveDotGit": true,
+            "leaveDotGit": false,
             "name": null,
             "owner": "folke",
             "repo": "trouble.nvim",
             "rev": "v2.10.0",
-            "sha256": "sha256-Kg+W3q7alKbTc4hlJ76Fy5/oMWQnVYBsOcHaPzNoTvE=",
+            "sha256": "sha256-8nLghiueYOtWY7OGVxow9A2G/5lgt+Kt5D8q1xeJvVg=",
             "type": "github"
         },
         "version": "v2.10.0"

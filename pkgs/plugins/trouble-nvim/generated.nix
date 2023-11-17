@@ -9,9 +9,7 @@
       repo = "trouble.nvim";
       rev = "v2.10.0";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = true;
-      sha256 = "sha256-Kg+W3q7alKbTc4hlJ76Fy5/oMWQnVYBsOcHaPzNoTvE=";
+      sha256 = "sha256-8nLghiueYOtWY7OGVxow9A2G/5lgt+Kt5D8q1xeJvVg=";
     };
   };
 }
