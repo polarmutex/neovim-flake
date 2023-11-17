@@ -3,14 +3,14 @@
 {
   schemastore-nvim = {
     pname = "schemastore-nvim";
-    version = "f934fbbf417cf05da7f1576c67655ab25f7b702d";
+    version = "357fe900baae09e1a3fcef913e49733d05d1f888";
     src = fetchFromGitHub {
       owner = "b0o";
       repo = "SchemaStore.nvim";
-      rev = "f934fbbf417cf05da7f1576c67655ab25f7b702d";
+      rev = "357fe900baae09e1a3fcef913e49733d05d1f888";
       fetchSubmodules = false;
-      sha256 = "sha256-8L1zmK7ICKBh9CflZdhxVtQ1vcCF1NDKhLp4jVOKbhE=";
+      sha256 = "sha256-FAYGuEQjFcGKjvFN9XWZXTCU+dhqYPZR+EWgpdNCYLY=";
     };
-    date = "2023-11-08";
+    date = "2023-11-14";
   };
 }
