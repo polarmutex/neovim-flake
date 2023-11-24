@@ -3,14 +3,14 @@
 {
   gitsigns-nvim = {
     pname = "gitsigns-nvim";
-    version = "37d26d718f8120a8c5c107c580c8c98cf89fdf1f";
+    version = "5fc573f2d2a49aec74dd6dc977e8b137429d1897";
     src = fetchFromGitHub {
       owner = "lewis6991";
       repo = "gitsigns.nvim";
-      rev = "37d26d718f8120a8c5c107c580c8c98cf89fdf1f";
+      rev = "5fc573f2d2a49aec74dd6dc977e8b137429d1897";
       fetchSubmodules = false;
-      sha256 = "sha256-Fze+hyyqryx5mKZrAmBM6bhagu15HOqOvFwHfcHshAs=";
+      sha256 = "sha256-IOxUO5ye2J1yGt72bfRAkRSC9EIttM9waC0Snnj3XEY=";
     };
-    date = "2023-11-16";
+    date = "2023-11-23";
   };
 }
