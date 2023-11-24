@@ -3,13 +3,13 @@
 {
   mini-indentscope = {
     pname = "mini-indentscope";
-    version = "v0.10.0";
+    version = "v0.11.0";
     src = fetchFromGitHub {
       owner = "echasnovski";
       repo = "mini.indentscope";
-      rev = "v0.10.0";
+      rev = "v0.11.0";
       fetchSubmodules = false;
-      sha256 = "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA=";
+      sha256 = "sha256-TAHFx0QTL/rTKG+Y6+4zJVUWv5Dau/WAN4t8Wgsn10U=";
     };
   };
 }
