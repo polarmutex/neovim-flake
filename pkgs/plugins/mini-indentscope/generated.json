@@ -13,10 +13,10 @@
             "name": null,
             "owner": "echasnovski",
             "repo": "mini.indentscope",
-            "rev": "v0.10.0",
-            "sha256": "sha256-lqy5GMi0J90X7TDrp4ao5Mp6FmBascfJhLjLurq1TMA=",
+            "rev": "v0.11.0",
+            "sha256": "sha256-TAHFx0QTL/rTKG+Y6+4zJVUWv5Dau/WAN4t8Wgsn10U=",
             "type": "github"
         },
-        "version": "v0.10.0"
+        "version": "v0.11.0"
     }
 }
