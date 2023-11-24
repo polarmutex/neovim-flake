@@ -3,14 +3,14 @@
 {
   diffview-nvim = {
     pname = "diffview-nvim";
-    version = "d38c1b5266850f77f75e006bcc26213684e1e141";
+    version = "3dc498c9777fe79156f3d32dddd483b8b3dbd95f";
     src = fetchFromGitHub {
       owner = "sindrets";
       repo = "diffview.nvim";
-      rev = "d38c1b5266850f77f75e006bcc26213684e1e141";
+      rev = "3dc498c9777fe79156f3d32dddd483b8b3dbd95f";
       fetchSubmodules = false;
-      sha256 = "sha256-ZlEF5VZaE2LIfynaAzbcN9LP++0eAvyGzMF70Qds2K8=";
+      sha256 = "sha256-3EdnBUka9Rh5Brl6TWpN6GlD9z32mmY3Ip+wyiKob/8=";
     };
-    date = "2023-10-11";
+    date = "2023-11-20";
   };
 }
