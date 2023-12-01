@@ -1,7 +1,7 @@
 {
     "nvim-lint": {
         "cargoLocks": null,
-        "date": "2023-11-19",
+        "date": "2023-11-29",
         "extract": null,
         "name": "nvim-lint",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-lint",
-            "rev": "3a7c15331a57ba40a56f00f29173700af853fa03",
-            "sha256": "sha256-ybBgyNcYdhTm8f+AnuknBmJmIVGJkXKDN1TsdxnQCI4=",
+            "rev": "6f589cb93560581dc2a3b9693658afe865e5649e",
+            "sha256": "sha256-YT1siOydZkeDdAyDkjMgDd/d28J7CzJO5V8RYD5rOH8=",
             "type": "github"
         },
-        "version": "3a7c15331a57ba40a56f00f29173700af853fa03"
+        "version": "6f589cb93560581dc2a3b9693658afe865e5649e"
     }
 }
