@@ -3,13 +3,13 @@
 {
   telescope-nvim = {
     pname = "telescope-nvim";
-    version = "0.1.4";
+    version = "0.1.5";
     src = fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope.nvim";
-      rev = "0.1.4";
+      rev = "0.1.5";
       fetchSubmodules = false;
-      sha256 = "sha256-7SqYFnfCjotOBhuX6Wx1IOhgMKoxaoI1a4SKz1d5RVM=";
+      sha256 = "sha256-H5RpyWMluE+Yxg7xFX43AZTVW+Yg70DF3FmEGXBUSNg=";
     };
   };
 }
