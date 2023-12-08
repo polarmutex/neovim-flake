@@ -3,13 +3,13 @@
 {
   dressing-nvim = {
     pname = "dressing-nvim";
-    version = "v2.0.1";
+    version = "v2.1.0";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "dressing.nvim";
-      rev = "v2.0.1";
+      rev = "v2.1.0";
       fetchSubmodules = false;
-      sha256 = "sha256-d2nID4ggbwfw8kVEcV7RGwtq04xos9sLOaVN0tA+6VY=";
+      sha256 = "sha256-yza3h2IwgWppKmHLhguWfp1bZO0m94x3+G4lF/dVQ74=";
     };
   };
 }
