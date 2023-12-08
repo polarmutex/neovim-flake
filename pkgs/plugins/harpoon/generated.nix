@@ -3,14 +3,14 @@
 {
   harpoon = {
     pname = "harpoon";
-    version = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a";
+    version = "867e212ac153e793f95b316d1731f3ca1894625e";
     src = fetchFromGitHub {
       owner = "ThePrimeagen";
       repo = "harpoon";
-      rev = "c1aebbad9e3d13f20bedb8f2ce8b3a94e39e424a";
+      rev = "867e212ac153e793f95b316d1731f3ca1894625e";
       fetchSubmodules = false;
-      sha256 = "sha256-pSnFx5fg1llNlpTCV4hoo3Pf1KWnAJDRVSe+88N4HXM=";
+      sha256 = "sha256-No26U/bpSzc4GACxNr33aAZoebcWUHx4BNWFQXvlikY=";
     };
-    date = "2023-10-10";
+    date = "2023-12-01";
   };
 }
