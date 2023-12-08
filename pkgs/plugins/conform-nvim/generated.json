@@ -13,10 +13,10 @@
             "name": null,
             "owner": "stevearc",
             "repo": "conform.nvim",
-            "rev": "v4.2.0",
-            "sha256": "sha256-odqRoDqFxYUAQZ8hsEG6y1MBqF7rbQCdKyyGlCim4Rw=",
+            "rev": "v4.3.0",
+            "sha256": "sha256-vw9uUhnsSj2Iv3NxcoyYpemrj3cGjQT7ezyn7d187Do=",
             "type": "github"
         },
-        "version": "v4.2.0"
+        "version": "v4.3.0"
     }
 }
