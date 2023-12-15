@@ -3,14 +3,14 @@
 {
   nvim-lspconfig = {
     pname = "nvim-lspconfig";
-    version = "511609ae0311abfcfaed3c398429a147e895ce2c";
+    version = "84f2dd42efffa20d505ac44c78568d778ca7e0a1";
     src = fetchFromGitHub {
       owner = "neovim";
       repo = "nvim-lspconfig";
-      rev = "511609ae0311abfcfaed3c398429a147e895ce2c";
+      rev = "84f2dd42efffa20d505ac44c78568d778ca7e0a1";
       fetchSubmodules = false;
-      sha256 = "sha256-4Ogx+58962qoph8iMyHBGEqoRARK5KQAYEaa1wsgdsw=";
+      sha256 = "sha256-Eq7mogdhCBGn/9HcVTDVwUNOGsj+ViWkjMq9SbFUzx4=";
     };
-    date = "2023-12-08";
+    date = "2023-12-14";
   };
 }
