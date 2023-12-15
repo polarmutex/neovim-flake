@@ -3,14 +3,14 @@
 {
   cmp-nvim-lsp = {
     pname = "cmp-nvim-lsp";
-    version = "44b16d11215dce86f253ce0c30949813c0a90765";
+    version = "5af77f54de1b16c34b23cba810150689a3a90312";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-nvim-lsp";
-      rev = "44b16d11215dce86f253ce0c30949813c0a90765";
+      rev = "5af77f54de1b16c34b23cba810150689a3a90312";
       fetchSubmodules = false;
-      sha256 = "sha256-mU0soCz79erJXMMqD/FyrJZ0mu2n6fE0deymPzQlxts=";
+      sha256 = "sha256-/0sh9vJBD9pUuD7q3tNSQ1YLvxFMNykdg5eG+LjZAA8=";
     };
-    date = "2023-06-23";
+    date = "2023-12-10";
   };
 }
