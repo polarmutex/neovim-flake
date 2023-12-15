@@ -3,14 +3,14 @@
 {
   cmp-dap = {
     pname = "cmp-dap";
-    version = "d16f14a210cd28988b97ca8339d504533b7e09a4";
+    version = "ea92773e84c0ad3288c3bc5e452ac91559669087";
     src = fetchFromGitHub {
       owner = "rcarriga";
       repo = "cmp-dap";
-      rev = "d16f14a210cd28988b97ca8339d504533b7e09a4";
+      rev = "ea92773e84c0ad3288c3bc5e452ac91559669087";
       fetchSubmodules = false;
-      sha256 = "sha256-w+gGaZxXjb2B0dMXhfduEQKtO5CmQnuUdh4otpcsFuc=";
+      sha256 = "sha256-wi9L4RcnJWUzTkC4u8vSTacrMxg4ftm/K7pkuwLEQ3U=";
     };
-    date = "2022-11-13";
+    date = "2023-12-10";
   };
 }
