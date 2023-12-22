@@ -1,7 +1,7 @@
 {
     "nvim-dap-python": {
         "cargoLocks": null,
-        "date": "2023-11-15",
+        "date": "2023-12-19",
         "extract": null,
         "name": "nvim-dap-python",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-dap-python",
-            "rev": "e0be843877e7ae756ef1ee7a441ca0b9e1677da9",
-            "sha256": "sha256-dNkSpHyiQERy7bLNa0sJgah/oWr9tHxANsnZ7FUXK3Y=",
+            "rev": "091e4ae00a12085f9ed4200a3cd04af7179b8a23",
+            "sha256": "sha256-V/88NHqW/rpHWC2m1dnVZWo3Va7wSPqw3FpEM1+lKgo=",
             "type": "github"
         },
-        "version": "e0be843877e7ae756ef1ee7a441ca0b9e1677da9"
+        "version": "091e4ae00a12085f9ed4200a3cd04af7179b8a23"
     }
 }
