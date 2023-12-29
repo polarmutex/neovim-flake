@@ -1,7 +1,7 @@
 {
     "neogit": {
         "cargoLocks": null,
-        "date": "2023-12-20",
+        "date": "2023-12-28",
         "extract": null,
         "name": "neogit",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "NeogitOrg",
             "repo": "neogit",
-            "rev": "bbb3c19a9f55a36f844b862c3bea21781aef8644",
-            "sha256": "sha256-Ueudq2WkhYuL1oVtw0YeMf65nQ7EmO1jRhTg8Q7E3KM=",
+            "rev": "3718664bb62e89930f0c3c836188c2a4f44fa119",
+            "sha256": "sha256-iv9hILUEtzJVo1MIc1HtRd56p5nrFmTmW/NaJrSyLSY=",
             "type": "github"
         },
-        "version": "bbb3c19a9f55a36f844b862c3bea21781aef8644"
+        "version": "3718664bb62e89930f0c3c836188c2a4f44fa119"
     }
 }
