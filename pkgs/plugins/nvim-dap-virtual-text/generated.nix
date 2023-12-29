@@ -3,14 +3,14 @@
 {
   nvim-dap-virtual-text = {
     pname = "nvim-dap-virtual-text";
-    version = "57f1dbd0458dd84a286b27768c142e1567f3ce3b";
+    version = "d4542ac257d3c7ee4131350db6179ae6340ce40b";
     src = fetchFromGitHub {
       owner = "theHamsta";
       repo = "nvim-dap-virtual-text";
-      rev = "57f1dbd0458dd84a286b27768c142e1567f3ce3b";
+      rev = "d4542ac257d3c7ee4131350db6179ae6340ce40b";
       fetchSubmodules = false;
-      sha256 = "sha256-yzMRudA8Wag881ewzw82uXPzHoxaB6kAapPElKN6G6E=";
+      sha256 = "sha256-IJMdDcrfsNfxd4rvLVCD1L2FL7Tzm6dV8c0mtEo98vU=";
     };
-    date = "2023-05-25";
+    date = "2023-12-28";
   };
 }
