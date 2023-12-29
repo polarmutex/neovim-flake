@@ -3,13 +3,13 @@
 {
   overseer-nvim = {
     pname = "overseer-nvim";
-    version = "v1.3.0";
+    version = "v1.3.1";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "overseer.nvim";
-      rev = "v1.3.0";
+      rev = "v1.3.1";
       fetchSubmodules = false;
-      sha256 = "sha256-CIMzdwGUZ5+/NFm+NoF2BypHVYG++KVrBXqxmETKXQ4=";
+      sha256 = "sha256-O2t/FcwO619So63yKxwNv6CHxdE+aW4vZUjLN8rssYo=";
     };
   };
 }
