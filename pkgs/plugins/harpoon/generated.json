@@ -1,7 +1,7 @@
 {
     "harpoon": {
         "cargoLocks": null,
-        "date": "2023-12-01",
+        "date": "2023-12-26",
         "extract": null,
         "name": "harpoon",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "ThePrimeagen",
             "repo": "harpoon",
-            "rev": "867e212ac153e793f95b316d1731f3ca1894625e",
-            "sha256": "sha256-No26U/bpSzc4GACxNr33aAZoebcWUHx4BNWFQXvlikY=",
+            "rev": "ccae1b9bec717ae284906b0bf83d720e59d12b91",
+            "sha256": "sha256-SIqssvuNnkw1YbEEElLYCHmh9OLnoHzggXNIZMb3jYI=",
             "type": "github"
         },
-        "version": "867e212ac153e793f95b316d1731f3ca1894625e"
+        "version": "ccae1b9bec717ae284906b0bf83d720e59d12b91"
     }
 }
