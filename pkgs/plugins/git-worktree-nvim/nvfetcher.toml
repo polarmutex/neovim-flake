@@ -1,3 +1,4 @@
 [git-worktree-nvim]
 src.git = "https://github.com/polarmutex/git-worktree.nvim"
+src.branch = "v2"
 fetch.github = "polarmutex/git-worktree.nvim"

@@ -3,14 +3,14 @@
 {
   git-worktree-nvim = {
     pname = "git-worktree-nvim";
-    version = "b6f06312850ec2657921484c1c7c34ff0468f4f2";
+    version = "ee1030d6b987f381c05f7228565a63e124e93ad3";
     src = fetchFromGitHub {
       owner = "polarmutex";
       repo = "git-worktree.nvim";
-      rev = "b6f06312850ec2657921484c1c7c34ff0468f4f2";
+      rev = "ee1030d6b987f381c05f7228565a63e124e93ad3";
       fetchSubmodules = false;
-      sha256 = "sha256-BtSfwp6B1QgivZ918xng/yMNJ3RZGt+4ZhfAYpCgIqg=";
+      sha256 = "sha256-2XgPF8uzLgyDUGBiqZJZN/jWV369jqfkPGEHnyeG6KI=";
     };
-    date = "2023-11-17";
+    date = "2024-01-04";
   };
 }
