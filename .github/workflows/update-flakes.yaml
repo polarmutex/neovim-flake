@@ -15,7 +15,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Install nix
-      uses: cachix/install-nix-action@v24
+      uses: cachix/install-nix-action@v25
       with:
         extra_nix_config: |
           auto-optimise-store = true
@@ -43,7 +43,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Install nix
-      uses: cachix/install-nix-action@v24
+      uses: cachix/install-nix-action@v25
       with:
         extra_nix_config: |
           auto-optimise-store = true
@@ -78,7 +78,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
     - name: Install nix
-      uses: cachix/install-nix-action@v24
+      uses: cachix/install-nix-action@v25
       with:
         extra_nix_config: |
           auto-optimise-store = true
