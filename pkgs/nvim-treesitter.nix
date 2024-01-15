@@ -147,38 +147,6 @@
     lib.concatMapStringsSep "\n" f
     (lib.mapAttrsToList (k: v: {name = k;} // v) attrs);
 
-  update-grammars = pkgs.writeShellApplication {
-    name = "update-grammars.sh";
-    runtimeInputs = [pkgs.npins];
-    text = ''
-       rm -rf tree-sitter-grammars/*
-      ${pkgs.npins}/bin/npins -d tree-sitter-grammars init --bare
-       ${
-        foreachSh allGrammars ({
-          name,
-          owner,
-          repo,
-          branch,
-          rev,
-          ...
-        }: ''
-          echo "Updating treesitter parser for ${name}"
-          ${pkgs.npins}/bin/npins \
-            -d tree-sitter-grammars \
-            add \
-            --name tree-sitter-${name}\
-            github \
-            "${owner}" \
-            "${repo}" \
-            -b "${branch}" \
-            --at "${rev}"
-        '')
-      }
-      # update beancount to latest in repo for testing
-      ${pkgs.npins}/bin/npins -d tree-sitter-grammars update tree-sitter-beancount
-    '';
-  };
-
   buildGrammar = pkgs.callPackage "${nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" {};
 
   # Build grammars that were fetched using nvfetcher

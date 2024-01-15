@@ -49,7 +49,7 @@
           };
           update-treesitter-parsers = {
             type = "app";
-            program = pkgs.nvim-treesitter-master.update-grammars;
+            program = pkgs.update-tree-sitter-grammars;
           };
         };
 
@@ -59,6 +59,7 @@
               inherit (pkgs) fd;
               inherit (pkgs) jq;
               inherit (pkgs) lemmy-help;
+              inherit (pkgs) npins;
               inherit (pkgs) nvfetcher;
             };
             inherit (self.checks.${system}.pre-commit-check) shellHook;
