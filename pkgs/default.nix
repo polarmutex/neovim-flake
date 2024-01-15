@@ -41,7 +41,14 @@ in {
           mdformat-with-plugins =
             pkgs.python311Packages.mdformat.withPlugins
             (with pkgs.python311Packages; [
-              mdformat-gfm
+              (mdformat-gfm.overridePythonAttrs (prev: {
+                src = pkgs.fetchFromGitHub {
+                  owner = "hukkin";
+                  repo = prev.pname;
+                  rev = "master";
+                  hash = "sha256-dQsYL2I3bWmdgoxIHhW6e+Sz8kfjD1bR5XZmpmUYCV8=";
+                };
+              }))
               mdformat-frontmatter
               mdformat-toc
             ]);
