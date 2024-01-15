@@ -1,7 +1,7 @@
 {
     "schemastore-nvim": {
         "cargoLocks": null,
-        "date": "2024-01-04",
+        "date": "2024-01-14",
         "extract": null,
         "name": "schemastore-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "b0o",
             "repo": "SchemaStore.nvim",
-            "rev": "bdf477a9d30e26881c971bf4b061f0f7b18ce67e",
-            "sha256": "sha256-aHkVPSzbsXkjZv72vT0Bf7Hkx6IcwkfwwYZvIuLc2G0=",
+            "rev": "3872be10ce1db13d87b4dee1e260ac4936a38d8e",
+            "sha256": "sha256-aDTg9h5kjud1FEkWF9l/thjwHe5Vv9Io6RKnRC6mGtM=",
             "type": "github"
         },
-        "version": "bdf477a9d30e26881c971bf4b061f0f7b18ce67e"
+        "version": "3872be10ce1db13d87b4dee1e260ac4936a38d8e"
     }
 }
