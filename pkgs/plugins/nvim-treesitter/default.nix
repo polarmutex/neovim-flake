@@ -47,6 +47,10 @@ in
     inherit (sources.nvim-treesitter) pname src;
     version = sources.nvim-treesitter.date;
 
+    patches = [
+      ./disable_ensure_installed.patch
+    ];
+
     postInstall = lib.concatStringsSep "\n" (map
       (drv: ''
         ls ${drv}

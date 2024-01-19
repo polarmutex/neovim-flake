@@ -162,10 +162,9 @@ in {
           owner = "tree-sitter";
           location = "typescript";
         };
-        # vim = {
-        #   owner = "vigoux";
-        #   repo = "tree-sitter-viml";
-        # };
+        vim = {
+          owner = "neovim";
+        };
         vimdoc = {
           owner = "neovim";
         };

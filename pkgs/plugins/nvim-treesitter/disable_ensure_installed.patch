@@ -1,0 +1,13 @@
+diff --git a/lua/nvim-treesitter/configs.lua b/lua/nvim-treesitter/configs.lua
+index 6be0c014..9912eaf9 100644
+--- a/lua/nvim-treesitter/configs.lua
++++ b/lua/nvim-treesitter/configs.lua
+@@ -20,7 +20,7 @@ local M = {}
+ local config = {
+   modules = {},
+   sync_install = false,
+-  ensure_installed = { "lua", "query", "vimdoc", "vim", "c", "python", "bash", "markdown", "markdown_inline" },
++  ensure_installed = {},
+   auto_install = false,
+   ignore_install = {},
+   parser_install_dir = nil,
