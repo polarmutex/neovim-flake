@@ -3,13 +3,13 @@
 {
   nvim-dap-ui = {
     pname = "nvim-dap-ui";
-    version = "v3.9.1";
+    version = "v3.9.2";
     src = fetchFromGitHub {
       owner = "rcarriga";
       repo = "nvim-dap-ui";
-      rev = "v3.9.1";
+      rev = "v3.9.2";
       fetchSubmodules = false;
-      sha256 = "sha256-IdWPzLpNH0fkubELr2uTI7UnB0Yaf/zCkF8WUWBtyaM=";
+      sha256 = "sha256-gzR0DF5g4dqbCA/qe4alQIqwA7sxxphqSbBnccRcSHU=";
     };
   };
 }
