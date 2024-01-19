@@ -49,6 +49,7 @@ in {
                   hash = "sha256-dQsYL2I3bWmdgoxIHhW6e+Sz8kfjD1bR5XZmpmUYCV8=";
                 };
               }))
+              mdit-py-plugins
               mdformat-frontmatter
               mdformat-toc
             ]);
