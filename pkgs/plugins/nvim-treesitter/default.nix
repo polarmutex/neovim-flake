@@ -53,7 +53,7 @@ in
     version = sources.nvim-treesitter.date;
 
     patches = [
-      ./disable_ensure_installed.patch
+      #./disable_ensure_installed.patch # may need in the future
     ];
 
     postInstall = lib.concatStringsSep "\n" (map
