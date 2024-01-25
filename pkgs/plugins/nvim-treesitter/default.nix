@@ -1,6 +1,5 @@
 {
   sources,
-  grammars,
   #date,
   #pname,
   #src,
@@ -28,20 +27,26 @@
     mapAttrsToList
     (n: v:
       buildGrammar {
-        #language = removePrefix "tree-sitter-" n;
-        language = n;
-        version = grammar-sources."tree-sitter-${n}".revision;
-        src = grammar-sources."tree-sitter-${n}";
-        name = "tree-sitter-${n}-grammar";
+        language = removePrefix "tree-sitter-" n;
+        # version = grammar-sources."${n}".revision;
+        version = v.revision;
+        # src = grammar-sources."${n}";
+        src = v;
+        name = "${n}-grammar";
         location =
-          if v ? "location"
-          then v.location
+          if n == "tree-sitter-markdown_inline"
+          then "tree-sitter-markdown-inline"
+          else if n == "tree-sitter-markdown"
+          then "tree-sitter-markdown"
+          else if n == "tree-sitter-typescript"
+          then "typescript"
           else null;
 
         #passthru.parserName = "${lib.strings.replaceStrings ["-"] ["_"] (lib.strings.removePrefix "tree-sitter-" n)}";
-        passthru.parserName = n;
+        # passthru.parserName = n;
+        passthru.parserName = removePrefix "tree-sitter-" n;
       })
-    grammars;
+    grammar-sources;
 in
   vimUtils.buildVimPlugin {
     inherit (sources.nvim-treesitter) pname src;

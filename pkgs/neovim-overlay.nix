@@ -1,0 +1,242 @@
+{
+  inputs,
+  polar-lua-config,
+}: final: prev:
+with final.lib; let
+  mkNeovim = {
+    appName ? null,
+    plugins ? [],
+    devPlugins ? [],
+    extraPackages ? [],
+    resolvedExtraLuaPackages ? [],
+    extraPython3Packages ? p: [],
+    withPython3 ? true,
+    withRuby ? false,
+    withNodeJs ? false,
+    viAlias ? true,
+    vimAlias ? true,
+  }: let
+    defaultPlugin = {
+      plugin = null;
+      config = null;
+      optional = false;
+      runtime = {};
+    };
+
+    externalPackages = extraPackages ++ [final.sqlite];
+
+    normalizedPlugins = map (x:
+      defaultPlugin
+      // (
+        if x ? plugin
+        then x
+        else {plugin = x;}
+      ))
+    plugins;
+
+    neovimConfig = final.neovimUtils.makeNeovimConfig {
+      inherit extraPython3Packages withPython3 withRuby withNodeJs viAlias vimAlias;
+      plugins = normalizedPlugins;
+    };
+
+    nvimConfig = final.stdenv.mkDerivation {
+      name = "nvim-config";
+      src = ../nvim;
+
+      buildPhase = ''
+        mkdir -p $out/nvim
+        rm init.lua
+      '';
+
+      installPhase = ''
+        cp -r * $out/nvim
+        rm -r $out/nvim/after
+        cp -r after $out/after
+      '';
+    };
+
+    initLua =
+      ''
+        vim.loader.enable()
+      ''
+      + ""
+      + (builtins.readFile ../nvim/init.lua)
+      + ""
+      + optionalString (devPlugins != []) (
+        ''
+          local dev_pack_path = vim.fn.stdpath('data') .. '/site/pack/dev'
+          local dev_plugins_dir = dev_pack_path .. '/opt'
+          local dev_plugin_path
+        ''
+        + strings.concatMapStringsSep
+        "\n"
+        (plugin: ''
+          dev_plugin_path = dev_plugins_dir .. '/${plugin.name}'
+          if vim.fn.empty(vim.fn.glob(dev_plugin_path)) > 0 then
+            vim.notify('Bootstrapping dev plugin ${plugin.name} ...', vim.log.levels.INFO)
+            vim.cmd('!ln -s  ${plugin.path} ' .. dev_plugin_path)
+          end
+          vim.cmd('packadd! ${plugin.name}')
+        '')
+        devPlugins
+      );
+
+    extraMakeWrapperArgs = builtins.concatStringsSep " " (
+      (optional (appName != "nvim" && appName != null && appName != "")
+        ''--set NVIM_APPNAME "${appName}"'')
+      ++ (optional (externalPackages != [])
+        ''--prefix PATH : "${makeBinPath externalPackages}"'')
+      ++ [
+        ''--set LIBSQLITE_CLIB_PATH "${final.sqlite.out}/lib/libsqlite3.so"''
+        ''--set LIBSQLITE "${final.sqlite.out}/lib/libsqlite3.so"''
+      ]
+    );
+
+    extraMakeWrapperLuaCArgs = optionalString (resolvedExtraLuaPackages != []) ''
+      --suffix LUA_CPATH ";" "${
+        lib.concatMapStringsSep ";" final.luaPackages.getLuaCPath
+        resolvedExtraLuaPackages
+      }"'';
+
+    extraMakeWrapperLuaArgs =
+      optionalString (resolvedExtraLuaPackages != [])
+      ''
+        --suffix LUA_PATH ";" "${
+          concatMapStringsSep ";" final.luaPackages.getLuaPath
+          resolvedExtraLuaPackages
+        }"'';
+  in
+    final.wrapNeovimUnstable inputs.neovim-flake.packages.${prev.system}.neovim (neovimConfig
+      // {
+        luaRcContent = initLua;
+        wrapperArgs =
+          escapeShellArgs neovimConfig.wrapperArgs
+          + " "
+          + extraMakeWrapperArgs
+          + " "
+          + extraMakeWrapperLuaCArgs
+          + " "
+          + extraMakeWrapperLuaArgs;
+        wrapRc = true;
+      });
+
+  all-plugins = with final.nvimPlugins; [
+    polar-lua-config
+    beancount-nvim
+    cmp-dap
+    cmp-emoji
+    cmp-nvim-lsp
+    cmp-path
+    comments-nvim
+    conform-nvim
+    crates-nvim
+    diffview-nvim
+    dressing-nvim
+    edgy-nvim
+    flash-nvim
+    friendly-snippets
+    gitsigns-nvim
+    harpoon
+    lualine-nvim
+    luasnip
+    kanagawa-nvim
+    mini-indentscope
+    neodev-nvim
+    neogit
+    noice-nvim
+    nui-nvim
+    null-ls-nvim
+    nvim-cmp
+    nvim-colorizer
+    nvim-dap
+    nvim-dap-python
+    nvim-dap-ui
+    nvim-dap-virtual-text
+    nvim-jdtls
+    nvim-lint
+    nvim-lspconfig
+    nvim-navic
+    nvim-treesitter
+    nvim-treesitter-playground
+    nvim-web-devicons
+    one-small-step-for-vimkind
+    overseer-nvim
+    plenary-nvim
+    schemastore-nvim
+    sqlite-lua
+    telescope-nvim
+    tokyonight-nvim
+    trouble-nvim
+    vim-be-good
+    vim-illuminate
+    which-key-nvim
+    yanky-nvim
+  ];
+
+  extraPackages = with final; [
+    # lua
+    lua-language-server
+    luajitPackages.luacheck
+    stylua
+
+    # markdown
+    markdownlint-cli
+    mdformat-with-plugins
+
+    #nix
+    nil-git
+    deadnix
+    statix
+    alejandra
+
+    # python
+    (python311.withPackages (ps:
+      with ps; [
+        black
+        python-lsp-server
+        python-lsp-black
+        (python-lsp-ruff.overridePythonAttrs (old: rec {
+          version = "1.6.0";
+          src = pkgs.fetchPypi {
+            inherit (old) pname;
+            inherit version;
+            sha256 = "sha256-vf3ZNZyen1W29qk4ST1sus5VTcys9F3067NlUr406bg=";
+          };
+        }))
+        pydocstyle
+        debugpy
+      ]))
+    ruff
+
+    # rust
+    rust-analyzer
+
+    # yaml
+    nodePackages_latest.yaml-language-server
+  ];
+
+  neovim-polar-dev = mkNeovim {
+    plugins = all-plugins;
+    devPlugins = [
+      {
+        name = "git-worktree.nvim";
+        path = "~/repos/personal/git-worktree-nvim/v2 ";
+      }
+    ];
+    inherit extraPackages;
+  };
+
+  neovim-polar = mkNeovim {
+    plugins =
+      all-plugins
+      ++ (with final.nvimPlugins; [
+        git-worktree-nvim
+      ]);
+    inherit extraPackages;
+  };
+in {
+  inherit
+    neovim-polar-dev
+    neovim-polar
+    ;
+}

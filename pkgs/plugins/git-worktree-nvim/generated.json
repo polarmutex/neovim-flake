@@ -1,7 +1,7 @@
 {
     "git-worktree-nvim": {
         "cargoLocks": null,
-        "date": "2024-01-04",
+        "date": "2024-01-22",
         "extract": null,
         "name": "git-worktree-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "polarmutex",
             "repo": "git-worktree.nvim",
-            "rev": "ee1030d6b987f381c05f7228565a63e124e93ad3",
-            "sha256": "sha256-2XgPF8uzLgyDUGBiqZJZN/jWV369jqfkPGEHnyeG6KI=",
+            "rev": "36091e6be0391c5a8a46c0f3a0ea4ad90885aed3",
+            "sha256": "sha256-OaEKvScOu4Y8c2T4h+I6noI27dEWG9uETXOhPQ6jvzI=",
             "type": "github"
         },
-        "version": "ee1030d6b987f381c05f7228565a63e124e93ad3"
+        "version": "36091e6be0391c5a8a46c0f3a0ea4ad90885aed3"
     }
 }
