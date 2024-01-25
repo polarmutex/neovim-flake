@@ -3,13 +3,13 @@
 {
   edgy-nvim = {
     pname = "edgy-nvim";
-    version = "v1.8.2";
+    version = "v1.8.3";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "edgy.nvim";
-      rev = "v1.8.2";
+      rev = "v1.8.3";
       fetchSubmodules = false;
-      sha256 = "sha256-4lE+Uo1uxrqxEzx4lDyH35FNQbE95htSV2IDuJJkgLs=";
+      sha256 = "sha256-mx7E7ov09IN1UueAEsQ5OFNs05h4hw+v4y7ot+0JuxE=";
     };
   };
 }
