@@ -13,10 +13,10 @@
             "name": null,
             "owner": "rcarriga",
             "repo": "nvim-dap-ui",
-            "rev": "v3.9.2",
-            "sha256": "sha256-gzR0DF5g4dqbCA/qe4alQIqwA7sxxphqSbBnccRcSHU=",
+            "rev": "v3.9.3",
+            "sha256": "sha256-mP48GChAxfF2gUVQLsVIUBGDcguCvH4MHIq8twD4dSk=",
             "type": "github"
         },
-        "version": "v3.9.2"
+        "version": "v3.9.3"
     }
 }
