@@ -45,6 +45,8 @@ in {
     packages = {
       default = config.packages.neovim-git;
 
+      inherit (pkgs) fd;
+      inherit (pkgs) jq;
       inherit (pkgs) nvfetcher;
 
       # from https://github.com/nix-community/neovim-nightly-overlay
@@ -76,6 +78,8 @@ in {
           cat "$TMPDIR/changelog"
 
           if [ -s "$TMPDIR/changelog" ]; then
+           git config user.name "polarmutex"
+           git config user.email "polarmutex@users.noreply.github.com"
            cat "$TMPDIR/commit-summary" "$TMPDIR/changelog" | tr '\n' ' ' > "$TMPDIR/commit-message"
            git add .
            git commit . -F "$TMPDIR/commit-message"

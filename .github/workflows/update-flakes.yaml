@@ -10,7 +10,7 @@ jobs:
     name: Generate nvfetcher update matrix
     runs-on: ubuntu-latest
     outputs:
-      paths: ${{ steps.matrix.outputs.paths }}
+      plugins: ${{ steps.matrix.outputs.plugins }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -28,17 +28,17 @@ jobs:
       run: |
         set -ex
         nix profile install .#jq .#fd
-        paths="$(fd 'nvfetcher.toml|sources.toml' | jq -ncR '[inputs]')"
-        echo "paths=$paths" >> $GITHUB_OUTPUT
+        plugins="$(fd 'nvfetcher.toml' pkgs/plugins --exec dirname {} \; | xargs basename -a | jq -ncR '[inputs]')"
+        echo "plugins=$plugins" >> $GITHUB_OUTPUT
 
   nvfetcher_update:
     runs-on: ubuntu-latest
     needs: [nvfetcher_matrix]
-    if: ${{ needs.nvfetcher_matrix.outputs.paths != '[]' && needs.nvfetcher_matrix.outputs.paths != '' }}
+    if: ${{ needs.nvfetcher_matrix.outputs.plugins != '[]' && needs.nvfetcher_matrix.outputs.plugins != '' }}
     strategy:
       fail-fast: false
       matrix:
-        path: ${{ fromJson(needs.nvfetcher_matrix.outputs.paths )}}
+        plugin: ${{ fromJson(needs.nvfetcher_matrix.outputs.plugins )}}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -53,27 +53,23 @@ jobs:
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
     - name: Update element
       run: |
-        nix run .#nvfetcher -- \
-          --build-dir $(dirname ${{ matrix.path }}) \
-          --config ${{ matrix.path }}
+        nix run .#update-nvim-plugin -- ${{ matrix.plugin }}
+    - name: Update tree-sitter parsers
+      if: ${{ matrix.plugin == 'nvim-treesitter' }}
+      run: |
+        nix run .#update-tree-sitter-grammars
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
         token: '${{ secrets.PAT }}'
-        title: 'ci: bump ${{ matrix.path }}'
-        commit-message: |
-          chore: Bump ${{ matrix.path }}
-
-
-          Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+        title: 'ci: update ${{ matrix.plugin }}'
         author: GitHub <noreply@github.com>
-        branch: update/${{ matrix.path }}
+        branch: update/${{ matrix.plugin }}
         delete-branch: true
+
   main:
     name: Update flake inputs
     runs-on: ubuntu-latest
-    outputs:
-      paths: ${{ steps.matrix.outputs.paths }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -101,31 +97,3 @@ jobs:
         author: GitHub <noreply@github.com>
         branch: update/flake
         delete-branch: true
-
-  #    - uses: tibdex/github-app-token@v2
-  #      id: generate-token
-  #      with:
-  #        app_id: ${{ secrets.APP_ID }}
-  #        private_key: ${{ secrets.APP_KEY }}
-
-  #    - name: Create a pull request to update dependencies
-  #      id: create_pr
-  #      uses: peter-evans/create-pull-request@v5
-  #      with:
-  #        commit-message: "chore(dependencies): updates"
-  #        branch: "update_flake_dependencies"
-  #        delete-branch: true
-  #        author: "polarmutex[bot] <polarmutex[bot]@users.noreply.github.com>"
-  #        signoff: false
-  #        title: "chore(dependencies): Update dependencies"
-  #        token: ${{ steps.generate-token.outputs.token }}
-  #        body: ${{ steps.pr_body.outputs.content }}
-  #        labels: dependencies,autorebase:opt-in
-
-  #    - name: Set the PR to automerge
-  #      if: ${{ steps.create_pr.outputs.pull-request-operation == 'created' }}
-  #      uses: peter-evans/enable-pull-request-automerge@v3
-  #      with:
-  #        token: ${{ secrets.GITHUB_TOKEN }}
-  #        pull-request-number: ${{ steps.create_pr.outputs.pull-request-number }}
-  #        merge-method: "rebase"
