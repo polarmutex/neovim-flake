@@ -72,9 +72,9 @@
         ''
           touch $out
           export HOME=$(mktemp -d)
-          ln -s ${self'.packages.neovim-plugin-nvim-treesitter}/CONTRIBUTING.md .
+          ln -s ${self'.packages.nvimPlugins-nvim-treesitter}/CONTRIBUTING.md .
 
-          ${self'.packages.neovim-polar}/bin/nvim --headless "+luafile ${self'.packages.neovim-plugin-nvim-treesitter}/scripts/check-queries.lua" # | tee log
+          ${self'.packages.neovim-polar}/bin/nvim --headless "+luafile ${self'.packages.nvimPlugins-nvim-treesitter}/scripts/check-queries.lua" # | tee log
 
           #if grep -q Warning log; then
           #  echo "Error: warnings were emitted by the check"
