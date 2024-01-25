@@ -3,14 +3,14 @@
 {
   friendly-snippets = {
     pname = "friendly-snippets";
-    version = "69a2c1675b66e002799f5eef803b87a12f593049";
+    version = "aced40b66b7bae9bc2c37fd7b11841d54727a7b0";
     src = fetchFromGitHub {
       owner = "rafamadriz";
       repo = "friendly-snippets";
-      rev = "69a2c1675b66e002799f5eef803b87a12f593049";
+      rev = "aced40b66b7bae9bc2c37fd7b11841d54727a7b0";
       fetchSubmodules = false;
-      sha256 = "sha256-ws6Lb5DLFv7nRu7kCFoxM1WkAZ3l3PTbh1lpr1rEKBU=";
+      sha256 = "sha256-6ZU6yvEUttq8BBHHXqBWXIdz659Uq5CmpPAqu0OHlYY=";
     };
-    date = "2024-01-07";
+    date = "2024-01-24";
   };
 }
