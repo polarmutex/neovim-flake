@@ -55,62 +55,96 @@ in {
 
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
-      # update-tree-sitter-grammars = let
-      #   sources = pkgs.callPackages ./plugins/nvim-treesitter/generated.nix {};
-      #   lockfile = pkgs.lib.importJSON "${sources.nvim-treesitter.src}/lockfile.json";
-      #
-      #   allGrammars =
-      #     builtins.mapAttrs
-      #     (name: value: rec {
-      #       inherit (value) owner;
-      #       repo =
-      #         if value ? "repo"
-      #         then value.repo
-      #         else "tree-sitter-${name}";
-      #       rev =
-      #         if value ? "rev"
-      #         then value.rev
-      #         else lockfile."${name}".revision;
-      #       branch =
-      #         if value ? "branch"
-      #         then value.branch
-      #         else "master";
-      #     })
-      #     grammars;
-      #
-      #   foreachSh = attrs: f:
-      #     pkgs.lib.concatMapStringsSep "\n" f
-      #     (pkgs.lib.mapAttrsToList (k: v: {name = k;} // v) attrs);
-      # in
-      #   pkgs.writeShellApplication {
-      #     name = "update-grammars.sh";
-      #     runtimeInputs = [pkgs.npins];
-      #     text = ''
-      #        rm -rf pkgs/plugins/nvim-treesitter/grammars/*
-      #       ${pkgs.npins}/bin/npins -d pkgs/plugins/nvim-treesitter/grammars init --bare
-      #        ${
-      #         foreachSh allGrammars ({
-      #           name,
-      #           owner,
-      #           repo,
-      #           branch,
-      #           rev,
-      #           ...
-      #         }: ''
-      #           echo "Updating treesitter parser for ${name}"
-      #           ${pkgs.npins}/bin/npins \
-      #             -d pkgs/plugins/nvim-treesitter/grammars \
-      #             add \
-      #             --name tree-sitter-${name}\
-      #             github \
-      #             "${owner}" \
-      #             "${repo}" \
-      #             -b "${branch}" \
-      #             --at "${rev}"
-      #         '')
-      #       }
-      #     '';
-      #   };
+      update-nvim-plugin = pkgs.writeShellApplication {
+        name = "update-nvim-plugin";
+        runtimeInputs = with pkgs; [
+          git
+          mktemp
+          nvfetcher
+        ];
+
+        text = ''
+          #!/bin/sh
+          set -eu
+
+          TMPDIR="$(mktemp -d -t nvfetcher-XXXXXX)"
+
+          cd "$(git rev-parse --show-toplevel)/pkgs/plugins/''${1}" || exit 1
+          nvfetcher -l "$TMPDIR/changelog" --build-dir .
+
+          echo "chore(plugin-update): " > "$TMPDIR/commit-summary"
+          cat "$TMPDIR/changelog"
+
+          if [ -s "$TMPDIR/changelog" ]; then
+           cat "$TMPDIR/commit-summary" "$TMPDIR/changelog" | tr '\n' ' ' > "$TMPDIR/commit-message"
+           git add .
+           git commit . -F "$TMPDIR/commit-message"
+          else
+           git restore .
+          fi
+          rm -r "$TMPDIR"
+        '';
+      };
+
+      update-tree-sitter-grammars = let
+        data = builtins.fromJSON (builtins.readFile ./plugins/nvim-treesitter/grammars/sources.json);
+        inherit (data) pins;
+
+        grammar-sources = pkgs.callPackages ./plugins/nvim-treesitter/generated.nix {};
+        lockfile = pkgs.lib.importJSON "${grammar-sources.nvim-treesitter.src}/lockfile.json";
+
+        allGrammars = with pkgs.lib;
+          mapAttrs (
+            name: value: {
+              inherit (value.repository) owner;
+              inherit (value.repository) repo;
+              rev = lockfile."${removePrefix "tree-sitter-" name}".revision;
+              inherit (value) branch;
+            }
+          )
+          pins;
+
+        foreachSh = attrs: f:
+          pkgs.lib.concatMapStringsSep "\n" f
+          (pkgs.lib.mapAttrsToList (k: v: {name = k;} // v) attrs);
+      in
+        pkgs.writeShellApplication {
+          name = "update-grammars.sh";
+          runtimeInputs = with pkgs; [
+            alejandra
+            git
+            npins
+          ];
+          text = ''
+            cd "$(git rev-parse --show-toplevel)/pkgs/plugins/nvim-treesitter" || exit 1
+            rm -rf ./grammars/*
+            ${pkgs.npins}/bin/npins -d ./grammars init --bare
+             ${
+              foreachSh allGrammars ({
+                name,
+                owner,
+                repo,
+                branch,
+                rev,
+                ...
+              }: ''
+                echo "Updating treesitter parser for ${name}"
+                ${pkgs.npins}/bin/npins \
+                  -d ./grammars \
+                  add \
+                  --name ${name}\
+                  github \
+                  "${owner}" \
+                  "${repo}" \
+                  -b "${branch}" \
+                  --at "${rev}"
+              '')
+            }
+            ${pkgs.alejandra}/bin/alejandra -q .
+            git add .
+            git commit --amend --no-edit
+          '';
+        };
     };
   };
 }
