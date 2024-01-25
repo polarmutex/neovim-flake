@@ -49,8 +49,9 @@ in {
 
       # from https://github.com/nix-community/neovim-nightly-overlay
       neovim-git = inputs'.neovim-flake.packages.neovim;
-      neovim-polar-dev = pkgs.neovim-polar-dev;
-      neovim-polar = pkgs.neovim-polar;
+      inherit (pkgs) neovim-polar-dev;
+      inherit (pkgs) neovim-polar;
+      inherit polar-lua-config;
 
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
