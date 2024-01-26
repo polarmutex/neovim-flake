@@ -59,7 +59,6 @@ in {
     nvim-dap-virtual-text = w prev.callPackage ./plugins/nvim-dap-virtual-text {};
     nvim-jdtls = w prev.callPackage ./plugins/nvim-jdtls {};
     nvim-lint = w prev.callPackage ./plugins/nvim-lint {};
-    nvim-lspconfig = w prev.callPackage ./plugins/nvim-lspconfig {};
     nvim-navic = w prev.callPackage ./plugins/nvim-navic {};
     nvim-treesitter = w prev.callPackage ./plugins/nvim-treesitter {
       inherit (inputs) nixpkgs;
@@ -69,6 +68,7 @@ in {
     one-small-step-for-vimkind = w prev.callPackage ./plugins/one-small-step-for-vimkind {};
     overseer-nvim = w prev.callPackage ./plugins/overseer-nvim {};
     plenary-nvim = w prev.callPackage ./plugins/plenary-nvim {};
+    rustaceanvim = w prev.callPackage ./plugins/rustaceanvim {};
     schemastore-nvim = w prev.callPackage ./plugins/schemastore-nvim {};
     sqlite-lua = w prev.callPackage ./plugins/sqlite-lua {};
     telescope-nvim = w prev.callPackage ./plugins/telescope-nvim {};

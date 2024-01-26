@@ -154,13 +154,13 @@ with final.lib; let
     nvim-dap-virtual-text
     nvim-jdtls
     nvim-lint
-    nvim-lspconfig
     nvim-navic
     nvim-treesitter
     nvim-treesitter-playground
     nvim-web-devicons
     one-small-step-for-vimkind
     overseer-nvim
+    rustaceanvim
     plenary-nvim
     schemastore-nvim
     sqlite-lua
