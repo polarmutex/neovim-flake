@@ -144,16 +144,16 @@
       "inputs": {
         "flake-utils": "flake-utils_2",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-mine"
         ]
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1706209764,
-        "narHash": "sha256-o9V6UUJj+RxfAVVPXh39lNSU8WLccDpzmAGrudzHHn4=",
+        "lastModified": 1706238294,
+        "narHash": "sha256-4cuQ+Kc3Yh8kfNcX0lD+VLAcl+lwWuzDh0KSTZDvYJU=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "1e0996b57230ad65c28659e179a7da7bfa01e5be",
+        "rev": "226466a46941cd6b693f56b6eb7f4293d4066c8d",
         "type": "github"
       },
       "original": {
@@ -217,6 +217,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-mine": {
+      "locked": {
+        "lastModified": 1706284898,
+        "narHash": "sha256-2Fd/VGVsFt7UYZ1MEgacNFyY6nAZDiJm9KJS6ewT8Gk=",
+        "owner": "polarmutex",
+        "repo": "nixpkgs",
+        "rev": "494e53c2578f80e25ac95774402beb4ca137e17b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "polarmutex",
+        "ref": "update-treesitter",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1704874635,
@@ -235,11 +251,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1706214575,
-        "narHash": "sha256-qLRT7SxojcBPc7Dzocd6Www4+I+UeFrkcmR1Gxgz/vM=",
+        "lastModified": 1706241481,
+        "narHash": "sha256-JsBUXpgjex1kSJDxrKxEKGnL3rxF+J3t3r3e5mi6tqI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f67b36bad67f1cf683a61cf6ac98e12d3b5a6532",
+        "rev": "a3a75ec90853d83e041c9ac6a133a3002f89fa40",
         "type": "github"
       },
       "original": {
@@ -308,6 +324,7 @@
         "neovim-flake": "neovim-flake",
         "nil": "nil",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-mine": "nixpkgs-mine",
         "nvfetcher": "nvfetcher",
         "pre-commit-hooks": "pre-commit-hooks"
       }

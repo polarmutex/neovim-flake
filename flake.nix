@@ -71,6 +71,7 @@
   # Input source for our derivation
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
     flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
@@ -91,7 +92,7 @@
     #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
     neovim-flake = {
       url = "github:neovim/neovim?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-mine";
     };
     # Lsp
     nil = {
