@@ -3,14 +3,14 @@
 {
   nvim-lint = {
     pname = "nvim-lint";
-    version = "8e5920f9ce9f24c283a2e64be5fe58d1d37d1744";
+    version = "76af3422e3c82ea40adf9ade1ccf1dc1eb361789";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-lint";
-      rev = "8e5920f9ce9f24c283a2e64be5fe58d1d37d1744";
+      rev = "76af3422e3c82ea40adf9ade1ccf1dc1eb361789";
       fetchSubmodules = false;
-      sha256 = "sha256-5AvqCs02USgkKXRvFsTLqizglZjl0yKlTpg+iTIReh8=";
+      sha256 = "sha256-iqUMcrlYuhUuVcORG08/zTfv72/C1qhY5CRHQcDZZmk=";
     };
-    date = "2024-01-24";
+    date = "2024-02-01";
   };
 }
