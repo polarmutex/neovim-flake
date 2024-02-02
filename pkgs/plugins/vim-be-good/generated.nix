@@ -3,14 +3,14 @@
 {
   vim-be-good = {
     pname = "vim-be-good";
-    version = "c290810728a4f75e334b07dc0f3a4cdea908d351";
+    version = "4fa57b7957715c91326fcead58c1fa898b9b3625";
     src = fetchFromGitHub {
       owner = "ThePrimeagen";
       repo = "vim-be-good";
-      rev = "c290810728a4f75e334b07dc0f3a4cdea908d351";
+      rev = "4fa57b7957715c91326fcead58c1fa898b9b3625";
       fetchSubmodules = false;
-      sha256 = "sha256-lJNY/5dONZLkxSEegrwtZ6PHYsgMD3nZkbxm6fFq3vY=";
+      sha256 = "sha256-XVFq3Gb4C95Y0NYKk08ZjZaGLVF6ayPicIAccba+VRs=";
     };
-    date = "2022-11-08";
+    date = "2024-01-30";
   };
 }
