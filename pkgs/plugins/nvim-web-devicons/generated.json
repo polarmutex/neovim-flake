@@ -1,7 +1,7 @@
 {
     "nvim-web-devicons": {
         "cargoLocks": null,
-        "date": "2024-01-24",
+        "date": "2024-01-30",
         "extract": null,
         "name": "nvim-web-devicons",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "nvim-tree",
             "repo": "nvim-web-devicons",
-            "rev": "b427ac5f9dff494f839e81441fb3f04a58cbcfbc",
-            "sha256": "sha256-w038PU9i1onEBo3x4bo1kDz9Fo46Whd8ZJhyIqxz3I8=",
+            "rev": "aaec87dbdaa776bfa0a13c8694bec9bcb7454719",
+            "sha256": "sha256-bIAZWkgvD8G/GWDcI3CoufatmFm4x27WjE0MIAmL1JE=",
             "type": "github"
         },
-        "version": "b427ac5f9dff494f839e81441fb3f04a58cbcfbc"
+        "version": "aaec87dbdaa776bfa0a13c8694bec9bcb7454719"
     }
 }
