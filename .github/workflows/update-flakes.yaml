@@ -59,7 +59,7 @@ jobs:
       run: |
         nix run .#update-tree-sitter-grammars
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
+      uses: peter-evans/create-pull-request@v6
       with:
         token: '${{ secrets.PAT }}'
         title: 'ci: update ${{ matrix.plugin }}'
@@ -85,7 +85,7 @@ jobs:
     - name: Update flake.lock
       run: nix flake update
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
+      uses: peter-evans/create-pull-request@v6
       with:
         token: '${{ secrets.PAT }}'
         title: 'ci: bump flake'
