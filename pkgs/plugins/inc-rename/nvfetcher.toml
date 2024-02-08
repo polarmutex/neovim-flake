@@ -1,0 +1,3 @@
+[inc-rename-nvim]
+src.git = "https://github.com/smjonas/inc-rename.nvim"
+fetch.github = "smjonas/inc-rename.nvim"

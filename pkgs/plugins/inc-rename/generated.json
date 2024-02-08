@@ -1,0 +1,22 @@
+{
+    "inc-rename-nvim": {
+        "cargoLocks": null,
+        "date": "2023-12-28",
+        "extract": null,
+        "name": "inc-rename-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "smjonas",
+            "repo": "inc-rename.nvim",
+            "rev": "6f9b5f9cb237e12935144cdc535322b8c93c1b25",
+            "sha256": "sha256-troS1bXmhhvJeetn0YD/vSqknhLjevA+q85fX7FWJC8=",
+            "type": "github"
+        },
+        "version": "6f9b5f9cb237e12935144cdc535322b8c93c1b25"
+    }
+}
