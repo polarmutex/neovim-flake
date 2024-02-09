@@ -137,6 +137,7 @@ with final.lib; let
     friendly-snippets
     gitsigns-nvim
     harpoon
+    inc-rename-nvim
     lualine-nvim
     luasnip
     kanagawa-nvim

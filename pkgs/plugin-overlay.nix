@@ -42,6 +42,7 @@ in {
     git-worktree-nvim = w prev.callPackage ./plugins/git-worktree-nvim {};
     gitsigns-nvim = w prev.callPackage ./plugins/gitsigns-nvim {};
     harpoon = w prev.callPackage ./plugins/harpoon {};
+    inc-rename-nvim = w prev.callPackage ./plugins/inc-rename {};
     lualine-nvim = w prev.callPackage ./plugins/lualine-nvim {};
     luasnip = w prev.callPackage ./plugins/luasnip {};
     kanagawa-nvim = w prev.callPackage ./plugins/kanagawa-nvim {};
