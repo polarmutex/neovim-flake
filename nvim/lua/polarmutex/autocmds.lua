@@ -39,6 +39,12 @@ M.setup = function()
         "BufReadPost",
         { command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
     )
+    -- api.nvim_create_autocmd("BufReadPost", {
+    --     desc = "Open file at the last position it was edited earlier",
+    --     group = misc_augroup,
+    --     pattern = "*",
+    --     command = 'silent! normal! g`"zv',
+    -- })
 
     -- show cursor line only in active window
     local cursorGrp = api.nvim_create_augroup("CursorLine", { clear = true })
