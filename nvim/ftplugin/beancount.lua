@@ -1,6 +1,7 @@
 --local lsp_cmd = "beancount-language-server"
-local lsp_cmd = "/home/polar/repos/personal/beancount-language-server/main/target/release/beancount-language-server"
---local lsp_cmd = "/home/polar/repos/personal/beancount-language-server/develop/target/release/beancount-language-server"
+-- local lsp_cmd = "/home/polar/repos/personal/beancount-language-server/main/target/release/beancount-language-server"
+-- local lsp_cmd = "/home/polar/repos/personal/beancount-language-server/develop/target/release/beancount-language-server"
+local lsp_cmd = "/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server"
 
 -- Check if lsp-server is available
 if vim.fn.executable(lsp_cmd) ~= 1 then
