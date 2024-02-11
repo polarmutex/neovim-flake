@@ -182,7 +182,11 @@ with final.lib; let
 
     # markdown
     markdownlint-cli
-    mdformat-with-plugins
+    (pkgs.mdformat.withPlugins (p: [
+      p.mdformat-gfm
+      p.mdformat-frontmatter
+      p.mdformat-toc
+    ]))
 
     #nix
     nil-git
@@ -196,14 +200,7 @@ with final.lib; let
         black
         python-lsp-server
         python-lsp-black
-        (python-lsp-ruff.overridePythonAttrs (old: rec {
-          version = "1.6.0";
-          src = pkgs.fetchPypi {
-            inherit (old) pname;
-            inherit version;
-            sha256 = "sha256-vf3ZNZyen1W29qk4ST1sus5VTcys9F3067NlUr406bg=";
-          };
-        }))
+        python-lsp-ruff
         pydocstyle
         debugpy
       ]))
