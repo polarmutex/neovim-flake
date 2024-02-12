@@ -3,14 +3,14 @@
 {
   beancount-nvim = {
     pname = "beancount-nvim";
-    version = "52dcd779a7a15d0ff1f05054cf5a82ba6616d781";
+    version = "869564aba3087ee5df8f282aa37555e314aa2152";
     src = fetchFromGitHub {
       owner = "polarmutex";
       repo = "beancount.nvim";
-      rev = "52dcd779a7a15d0ff1f05054cf5a82ba6616d781";
+      rev = "869564aba3087ee5df8f282aa37555e314aa2152";
       fetchSubmodules = false;
-      sha256 = "sha256-bEVi5GNqYZobYLzIbkvicTYs/Div8M7Gp6lS3nBcS5s=";
+      sha256 = "sha256-LuACGVB3kiaiJqoGtvFy6kbPNtqoGliKLDeR+Z7Wzbw=";
     };
-    date = "2023-09-02";
+    date = "2024-02-12";
   };
 }
