@@ -7,14 +7,14 @@
 }: {
   nvim-treesitter = {
     pname = "nvim-treesitter";
-    version = "76700e147bfab7630e6b97f91b32397175e8153f";
+    version = "d49a8f82f107b43b7cdded278dab4873024a6f36";
     src = fetchFromGitHub {
       owner = "nvim-treesitter";
       repo = "nvim-treesitter";
-      rev = "76700e147bfab7630e6b97f91b32397175e8153f";
+      rev = "d49a8f82f107b43b7cdded278dab4873024a6f36";
       fetchSubmodules = false;
-      sha256 = "sha256-mUolFZj3uwpdSKAypvEV8gW+o93LEuM59CQp/8EyoRE=";
+      sha256 = "sha256-97/RUtddTgMBi/tr430LQNcEOhnG+vh8/KQMScmB+6g=";
     };
-    date = "2024-02-08";
+    date = "2024-02-15";
   };
 }
