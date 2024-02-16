@@ -1,7 +1,7 @@
 {
     "friendly-snippets": {
         "cargoLocks": null,
-        "date": "2024-01-29",
+        "date": "2024-02-12",
         "extract": null,
         "name": "friendly-snippets",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "rafamadriz",
             "repo": "friendly-snippets",
-            "rev": "b8fae73a479ae0a1c54f5c98fa687ae8a0addc53",
-            "sha256": "sha256-tIWZGunN4SzFYKvX5hVkIKYcaH7yuJ4rfjNYk+076PI=",
+            "rev": "5cc1f45c6aac699ad008fb85f6ae03236062667d",
+            "sha256": "sha256-bRZOhoqq/kW+YtZeMZrU3K6DD9jdYaP1HyAoZgGusQU=",
             "type": "github"
         },
-        "version": "b8fae73a479ae0a1c54f5c98fa687ae8a0addc53"
+        "version": "5cc1f45c6aac699ad008fb85f6ae03236062667d"
     }
 }
