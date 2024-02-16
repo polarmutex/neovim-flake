@@ -220,6 +220,10 @@ with final.lib; let
         name = "git-worktree.nvim";
         path = "~/repos/personal/git-worktree-nvim/v2 ";
       }
+      {
+        name = "beancount.nvim";
+        path = "~/repos/personal/beancount-nvim/master ";
+      }
     ];
     inherit extraPackages;
   };
