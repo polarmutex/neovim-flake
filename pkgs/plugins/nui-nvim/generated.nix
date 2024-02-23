@@ -3,13 +3,13 @@
 {
   nui-nvim = {
     pname = "nui-nvim";
-    version = "0.2.0";
+    version = "0.3.0";
     src = fetchFromGitHub {
       owner = "MunifTanjim";
       repo = "nui.nvim";
-      rev = "0.2.0";
+      rev = "0.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-nSUs9zAX7hQ3PuFrH4zQblMfTY6ALDNggmqaQnkbR5E=";
+      sha256 = "sha256-L0ebXtv794357HOAgT17xlEJsmpqIHGqGlYfDB20WTo=";
     };
   };
 }
