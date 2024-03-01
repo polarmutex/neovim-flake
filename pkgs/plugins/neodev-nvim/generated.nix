@@ -3,14 +3,14 @@
 {
   neodev-nvim = {
     pname = "neodev-nvim";
-    version = "b0ccf605c952eb0d1efe3692d5b241c52ceee187";
+    version = "84e0290f5600e8b89c0dfcafc864f45496a53400";
     src = fetchFromGitHub {
       owner = "folke";
       repo = "neodev.nvim";
-      rev = "b0ccf605c952eb0d1efe3692d5b241c52ceee187";
+      rev = "84e0290f5600e8b89c0dfcafc864f45496a53400";
       fetchSubmodules = false;
-      sha256 = "sha256-AHc6NIweKi3GWmgUpqK+41QNS7wIAjXgRWHImV/CYqE=";
+      sha256 = "sha256-VyJTGbWBzGmuEkotKwTxAVpznfrrQ26aaBc31n6ZjlE=";
     };
-    date = "2024-02-22";
+    date = "2024-02-28";
   };
 }
