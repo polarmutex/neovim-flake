@@ -159,6 +159,7 @@ with final.lib; let
     nvim-treesitter
     nvim-treesitter-playground
     nvim-web-devicons
+    obsidian-nvim
     one-small-step-for-vimkind
     overseer-nvim
     rustaceanvim

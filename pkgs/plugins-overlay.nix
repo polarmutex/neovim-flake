@@ -66,6 +66,7 @@ in {
     };
     nvim-treesitter-playground = w prev.callPackage ./plugins/nvim-treesitter-playground {};
     nvim-web-devicons = w prev.callPackage ./plugins/nvim-web-devicons {};
+    obsidian-nvim = w prev.callPackage ./plugins/obsidian-nvim {};
     one-small-step-for-vimkind = w prev.callPackage ./plugins/one-small-step-for-vimkind {};
     overseer-nvim = w prev.callPackage ./plugins/overseer-nvim {};
     plenary-nvim = w prev.callPackage ./plugins/plenary-nvim {};

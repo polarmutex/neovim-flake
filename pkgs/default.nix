@@ -8,7 +8,7 @@ in {
     ...
   }: let
     polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {inherit (config) packages;};
-    plugin-overlay = import ./plugin-overlay.nix {inherit inputs;};
+    plugin-overlay = import ./plugins-overlay.nix {inherit inputs;};
     neovim-overlay = import ./neovim-overlay.nix {
       inherit inputs;
       inherit polar-lua-config;

@@ -1,0 +1,22 @@
+{
+    "obsidian-nvim": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "obsidian-nvim",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "epwalsh",
+            "repo": "obsidian.nvim",
+            "rev": "v3.6.1",
+            "sha256": "sha256-WQ5yzurbc2sjv0e4chcxUtLaIRR2Orpb8b9S38WG+ZM=",
+            "type": "github"
+        },
+        "version": "v3.6.1"
+    }
+}

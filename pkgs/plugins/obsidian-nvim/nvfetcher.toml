@@ -1,0 +1,3 @@
+[obsidian-nvim]
+src.github = "epwalsh/obsidian.nvim"
+fetch.github = "epwalsh/obsidian.nvim"
