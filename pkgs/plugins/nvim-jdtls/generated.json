@@ -1,7 +1,7 @@
 {
     "nvim-jdtls": {
         "cargoLocks": null,
-        "date": "2024-02-21",
+        "date": "2024-03-07",
         "extract": null,
         "name": "nvim-jdtls",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "mfussenegger",
             "repo": "nvim-jdtls",
-            "rev": "382b9f625861f47d95876bcfb4c261f3b96077cb",
-            "sha256": "sha256-7i1IRzSv2wUg93xldZTVI+NenC348mycCbDSwEVQxbA=",
+            "rev": "8eb5f0dbe6e126b392ddcaf45893358619893e45",
+            "sha256": "sha256-yodvMYeCOeQMYJ42lg6yK2GCP0kf9sw8CjxjjVIIYxM=",
             "type": "github"
         },
-        "version": "382b9f625861f47d95876bcfb4c261f3b96077cb"
+        "version": "8eb5f0dbe6e126b392ddcaf45893358619893e45"
     }
 }

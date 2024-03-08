@@ -3,14 +3,14 @@
 {
   nvim-jdtls = {
     pname = "nvim-jdtls";
-    version = "382b9f625861f47d95876bcfb4c261f3b96077cb";
+    version = "8eb5f0dbe6e126b392ddcaf45893358619893e45";
     src = fetchFromGitHub {
       owner = "mfussenegger";
       repo = "nvim-jdtls";
-      rev = "382b9f625861f47d95876bcfb4c261f3b96077cb";
+      rev = "8eb5f0dbe6e126b392ddcaf45893358619893e45";
       fetchSubmodules = false;
-      sha256 = "sha256-7i1IRzSv2wUg93xldZTVI+NenC348mycCbDSwEVQxbA=";
+      sha256 = "sha256-yodvMYeCOeQMYJ42lg6yK2GCP0kf9sw8CjxjjVIIYxM=";
     };
-    date = "2024-02-21";
+    date = "2024-03-07";
   };
 }
