@@ -3,14 +3,14 @@
 {
   cmp-emoji = {
     pname = "cmp-emoji";
-    version = "19075c36d5820253d32e2478b6aaf3734aeaafa0";
+    version = "0acd702358230abeb6576769f7116e766bca28a0";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "cmp-emoji";
-      rev = "19075c36d5820253d32e2478b6aaf3734aeaafa0";
+      rev = "0acd702358230abeb6576769f7116e766bca28a0";
       fetchSubmodules = false;
-      sha256 = "sha256-zc5GNkwdVHaeEoCer9tz40F2Xc8qTzPw6NbgkMjjWQI=";
+      sha256 = "sha256-M/7AUW597qwGGAcqpu/0eHgsLQ2mdRndSSdHxU6YKsU=";
     };
-    date = "2021-09-28";
+    date = "2024-03-05";
   };
 }
