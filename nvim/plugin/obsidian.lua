@@ -1,16 +1,11 @@
 local obsidian = require("obsidian")
-local Path = require("plenary.path")
+local Path = require("obsidian.path")
 
 local ws = {}
 
-local p = "~/repos/personal/obsidian-second-brain/main"
-if Path:new(p):exists() then
-    print("adding workspace ....")
-    table.insert(ws, {
-        name = "main",
-        path = "~/repos/personal/obsidian-second-brain/main",
-        strict = true,
-    })
+local p = Path.new("~/repos/personal/obsidian-second-brain/main"):resolve()
+if p:exists() then
+    table.insert(ws, { name = "main", path = "~/repos/personal/obsidian-second-brain/main" })
 end
 
 if ws[1] ~= nil then
