@@ -1,7 +1,7 @@
 {
     "lualine-nvim": {
         "cargoLocks": null,
-        "date": "2024-01-25",
+        "date": "2024-03-04",
         "extract": null,
         "name": "lualine-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "nvim-lualine",
             "repo": "lualine.nvim",
-            "rev": "7d131a8d3ba5016229e8a1d08bf8782acea98852",
-            "sha256": "sha256-LMMcRY4qnGywdK6Bl4YeAEKLhnRuOZ2txn4oYoso2gI=",
+            "rev": "8b56462bfb746760465264de41b4907310f113ec",
+            "sha256": "sha256-G4npmdS7vue68h5QN8vWx3Oh5FHdvmzFHGxqMIRC+Mk=",
             "type": "github"
         },
-        "version": "7d131a8d3ba5016229e8a1d08bf8782acea98852"
+        "version": "8b56462bfb746760465264de41b4907310f113ec"
     }
 }
