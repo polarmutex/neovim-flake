@@ -1,7 +1,7 @@
 {
     "cmp-emoji": {
         "cargoLocks": null,
-        "date": "2021-09-28",
+        "date": "2024-03-05",
         "extract": null,
         "name": "cmp-emoji",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "hrsh7th",
             "repo": "cmp-emoji",
-            "rev": "19075c36d5820253d32e2478b6aaf3734aeaafa0",
-            "sha256": "sha256-zc5GNkwdVHaeEoCer9tz40F2Xc8qTzPw6NbgkMjjWQI=",
+            "rev": "0acd702358230abeb6576769f7116e766bca28a0",
+            "sha256": "sha256-M/7AUW597qwGGAcqpu/0eHgsLQ2mdRndSSdHxU6YKsU=",
             "type": "github"
         },
-        "version": "19075c36d5820253d32e2478b6aaf3734aeaafa0"
+        "version": "0acd702358230abeb6576769f7116e766bca28a0"
     }
 }
