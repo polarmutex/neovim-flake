@@ -184,8 +184,8 @@ with final.lib; let
     # markdown
     markdownlint-cli
     (pkgs.mdformat.withPlugins (p: [
-      p.mdformat-gfm
       p.mdformat-frontmatter
+      p.mdformat-gfm
       p.mdformat-toc
     ]))
 
