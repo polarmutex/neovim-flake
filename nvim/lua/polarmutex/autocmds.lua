@@ -27,11 +27,15 @@ M.setup = function()
     -- don't auto comment new line
     api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
 
-    -- Highlight on yank
-    local yankGrp = api.nvim_create_augroup("YankHighlight", { clear = true })
+    -- Highlight when yanking (copying) text
+    --  Try it with `yap` in normal mode
+    --  See `:help vim.highlight.on_yank()`
     api.nvim_create_autocmd("TextYankPost", {
-        command = "silent! lua vim.highlight.on_yank()",
-        group = yankGrp,
+        desc = "Highlight when yanking (copying) text",
+        group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+        callback = function()
+            vim.highlight.on_yank()
+        end,
     })
 
     -- go to last loc when opening a buffer
