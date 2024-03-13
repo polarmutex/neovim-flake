@@ -212,6 +212,9 @@ with final.lib; let
 
     # yaml
     nodePackages_latest.yaml-language-server
+
+    # java
+    jdt-language-server
   ];
 
   neovim-polar-dev = mkNeovim {
