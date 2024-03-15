@@ -13,10 +13,10 @@
             "name": null,
             "owner": "nvim-telescope",
             "repo": "telescope.nvim",
-            "rev": "0.1.5",
-            "sha256": "sha256-H5RpyWMluE+Yxg7xFX43AZTVW+Yg70DF3FmEGXBUSNg=",
+            "rev": "0.1.6",
+            "sha256": "sha256-NmB9VDPmnZifUDQl3APWb81isbRTK6+k5onT6bthoqw=",
             "type": "github"
         },
-        "version": "0.1.5"
+        "version": "0.1.6"
     }
 }
