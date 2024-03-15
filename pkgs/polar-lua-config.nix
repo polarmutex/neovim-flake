@@ -3,7 +3,10 @@
   lib,
   ...
 }: let
-  vars = {};
+  vars = {
+    java-debug = pkgs.vscode-extensions.vscjava.vscode-java-debug;
+    java-test = pkgs.vscode-extensions.vscjava.vscode-java-test;
+  };
 in
   pkgs.vimUtils.buildVimPlugin {
     pname = "polarmutex";
