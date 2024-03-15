@@ -25,6 +25,15 @@ local function get_jdtls_jvm_args()
     return unpack(args)
 end
 
+local bundles = {
+    vim.fn.glob("@java-test@/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar", 1),
+}
+
+vim.list_extend(
+    bundles,
+    vim.split(vim.fn.glob("@java-test@/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar"), "\n")
+)
+
 local config = {
     cmd = {
         "jdtls",
@@ -34,25 +43,9 @@ local config = {
         get_jdtls_workspace_dir(),
         get_jdtls_jvm_args(),
     },
-    filetypes = { "java" },
-    root_dir = vim.fs.dirname(vim.fs.find({ ".git", "build.xml", "pom.xml" }, { upward = true })[1]),
-    single_file_support = true,
-    capabilities = require("polarmutex.lsp").make_client_capabilities(),
     init_options = {
-        workspace = get_jdtls_workspace_dir(),
-        jvm_args = {},
-        os_config = nil,
-    },
-    handlers = {
-        -- Due to an invalid protocol implementation in the jdtls we have to conform these to be spec compliant.
-        -- https://github.com/eclipse/eclipse.jdt.ls/issues/376
-        -- ["textDocument/codeAction"] = on_textdocument_codeaction,
-        -- ["textDocument/rename"] = on_textdocument_rename,
-        -- ["workspace/applyEdit"] = on_workspace_applyedit,
-        -- ["language/status"] = vim.schedule_wrap(on_language_status),
+        bundles = bundles,
     },
 }
-
-print("starting java")
-
-vim.lsp.start(config)
+print(vim.inspect(bundles))
+require("jdtls").start_or_attach(config)
