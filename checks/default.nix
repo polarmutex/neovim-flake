@@ -16,13 +16,15 @@
         hooks = {
           alejandra = {
             enable = true;
-            excludes = ["pkgs/plugins/.*/generated.*"];
+            excludes = [
+              "pkgs/plugins/.*/generated.*"
+              "tree-sitter-grammars"
+            ];
           };
           stylua.enable = true;
           luacheck.enable = true;
         };
         settings = {
-          alejandra.exclude = ["tree-sitter-grammars"];
         };
       };
     in {
