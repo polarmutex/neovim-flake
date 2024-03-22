@@ -61,6 +61,7 @@ in {
     nvim-jdtls = w prev.callPackage ./plugins/nvim-jdtls {};
     nvim-lint = w prev.callPackage ./plugins/nvim-lint {};
     nvim-navic = w prev.callPackage ./plugins/nvim-navic {};
+    nvim-nio = w prev.callPackage ./plugins/nvim-nio {};
     nvim-treesitter = w prev.callPackage ./plugins/nvim-treesitter {
       inherit (inputs) nixpkgs;
     };
