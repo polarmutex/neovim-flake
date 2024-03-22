@@ -3,14 +3,14 @@
 {
   nvim-web-devicons = {
     pname = "nvim-web-devicons";
-    version = "a851380fbea4c1312d11f13d5cdc86a7a19808dd";
+    version = "cb0c967c9723a76ccb1be0cc3a9a10e577d2f6ec";
     src = fetchFromGitHub {
       owner = "nvim-tree";
       repo = "nvim-web-devicons";
-      rev = "a851380fbea4c1312d11f13d5cdc86a7a19808dd";
+      rev = "cb0c967c9723a76ccb1be0cc3a9a10e577d2f6ec";
       fetchSubmodules = false;
-      sha256 = "sha256-Y7BL2uIeqFXC/Z69vuEFd0MWwxJr5uthJXpDqElB2So=";
+      sha256 = "sha256-3AKsnCvNiQloFfgFKsAHTga0rEEfL8TGmN0BEeO0EQ0=";
     };
-    date = "2024-03-15";
+    date = "2024-03-16";
   };
 }
