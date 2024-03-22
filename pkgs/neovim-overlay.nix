@@ -156,6 +156,7 @@ with final.lib; let
     nvim-jdtls
     nvim-lint
     nvim-navic
+    nvim-nio
     nvim-treesitter
     nvim-treesitter-playground
     nvim-web-devicons
