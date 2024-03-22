@@ -3,13 +3,13 @@
 {
   conform-nvim = {
     pname = "conform-nvim";
-    version = "v5.4.0";
+    version = "v5.5.0";
     src = fetchFromGitHub {
       owner = "stevearc";
       repo = "conform.nvim";
-      rev = "v5.4.0";
+      rev = "v5.5.0";
       fetchSubmodules = false;
-      sha256 = "sha256-yPG2iOwwiV+0FO48aZDyV653q/ksMVonc++2emrcc3M=";
+      sha256 = "sha256-Xqxz/AdB1KkzCbwA31PsCY2niWNU9jgEznym51YvRVU=";
     };
   };
 }
