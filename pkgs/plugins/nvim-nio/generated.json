@@ -1,0 +1,22 @@
+{
+    "nvim-nio": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "nvim-nio",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nvim-neotest",
+            "repo": "nvim-nio",
+            "rev": "v1.8.1",
+            "sha256": "sha256-MHCrUisx3blgHWFyA5IHcSwKvC1tK1Pgy/jADBkoXX0=",
+            "type": "github"
+        },
+        "version": "v1.8.1"
+    }
+}

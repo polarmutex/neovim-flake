@@ -1,0 +1,3 @@
+[nvim-nio]
+src.github = "nvim-neotest/nvim-nio"
+fetch.github = "nvim-neotest/nvim-nio"
