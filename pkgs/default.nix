@@ -18,7 +18,6 @@ in {
       inherit system;
       config.allowUnfree = true;
       overlays = [
-        inputs.nvfetcher.overlays.default
         plugin-overlay
         neovim-overlay
         (_final: _prev: {

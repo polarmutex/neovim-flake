@@ -75,14 +75,6 @@
     flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";
     flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
-    nvfetcher = {
-      url = "github:berberman/nvfetcher/0.6.2";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-        flake-compat.follows = "flake-compat";
-      };
-    };
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
