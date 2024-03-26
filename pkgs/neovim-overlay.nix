@@ -146,7 +146,6 @@ with final.lib; let
     neogit
     noice-nvim
     nui-nvim
-    null-ls-nvim
     nvim-cmp
     nvim-colorizer
     nvim-dap
@@ -183,12 +182,13 @@ with final.lib; let
     stylua
 
     # markdown
+    prettierd
     markdownlint-cli
-    (pkgs.mdformat.withPlugins (p: [
-      p.mdformat-frontmatter
-      p.mdformat-gfm
-      p.mdformat-toc
-    ]))
+    # (pkgs.mdformat.withPlugins (p: [
+    #   p.mdformat-frontmatter
+    #   p.mdformat-gfm
+    #   p.mdformat-toc
+    # ]))
 
     #nix
     nil-git

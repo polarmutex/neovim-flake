@@ -51,7 +51,6 @@ in {
     neogit = w prev.callPackage ./plugins/neogit {};
     noice-nvim = w prev.callPackage ./plugins/noice-nvim {};
     nui-nvim = w prev.callPackage ./plugins/nui-nvim {};
-    null-ls-nvim = w prev.callPackage ./plugins/null-ls-nvim {};
     nvim-cmp = w prev.callPackage ./plugins/nvim-cmp {};
     nvim-colorizer = w prev.callPackage ./plugins/nvim-colorizer {};
     nvim-dap = w prev.callPackage ./plugins/nvim-dap {};
