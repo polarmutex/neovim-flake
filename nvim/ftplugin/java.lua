@@ -45,5 +45,19 @@ local config = {
     init_options = {
         bundles = bundles,
     },
+    settings = {
+        java = {
+            saveActions = {
+                organizeImports = true,
+            },
+            signatureHelp = { enabled = true },
+            sources = {
+                organizeImports = {
+                    starThreshold = 9999,
+                    staticStarThreshold = 9999,
+                },
+            },
+        },
+    },
 }
 require("jdtls").start_or_attach(config)
