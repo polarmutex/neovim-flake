@@ -13,10 +13,10 @@
             "name": null,
             "owner": "folke",
             "repo": "noice.nvim",
-            "rev": "v2.0.0",
-            "sha256": "sha256-7lgJK5pkMqwIXNeBDsz4B8UAKnkpUvDrHdeG/aSFRzM=",
+            "rev": "v2.0.1",
+            "sha256": "sha256-y6gHNkWVsIuwBf7MblCTKTZSqjGDxqeFeQZWexzwk94=",
             "type": "github"
         },
-        "version": "v2.0.0"
+        "version": "v2.0.1"
     }
 }
