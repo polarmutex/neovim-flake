@@ -3,14 +3,14 @@
 {
   nvim-cmp = {
     pname = "nvim-cmp";
-    version = "43b460a2bd02fd898e67f5f1f65dfd1cce26203a";
+    version = "97dc716fc914c46577a4f254035ebef1aa72558a";
     src = fetchFromGitHub {
       owner = "hrsh7th";
       repo = "nvim-cmp";
-      rev = "43b460a2bd02fd898e67f5f1f65dfd1cce26203a";
+      rev = "97dc716fc914c46577a4f254035ebef1aa72558a";
       fetchSubmodules = false;
-      sha256 = "sha256-4wTAeFo1xfV1D9FJ//YaHMg7AHIeVQ1ShFKTca/6Y/Y=";
+      sha256 = "sha256-VFtf1mI1ucClWzsWn+rf+TlC3ZgkYPiHrPTQZci9zrQ=";
     };
-    date = "2024-03-22";
+    date = "2024-03-24";
   };
 }
