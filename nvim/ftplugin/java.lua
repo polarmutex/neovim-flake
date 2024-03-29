@@ -26,13 +26,12 @@ local function get_jdtls_jvm_args()
 end
 
 local bundles = {
+    vim.fn.glob(
+        "@java-debug@/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-*.jar",
+        1
+    ),
     vim.fn.glob("@java-test@/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar", 1),
 }
-
-vim.list_extend(
-    bundles,
-    vim.split(vim.fn.glob("@java-test@/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar"), "\n")
-)
 
 local config = {
     cmd = {
@@ -47,5 +46,4 @@ local config = {
         bundles = bundles,
     },
 }
-print(vim.inspect(bundles))
 require("jdtls").start_or_attach(config)
