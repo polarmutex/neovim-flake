@@ -1,7 +1,7 @@
 {
     "nvim-treesitter": {
         "cargoLocks": null,
-        "date": "2024-03-28",
+        "date": "2024-04-04",
         "extract": null,
         "name": "nvim-treesitter",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "nvim-treesitter",
             "repo": "nvim-treesitter",
-            "rev": "23ba63028c6acca29be6462c0a291fc4a1b9eae8",
-            "sha256": "sha256-rtwm8pVsagN4/Cunlt74+BGBx+33xSRi5MwrDFlFepM=",
+            "rev": "1b050206e490a4146cdf25c7b38969c1711b5620",
+            "sha256": "sha256-qwjm/XsFcQlmYC347MIAIzVV7Trp1qUY1vuRl0fuODc=",
             "type": "github"
         },
-        "version": "23ba63028c6acca29be6462c0a291fc4a1b9eae8"
+        "version": "1b050206e490a4146cdf25c7b38969c1711b5620"
     }
 }
