@@ -1,3 +1,4 @@
 [neogit]
 src.git = "https://github.com/NeogitOrg/neogit"
+src.branch = "nightly"
 fetch.github = "NeogitOrg/neogit"
