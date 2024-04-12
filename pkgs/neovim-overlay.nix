@@ -201,7 +201,21 @@ with final.lib; let
       with ps; [
         black
         python-lsp-server
-        python-lsp-black
+        python-lsp-black.overrideAttrs
+        (oldAttrs: rec {
+          patches =
+            oldAttrs.patches
+            /*
+            fix test failure with black>=24.3.0;
+            remove this patch once python-lsp-black>2.0.0
+            */
+            ++ lib.optional
+            (with lib; (versionOlder version "2.0.1") && (versionAtLeast black.version "24.3.0"))
+            (fetchpatch {
+              url = "https://patch-diff.githubusercontent.com/raw/python-lsp/python-lsp-black/pull/59.patch";
+              hash = "sha256-4u0VIS7eidVEiKRW2wc8lJVkJwhzJD/M+uuqmTtiZ7E=";
+            });
+        })
         python-lsp-ruff
         pydocstyle
         debugpy
