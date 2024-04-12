@@ -3,14 +3,14 @@
 {
   one-small-step-for-vimkind = {
     pname = "one-small-step-for-vimkind";
-    version = "cd2500ab74addeed6ac260a008dd649c01d3ba12";
+    version = "93af151b02d2952977fd3db20b07d2a5d23b60f6";
     src = fetchFromGitHub {
       owner = "jbyuki";
       repo = "one-small-step-for-vimkind";
-      rev = "cd2500ab74addeed6ac260a008dd649c01d3ba12";
+      rev = "93af151b02d2952977fd3db20b07d2a5d23b60f6";
       fetchSubmodules = false;
-      sha256 = "sha256-f1vxmjSnsSAylKOV4+5z3Iy71ENO2q4D8cyfrWV0GMA=";
+      sha256 = "sha256-b5wiqGT1bqoJz1N3btCO6K/JPLdD2MdNqPLIrjeBaIQ=";
     };
-    date = "2024-03-17";
+    date = "2024-04-06";
   };
 }
