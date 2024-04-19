@@ -13,10 +13,10 @@
             "name": null,
             "owner": "mrcjkb",
             "repo": "rustaceanvim",
-            "rev": "4.21.1",
-            "sha256": "sha256-9GrdMl9V4tXQIskfzA05/Lmz0qKjvt1QTLRdnyqCaH0=",
+            "rev": "4.22.6",
+            "sha256": "sha256-d7suNNEYPFMqu8p5Yiq3eSMZhnrAAlhIzsXi6IvgSOU=",
             "type": "github"
         },
-        "version": "4.21.1"
+        "version": "4.22.6"
     }
 }
