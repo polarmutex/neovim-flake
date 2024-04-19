@@ -3,14 +3,14 @@
 {
   vim-illuminate = {
     pname = "vim-illuminate";
-    version = "305bf07b919ac526deb5193280379e2f8b599926";
+    version = "e522e0dd742a83506db0a72e1ced68c9c130f185";
     src = fetchFromGitHub {
       owner = "RRethy";
       repo = "vim-illuminate";
-      rev = "305bf07b919ac526deb5193280379e2f8b599926";
+      rev = "e522e0dd742a83506db0a72e1ced68c9c130f185";
       fetchSubmodules = false;
-      sha256 = "sha256-KNIu4cNyZddZSRS8KZ0U0T8uSSLJu8iqNLQN8e+Bv94=";
+      sha256 = "sha256-o0D1edrsHkaljrzBFZXjdxiK/5ziCGJxM/kYNJgBI1E=";
     };
-    date = "2024-02-03";
+    date = "2024-04-18";
   };
 }
