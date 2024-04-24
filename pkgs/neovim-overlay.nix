@@ -127,7 +127,6 @@ with final.lib; let
     cmp-emoji
     cmp-nvim-lsp
     cmp-path
-    comments-nvim
     conform-nvim
     crates-nvim
     diffview-nvim
