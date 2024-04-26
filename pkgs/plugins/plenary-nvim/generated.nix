@@ -3,14 +3,14 @@
 {
   plenary-nvim = {
     pname = "plenary-nvim";
-    version = "8aad4396840be7fc42896e3011751b7609ca4119";
+    version = "08e301982b9a057110ede7a735dd1b5285eb341f";
     src = fetchFromGitHub {
       owner = "nvim-lua";
       repo = "plenary.nvim";
-      rev = "8aad4396840be7fc42896e3011751b7609ca4119";
+      rev = "08e301982b9a057110ede7a735dd1b5285eb341f";
       fetchSubmodules = false;
-      sha256 = "sha256-wM/FuK24NPEyaWntwT+mi2SuPExC/abXDK9c2WvgUBk=";
+      sha256 = "sha256-vy0MXEoSM4rvYpfwbc2PnilvMOA30Urv0FAxjXuvqQ8=";
     };
-    date = "2024-03-25";
+    date = "2024-04-26";
   };
 }
