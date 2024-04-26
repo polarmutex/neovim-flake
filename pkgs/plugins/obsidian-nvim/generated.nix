@@ -3,13 +3,13 @@
 {
   obsidian-nvim = {
     pname = "obsidian-nvim";
-    version = "v3.7.8";
+    version = "v3.7.10";
     src = fetchFromGitHub {
       owner = "epwalsh";
       repo = "obsidian.nvim";
-      rev = "v3.7.8";
+      rev = "v3.7.10";
       fetchSubmodules = false;
-      sha256 = "sha256-D2uFbB+9BrEMoKV73MGlK7mTrh2wpRpkg3CrVPYxL2c=";
+      sha256 = "sha256-sM+0tRRY8nhYWNHs2qJP18URwYEyBK7RKbjTHfMOWfo=";
     };
   };
 }

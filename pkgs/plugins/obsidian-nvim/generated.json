@@ -13,10 +13,10 @@
             "name": null,
             "owner": "epwalsh",
             "repo": "obsidian.nvim",
-            "rev": "v3.7.8",
-            "sha256": "sha256-D2uFbB+9BrEMoKV73MGlK7mTrh2wpRpkg3CrVPYxL2c=",
+            "rev": "v3.7.10",
+            "sha256": "sha256-sM+0tRRY8nhYWNHs2qJP18URwYEyBK7RKbjTHfMOWfo=",
             "type": "github"
         },
-        "version": "v3.7.8"
+        "version": "v3.7.10"
     }
 }
