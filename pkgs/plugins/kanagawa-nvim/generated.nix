@@ -3,14 +3,14 @@
 {
   kanagawa-nvim = {
     pname = "kanagawa-nvim";
-    version = "bfa818c7bf6259152f1d89cf9fbfba3554c93695";
+    version = "23ae977e5a46dbf976d051ad2b57f5ed789871d8";
     src = fetchFromGitHub {
       owner = "rebelot";
       repo = "kanagawa.nvim";
-      rev = "bfa818c7bf6259152f1d89cf9fbfba3554c93695";
+      rev = "23ae977e5a46dbf976d051ad2b57f5ed789871d8";
       fetchSubmodules = false;
-      sha256 = "sha256-eSrng/h+hN8iSu2nLLfqSMvnOmBXE2Rwwil4KWSZWU4=";
+      sha256 = "sha256-n6RKlOknXRqTjjvzYtWDHb/jl7jNiPBI18uZMsuc/Y4=";
     };
-    date = "2024-02-28";
+    date = "2024-04-24";
   };
 }
