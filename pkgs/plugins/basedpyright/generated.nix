@@ -3,13 +3,13 @@
 {
   basedpyright = {
     pname = "basedpyright";
-    version = "v1.10.1";
+    version = "v1.11.0";
     src = fetchFromGitHub {
       owner = "DetachHead";
       repo = "basedpyright";
-      rev = "v1.10.1";
+      rev = "v1.11.0";
       fetchSubmodules = false;
-      sha256 = "sha256-BAFn66mM5NRoPdH/XLuj1tWUYehj9Zg93/JWQdw0iB4=";
+      sha256 = "sha256-zkL3HNbaL4elSOq2cmfycD/D2VKTbMMZvmdK2mHbPSM=";
     };
   };
 }
