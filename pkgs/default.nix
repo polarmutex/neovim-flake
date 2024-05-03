@@ -280,8 +280,6 @@ in {
               '')
             }
             ${pkgs.alejandra}/bin/alejandra -q .
-            git add .
-            git commit --amend --no-edit
           '';
         };
     };
