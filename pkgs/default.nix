@@ -60,8 +60,8 @@ in {
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
       # scripts
-      commit-and-format-patch = pkgs.writeShellApplication {
-        name = "commit-and-format-patch";
+      flake-commit-and-format-patch = pkgs.writeShellApplication {
+        name = "flake-commit-and-format-patch";
         runtimeInputs = with pkgs; [
           coreutils
           git
@@ -71,15 +71,39 @@ in {
           #!/bin/bash
 
           usage() {
-            printf "%s\n\n" "usage: $(basename "$0") <commit-message> <output-file>"
+            printf "%s\n\n" "usage: $(basename "$0") <patch-file> "
             printf "%s\n\n" "Commits all current changes with <commit-message> as the commit message and writes a patch to <output-file>."
             exit 1
           }
 
-          if [ $# -ne 2 ]; then
+          if [ $# -ne 1 ]; then
             usage
           else
-            git commit -am "$1" && git format-patch -1 HEAD --output "$2"
+            git commit -am "chore(update/flake): update nix flake" && git format-patch -1 HEAD --output "$1"
+          fi
+        '';
+      };
+
+      npins-commit-and-format-patch = pkgs.writeShellApplication {
+        name = "npins-commit-and-format-patch";
+        runtimeInputs = with pkgs; [
+          coreutils
+          git
+        ];
+
+        text = ''
+          #!/bin/bash
+
+          usage() {
+            printf "%s\n\n" "usage: $(basename "$0") <patch-file> <pin-name> <old-version> <new-version>"
+            printf "%s\n\n" "Commits all current changes with <commit-message> as the commit message and writes a patch to <output-file>."
+            exit 1
+          }
+
+          if [ $# -ne 4 ]; then
+            usage
+          else
+            git commit -am "chore(plugin/update): $2: $3 -> $4" && git format-patch -1 HEAD --output "$1"
           fi
         '';
       };
