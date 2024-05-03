@@ -3,14 +3,14 @@
 {
   inc-rename-nvim = {
     pname = "inc-rename-nvim";
-    version = "5e03e986625961d1fac296d1bf332a6510c3add6";
+    version = "e1fdd51ca13b8e13dff478b5ba601f38d59efc34";
     src = fetchFromGitHub {
       owner = "smjonas";
       repo = "inc-rename.nvim";
-      rev = "5e03e986625961d1fac296d1bf332a6510c3add6";
+      rev = "e1fdd51ca13b8e13dff478b5ba601f38d59efc34";
       fetchSubmodules = false;
-      sha256 = "sha256-+Vxm0/HBdzCZi32ymro7SMZPfJ7EJE587cZsfD2IkX0=";
+      sha256 = "sha256-sYl7+mciQ4cTGdZYSJJdlVy+ntRw+k5GDKxkpt7Kws8=";
     };
-    date = "2024-04-02";
+    date = "2024-05-02";
   };
 }
