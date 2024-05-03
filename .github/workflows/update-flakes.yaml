@@ -2,73 +2,23 @@
 name: update-flakes
 on:
   workflow_dispatch:
+    inputs:
+      dry-run:
+        description: "Dry run: if `true`, a pull request will not be made."
+        type: boolean
+        required: true
+        default: false
   schedule:
     - cron: "0 4 * * 5"
 
+run-name: Update flake inputs and npins
+
+env:
+  GIT_USERNAME: github-actions[bot]
+  GIT_EMAIL: github-actions[bot]@users.noreply.github.com
+
 jobs:
-  nvfetcher_matrix:
-    name: Generate nvfetcher update matrix
-    runs-on: ubuntu-latest
-    outputs:
-      plugins: ${{ steps.matrix.outputs.plugins }}
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Install nix
-      uses: cachix/install-nix-action@v26
-      with:
-        extra_nix_config: |
-          auto-optimise-store = true
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-          experimental-features = nix-command flakes
-          substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
-    - name: Generate matrix
-      id: matrix
-      run: |
-        set -ex
-        nix profile install .#jq .#fd
-        plugins="$(fd 'nvfetcher.toml' pkgs/plugins --exec dirname {} \; | xargs basename -a | jq -ncR '[inputs]')"
-        echo "plugins=$plugins" >> $GITHUB_OUTPUT
-
-  nvfetcher_update:
-    runs-on: ubuntu-latest
-    needs: [nvfetcher_matrix]
-    if: ${{ needs.nvfetcher_matrix.outputs.plugins != '[]' && needs.nvfetcher_matrix.outputs.plugins != '' }}
-    strategy:
-      fail-fast: false
-      matrix:
-        plugin: ${{ fromJson(needs.nvfetcher_matrix.outputs.plugins )}}
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Install nix
-      uses: cachix/install-nix-action@v26
-      with:
-        extra_nix_config: |
-          auto-optimise-store = true
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-          experimental-features = nix-command flakes
-          substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
-    - name: Update element
-      run: |
-        nix run .#update-nvim-plugin -- ${{ matrix.plugin }}
-    - name: Update tree-sitter parsers
-      if: ${{ matrix.plugin == 'nvim-treesitter' }}
-      run: |
-        nix run .#update-tree-sitter-grammars
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
-      with:
-        token: '${{ secrets.PAT }}'
-        title: 'ci: update ${{ matrix.plugin }}'
-        author: GitHub <noreply@github.com>
-        branch: update/${{ matrix.plugin }}
-        delete-branch: true
-
-  main:
-    name: Update flake inputs
+  update-flake:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -84,15 +34,115 @@ jobs:
           trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
     - name: Update flake.lock
       run: nix flake update
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
+    - id: generate-patch
+      name: Generate patch
+      run: |
+        nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
+        if nix run .#commit-and-format-patch -- "chore(flake): update flake inputs" "flake-update.patch"
+        then
+          echo "patch=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "patch=false" >> "$GITHUB_OUTPUT"
+        fi
+    - uses: actions/upload-artifact@v3
+      if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
       with:
-        token: '${{ secrets.PAT }}'
-        title: 'ci: bump flake'
-        commit-message: |
-          chore: Bump flake
+        name: flake-update-patch
+        path: flake-update.patch
 
+  generate-npins-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      npins-matrix: ${{ steps.npins-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nix
+        uses: cachix/install-nix-action@v26
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+      - id: npins-matrix
+        name: Generate npins matrix
+        run: |
+          matrix=$(nix run .#generate-npins-matrix -- pkgs/npins/sources.json )
+          printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
-          Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-        branch: update/flake
-        delete-branch: true
+  update-npins:
+    runs-on: ubuntu-latest
+    needs: [generate-npins-matrix, update-flake]
+    if: ${{ needs.generate-npins-matrix.result == 'success' && needs.generate-npins-matrix.outputs.npins-matrix != '[]' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        pin: ${{ fromJson(needs.generate-npins-matrix.outputs.npins-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nix
+        uses: cachix/install-nix-action@v26
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+      - name: Update ${{ matrix.pin.name }}
+        run: nix run .#npins -- -d "$(dirname ${{ matrix.pin.sources-file }})" update ${{ matrix.pin.name }}
+      - name: Update tree-sitter parsers
+        if: ${{ matrix.pin.name == 'nvim-treesitter' }}
+        run: |
+          nix run .#update-tree-sitter-grammars
+      - id: generate-patch
+        name: Generate patch
+        run: |
+          nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
+          if nix run .#commit-and-format-patch -- "chore(planet/pkgs): update \`${{ matrix.pin.name }}\`" "${{ matrix.pin.name }}.patch"
+          then
+            echo "patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "patch=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/upload-artifact@v3
+        if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
+        with:
+          name: ${{ matrix.pin.name }}-patch
+          path: ${{ matrix.pin.name }}.patch
+
+  create-pull-request:
+    runs-on: ubuntu-latest
+    needs: [update-flake, update-npins]
+    if: contains(needs.*.result, 'success')
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nix
+        uses: cachix/install-nix-action@v26
+        with:
+          extra_nix_config: |
+            auto-optimise-store = true
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            experimental-features = nix-command flakes
+            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+      - name: Configure git
+        run: nix run .#configure-git-userh -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
+      - uses: actions/download-artifact@v3
+        with:
+          path: patches
+      - name: Apply patches
+        run: |
+          shopt -s globstar
+          git am ./patches/**/*.patch
+      - name: Delete patch files
+        run: |
+          rm -rf ./patches
+      - if: ${{ !inputs.dry-run }}
+        uses: peter-evans/create-pull-request@v5
+        with:
+          title: Update flake inputs and npins
+          body: ${{ github.event_name == 'workflow_dispatch' && 'Manually triggered update.' || 'Automated periodic update.' }}
+          token: '${{ secrets.PAT }}'
+          branch: update-flake-inputs-and-npins

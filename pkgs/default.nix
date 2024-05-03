@@ -59,21 +59,100 @@ in {
 
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
+      # scripts
+      commit-and-format-patch = pkgs.writeShellApplication {
+        name = "commit-and-format-patch";
+        runtimeInputs = with pkgs; [
+          coreutils
+          git
+        ];
+
+        text = ''
+          #!/bin/bash
+
+          usage() {
+            printf "%s\n\n" "usage: $(basename "$0") <commit-message> <output-file>"
+            printf "%s\n\n" "Commits all current changes with <commit-message> as the commit message and writes a patch to <output-file>."
+            exit 1
+          }
+
+          if [ $# -ne 2 ]; then
+            usage
+          else
+            git commit -am "$1" && git format-patch -1 HEAD --output "$2"
+          fi
+        '';
+      };
+
+      configure-git-user = pkgs.writeShellApplication {
+        name = "configure-git-user";
+        runtimeInputs = with pkgs; [
+          coreutils
+          git
+        ];
+
+        text = ''
+          #!/bin/bash
+
+          usage() {
+            printf "%s\n\n" "usage: $(basename "$0") <user.name> <user.email>"
+            printf "%s\n\n" "Configures the \`git\` user name and email."
+            exit 1
+          }
+
+          if [ $# -ne 2 ]; then
+            usage
+          else
+            git config user.name "$1"
+            git config user.email "$2"
+          fi
+        '';
+      };
+
+      generate-npins-matrix = pkgs.writeShellApplication {
+        name = "generate-npins-matrix";
+        runtimeInputs = with pkgs; [
+          coreutils
+          jq
+        ];
+
+        text = ''
+          #!/bin/bash
+
+          usage() {
+            printf "%s\n\n" "usage: $(basename "$0") <source-files...>"
+            printf "%s\n\n" "Prints a JSON array of objects that each correspond to an \`npins\` source."
+            printf "%s\n\n" "Each value in <source-files...> should be a path to an \`npins\` \`sources.json\` file."
+            printf "%s\n" "Each object in the output contains the following keys:"
+            printf "  %s\n" "\"name\": the name of the pin as per its entry in its \`sources.json\`"
+            printf "  %s\n" "\"sources-file\": the path to the \`sources.json\` file that contains the pin"
+            exit 1
+          }
+
+          if [ $# -eq 0 ]; then
+            usage
+          else
+            # https://stackoverflow.com/questions/51217020/jq-convert-array-to-object-indexed-by-filename
+            jq -cn '[ inputs | .pins | keys_unsorted | { name: .[], "sources-file": input_filename } ]' "$@"
+          fi
+        '';
+      };
+
       update-nvim-plugin = pkgs.writeShellApplication {
         name = "update-nvim-plugin";
         runtimeInputs = with pkgs; [
           git
           mktemp
-          nvfetcher
+          npins
         ];
 
         text = ''
-          #!/bin/sh
+          ${pkgs.npins}/bin/npins -d pkgs/npins update ${1}
+
           set -eu
+          TMPDIR="$(mktemp -d -t npins-XXXXXX)"
 
-          TMPDIR="$(mktemp -d -t nvfetcher-XXXXXX)"
-
-          cd "$(git rev-parse --show-toplevel)/pkgs/plugins/''${1}" || exit 1
+          cd "$(git rev-parse --show-toplevel)/pkgs/''${1}" || exit 1
           nvfetcher -l "$TMPDIR/changelog" --build-dir .
 
           echo "chore(plugin-update): " > "$TMPDIR/commit-summary"
