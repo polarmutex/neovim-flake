@@ -20,7 +20,10 @@ in {
       overlays = [
         plugin-overlay
         neovim-overlay
-        (_final: _prev: {
+        (_final: prev: {
+          basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
+            inherit (prev) system;
+          };
           mdformat-with-plugins =
             pkgs.python311Packages.mdformat.withPlugins
             (with pkgs.python311Packages; [

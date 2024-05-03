@@ -199,6 +199,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-basedpyright": {
+      "locked": {
+        "lastModified": 1714648391,
+        "narHash": "sha256-NImNDu83cNjU9zaDhu390Q8CX/2/vlf4f/hgkjBz+GQ=",
+        "owner": "kiike",
+        "repo": "nixpkgs",
+        "rev": "abae3ae3a46525729a4961da9cf57e97f387ead8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kiike",
+        "ref": "pkgs/basedpyright",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1714640452,
@@ -275,6 +291,7 @@
         "neovim-flake": "neovim-flake",
         "nil": "nil",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-basedpyright": "nixpkgs-basedpyright",
         "pre-commit-hooks": "pre-commit-hooks"
       }
     },
