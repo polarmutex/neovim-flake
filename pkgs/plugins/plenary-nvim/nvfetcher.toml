@@ -1,3 +1,0 @@
-[plenary-nvim]
-src.git = "https://github.com/nvim-lua/plenary.nvim"
-fetch.github = "nvim-lua/plenary.nvim"

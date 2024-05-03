@@ -1,3 +1,0 @@
-[diffview-nvim]
-src.git = "https://github.com/sindrets/diffview.nvim"
-fetch.github = "sindrets/diffview.nvim"

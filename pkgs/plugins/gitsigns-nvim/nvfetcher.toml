@@ -1,3 +1,0 @@
-[gitsigns-nvim]
-src.github = "lewis6991/gitsigns.nvim"
-fetch.github = "lewis6991/gitsigns.nvim"

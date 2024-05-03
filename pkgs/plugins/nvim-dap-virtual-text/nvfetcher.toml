@@ -1,3 +1,0 @@
-[nvim-dap-virtual-text]
-src.git = "https://github.com/theHamsta/nvim-dap-virtual-text"
-fetch.github = "theHamsta/nvim-dap-virtual-text"

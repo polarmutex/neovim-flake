@@ -93,11 +93,11 @@ in {
       };
 
       update-tree-sitter-grammars = let
-        data = builtins.fromJSON (builtins.readFile ./plugins/nvim-treesitter/grammars/sources.json);
+        data = builtins.fromJSON (builtins.readFile ./grammars/sources.json);
         inherit (data) pins;
 
-        grammar-sources = pkgs.callPackages ./plugins/nvim-treesitter/generated.nix {};
-        lockfile = pkgs.lib.importJSON "${grammar-sources.nvim-treesitter.src}/lockfile.json";
+        grammar-sources = import ./npins;
+        lockfile = pkgs.lib.importJSON "${grammar-sources."nvim-treesitter"}/lockfile.json";
 
         allGrammars = with pkgs.lib;
           mapAttrs (
@@ -122,7 +122,7 @@ in {
             npins
           ];
           text = ''
-            cd "$(git rev-parse --show-toplevel)/pkgs/plugins/nvim-treesitter" || exit 1
+            cd "$(git rev-parse --show-toplevel)/pkgs" || exit 1
             rm -rf ./grammars/*
             ${pkgs.npins}/bin/npins -d ./grammars init --bare
              ${

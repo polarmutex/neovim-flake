@@ -1,3 +1,0 @@
-[which-key-nvim]
-src.github = "folke/which-key.nvim"
-fetch.github = "folke/which-key.nvim"

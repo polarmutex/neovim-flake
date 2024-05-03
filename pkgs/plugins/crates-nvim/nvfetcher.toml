@@ -1,3 +1,0 @@
-[crates-nvim]
-src.github = "Saecki/crates.nvim"
-fetch.github = "Saecki/crates.nvim"

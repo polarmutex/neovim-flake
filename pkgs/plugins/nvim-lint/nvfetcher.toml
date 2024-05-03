@@ -1,3 +1,0 @@
-[nvim-lint]
-src.git = "https://github.com/mfussenegger/nvim-lint"
-fetch.github = "mfussenegger/nvim-lint"

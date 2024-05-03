@@ -1,3 +1,0 @@
-[trouble-nvim]
-src.github = "folke/trouble.nvim"
-fetch.github = "folke/trouble.nvim"

@@ -1,3 +1,0 @@
-[nvim-jdtls]
-src.git = "https://github.com/mfussenegger/nvim-jdtls"
-fetch.github = "mfussenegger/nvim-jdtls"

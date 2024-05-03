@@ -1,3 +1,0 @@
-[nvim-dap-python]
-src.git = "https://github.com/mfussenegger/nvim-dap-python"
-fetch.github = "mfussenegger/nvim-dap-python"

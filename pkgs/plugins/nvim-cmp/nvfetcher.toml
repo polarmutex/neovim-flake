@@ -1,3 +1,0 @@
-[nvim-cmp]
-src.git = "https://github.com/hrsh7th/nvim-cmp"
-fetch.github = "hrsh7th/nvim-cmp"

@@ -1,3 +1,0 @@
-[dressing-nvim]
-src.github_tag = "stevearc/dressing.nvim"
-fetch.github = "stevearc/dressing.nvim"

@@ -1,3 +1,0 @@
-[kanagawa-nvim]
-src.git = "https://github.com/rebelot/kanagawa.nvim"
-fetch.github = "rebelot/kanagawa.nvim"
