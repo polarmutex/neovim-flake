@@ -1,7 +1,7 @@
 {
     "kanagawa-nvim": {
         "cargoLocks": null,
-        "date": "2024-04-24",
+        "date": "2024-04-29",
         "extract": null,
         "name": "kanagawa-nvim",
         "passthru": null,
@@ -13,10 +13,10 @@
             "name": null,
             "owner": "rebelot",
             "repo": "kanagawa.nvim",
-            "rev": "23ae977e5a46dbf976d051ad2b57f5ed789871d8",
-            "sha256": "sha256-n6RKlOknXRqTjjvzYtWDHb/jl7jNiPBI18uZMsuc/Y4=",
+            "rev": "860e4f80df71221d18bf2cd9ef1deb4d364274d2",
+            "sha256": "sha256-ofrlfrp57JUIBc26PTsWeqol/C+ZmkQ8mDBOlnLZtLI=",
             "type": "github"
         },
-        "version": "23ae977e5a46dbf976d051ad2b57f5ed789871d8"
+        "version": "860e4f80df71221d18bf2cd9ef1deb4d364274d2"
     }
 }
