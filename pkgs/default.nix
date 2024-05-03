@@ -187,7 +187,7 @@ in {
             usage
           else
             # https://stackoverflow.com/questions/51217020/jq-convert-array-to-object-indexed-by-filename
-            jq -cn "inputs | .pins | .[] |select(.repository.repo == \"$2\") |  if .version != null then .version else .revision[0:8] end " "$1"
+            jq -rcn "inputs | .pins | .[] |select(.repository.repo == \"$2\") |  if .version != null then .version else .revision[0:8] end " "$1"
           fi
         '';
       };
