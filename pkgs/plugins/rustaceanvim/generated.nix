@@ -3,13 +3,13 @@
 {
   rustaceanvim = {
     pname = "rustaceanvim";
-    version = "4.22.6";
+    version = "4.22.8";
     src = fetchFromGitHub {
       owner = "mrcjkb";
       repo = "rustaceanvim";
-      rev = "4.22.6";
+      rev = "4.22.8";
       fetchSubmodules = false;
-      sha256 = "sha256-d7suNNEYPFMqu8p5Yiq3eSMZhnrAAlhIzsXi6IvgSOU=";
+      sha256 = "sha256-tW4SBMMQScDbax/YNP5CqvmfDywlKNQgYlXh1lHGM9k=";
     };
   };
 }
