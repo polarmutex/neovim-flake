@@ -3,13 +3,13 @@
 {
   nvim-nio = {
     pname = "nvim-nio";
-    version = "v1.9.0";
+    version = "v1.9.3";
     src = fetchFromGitHub {
       owner = "nvim-neotest";
       repo = "nvim-nio";
-      rev = "v1.9.0";
+      rev = "v1.9.3";
       fetchSubmodules = false;
-      sha256 = "sha256-ZRYclqsgAvlRBwb59XHlqVat7CxUJTH1rD6QLwh1ang=";
+      sha256 = "sha256-VfoJOXXtMhalFcnfhVzweq7TVmB8WjRP+Z5Z5Z24Pzc=";
     };
   };
 }

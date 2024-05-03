@@ -13,10 +13,10 @@
             "name": null,
             "owner": "nvim-neotest",
             "repo": "nvim-nio",
-            "rev": "v1.9.0",
-            "sha256": "sha256-ZRYclqsgAvlRBwb59XHlqVat7CxUJTH1rD6QLwh1ang=",
+            "rev": "v1.9.3",
+            "sha256": "sha256-VfoJOXXtMhalFcnfhVzweq7TVmB8WjRP+Z5Z5Z24Pzc=",
             "type": "github"
         },
-        "version": "v1.9.0"
+        "version": "v1.9.3"
     }
 }
