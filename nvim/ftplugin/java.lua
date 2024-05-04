@@ -28,9 +28,9 @@ end
 local bundles = {
     vim.fn.glob(
         "@java-debug@/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-*.jar",
-        1
+        true
     ),
-    vim.fn.glob("@java-test@/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar", 1),
+    vim.fn.glob("@java-test@/share/vscode/extensions/vscjava.vscode-java-test/server/*.jar", true),
 }
 
 local config = {

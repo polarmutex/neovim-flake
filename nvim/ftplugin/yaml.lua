@@ -17,3 +17,5 @@ vim.lsp.start({
         },
     },
 })
+
+-- vim.wo[0].spell = false

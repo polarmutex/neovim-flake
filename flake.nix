@@ -62,7 +62,12 @@
               inherit (pkgs) npins;
               inherit (pkgs) nvfetcher;
             };
-            inherit (self.checks.${system}.pre-commit-check) shellHook;
+            shellHook = let
+              luarc = pkgs.mk-luarc-json {plugins = with pkgs.nvimPlugins; [nvim-treesitter];};
+            in ''
+              ${self.checks.${system}.pre-commit-check.shellHook}
+              ln -fs ${luarc} .luarc.json
+            '';
           };
         };
       };
@@ -87,6 +92,8 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
 
     # spell
     spell-en-dictionary = {

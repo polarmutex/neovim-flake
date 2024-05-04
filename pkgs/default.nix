@@ -20,6 +20,7 @@ in {
       overlays = [
         plugin-overlay
         neovim-overlay
+        inputs.gen-luarc.overlays.default
         (_final: prev: {
           basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
             inherit (prev) system;
