@@ -563,18 +563,16 @@
       "hash": "0ckifx6xxrannn9szacgiiqjsp4rswghxscdl3s411dhas8djj1m"
     },
     "telescope.nvim": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "version": "0.1.6",
-      "revision": "6312868392331c9c0f22725041f1ec2bef57c751",
-      "url": "https://api.github.com/repos/nvim-telescope/telescope.nvim/tarball/0.1.6",
-      "hash": "1b52c6xyklw9wsjayasknjqn5kbgsq1xq99la2gri7g66da7sq1n"
+      "branch": "master",
+      "revision": "fac83a556e7b710dc31433dec727361ca062dbe9",
+      "url": "https://github.com/nvim-telescope/telescope.nvim/archive/fac83a556e7b710dc31433dec727361ca062dbe9.tar.gz",
+      "hash": "0caam3dm86z9g3qw1c418pzsqhzq8yvzpf26j4sbczrvy6s1x0aa"
     },
     "tokyonight.nvim": {
       "type": "GitRelease",
