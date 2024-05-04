@@ -71,15 +71,11 @@ M.setup = function()
         autoformat = true,
     })
 
-    local inlay_hint = vim.lsp.buf.inlay_hint or vim.lsp.inlay_hint
-
-    if true and inlay_hint then
-        Util.on_attach(function(client, buffer)
-            if client.supports_method("textDocument/inlayHint") then
-                inlay_hint.enable(buffer, true)
-            end
-        end)
-    end
+    Util.on_attach(function(client, buffer)
+        if client.supports_method("textDocument/inlayHint") then
+            vim.lsp.inlay_hint.enable(buffer, true)
+        end
+    end)
 end
 
 return M
