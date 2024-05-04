@@ -2,6 +2,10 @@ local M = {}
 
 ---@mod polarmutex.keymaps Keymaps
 
+local function toggle_spell_check()
+    vim.opt.spell = not (vim.opt.spell:get())
+end
+
 M.setup = function()
     local map = vim.keymap.set
 
@@ -62,6 +66,8 @@ M.setup = function()
     map("n", "<C-j>", "<cmd>cprev<CR>zz")
     map("n", "<leader>k", "<cmd>lnext<CR>zz")
     map("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+    map("n", "<leader>S", toggle_spell_check, { noremap = true, silent = true })
 
     ---@class Git
     ---@brief [[

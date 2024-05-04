@@ -104,6 +104,9 @@ M.setup = function()
     vim.opt.cmdheight = 0
     vim.opt.splitkeep = "screen"
     vim.opt.conceallevel = 1 -- for obsidian.nvim
+
+    vim.opt.spell = true
+    vim.opt.spelllang = "en"
 end
 
 return M

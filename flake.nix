@@ -87,6 +87,17 @@
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # spell
+    spell-en-dictionary = {
+      url = "http://ftp.vim.org/vim/runtime/spell/en.utf-8.spl";
+      flake = false;
+    };
+    spell-en-suggestions = {
+      url = "http://ftp.vim.org/vim/runtime/spell/en.utf-8.sug";
+      flake = false;
+    };
+
     # Lsp
     nil = {
       url = "github:oxalica/nil";

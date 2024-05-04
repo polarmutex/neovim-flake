@@ -52,6 +52,8 @@ with final.lib; let
         cp -r * $out/nvim
         rm -r $out/nvim/after
         cp -r after $out/after
+        ln -s ${inputs.spell-en-dictionary} $out/nvim/spell/en.utf-8.spl;
+        ln -s ${inputs.spell-en-suggestions} $out/nvim/spell/en.utf-8.sug;
       '';
     };
 
