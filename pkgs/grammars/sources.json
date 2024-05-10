@@ -8,9 +8,9 @@
         "repo": "tree-sitter-bash"
       },
       "branch": "master",
-      "revision": "f8fb3274f72a30896075585b32b0c54cad65c086",
-      "url": "https://github.com/tree-sitter/tree-sitter-bash/archive/f8fb3274f72a30896075585b32b0c54cad65c086.tar.gz",
-      "hash": "1aagb3ckcngql1kmlw83bkbh7mi0c46jlhn3bmbli4rnprhnlgdj"
+      "revision": "2fbd860f802802ca76a6661ce025b3a3bca2d3ed",
+      "url": "https://github.com/tree-sitter/tree-sitter-bash/archive/2fbd860f802802ca76a6661ce025b3a3bca2d3ed.tar.gz",
+      "hash": "1diy2v5csp7v6bincvba1p8gwlly6izk9pla54b78fh0fip90axc"
     },
     "tree-sitter-beancount": {
       "type": "Git",
@@ -128,9 +128,9 @@
         "repo": "tree-sitter-html"
       },
       "branch": "master",
-      "revision": "eee29ca0ce287b699d9d52118f9c1cd9094c48f9",
-      "url": "https://github.com/tree-sitter/tree-sitter-html/archive/eee29ca0ce287b699d9d52118f9c1cd9094c48f9.tar.gz",
-      "hash": "1bh1zsar6nrn3jr5pzng2krm4azx8pqn40bn4r6p0c0732fvvp2z"
+      "revision": "e4d834eb4918df01dcad5c27d1b15d56e3bd94cd",
+      "url": "https://github.com/tree-sitter/tree-sitter-html/archive/e4d834eb4918df01dcad5c27d1b15d56e3bd94cd.tar.gz",
+      "hash": "0z7jl10aww4dhkrlj7wg41wfkwhbq7647hn1swfrm64yamyvfz5h"
     },
     "tree-sitter-java": {
       "type": "Git",
@@ -152,9 +152,9 @@
         "repo": "tree-sitter-javascript"
       },
       "branch": "master",
-      "revision": "c0027460e8f9629afeeb27f7949ecf961c82d707",
-      "url": "https://github.com/tree-sitter/tree-sitter-javascript/archive/c0027460e8f9629afeeb27f7949ecf961c82d707.tar.gz",
-      "hash": "14ha2bjajnrjvj3in1m05jzbpwkkcynz9p6g0spcyvjs3kwj27zy"
+      "revision": "4928d3d18019a848906855476fde2dc8be030217",
+      "url": "https://github.com/tree-sitter/tree-sitter-javascript/archive/4928d3d18019a848906855476fde2dc8be030217.tar.gz",
+      "hash": "1i7kk5dkfsmf1w7yjkyp196rs9x6skj2930ymlrip97v3jpk9chp"
     },
     "tree-sitter-json": {
       "type": "Git",
@@ -164,9 +164,9 @@
         "repo": "tree-sitter-json"
       },
       "branch": "master",
-      "revision": "80e623c2165887f9829357acfa9c0a0bab34a3cd",
-      "url": "https://github.com/tree-sitter/tree-sitter-json/archive/80e623c2165887f9829357acfa9c0a0bab34a3cd.tar.gz",
-      "hash": "0mjphf34k5d0h28wwafwljk486h5mzx30dqdxz23lcmvnh0s79y1"
+      "revision": "94f5c527b2965465956c2000ed6134dd24daf2a7",
+      "url": "https://github.com/tree-sitter/tree-sitter-json/archive/94f5c527b2965465956c2000ed6134dd24daf2a7.tar.gz",
+      "hash": "14za39wy4cw0r6r2m5a1i1za9m2wcyrlmh6yi2zl15b86i3dkbyp"
     },
     "tree-sitter-lua": {
       "type": "Git",
@@ -260,9 +260,9 @@
         "repo": "tree-sitter-query"
       },
       "branch": "main",
-      "revision": "608c01187fb9f525a1e4cf585bb63d73dea280b7",
-      "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/608c01187fb9f525a1e4cf585bb63d73dea280b7.tar.gz",
-      "hash": "0yx2jr4g2v1dlqszjlhl8avkh417c523mkf4clggs2ji02a5dsch"
+      "revision": "d25e8d183f319497b8b22a2a1585975b020da722",
+      "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/d25e8d183f319497b8b22a2a1585975b020da722.tar.gz",
+      "hash": "191h311g14aah7wpibpyhpz925506c3l6qyrfra1kd8pjn1nv2vk"
     },
     "tree-sitter-regex": {
       "type": "Git",
@@ -272,9 +272,9 @@
         "repo": "tree-sitter-regex"
       },
       "branch": "master",
-      "revision": "ba22e4e0cb42b2ef066948d0ea030ac509cef733",
-      "url": "https://github.com/tree-sitter/tree-sitter-regex/archive/ba22e4e0cb42b2ef066948d0ea030ac509cef733.tar.gz",
-      "hash": "02nxl4s5vx8nsmhg7cjaf45nl92x8q60b7jhlp29qdqvbgg35gwr"
+      "revision": "47007f195752d8e57bda80b0b6cdb2d173a9f7d7",
+      "url": "https://github.com/tree-sitter/tree-sitter-regex/archive/47007f195752d8e57bda80b0b6cdb2d173a9f7d7.tar.gz",
+      "hash": "0j9shwv7j8jnkms1f8h9ddg80cj85vp1pivkdcspdifbi69q8l2z"
     },
     "tree-sitter-rust": {
       "type": "Git",
@@ -284,9 +284,9 @@
         "repo": "tree-sitter-rust"
       },
       "branch": "master",
-      "revision": "04352146022062c101b8ddd853adf17eadd8cf56",
-      "url": "https://github.com/tree-sitter/tree-sitter-rust/archive/04352146022062c101b8ddd853adf17eadd8cf56.tar.gz",
-      "hash": "1xn8l6jy91arhlxfmnlcw2lq41xhjr17rh3j63pc8mwjybly2970"
+      "revision": "9c84af007b0f144954adb26b3f336495cbb320a7",
+      "url": "https://github.com/tree-sitter/tree-sitter-rust/archive/9c84af007b0f144954adb26b3f336495cbb320a7.tar.gz",
+      "hash": "0wjw8wz34c3h624xi0n133pv4ld1gmx4zn60xfkqgv7cmn9f42cv"
     },
     "tree-sitter-toml": {
       "type": "Git",
@@ -296,9 +296,9 @@
         "repo": "tree-sitter-toml"
       },
       "branch": "master",
-      "revision": "221526cb106e4f0e26d715922e573c2903ecc72a",
-      "url": "https://github.com/ikatyang/tree-sitter-toml/archive/221526cb106e4f0e26d715922e573c2903ecc72a.tar.gz",
-      "hash": "0s142z880yywxz1z9wmghb4bww86nlkl2093gcrmakpsk7nfsfc1"
+      "revision": "16a30c83ce427385b8d14939c45c137fcfca6c42",
+      "url": "https://github.com/ikatyang/tree-sitter-toml/archive/16a30c83ce427385b8d14939c45c137fcfca6c42.tar.gz",
+      "hash": "1jb9ws82dv3acnis945i9pkwjk4h2alnhnkmd8gyiiam8crhz2sm"
     },
     "tree-sitter-typescript": {
       "type": "Git",
@@ -308,9 +308,9 @@
         "repo": "tree-sitter-typescript"
       },
       "branch": "master",
-      "revision": "b00b8eb44f0b9f02556da0b1a4e2f71faed7e61b",
-      "url": "https://github.com/tree-sitter/tree-sitter-typescript/archive/b00b8eb44f0b9f02556da0b1a4e2f71faed7e61b.tar.gz",
-      "hash": "1lv3w5wxpzjbq629b7krnbww2hba6vk4s7y3l8p4jm4kaw9v0sxq"
+      "revision": "7b4275d077ae196fc0ce42ab3ad091574e3ec519",
+      "url": "https://github.com/tree-sitter/tree-sitter-typescript/archive/7b4275d077ae196fc0ce42ab3ad091574e3ec519.tar.gz",
+      "hash": "1w113zbh322i39pr3cym4n4kvs33sg004mpca5mydh1nx19w06x1"
     },
     "tree-sitter-vim": {
       "type": "Git",
@@ -344,9 +344,9 @@
         "repo": "tree-sitter-yaml"
       },
       "branch": "master",
-      "revision": "08ab1fbc18beac06b2938495a2c6ab17b5a6abc5",
-      "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/08ab1fbc18beac06b2938495a2c6ab17b5a6abc5.tar.gz",
-      "hash": "1jx6a54cjn1xd5g5y9z44y2nnfs288g40bs3dbjzsf6x8x87l32z"
+      "revision": "7b03feefd36b5f155465ca736c6304aca983b267",
+      "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/7b03feefd36b5f155465ca736c6304aca983b267.tar.gz",
+      "hash": "0d6kxdj6w0i1j77m2gsnafn78kvgf100hyhrymv359hcr6zm0dl6"
     }
   },
   "version": 3
