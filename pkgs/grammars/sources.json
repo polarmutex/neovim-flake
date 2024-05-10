@@ -32,9 +32,9 @@
         "repo": "tree-sitter-c"
       },
       "branch": "master",
-      "revision": "1aafaff4d26dac5a36dd3495be33e1c20161d761",
-      "url": "https://github.com/tree-sitter/tree-sitter-c/archive/1aafaff4d26dac5a36dd3495be33e1c20161d761.tar.gz",
-      "hash": "17xkaz1kqv5xqxl4gc68kg4msfr0pwhiwv0xz9fb5khrmc37yb3s"
+      "revision": "82fb86aa544843bd17a9f0f3dc16edf645a34349",
+      "url": "https://github.com/tree-sitter/tree-sitter-c/archive/82fb86aa544843bd17a9f0f3dc16edf645a34349.tar.gz",
+      "hash": "0sycp85pl0yr3d35fj17p1kbz8j3xj04ql35xmmd78f9592s0862"
     },
     "tree-sitter-cmake": {
       "type": "Git",
@@ -80,9 +80,9 @@
         "repo": "tree-sitter-dockerfile"
       },
       "branch": "main",
-      "revision": "439c3e7b8a9bfdbf1f7d7c2beaae4173dc484cbf",
-      "url": "https://github.com/camdencheek/tree-sitter-dockerfile/archive/439c3e7b8a9bfdbf1f7d7c2beaae4173dc484cbf.tar.gz",
-      "hash": "0y92ygbiqwqwg6vpbai5slgcwmv4545kxi6c4qwajd8p404dyvdi"
+      "revision": "087daa20438a6cc01fa5e6fe6906d77c869d19fe",
+      "url": "https://github.com/camdencheek/tree-sitter-dockerfile/archive/087daa20438a6cc01fa5e6fe6906d77c869d19fe.tar.gz",
+      "hash": "0nxw8q0sxmmpw6v0vw10075rkp5mfw1v2hx1hwkmyq8qlfml6d5q"
     },
     "tree-sitter-git_rebase": {
       "type": "Git",
