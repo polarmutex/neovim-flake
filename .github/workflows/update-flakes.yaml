@@ -38,7 +38,7 @@ jobs:
       name: Generate patch
       run: |
         nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
-        if nix run .#flake-commit-and-format-pathch -- "flake-update.patch"
+        if nix run .#flake-commit-and-format-patch -- "flake-update.patch"
         then
           echo "patch=true" >> "$GITHUB_OUTPUT"
         else
