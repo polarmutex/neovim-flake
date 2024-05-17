@@ -505,10 +505,10 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "v1.3.1",
-      "revision": "8e701da79f3fd7c44c3e8ad1aed6512aedc50191",
-      "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/v1.3.1",
-      "hash": "12mixk53gjs8clpnws9ys72qg85z1lf2pwmdld95zsqfrhapysrv"
+      "version": "v1.4.0",
+      "revision": "8278265e7ffd3420b8246004140df12255a9737c",
+      "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/v1.4.0",
+      "hash": "1aj8ri1lr5dx4ypq3yc53bijv5msw6jh07ywiqr440cxl2pbqfjd"
     },
     "playground": {
       "type": "Git",
