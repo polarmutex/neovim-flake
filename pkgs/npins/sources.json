@@ -135,10 +135,10 @@
       },
       "pre_releases": false,
       "version_upper_bound": null,
-      "version": "v2.2.0",
-      "revision": "42d767b04c50a6966c9633e3968bc65c0c2f2bfc",
-      "url": "https://api.github.com/repos/stevearc/dressing.nvim/tarball/v2.2.0",
-      "hash": "0zd2wswd1x83qgs9d6bsh7k5nmdniqd4ba0x4w3qdndp27nafcz9"
+      "version": "v2.2.1",
+      "revision": "572314728cb1ce012e825fd66331f52c94acac12",
+      "url": "https://api.github.com/repos/stevearc/dressing.nvim/tarball/v2.2.1",
+      "hash": "1i65g5qlk2i16d74frpwra8m8cvvcwj6d1hncd2gdk1h4pssxgyc"
     },
     "edgy.nvim": {
       "type": "GitRelease",
