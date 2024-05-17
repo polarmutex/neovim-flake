@@ -176,9 +176,9 @@
         "repo": "friendly-snippets"
       },
       "branch": "main",
-      "revision": "3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a",
-      "url": "https://github.com/rafamadriz/friendly-snippets/archive/3e9a3f5a0cfcef1741e352c37bda4e82e5eb846a.tar.gz",
-      "hash": "03z76x6a444fxys8qnsjbafy3ij8hf3y15wn6gc22glxfqyfvjsn"
+      "revision": "dd2fd1281d4b22e7b4a5bfafa3e142d958e251f2",
+      "url": "https://github.com/rafamadriz/friendly-snippets/archive/dd2fd1281d4b22e7b4a5bfafa3e142d958e251f2.tar.gz",
+      "hash": "06w5m39zbkbqr85cj32dn44n11z4yji4k9iij722fci9cp66g2wl"
     },
     "git-worktree.nvim": {
       "type": "Git",
