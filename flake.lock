@@ -163,7 +163,7 @@
       "inputs": {
         "flake-utils": "flake-utils_2",
         "nixpkgs": [
-          "nixpkgs"
+          "nixpkgs-treesitter"
         ]
       },
       "locked": {
@@ -280,6 +280,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-treesitter": {
+      "locked": {
+        "lastModified": 1715190945,
+        "narHash": "sha256-4io2n235V0Uz1UpRAobYy3oICK0o+y36g/SEbLh0F9w=",
+        "owner": "r-ryantm",
+        "repo": "nixpkgs",
+        "rev": "693471128715a7ea020ac4c81c3b03db33b8387b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "r-ryantm",
+        "ref": "auto-update/tree-sitter",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1714314149,
@@ -345,6 +361,7 @@
         "nil": "nil",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-basedpyright": "nixpkgs-basedpyright",
+        "nixpkgs-treesitter": "nixpkgs-treesitter",
         "pre-commit-hooks": "pre-commit-hooks",
         "spell-en-dictionary": "spell-en-dictionary",
         "spell-en-suggestions": "spell-en-suggestions"
