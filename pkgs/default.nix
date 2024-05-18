@@ -5,6 +5,7 @@ in {
     inputs',
     pkgs,
     system,
+    self,
     ...
   }: let
     polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {inherit (config) packages;};
@@ -193,38 +194,21 @@ in {
         '';
       };
 
-      # update-nvim-plugin = pkgs.writeShellApplication {
-      #   name = "update-nvim-plugin";
-      #   runtimeInputs = with pkgs; [
-      #     git
-      #     mktemp
-      #     npins
-      #   ];
-      #
-      #   text = ''
-      #     ${pkgs.npins}/bin/npins -d pkgs/npins update $1
-      #
-      #     set -eu
-      #     TMPDIR="$(mktemp -d -t npins-XXXXXX)"
-      #
-      #     cd "$(git rev-parse --show-toplevel)/pkgs/''${1}" || exit 1
-      #     nvfetcher -l "$TMPDIR/changelog" --build-dir .
-      #
-      #     echo "chore(plugin-update): " > "$TMPDIR/commit-summary"
-      #     cat "$TMPDIR/changelog"
-      #
-      #     if [ -s "$TMPDIR/changelog" ]; then
-      #      git config user.name "polarmutex"
-      #      git config user.email "polarmutex@users.noreply.github.com"
-      #      cat "$TMPDIR/commit-summary" "$TMPDIR/changelog" | tr '\n' ' ' > "$TMPDIR/commit-message"
-      #      git add .
-      #      git commit . -F "$TMPDIR/commit-message"
-      #     else
-      #      git restore .
-      #     fi
-      #     rm -r "$TMPDIR"
-      #   '';
-      # };
+      update-nvim-plugin = pkgs.writeShellApplication {
+        name = "update-nvim-plugin";
+        runtimeInputs = with pkgs; [
+          git
+          mktemp
+          npins
+        ];
+
+        text = ''
+          OLD_VERSION=$(jq -rcn "inputs | .pins | .[] |select(.repository.repo == \"$1\") |  if .version != null then .version else .revision[0:8] end " "pkgs/npins/sources.json")
+          ${pkgs.npins}/bin/npins -d pkgs/npins update $1
+          NEW_VERSION=$(jq -rcn "inputs | .pins | .[] |select(.repository.repo == \"$1\") |  if .version != null then .version else .revision[0:8] end " "pkgs/npins/sources.json")
+          git commit -am "chore(plugin/update): $1: $OLD_VERSION -> $NEW_VERSION"
+        '';
+      };
 
       update-tree-sitter-grammars = let
         data = builtins.fromJSON (builtins.readFile ./grammars/sources.json);
