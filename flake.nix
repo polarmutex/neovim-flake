@@ -91,7 +91,7 @@
     #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
     neovim-flake = {
       url = "github:neovim/neovim?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs-treesitter";
+      inputs.nixpkgs.follows = "nixpkgs-treesitter"; # TODO FIXME when update lands in nixpkgs
     };
 
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
