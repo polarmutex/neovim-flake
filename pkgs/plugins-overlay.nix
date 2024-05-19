@@ -135,6 +135,7 @@ in {
     telescope-nvim = mkNvimPlugin plugins-pins."telescope.nvim" "telescope-nvim";
     tokyonight-nvim = mkNvimPlugin plugins-pins."tokyonight.nvim" "tokyonight-nvim";
     trouble-nvim = mkNvimPlugin plugins-pins."trouble.nvim" "trouble-nvim";
+    vim-arduino = mkNvimPlugin plugins-pins."vim-arduino" "vim-be-arduino";
     vim-be-good = mkNvimPlugin plugins-pins."vim-be-good" "vim-be-good";
     vim-illuminate = mkNvimPlugin plugins-pins."vim-illuminate" "vim-illuminate";
     which-key-nvim = mkNvimPlugin plugins-pins."which-key.nvim" "which-key-nvim";

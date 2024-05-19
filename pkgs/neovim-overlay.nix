@@ -170,6 +170,7 @@ with final.lib; let
     telescope-nvim
     tokyonight-nvim
     trouble-nvim
+    vim-arduino
     vim-be-good
     vim-illuminate
     which-key-nvim
@@ -232,6 +233,9 @@ with final.lib; let
 
     # java
     jdt-language-server
+
+    # arduino
+    arduino-cli
   ];
 
   neovim-polar-dev = mkNeovim {

@@ -621,6 +621,18 @@
       "url": "https://api.github.com/repos/folke/trouble.nvim/tarball/v2.10.0",
       "hash": "0n5xi4bxfaizwjny5dv0k7zqc3gl60d5g1mkcdbfnq4y5f3f0wpj"
     },
+    "vim-arduino": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "stevearc",
+        "repo": "vim-arduino"
+      },
+      "branch": "master",
+      "revision": "2ded67cdf09bb07c4805d9e93d478095ed3d8606",
+      "url": "https://github.com/stevearc/vim-arduino/archive/2ded67cdf09bb07c4805d9e93d478095ed3d8606.tar.gz",
+      "hash": "10drm1dfh48wiwlnpycn277haagpm66mxaa2alx3svayln1hi8pr"
+    },
     "vim-be-good": {
       "type": "Git",
       "repository": {
