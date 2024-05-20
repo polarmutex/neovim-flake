@@ -587,9 +587,9 @@
         "repo": "telescope.nvim"
       },
       "branch": "master",
-      "revision": "96610122a40f0bb4ce2e452c6d2429bf093d6700",
-      "url": "https://github.com/nvim-telescope/telescope.nvim/archive/96610122a40f0bb4ce2e452c6d2429bf093d6700.tar.gz",
-      "hash": "1v6mg7hqfpw9pwnxw6vh7m2jpcy8smwfs69iawmgx26vfrdnrwhm"
+      "revision": "0c12735d5aff6a48ffd8111bf144dc2ff44e5975",
+      "url": "https://github.com/nvim-telescope/telescope.nvim/archive/0c12735d5aff6a48ffd8111bf144dc2ff44e5975.tar.gz",
+      "hash": "1k439x672iwrfqhy1ak6knsqlsydp5vhwf9ipd1m6p3hzbk0n7gs"
     },
     "tokyonight.nvim": {
       "type": "GitRelease",
