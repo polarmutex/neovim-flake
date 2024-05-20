@@ -653,9 +653,9 @@
         "repo": "vim-illuminate"
       },
       "branch": "master",
-      "revision": "e522e0dd742a83506db0a72e1ced68c9c130f185",
-      "url": "https://github.com/RRethy/vim-illuminate/archive/e522e0dd742a83506db0a72e1ced68c9c130f185.tar.gz",
-      "hash": "0l9306c3867r6dqn4272kkzql63pwfaibhdwisjlc7pcv9wzah53"
+      "revision": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa",
+      "url": "https://github.com/RRethy/vim-illuminate/archive/5eeb7951fc630682c322e88a9bbdae5c224ff0aa.tar.gz",
+      "hash": "0g86iv1mndcalrizdhl3z8ryj19jnqv139jwijpzyfk8gi677lhd"
     },
     "which-key.nvim": {
       "type": "GitRelease",

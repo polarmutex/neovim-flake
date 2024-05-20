@@ -125,7 +125,11 @@ in {
     # };
     nvim-treesitter-playground = mkNvimPlugin plugins-pins."playground" "nvim-treesitter-playground";
     nvim-web-devicons = mkNvimPlugin plugins-pins."nvim-web-devicons" "nvim-web-devicons";
-    obsidian-nvim = mkNvimPlugin plugins-pins."obsidian.nvim" "obsidian-nvim";
+    obsidian-nvim = (mkNvimPlugin plugins-pins."obsidian.nvim" "obsidian-nvim").overrideAttrs (_: {
+      patches = [
+        ./patches/obsidian_nvim_islist.patch
+      ];
+    });
     one-small-step-for-vimkind = mkNvimPlugin plugins-pins."one-small-step-for-vimkind" "one-small-step-for-vimkind";
     overseer-nvim = mkNvimPlugin plugins-pins."overseer.nvim" "overseer-nvim";
     plenary-nvim = mkNvimPlugin plugins-pins."plenary.nvim" "plenary-nvim";
