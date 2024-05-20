@@ -178,6 +178,8 @@ with final.lib; let
   ];
 
   extraPackages = with final; [
+    fswatch
+
     # lua
     lua-language-server
     luajitPackages.luacheck
