@@ -108,7 +108,7 @@ in {
     neodev-nvim = mkNvimPlugin plugins-pins."neodev.nvim" "neodev-nvim";
     neogit = mkNvimPlugin plugins-pins."neogit" "neogit";
     noice-nvim = mkNvimPlugin plugins-pins."noice.nvim" "noice-nvim";
-    nui-nvim = mkNvimPlugin plugins-pins."nui.nvim" "nui-nvim";
+    nui-nvim = mkNvimPlugin plugins-pins."nui.nvim" "nui-nvim"; # TODO FIx back to release
     nvim-cmp = mkNvimPlugin plugins-pins."nvim-cmp" "nvim-cmp";
     nvim-colorizer = mkNvimPlugin plugins-pins."nvim-colorizer.lua" "nvim-colorizer-lua";
     nvim-dap = mkNvimPlugin plugins-pins."nvim-dap" "nvim-dap";

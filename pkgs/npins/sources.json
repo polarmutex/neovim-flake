@@ -319,19 +319,16 @@
       "hash": "0slxiq7s1b0iars3p59bp2krk2zf2wr95qz9paa1jdkc6i7azzmf"
     },
     "nui.nvim": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "MunifTanjim",
         "repo": "nui.nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "0.3.0",
-      "revision": "a0fd35fcbb4cb479366f1dc5f20145fd718a3733",
-      "url": "https://api.github.com/repos/MunifTanjim/nui.nvim/tarball/0.3.0",
-      "hash": "0fjrnhfhq7sn3am7283adar0jlf6gcyq303kxkwqvxzvvdg9nirg"
+      "branch": "main",
+      "revision": "b1b3dcd6ed8f355c78bad3d395ff645be5f8b6ae",
+      "url": "https://github.com/MunifTanjim/nui.nvim/archive/b1b3dcd6ed8f355c78bad3d395ff645be5f8b6ae.tar.gz",
+      "hash": "0i4pf0rrdyc0s41x0cfzvy1q5dxg3q0gl2wzmzir8ra27m2ma595"
     },
     "nvim-cmp": {
       "type": "Git",
