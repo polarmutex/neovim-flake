@@ -125,9 +125,9 @@
         "repo": "diffview.nvim"
       },
       "branch": "main",
-      "revision": "9bdd5537575c2ea7925b71ae06585b934beea13d",
-      "url": "https://github.com/sindrets/diffview.nvim/archive/9bdd5537575c2ea7925b71ae06585b934beea13d.tar.gz",
-      "hash": "1x4xj923az3pyc552qaxgifhk13bkhbxpn34n8kp8v3jjhq1xc4d"
+      "revision": "0bae1a371ac68be86ead374ee2c4f36bd96bb6c6",
+      "url": "https://github.com/sindrets/diffview.nvim/archive/0bae1a371ac68be86ead374ee2c4f36bd96bb6c6.tar.gz",
+      "hash": "0gk5jdh28ca0aiwrm0c5yyvywrc6bnba6ijr2brmhi0h5i4yxl5d"
     },
     "dressing.nvim": {
       "type": "GitRelease",
