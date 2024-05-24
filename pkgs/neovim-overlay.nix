@@ -108,7 +108,7 @@ with final.lib; let
           resolvedExtraLuaPackages
         }"'';
   in
-    final.wrapNeovimUnstable inputs.neovim-flake.packages.${prev.system}.neovim (neovimConfig
+    final.wrapNeovimUnstable inputs.neovim-nightly-overlay.packages.${prev.system}.neovim (neovimConfig
       // {
         luaRcContent = initLua;
         wrapperArgs =

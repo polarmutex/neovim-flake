@@ -54,7 +54,7 @@ in {
       inherit (pkgs) npins;
 
       # from https://github.com/nix-community/neovim-nightly-overlay
-      neovim-git = inputs'.neovim-flake.packages.neovim;
+      neovim-git = inputs'.neovim-nightly-overlay.packages.neovim;
       inherit (pkgs) neovim-polar-dev;
       inherit (pkgs) neovim-polar;
       inherit polar-lua-config;

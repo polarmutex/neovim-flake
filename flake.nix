@@ -88,10 +88,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #neovim = { url = "github:neovim/neovim?dir=contrib&rev=47e60da7210209330767615c234ce181b6b67a08"; };
-    neovim-flake = {
-      url = "github:neovim/neovim?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs-treesitter"; # TODO FIXME when update lands in nixpkgs
+    neovim-src = {
+      url = "github:neovim/neovim";
+      flake = false;
+    };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.neovim-src.follows = "neovim-src";
     };
 
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
