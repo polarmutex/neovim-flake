@@ -292,16 +292,19 @@
       "hash": "0xxr4z1jmqfdi2cn6l6fvzx0cydf5r162yd434248ghpah2yv6qy"
     },
     "neogit": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
         "owner": "NeogitOrg",
         "repo": "neogit"
       },
-      "branch": "nightly",
-      "revision": "d55898fe64e3b3d87a0b3b38ddc9c3d57526ff48",
-      "url": "https://github.com/NeogitOrg/neogit/archive/d55898fe64e3b3d87a0b3b38ddc9c3d57526ff48.tar.gz",
-      "hash": "01q0zsq35w5km135nh4sb9i22zg0igljixjblwk9frvlh4lc1vwc"
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v1.0.0",
+      "revision": "16ee9ae957db2142fb189f5f2556123e24c5b7fb",
+      "url": "https://api.github.com/repos/NeogitOrg/neogit/tarball/v1.0.0",
+      "hash": "0ydslkgmpkgav5a9yb5jv6520ajjd5dbzl0m48l06r1rxmq1s9yd"
     },
     "noice.nvim": {
       "type": "GitRelease",
