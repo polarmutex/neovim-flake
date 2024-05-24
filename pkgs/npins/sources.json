@@ -556,10 +556,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "4.23.2",
-      "revision": "66466d4fe0b8988ba9e2932d3c41782c2efb683b",
-      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/4.23.2",
-      "hash": "09hfc2mbxb9mmcyain6r2srdhabflcmbj30cdf4wzwivb8wmlbgb"
+      "version": "4.23.5",
+      "revision": "e306c742bd7f7183e371cd91268b72d9db1bbae0",
+      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/4.23.5",
+      "hash": "1yn3vqn929mcl2b3a2i5f3640ymw7pdldvgdgyx8n3cdwz8kvp92"
     },
     "sqlite.lua": {
       "type": "GitRelease",
