@@ -299,9 +299,9 @@
         "repo": "neogit"
       },
       "branch": "nightly",
-      "revision": "1bd1c520a1c2f975b1e72548fbc9710d98ce3744",
-      "url": "https://github.com/NeogitOrg/neogit/archive/1bd1c520a1c2f975b1e72548fbc9710d98ce3744.tar.gz",
-      "hash": "0ydslkgmpkgav5a9yb5jv6520ajjd5dbzl0m48l06r1rxmq1s9yd"
+      "revision": "d55898fe64e3b3d87a0b3b38ddc9c3d57526ff48",
+      "url": "https://github.com/NeogitOrg/neogit/archive/d55898fe64e3b3d87a0b3b38ddc9c3d57526ff48.tar.gz",
+      "hash": "01q0zsq35w5km135nh4sb9i22zg0igljixjblwk9frvlh4lc1vwc"
     },
     "noice.nvim": {
       "type": "GitRelease",
