@@ -542,9 +542,9 @@
         "repo": "plenary.nvim"
       },
       "branch": "master",
-      "revision": "08e301982b9a057110ede7a735dd1b5285eb341f",
-      "url": "https://github.com/nvim-lua/plenary.nvim/archive/08e301982b9a057110ede7a735dd1b5285eb341f.tar.gz",
-      "hash": "03x9mxxqscahs3plml9pw0q6yacyiz6nvw4pcbpqlcqj99f0qbdz"
+      "revision": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683",
+      "url": "https://github.com/nvim-lua/plenary.nvim/archive/a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683.tar.gz",
+      "hash": "0n2p8krzwiw682f0yb6n8faamffpp336rjy50pbqf3jmc6czd5z4"
     },
     "rustaceanvim": {
       "type": "GitRelease",
