@@ -10,7 +10,6 @@ function M.fg(name)
     return fg and { fg = string.format("#%06x", fg) }
 end
 
----@param on_attach fun(client, buffer)
 function M.on_attach(on_attach)
     vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
