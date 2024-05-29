@@ -60,7 +60,7 @@
               inherit (pkgs) jq;
               inherit (pkgs) lemmy-help;
               inherit (pkgs) npins;
-              inherit (pkgs) nvfetcher;
+              # inherit (pkgs) nvfetcher;
             };
             shellHook = let
               luarc = pkgs.mk-luarc-json {plugins = with pkgs.nvimPlugins; [nvim-treesitter];};
@@ -77,27 +77,30 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
     # nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
-    nixpkgs-basedpyright.url = "github:kiike/nixpkgs/pkgs/basedpyright";
-    nixpkgs-treesitter.url = "github:r-ryantm/nixpkgs/auto-update/tree-sitter";
-    flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
+    # nixpkgs-treesitter.url = "github:r-ryantm/nixpkgs/auto-update/tree-sitter";
+
+    # flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
+    # flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
 
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # neovim
+    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
     neovim-src = {
       url = "github:neovim/neovim";
       flake = false;
     };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.neovim-src.follows = "neovim-src";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        neovim-src.follows = "neovim-src";
+      };
     };
-
-    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
 
     # spell
     spell-en-dictionary = {

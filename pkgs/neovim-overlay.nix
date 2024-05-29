@@ -225,7 +225,7 @@ with final.lib; let
         debugpy
       ]))
     ruff
-    basedpyright-nixpkgs.basedpyright
+    basedpyright
 
     # rust
     rust-analyzer
