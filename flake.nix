@@ -28,7 +28,7 @@
         #config,
         pkgs,
         #inputs',
-        #self',
+        self',
         system,
         ...
       }: {
@@ -62,11 +62,9 @@
               inherit (pkgs) npins;
               # inherit (pkgs) nvfetcher;
             };
-            shellHook = let
-              luarc = pkgs.mk-luarc-json {plugins = with pkgs.nvimPlugins; [nvim-treesitter];};
-            in ''
+            shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
-              ln -fs ${luarc} .luarc.json
+              ln -fs ${pkgs.nvim-luarc-json} .luarc.json
             '';
           };
         };

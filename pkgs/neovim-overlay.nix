@@ -3,124 +3,9 @@
   polar-lua-config,
 }: final: prev:
 with final.lib; let
-  mkNeovim = {
-    appName ? null,
-    plugins ? [],
-    devPlugins ? [],
-    extraPackages ? [],
-    resolvedExtraLuaPackages ? [],
-    extraPython3Packages ? p: [],
-    withPython3 ? true,
-    withRuby ? false,
-    withNodeJs ? false,
-    viAlias ? true,
-    vimAlias ? true,
-  }: let
-    defaultPlugin = {
-      plugin = null;
-      config = null;
-      optional = false;
-      runtime = {};
-    };
-
-    externalPackages = extraPackages ++ [final.sqlite];
-
-    normalizedPlugins = map (x:
-      defaultPlugin
-      // (
-        if x ? plugin
-        then x
-        else {plugin = x;}
-      ))
-    plugins;
-
-    neovimConfig = final.neovimUtils.makeNeovimConfig {
-      inherit extraPython3Packages withPython3 withRuby withNodeJs viAlias vimAlias;
-      plugins = normalizedPlugins;
-    };
-
-    nvimConfig = final.stdenv.mkDerivation {
-      name = "nvim-config";
-      src = ../nvim;
-
-      buildPhase = ''
-        mkdir -p $out/nvim
-        rm init.lua
-      '';
-
-      installPhase = ''
-        cp -r * $out/nvim
-        rm -r $out/nvim/after
-        cp -r after $out/after
-        ln -s ${inputs.spell-en-dictionary} $out/nvim/spell/en.utf-8.spl;
-        ln -s ${inputs.spell-en-suggestions} $out/nvim/spell/en.utf-8.sug;
-      '';
-    };
-
-    initLua =
-      ''
-        vim.loader.enable()
-      ''
-      + ""
-      + (builtins.readFile ../nvim/init.lua)
-      + ""
-      + optionalString (devPlugins != []) (
-        ''
-          local dev_pack_path = vim.fn.stdpath('data') .. '/site/pack/dev'
-          local dev_plugins_dir = dev_pack_path .. '/opt'
-          local dev_plugin_path
-        ''
-        + strings.concatMapStringsSep
-        "\n"
-        (plugin: ''
-          dev_plugin_path = dev_plugins_dir .. '/${plugin.name}'
-          if vim.fn.empty(vim.fn.glob(dev_plugin_path)) > 0 then
-            vim.notify('Bootstrapping dev plugin ${plugin.name} ...', vim.log.levels.INFO)
-            vim.cmd('!ln -s  ${plugin.path} ' .. dev_plugin_path)
-          end
-          vim.cmd('packadd! ${plugin.name}')
-        '')
-        devPlugins
-      );
-
-    extraMakeWrapperArgs = builtins.concatStringsSep " " (
-      (optional (appName != "nvim" && appName != null && appName != "")
-        ''--set NVIM_APPNAME "${appName}"'')
-      ++ (optional (externalPackages != [])
-        ''--prefix PATH : "${makeBinPath externalPackages}"'')
-      ++ [
-        ''--set LIBSQLITE_CLIB_PATH "${final.sqlite.out}/lib/libsqlite3.so"''
-        ''--set LIBSQLITE "${final.sqlite.out}/lib/libsqlite3.so"''
-      ]
-    );
-
-    extraMakeWrapperLuaCArgs = optionalString (resolvedExtraLuaPackages != []) ''
-      --suffix LUA_CPATH ";" "${
-        lib.concatMapStringsSep ";" final.luaPackages.getLuaCPath
-        resolvedExtraLuaPackages
-      }"'';
-
-    extraMakeWrapperLuaArgs =
-      optionalString (resolvedExtraLuaPackages != [])
-      ''
-        --suffix LUA_PATH ";" "${
-          concatMapStringsSep ";" final.luaPackages.getLuaPath
-          resolvedExtraLuaPackages
-        }"'';
-  in
-    final.wrapNeovimUnstable inputs.neovim-nightly-overlay.packages.${prev.system}.neovim (neovimConfig
-      // {
-        luaRcContent = initLua;
-        wrapperArgs =
-          escapeShellArgs neovimConfig.wrapperArgs
-          + " "
-          + extraMakeWrapperArgs
-          + " "
-          + extraMakeWrapperLuaCArgs
-          + " "
-          + extraMakeWrapperLuaArgs;
-        wrapRc = true;
-      });
+  mkNeovim = final.callPackage ./mkNeovim.nix {
+    inherit inputs;
+  };
 
   all-plugins = with final.nvimPlugins; [
     polar-lua-config
@@ -268,4 +153,11 @@ in {
     neovim-polar-dev
     neovim-polar
     ;
+
+  # This can be symlinked in the devShell's shellHook.
+  nvim-luarc-json = final.mk-luarc-json {
+    nvim = neovim-polar;
+    plugins = all-plugins;
+    neodev-types = "nightly";
+  };
 }

@@ -8,7 +8,10 @@ in {
     self,
     ...
   }: let
-    polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {inherit (config) packages;};
+    polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {
+      inherit inputs;
+      inherit (config) packages;
+    };
     plugin-overlay = import ./plugins-overlay.nix {inherit inputs;};
     neovim-overlay = import ./neovim-overlay.nix {
       inherit inputs;
@@ -54,6 +57,7 @@ in {
       neovim-git = inputs'.neovim-nightly-overlay.packages.neovim;
       inherit (pkgs) neovim-polar-dev;
       inherit (pkgs) neovim-polar;
+      inherit (pkgs) nvim-luarc-json;
       inherit polar-lua-config;
 
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;

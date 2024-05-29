@@ -1,30 +1,4 @@
 {inputs}: final: prev: let
-  /*
-  wrapperFor returns a wrapper w for a set of pkgs
-
-  wrapper incudes automatic overrides for a callPackage definition
-  */
-  wrapperFor = _pkgs: _callPackage: path: extraOverrides: let
-    # args :: set
-    args = builtins.functionArgs (import path);
-
-    usesNvfetcher = builtins.hasAttr "src" args || builtins.hasAttr "sources" args;
-
-    sources = _pkgs.callPackages (path + "/generated.nix") {};
-
-    firstSource = builtins.head (builtins.attrValues sources);
-
-    nvfetcherOverrides =
-      if ! usesNvfetcher
-      then {}
-      else if builtins.hasAttr "sources" args
-      then {inherit sources;}
-      else builtins.intersectAttrs args firstSource;
-  in
-    _callPackage path (nvfetcherOverrides // extraOverrides);
-
-  w = wrapperFor prev;
-
   plugins-pins = import ./npins;
 
   mkNvimPlugin = src: pname:
@@ -120,9 +94,6 @@ in {
     nvim-navic = mkNvimPlugin plugins-pins."nvim-navic" "nvim-navic";
     nvim-nio = mkNvimPlugin plugins-pins."nvim-nio" "nvim-nio";
     nvim-treesitter = mkNvimTreesitterPlugin plugins-pins."nvim-treesitter" "nvim-treesitter";
-    # nvim-treesitter = w prev.callPackage ./plugins/nvim-treesitter {
-    #   inherit (inputs) nixpkgs;
-    # };
     nvim-treesitter-playground = mkNvimPlugin plugins-pins."playground" "nvim-treesitter-playground";
     nvim-web-devicons = mkNvimPlugin plugins-pins."nvim-web-devicons" "nvim-web-devicons";
     obsidian-nvim = (mkNvimPlugin plugins-pins."obsidian.nvim" "obsidian-nvim").overrideAttrs (_: {
