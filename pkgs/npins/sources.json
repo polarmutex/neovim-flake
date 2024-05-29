@@ -579,6 +579,18 @@
       "url": "https://api.github.com/repos/kkharji/sqlite.lua/tarball/v1.2.2",
       "hash": "0ckifx6xxrannn9szacgiiqjsp4rswghxscdl3s411dhas8djj1m"
     },
+    "telescope-fzf-native.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-telescope",
+        "repo": "telescope-fzf-native.nvim"
+      },
+      "branch": "main",
+      "revision": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27",
+      "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim/archive/9ef21b2e6bb6ebeaf349a0781745549bbb870d27.tar.gz",
+      "hash": "0lvykmaarl5nd3iaphp8jgnxg6cly5p6ignd3i1450rpbdp1w9xg"
+    },
     "telescope.nvim": {
       "type": "GitRelease",
       "repository": {

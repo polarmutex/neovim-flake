@@ -108,6 +108,12 @@ in {
     schemastore-nvim = mkNvimPlugin plugins-pins."SchemaStore.nvim" "schemaStore-nvim";
     sqlite-lua = mkNvimPlugin plugins-pins."sqlite.lua" "sqlite.lua";
     telescope-nvim = mkNvimPlugin plugins-pins."telescope.nvim" "telescope-nvim";
+    telescope-fzf-native = prev.pkgs.vimUtils.buildVimPlugin rec {
+      pname = "telescope-fzf-native";
+      src = plugins-pins."telescope-fzf-native.nvim";
+      version = src.revision;
+      buildPhase = "make";
+    };
     tokyonight-nvim = mkNvimPlugin plugins-pins."tokyonight.nvim" "tokyonight-nvim";
     trouble-nvim = mkNvimPlugin plugins-pins."trouble.nvim" "trouble-nvim";
     vim-arduino = mkNvimPlugin plugins-pins."vim-arduino" "vim-be-arduino";

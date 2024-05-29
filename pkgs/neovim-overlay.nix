@@ -53,6 +53,7 @@ with final.lib; let
     schemastore-nvim
     sqlite-lua
     telescope-nvim
+    telescope-fzf-native
     tokyonight-nvim
     trouble-nvim
     vim-arduino
