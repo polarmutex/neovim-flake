@@ -60,7 +60,7 @@
               inherit (pkgs) jq;
               inherit (pkgs) lemmy-help;
               inherit (pkgs) npins;
-              # inherit (pkgs) nvfetcher;
+              inherit (pkgs) nix-tree;
             };
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
@@ -73,7 +73,8 @@
 
   # Input source for our derivation
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    # nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
     # nixpkgs-treesitter.url = "github:r-ryantm/nixpkgs/auto-update/tree-sitter";
 
