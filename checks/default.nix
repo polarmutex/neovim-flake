@@ -17,8 +17,7 @@
           alejandra = {
             enable = true;
             excludes = [
-              "pkgs/plugins/.*/generated.*"
-              "tree-sitter-grammars"
+              "./pkgs/grammars"
             ];
           };
           stylua.enable = true;
