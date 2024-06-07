@@ -286,10 +286,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v2.5.2",
-      "revision": "da1562e1e3df0e994ddc52cb4ba22376a5d7f2fc",
-      "url": "https://api.github.com/repos/folke/neodev.nvim/tarball/v2.5.2",
-      "hash": "0xxr4z1jmqfdi2cn6l6fvzx0cydf5r162yd434248ghpah2yv6qy"
+      "version": "v3.0.0",
+      "revision": "1f4ebcc10852518166ce165e57d425a4265a10d4",
+      "url": "https://api.github.com/repos/folke/neodev.nvim/tarball/v3.0.0",
+      "hash": "1lfj7ww8fplmj0xmm2qa4f8ifqapvmdra9s8gwz770b7dyraj615"
     },
     "neogit": {
       "type": "GitRelease",
