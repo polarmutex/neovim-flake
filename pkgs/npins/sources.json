@@ -493,10 +493,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.7.12",
-      "revision": "29a6e054529fa42b3db3cb14e9e31eb49ed561c1",
-      "url": "https://api.github.com/repos/epwalsh/obsidian.nvim/tarball/v3.7.12",
-      "hash": "1v5bybcaazkkmjgpwb2gc7klp42kj3lghp52ikciyb65ywy458d9"
+      "version": "v3.7.14",
+      "revision": "056c73f2377c25299531e80cfcaf4bf00afb79be",
+      "url": "https://api.github.com/repos/epwalsh/obsidian.nvim/tarball/v3.7.14",
+      "hash": "0jkr1mwl2bi0nqr41f5vjm4wwvypwbmm20bznjmah1dq6sjhb11d"
     },
     "one-small-step-for-vimkind": {
       "type": "Git",
