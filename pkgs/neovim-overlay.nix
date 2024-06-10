@@ -127,6 +127,7 @@ with final.lib; let
   ];
 
   neovim-polar-dev = mkNeovim {
+    vimAlias = true;
     plugins = all-plugins;
     devPlugins = [
       {
@@ -142,6 +143,7 @@ with final.lib; let
   };
 
   neovim-polar = mkNeovim {
+    vimAlias = true;
     plugins =
       all-plugins
       ++ (with final.nvimPlugins; [
