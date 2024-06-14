@@ -208,10 +208,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.8.1",
-      "revision": "76927d14d3fbd4ba06ccb5246e79d93b5442c188",
-      "url": "https://api.github.com/repos/lewis6991/gitsigns.nvim/tarball/v0.8.1",
-      "hash": "12q8j0ds2jzgm1yhi7dwd3l6szc62kkv641d6wf3krsg6zfx633m"
+      "version": "v0.9.0",
+      "revision": "0b04035bb7b3c83e999b9676e2fb46fd0aa9f910",
+      "url": "https://api.github.com/repos/lewis6991/gitsigns.nvim/tarball/v0.9.0",
+      "hash": "100hqm6fwd8nnwc0m66ap8dwzgbcfgprxh8m326f314bl83f7f81"
     },
     "harpoon": {
       "type": "Git",
