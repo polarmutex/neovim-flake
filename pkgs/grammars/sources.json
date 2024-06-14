@@ -332,9 +332,9 @@
         "repo": "tree-sitter-vimdoc"
       },
       "branch": "master",
-      "revision": "1b177bd9f53995dac83616e84b552a8d4f6c5f7e",
-      "url": "https://github.com/neovim/tree-sitter-vimdoc/archive/1b177bd9f53995dac83616e84b552a8d4f6c5f7e.tar.gz",
-      "hash": "1qpmrdwwg87c8m9rirvwqm4np17nc33g40dj01g0pl7qfl3ackff"
+      "revision": "2249c44ecd3f5cf22da3dcccfb74f816ddb29245",
+      "url": "https://github.com/neovim/tree-sitter-vimdoc/archive/2249c44ecd3f5cf22da3dcccfb74f816ddb29245.tar.gz",
+      "hash": "0raqlzi2x9a0qrfidgw0gqda8030jz518kdwzvyxjndnd5cd5rdz"
     },
     "tree-sitter-yaml": {
       "type": "Git",
