@@ -271,10 +271,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.12.0",
-      "revision": "dacbd27d9c237b38373c40fc484601497330d1b4",
-      "url": "https://api.github.com/repos/echasnovski/mini.indentscope/tarball/v0.12.0",
-      "hash": "0hrjaxs878vh0ks2yblqq2n00wb65nymz0kdxzi1v3da227g7hd2"
+      "version": "v0.13.0",
+      "revision": "cbbdc6afba859d20d6fb67c3e035586712622816",
+      "url": "https://api.github.com/repos/echasnovski/mini.indentscope/tarball/v0.13.0",
+      "hash": "08hnppjd6rcr9pcqk3bh30sm3vh5h2x87i89g9k99aa9lx3062yk"
     },
     "neodev.nvim": {
       "type": "GitRelease",
