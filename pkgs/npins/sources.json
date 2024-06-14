@@ -97,10 +97,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v5.8.0",
-      "revision": "9b26e81c4292106e68dda3e7b64473434fd5b3e0",
-      "url": "https://api.github.com/repos/stevearc/conform.nvim/tarball/v5.8.0",
-      "hash": "1ic95x2alfcnppc3ylhbd924xm6nrdc74qvlrdgyicxzp6fl2wlj"
+      "version": "v5.9.0",
+      "revision": "797d1f622a23d4a21bb58218bdf5999a9beac4ef",
+      "url": "https://api.github.com/repos/stevearc/conform.nvim/tarball/v5.9.0",
+      "hash": "18iw9dbcl8a5pz3rfq6z3ncmmwq1ww6sff8jx40r6z97s1m2gla3"
     },
     "crates.nvim": {
       "type": "GitRelease",
