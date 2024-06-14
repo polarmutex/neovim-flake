@@ -17,7 +17,7 @@
           alejandra = {
             enable = true;
             excludes = [
-              "./pkgs/grammars"
+              "pkgs/grammars"
             ];
           };
           stylua.enable = true;
