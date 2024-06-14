@@ -341,9 +341,9 @@
         "repo": "nvim-cmp"
       },
       "branch": "main",
-      "revision": "5260e5e8ecadaf13e6b82cf867a909f54e15fd07",
-      "url": "https://github.com/hrsh7th/nvim-cmp/archive/5260e5e8ecadaf13e6b82cf867a909f54e15fd07.tar.gz",
-      "hash": "1ld6xs2mby4kyq3c6b88hcn3mw0x2yhzmgc8xm65ap59dafxy58s"
+      "revision": "a110e12d0b58eefcf5b771f533fc2cf3050680ac",
+      "url": "https://github.com/hrsh7th/nvim-cmp/archive/a110e12d0b58eefcf5b771f533fc2cf3050680ac.tar.gz",
+      "hash": "0qn7yz2nqp1k5p337nys0d2sr34ybs52s8sx4gg9krl76l91zlgf"
     },
     "nvim-colorizer.lua": {
       "type": "Git",
