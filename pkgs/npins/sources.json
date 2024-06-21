@@ -316,10 +316,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v4.2.0",
-      "revision": "f65b6b7ab87796f93ea8f8a92d5a64dc53d912d1",
-      "url": "https://api.github.com/repos/folke/noice.nvim/tarball/v4.2.0",
-      "hash": "00d0ga8rhzr1snqqbsmvd3c60fas2dbik9hp4v3xmimb3v03fzzl"
+      "version": "v4.2.2",
+      "revision": "8f1d9966762e62fa8788e5fb1a5f6a86784221d9",
+      "url": "https://api.github.com/repos/folke/noice.nvim/tarball/v4.2.2",
+      "hash": "16b3gdw6137qzqgv7ihsk091zikklvs6krafrxmdd9lgjf877s2n"
     },
     "nui.nvim": {
       "type": "Git",
