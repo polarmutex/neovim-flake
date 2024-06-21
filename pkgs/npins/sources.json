@@ -631,10 +631,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.4.1",
-      "revision": "3609bb9a82bbab1ef95cf2c27ce7e52267a7d40d",
-      "url": "https://api.github.com/repos/folke/trouble.nvim/tarball/v3.4.1",
-      "hash": "0fmrbl8b2y1ry3a43lvm3bfc35sxw12cq4h0zcsj4g2f8l1923lc"
+      "version": "v3.4.2",
+      "revision": "09380a8ed0694dbfbbcf59f9eaac499e259cb75c",
+      "url": "https://api.github.com/repos/folke/trouble.nvim/tarball/v3.4.2",
+      "hash": "1qgyj6k3rfps4j31g4siw13ddkf2m7bqfbypdwshlwcy7chccj4s"
     },
     "vim-arduino": {
       "type": "Git",
