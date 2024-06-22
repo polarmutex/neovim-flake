@@ -163,6 +163,5 @@ in {
   nvim-luarc-json = final.mk-luarc-json {
     nvim = neovim-polar;
     plugins = all-plugins;
-    neodev-types = "nightly";
   };
 }
