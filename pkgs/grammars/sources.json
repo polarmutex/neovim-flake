@@ -104,9 +104,9 @@
         "repo": "tree-sitter-gitcommit"
       },
       "branch": "main",
-      "revision": "edd817e0532f179b7f7f371dc180629070945f0c",
-      "url": "https://github.com/gbprod/tree-sitter-gitcommit/archive/edd817e0532f179b7f7f371dc180629070945f0c.tar.gz",
-      "hash": "19wa18kpgmfl6z0dm0xsh3kmmx5imlg2dngzhmqrl91gxy076ala"
+      "revision": "821994a8029b0e271171da4331b8cfc0294d08ed",
+      "url": "https://github.com/gbprod/tree-sitter-gitcommit/archive/821994a8029b0e271171da4331b8cfc0294d08ed.tar.gz",
+      "hash": "01dzgjqvl8ss591lifbb1hqlnfxs40v92pikbj1qhzlabv3hdyvp"
     },
     "tree-sitter-go": {
       "type": "Git",
@@ -236,9 +236,9 @@
         "repo": "tree-sitter-nix"
       },
       "branch": "master",
-      "revision": "b3cda619248e7dd0f216088bd152f59ce0bbe488",
-      "url": "https://github.com/cstrahan/tree-sitter-nix/archive/b3cda619248e7dd0f216088bd152f59ce0bbe488.tar.gz",
-      "hash": "1xh75z11d1b514qm997br8vmxalir2ah1pk7v3k1ppm28043ggr1"
+      "revision": "0fdada10f1f845ca9116e279ad8f5d0ca93e9949",
+      "url": "https://github.com/cstrahan/tree-sitter-nix/archive/0fdada10f1f845ca9116e279ad8f5d0ca93e9949.tar.gz",
+      "hash": "1vnf28sgzck9i020is5m5ff95b6sxp2kams21nwrajvq66a38xl6"
     },
     "tree-sitter-python": {
       "type": "Git",
