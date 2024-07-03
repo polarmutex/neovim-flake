@@ -587,9 +587,9 @@
         "repo": "telescope-fzf-native.nvim"
       },
       "branch": "main",
-      "revision": "9ef21b2e6bb6ebeaf349a0781745549bbb870d27",
-      "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim/archive/9ef21b2e6bb6ebeaf349a0781745549bbb870d27.tar.gz",
-      "hash": "0lvykmaarl5nd3iaphp8jgnxg6cly5p6ignd3i1450rpbdp1w9xg"
+      "revision": "cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b",
+      "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim/archive/cf48d4dfce44e0b9a2e19a008d6ec6ea6f01a83b.tar.gz",
+      "hash": "0h741m7rcm5kl0mq9kkzw6za2h53chavpkai1qp433plaxzlyj0q"
     },
     "telescope.nvim": {
       "type": "GitRelease",
