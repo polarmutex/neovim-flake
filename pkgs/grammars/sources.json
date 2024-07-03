@@ -68,9 +68,9 @@
         "repo": "tree-sitter-diff"
       },
       "branch": "main",
-      "revision": "629676fc3919606964231b2c7b9677d6998a2cb4",
-      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/629676fc3919606964231b2c7b9677d6998a2cb4.tar.gz",
-      "hash": "06ayrkmzsgh32p5hx36b21mn4dc67bd35mdhi290nm6jbbppss8k"
+      "revision": "19dd5aa52fe339a1d974768a09ee2537303e8ca5",
+      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/19dd5aa52fe339a1d974768a09ee2537303e8ca5.tar.gz",
+      "hash": "0kbrmhsyypvjrfmr86qk0n8g18vgs1crm737k4lvv1ans96v2bx5"
     },
     "tree-sitter-dockerfile": {
       "type": "Git",
@@ -92,9 +92,9 @@
         "repo": "tree-sitter-git-rebase"
       },
       "branch": "master",
-      "revision": "d8a4207ebbc47bd78bacdf48f883db58283f9fd8",
-      "url": "https://github.com/the-mikedavis/tree-sitter-git-rebase/archive/d8a4207ebbc47bd78bacdf48f883db58283f9fd8.tar.gz",
-      "hash": "16g3i69jxq7fm2nis2d61bcj1r84sbr1drbmjd6zwm8rxkdnxd4r"
+      "revision": "274e27ea0f09371122ab55b8a812a32d6ef644e8",
+      "url": "https://github.com/the-mikedavis/tree-sitter-git-rebase/archive/274e27ea0f09371122ab55b8a812a32d6ef644e8.tar.gz",
+      "hash": "0mjg9ppxs1qhkl1h16pcsghp12ya4mxsfzxv07372gdfklwq6ijv"
     },
     "tree-sitter-gitcommit": {
       "type": "Git",
@@ -104,9 +104,9 @@
         "repo": "tree-sitter-gitcommit"
       },
       "branch": "main",
-      "revision": "821994a8029b0e271171da4331b8cfc0294d08ed",
-      "url": "https://github.com/gbprod/tree-sitter-gitcommit/archive/821994a8029b0e271171da4331b8cfc0294d08ed.tar.gz",
-      "hash": "01dzgjqvl8ss591lifbb1hqlnfxs40v92pikbj1qhzlabv3hdyvp"
+      "revision": "aa5c279287f0895a7ebc76a06e55ac3e4b2df7c7",
+      "url": "https://github.com/gbprod/tree-sitter-gitcommit/archive/aa5c279287f0895a7ebc76a06e55ac3e4b2df7c7.tar.gz",
+      "hash": "0xivxjh9k0qcply9b6m0m6s1kkkx58ckhi1cpkab4ym70fidlcaf"
     },
     "tree-sitter-go": {
       "type": "Git",
