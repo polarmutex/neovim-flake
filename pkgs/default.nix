@@ -42,6 +42,9 @@ in {
           #     mdformat-toc
           #   ]);
           nil-git = inputs'.nil.packages.default;
+          basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
+            inherit (prev) system;
+          };
         })
       ];
     };
