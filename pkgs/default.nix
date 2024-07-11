@@ -214,7 +214,7 @@ in {
 
       # inherit (pkgs) fd;
       # inherit (pkgs) jq;
-      # inherit (pkgs) npins;
+      inherit (pkgs) npins;
 
       # # from https://github.com/nix-community/neovim-nightly-overlay
       # neovim-git = inputs'.neovim-nightly-overlay.packages.neovim;
