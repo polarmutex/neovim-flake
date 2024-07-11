@@ -1,47 +1,149 @@
 {inputs, ...}: let
 in {
   perSystem = {
-    config,
     inputs',
-    pkgs,
     system,
-    self,
+    config,
+    lib,
+    pkgs,
+    #self,
     ...
   }: let
-    polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {
-      inherit inputs;
-      inherit (config) packages;
-    };
     plugin-overlay = import ./plugins-overlay.nix {inherit inputs;};
-    neovim-overlay = import ./neovim-overlay.nix {
+
+    npins = import ./npins;
+
+    mkNeovim = pkgs.callPackage ./mkNeovim.nix {
       inherit inputs;
-      inherit polar-lua-config;
+      neovim-unwrapped = config.packages.neovim;
     };
+
+    all-plugins = with pkgs.nvimPlugins; [
+      beancount-nvim
+      cmp-dap
+      cmp-emoji
+      cmp-nvim-lsp
+      cmp-path
+      conform-nvim
+      crates-nvim
+      diffview-nvim
+      dressing-nvim
+      edgy-nvim
+      flash-nvim
+      friendly-snippets
+      gitsigns-nvim
+      harpoon
+      inc-rename-nvim
+      lualine-nvim
+      luasnip
+      kanagawa-nvim
+      mini-indentscope
+      neodev-nvim
+      neogit
+      noice-nvim
+      nui-nvim
+      nvim-cmp
+      nvim-colorizer
+      nvim-dap
+      nvim-dap-python
+      nvim-dap-ui
+      nvim-dap-virtual-text
+      nvim-jdtls
+      nvim-lint
+      nvim-navic
+      nvim-nio
+      nvim-treesitter
+      nvim-treesitter-playground
+      nvim-web-devicons
+      obsidian-nvim
+      one-small-step-for-vimkind
+      overseer-nvim
+      rustaceanvim
+      plenary-nvim
+      schemastore-nvim
+      sqlite-lua
+      telescope-nvim
+      telescope-fzf-native
+      tokyonight-nvim
+      trouble-nvim
+      vim-arduino
+      vim-be-good
+      vim-illuminate
+      which-key-nvim
+      yanky-nvim
+    ];
+
+    extraPackages = with pkgs; [
+      fswatch
+
+      # lua
+      lua-language-server
+      luajitPackages.luacheck
+      stylua
+
+      # markdown
+      prettierd
+      markdownlint-cli
+      # (pkgs.mdformat.withPlugins (p: [
+      #   p.mdformat-frontmatter
+      #   p.mdformat-gfm
+      #   p.mdformat-toc
+      # ]))
+
+      #nix
+      nil
+      deadnix
+      statix
+      alejandra
+
+      # python
+      (python311.withPackages (ps:
+        with ps; [
+          black
+          python-lsp-server
+          python-lsp-black.overrideAttrs
+          (oldAttrs: rec {
+            patches =
+              oldAttrs.patches
+              /*
+              fix test failure with black>=24.3.0;
+              remove this patch once python-lsp-black>2.0.0
+              */
+              ++ lib.optional
+              (with lib; (versionOlder version "2.0.1") && (versionAtLeast black.version "24.3.0"))
+              (fetchpatch {
+                url = "https://patch-diff.githubusercontent.com/raw/python-lsp/python-lsp-black/pull/59.patch";
+                hash = "sha256-4u0VIS7eidVEiKRW2wc8lJVkJwhzJD/M+uuqmTtiZ7E=";
+              });
+          })
+          python-lsp-ruff
+          pydocstyle
+          debugpy
+        ]))
+      ruff
+      basedpyright-nixpkgs.basedpyright
+
+      # rust
+      rust-analyzer
+
+      # yaml
+      nodePackages_latest.yaml-language-server
+
+      # java
+      jdt-language-server
+
+      # arduino
+      arduino-cli
+    ];
   in {
     _module.args.pkgs = import inputs.nixpkgs {
       inherit system;
-      config.allowUnfree = true;
+      config.allowUnfree = false;
       overlays = [
         plugin-overlay
-        neovim-overlay
         inputs.gen-luarc.overlays.default
         (_final: prev: {
-          # mdformat-with-plugins =
-          #   pkgs.python311Packages.mdformat.withPlugins
-          #   (with pkgs.python311Packages; [
-          #     (mdformat-gfm.overridePythonAttrs (prev: {
-          #       src = pkgs.fetchFromGitHub {
-          #         owner = "hukkin";
-          #         repo = prev.pname;
-          #         rev = "master";
-          #         hash = "sha256-dQsYL2I3bWmdgoxIHhW6e+Sz8kfjD1bR5XZmpmUYCV8=";
-          #       };
-          #     }))
-          #     mdit-py-plugins
-          #     mdformat-frontmatter
-          #     mdformat-toc
-          #   ]);
-          nil-git = inputs'.nil.packages.default;
+          # nil-git = inputs'.nil.packages.default;
           basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
             inherit (prev) system;
           };
@@ -50,227 +152,87 @@ in {
     };
 
     packages = {
-      default = config.packages.neovim-git;
+      default = config.packages.neovim;
 
-      inherit (pkgs) fd;
-      inherit (pkgs) jq;
-      inherit (pkgs) npins;
+      neovim = import ./neovim.nix {
+        neovim-src = npins.neovim;
+        inherit lib pkgs;
+      };
 
-      # from https://github.com/nix-community/neovim-nightly-overlay
-      neovim-git = inputs'.neovim-nightly-overlay.packages.neovim;
-      inherit (pkgs) neovim-polar-dev;
-      inherit (pkgs) neovim-polar;
-      inherit (pkgs) nvim-luarc-json;
-      inherit polar-lua-config;
+      neovim-debug = import ./neovim-debug.nix {
+        inherit (config.packages) neovim;
+        inherit pkgs;
+      };
+
+      neovim-developer = import ./neovim-developer.nix {
+        inherit (config.packages) neovim-debug;
+        neovim-src = npins.neovim;
+        inherit lib pkgs;
+      };
+
+      polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {
+        inherit (config) packages;
+      };
+
+      neovim-polar-dev = mkNeovim {
+        vimAlias = true;
+        appName = "nvim";
+        plugins =
+          all-plugins
+          ++ [
+            config.packages.polar-lua-config
+          ];
+        devPlugins = [
+          {
+            name = "git-worktree.nvim";
+            path = "~/repos/personal/git-worktree-nvim/v2 ";
+          }
+          {
+            name = "beancount.nvim";
+            path = "~/repos/personal/beancount-nvim/master ";
+          }
+        ];
+        inherit extraPackages;
+      };
+
+      neovim-polar = mkNeovim {
+        vimAlias = true;
+        appName = "nvim";
+        plugins =
+          all-plugins
+          ++ (with pkgs.nvimPlugins; [
+            config.packages.polar-lua-config
+            git-worktree-nvim
+          ]);
+        inherit extraPackages;
+      };
+
+      nvim-luarc-json = pkgs.mk-luarc-json {
+        nvim = config.packages.neovim-polar;
+        plugins = all-plugins;
+      };
+
+      # inherit (pkgs) fd;
+      # inherit (pkgs) jq;
+      # inherit (pkgs) npins;
+
+      # # from https://github.com/nix-community/neovim-nightly-overlay
+      # neovim-git = inputs'.neovim-nightly-overlay.packages.neovim;
+      # inherit (pkgs) neovim-polar-dev;
+      # inherit (pkgs) neovim-polar;
+      # inherit (pkgs) nvim-luarc-json;
+      # inherit polar-lua-config;
 
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
-      # scripts
-      flake-commit-and-format-patch = pkgs.writeShellApplication {
-        name = "flake-commit-and-format-patch";
-        runtimeInputs = with pkgs; [
-          coreutils
-          git
-        ];
-
-        text = ''
-          #!/bin/bash
-
-          usage() {
-            printf "%s\n\n" "usage: $(basename "$0") <patch-file> "
-            printf "%s\n\n" "Commits all current changes with <commit-message> as the commit message and writes a patch to <output-file>."
-            exit 1
-          }
-
-          if [ $# -ne 1 ]; then
-            usage
-          else
-            git commit -am "chore(update/flake): update nix flake" && git format-patch -1 HEAD --output "$1"
-          fi
-        '';
-      };
-
-      npins-commit-and-format-patch = pkgs.writeShellApplication {
-        name = "npins-commit-and-format-patch";
-        runtimeInputs = with pkgs; [
-          coreutils
-          git
-        ];
-
-        text = ''
-          #!/bin/bash
-
-          usage() {
-            printf "%s\n\n" "usage: $(basename "$0") <patch-file> <pin-name> <old-version> <new-version>"
-            printf "%s\n\n" "Commits all current changes with <commit-message> as the commit message and writes a patch to <output-file>."
-            exit 1
-          }
-
-          if [ $# -ne 4 ]; then
-            usage
-          else
-            git commit -am "chore(plugin/update): $2: $3 -> $4" && git format-patch -1 HEAD --output "$1"
-          fi
-        '';
-      };
-
-      configure-git-user = pkgs.writeShellApplication {
-        name = "configure-git-user";
-        runtimeInputs = with pkgs; [
-          coreutils
-          git
-        ];
-
-        text = ''
-          #!/bin/bash
-
-          usage() {
-            printf "%s\n\n" "usage: $(basename "$0") <user.name> <user.email>"
-            printf "%s\n\n" "Configures the \`git\` user name and email."
-            exit 1
-          }
-
-          if [ $# -ne 2 ]; then
-            usage
-          else
-            git config user.name "$1"
-            git config user.email "$2"
-          fi
-        '';
-      };
-
-      generate-npins-matrix = pkgs.writeShellApplication {
-        name = "generate-npins-matrix";
-        runtimeInputs = with pkgs; [
-          coreutils
-          jq
-        ];
-
-        text = ''
-          #!/bin/bash
-
-          usage() {
-            printf "%s\n\n" "usage: $(basename "$0") <source-files...>"
-            printf "%s\n\n" "Prints a JSON array of objects that each correspond to an \`npins\` source."
-            printf "%s\n\n" "Each value in <source-files...> should be a path to an \`npins\` \`sources.json\` file."
-            printf "%s\n" "Each object in the output contains the following keys:"
-            printf "  %s\n" "\"name\": the name of the pin as per its entry in its \`sources.json\`"
-            printf "  %s\n" "\"sources-file\": the path to the \`sources.json\` file that contains the pin"
-            exit 1
-          }
-
-          if [ $# -eq 0 ]; then
-            usage
-          else
-            # https://stackoverflow.com/questions/51217020/jq-convert-array-to-object-indexed-by-filename
-            # jq -cn '[ inputs | .pins | keys_unsorted | { name: .[], "sources-file": input_filename } ]' "$@"
-            jq -cn '[ inputs | .pins | map(.) | .[] | { name: .repository.repo, version: (if .version != null then .version else .revision[0:8] end), "sources-file": input_filename } ]' "$@"
-          fi
-        '';
-      };
-
-      npins-version-matrix = pkgs.writeShellApplication {
-        name = "npins-version-matrix";
-        runtimeInputs = with pkgs; [
-          coreutils
-          jq
-        ];
-
-        text = ''
-          #!/bin/bash
-
-          usage() {
-            printf "%s\n\n" "usage: $(basename "$0") <source-file> <package-name>"
-            printf "%s\n\n" "Prints a JSON array of objects that each correspond to an \`npins\` source."
-            printf "%s\n\n" "Each value in <source-files...> should be a path to an \`npins\` \`sources.json\` file."
-            printf "%s\n" "Each object in the output contains the following keys:"
-            printf "  %s\n" "\"name\": the name of the pin as per its entry in its \`sources.json\`"
-            printf "  %s\n" "\"sources-file\": the path to the \`sources.json\` file that contains the pin"
-            exit 1
-          }
-
-          if [ $# -eq 0 ]; then
-            usage
-          else
-            # https://stackoverflow.com/questions/51217020/jq-convert-array-to-object-indexed-by-filename
-            jq -rcn "inputs | .pins | .[] |select(.repository.repo == \"$2\") |  if .version != null then .version else .revision[0:8] end " "$1"
-          fi
-        '';
-      };
-
-      update-nvim-plugin = pkgs.writeShellApplication {
-        name = "update-nvim-plugin";
-        runtimeInputs = with pkgs; [
-          git
-          mktemp
-          npins
-        ];
-
-        text = ''
-          OLD_VERSION=$(jq -rcn "inputs | .pins | .[] |select(.repository.repo == \"$1\") |  if .version != null then .version else .revision[0:8] end " "pkgs/npins/sources.json")
-          ${pkgs.npins}/bin/npins -d pkgs/npins update "$1"
-          NEW_VERSION=$(jq -rcn "inputs | .pins | .[] |select(.repository.repo == \"$1\") |  if .version != null then .version else .revision[0:8] end " "pkgs/npins/sources.json")
-          git commit -am "chore(plugin/update): $1: $OLD_VERSION -> $NEW_VERSION"
-        '';
-      };
-
-      update-tree-sitter-grammars = let
-        data = builtins.fromJSON (builtins.readFile ./grammars/sources.json);
-        inherit (data) pins;
-
-        grammar-sources = import ./npins;
-        lockfile = pkgs.lib.importJSON "${grammar-sources."nvim-treesitter"}/lockfile.json";
-
-        allGrammars = with pkgs.lib;
-          mapAttrs (
-            name: value: {
-              inherit (value.repository) owner;
-              inherit (value.repository) repo;
-              rev = lockfile."${removePrefix "tree-sitter-" name}".revision;
-              inherit (value) branch;
-            }
-          )
-          pins;
-
-        foreachSh = attrs: f:
-          pkgs.lib.concatMapStringsSep "\n" f
-          (pkgs.lib.mapAttrsToList (k: v: {name = k;} // v) attrs);
-      in
-        pkgs.writeShellApplication {
-          name = "update-grammars.sh";
-          runtimeInputs = with pkgs; [
-            alejandra
-            git
-            npins
-          ];
-          text = ''
-            cd "$(git rev-parse --show-toplevel)/pkgs" || exit 1
-            rm -rf ./grammars/*
-            ${pkgs.npins}/bin/npins -d ./grammars init --bare
-             ${
-              foreachSh allGrammars ({
-                name,
-                owner,
-                repo,
-                branch,
-                rev,
-                ...
-              }: ''
-                echo "Updating treesitter parser for ${name}"
-                ${pkgs.npins}/bin/npins \
-                  -d ./grammars \
-                  add \
-                  --name ${name}\
-                  github \
-                  "${owner}" \
-                  "${repo}" \
-                  -b "${branch}" \
-                  --at "${rev}"
-              '')
-            }
-            ${pkgs.alejandra}/bin/alejandra -q .
-          '';
-        };
+      # # scripts
+      flake-commit-and-format-patch = import ./script-flake-commit-and-format-patch.nix {};
+      npins-commit-and-format-patch = import ./script-npins-commit-and-format-patch.nix {};
+      configure-git-user = import ./script-configure-git-user.nix {};
+      generate-npins-matrix = import ./script-generate-npins-matrix.nix {};
+      npins-version-matrix = import ./script-npins-version-matrix.nix {};
+      update-nvim-plugin = import ./script-update-nvim-plugin.nix {};
+      update-tree-sitter-grammars = import ./script-update-tree-sitter-grammars.nix {};
     };
   };
 }

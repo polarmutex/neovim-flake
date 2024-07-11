@@ -1,5 +1,6 @@
 # Function for creating a Neovim derivation
 {
+  neovim-unwrapped,
   inputs,
   pkgs,
 }:
@@ -29,8 +30,6 @@ with pkgs.lib;
     vimAlias ? appName == "nvim", # Add a "vim" binary to the build output as an alias?
     extraLuaConfig ? "", # Extra Lua configuration
   }: let
-    neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
-
     # This is the structure of a plugin definition.
     # Each plugin in the `plugins` argument list can also be defined as this attrset
     defaultPlugin = {

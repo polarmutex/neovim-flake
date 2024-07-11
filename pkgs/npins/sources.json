@@ -306,6 +306,18 @@
       "url": "https://api.github.com/repos/NeogitOrg/neogit/tarball/v1.0.0",
       "hash": "0ydslkgmpkgav5a9yb5jv6520ajjd5dbzl0m48l06r1rxmq1s9yd"
     },
+    "neovim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "neovim",
+        "repo": "neovim"
+      },
+      "branch": "master",
+      "revision": "d918ebe3b8a5ee2a7ad735e2edd474cc1224ea28",
+      "url": "https://github.com/neovim/neovim/archive/d918ebe3b8a5ee2a7ad735e2edd474cc1224ea28.tar.gz",
+      "hash": "0kzbcplvb9xl223p28c59q7kr7kwx8cc2px89sjlisqlqkvmvqg1"
+    },
     "noice.nvim": {
       "type": "GitRelease",
       "repository": {
