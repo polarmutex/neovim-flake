@@ -4,6 +4,7 @@
   ...
 }: {
   perSystem = {
+    config,
     pkgs,
     system,
     ...
@@ -37,7 +38,7 @@
         } ''
           # We *must* create some output, usually contains test logs for checks
           mkdir -p "$out"
-          output=$(HOME=$(realpath .) ${pkgs.neovim-polar}/bin/nvim -mn --headless "+q" 2>&1 >/dev/null)
+          output=$(HOME=$(realpath .) ${config.packages.neovim-polar}/bin/nvim -mn --headless "+q" 2>&1 >/dev/null)
           if [[ -n $output ]]; then
              echo "ERROR: $output"
               exit 1
@@ -52,7 +53,7 @@
         } ''
           # We *must* create some output, usually contains test logs for checks
           mkdir -p "$out"
-          output=$(HOME=$(realpath .) ${pkgs.neovim-polar}/bin/nvim -c "lua require('polarmutex.health').nix_check()" -c "q" 2>&1 /dev/null)
+          output=$(HOME=$(realpath .) ${config.packages.neovim-polar}/bin/nvim -c "lua require('polarmutex.health').nix_check()" -c "q" 2>&1 /dev/null)
           if [ -n "$(cat "$out/nvim-health.log")" ]; then
               while IFS= read -r line; do
                   echo "$line"

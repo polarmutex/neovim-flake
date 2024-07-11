@@ -226,13 +226,13 @@ in {
       nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
       # # scripts
-      flake-commit-and-format-patch = import ./script-flake-commit-and-format-patch.nix {};
-      npins-commit-and-format-patch = import ./script-npins-commit-and-format-patch.nix {};
-      configure-git-user = import ./script-configure-git-user.nix {};
-      generate-npins-matrix = import ./script-generate-npins-matrix.nix {};
-      npins-version-matrix = import ./script-npins-version-matrix.nix {};
-      update-nvim-plugin = import ./script-update-nvim-plugin.nix {};
-      update-tree-sitter-grammars = import ./script-update-tree-sitter-grammars.nix {};
+      flake-commit-and-format-patch = pkgs.callPackage ./script-flake-commit-and-format-patch.nix {};
+      npins-commit-and-format-patch = pkgs.callPackage ./script-npins-commit-and-format-patch.nix {};
+      configure-git-user = pkgs.callPackage ./script-configure-git-user.nix {};
+      generate-npins-matrix = pkgs.callPackage ./script-generate-npins-matrix.nix {};
+      npins-version-matrix = pkgs.callPackage ./script-npins-version-matrix.nix {};
+      update-nvim-plugin = pkgs.callPackage ./script-update-nvim-plugin.nix {};
+      update-tree-sitter-grammars = pkgs.callPackage ./script-update-tree-sitter-grammars.nix {};
     };
   };
 }

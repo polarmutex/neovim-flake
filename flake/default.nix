@@ -1,6 +1,6 @@
 {inputs, ...}: {
   imports = [
-    # ./checks.nix
+    ./checks.nix
     # ./ci.nix
     ./devshells.nix
     # ./overlays.nix
