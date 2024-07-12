@@ -628,10 +628,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v4.3.0",
-      "revision": "9e9c54471350c428e023c84179d5fb047a00cd18",
-      "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/v4.3.0",
-      "hash": "1b2z3vm82j7zdmsa3422dbcgjpwij4710gh1jgx8rwandqz19q94"
+      "version": "v4.4.0",
+      "revision": "0a84c2df1dc65610ee0d9b516b2fb342e4b0ed6f",
+      "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/v4.4.0",
+      "hash": "0yj1ymwzmgx3gr25kc7kwqqa186ccfxy52dxcivi91zz54z2yqdp"
     },
     "trouble.nvim": {
       "type": "GitRelease",
