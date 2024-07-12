@@ -314,9 +314,9 @@
         "repo": "neovim"
       },
       "branch": "master",
-      "revision": "d918ebe3b8a5ee2a7ad735e2edd474cc1224ea28",
-      "url": "https://github.com/neovim/neovim/archive/d918ebe3b8a5ee2a7ad735e2edd474cc1224ea28.tar.gz",
-      "hash": "0kzbcplvb9xl223p28c59q7kr7kwx8cc2px89sjlisqlqkvmvqg1"
+      "revision": "bcb17689da4fef9059f0c0fae2f1493969b0a78c",
+      "url": "https://github.com/neovim/neovim/archive/bcb17689da4fef9059f0c0fae2f1493969b0a78c.tar.gz",
+      "hash": "07cvmf2cx0gz2zb1pqp3qp15q8ibd1js5qvs0q4qns6vnxyj27fn"
     },
     "noice.nvim": {
       "type": "GitRelease",
