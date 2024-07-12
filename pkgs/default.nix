@@ -32,6 +32,7 @@ in {
       flash-nvim
       friendly-snippets
       gitsigns-nvim
+      hardtime-nvim
       harpoon
       inc-rename-nvim
       lualine-nvim

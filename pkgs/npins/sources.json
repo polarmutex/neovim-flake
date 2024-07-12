@@ -213,6 +213,18 @@
       "url": "https://api.github.com/repos/lewis6991/gitsigns.nvim/tarball/v0.9.0",
       "hash": "100hqm6fwd8nnwc0m66ap8dwzgbcfgprxh8m326f314bl83f7f81"
     },
+    "hardtime.nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "m4xshen",
+        "repo": "hardtime.nvim"
+      },
+      "branch": "main",
+      "revision": "9a4e24fb40482dc85a93bf6cf344a030b9bf9a39",
+      "url": "https://github.com/m4xshen/hardtime.nvim/archive/9a4e24fb40482dc85a93bf6cf344a030b9bf9a39.tar.gz",
+      "hash": "01b34bmyw236xr8bcwwn40s6360ybmrd9lpbw0hnvkn4nsml6hi6"
+    },
     "harpoon": {
       "type": "Git",
       "repository": {

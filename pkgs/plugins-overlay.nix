@@ -73,6 +73,7 @@ in {
     friendly-snippets = mkNvimPlugin plugins-pins."friendly-snippets" "friendly-snippets";
     git-worktree-nvim = mkNvimPlugin plugins-pins."git-worktree.nvim" "git-worktree-nvim";
     gitsigns-nvim = mkNvimPlugin plugins-pins."gitsigns.nvim" "gitsigns-nvim";
+    hardtime-nvim = mkNvimPlugin plugins-pins."hardtime.nvim" "hardtime.nvim";
     harpoon = mkNvimPlugin plugins-pins."harpoon" "harpoon";
     inc-rename-nvim = mkNvimPlugin plugins-pins."inc-rename.nvim" "inc-rename-nvim";
     lualine-nvim = mkNvimPlugin plugins-pins."lualine.nvim" "lualine-nvim";
