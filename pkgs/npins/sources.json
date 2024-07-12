@@ -169,10 +169,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v1.18.3",
-      "revision": "7bb4a9c75d1e20cd24185afedeaa11681829ba23",
-      "url": "https://api.github.com/repos/folke/flash.nvim/tarball/v1.18.3",
-      "hash": "10f52qma6gh03pml1434w6lr7i8qh1jccl6yx4bmni9dscbv10hx"
+      "version": "v2.1.0",
+      "revision": "ec0bf2842189f65f60fd40bf3557cac1029cc932",
+      "url": "https://api.github.com/repos/folke/flash.nvim/tarball/v2.1.0",
+      "hash": "0pv5czj11ckfxlgn252ynwm80npl67lgwi3wm6vi9d9idz5ns7s2"
     },
     "friendly-snippets": {
       "type": "Git",
