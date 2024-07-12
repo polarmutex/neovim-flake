@@ -106,6 +106,7 @@ in {
     one-small-step-for-vimkind = mkNvimPlugin plugins-pins."one-small-step-for-vimkind" "one-small-step-for-vimkind";
     overseer-nvim = mkNvimPlugin plugins-pins."overseer.nvim" "overseer-nvim";
     plenary-nvim = mkNvimPlugin plugins-pins."plenary.nvim" "plenary-nvim";
+    precognition-nvim = mkNvimPlugin plugins-pins."precognition.nvim" "precognition-nvim";
     rustaceanvim = mkNvimPlugin plugins-pins."rustaceanvim" "rustaceanvim";
     schemastore-nvim = mkNvimPlugin plugins-pins."SchemaStore.nvim" "schemaStore-nvim";
     sqlite-lua = mkNvimPlugin plugins-pins."sqlite.lua" "sqlite.lua";

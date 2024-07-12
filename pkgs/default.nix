@@ -60,6 +60,7 @@ in {
       one-small-step-for-vimkind
       overseer-nvim
       rustaceanvim
+      precognition-nvim
       plenary-nvim
       schemastore-nvim
       sqlite-lua
