@@ -518,9 +518,9 @@
         "repo": "one-small-step-for-vimkind"
       },
       "branch": "main",
-      "revision": "3f73e0b549636693dd10795506a2819eeac3e727",
-      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/3f73e0b549636693dd10795506a2819eeac3e727.tar.gz",
-      "hash": "1y3hm4g02ncfb4c71ag7j6w0v00fay0dy91iwrh184jjpiy21jni"
+      "revision": "730189c92c6fd80eb92bb6c1886392a142dba273",
+      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/730189c92c6fd80eb92bb6c1886392a142dba273.tar.gz",
+      "hash": "0rab2vdnlybvq865fa9hz6lh7q99kqz9md4swpkqknsc4qhx5b9f"
     },
     "overseer.nvim": {
       "type": "GitRelease",
