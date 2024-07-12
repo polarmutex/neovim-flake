@@ -257,9 +257,9 @@
         "repo": "lualine.nvim"
       },
       "branch": "master",
-      "revision": "0a5a66803c7407767b799067986b4dc3036e1983",
-      "url": "https://github.com/nvim-lualine/lualine.nvim/archive/0a5a66803c7407767b799067986b4dc3036e1983.tar.gz",
-      "hash": "1llhfs5wgv87k5hv8mdyv4qjpw37zq27488lq0j063jicxszdhar"
+      "revision": "6a40b530539d2209f7dc0492f3681c8c126647ad",
+      "url": "https://github.com/nvim-lualine/lualine.nvim/archive/6a40b530539d2209f7dc0492f3681c8c126647ad.tar.gz",
+      "hash": "17plr9wq4w73dhpyldn9kp97dip0xr3z02iny3mgcf1jmzsclv0l"
     },
     "mini.indentscope": {
       "type": "GitRelease",
