@@ -505,10 +505,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.8.1",
-      "revision": "3dc99e4c39dc5726195295ce6976e1ac92f02c52",
-      "url": "https://api.github.com/repos/epwalsh/obsidian.nvim/tarball/v3.8.1",
-      "hash": "1zrs3ryjn5wwq24jwrws8vi8ihd381gk1mfmif5ggw3yc095g7k5"
+      "version": "v3.9.0",
+      "revision": "c46c241026797bec7a81210db9d032fe7c90fbe5",
+      "url": "https://api.github.com/repos/epwalsh/obsidian.nvim/tarball/v3.9.0",
+      "hash": "0af1l5dqxgq91nvbz3jx7z360c8hkhj5hhc3maixw8yh9llw97sq"
     },
     "one-small-step-for-vimkind": {
       "type": "Git",
