@@ -148,16 +148,16 @@
     },
     "nixpkgs-basedpyright": {
       "locked": {
-        "lastModified": 1720106919,
-        "narHash": "sha256-SaBgGkSJqxEnuR2fsGdylQF6kY8WB5l5dlJRq2aC5CE=",
+        "lastModified": 1721233549,
+        "narHash": "sha256-SgwJjxnO0re055UtTrRYToSiwmwuN6/1gx8EokaqTGQ=",
         "owner": "kiike",
         "repo": "nixpkgs",
-        "rev": "11a222e2cd551c0be2106ca044540a31ef335418",
+        "rev": "b9430e8d41ddd52ca7261889180de747090f7d1e",
         "type": "github"
       },
       "original": {
         "owner": "kiike",
-        "ref": "basedpyright",
+        "ref": "fix/basedpyright",
         "repo": "nixpkgs",
         "type": "github"
       }

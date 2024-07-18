@@ -10,8 +10,8 @@
         inputsFrom = [
         ];
         packages = with pkgs; [
-          fd
-          jq
+          #fd
+          #jq
           lemmy-help
           npins
           nix-tree

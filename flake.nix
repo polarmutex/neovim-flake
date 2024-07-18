@@ -70,7 +70,7 @@
     # nixpkgs.url = "github:nixos/nixpkgs/master";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
-    nixpkgs-basedpyright.url = "github:kiike/nixpkgs/basedpyright";
+    nixpkgs-basedpyright.url = "github:kiike/nixpkgs/fix/basedpyright";
 
     # flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";
