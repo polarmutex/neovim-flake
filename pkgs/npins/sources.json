@@ -187,16 +187,19 @@
       "hash": "1dvv9r27dc5arc1s3jx5xxcjxck3rhhrjq2mb8rz743i94k7kmrd"
     },
     "git-worktree.nvim": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
         "owner": "polarmutex",
         "repo": "git-worktree.nvim"
       },
-      "branch": "v2",
-      "revision": "e445e86d53c58883b3bf5590b7ea56466748344e",
-      "url": "https://github.com/polarmutex/git-worktree.nvim/archive/e445e86d53c58883b3bf5590b7ea56466748344e.tar.gz",
-      "hash": "1ih7gqjdx90y8isqmvafzjnx4f636fsrrsqm37l985ni7mvgyfi1"
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "2.0.0",
+      "revision": "13bab466fc2a72f2a7aa8211d70a4d6dc0d6f8b0",
+      "url": "https://api.github.com/repos/polarmutex/git-worktree.nvim/tarball/2.0.0",
+      "hash": "1424q1ryqcr9pdxwirag5s7p9v52wpkhp2kxvcx69y9rda1gzypx"
     },
     "gitsigns.nvim": {
       "type": "GitRelease",
