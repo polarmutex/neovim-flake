@@ -4,7 +4,7 @@ require("conform").setup({
         markdown = { "prettierd" },
         nix = { "alejandra" },
         -- Conform will run multiple formatters sequentially
-        --python = { "isort", "black" },
+        python = { "ruff_format" },
         -- Use a sub-list to run only the first available formatter
         --javascript = { { "prettierd", "prettier" } },
     },

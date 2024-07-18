@@ -9,6 +9,7 @@ local severities = {
 
 lint.linters.deadnix = {
     cmd = "deadnix",
+    name = "deadnix",
     stdin = false, -- or false if it doesn't support content input via stdin. In that case the filename is automatically added to the arguments.
     append_fname = true, -- Automatically append the file name to `args` if `stdin = false` (default: true)
     args = { "--output-format=json" }, -- list of arguments. Can contain functions with zero arguments that will be evaluated once the linter is used.
@@ -45,6 +46,7 @@ lint.linters_by_ft = {
     lua = { "luacheck" },
     markdown = { "markdownlint" },
     nix = { "deadnix", "statix" },
+    python = { "ruff" },
 }
 
 function M.debounce(ms, fn)
