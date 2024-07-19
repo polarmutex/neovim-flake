@@ -248,9 +248,9 @@
         "repo": "tree-sitter-python"
       },
       "branch": "master",
-      "revision": "ccc2408e558029ad82b0dea63ff55ada495965da",
-      "url": "https://github.com/tree-sitter/tree-sitter-python/archive/ccc2408e558029ad82b0dea63ff55ada495965da.tar.gz",
-      "hash": "16ws86h51yladk7ckik34h1ia90rgjgc81wm6yiymykb7bqg7aw7"
+      "revision": "0dee05ef958ba2eae88d1e65f24b33cad70d4367",
+      "url": "https://github.com/tree-sitter/tree-sitter-python/archive/0dee05ef958ba2eae88d1e65f24b33cad70d4367.tar.gz",
+      "hash": "0i1ikkyd1flcnipzrj33k7jnk7wykyrzlclh1yans9cpvgr7vaqz"
     },
     "tree-sitter-query": {
       "type": "Git",
