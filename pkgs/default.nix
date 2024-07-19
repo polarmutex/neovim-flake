@@ -187,7 +187,7 @@ in {
         devPlugins = [
           {
             name = "git-worktree.nvim";
-            path = "~/repos/personal/git-worktree-nvim/v2 ";
+            path = "~/repos/personal/git-worktree-nvim/devel ";
           }
           {
             name = "beancount.nvim";
