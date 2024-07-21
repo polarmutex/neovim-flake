@@ -1,23 +1,27 @@
 {
-  pkgs,
   lib,
-  ...
+  lemmy-help,
+  vimUtils,
+  vscode-extensions,
+  self,
 }: let
   vars = {
-    java-debug = pkgs.vscode-extensions.vscjava.vscode-java-debug;
-    java-test = pkgs.vscode-extensions.vscjava.vscode-java-test;
+    java-debug = vscode-extensions.vscjava.vscode-java-debug;
+    java-test = vscode-extensions.vscjava.vscode-java-test;
   };
 in
-  pkgs.vimUtils.buildVimPlugin {
-    pname = "polarmutex";
-    version = "dev";
-    src = ../nvim;
+  vimUtils.buildVimPlugin {
+    pname = "polar";
+    version = self.shortRev or self.dirtyRev or "dirty";
+
+    # TODO: use filesets or something similar to filter out unwanted files
+    src = "${self}/plugins/polar";
 
     postUnpack = ''
       #mkdir -p $sourceRoot/lua
       #mv $sourceRoot/lua $sourceRoot/lua
       mkdir -p $sourceRoot/doc
-      ${pkgs.lemmy-help}/bin/lemmy-help -fact \
+      ${lemmy-help}/bin/lemmy-help -fact \
           $sourceRoot/lua/polarmutex/keymaps.lua \
           > $sourceRoot/doc/polarmutex.txt
         #ln -s {inputs.spell-en-dictionary} $out/nvim/spell/en.utf-8.spl;

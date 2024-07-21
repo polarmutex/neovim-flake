@@ -84,7 +84,7 @@ with pkgs.lib;
         vim.loader.enable()
       ''
       + ""
-      + (builtins.readFile ../nvim/init.lua)
+      + (builtins.readFile ../plugins/polar/init.lua)
       + ""
       + optionalString (devPlugins != []) (
         ''

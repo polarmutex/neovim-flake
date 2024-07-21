@@ -28,41 +28,62 @@
       ];
 
       imports = [
-        # ./checks
-        # ./pkgs
-        ./flake
+        ./checks
+        ./pkgs
+        ./plugins
       ];
 
-      # flake = {
-      #   overlays.default = _final: _prev: {
-      #   };
-      # };
-      # perSystem = {
-      #   #config,
-      #   pkgs,
-      #   #inputs',
-      #   self',
-      #   system,
-      #   ...
-      # }: {
-      #   apps = {
-      #
-      #   devShells = {
-      #     default = pkgs.mkShell {
-      #       packages = builtins.attrValues {
-      #         inherit (pkgs) fd;
-      #         inherit (pkgs) jq;
-      #         inherit (pkgs) lemmy-help;
-      #         inherit (pkgs) npins;
-      #         inherit (pkgs) nix-tree;
-      #       };
-      #       shellHook = ''
-      #         ${self.checks.${system}.pre-commit-check.shellHook}
-      #         ln -fs ${pkgs.nvim-luarc-json} .luarc.json
-      #       '';
-      #     };
-      #   };
-      # };
+      perSystem = {
+        self',
+        pkgs,
+        npins,
+        inputs',
+        system,
+        ...
+      }: {
+        _module.args.npins = import ./npins;
+        _module.args.pkgs = import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = false;
+          overlays = [
+            # plugin-overlay
+            inputs.gen-luarc.overlays.default
+            (_final: prev: {
+              # nil-git = inputs'.nil.packages.default;
+              basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
+                inherit (prev) system;
+              };
+            })
+          ];
+        };
+
+        devShells = {
+          default = pkgs.mkShell {
+            name = "neovim-developer-shell";
+            packages = with pkgs; [
+              lemmy-help
+              # npins
+              nix-tree
+            ];
+            shellHook = ''
+              #export NVIM_PYTHON_LOG_LEVEL=DEBUG
+              #export NVIM_LOG_FILE=/tmp/nvim.log
+              #export VIMRUNTIME=
+
+              # ASAN_OPTIONS=detect_leaks=1
+              #export ASAN_OPTIONS="log_path=./test.log:abort_on_error=1"
+
+              # for treesitter functionaltests
+              #mkdir -p runtime/parser
+              #cp -f {pkgs.vimPlugins.nvim-treesitter.builtGrammars.c}/parser runtime/parser/c.so
+            '';
+            #       shellHook = ''
+            #         ${self.checks.${system}.pre-commit-check.shellHook}
+            #         ln -fs ${pkgs.nvim-luarc-json} .luarc.json
+            #       '';
+          };
+        };
+      };
     };
 
   # Input source for our derivation

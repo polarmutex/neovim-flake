@@ -6,74 +6,72 @@ in {
     config,
     lib,
     pkgs,
+    npins,
+    self',
     #self,
     ...
   }: let
-    plugin-overlay = import ./plugins-overlay.nix {inherit inputs;};
-
-    npins = import ./npins;
-
     mkNeovim = pkgs.callPackage ./mkNeovim.nix {
       inherit inputs;
       neovim-unwrapped = config.packages.neovim;
     };
 
-    all-plugins = with pkgs.nvimPlugins; [
-      beancount-nvim
-      cmp-dap
-      cmp-emoji
-      cmp-nvim-lsp
-      cmp-path
-      conform-nvim
-      crates-nvim
-      diffview-nvim
-      dressing-nvim
-      edgy-nvim
-      flash-nvim
-      friendly-snippets
-      gitsigns-nvim
-      hardtime-nvim
-      harpoon
-      inc-rename-nvim
-      lualine-nvim
-      luasnip
-      kanagawa-nvim
-      mini-indentscope
-      neodev-nvim
-      neogit
-      noice-nvim
-      nui-nvim
-      nvim-cmp
-      nvim-colorizer
-      nvim-dap
-      nvim-dap-python
-      nvim-dap-ui
-      nvim-dap-virtual-text
-      nvim-jdtls
-      nvim-lint
-      nvim-navic
-      nvim-nio
-      nvim-treesitter
-      nvim-treesitter-playground
-      nvim-web-devicons
-      obsidian-nvim
-      one-small-step-for-vimkind
-      overseer-nvim
-      rustaceanvim
-      precognition-nvim
-      plenary-nvim
-      schemastore-nvim
-      sqlite-lua
-      telescope-nvim
-      telescope-fzf-native
-      tokyonight-nvim
-      trouble-nvim
-      vim-arduino
-      vim-be-good
-      vim-illuminate
-      which-key-nvim
-      yanky-nvim
-    ];
+    # all-plugins = with pkgs.nvimPlugins; [
+    #   beancount-nvim
+    #   cmp-dap
+    #   cmp-emoji
+    #   cmp-nvim-lsp
+    #   cmp-path
+    #   conform-nvim
+    #   crates-nvim
+    #   diffview-nvim
+    #   dressing-nvim
+    #   edgy-nvim
+    #   flash-nvim
+    #   friendly-snippets
+    #   gitsigns-nvim
+    #   hardtime-nvim
+    #   harpoon
+    #   inc-rename-nvim
+    #   lualine-nvim
+    #   luasnip
+    #   kanagawa-nvim
+    #   mini-indentscope
+    #   neodev-nvim
+    #   neogit
+    #   noice-nvim
+    #   nui-nvim
+    #   nvim-cmp
+    #   nvim-colorizer
+    #   nvim-dap
+    #   nvim-dap-python
+    #   nvim-dap-ui
+    #   nvim-dap-virtual-text
+    #   nvim-jdtls
+    #   nvim-lint
+    #   nvim-navic
+    #   nvim-nio
+    #   nvim-treesitter
+    #   nvim-treesitter-playground
+    #   nvim-web-devicons
+    #   obsidian-nvim
+    #   one-small-step-for-vimkind
+    #   overseer-nvim
+    #   rustaceanvim
+    #   precognition-nvim
+    #   plenary-nvim
+    #   schemastore-nvim
+    #   sqlite-lua
+    #   telescope-nvim
+    #   telescope-fzf-native
+    #   tokyonight-nvim
+    #   trouble-nvim
+    #   vim-arduino
+    #   vim-be-good
+    #   vim-illuminate
+    #   which-key-nvim
+    #   yanky-nvim
+    # ];
 
     extraPackages = with pkgs; [
       fswatch
@@ -138,21 +136,6 @@ in {
       arduino-cli
     ];
   in {
-    _module.args.pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = false;
-      overlays = [
-        plugin-overlay
-        inputs.gen-luarc.overlays.default
-        (_final: prev: {
-          # nil-git = inputs'.nil.packages.default;
-          basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
-            inherit (prev) system;
-          };
-        })
-      ];
-    };
-
     packages = {
       default = config.packages.neovim;
 
@@ -172,60 +155,50 @@ in {
         inherit lib pkgs;
       };
 
-      polar-lua-config = pkgs.callPackage ./polar-lua-config.nix {
-        inherit (config) packages;
-      };
+      polar-config = self'.legacyPackages.neovimPlugins.polar;
+      inherit (self'.legacyPackages.neovimPlugins) treesitter;
+      inherit (self'.legacyPackages.neovimPlugins) telescope-fzf-native;
 
-      neovim-polar-dev = mkNeovim {
-        vimAlias = true;
-        appName = "nvim";
-        plugins =
-          all-plugins
-          ++ [
-            config.packages.polar-lua-config
-          ];
-        devPlugins = [
-          {
-            name = "git-worktree.nvim";
-            path = "~/repos/personal/git-worktree-nvim/devel ";
-          }
-          {
-            name = "beancount.nvim";
-            path = "~/repos/personal/beancount-nvim/master ";
-          }
-        ];
-        inherit extraPackages;
-      };
+      # neovim-polar-dev = mkNeovim {
+      #   vimAlias = true;
+      #   appName = "nvim";
+      #   plugins =
+      #     all-plugins
+      #     ++ [
+      #       config.packages.polar-lua-config
+      #     ];
+      #   devPlugins = [
+      #     {
+      #       name = "git-worktree.nvim";
+      #       path = "~/repos/personal/git-worktree-nvim/devel ";
+      #     }
+      #     {
+      #       name = "beancount.nvim";
+      #       path = "~/repos/personal/beancount-nvim/master ";
+      #     }
+      #   ];
+      #   inherit extraPackages;
+      # };
 
       neovim-polar = mkNeovim {
         vimAlias = true;
         appName = "nvim";
-        plugins =
-          all-plugins
-          ++ (with pkgs.nvimPlugins; [
-            config.packages.polar-lua-config
-            git-worktree-nvim
-          ]);
+        plugins = builtins.attrValues self'.legacyPackages.neovimPlugins;
+        # plugins =
+        #   all-plugins
+        #   ++ (with pkgs.nvimPlugins; [
+        #     config.packages.polar-lua-config
+        #     git-worktree-nvim
+        #   ]);
         inherit extraPackages;
       };
 
-      nvim-luarc-json = pkgs.mk-luarc-json {
-        nvim = config.packages.neovim-polar;
-        plugins = all-plugins;
-      };
+      # nvim-luarc-json = pkgs.mk-luarc-json {
+      #   nvim = config.packages.neovim-polar;
+      #   plugins = all-plugins;
+      # };
 
-      # inherit (pkgs) fd;
-      # inherit (pkgs) jq;
       inherit (pkgs) npins;
-
-      # # from https://github.com/nix-community/neovim-nightly-overlay
-      # neovim-git = inputs'.neovim-nightly-overlay.packages.neovim;
-      # inherit (pkgs) neovim-polar-dev;
-      # inherit (pkgs) neovim-polar;
-      # inherit (pkgs) nvim-luarc-json;
-      # inherit polar-lua-config;
-
-      nvimPlugins-nvim-treesitter = pkgs.nvimPlugins.nvim-treesitter;
 
       # # scripts
       flake-commit-and-format-patch = pkgs.callPackage ./script-flake-commit-and-format-patch.nix {};
