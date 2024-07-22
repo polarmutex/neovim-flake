@@ -66,6 +66,7 @@
               nix-tree
             ];
             shellHook = ''
+              ${self.checks.${system}.pre-commit-check.shellHook}
               #export NVIM_PYTHON_LOG_LEVEL=DEBUG
               #export NVIM_LOG_FILE=/tmp/nvim.log
               #export VIMRUNTIME=
@@ -77,10 +78,7 @@
               #mkdir -p runtime/parser
               #cp -f {pkgs.vimPlugins.nvim-treesitter.builtGrammars.c}/parser runtime/parser/c.so
             '';
-            #       shellHook = ''
-            #         ${self.checks.${system}.pre-commit-check.shellHook}
-            #         ln -fs ${pkgs.nvim-luarc-json} .luarc.json
-            #       '';
+            #         ln -fs {pkgs.nvim-luarc-json} .luarc.json
           };
         };
       };
@@ -104,6 +102,7 @@
 
     # neovim
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
+    mnw.url = "github:gerg-l/mnw";
 
     # spell
     spell-en-dictionary = {

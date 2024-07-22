@@ -13,7 +13,7 @@ end
 --     cmd = { python_lsp_cmd },
 --     filetypes = { "python" },
 --     root_dir = vim.fs.dirname(vim.fs.find({ ".git", "setup.py", "setup.cfg", "pyproject.toml" }, { upward = true })[1]),
---     capabilities = require("polarmutex.lsp").make_client_capabilities(),
+--     capabilities = require("polar.lsp").make_client_capabilities(),
 --     -- pylsp
 --     settings = {
 --         pylsp = {

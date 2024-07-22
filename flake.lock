@@ -110,6 +110,21 @@
         "type": "github"
       }
     },
+    "mnw": {
+      "locked": {
+        "lastModified": 1721440413,
+        "narHash": "sha256-PF/FbgCUZ6mQrKp28G2YoVDlSThBy8AxIT9d2Ju3kTY=",
+        "owner": "gerg-l",
+        "repo": "mnw",
+        "rev": "4ea225024677e7c3a96080af8624fd3aa5dfa1b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gerg-l",
+        "repo": "mnw",
+        "type": "github"
+      }
+    },
     "nil": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -260,6 +275,7 @@
       "inputs": {
         "flake-parts": "flake-parts",
         "gen-luarc": "gen-luarc",
+        "mnw": "mnw",
         "nil": "nil",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-basedpyright": "nixpkgs-basedpyright",

@@ -23,7 +23,7 @@ vim.lsp.start({
     cmd = { lua_ls_cmd },
     filetypes = { "lua" },
     root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
-    capabilities = require("polarmutex.lsp").make_client_capabilities(),
+    capabilities = require("polar.lsp").make_client_capabilities(),
     --before_init = require("neodev.lsp").before_init,
     settings = {
         Lua = {

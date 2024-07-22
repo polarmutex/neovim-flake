@@ -135,6 +135,14 @@ in {
       # arduino
       arduino-cli
     ];
+
+    neovimFarm = prefix: name: drvs: let
+      mkEntryFromDrv = drv: {
+        name = "${prefix}/${lib.getName drv}";
+        path = drv;
+      };
+    in
+      pkgs.linkFarm name (map mkEntryFromDrv drvs);
   in {
     packages = {
       default = config.packages.neovim;
@@ -180,17 +188,16 @@ in {
       #   inherit extraPackages;
       # };
 
-      neovim-polar = mkNeovim {
-        vimAlias = true;
+      neovim-polar = inputs.mnw.lib.wrap pkgs {
+        inherit (self'.packages) neovim;
+
+        wrapperArgs = [];
+
         appName = "nvim";
+        extraLuaPackages = _: [];
+
         plugins = builtins.attrValues self'.legacyPackages.neovimPlugins;
-        # plugins =
-        #   all-plugins
-        #   ++ (with pkgs.nvimPlugins; [
-        #     config.packages.polar-lua-config
-        #     git-worktree-nvim
-        #   ]);
-        inherit extraPackages;
+        extraBinPath = extraPackages;
       };
 
       # nvim-luarc-json = pkgs.mk-luarc-json {
