@@ -164,6 +164,7 @@ in {
       };
 
       polar-config = self'.legacyPackages.neovimPlugins.polar;
+      polar-config-compressed = self'.legacyPackages.neovimPluginsCompressed.polar;
       inherit (self'.legacyPackages.neovimPlugins) treesitter;
       inherit (self'.legacyPackages.neovimPlugins) telescope-fzf-native;
 
@@ -196,6 +197,7 @@ in {
         appName = "nvim";
         extraLuaPackages = _: [];
 
+        # plugins = builtins.attrValues self'.legacyPackages.neovimPluginsCompressed;
         plugins = builtins.attrValues self'.legacyPackages.neovimPlugins;
         extraBinPath = extraPackages;
       };

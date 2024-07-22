@@ -64,6 +64,7 @@
               lemmy-help
               # npins
               nix-tree
+              statix
             ];
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
