@@ -411,6 +411,21 @@
       "url": "https://github.com/nvim-lualine/lualine.nvim/archive/544dd1583f9bb27b393f598475c89809c4d5e86b.tar.gz",
       "hash": "0a7m6g7gzsxzgs4vhsfsznvdx06n6zqjmi9h1z1zbvdcfp5d3l5q"
     },
+    "nvim-lz-n": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neorocks",
+        "repo": "lz.n"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v1.4.3",
+      "revision": "3d36b6848fc67f6a13d2a52cf4f96fd3403c0c43",
+      "url": "https://api.github.com/repos/nvim-neorocks/lz.n/tarball/v1.4.3",
+      "hash": "11ic8hylck3dvlp6d9kzblingbi167j2kcid155x4hpc2hhqf2aj"
+    },
     "nvim-mini.indentscope": {
       "type": "GitRelease",
       "repository": {
