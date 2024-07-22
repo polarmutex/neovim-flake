@@ -11,7 +11,7 @@
 -- }
 
 -- local function register_cap()
---     local capabilities = require("polarmutex.lsp").make_client_capabilities()
+--     local capabilities = require("polar.lsp").make_client_capabilities()
 --     capabilities.experimental = {
 --         serverStatusNotification = true,
 --     }

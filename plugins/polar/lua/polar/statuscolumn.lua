@@ -124,7 +124,7 @@ function M.column()
 end
 
 M.setup = function()
-    vim.opt.statuscolumn = [[%!v:lua.require'polarmutex.statuscolumn'.column()]]
+    vim.opt.statuscolumn = [[%!v:lua.require'polar.statuscolumn'.column()]]
 end
 
 return M

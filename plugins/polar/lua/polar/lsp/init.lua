@@ -1,4 +1,4 @@
-local Util = require("polarmutex.utils")
+local Util = require("polar.utils")
 
 local M = {}
 ---Gets a 'ClientCapabilities' object, describing the LSP client capabilities
@@ -67,7 +67,7 @@ M.setup = function()
         },
     })
     -- setup autoformat
-    require("polarmutex.lsp.format").setup({
+    require("polar.lsp.format").setup({
         autoformat = true,
     })
 

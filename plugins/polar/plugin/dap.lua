@@ -15,7 +15,7 @@ local dapui = require("dapui")
 --end
 
 --for _, file in ipairs({ "dap" }) do
---    require("polarmutex.plugins.dap." .. file)
+--    require("polar.plugins.dap." .. file)
 --end
 local map = function(lhs, rhs, desc)
     if desc then

@@ -1,4 +1,4 @@
-local nullls_utils = require("polarmutex.utils.null-ls")
+local nullls_utils = require("polar.utils.null-ls")
 
 local dap_section = {
     function()
@@ -60,8 +60,8 @@ local lsp_active_section = {
     color = { gui = "bold" },
 }
 
-local icons = require("polarmutex.icons")
-local Util = require("polarmutex.utils")
+local icons = require("polar.icons")
+local Util = require("polar.utils")
 
 require("lualine").setup({
     options = {

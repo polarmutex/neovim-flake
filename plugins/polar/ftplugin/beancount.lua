@@ -16,7 +16,7 @@ local config = {
     },
     filetypes = { "beancount" },
     root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
-    capabilities = require("polarmutex.lsp").make_client_capabilities(),
+    capabilities = require("polar.lsp").make_client_capabilities(),
     single_file_support = true,
     init_options = {
         journal_file = "~/repos/personal/beancount/main/main.beancount",

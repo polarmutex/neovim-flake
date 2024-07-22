@@ -10,7 +10,7 @@ vim.lsp.start({
     cmd = { yaml_lsp_cmd, "--stdio" },
     root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
     filetypes = { "yaml", "yaml.docker-compose" },
-    capabilities = require("polarmutex.lsp").make_client_capabilities(),
+    capabilities = require("polar.lsp").make_client_capabilities(),
     settings = {
         yaml = {
             schemas = require("schemastore").yaml.schemas(),

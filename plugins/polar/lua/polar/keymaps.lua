@@ -1,6 +1,6 @@
 local M = {}
 
----@mod polarmutex.keymaps Keymaps
+---@mod polar.keymaps Keymaps
 
 local function toggle_spell_check()
     vim.opt.spell = not (vim.opt.spell:get())
