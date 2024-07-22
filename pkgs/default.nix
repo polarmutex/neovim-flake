@@ -206,6 +206,7 @@ in {
       configure-git-user = pkgs.callPackage ./script-configure-git-user.nix {};
       generate-npins-matrix = pkgs.callPackage ./script-generate-npins-matrix.nix {};
       npins-version-matrix = pkgs.callPackage ./script-npins-version-matrix.nix {};
+      new-nvim-plugin = pkgs.callPackage ./script-new-nvim-plugin.nix {};
       update-nvim-plugin = pkgs.callPackage ./script-update-nvim-plugin.nix {};
       update-tree-sitter-grammars = pkgs.callPackage ./script-update-tree-sitter-grammars.nix {};
     };

@@ -68,7 +68,7 @@ jobs:
       - id: npins-matrix
         name: Generate npins matrix
         run: |
-          matrix=$(nix run .#generate-npins-matrix -- pkgs/npins/sources.json )
+          matrix=$(nix run .#generate-npins-matrix -- npins/sources.json )
           printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
   update-npins:
@@ -100,7 +100,7 @@ jobs:
         name: Generate patch
         run: |
           nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
-          if nix run .#npins-commit-and-format-patch --  "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#npins-version-matrix -- pkgs/npins/sources.json ${{ matrix.pin.name }})
+          if nix run .#npins-commit-and-format-patch --  "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#npins-version-matrix -- npins/sources.json ${{ matrix.pin.name }})
           then
             echo "patch=true" >> "$GITHUB_OUTPUT"
           else

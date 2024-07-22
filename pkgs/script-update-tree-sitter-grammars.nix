@@ -28,7 +28,7 @@ in
       npins
     ];
     text = ''
-      cd "$(git rev-parse --show-toplevel)/pkgs" || exit 1
+      cd "$(git rev-parse --show-toplevel)/plugins" || exit 1
       rm -rf ./grammars/*
       ${pkgs.npins}/bin/npins -d ./grammars init --bare
        ${
