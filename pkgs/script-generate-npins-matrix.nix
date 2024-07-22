@@ -24,7 +24,7 @@ pkgs.writeShellApplication {
     else
       # https://stackoverflow.com/questions/51217020/jq-convert-array-to-object-indexed-by-filename
       # jq -cn '[ inputs | .pins | keys_unsorted | { name: .[], "sources-file": input_filename } ]' "$@"
-      jq -cn '[ inputs | .pins | map(.) | .[] | { name: .repository.repo, version: (if .version != null then .version else .revision[0:8] end), "sources-file": input_filename } ]' "$@"
+      jq -cn '[ inputs | .pins | to_entries | .[] | { name: .key, version: (if .value.version != null then .value.version else .value.revision[0:8] end), "sources-file": input_filename } ]' "$@"
     fi
   '';
 }
