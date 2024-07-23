@@ -68,6 +68,7 @@
             ];
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
+              ln -fs ${self'.packages.nvim-luarc-json} .luarc.json
               #export NVIM_PYTHON_LOG_LEVEL=DEBUG
               #export NVIM_LOG_FILE=/tmp/nvim.log
               #export VIMRUNTIME=
@@ -79,7 +80,6 @@
               #mkdir -p runtime/parser
               #cp -f {pkgs.vimPlugins.nvim-treesitter.builtGrammars.c}/parser runtime/parser/c.so
             '';
-            #         ln -fs {pkgs.nvim-luarc-json} .luarc.json
           };
         };
       };
