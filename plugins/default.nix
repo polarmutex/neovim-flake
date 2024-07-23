@@ -12,7 +12,7 @@
   }: let
     makePluginFromPin = name: pin:
       pkgs.vimUtils.buildVimPlugin {
-        pname = name;
+        pname = "src-${name}";
         version = pin.version or pin.revision;
         src = pin;
       };
@@ -46,6 +46,7 @@
         p.overrideAttrs (
           prev:
             {
+              pname = lib.removePrefix "src-" prev.pname;
               nativeBuildInputs = prev.nativeBuildInputs or [] ++ [byteCompileLuaHook];
             }
             // lib.optionalAttrs (prev ? buildCommand) {

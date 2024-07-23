@@ -11,7 +11,7 @@
   };
 in
   vimUtils.buildVimPlugin {
-    pname = "polar";
+    pname = "src-polar";
     version = self.shortRev or self.dirtyRev or "dirty";
 
     # TODO: use filesets or something similar to filter out unwanted files
