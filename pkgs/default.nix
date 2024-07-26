@@ -74,7 +74,8 @@ in {
     # ];
 
     extraPackages = with pkgs; [
-      fswatch
+      fswatch # for lsp file watching
+      xclip # for clipboard
 
       # lua
       lua-language-server

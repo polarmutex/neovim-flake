@@ -29,7 +29,7 @@ M.setup = function()
     -- Sync clipboard between OS and Neovim.
     --  Remove this option if you want your OS clipboard to remain independent.
     --  See `:help 'clipboard'`
-    vim.opt.clipboard = "unnamedplus"
+    vim.opt.clipboard = { "unnamed", "unnamedplus" }
 
     -- Enable break indent
     vim.opt.breakindent = true
