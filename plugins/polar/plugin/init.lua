@@ -16,3 +16,5 @@ for _, module in ipairs(modules) do
         mod.setup()
     end
 end
+
+require("polar.core.ui.statusline")

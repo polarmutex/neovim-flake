@@ -18,6 +18,7 @@ M.git = {
     added = " ",
     modified = " ",
     removed = " ",
+    branch = " ",
 }
 
 M.kinds = {
@@ -56,6 +57,23 @@ M.kinds = {
     Unit = " ",
     Value = " ",
     Variable = " ",
+}
+
+M.misc = {
+    check = " ",
+    search = " ",
+    tree = " ",
+}
+
+M.separators = {
+    bar = "│",
+    bar2 = "￨", -- Halfwidth Forms Light Vertical (U+FFE8)
+    bar_left = "▏", -- U+258F
+    bar_right = "▕", -- U+2595
+    chevron_left = "",
+    chevron_right = "",
+    triangle_left = "",
+    triangle_right = "",
 }
 
 return M

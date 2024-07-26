@@ -399,18 +399,6 @@
       "url": "https://github.com/mfussenegger/nvim-lint/archive/efc6fc83f0772283e064c53a8f9fb5645bde0bc0.tar.gz",
       "hash": "1garyyavgg2xfdkw8s9jjq4p5mv5i6m54m8dszdhvkad5ni1zlvb"
     },
-    "nvim-lualine": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-lualine",
-        "repo": "lualine.nvim"
-      },
-      "branch": "master",
-      "revision": "544dd1583f9bb27b393f598475c89809c4d5e86b",
-      "url": "https://github.com/nvim-lualine/lualine.nvim/archive/544dd1583f9bb27b393f598475c89809c4d5e86b.tar.gz",
-      "hash": "0a7m6g7gzsxzgs4vhsfsznvdx06n6zqjmi9h1z1zbvdcfp5d3l5q"
-    },
     "nvim-lz-n": {
       "type": "GitRelease",
       "repository": {
