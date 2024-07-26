@@ -1,5 +1,11 @@
 local M = {}
 
+M.caret = {
+    caret_down = "",
+    caret_left = "",
+    caret_right = "",
+}
+
 M.dap = {
     Stopped = { "󰁕 ", "DiagnosticWarn", "DapStoppedLine" },
     Breakpoint = " ",
@@ -61,6 +67,7 @@ M.kinds = {
 
 M.misc = {
     check = " ",
+    folder = "󰉋 ",
     search = " ",
     tree = " ",
 }

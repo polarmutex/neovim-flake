@@ -18,3 +18,4 @@ for _, module in ipairs(modules) do
 end
 
 require("polar.core.ui.statusline")
+require("polar.core.ui.winbar")

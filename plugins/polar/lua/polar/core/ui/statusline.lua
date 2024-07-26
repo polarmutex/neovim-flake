@@ -9,6 +9,9 @@ local icons = require("polar.icons")
 local powerline_left = icons.separators.chevron_right
 local powerline_right = icons.separators.chevron_left
 
+-- Cache the highlight groups created for different icons
+local cached_hls = {}
+
 -- Decide whether to truncate
 local function is_truncated(trunc_width)
     -- Use -1 to default to 'not truncated'
@@ -255,11 +258,11 @@ function M.fileinfo_component()
     if has_devicons then
         local icon, icon_color = devicons.get_icon_color_by_filetype(filetype, { default = true })
         local icon_hl = "StlIcon-" .. filetype
-        -- if not cached_hls[icon_hl] then
-        local bg_color = vim.api.nvim_get_hl(0, { name = "StatusLine" }).bg
-        vim.api.nvim_set_hl(0, icon_hl, { fg = icon_color, bg = bg_color })
-        -- cached_hls[icon_hl] = true
-        -- end
+        if not cached_hls[icon_hl] then
+            local bg_color = vim.api.nvim_get_hl(0, { name = "StatusLine" }).bg
+            vim.api.nvim_set_hl(0, icon_hl, { fg = icon_color, bg = bg_color })
+            cached_hls[icon_hl] = true
+        end
         return string.format("%%#%s#%s %%#StlFiletype#%s%%*%s", icon_hl, icon, filetype, size)
     end
     return string.format("%s%%#StlFiletype#%s%%*%s", icons.misc.file, filetype, size)

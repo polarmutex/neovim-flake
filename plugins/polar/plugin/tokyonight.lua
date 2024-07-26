@@ -4,13 +4,13 @@ require("tokyonight").setup({
     ---@param highlights tokyonight.Highlights
     ---@param colors ColorScheme
     on_highlights = function(highlights, colors)
-        highlights["StlModeNormal"] = { fg = colors.black, bg = colors.blue }
-        highlights["StlModeInsert"] = { fg = colors.black, bg = colors.green }
-        highlights["StlModeVisual"] = { fg = colors.black, bg = colors.magenta }
-        highlights["StlModeReplace"] = { fg = colors.black, bg = colors.red }
-        highlights["StlModeCommand"] = { fg = colors.black, bg = colors.yellow }
-        highlights["StlModeTerminal"] = { fg = colors.black, bg = colors.green1 }
-        highlights["StlModePending"] = { fg = colors.black, bg = colors.red }
+        highlights["StlModeNormal"] = { fg = colors.black, bg = colors.blue, bold = true }
+        highlights["StlModeInsert"] = { fg = colors.black, bg = colors.green, bold = true }
+        highlights["StlModeVisual"] = { fg = colors.black, bg = colors.magenta, bold = true }
+        highlights["StlModeReplace"] = { fg = colors.black, bg = colors.red, bold = true }
+        highlights["StlModeCommand"] = { fg = colors.black, bg = colors.yellow, bold = true }
+        highlights["StlModeTerminal"] = { fg = colors.black, bg = colors.green1, bold = true }
+        highlights["StlModePending"] = { fg = colors.black, bg = colors.red, bold = true }
 
         highlights["StlModeSepNormal"] = { fg = colors.blue, bg = colors.bg_statusline }
         highlights["StlModeSepInsert"] = { fg = colors.green, bg = colors.bg_statusline }
@@ -40,6 +40,14 @@ require("tokyonight").setup({
 
         highlights["StlLocComponent"] = "StlModeNormal"
         highlights["StlLocComponentSep"] = "StlModeSepNormal"
+
+        highlights["WinbarHeader"] = { fg = colors.fg, bg = colors.blue0 }
+        highlights["WinbarTriangleSep"] = { fg = colors.blue0 }
+        highlights["WinbarModified"] = { fg = colors.fg, bg = colors.bg }
+        highlights["WinbarError"] = { fg = colors.error, bg = colors.bg }
+        highlights["WinbarWarn"] = { fg = colors.warning, bg = colors.bg }
+        highlights["WinbarSpecialIcon"] = { fg = colors.fg, bg = colors.bg }
+        highlights["WinbarPathPrefix"] = { fg = colors.fg, bg = colors.bg, bold = true }
     end,
 })
 vim.cmd([[colorscheme tokyonight]])
