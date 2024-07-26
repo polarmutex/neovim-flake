@@ -5,7 +5,6 @@ local modules = {
     "keymaps",
     "lsp",
     "options",
-    "statuscolumn",
 }
 
 for _, module in ipairs(modules) do
@@ -19,3 +18,4 @@ end
 
 require("polar.core.ui.statusline")
 require("polar.core.ui.winbar")
+require("polar.core.ui.statuscolumn")

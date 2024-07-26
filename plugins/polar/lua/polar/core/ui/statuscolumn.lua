@@ -123,8 +123,6 @@ function M.column()
     return table.concat(components, "")
 end
 
-M.setup = function()
-    vim.opt.statuscolumn = [[%!v:lua.require'polar.statuscolumn'.column()]]
-end
+vim.opt.statuscolumn = [[%!v:lua.require'polar.core.ui.statuscolumn'.column()]]
 
 return M
