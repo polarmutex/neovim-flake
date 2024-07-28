@@ -190,19 +190,16 @@
       "hash": "1fsfnir1af847hmxgc6ca3hxqpnik9dv1s7ag28kzmvy0wj8clav"
     },
     "nvim-dap-ui": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "rcarriga",
         "repo": "nvim-dap-ui"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v4.0.0",
-      "revision": "f7d75cca202b52a60c520ec7b1ec3414d6e77b0f",
-      "url": "https://api.github.com/repos/rcarriga/nvim-dap-ui/tarball/v4.0.0",
-      "hash": "1b6836m18rl7mw0zc5jm258cmj0c68hxbw1jd82j1bp9d4klkjkh"
+      "branch": "master",
+      "revision": "a5606bc5958db86f8d92803bea7400ee26a8d7e4",
+      "url": "https://github.com/rcarriga/nvim-dap-ui/archive/a5606bc5958db86f8d92803bea7400ee26a8d7e4.tar.gz",
+      "hash": "1wwh70bj2798nyv5md1s2a1h3ayni8lajwzm6jby4ddx51x9fvi9"
     },
     "nvim-dap-virtual-text": {
       "type": "Git",
