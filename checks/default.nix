@@ -29,38 +29,75 @@
       };
     in {
       inherit pre-commit-check;
-      neovim-check-config =
-        pkgs.runCommand "neovim-check-config"
-        {
-          buildInputs = [
-            pkgs.git
-          ];
-        } ''
-          # We *must* create some output, usually contains test logs for checks
-          mkdir -p "$out"
-          output=$(HOME=$(realpath .) ${config.packages.neovim-polar}/bin/nvim -mn --headless "+q" 2>&1 >/dev/null)
-          if [[ -n $output ]]; then
-             echo "ERROR: $output"
+      # neovim-check-health = pkgs.stdenv.mkDerivation {
+      #   name = "neovim-check-health";
+      #   phases = ["checkPhase"];
+      #   doCheck = true;
+      #   checkPhase =
+      #     /*
+      #     sh
+      #     */
+      #     ''
+      #       mkdir -p $out
+      #       export HOME=$(realpath .)
+      #       ${config.packages.neovim-polar}/bin/nvim --headless  -c "checkhealth vim.health" -c "write $out/health.log" -c "quitall"
+      #       # Check for errors inside the health log
+      #       if grep -q ERROR $out/health.log; then
+      #         cat $out/health.log
+      #         exit 1
+      #       fi
+      #     '';
+      # };
+      neovim-check-health-deprecated = pkgs.stdenv.mkDerivation {
+        name = "neovim-check-health-deprecated";
+        phases = ["checkPhase"];
+        doCheck = true;
+        checkPhase =
+          /*
+          sh
+          */
+          ''
+            mkdir -p $out
+            export HOME=$(realpath .)
+            ${config.packages.neovim-polar}/bin/nvim --headless  -c "checkhealth vim.deprecated" -c "write $out/health.log" -c "quitall"
+            # Check for errors inside the health log
+            if grep -q WARNING $out/health.log; then
+              cat $out/health.log
               exit 1
-          fi
-        '';
-      neovim-check-health =
-        pkgs.runCommand "neovim-check-health"
-        {
-          buildInputs = [
-            pkgs.git
-          ];
-        } ''
-          # We *must* create some output, usually contains test logs for checks
-          mkdir -p "$out"
-          output=$(HOME=$(realpath .) ${config.packages.neovim-polar}/bin/nvim -c "lua require('polarmutex.health').nix_check()" -c "q" 2>&1 /dev/null)
-          if [ -n "$(cat "$out/nvim-health.log")" ]; then
-              while IFS= read -r line; do
-                  echo "$line"
-              done < "$out/nvim-health.log"
-              exit 1
-          fi
-        '';
+            fi
+          '';
+      };
+      # pkgs.runCommand "neovim-check-config"
+      # {
+      #   buildInputs = [
+      #     pkgs.git
+      #   ];
+      # } ''
+      #   # We *must* create some output, usually contains test logs for checks
+      #   mkdir -p "$out"
+      #   output=$(HOME=$(realpath .) ${config.packages.neovim-polar}/bin/nvim -mn --headless "+q" 2>&1 >/dev/null)
+      #   if [[ -n $output ]]; then
+      #      echo "ERROR: $output"
+      #       exit 1
+      #   fi
+      # '';
+      # neovim-check-health =
+      #   pkgs.runCommand "neovim-check-health"
+      #   {
+      #     buildInputs = [
+      #       pkgs.git
+      #     ];
+      #   } ''
+      #     # We *must* create some output, usually contains test logs for checks
+      #     mkdir -p "$out"
+      #     output=$(HOME=$(realpath .) ${config.packages.neovim-polar}/bin/nvim -c "lua require('polarmutex.health').nix_check()" -c "q" 2>&1 /dev/null)
+      #     if [ -n "$(cat "$out/nvim-health.log")" ]; then
+      #         while IFS= read -r line; do
+      #             echo "$line"
+      #         done < "$out/nvim-health.log"
+      #         exit 1
+      #     fi
+      #   '';
 
       # fixme
       #   neovim-check-treesitter-queries =
