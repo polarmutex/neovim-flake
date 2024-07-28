@@ -498,6 +498,21 @@
       "url": "https://api.github.com/repos/folke/noice.nvim/tarball/v4.4.3",
       "hash": "0sw4yfzc2gp221bphg9j0m0nx8f8mn1sr01zvyk7ba1zvpfw1x3r"
     },
+    "nvim-notify": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "rcarriga",
+        "repo": "nvim-notify"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v3.13.5",
+      "revision": "d333b6f167900f6d9d42a59005d82919830626bf",
+      "url": "https://api.github.com/repos/rcarriga/nvim-notify/tarball/v3.13.5",
+      "hash": "0000a56y6xp2hzb5pf0in9336s9r29w590kxqdxdl5gfpz08f763"
+    },
     "nvim-nui": {
       "type": "Git",
       "repository": {
