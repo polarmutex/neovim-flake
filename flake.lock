@@ -161,22 +161,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-basedpyright": {
-      "locked": {
-        "lastModified": 1721233549,
-        "narHash": "sha256-SgwJjxnO0re055UtTrRYToSiwmwuN6/1gx8EokaqTGQ=",
-        "owner": "kiike",
-        "repo": "nixpkgs",
-        "rev": "b9430e8d41ddd52ca7261889180de747090f7d1e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "kiike",
-        "ref": "fix/basedpyright",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1722555339,
@@ -278,7 +262,6 @@
         "mnw": "mnw",
         "nil": "nil",
         "nixpkgs": "nixpkgs_3",
-        "nixpkgs-basedpyright": "nixpkgs-basedpyright",
         "pre-commit-hooks": "pre-commit-hooks",
         "spell-en-dictionary": "spell-en-dictionary",
         "spell-en-suggestions": "spell-en-suggestions"

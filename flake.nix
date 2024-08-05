@@ -48,12 +48,12 @@
           overlays = [
             # plugin-overlay
             inputs.gen-luarc.overlays.default
-            (_final: prev: {
-              # nil-git = inputs'.nil.packages.default;
-              basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
-                inherit (prev) system;
-              };
-            })
+            # (_final: prev: {
+            #   # nil-git = inputs'.nil.packages.default;
+            #   basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
+            #     inherit (prev) system;
+            #   };
+            # })
           ];
         };
 
@@ -90,7 +90,6 @@
     # nixpkgs.url = "github:nixos/nixpkgs/master";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     # nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
-    nixpkgs-basedpyright.url = "github:kiike/nixpkgs/fix/basedpyright";
 
     # flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";

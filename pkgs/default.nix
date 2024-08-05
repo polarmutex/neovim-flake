@@ -122,7 +122,7 @@ in {
           debugpy
         ]))
       ruff
-      basedpyright-nixpkgs.basedpyright
+      basedpyright
 
       # rust
       rust-analyzer
