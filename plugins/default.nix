@@ -13,7 +13,7 @@
     makePluginFromPin = name: pin:
       pkgs.vimUtils.buildVimPlugin {
         pname = "src-${name}";
-        version = pin.version or pin.revision;
+        version = pin.version or (builtins.substring 0 8 pin.revision);
         src = pin;
       };
     plugins = lib.pipe npins [
