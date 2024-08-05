@@ -192,6 +192,10 @@ in {
 
         plugins = builtins.attrValues self'.legacyPackages.neovimPluginsCompressed;
         extraBinPath = extraPackages;
+
+        # Symlink vi/vim to nvim
+        viAlias = true;
+        vimAlias = true;
       };
 
       nvim-luarc-json = pkgs.mk-luarc-json {
