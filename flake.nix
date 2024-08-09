@@ -65,6 +65,7 @@
               # npins
               nix-tree
               statix
+              just
             ];
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
