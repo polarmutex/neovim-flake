@@ -20,9 +20,9 @@
         "repo": "tree-sitter-beancount"
       },
       "branch": "master",
-      "revision": "384c55ede2a1f13e83d8e18dbef8f11304c379c2",
-      "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/384c55ede2a1f13e83d8e18dbef8f11304c379c2.tar.gz",
-      "hash": "1r48qavpyrv83d3rijjvldrvv4dw28ir6f59d9q0ryvpc4jy4irq"
+      "revision": "01c0da29e0fc7130420a09d939ecc524e09b6ba6",
+      "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/01c0da29e0fc7130420a09d939ecc524e09b6ba6.tar.gz",
+      "hash": "0lc55ybijjfkmd5j8vbxw5zsham6a40imlzmgmpqvyfy0na0dcm1"
     },
     "tree-sitter-c": {
       "type": "Git",
@@ -236,9 +236,9 @@
         "repo": "tree-sitter-nix"
       },
       "branch": "master",
-      "revision": "0fdada10f1f845ca9116e279ad8f5d0ca93e9949",
-      "url": "https://github.com/cstrahan/tree-sitter-nix/archive/0fdada10f1f845ca9116e279ad8f5d0ca93e9949.tar.gz",
-      "hash": "1vnf28sgzck9i020is5m5ff95b6sxp2kams21nwrajvq66a38xl6"
+      "revision": "486bb0337ee94575f53367b53bffeaea99063f2c",
+      "url": "https://github.com/cstrahan/tree-sitter-nix/archive/486bb0337ee94575f53367b53bffeaea99063f2c.tar.gz",
+      "hash": "17avz0l25yihr996kchdm0fmkgnsj9sc12khx8dz5d90bzy6mbfx"
     },
     "tree-sitter-python": {
       "type": "Git",
@@ -320,9 +320,9 @@
         "repo": "tree-sitter-vim"
       },
       "branch": "master",
-      "revision": "b448ca63f972ade12c373c808acdd2bf972937db",
-      "url": "https://github.com/neovim/tree-sitter-vim/archive/b448ca63f972ade12c373c808acdd2bf972937db.tar.gz",
-      "hash": "05kjl2jgc2vki2xid5929bap2b9dqhd0w7jq6mm8yjfw7iw14161"
+      "revision": "f3cd62d8bd043ef20507e84bb6b4b53731ccf3a7",
+      "url": "https://github.com/neovim/tree-sitter-vim/archive/f3cd62d8bd043ef20507e84bb6b4b53731ccf3a7.tar.gz",
+      "hash": "1sqp7aj36ivmay8l8bkcrfmjhzmkg4wzfrxiwzjbrbrvllj96mi9"
     },
     "tree-sitter-vimdoc": {
       "type": "Git",
