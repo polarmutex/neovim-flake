@@ -185,7 +185,7 @@ in {
       neovim-polar = inputs.mnw.lib.wrap pkgs {
         inherit (self'.packages) neovim;
 
-        wrapperArgs = [];
+        bwrapArgs = [];
 
         appName = "nvim";
         extraLuaPackages = _: [];
