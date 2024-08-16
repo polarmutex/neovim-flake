@@ -8,9 +8,9 @@
         "repo": "neovim"
       },
       "branch": "master",
-      "revision": "0d3f2c4904d552635da07a6e2b4e75520b514940",
-      "url": "https://github.com/neovim/neovim/archive/0d3f2c4904d552635da07a6e2b4e75520b514940.tar.gz",
-      "hash": "1f44c2gljihb87219jlxlf8syx8jl80k6qh97yz19jvw91j8zmfs"
+      "revision": "fd65422b99c7cc69e5053a852244cfc9d46d7b65",
+      "url": "https://github.com/neovim/neovim/archive/fd65422b99c7cc69e5053a852244cfc9d46d7b65.tar.gz",
+      "hash": "1i37ax01363vigj3b9qybdg9qqmzn1k969kxsi83hjlrhw0hbd3v"
     },
     "nvim-LuaSnip": {
       "type": "GitRelease",
