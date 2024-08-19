@@ -97,7 +97,7 @@
     # flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
 
     pre-commit-hooks = {
-      url = "github:cachix/pre-commit-hooks.nix";
+      url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

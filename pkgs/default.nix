@@ -77,6 +77,10 @@ in {
       fswatch # for lsp file watching
       xclip # for clipboard
 
+      # cpp
+      clang
+      clang-tools
+
       # lua
       lua-language-server
       luajitPackages.luacheck
