@@ -92,7 +92,8 @@ in {
       # ]))
 
       #nix
-      nil
+      # nil
+      nixd
       deadnix
       statix
       alejandra

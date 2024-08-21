@@ -116,8 +116,8 @@
     };
 
     # Lsp
-    nil = {
-      url = "github:oxalica/nil";
-    };
+    # nil = {
+    #   url = "github:oxalica/nil";
+    # };
   };
 }
