@@ -16,8 +16,10 @@ vim.lsp.start({
     root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
     capabilities = require("polar.lsp").make_client_capabilities(),
     settings = {
-        formatting = {
-            command = { "alejandra", "-qq" },
+        nixd = {
+            formatting = {
+                command = { "alejandra", "-qq" },
+            },
         },
         -- flake = {
         --     autoArchive = true,
