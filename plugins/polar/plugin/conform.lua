@@ -2,7 +2,6 @@ require("conform").setup({
     formatters_by_ft = {
         lua = { "stylua" },
         markdown = { "prettierd" },
-        nix = { "alejandra" },
         -- Conform will run multiple formatters sequentially
         python = { "ruff_format" },
         -- Use a sub-list to run only the first available formatter
