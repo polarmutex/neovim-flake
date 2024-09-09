@@ -140,7 +140,7 @@ jobs:
         run: |
           rm -rf ./patches
       - if: ${{ !inputs.dry-run }}
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           title: Update flake inputs and npins
           body: ${{ github.event_name == 'workflow_dispatch' && 'Manually triggered update.' || 'Automated periodic update.' }}
