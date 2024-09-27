@@ -58,7 +58,7 @@
               pkgs.rustPlatform.buildRustPackage (args
                 // {
                   src = deps.treesitter;
-                  cargoHash = "sha256-QvxH5uukaCmpHkWMle1klR5/rA2/HgNehmYIaESNpxc=";
+                  cargoHash = "sha256-Gmpcd4+WFYYlrOnRzAPLGH8EeA7LorecyiUGZ//k08E=";
                 });
           };
       };
