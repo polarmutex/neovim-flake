@@ -1,77 +1,68 @@
-{inputs, ...}: let
-in {
+{inputs, ...}: {
   perSystem = {
     inputs',
     system,
-    config,
     lib,
     pkgs,
-    npins,
-    self',
-    #self,
     ...
   }: let
-    mkNeovim = pkgs.callPackage ./mkNeovim.nix {
-      inherit inputs;
-      neovim-unwrapped = config.packages.neovim;
-    };
+    makePluginFromPin = name: pin:
+      pkgs.vimUtils.buildVimPlugin {
+        pname = "${name}";
+        name = "${name}";
+        version = pin.version or (builtins.substring 0 8 pin.revision);
+        src = pin;
+        passthru = {opt = true;};
+      };
+    npins = import ../npins;
+    npinPlugins = lib.pipe npins [
+      (lib.filterAttrs (name: _: lib.hasPrefix "plugin-" name))
+      (lib.mapAttrs' (name: pin: lib.nameValuePair (lib.removePrefix "plugin-" name + "-src") pin))
+      (lib.mapAttrs makePluginFromPin)
+    ];
+    npinPlugins' =
+      npinPlugins
+      // {
+        telescope-fzf-native-nvim-src = npinPlugins.telescope-fzf-native-nvim-src.overrideAttrs {buildPhase = "make";};
+        lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {opt = false;};};
+      };
 
-    # all-plugins = with pkgs.nvimPlugins; [
-    #   beancount-nvim
-    #   cmp-dap
-    #   cmp-emoji
-    #   cmp-nvim-lsp
-    #   cmp-path
-    #   conform-nvim
-    #   crates-nvim
-    #   diffview-nvim
-    #   dressing-nvim
-    #   edgy-nvim
-    #   flash-nvim
-    #   friendly-snippets
-    #   gitsigns-nvim
-    #   hardtime-nvim
-    #   harpoon
-    #   inc-rename-nvim
-    #   lualine-nvim
-    #   luasnip
-    #   kanagawa-nvim
-    #   mini-indentscope
-    #   neodev-nvim
-    #   neogit
-    #   noice-nvim
-    #   nui-nvim
-    #   nvim-cmp
-    #   nvim-colorizer
-    #   nvim-dap
-    #   nvim-dap-python
-    #   nvim-dap-ui
-    #   nvim-dap-virtual-text
-    #   nvim-jdtls
-    #   nvim-lint
-    #   nvim-navic
-    #   nvim-nio
-    #   nvim-treesitter
-    #   nvim-treesitter-playground
-    #   nvim-web-devicons
-    #   obsidian-nvim
-    #   one-small-step-for-vimkind
-    #   overseer-nvim
-    #   rustaceanvim
-    #   precognition-nvim
-    #   plenary-nvim
-    #   schemastore-nvim
-    #   sqlite-lua
-    #   telescope-nvim
-    #   telescope-fzf-native
-    #   tokyonight-nvim
-    #   trouble-nvim
-    #   vim-arduino
-    #   vim-be-good
-    #   vim-illuminate
-    #   which-key-nvim
-    #   yanky-nvim
-    # ];
+    buildTSGrammar = pkgs.callPackage "${inputs.nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" {};
+    treesitterGrammars = lib.pipe (import ../npins-ts-grammars) [
+      (lib.mapAttrs (name: pin:
+        buildTSGrammar {
+          language = lib.removePrefix "tree-sitter-" name;
+          version = pin.version or (builtins.substring 0 8 pin.revision);
+          src = pin;
+          name = "${name}-grammar";
+          pname = "${name}-grammar";
+          location =
+            if name == "tree-sitter-markdown_inline"
+            then "tree-sitter-markdown-inline"
+            else if name == "tree-sitter-markdown"
+            then "tree-sitter-markdown"
+            else if name == "tree-sitter-typescript"
+            then "typescript"
+            else null;
+          passthru.parserName = lib.removePrefix "tree-sitter-" name;
+        }))
+      (lib.mapAttrs (
+        name: pin:
+          pkgs.stdenv.mkDerivation {
+            name = pin.name;
+            pname = pin.pname;
+            inherit (pin) src;
+            dontBuild = true;
+            passthru = {opt = false;};
+            installPhase = ''
+              mkdir -pv $out/parser
+              cp ${pin}/parser $out/parser/${(lib.removePrefix "tree-sitter-" pin.parserName)}.so
+              mkdir -pv $out/queries
+              cp -r ${npins.nvim-treesitter}/queries/${lib.removePrefix "tree-sitter-" pin.parserName} $out/queries
+            '';
+          }
+      ))
+    ];
 
     extraPackages = with pkgs; [
       fswatch # for lsp file watching
@@ -108,7 +99,7 @@ in {
           black
           python-lsp-server
           python-lsp-black.overrideAttrs
-          (oldAttrs: rec {
+          (oldAttrs: {
             patches =
               oldAttrs.patches
               /*
@@ -142,83 +133,180 @@ in {
       arduino-cli
     ];
   in {
-    packages = {
-      default = config.packages.neovim;
+    packages = let
+      byteCompileLuaHook = pkgs.makeSetupHook {name = "byte-compile-lua-hook";} (
+        let
+          luajit = lib.getExe' pkgs.luajit "luajit";
+        in
+          pkgs.writeText "byte-compile-lua-hook.sh" # bash
+          
+          ''
+            byteCompileLuaPostFixup() {
+                while IFS= read -r -d "" file; do
+                    tmp=$(mktemp -u "$file.XXXX")
+                    if ${luajit} -bd -- "$file" "$tmp"; then
+                        mv "$tmp" "$file"
+                    fi
+                done < <(find "$out" -type f,l -name "*.lua" -print0)
+            }
+            postFixupHooks+=(byteCompileLuaPostFixup)
+          ''
+      );
 
-      neovim = import ./neovim.nix {
-        neovim-src = npins.neovim;
-        inherit lib pkgs;
-      };
+      # Byte compiling of normalized plugin list
+      byteCompilePlugins = plugins: let
+        byteCompile = p:
+          p.overrideAttrs (
+            prev:
+              {
+                pname = lib.removePrefix "src-" prev.pname;
+                nativeBuildInputs = prev.nativeBuildInputs or [] ++ [byteCompileLuaHook];
+              }
+              // lib.optionalAttrs (prev ? buildCommand) {
+                buildCommand = ''
+                  ${prev.buildCommand}
+                  runHook postFixup
+                '';
+              }
+              // lib.optionalAttrs (prev ? dependencies) {dependencies = map byteCompile prev.dependencies;}
+          );
+      in
+        lib.mapAttrs' (name: pin:
+          lib.nameValuePair (lib.removeSuffix "-src" name) (byteCompile (pin.overrideAttrs (old: {
+            name = lib.removeSuffix "-src" old.name;
+            pname = lib.removeSuffix "-src" old.pname;
+          }))))
+        plugins;
+      npinCompressedPlugins = byteCompilePlugins npinPlugins';
+    in
+      lib.fix (_: let
+        # packages in $FLAKE/pkgs, callPackage'd automatically
+        stage1 = lib.fix (
+          self': let
+            callPackage = lib.callPackageWith (pkgs // self');
+            auto = lib.pipe (builtins.readDir ./.) [
+              (lib.filterAttrs (_: value: value == "directory"))
+              (builtins.mapAttrs (name: _: callPackage ./${name} {}))
+            ];
+          in
+            auto
+            // {
+              inherit (pkgs) neovim-nightly;
+              nvim-luarc-json = pkgs.mk-luarc-json {
+                nvim = pkgs.neovim-nightly;
+                plugins = builtins.attrValues npinPlugins';
+              };
+            }
+        );
 
-      neovim-debug = import ./neovim-debug.nix {
-        inherit (config.packages) neovim;
-        inherit pkgs;
-      };
+        # wrapper-manager packages
+        stage2 =
+          stage1
+          // (inputs.wrapper-manager.lib {
+            pkgs = pkgs // stage1;
+            modules = lib.pipe (builtins.readDir ../wrapper-manager) [
+              (lib.filterAttrs (_: value: value == "directory"))
+              builtins.attrNames
+              (map (n: ../wrapper-manager/${n}))
+            ];
+            specialArgs = {
+              inherit inputs' npinCompressedPlugins treesitterGrammars;
+            };
+          })
+          .config
+          .build
+          .packages;
+      in
+        stage2);
+    # packages = l {
+    #   default = config.packages.neovim;
+    #
+    #   neovim = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+    #
+    #   neovim-polar = inputs.wrapper-manager.lib.build {
+    #     inherit pkgs;
+    #     modules = [
+    #       {
+    #         wrappers.stack = {
+    #           basePackage = pkgs.stack;
+    #           flags = [
+    #             "--resolver"
+    #             "lts"
+    #           ];
+    #           env.NO_COLOR.value = "1";
+    #         };
+    #       }
+    #     ];
+    #   };
+    #               import ./neovim.nix {
+    #   neovim-src = npins.neovim;
+    #   inherit lib pkgs;
+    # };
 
-      neovim-developer = import ./neovim-developer.nix {
-        inherit (config.packages) neovim-debug;
-        neovim-src = npins.neovim;
-        inherit lib pkgs;
-      };
+    # neovim-debug = import ./neovim-debug.nix {
+    #   inherit (confcfg.packages) neovim;
+    #   inherit pkgs;
+    # };
 
-      polar-config = self'.legacyPackages.neovimPlugins.polar;
-      polar-config-compressed = self'.legacyPackages.neovimPluginsCompressed.polar;
-      inherit (self'.legacyPackages.neovimPlugins) treesitter;
-      inherit (self'.legacyPackages.neovimPlugins) telescope-fzf-native;
+    # neovim-developer = import ./neovim-developer.nix {
+    #   inherit (config.packages) neovim-debug;
+    #   neovim-src = npins.neovim;
+    #   inherit lib pkgs;
+    # };
+    #
+    # polar-config = self'.legacyPackages.neovimPlugins.polar;
+    # polar-config-compressed = self'.legacyPackages.neovimPluginsCompressed.polar;
+    # inherit (self'.legacyPackages.neovimPlugins) treesitter;
+    # inherit (self'.legacyPackages.neovimPlugins) telescope-fzf-native;
 
-      # neovim-polar-dev = mkNeovim {
-      #   vimAlias = true;
-      #   appName = "nvim";
-      #   plugins =
-      #     all-plugins
-      #     ++ [
-      #       config.packages.polar-lua-config
-      #     ];
-      #   devPlugins = [
-      #     {
-      #       name = "git-worktree.nvim";
-      #       path = "~/repos/personal/git-worktree-nvim/devel ";
-      #     }
-      #     {
-      #       name = "beancount.nvim";
-      #       path = "~/repos/personal/beancount-nvim/master ";
-      #     }
-      #   ];
-      #   inherit extraPackages;
-      # };
+    # neovim-polar-dev = mkNeovim {
+    #   vimAlias = true;
+    #   appName = "nvim";
+    #   plugins =
+    #     all-plugins
+    #     ++ [
+    #       config.packages.polar-lua-config
+    #     ];
+    #   devPlugins = [
+    #     {
+    #       name = "git-worktree.nvim";
+    #       path = "~/repos/personal/git-worktree-nvim/devel ";
+    #     }
+    #     {
+    #       name = "beancount.nvim";
+    #       path = "~/repos/personal/beancount-nvim/master ";
+    #     }
+    #   ];
+    #   inherit extraPackages;
+    # };
 
-      neovim-polar = inputs.mnw.lib.wrap pkgs {
-        inherit (self'.packages) neovim;
+    # neovim-polar = inputs.mnw.lib.wrap pkgs {
+    #   inherit (self'.packages) neovim;
+    #
+    #   wrapperArgs = [];
+    #
+    #   appName = "nvim";
+    #   extraLuaPackages = _: [];
+    #
+    #   plugins = builtins.attrValues self'.legacyPackages.neovimPluginsCompressed;
+    #   extraBinPath = extraPackages;
+    #
+    #   # Symlink vi/vim to nvim
+    #   viAlias = true;
+    #   vimAlias = true;
+    # };
 
-        wrapperArgs = [];
+    # inherit (pkgs) npins;
 
-        appName = "nvim";
-        extraLuaPackages = _: [];
-
-        plugins = builtins.attrValues self'.legacyPackages.neovimPluginsCompressed;
-        extraBinPath = extraPackages;
-
-        # Symlink vi/vim to nvim
-        viAlias = true;
-        vimAlias = true;
-      };
-
-      nvim-luarc-json = pkgs.mk-luarc-json {
-        nvim = config.packages.neovim-polar;
-        plugins = builtins.attrValues self'.legacyPackages.neovimPlugins;
-      };
-
-      inherit (pkgs) npins;
-
-      # # scripts
-      flake-commit-and-format-patch = pkgs.callPackage ./script-flake-commit-and-format-patch.nix {};
-      npins-commit-and-format-patch = pkgs.callPackage ./script-npins-commit-and-format-patch.nix {};
-      configure-git-user = pkgs.callPackage ./script-configure-git-user.nix {};
-      generate-npins-matrix = pkgs.callPackage ./script-generate-npins-matrix.nix {};
-      npins-version-matrix = pkgs.callPackage ./script-npins-version-matrix.nix {};
-      new-nvim-plugin = pkgs.callPackage ./script-new-nvim-plugin.nix {};
-      update-nvim-plugin = pkgs.callPackage ./script-update-nvim-plugin.nix {};
-      update-tree-sitter-grammars = pkgs.callPackage ./script-update-tree-sitter-grammars.nix {};
-    };
+    #     # # scripts
+    #     flake-commit-and-format-patch = pkgs.callPackage ./script-flake-commit-and-format-patch.nix {};
+    #     npins-commit-and-format-patch = pkgs.callPackage ./script-npins-commit-and-format-patch.nix {};
+    #     configure-git-user = pkgs.callPackage ./script-configure-git-user.nix {};
+    #     generate-npins-matrix = pkgs.callPackage ./script-generate-npins-matrix.nix {};
+    #     npins-version-matrix = pkgs.callPackage ./script-npins-version-matrix.nix {};
+    #     new-nvim-plugin = pkgs.callPackage ./script-new-nvim-plugin.nix {};
+    #     update-nvim-plugin = pkgs.callPackage ./script-update-nvim-plugin.nix {};
+    #     update-tree-sitter-grammars = pkgs.callPackage ./script-update-tree-sitter-grammars.nix {};
+    #   };
   };
 }

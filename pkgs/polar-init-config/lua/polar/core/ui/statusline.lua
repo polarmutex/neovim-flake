@@ -206,7 +206,7 @@ function M.treesitter_component()
     local res = icons.misc.tree
     local buf = vim.api.nvim_get_current_buf()
     local hl_enabled = vim.treesitter.highlighter.active[buf]
-    local has_parser = require("nvim-treesitter.parsers").has_parser()
+    local has_parser = vim.treesitter.get_parser(buf, vim.bo.filetype, { error = false }) ~= nil
     if not has_parser then
         return string.format("%%#StlComponentInactive#%s%%*", res)
     end

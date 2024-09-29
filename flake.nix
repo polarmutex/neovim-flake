@@ -36,27 +36,24 @@
       perSystem = {
         self',
         pkgs,
-        npins,
-        inputs',
         system,
         ...
       }: {
-        _module.args.npins = import ./npins;
         _module.args.pkgs = import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = false;
           overlays = [
             # plugin-overlay
             inputs.gen-luarc.overlays.default
-            # (_final: prev: {
-            #   # nil-git = inputs'.nil.packages.default;
-            #   basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
-            #     inherit (prev) system;
-            #   };
-            # })
+            (_final: _prev: {
+              neovim-nightly = inputs.neovim-nightly-overlay.packages.${system}.default;
+              #   # nil-git = inputs'.nil.packages.default;
+              #   basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
+              #     inherit (prev) system;
+              #   };
+            })
           ];
         };
-
         devShells = {
           default = pkgs.mkShell {
             name = "neovim-developer-shell";
@@ -88,36 +85,39 @@
 
   # Input source for our derivation
   inputs = {
-    # nixpkgs.url = "github:nixos/nixpkgs/master";
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    # nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
-
-    # flake-compat.url = "https://flakehub.com/f/edolstra/flake-compat/1.tar.gz";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    # flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/0.1.tar.gz";
+
+    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
 
     pre-commit-hooks = {
       url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # neovim
-    gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
-    mnw.url = "github:gerg-l/mnw";
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    # nixpkgs-mine.url = "github:polarmutex/nixpkgs/update-treesitter";
 
     # spell
     spell-en-dictionary = {
       url = "http://ftp.vim.org/vim/runtime/spell/en.utf-8.spl";
       flake = false;
     };
+
     spell-en-suggestions = {
       url = "http://ftp.vim.org/vim/runtime/spell/en.utf-8.sug";
       flake = false;
-    };
+    }; # Add the wrapper-manager flake
 
-    # Lsp
-    # nil = {
-    #   url = "github:oxalica/nil";
-    # };
+    wrapper-manager = {
+      url = "github:viperML/wrapper-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }
