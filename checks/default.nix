@@ -18,7 +18,7 @@
           alejandra = {
             enable = true;
             excludes = [
-              "plugins/grammars"
+              "npins-ts-grammars"
             ];
           };
           stylua.enable = true;
