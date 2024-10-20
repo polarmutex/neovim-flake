@@ -1,8 +1,8 @@
 {pkgs, ...}: let
-  data = builtins.fromJSON (builtins.readFile ../plugins/grammars/sources.json);
+  data = builtins.fromJSON (builtins.readFile ../../npins-ts-grammars/sources.json);
   inherit (data) pins;
 
-  grammar-sources = import ../npins;
+  grammar-sources = import ../../npins;
   lockfile = pkgs.lib.importJSON "${grammar-sources."nvim-treesitter"}/lockfile.json";
 
   allGrammars = with pkgs.lib;
@@ -28,9 +28,9 @@ in
       npins
     ];
     text = ''
-      cd "$(git rev-parse --show-toplevel)/plugins" || exit 1
-      rm -rf ./grammars/*
-      ${pkgs.npins}/bin/npins -d ./grammars init --bare
+      # cd "$(git rev-parse --show-toplevel)/npins" || exit 1
+      rm -rf ./npins-ts-grammars/*
+      ${pkgs.npins}/bin/npins -d ./npins-ts-grammars init --bare
        ${
         foreachSh allGrammars ({
           name,
@@ -42,7 +42,7 @@ in
         }: ''
           echo "Updating treesitter parser for ${name}"
           ${pkgs.npins}/bin/npins \
-            -d ./grammars \
+            -d ./npins-ts-grammars \
             add \
             --name ${name}\
             github \
