@@ -192,6 +192,7 @@
             auto
             // {
               inherit (pkgs) neovim-nightly;
+              inherit (pkgs) npins;
               nvim-luarc-json = pkgs.mk-luarc-json {
                 nvim = pkgs.neovim-nightly;
                 plugins = builtins.attrValues npinPlugins';
