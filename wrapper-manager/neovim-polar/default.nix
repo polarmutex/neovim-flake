@@ -66,6 +66,74 @@
       "--cmd"
       "set packpath^=${packDir} | set runtimepath^=${packDir}"
     ];
+    pathAdd = with pkgs; [
+      fswatch # for lsp file watching
+      xclip # for clipboard
+
+      # cpp
+      clang
+      clang-tools
+
+      # lua
+      lua-language-server
+      luajitPackages.luacheck
+      stylua
+
+      # markdown
+      prettierd
+      markdownlint-cli
+      # (pkgs.mdformat.withPlugins (p: [
+      #   p.mdformat-frontmatter
+      #   p.mdformat-gfm
+      #   p.mdformat-toc
+      # ]))
+
+      #nix
+      # nil
+      nixd
+      deadnix
+      statix
+      alejandra
+
+      # python
+      (python311.withPackages (ps:
+        with ps; [
+          black
+          python-lsp-server
+          python-lsp-black.overrideAttrs
+          (oldAttrs: {
+            patches =
+              oldAttrs.patches
+              /*
+              fix test failure with black>=24.3.0;
+              remove this patch once python-lsp-black>2.0.0
+              */
+              ++ lib.optional
+              (with lib; (versionOlder version "2.0.1") && (versionAtLeast black.version "24.3.0"))
+              (fetchpatch {
+                url = "https://patch-diff.githubusercontent.com/raw/python-lsp/python-lsp-black/pull/59.patch";
+                hash = "sha256-4u0VIS7eidVEiKRW2wc8lJVkJwhzJD/M+uuqmTtiZ7E=";
+              });
+          })
+          python-lsp-ruff
+          pydocstyle
+          debugpy
+        ]))
+      ruff
+      basedpyright
+
+      # rust
+      rust-analyzer
+
+      # yaml
+      nodePackages_latest.yaml-language-server
+
+      # java
+      jdt-language-server
+
+      # arduino
+      arduino-cli
+    ];
     overrideAttrs = old: let
       pname = config.wrappers.neovim-polar.env.NVIM_APPNAME.value;
       inherit (config.wrappers.neovim-polar.basePackage) version;
