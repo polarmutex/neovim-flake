@@ -8,9 +8,9 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
-      "revision": "377039daa260b71f304c881d1b21d643c501a261",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/377039daa260b71f304c881d1b21d643c501a261.tar.gz",
-      "hash": "1a6416kqfyb2s7xcaf7nhd26239fyz5g1qd7ngas7dgzw1pzqznq"
+      "revision": "92d2501d698e0fe855bd222540f9648890fab6c7",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/92d2501d698e0fe855bd222540f9648890fab6c7.tar.gz",
+      "hash": "1a0imp0w5b58ss9k3sfzk0hp6c57xs3mvg8h5adwgz1xm2z2x5z6"
     },
     "plugin-LuaSnip": {
       "type": "GitRelease",
