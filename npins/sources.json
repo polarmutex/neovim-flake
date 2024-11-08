@@ -301,10 +301,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.13.0",
-      "revision": "cbbdc6afba859d20d6fb67c3e035586712622816",
-      "url": "https://api.github.com/repos/echasnovski/mini.indentscope/tarball/v0.13.0",
-      "hash": "08hnppjd6rcr9pcqk3bh30sm3vh5h2x87i89g9k99aa9lx3062yk"
+      "version": "v0.14.0",
+      "revision": "40015df075292dd5ad153ccb78c0e15588bd1a45",
+      "url": "https://api.github.com/repos/echasnovski/mini.indentscope/tarball/v0.14.0",
+      "hash": "1pbhic4q9ikbdgmmvlhpil4aykpf0ryx7dckb36q3xc0ai2gwc6g"
     },
     "plugin-mini-nvim": {
       "type": "GitRelease",
