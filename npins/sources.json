@@ -578,9 +578,9 @@
         "repo": "plenary.nvim"
       },
       "branch": "master",
-      "revision": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683",
-      "url": "https://github.com/nvim-lua/plenary.nvim/archive/a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683.tar.gz",
-      "hash": "0n2p8krzwiw682f0yb6n8faamffpp336rjy50pbqf3jmc6czd5z4"
+      "revision": "2d9b06177a975543726ce5c73fca176cedbffe9d",
+      "url": "https://github.com/nvim-lua/plenary.nvim/archive/2d9b06177a975543726ce5c73fca176cedbffe9d.tar.gz",
+      "hash": "1blmh0qr010jhydw61kiynll2m7q4xyrvrva8b5ipf1g81x8ysbf"
     },
     "plugin-precognition-nvim": {
       "type": "GitRelease",
