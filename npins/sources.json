@@ -374,9 +374,9 @@
         "repo": "nui.nvim"
       },
       "branch": "main",
-      "revision": "61574ce6e60c815b0a0c4b5655b8486ba58089a1",
-      "url": "https://github.com/MunifTanjim/nui.nvim/archive/61574ce6e60c815b0a0c4b5655b8486ba58089a1.tar.gz",
-      "hash": "1vllq6lkk7karc3n8h9wj2ax6sc99h26r96h18lbvi0nsy98ss53"
+      "revision": "b58e2bfda5cea347c9d58b7f11cf3012c7b3953f",
+      "url": "https://github.com/MunifTanjim/nui.nvim/archive/b58e2bfda5cea347c9d58b7f11cf3012c7b3953f.tar.gz",
+      "hash": "0klz9wy09jk74f39v6f7s5gn98nf3vq4lgv5d29mkszpykxaligp"
     },
     "plugin-nvim-cmp": {
       "type": "Git",
