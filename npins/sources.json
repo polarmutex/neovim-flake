@@ -346,10 +346,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v1.0.0",
-      "revision": "16ee9ae957db2142fb189f5f2556123e24c5b7fb",
-      "url": "https://api.github.com/repos/NeogitOrg/neogit/tarball/v1.0.0",
-      "hash": "0ydslkgmpkgav5a9yb5jv6520ajjd5dbzl0m48l06r1rxmq1s9yd"
+      "version": "v2.0.0",
+      "revision": "7f97dbfc5af3b898c6660d927c23e3a96a5bd069",
+      "url": "https://api.github.com/repos/NeogitOrg/neogit/tarball/v2.0.0",
+      "hash": "0nyv64ai3765if7bdfyx01a0xmsmhm8cjvxyvh2s40bzvkx8xy17"
     },
     "plugin-noice-nvim": {
       "type": "GitRelease",
