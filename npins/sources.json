@@ -248,9 +248,9 @@
         "repo": "harpoon"
       },
       "branch": "master",
-      "revision": "ccae1b9bec717ae284906b0bf83d720e59d12b91",
-      "url": "https://github.com/ThePrimeagen/harpoon/archive/ccae1b9bec717ae284906b0bf83d720e59d12b91.tar.gz",
-      "hash": "10ldyz368j3kh7h7r877wbsa2y88v191415ic4slr7ldzfrar2j8"
+      "revision": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3",
+      "url": "https://github.com/ThePrimeagen/harpoon/archive/1bc17e3e42ea3c46b33c0bbad6a880792692a1b3.tar.gz",
+      "hash": "0q7lcww2y1x8s6r5g6wbdlnv3dvc8pj1g7wq6yxvl5fsi40wvhwj"
     },
     "plugin-inc-rename-nvim": {
       "type": "Git",
