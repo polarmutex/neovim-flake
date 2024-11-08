@@ -194,9 +194,9 @@
         "repo": "friendly-snippets"
       },
       "branch": "main",
-      "revision": "00ebcaa159e817150bd83bfe2d51fa3b3377d5c4",
-      "url": "https://github.com/rafamadriz/friendly-snippets/archive/00ebcaa159e817150bd83bfe2d51fa3b3377d5c4.tar.gz",
-      "hash": "1jkm5hxgpa0l6qmr0mspykcndl4nh50lk13q4b7rv3byfryv40ck"
+      "revision": "de8fce94985873666bd9712ea3e49ee17aadb1ed",
+      "url": "https://github.com/rafamadriz/friendly-snippets/archive/de8fce94985873666bd9712ea3e49ee17aadb1ed.tar.gz",
+      "hash": "0aq3k61x8qni60ad30n67s531jpfpq2m5a08zshc8rkllz4i3phz"
     },
     "plugin-git-worktree-nvim": {
       "type": "GitRelease",
