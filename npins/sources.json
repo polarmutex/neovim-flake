@@ -124,10 +124,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.5.1",
-      "revision": "5d2751f3d31c952663ade44669b6b63efa06e295",
-      "url": "https://api.github.com/repos/Saecki/crates.nvim/tarball/v0.5.1",
-      "hash": "1fn9afqkaj79ymz82mc98nf7ga040p4xvl1ij8hm4rj4ngarm6b3"
+      "version": "v0.5.2",
+      "revision": "1c924d5a9ea3496c4e1a02d0d51388ba809f8468",
+      "url": "https://api.github.com/repos/Saecki/crates.nvim/tarball/v0.5.2",
+      "hash": "1aig0p82q7sy3291671msh6yk945dnxczw6qg59n5w98aw8848cp"
     },
     "plugin-diffview-nvim": {
       "type": "Git",
