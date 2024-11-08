@@ -730,10 +730,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.10.0",
-      "revision": "8600b0029896ad2e36eb27a0808614ab8a0c057a",
-      "url": "https://api.github.com/repos/folke/which-key.nvim/tarball/v3.10.0",
-      "hash": "07am4ybrrk7nhf0g3b8109awz9ci8djzdjrjv4gcjbija85mba58"
+      "version": "v3.13.3",
+      "revision": "fb070344402cfc662299d9914f5546d840a22126",
+      "url": "https://api.github.com/repos/folke/which-key.nvim/tarball/v3.13.3",
+      "hash": "0p66gn3cxmkx6ldp38gnwqnwy3d3qdhhl1gr1xaw8gliry0jwx9z"
     },
     "plugin-yanky-nvim": {
       "type": "GitRelease",
