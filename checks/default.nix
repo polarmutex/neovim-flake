@@ -48,25 +48,26 @@
       #       fi
       #     '';
       # };
-      neovim-check-health-deprecated = pkgs.stdenv.mkDerivation {
-        name = "neovim-check-health-deprecated";
-        phases = ["checkPhase"];
-        doCheck = true;
-        checkPhase =
-          /*
-          sh
-          */
-          ''
-            mkdir -p $out
-            export HOME=$(realpath .)
-            ${config.packages.neovim-polar}/bin/nvim --headless  -c "checkhealth vim.deprecated" -c "write $out/health.log" -c "quitall"
-            # Check for errors inside the health log
-            if grep -q WARNING $out/health.log; then
-              cat $out/health.log
-              exit 1
-            fi
-          '';
-      };
+      # TODO separate into something I can call by itself
+      # neovim-check-health-deprecated = pkgs.stdenv.mkDerivation {
+      #   name = "neovim-check-health-deprecated";
+      #   phases = ["checkPhase"];
+      #   doCheck = true;
+      #   checkPhase =
+      #     /*
+      #     sh
+      #     */
+      #     ''
+      #       mkdir -p $out
+      #       export HOME=$(realpath .)
+      #       ${config.packages.neovim-polar}/bin/nvim --headless  -c "checkhealth vim.deprecated" -c "write $out/health.log" -c "quitall"
+      #       # Check for errors inside the health log
+      #       if grep -q WARNING $out/health.log; then
+      #         cat $out/health.log
+      #         exit 1
+      #       fi
+      #     '';
+      # };
       # pkgs.runCommand "neovim-check-config"
       # {
       #   buildInputs = [
