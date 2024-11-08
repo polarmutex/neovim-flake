@@ -208,10 +208,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "2.0.0",
-      "revision": "13bab466fc2a72f2a7aa8211d70a4d6dc0d6f8b0",
-      "url": "https://api.github.com/repos/polarmutex/git-worktree.nvim/tarball/2.0.0",
-      "hash": "1424q1ryqcr9pdxwirag5s7p9v52wpkhp2kxvcx69y9rda1gzypx"
+      "version": "2.0.1",
+      "revision": "9b5136bd9539805ba16ad0e92f3a021224c182d8",
+      "url": "https://api.github.com/repos/polarmutex/git-worktree.nvim/tarball/2.0.1",
+      "hash": "0dalswz65hygb5s5xlcnrhvav0026q9fhj8fljskhrn6x63wx37r"
     },
     "plugin-gitsigns-nvim": {
       "type": "GitRelease",
