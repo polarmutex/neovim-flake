@@ -592,10 +592,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v1.0.0",
-      "revision": "5255b72c52b1159e9757f50389bde65e05e3bfb1",
-      "url": "https://api.github.com/repos/tris203/precognition.nvim/tarball/v1.0.0",
-      "hash": "0csph3ww7vhrsxybzabvnv8ncrbif8kkh2v076r05fkxzrbri982"
+      "version": "v1.1.0",
+      "revision": "35c402c19a10e524d5378c9c0a5151ff5d847b06",
+      "url": "https://api.github.com/repos/tris203/precognition.nvim/tarball/v1.1.0",
+      "hash": "1sq7ahnj9kj0cijr8jb4shr226rv65a3gdcnrv10glf9kisbpk6i"
     },
     "plugin-rustaceanvim": {
       "type": "GitRelease",
