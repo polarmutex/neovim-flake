@@ -73,6 +73,8 @@
       # cpp
       clang
       clang-tools
+      cpplint
+      cppcheck
 
       # lua
       lua-language-server

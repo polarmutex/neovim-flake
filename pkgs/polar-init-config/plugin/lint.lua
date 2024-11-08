@@ -42,6 +42,7 @@ lint.linters.deadnix = {
 
 lint.linters_by_ft = {
     cmake = { "cmakelint" },
+    cpp = { "clangtidy", "cppcheck", "cpplint" },
     dockerfile = { "hadolint" },
     lua = { "luacheck" },
     markdown = { "markdownlint" },

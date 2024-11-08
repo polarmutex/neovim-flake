@@ -141,6 +141,14 @@ function M.lsp_component(trunc_width)
     return string.format("[%s]", table.concat(client_names, ", "))
 end
 
+function M.lint_component(trunc_width)
+    if is_truncated(trunc_width) then
+        return ""
+    end
+    local linters = require("lint").get_running()
+    return string.format("[%s]", table.concat(linters, ", "))
+end
+
 -- TODO
 function M.dap_component() end
 
@@ -291,6 +299,7 @@ function M.render()
             M.git_branch_component(120),
             -- M.git_diff_component(120),
             M.lsp_component(120),
+            M.lint_component(120),
         }, " " .. powerline_left .. " "),
         "%=",
         "%=",
