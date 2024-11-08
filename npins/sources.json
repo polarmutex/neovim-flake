@@ -166,10 +166,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v1.10.1",
-      "revision": "1fe28978ab5671e9534fca40dca10280430ba727",
-      "url": "https://api.github.com/repos/folke/edgy.nvim/tarball/v1.10.1",
-      "hash": "0103i82ymr1f7x1wi8ddi4jk1k97l9rcqdnhrfisfhljbcplhj4n"
+      "version": "v1.10.2",
+      "revision": "ebb77fde6f5cb2745431c6c0fe57024f66471728",
+      "url": "https://api.github.com/repos/folke/edgy.nvim/tarball/v1.10.2",
+      "hash": "1psavlldajgfvwx0jjhwdilccrhz38p880jsrddmrmfx9yq3yl5s"
     },
     "plugin-flash-nvim": {
       "type": "GitRelease",
