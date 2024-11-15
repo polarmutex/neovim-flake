@@ -607,10 +607,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v5.13.1",
-      "revision": "e1f9464d9e1addeccb170eb7968471966965f5a3",
-      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v5.13.1",
-      "hash": "1xqqzq3203fnjw0n91r1m4m5mp8pmsh7bjj62217schhmzclvs00"
+      "version": "v5.14.1",
+      "revision": "8ece53be36515cb9e76f3d03511643636469502d",
+      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v5.14.1",
+      "hash": "1p0pqv0a415k0ndgdjy0k0p58sdvn4ngm9zymd5hn3ny9441b22v"
     },
     "plugin-sqlite-lua": {
       "type": "GitRelease",
