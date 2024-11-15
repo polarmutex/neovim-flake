@@ -565,10 +565,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v1.4.0",
-      "revision": "8278265e7ffd3420b8246004140df12255a9737c",
-      "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/v1.4.0",
-      "hash": "1aj8ri1lr5dx4ypq3yc53bijv5msw6jh07ywiqr440cxl2pbqfjd"
+      "version": "v1.5.0",
+      "revision": "c136856c7556c0eeb0554839ddcd499b02f66832",
+      "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/v1.5.0",
+      "hash": "0ln0xx2zqary6gixnz2d4hrwfih25dl7mbz04ls7bvk9zl3ppgzx"
     },
     "plugin-plenary-nvim": {
       "type": "Git",
