@@ -45,7 +45,7 @@ local config = {
 
 vim.lsp.start(config, {
     reuse_client = function(client, conf)
-        return client.name == conf.name and client.config.root_dir == conf.root_dir
+        return client.config.root_dir == conf.root_dir
     end,
 })
 
