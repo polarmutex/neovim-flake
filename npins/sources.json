@@ -612,6 +612,21 @@
       "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v5.15.0",
       "hash": "02gnab92brnn28y4y16s7dfr1hqmy1v8bi0x5qyg8xahbwlwa2s2"
     },
+    "plugin-snacks-nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "snacks.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v2.5.0",
+      "revision": "c8d76a765eaa6eb987a0f94df412de9e62776437",
+      "url": "https://api.github.com/repos/folke/snacks.nvim/tarball/v2.5.0",
+      "hash": "0mk8kx44hqg61p8m36n80bbjbxxyarsbp82gs86n1s393jxbcn48"
+    },
     "plugin-sqlite-lua": {
       "type": "GitRelease",
       "repository": {
