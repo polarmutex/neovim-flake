@@ -30,7 +30,6 @@
       imports = [
         ./checks
         ./pkgs
-        ./plugins
       ];
 
       perSystem = {
