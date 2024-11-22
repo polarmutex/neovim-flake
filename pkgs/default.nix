@@ -12,12 +12,25 @@
         name = "${name}";
         version = pin.version or (builtins.substring 0 8 pin.revision);
         src = pin;
-        passthru = {opt = true;};
+        passthru.opt =
+          if (pin ? opt)
+          then pin.opt
+          else false;
       };
     npins = import ../npins;
     npinPlugins = lib.pipe npins [
-      (lib.filterAttrs (name: _: lib.hasPrefix "plugin-" name))
-      (lib.mapAttrs' (name: pin: lib.nameValuePair (lib.removePrefix "plugin-" name + "-src") pin))
+      # (lib.filterAttrs (name: _: lib.hasPrefix "plugin-" name))
+      (lib.mapAttrs' (name: pin:
+        lib.nameValuePair (
+          if lib.hasSuffix "--opt" name
+          then lib.removeSuffix "--opt" name
+          else name
+        ) (
+          if (lib.hasSuffix "--opt" name)
+          then pin // {opt = true;}
+          else pin
+        )))
+      (lib.mapAttrs' (name: pin: lib.nameValuePair (name + "-src") pin))
       (lib.mapAttrs makePluginFromPin)
     ];
     npinPlugins' =
@@ -123,7 +136,7 @@
       # rust
       rust-analyzer
 
-      # yaml
+      # yaml((
       nodePackages_latest.yaml-language-server
 
       # java
@@ -203,6 +216,29 @@
         # wrapper-manager packages
         stage2 =
           stage1
+          // {
+            pack-dir = let
+              packName = "polar";
+              allPlugins = lib.flatten [
+                (lib.attrValues npinCompressedPlugins)
+                (lib.attrValues treesitterGrammars)
+              ];
+            in
+              pkgs.runCommandLocal "pack-dir" {}
+              # bash
+              ''
+                mkdir -pv $out/pack/${packName}/{start,opt}
+
+                ${lib.concatMapStringsSep "\n" (p: ''
+                    ln -vsfT ${p} $out/pack/${packName}/${
+                      if p ? passthru.opt && p.passthru.opt
+                      then "opt"
+                      else "start"
+                    }/${p.pname}
+                  '')
+                  allPlugins}
+              '';
+          }
           // (inputs.wrapper-manager.lib {
             pkgs = pkgs // stage1;
             modules = lib.pipe (builtins.readDir ../wrapper-manager) [

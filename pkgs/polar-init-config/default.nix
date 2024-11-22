@@ -25,7 +25,7 @@ in
       #mv $sourceRoot/lua $sourceRoot/lua
       mkdir -p $sourceRoot/doc
       ${lemmy-help}/bin/lemmy-help -fact \
-          $sourceRoot/lua/polar/keymaps.lua \
+          # $sourceRoot/lua/polar/keymaps.lua \
           > $sourceRoot/doc/polar.txt
         #ln -s {inputs.spell-en-dictionary} $out/nvim/spell/en.utf-8.spl;
         #ln -s {inputs.spell-en-suggestions} $out/nvim/spell/en.utf-8.sug;

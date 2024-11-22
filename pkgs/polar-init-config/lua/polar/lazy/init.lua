@@ -1,7 +1,7 @@
 local M = {}
 
 M.finish = function()
-    require("lz.n").load(require("polar.lazy.specs"))
+    require("lz.n").load("polar/plugins")
 end
 
 M.packadd = function(name)

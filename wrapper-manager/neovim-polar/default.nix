@@ -68,7 +68,7 @@
     ];
     pathAdd = with pkgs; [
       fswatch # for lsp file watching
-      xclip # for clipboard
+      xsel # for clipboard
 
       # cpp
       clang

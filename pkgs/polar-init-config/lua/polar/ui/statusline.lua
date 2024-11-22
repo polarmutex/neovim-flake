@@ -316,16 +316,15 @@ function M.render()
     }, " ")
 end
 
--- Refresh
-local group = vim.api.nvim_create_augroup("polar/status_redraw", {})
--- After gitsigns update
-vim.api.nvim_create_autocmd("User", {
-    group = group,
-    pattern = "GitSignsUpdate",
-    callback = function()
-        vim.cmd.redrawstatus()
-    end,
-})
-vim.o.statusline = "%!v:lua.require('polar.core.ui.statusline').render()"
+-- -- Refresh
+-- local group = vim.api.nvim_create_augroup("polar/status_redraw", {})
+-- -- After gitsigns update
+-- vim.api.nvim_create_autocmd("User", {
+--     group = group,
+--     pattern = "GitSignsUpdate",
+--     callback = function()
+--         vim.cmd.redrawstatus()
+--     end,
+-- })
 
 return M

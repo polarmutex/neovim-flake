@@ -1,3 +1,8 @@
+require("kanagawa").setup({
+    commentStyle = { italic = true },
+    theme = "wave",
+})
+
 require("tokyonight").setup({
     style = "moon",
     transparent = false,
@@ -50,4 +55,8 @@ require("tokyonight").setup({
         highlights["WinbarPathPrefix"] = { fg = colors.fg, bg = colors.bg, bold = true }
     end,
 })
+
+-- vim.cmd([[colorscheme kanagawa]])
 vim.cmd([[colorscheme tokyonight]])
+
+return {}
