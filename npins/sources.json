@@ -446,9 +446,9 @@
         "repo": "nvim-jdtls"
       },
       "branch": "master",
-      "revision": "e129398e171e87c0d9e94dd5bea7eb4730473ffc",
-      "url": "https://github.com/mfussenegger/nvim-jdtls/archive/e129398e171e87c0d9e94dd5bea7eb4730473ffc.tar.gz",
-      "hash": "191yhwas3s0k59piq2ci2z1m0gf3ad7jkfxc96pzl5kvanibx98v"
+      "revision": "ece818f909c6414cbad4e1fb240d87e003e10fda",
+      "url": "https://github.com/mfussenegger/nvim-jdtls/archive/ece818f909c6414cbad4e1fb240d87e003e10fda.tar.gz",
+      "hash": "0w8v835diycphiq5rd9pw43sjsyqj0fbfw9njw11i0967ls0ap0b"
     },
     "nvim-lint": {
       "type": "Git",
