@@ -745,10 +745,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.13.3",
-      "revision": "fb070344402cfc662299d9914f5546d840a22126",
-      "url": "https://api.github.com/repos/folke/which-key.nvim/tarball/v3.13.3",
-      "hash": "0p66gn3cxmkx6ldp38gnwqnwy3d3qdhhl1gr1xaw8gliry0jwx9z"
+      "version": "v3.14.1",
+      "revision": "9b365a6428a9633e3eeb34dbef1b791511c54f70",
+      "url": "https://api.github.com/repos/folke/which-key.nvim/tarball/v3.14.1",
+      "hash": "1r9zq4p8hm3pk2m65m4qczrls6g4bp0j17lfyyyd3b3lsdnnd577"
     },
     "yanky-nvim": {
       "type": "GitRelease",
