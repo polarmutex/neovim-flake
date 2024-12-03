@@ -4,3 +4,5 @@
 -- vim.ui.input = function(...)
 --     return vim.ui.input(...)
 -- end
+
+return {}

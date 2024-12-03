@@ -29,3 +29,5 @@ local opts = {
     },
 }
 require("noice").setup(opts)
+
+return {}

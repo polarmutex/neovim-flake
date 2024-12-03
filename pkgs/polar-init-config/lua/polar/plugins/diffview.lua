@@ -1,1 +1,3 @@
 require("diffview").setup()
+
+return {}

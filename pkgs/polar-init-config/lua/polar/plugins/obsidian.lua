@@ -71,3 +71,5 @@ if ws[1] ~= nil then
         -- open_notes_in = "current",
     })
 end
+
+return {}

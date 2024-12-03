@@ -11,3 +11,5 @@ require("overseer").setup({
         },
     },
 })
+
+return {}

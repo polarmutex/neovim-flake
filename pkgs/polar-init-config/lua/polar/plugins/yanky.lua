@@ -11,3 +11,5 @@ local opts = {
     --},
 }
 require("yanky").setup(opts)
+
+return {}

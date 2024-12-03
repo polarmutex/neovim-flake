@@ -1,1 +1,3 @@
 require("flash").setup({})
+
+return {}

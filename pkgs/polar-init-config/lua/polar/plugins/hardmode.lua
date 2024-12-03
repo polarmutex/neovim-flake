@@ -8,3 +8,5 @@ vim.keymap.set("n", "<leader>hh", function()
     require("precognition").toggle()
     require("hardtime").toggle()
 end, { desc = "[S]earch [H]elp" })
+
+return {}

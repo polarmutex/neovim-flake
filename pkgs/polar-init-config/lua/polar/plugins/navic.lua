@@ -12,3 +12,5 @@ local opts = {
     icons = require("polar.icons").kinds,
 }
 require("nvim-navic").setup(opts)
+
+return {}

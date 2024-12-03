@@ -42,3 +42,5 @@ require("vim.treesitter.query").set(
 ] @keyword
 ]]
 )
+
+return {}

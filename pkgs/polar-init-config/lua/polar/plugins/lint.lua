@@ -1,5 +1,3 @@
-local M = {}
-
 local lint = require("lint")
 
 local severities = {
@@ -50,7 +48,7 @@ lint.linters_by_ft = {
     python = { "ruff" },
 }
 
-function M.debounce(ms, fn)
+local debounce = function(ms, fn)
     local timer = vim.loop.new_timer()
     return function(...)
         local argv = { ... }
@@ -61,7 +59,7 @@ function M.debounce(ms, fn)
     end
 end
 
-function M.lint()
+local runlint = function()
     -- Use nvim-lint's logic first:
     -- * checks if linters exist for the full filetype first
     -- * otherwise will split filetype by "." and add all those linters
@@ -95,5 +93,7 @@ end
 
 vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
     group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
-    callback = M.debounce(100, M.lint),
+    callback = debounce(100, runlint),
 })
+
+return {}

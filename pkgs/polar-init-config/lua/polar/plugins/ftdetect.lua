@@ -14,3 +14,5 @@ vim.filetype.add({
         -- end,
     },
 })
+
+return {}

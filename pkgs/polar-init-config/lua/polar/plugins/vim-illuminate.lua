@@ -23,3 +23,5 @@ vim.api.nvim_create_autocmd("FileType", {
         map("[[", "prev", buffer)
     end,
 })
+
+return {}
