@@ -1,17 +1,5 @@
 {
   "pins": {
-    "nvim-treesitter": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-treesitter",
-        "repo": "nvim-treesitter"
-      },
-      "branch": "master",
-      "revision": "1249b4cfce166f26fe52e46ed36bda907d6bb577",
-      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/1249b4cfce166f26fe52e46ed36bda907d6bb577.tar.gz",
-      "hash": "14sjfbiriqxyhmrgi9j5hvxw0vv58qazda3frisnhbiay77vpcfk"
-    },
     "LuaSnip": {
       "type": "GitRelease",
       "repository": {
@@ -515,6 +503,18 @@
       "revision": "fbef5d32be8466dd76544a257d3f3dce20082a07",
       "url": "https://api.github.com/repos/rcarriga/nvim-notify/tarball/v3.14.0",
       "hash": "0wbsib27kgrk632c094ivjbc8rw51kbalq9c8j576p78k93wipj9"
+    },
+    "nvim-treesitter": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-treesitter",
+        "repo": "nvim-treesitter"
+      },
+      "branch": "master",
+      "revision": "1249b4cfce166f26fe52e46ed36bda907d6bb577",
+      "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/1249b4cfce166f26fe52e46ed36bda907d6bb577.tar.gz",
+      "hash": "14sjfbiriqxyhmrgi9j5hvxw0vv58qazda3frisnhbiay77vpcfk"
     },
     "nvim-web-devicons": {
       "type": "Git",
