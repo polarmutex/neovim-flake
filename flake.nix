@@ -105,12 +105,12 @@
 
     # spell
     spell-en-dictionary = {
-      url = "http://ftp.vim.org/vim/runtime/spell/en.utf-8.spl";
+      url = "http://ftp.nluug.nl/vim/runtime/spell/en.utf-8.spl";
       flake = false;
     };
 
     spell-en-suggestions = {
-      url = "http://ftp.vim.org/vim/runtime/spell/en.utf-8.sug";
+      url = "http://ftp.nluug.nl/vim/runtime/spell/en.utf-8.sug";
       flake = false;
     }; # Add the wrapper-manager flake
 
