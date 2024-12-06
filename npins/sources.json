@@ -719,9 +719,9 @@
         "repo": "vim-be-good"
       },
       "branch": "master",
-      "revision": "4fa57b7957715c91326fcead58c1fa898b9b3625",
-      "url": "https://github.com/ThePrimeagen/vim-be-good/archive/4fa57b7957715c91326fcead58c1fa898b9b3625.tar.gz",
-      "hash": "06smpsv72740f3i26svsa4nqd5ld357r62nns1cdw2zqcvf6llax"
+      "revision": "0ae3de14eb8efc6effe7704b5e46495e91931cc5",
+      "url": "https://github.com/ThePrimeagen/vim-be-good/archive/0ae3de14eb8efc6effe7704b5e46495e91931cc5.tar.gz",
+      "hash": "1kqb4ljlwypilq23y5d83njh08z5w8mlk323qcqp521jvmbmkcya"
     },
     "vim-illuminate": {
       "type": "Git",
