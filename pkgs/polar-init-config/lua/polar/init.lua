@@ -8,4 +8,6 @@ require("polar.config.autocmds")
 
 require("polar.lazy").finish()
 
+require("polar.lsp").setup()
+
 require("polar.health").loaded = true

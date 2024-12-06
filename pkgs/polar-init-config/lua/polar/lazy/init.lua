@@ -17,11 +17,13 @@ M.load_once = function(name)
 
     for _, v in ipairs(require("lz.n.state").plugins) do
         vim.notify(v)
-
-        if v == name then
-            table.remove(require("lz.n.state").plugins, name)
-            break
-        end
+        --
+        print(v)
+        print(name)
+        --     if v == name then
+        --         table.remove(require("lz.n.state").plugins, name)
+        --         break
+        --     end
     end
 end
 
