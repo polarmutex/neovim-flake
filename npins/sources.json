@@ -524,9 +524,9 @@
         "repo": "nvim-web-devicons"
       },
       "branch": "master",
-      "revision": "203da76ecfbb4b192cf830665b03eb651b635c94",
-      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/203da76ecfbb4b192cf830665b03eb651b635c94.tar.gz",
-      "hash": "14ljgk5b8p9kmakrvdq86crvlm2d4hhlp9nkwqiss8skibksn7sa"
+      "revision": "e73d2774d12d0ecf9e05578d692ba1ea50508cf2",
+      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/e73d2774d12d0ecf9e05578d692ba1ea50508cf2.tar.gz",
+      "hash": "15y3967a19g0aqigfqk6fsrq5qqiwc23kgdpz3lpr71y831byrpf"
     },
     "obsidian-nvim--opt": {
       "type": "GitRelease",
