@@ -1,8 +1,9 @@
 return {
     {
         "telescope-nvim",
-        cmd = "Telescope",
-        keys = { "<leader>s" },
+        -- cmd = "Telescope",
+        -- keys = { "<leader>s" },
+        event = "DeferredUIEnter",
         after = function()
             local opts = {
                 pickers = {
