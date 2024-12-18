@@ -153,6 +153,18 @@
       "url": "https://github.com/rafamadriz/friendly-snippets/archive/efff286dd74c22f731cdec26a70b46e5b203c619.tar.gz",
       "hash": "1vb5l8ipfjwsrqffbq8v2z5p1cpg035b3gk57692wd7835kr3i13"
     },
+    "fzf-lua": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ibhagwan",
+        "repo": "fzf-lua"
+      },
+      "branch": "main",
+      "revision": "026ee1f7210ea132ab59783eb8919eea970aa476",
+      "url": "https://github.com/ibhagwan/fzf-lua/archive/026ee1f7210ea132ab59783eb8919eea970aa476.tar.gz",
+      "hash": "0pdirhbbbr2fwhh0pangc0xqdq0vvknqygr2mzxlsps74p2ilz21"
+    },
     "git-worktree-nvim": {
       "type": "GitRelease",
       "repository": {
