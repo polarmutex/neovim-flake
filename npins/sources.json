@@ -39,53 +39,20 @@
       "url": "https://github.com/polarmutex/beancount.nvim/archive/869564aba3087ee5df8f282aa37555e314aa2152.tar.gz",
       "hash": "1g6dssggk49p5j55h6m8v8vcyipafbqvc1ma4si2d4kpa0ch5q1f"
     },
-    "cmp-dap--opt": {
-      "type": "Git",
+    "blink-cmp": {
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
-        "owner": "rcarriga",
-        "repo": "cmp-dap"
+        "owner": "Saghen",
+        "repo": "blink.cmp"
       },
-      "branch": "master",
-      "revision": "ea92773e84c0ad3288c3bc5e452ac91559669087",
-      "url": "https://github.com/rcarriga/cmp-dap/archive/ea92773e84c0ad3288c3bc5e452ac91559669087.tar.gz",
-      "hash": "0xa3qh1bnr5s5fzxjziq30rjp9sdsb5vpf209qrna9972zhlnby2"
-    },
-    "cmp-emoji--opt": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "cmp-emoji"
-      },
-      "branch": "main",
-      "revision": "e8398e2adf512a03bb4e1728ca017ffeac670a9f",
-      "url": "https://github.com/hrsh7th/cmp-emoji/archive/e8398e2adf512a03bb4e1728ca017ffeac670a9f.tar.gz",
-      "hash": "1cmvnpqhawhfha89s5ah8v8cpmjykamizjghp5swv191bjv1xn29"
-    },
-    "cmp-nvim-lsp--opt": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "cmp-nvim-lsp"
-      },
-      "branch": "main",
-      "revision": "99290b3ec1322070bcfb9e846450a46f6efa50f0",
-      "url": "https://github.com/hrsh7th/cmp-nvim-lsp/archive/99290b3ec1322070bcfb9e846450a46f6efa50f0.tar.gz",
-      "hash": "08q5mf5jrqjjcl1s4h9zj2vd1kcizz0a5a6p65wv1rc5s1fa3a49"
-    },
-    "cmp-path--opt": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "cmp-path"
-      },
-      "branch": "main",
-      "revision": "91ff86cd9c29299a64f968ebb45846c485725f23",
-      "url": "https://github.com/hrsh7th/cmp-path/archive/91ff86cd9c29299a64f968ebb45846c485725f23.tar.gz",
-      "hash": "18ixx14ibc7qrv32nj0ylxrx8w4ggg49l5vhcqd35hkp4n56j6mn"
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v0.7.6",
+      "revision": "2dfc1736cb7874f795ab6336c62df6931cb86439",
+      "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.7.6",
+      "hash": "0kwwf7y16fyqigd9pnm14bj9s5bf48862lyvyn6kmqrild92lc3z"
     },
     "conform-nvim": {
       "type": "GitRelease",
@@ -365,18 +332,6 @@
       "revision": "53e907ffe5eedebdca1cd503b00aa8692068ca46",
       "url": "https://github.com/MunifTanjim/nui.nvim/archive/53e907ffe5eedebdca1cd503b00aa8692068ca46.tar.gz",
       "hash": "1m4vlf9qcs01a8qrq3salcz966sp8cpf01gbrg8dbf255vzc8kp9"
-    },
-    "nvim-cmp--opt": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "hrsh7th",
-        "repo": "nvim-cmp"
-      },
-      "branch": "main",
-      "revision": "3403e2e9391ed0a28c3afddd8612701b647c8e26",
-      "url": "https://github.com/hrsh7th/nvim-cmp/archive/3403e2e9391ed0a28c3afddd8612701b647c8e26.tar.gz",
-      "hash": "17sb7fcmgxvlsrg7cvl3v7zfjvv00s20n0dsmkk1pjbycndpa6q2"
     },
     "nvim-colorizer-lua": {
       "type": "Git",

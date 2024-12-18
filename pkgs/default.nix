@@ -36,6 +36,30 @@
     npinPlugins' =
       npinPlugins
       // {
+        blink-cmp-src = let
+          inherit (pkgs.stdenv) hostPlatform;
+          libExt =
+            if hostPlatform.isDarwin
+            then "dylib"
+            else if hostPlatform.isWindows
+            then "dll"
+            else "so";
+          lib_name =
+            if hostPlatform.isDarwin
+            then "aarch64-apple-darwin.${libExt}"
+            else "x86_64-unknown-linux-gnu.${libExt}";
+          blink-cmp = npinPlugins.blink-cmp-src;
+          blink-fuzzy-lib = builtins.fetchurl {
+            url = "https://github.com/Saghen/blink.cmp/releases/download/${blink-cmp.version}/${lib_name}";
+            sha256 = "sha256:12pzr98gy621dydv0v7qpvjybh5n50r2xf00l0rnwz8zji3i4qd8";
+          };
+        in
+          npinPlugins.blink-cmp-src.overrideAttrs {
+            preInstall = ''
+              mkdir -p target/release
+              ln -s ${blink-fuzzy-lib} target/release/libblink_cmp_fuzzy.${libExt}
+            '';
+          };
         telescope-fzf-native-nvim-src = npinPlugins.telescope-fzf-native-nvim-src.overrideAttrs {buildPhase = "make";};
         lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {opt = false;};};
       };
@@ -217,6 +241,7 @@
         stage2 =
           stage1
           // {
+            blink-cmp = npinCompressedPlugins.blink-cmp;
             pack-dir = let
               packName = "polar";
               allPlugins = lib.flatten [
