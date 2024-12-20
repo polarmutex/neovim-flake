@@ -589,10 +589,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v2.9.0",
-      "revision": "8a98e92dc51cea9add566fe00d9f8cb044bfd988",
-      "url": "https://api.github.com/repos/folke/snacks.nvim/tarball/v2.9.0",
-      "hash": "0mcjqd5yrdl9mbb934hb3hwq7i5j6k0lhsp5zrlwk19aipdfhfdk"
+      "version": "v2.11.0",
+      "revision": "6a837597b3570df88946c69cca7ab810ca7f05f5",
+      "url": "https://api.github.com/repos/folke/snacks.nvim/tarball/v2.11.0",
+      "hash": "1g10ps8cs1cils8sd1xq7bnk3l553g1qz20hbmgfyivzsn8xa4ni"
     },
     "sqlite-lua": {
       "type": "GitRelease",
