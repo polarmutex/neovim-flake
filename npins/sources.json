@@ -49,10 +49,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.7.6",
-      "revision": "2dfc1736cb7874f795ab6336c62df6931cb86439",
-      "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.7.6",
-      "hash": "0kwwf7y16fyqigd9pnm14bj9s5bf48862lyvyn6kmqrild92lc3z"
+      "version": "v0.8.2",
+      "revision": "6f8fbbb1f19a485c417b74761a3d4df481c2c7eb",
+      "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.8.2",
+      "hash": "0wa5rwxbjhpchdws2h47ml9q99k1ww2d2a7la5j5ii518ixxpvkg"
     },
     "conform-nvim": {
       "type": "GitRelease",
