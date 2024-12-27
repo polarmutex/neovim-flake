@@ -401,9 +401,9 @@
         "repo": "nvim-dap-virtual-text"
       },
       "branch": "master",
-      "revision": "76d80c3d171224315b61c006502a1e30c213a9ab",
-      "url": "https://github.com/theHamsta/nvim-dap-virtual-text/archive/76d80c3d171224315b61c006502a1e30c213a9ab.tar.gz",
-      "hash": "0in9x0l2qq4kmcigbh77szihsn4cyz7k7gg5rmrcjpifxm2xwsk1"
+      "revision": "df66808cd78b5a97576bbaeee95ed5ca385a9750",
+      "url": "https://github.com/theHamsta/nvim-dap-virtual-text/archive/df66808cd78b5a97576bbaeee95ed5ca385a9750.tar.gz",
+      "hash": "0hmkm4d735j9w06g7qpp5w2j6d8hmk696kndylchrvh4wan4kz2s"
     },
     "nvim-jdtls--opt": {
       "type": "Git",
