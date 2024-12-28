@@ -51,7 +51,7 @@
           blink-cmp = npinPlugins.blink-cmp-src;
           blink-fuzzy-lib = builtins.fetchurl {
             url = "https://github.com/Saghen/blink.cmp/releases/download/${blink-cmp.version}/${lib_name}";
-            sha256 = "sha256:12pzr98gy621dydv0v7qpvjybh5n50r2xf00l0rnwz8zji3i4qd8";
+            sha256 = "sha256:0xyd4fnx9i5z6vs5474bn00zx3igvqf2jdndjxs0x54qfcg4q01b";
           };
         in
           npinPlugins.blink-cmp-src.overrideAttrs {
