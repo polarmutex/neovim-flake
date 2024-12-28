@@ -135,6 +135,9 @@
 
       # arduino
       arduino-cli
+
+      # typescript
+      vtsls
     ];
     overrideAttrs = old: let
       pname = config.wrappers.neovim-polar.env.NVIM_APPNAME.value;
