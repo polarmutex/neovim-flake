@@ -466,10 +466,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v3.14.0",
-      "revision": "fbef5d32be8466dd76544a257d3f3dce20082a07",
-      "url": "https://api.github.com/repos/rcarriga/nvim-notify/tarball/v3.14.0",
-      "hash": "0wbsib27kgrk632c094ivjbc8rw51kbalq9c8j576p78k93wipj9"
+      "version": "v3.14.1",
+      "revision": "29b33efc802a304b1cf13ab200915d4e9e67373d",
+      "url": "https://api.github.com/repos/rcarriga/nvim-notify/tarball/v3.14.1",
+      "hash": "07rm8bzcj9y2nimkszwzj65lqvsdkq1kwyj49i5bdvpw56gndk76"
     },
     "nvim-treesitter": {
       "type": "Git",
