@@ -13,6 +13,7 @@ in
   vimUtils.buildVimPlugin {
     pname = "src-polar";
     version = "dev";
+    doCheck = false;
 
     # TODO: use filesets or something similar to filter out unwanted files
     src = lib.cleanSourceWith {

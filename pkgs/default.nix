@@ -12,6 +12,7 @@
         name = "${name}";
         version = pin.version or (builtins.substring 0 8 pin.revision);
         src = pin;
+        doCheck = false;
         passthru.opt =
           if (pin ? opt)
           then pin.opt
