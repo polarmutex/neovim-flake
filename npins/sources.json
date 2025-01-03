@@ -389,9 +389,9 @@
         "repo": "nvim-dap-ui"
       },
       "branch": "master",
-      "revision": "ffa89839f97bad360e78428d5c740fdad9a0ff02",
-      "url": "https://github.com/rcarriga/nvim-dap-ui/archive/ffa89839f97bad360e78428d5c740fdad9a0ff02.tar.gz",
-      "hash": "1zmmmkv1ghjbvjhp3mhzk2xd12d285xbgvsw167imf2ya34ya3lj"
+      "revision": "e94d98649dccb6a3884b66aabc2e07beb279e535",
+      "url": "https://github.com/rcarriga/nvim-dap-ui/archive/e94d98649dccb6a3884b66aabc2e07beb279e535.tar.gz",
+      "hash": "06vk5h3z3sp048fnwpy0fdf5q0q41wrnaqbfbaa5vdbpki103hm6"
     },
     "nvim-dap-virtual-text--opt": {
       "type": "Git",
