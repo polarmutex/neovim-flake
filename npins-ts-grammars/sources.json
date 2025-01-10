@@ -68,9 +68,9 @@
         "repo": "tree-sitter-diff"
       },
       "branch": "main",
-      "revision": "63439b5e6e35750aff1e53d9eecc663d369c54bc",
-      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/63439b5e6e35750aff1e53d9eecc663d369c54bc.tar.gz",
-      "hash": "0vhzbvqs0ilqyd97rjr6saky9fw6hpcymalpnf7m83pqwr41xhbl"
+      "revision": "e42b8def4f75633568f1aecfe01817bf15164928",
+      "url": "https://github.com/the-mikedavis/tree-sitter-diff/archive/e42b8def4f75633568f1aecfe01817bf15164928.tar.gz",
+      "hash": "1x919z3855qdz6wv98qrhxfsh4q8igr5fs0304gfissygn5cc9nn"
     },
     "tree-sitter-dockerfile": {
       "type": "Git",
@@ -248,9 +248,9 @@
         "repo": "tree-sitter-python"
       },
       "branch": "master",
-      "revision": "bffb65a8cfe4e46290331dfef0dbf0ef3679de11",
-      "url": "https://github.com/tree-sitter/tree-sitter-python/archive/bffb65a8cfe4e46290331dfef0dbf0ef3679de11.tar.gz",
-      "hash": "0a108sfqcsxrp54lapk7k3kq6fmz8745z5q99wpn3i1cqpi9slzg"
+      "revision": "409b5d671eb0ea4972eeacaaca24bbec1acf79b1",
+      "url": "https://github.com/tree-sitter/tree-sitter-python/archive/409b5d671eb0ea4972eeacaaca24bbec1acf79b1.tar.gz",
+      "hash": "1dbq5vbfcbdzajpcnz5hh0ijjf3lhkfx9jk07r1g052ymgd0p010"
     },
     "tree-sitter-query": {
       "type": "Git",
