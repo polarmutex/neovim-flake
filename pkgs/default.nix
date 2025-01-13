@@ -45,22 +45,35 @@
             else if hostPlatform.isWindows
             then "dll"
             else "so";
-          lib_name =
-            if hostPlatform.isDarwin
-            then "aarch64-apple-darwin.${libExt}"
-            else "x86_64-unknown-linux-gnu.${libExt}";
           blink-cmp = npinPlugins.blink-cmp-src;
-          blink-fuzzy-lib = builtins.fetchurl {
-            url = "https://github.com/Saghen/blink.cmp/releases/download/${blink-cmp.version}/${lib_name}";
-            sha256 = "sha256:1m84jnlifjg2jxj01slr2q5js20n7ppdr2kyzk15d719y5apxkl0";
+          blink-fuzzy-lib = pkgs.rustPlatform.buildRustPackage {
+            inherit (blink-cmp) version src;
+            pname = "blink-fuzzy-lib";
+
+            useFetchCargoVendor = true;
+            cargoHash = "sha256-ISCrUaIWNn+SfNzrAXKqeBbQyEnuqs3F8GAEl90kK7I=";
+
+            nativeBuildInputs = [pkgs.git];
+
+            env = {
+              # TODO: remove this if plugin stops using nightly rust
+              RUSTC_BOOTSTRAP = true;
+            };
           };
         in
-          npinPlugins.blink-cmp-src.overrideAttrs {
-            preInstall = ''
+          npinPlugins.blink-cmp-src.overrideAttrs (old: {
+            preInstall = let
+              ext = pkgs.stdenv.hostPlatform.extensions.sharedLibrary;
+            in ''
               mkdir -p target/release
-              ln -s ${blink-fuzzy-lib} target/release/libblink_cmp_fuzzy.${libExt}
+              ln -s ${blink-fuzzy-lib}/lib/libblink_cmp_fuzzy${ext} target/release/libblink_cmp_fuzzy${ext}
             '';
-          };
+            patches = let
+              tag = old.version;
+            in [
+              (pkgs.replaceVars ./blink-cmp-force-version.patch {inherit tag;})
+            ];
+          });
         telescope-fzf-native-nvim-src = npinPlugins.telescope-fzf-native-nvim-src.overrideAttrs {buildPhase = "make";};
         lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {opt = false;};};
       };
