@@ -165,18 +165,6 @@
       "url": "https://github.com/rafamadriz/friendly-snippets/archive/efff286dd74c22f731cdec26a70b46e5b203c619.tar.gz",
       "hash": "1vb5l8ipfjwsrqffbq8v2z5p1cpg035b3gk57692wd7835kr3i13"
     },
-    "fzf-lua": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "ibhagwan",
-        "repo": "fzf-lua"
-      },
-      "branch": "main",
-      "revision": "047f6862bb0c9710c06e5432d7ad50da9ea00e46",
-      "url": "https://github.com/ibhagwan/fzf-lua/archive/047f6862bb0c9710c06e5432d7ad50da9ea00e46.tar.gz",
-      "hash": "0wlncd0806myk8a7qwln7ghrx1ilyi2wlrx2v33zw0ny797xn0mn"
-    },
     "git-worktree-nvim": {
       "type": "GitRelease",
       "repository": {
@@ -607,19 +595,16 @@
       "hash": "0wxvfj6xb5b3ikxjdwnri8mc1dnjgln67yp83461c2p822yiwl6s"
     },
     "snacks-nvim--opt": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "folke",
         "repo": "snacks.nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v2.12.0",
-      "revision": "b5f4f27b28f7803509739bfde93dc0b8a953f3f4",
-      "url": "https://api.github.com/repos/folke/snacks.nvim/tarball/v2.12.0",
-      "hash": "0iwz6sqsyrll5kb7pxvznsbg5k16d2icyy1p16w66ndh6vx8vwkc"
+      "branch": "main",
+      "revision": "cd58a14e20fdcd810b55e8aee535486a3ad8719f",
+      "url": "https://github.com/folke/snacks.nvim/archive/cd58a14e20fdcd810b55e8aee535486a3ad8719f.tar.gz",
+      "hash": "11p3q3ir8jjkb73pl45rvkxpkl41sf1ixb8c15jr96fsc82xxl43"
     },
     "sqlite-lua": {
       "type": "GitRelease",
@@ -635,33 +620,6 @@
       "revision": "6c00ab414dc1b69621b145908c582b747f24b46e",
       "url": "https://api.github.com/repos/kkharji/sqlite.lua/tarball/v1.2.2",
       "hash": "0ckifx6xxrannn9szacgiiqjsp4rswghxscdl3s411dhas8djj1m"
-    },
-    "telescope-fzf-native-nvim--opt": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-telescope",
-        "repo": "telescope-fzf-native.nvim"
-      },
-      "branch": "main",
-      "revision": "dae2eac9d91464448b584c7949a31df8faefec56",
-      "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim/archive/dae2eac9d91464448b584c7949a31df8faefec56.tar.gz",
-      "hash": "0gm67j7gcs2a02b7nj15l6acy3dxjqd8cy6mx8nfkdlmq2fij5k4"
-    },
-    "telescope-nvim--opt": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-telescope",
-        "repo": "telescope.nvim"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "0.1.8",
-      "revision": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026",
-      "url": "https://api.github.com/repos/nvim-telescope/telescope.nvim/tarball/0.1.8",
-      "hash": "15536kary8m35xqhksxkwxgak1b3iwmav41jlqhga8h8rs2sanvv"
     },
     "tokyonight-nvim": {
       "type": "GitRelease",

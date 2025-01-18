@@ -74,7 +74,6 @@
               (pkgs.replaceVars ./blink-cmp-force-version.patch {inherit tag;})
             ];
           });
-        telescope-fzf-native-nvim-src = npinPlugins.telescope-fzf-native-nvim-src.overrideAttrs {buildPhase = "make";};
         lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {opt = false;};};
       };
 

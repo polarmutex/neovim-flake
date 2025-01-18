@@ -16,7 +16,7 @@ return {
     filetypes = { "lua" },
     -- before_init = require("neodev.lsp").before_init,
     on_init = function(client)
-        client.capabilities.client.settings = vim.tbl_deep_extend("force", client.settings, {
+        client.settings = vim.tbl_deep_extend("force", client.settings, {
             Lua = {
                 runtime = {
                     version = "LuaJIT",
