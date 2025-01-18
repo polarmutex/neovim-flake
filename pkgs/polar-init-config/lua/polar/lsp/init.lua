@@ -8,7 +8,7 @@ function M.make_client_capabilities()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     -- Add blink.cmp capabilities
-    capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+    -- capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
     -- Add any additional plugin capabilities here.
     -- Make sure to follow the instructions provided in the plugin's docs.
@@ -29,6 +29,9 @@ local sign = function(opts)
 end
 
 M.setup = function()
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("beancount")
+
     sign({ name = "DiagnosticSignError", text = "󰅚" })
     sign({ name = "DiagnosticSignWarn", text = "⚠" })
     sign({ name = "DiagnosticSignInfo", text = "ⓘ" })
