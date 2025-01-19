@@ -595,16 +595,19 @@
       "hash": "0wxvfj6xb5b3ikxjdwnri8mc1dnjgln67yp83461c2p822yiwl6s"
     },
     "snacks-nvim--opt": {
-      "type": "Git",
+      "type": "GitRelease",
       "repository": {
         "type": "GitHub",
         "owner": "folke",
         "repo": "snacks.nvim"
       },
-      "branch": "main",
-      "revision": "cd58a14e20fdcd810b55e8aee535486a3ad8719f",
-      "url": "https://github.com/folke/snacks.nvim/archive/cd58a14e20fdcd810b55e8aee535486a3ad8719f.tar.gz",
-      "hash": "11p3q3ir8jjkb73pl45rvkxpkl41sf1ixb8c15jr96fsc82xxl43"
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v2.13.0",
+      "revision": "c0b11f8351869491a7a3756e695f622ca63bf1f5",
+      "url": "https://api.github.com/repos/folke/snacks.nvim/tarball/v2.13.0",
+      "hash": "1mxja3y66rgpnnb0xc4qxpp21vrsw5l58lqp14pv0j973b1ax6jz"
     },
     "sqlite-lua": {
       "type": "GitRelease",
