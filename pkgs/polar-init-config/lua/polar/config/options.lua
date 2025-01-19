@@ -1,107 +1,78 @@
-local set = vim.opt
-
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
--- Set <space> as the leader key
+-- Snacks animations
+-- Set to `false` to globally disable all snacks animations
+vim.g.snacks_animate = true
 
--- Make line numbers default
-set.number = true
--- You can also add relative line numbers, for help with jumping.
-set.relativenumber = true
+local opt = vim.opt
 
--- Enable mouse mode, can be useful for resizing splits for example!
-set.mouse = "a"
+opt.autowrite = true -- Enable auto write
+-- only set clipboard if not in ssh, to make sure the OSC 52
+-- integration works automatically. Requires Neovim >= 0.10.0
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clipboard
+opt.completeopt = "menu,menuone,noselect"
+opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
+-- set.conceallevel = 1 -- for obsidian.nvim
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.cursorline = true -- Enable highlighting of the current line
+opt.errorbells = false
+opt.expandtab = true -- Use spaces instead of tabs
+opt.fillchars = {
+    foldopen = "",
+    foldclose = "",
+    fold = " ",
+    foldsep = " ",
+    diff = "╱",
+    eob = " ",
+}
+opt.foldlevel = 99
+-- opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+-- opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.ignorecase = true -- Ignore case
+opt.inccommand = "split" -- preview incremental substitute
+opt.jumpoptions = "view"
+opt.laststatus = 3 -- global statusline
+opt.linebreak = true -- Wrap lines at convenient points
+opt.list = true -- Show some invisible characters (tabs...
+-- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.mouse = "a" -- Enable mouse mode
+opt.number = true -- Print line number
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.relativenumber = true -- Relative line numbers
+opt.ruler = false -- Disable the default ruler
+opt.scrolloff = 4 -- Lines of context
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+opt.shiftround = true -- Round indent
+opt.shiftwidth = 4 -- Size of an indent
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+opt.showmode = false -- Dont show mode since we have a statusline
+opt.sidescrolloff = 8 -- Columns of context
+opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
+opt.smartcase = true -- Don't ignore case with capitals
+opt.smartindent = true -- Insert indents automatically
+opt.spelllang = { "en" }
+opt.splitbelow = true -- Put new windows below current
+opt.splitkeep = "screen"
+opt.splitright = true -- Put new windows right of current
+opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
+opt.tabstop = 4 -- Number of spaces tabs count for
+opt.termguicolors = true -- True color support
+opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
+opt.undofile = true
+opt.undolevels = 10000
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.wildmode = "longest:full,full" -- Command-line completion mode
+opt.winminwidth = 5 -- Minimum window width
+opt.wrap = false -- Disable line wrap
 
--- Don't show the mode, since it's already in status line
-set.showmode = false
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-set.clipboard = { "unnamed", "unnamedplus" }
-
--- Enable break indent
-set.breakindent = true
-
--- Save undo history
-set.undofile = true
-
--- Case-insensitive searching UNLESS \C or capital in search
-set.ignorecase = true
-set.smartcase = true
-
--- Keep signcolumn on by default
-set.signcolumn = "yes"
-
--- Decrease update time
-set.updatetime = 250
-
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
-set.timeoutlen = 300
-
--- Configure how new splits should be opened
-set.splitright = true
-set.splitbelow = true
-
--- Sets how neovim will display certain whitespace in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-set.list = true
-set.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
--- vim.opt.listchars = "tab:→→,trail:●,nbsp:○"
-
--- Preview substitutions live, as you type!
-set.inccommand = "split"
-
--- Show which line your cursor is on
-set.cursorline = true
-
--- Minimal number of screen lines to keep above and below the cursor.
-set.scrolloff = 15
-set.sidescrolloff = 15
-
--- Set highlight on search, but clear on pressing <Esc> in normal mode
-set.hlsearch = true
-
--- tabs
-set.expandtab = true
-set.shiftwidth = 4
-set.softtabstop = 4
-set.tabstop = 4
-
--- status line
-set.laststatus = 3
-
--- TODO
-set.completeopt = "menu,menuone,noselect"
-
-set.hidden = true
---vim.opt.fillchars = {
---    foldopen = "",
---    foldclose = "",
---    fold = " ",
---    foldsep = " ",
---    diff = "╱",
---    eob = " ",
---}
-set.matchpairs = "(:),{:},[:],<:>"
-set.showmatch = true
-set.termguicolors = true
-set.errorbells = false
---vim.opt.title = true; # Visual artifacts
-set.wildignore = "*/tmp/*,*.so,*.swp,*.pyc,*.db,*.sqlite,*.class,*/node_modules/*,*/.git/*"
-set.wildmode = "list:longest,list:full"
-
-set.cmdheight = 0
-set.splitkeep = "screen"
-set.conceallevel = 1 -- for obsidian.nvim
-
-set.spell = true
-set.spelllang = "en"
+-- set.hlsearch = true
+-- set.hidden = true
+-- set.matchpairs = "(:),{:},[:],<:>"
+-- set.cmdheight = 0

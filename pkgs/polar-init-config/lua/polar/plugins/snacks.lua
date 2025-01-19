@@ -5,9 +5,12 @@ return {
         after = function()
             ---@type snacks.Config
             local opts = {
+                bigfile = {},
+                indent = {},
+                picker = {},
+                scroll = {},
                 statuscolumn = { enabled = true },
                 ---@type snacks.picker.Config
-                picker = {},
             }
             local snacks = require("snacks")
             snacks.setup(opts)
