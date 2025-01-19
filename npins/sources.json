@@ -181,19 +181,16 @@
       "hash": "0dalswz65hygb5s5xlcnrhvav0026q9fhj8fljskhrn6x63wx37r"
     },
     "gitsigns-nvim": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "lewis6991",
         "repo": "gitsigns.nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v0.9.0",
-      "revision": "0b04035bb7b3c83e999b9676e2fb46fd0aa9f910",
-      "url": "https://api.github.com/repos/lewis6991/gitsigns.nvim/tarball/v0.9.0",
-      "hash": "100hqm6fwd8nnwc0m66ap8dwzgbcfgprxh8m326f314bl83f7f81"
+      "branch": "main",
+      "revision": "817bd848fffe82e697b4da656e3f2834cd0665c5",
+      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/817bd848fffe82e697b4da656e3f2834cd0665c5.tar.gz",
+      "hash": "085d953zlaxxmv1rymmbbnclgvmccx6hzrv3amp6n5g1nh3zpp9w"
     },
     "hardtime-nvim": {
       "type": "Git",
