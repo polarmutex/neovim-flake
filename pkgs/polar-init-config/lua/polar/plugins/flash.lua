@@ -1,3 +1,0 @@
-require("flash").setup({})
-
-return {}

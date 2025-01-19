@@ -56,7 +56,7 @@ require("tokyonight").setup({
     end,
 })
 
--- vim.cmd([[colorscheme kanagawa]])
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme kanagawa]])
+-- vim.cmd([[colorscheme tokyonight]])
 
 return {}
