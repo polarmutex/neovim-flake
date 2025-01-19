@@ -23,13 +23,14 @@ return {
                 },
                 diagnostics = {
                     -- Get the language server to recognize the `vim` global, etc.
-                    -- globals = {
-                    --     "vim",
-                    --     "describe",
-                    --     "it",
-                    --     "assert",
-                    --     "stub",
-                    -- },
+                    globals = {
+                        "Snacks",
+                        --     "vim",
+                        --     "describe",
+                        --     "it",
+                        --     "assert",
+                        --     "stub",
+                    },
                     -- disable = {
                     --     "duplicate-set-field",
                     -- },

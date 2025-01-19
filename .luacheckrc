@@ -8,4 +8,5 @@ read_globals = {
     "it",
     "assert",
     "Toggle_venn",
+    "Snacks",
 }

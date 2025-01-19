@@ -7,7 +7,19 @@ return {
             local opts = {
                 bigfile = {},
                 indent = {},
-                picker = {},
+                picker = {
+                    -- actions = require("trouble.sources.snacks").actions,
+                    -- win = {
+                    --     input = {
+                    --         keys = {
+                    --             ["<c-t>"] = {
+                    --                 "trouble_open",
+                    --                 mode = { "n", "i" },
+                    --             },
+                    --         },
+                    --     },
+                    -- },
+                },
                 scroll = {},
                 statuscolumn = { enabled = true },
                 ---@type snacks.picker.Config
