@@ -74,7 +74,13 @@ return {
                 -- or a list of adapter names,
                 -- or a table of adapter names, mapped to adapter configs.
                 -- The adapter will then be automatically loaded with the config.
-                adapters = {},
+                adapters = {
+                    ["neotest-python"] = {
+                        -- Here you can specify the settings for the adapter, i.e.
+                        -- runner = "pytest",
+                        -- python = ".venv/bin/python",
+                    },
+                },
                 -- Example for loading neotest-golang with a custom config
                 -- adapters = {
                 --   ["neotest-golang"] = {
