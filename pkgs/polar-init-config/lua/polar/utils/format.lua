@@ -123,7 +123,6 @@ function M.format(opts)
         if formatter.active then
             -- done = true
             -- TODO LazyVim.try(function()
-            print("formatting")
             return formatter.format(buf)
             -- end, { msg = "Formatter `" .. formatter.name .. "` failed" })
         end
