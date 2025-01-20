@@ -2,11 +2,27 @@ return {
     {
         "snacks-nvim",
         event = "DeferredUIEnter",
+        keys = {
+            {
+                "<leader>n",
+                function()
+                    Snacks.notifier.show_history()
+                end,
+                desc = "Notification History",
+            },
+            {
+                "<leader>un",
+                function()
+                    Snacks.notifier.hide()
+                end,
+                desc = "Dismiss All Notifications",
+            },
+        },
         after = function()
             ---@type snacks.Config
             local opts = {
-                bigfile = {},
-                indent = {},
+                bigfile = { enabled = true },
+                indent = { enabled = true },
                 picker = {
                     -- actions = require("trouble.sources.snacks").actions,
                     -- win = {
@@ -20,7 +36,8 @@ return {
                     --     },
                     -- },
                 },
-                scroll = {},
+                notifier = { enabled = true },
+                scroll = { enabled = false },
                 statuscolumn = { enabled = true },
                 ---@type snacks.picker.Config
             }

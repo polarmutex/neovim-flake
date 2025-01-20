@@ -453,18 +453,6 @@
       "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/fd59f984416f696d85119fd4d15ce0965b179944.tar.gz",
       "hash": "0ii933xaxvpjf1xjfnw6v71r5drygjyw2zkwzzxy4bzr845mzm2a"
     },
-    "nvim-web-devicons": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "nvim-tree",
-        "repo": "nvim-web-devicons"
-      },
-      "branch": "master",
-      "revision": "aafa5c187a15701a7299a392b907ec15d9a7075f",
-      "url": "https://github.com/nvim-tree/nvim-web-devicons/archive/aafa5c187a15701a7299a392b907ec15d9a7075f.tar.gz",
-      "hash": "08my2gdhqpc1rzps9wic37v3a5x84jf9dj0m7y1chpyp9ia48jcm"
-    },
     "obsidian-nvim--opt": {
       "type": "GitRelease",
       "repository": {
