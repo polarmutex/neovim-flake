@@ -249,6 +249,15 @@ return {
                 left = {
                     { title = "Neotest Summary", ft = "neotest-summary" },
                 },
+                right = {
+                    {
+                        title = "Overseer",
+                        ft = "OverseerList",
+                        open = function()
+                            require("overseer").open()
+                        end,
+                    },
+                },
                 keys = {
                     -- increase width
                     ["<c-Right>"] = function(win)

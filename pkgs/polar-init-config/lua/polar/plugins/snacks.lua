@@ -23,23 +23,24 @@ return {
             local opts = {
                 bigfile = { enabled = true },
                 indent = { enabled = true },
+                ---@type snacks.picker.Config
                 picker = {
-                    -- actions = require("trouble.sources.snacks").actions,
-                    -- win = {
-                    --     input = {
-                    --         keys = {
-                    --             ["<c-t>"] = {
-                    --                 "trouble_open",
-                    --                 mode = { "n", "i" },
-                    --             },
-                    --         },
-                    --     },
-                    -- },
+                    actions = require("trouble.sources.snacks").actions,
+                    win = {
+                        input = {
+                            keys = {
+                                ["<c-t>"] = {
+                                    "trouble_open",
+                                    mode = { "n", "i" },
+                                },
+                            },
+                        },
+                    },
                 },
                 notifier = { enabled = true },
                 scroll = { enabled = false },
                 statuscolumn = { enabled = true },
-                ---@type snacks.picker.Config
+                words = { enabled = true },
             }
             local snacks = require("snacks")
             snacks.setup(opts)

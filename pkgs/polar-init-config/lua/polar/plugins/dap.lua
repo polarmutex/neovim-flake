@@ -1,110 +1,235 @@
-local dap = require("dap")
-local dapui = require("dapui")
+---@param config {type?:string, args?:string[]|fun():string[]?}
+local function get_args(config)
+    local args = type(config.args) == "function" and (config.args() or {}) or config.args or {} --[[@as string[] | string ]]
+    local args_str = type(args) == "table" and table.concat(args, " ") or args --[[@as string]]
 
---local signs = {
---    Breakpoint = "",
---    BreakpointCondition = "",
---    LogPoint = "",
---    Stopped = "",
---    BreakpointRejected = "",
---}
-
---for type, icon in pairs(signs) do
---    local hl = "Dap" .. type
---    vim.fn.sign_define(hl, { text = icon, texthl = "LspDiagnosticsSignHint" })
---end
-
---for _, file in ipairs({ "dap" }) do
---    require("polar.plugins.dap." .. file)
---end
-local map = function(lhs, rhs, desc)
-    if desc then
-        desc = "[DAP] " .. desc
+    config = vim.deepcopy(config)
+    ---@cast args string[]
+    config.args = function()
+        local new_args = vim.fn.expand(vim.fn.input("Run with args: ", args_str)) --[[@as string]]
+        if config.type and config.type == "java" then
+            ---@diagnostic disable-next-line: return-type-mismatch
+            return new_args
+        end
+        return require("dap.utils").splitstr(new_args)
     end
-
-    vim.keymap.set("n", lhs, rhs, { silent = true, desc = desc })
+    return config
 end
 
-map("<F5>", require("dap").continue, "Debug: Continue")
-map("<F9>", require("dap").step_back, "Debug: Step Back")
-map("<F10>", require("dap").step_over, "Debug: Step Over")
-map("<F11>", require("dap").step_into, "Debug: Step Into")
-map("<F12>", require("dap").step_out, "Debug: Step Out")
-
-vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
-vim.keymap.set("n", "<leader>B", function()
-    dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
-end, { desc = "Debug: Set Breakpoint" })
-
--- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-vim.keymap.set("n", "<F7>", dapui.toggle, { desc = "Debug: See last session result." })
-
-map("<leader>dr", require("dap").repl.open, "repl")
-
-map("<leader>de", require("dapui").eval, "ui eval")
-map("<leader>dE", function()
-    require("dapui").eval(vim.fn.input("[DAP] Expression > "))
-end, "ui eval input")
-
-dapui.setup({
-    -- Set icons to characters that are more likely to work in every terminal.
-    --    Feel free to remove or use ones that you like more! :)
-    --    Don't feel like these are good choices.
-    icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
-    controls = {
-        icons = {
-            pause = "⏸",
-            play = "▶",
-            step_into = "⏎",
-            step_over = "⏭",
-            step_out = "⏮",
-            step_back = "b",
-            run_last = "▶▶",
-            terminate = "⏹",
-            disconnect = "⏏",
-        },
-    },
-    --mappings = {
-    --    expand = { "<CR>", "<2-LeftMouse>" },
-    --    open = "o",
-    --    remove = "d",
-    --    edit = "e",
-    --    repl = "r",
-    --    toggle = "t",
-    --},
-    layouts = {
-        {
-            elements = {
-                "scopes",
-                "breakpoints",
-                "stacks",
-                "watches",
+return {
+    {
+        "nvim-dap",
+        dependencies = {
+            "nvim-dap-ui",
+            -- virtual text for the debugger
+            {
+                "nvim-dap-virtual-text",
+                opts = {},
             },
-            size = 40,
-            position = "left",
         },
-        {
-            elements = {
-                "repl",
-                "console",
+        keys = {
+            {
+                "<leader>dB",
+                function()
+                    require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+                end,
+                desc = "Breakpoint Condition",
             },
-            size = 10,
-            position = "bottom",
+            {
+                "<leader>db",
+                function()
+                    require("dap").toggle_breakpoint()
+                end,
+                desc = "Toggle Breakpoint",
+            },
+            {
+                "<leader>dc",
+                function()
+                    require("dap").continue()
+                end,
+                desc = "Run/Continue",
+            },
+            {
+                "<F5>",
+                function()
+                    require("dap").continue()
+                end,
+                desc = "Debug: Continue",
+            },
+            {
+                "<leader>da",
+                function()
+                    require("dap").continue({ before = get_args })
+                end,
+                desc = "Run with Args",
+            },
+            {
+                "<leader>dC",
+                function()
+                    require("dap").run_to_cursor()
+                end,
+                desc = "Run to Cursor",
+            },
+            {
+                "<leader>dg",
+                function()
+                    require("dap").goto_()
+                end,
+                desc = "Go to Line (No Execute)",
+            },
+            {
+                "<leader>di",
+                function()
+                    require("dap").step_into()
+                end,
+                desc = "Step Into",
+            },
+            {
+                "<F11>",
+                function()
+                    require("dap").step_into()
+                end,
+                desc = "Debug: Step Into",
+            },
+            {
+                "<leader>dj",
+                function()
+                    require("dap").down()
+                end,
+                desc = "Down",
+            },
+            {
+                "<leader>dk",
+                function()
+                    require("dap").up()
+                end,
+                desc = "Up",
+            },
+            {
+                "<leader>dl",
+                function()
+                    require("dap").run_last()
+                end,
+                desc = "Run Last",
+            },
+            {
+                "<leader>do",
+                function()
+                    require("dap").step_out()
+                end,
+                desc = "Step Out",
+            },
+            {
+                "<F12>",
+                function()
+                    require("dap").step_out()
+                end,
+                desc = "Debug: Step Out",
+            },
+            {
+                "<leader>dO",
+                function()
+                    require("dap").step_over()
+                end,
+                desc = "Step Over",
+            },
+            {
+                "<F10>",
+                function()
+                    require("dap").step_over()
+                end,
+                desc = "Debug: Step Over",
+            },
+            {
+                "<leader>dP",
+                function()
+                    require("dap").pause()
+                end,
+                desc = "Pause",
+            },
+            {
+                "<leader>dr",
+                function()
+                    require("dap").repl.toggle()
+                end,
+                desc = "Toggle REPL",
+            },
+            {
+                "<leader>ds",
+                function()
+                    require("dap").session()
+                end,
+                desc = "Session",
+            },
+            {
+                "<leader>dt",
+                function()
+                    require("dap").terminate()
+                end,
+                desc = "Terminate",
+            },
+            {
+                "<leader>dw",
+                function()
+                    require("dap.ui.widgets").hover()
+                end,
+                desc = "Widgets",
+            },
         },
+        after = function()
+            vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+
+            for name, sign in pairs(require("polar.config.icons").dap) do
+                sign = type(sign) == "table" and sign or { sign }
+                vim.fn.sign_define(
+                    "Dap" .. name,
+                    { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
+                )
+            end
+
+            -- setup dap config by VsCode launch.json file
+            local vscode = require("dap.ext.vscode")
+            local json = require("plenary.json")
+            vscode.json_decode = function(str)
+                return vim.json.decode(json.json_strip_comments(str))
+            end
+            require("overseer").enable_dap()
+        end,
     },
-    --floating = {
-    --    max_height = 0.8,
-    --    max_width = 0.8,
-    --    border = "single",
-    --    mappings = {
-    --        close = { "q", "<Esc>" },
-    --    },
-    --},
-    --windows = { indent = 1 },
-})
-
-dap.listeners.after.event_initialized["dapui_config"] = dapui.open
-dap.listeners.before.event_terminated["dapui_config"] = dapui.close
-dap.listeners.before.event_exited["dapui_config"] = dapui.close
-
-return {}
+    {
+        "nvim-dap-ui",
+        dependencies = { "nvim-nio" },
+        keys = {
+            {
+                "<leader>du",
+                function()
+                    require("dapui").toggle({})
+                end,
+                desc = "Dap UI",
+            },
+            {
+                "<leader>de",
+                function()
+                    require("dapui").eval()
+                end,
+                desc = "Eval",
+                mode = { "n", "v" },
+            },
+        },
+        after = function()
+            local dap = require("dap")
+            local dapui = require("dapui")
+            local opts = {}
+            dapui.setup(opts)
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open({})
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close({})
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close({})
+            end
+        end,
+    },
+}
