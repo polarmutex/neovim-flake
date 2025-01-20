@@ -258,6 +258,21 @@
       "url": "https://api.github.com/repos/folke/neodev.nvim/tarball/v3.0.0",
       "hash": "1lfj7ww8fplmj0xmm2qa4f8ifqapvmdra9s8gwz770b7dyraj615"
     },
+    "neotest--opt": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neotest",
+        "repo": "neotest"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v5.8.0",
+      "revision": "d66cf4e05a116957f0d3a7755a24291c7d1e1f72",
+      "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.8.0",
+      "hash": "09bxarrrfnqvyv22ls6lm0y03ngcp6r372b8hy4rld902psdb11q"
+    },
     "noice-nvim--opt": {
       "type": "GitRelease",
       "repository": {
