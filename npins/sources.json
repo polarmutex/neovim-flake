@@ -54,6 +54,18 @@
       "url": "https://api.github.com/repos/akinsho/bufferline.nvim/tarball/v4.9.1",
       "hash": "0m5363rpbjgvsnbhp9yrivbqj17lmrb5m57lpnq7dgxsmw3hrvk9"
     },
+    "cmake-tools-nvim--opt": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Civitasv",
+        "repo": "cmake-tools.nvim"
+      },
+      "branch": "master",
+      "revision": "a673bb68680197143902ec4d0a0078e4ae3d2141",
+      "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/a673bb68680197143902ec4d0a0078e4ae3d2141.tar.gz",
+      "hash": "0mlz6mc1zm9cby7b4vns053x0p0bzx8xb0z565nird0gg4bfrgyl"
+    },
     "conform-nvim--opt": {
       "type": "GitRelease",
       "repository": {

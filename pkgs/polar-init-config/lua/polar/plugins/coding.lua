@@ -56,4 +56,9 @@ return {
             require("yanky").setup(opts)
         end,
     },
+    {
+        "cmake-tools-nvim",
+        lazy = true,
+        ft = "cpp",
+    },
 }
