@@ -70,10 +70,10 @@ M.setup = function()
             prefix = "",
         },
     })
-    -- setup autoformat
-    require("polar.lsp.format").setup({
-        autoformat = true,
-    })
+    -- -- setup autoformat
+    -- require("polar.lsp.format").setup({
+    --     autoformat = true,
+    -- })
 
     Util.on_attach(function(client, buffer)
         -- In this case, we create a function that lets us more easily define mappings specific
