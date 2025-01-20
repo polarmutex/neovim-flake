@@ -175,6 +175,13 @@ return {
                 end,
                 desc = "Widgets",
             },
+            {
+                "<leader>td",
+                function()
+                    require("neotest").run.run({ strategy = "dap" })
+                end,
+                desc = "Debug Nearest",
+            },
         },
         after = function()
             vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
