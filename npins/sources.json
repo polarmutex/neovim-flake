@@ -54,6 +54,21 @@
       "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.10.0",
       "hash": "1jzffgfigbl2vpm11dkb794ncxnfbn0yj8nbac1alxf0wzhwiw9i"
     },
+    "bufferline-nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "akinsho",
+        "repo": "bufferline.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "version": "v4.9.1",
+      "revision": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
+      "url": "https://api.github.com/repos/akinsho/bufferline.nvim/tarball/v4.9.1",
+      "hash": "0m5363rpbjgvsnbhp9yrivbqj17lmrb5m57lpnq7dgxsmw3hrvk9"
+    },
     "conform-nvim": {
       "type": "GitRelease",
       "repository": {
