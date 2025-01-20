@@ -80,6 +80,7 @@ return {
                         -- runner = "pytest",
                         -- python = ".venv/bin/python",
                     },
+                    ["rustaceanvim.neotest"] = {},
                 },
                 -- Example for loading neotest-golang with a custom config
                 -- adapters = {
