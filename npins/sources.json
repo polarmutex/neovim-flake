@@ -285,6 +285,18 @@
       "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.8.0",
       "hash": "09bxarrrfnqvyv22ls6lm0y03ngcp6r372b8hy4rld902psdb11q"
     },
+    "neotest-python--opt": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nvim-neotest",
+        "repo": "neotest-python"
+      },
+      "branch": "master",
+      "revision": "a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e",
+      "url": "https://github.com/nvim-neotest/neotest-python/archive/a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e.tar.gz",
+      "hash": "1m78f9bxsl548f1pcrmbndmnwdplvhqynpm86pv080272ci9msgy"
+    },
     "noice-nvim--opt": {
       "type": "GitRelease",
       "repository": {
