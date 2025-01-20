@@ -1,15 +1,10 @@
--- Exit if the language server isn't available
-if vim.fn.executable("nixd") ~= 1 then
-    return
-end
-
 local root_files = {
     "flake.nix",
     ".git",
 }
 
-vim.lsp.start({
-    name = "nixd",
+---@type vim.lsp.Config
+return {
     cmd = { "nixd" },
     filetypes = { "nix" },
     single_file_support = true,
@@ -26,4 +21,4 @@ vim.lsp.start({
         --     autoEvalInputs = true,
         -- },
     },
-})
+}
