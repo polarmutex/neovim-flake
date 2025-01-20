@@ -592,19 +592,16 @@
       "hash": "1cd8wxgicfm5f6g7lzqfhr1ip7cca5h11j190kx0w52h0kbf9k54"
     },
     "trouble-nvim": {
-      "type": "GitRelease",
+      "type": "Git",
       "repository": {
         "type": "GitHub",
         "owner": "folke",
         "repo": "trouble.nvim"
       },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v3.6.0",
-      "revision": "40c5317a6e90fe3393f07b0fee580d9e93a216b4",
-      "url": "https://api.github.com/repos/folke/trouble.nvim/tarball/v3.6.0",
-      "hash": "0yxp83f7hjzm1yi6ch7rib29sjb26g6z1l97wkrdd0c3q0clg51r"
+      "branch": "main",
+      "revision": "50481f414bd3c1a40122c1d759d7e424d5fafe84",
+      "url": "https://github.com/folke/trouble.nvim/archive/50481f414bd3c1a40122c1d759d7e424d5fafe84.tar.gz",
+      "hash": "14cvhnz4njzqydnbyf9iydsdhqvms4kajlvxgkr1gfkw6rw96r37"
     },
     "vim-arduino": {
       "type": "Git",
