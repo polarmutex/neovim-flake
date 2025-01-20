@@ -184,6 +184,8 @@ return {
             },
         },
         after = function()
+            local dap = require("dap")
+
             vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
 
             for name, sign in pairs(require("polar.config.icons").dap) do
@@ -201,6 +203,40 @@ return {
                 return vim.json.decode(json.json_strip_comments(str))
             end
             require("overseer").enable_dap()
+
+            -- C/C++
+            require("dap").adapters["codelldb"] = {
+                type = "server",
+                host = "localhost",
+                port = "${port}",
+                executable = {
+                    command = "codelldb",
+                    args = {
+                        "--port",
+                        "${port}",
+                    },
+                },
+            }
+            for _, lang in ipairs({ "c", "cpp" }) do
+                dap.configurations[lang] = {
+                    {
+                        type = "codelldb",
+                        request = "launch",
+                        name = "Launch file",
+                        program = function()
+                            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+                        end,
+                        cwd = "${workspaceFolder}",
+                    },
+                    {
+                        type = "codelldb",
+                        request = "attach",
+                        name = "Attach to process",
+                        pid = require("dap.utils").pick_process,
+                        cwd = "${workspaceFolder}",
+                    },
+                }
+            end
         end,
     },
     {
