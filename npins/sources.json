@@ -465,7 +465,7 @@
       "url": "https://api.github.com/repos/epwalsh/obsidian.nvim/tarball/v3.9.0",
       "hash": "0af1l5dqxgq91nvbz3jx7z360c8hkhj5hhc3maixw8yh9llw97sq"
     },
-    "one-small-step-for-vimkind": {
+    "one-small-step-for-vimkind--opt": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
@@ -477,7 +477,7 @@
       "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/5d2edc8937978585881d97a8fec4c2903fa4d72c.tar.gz",
       "hash": "1hn8m9kz0zzyxv6zkyz5x35yj24ya85cw92nzs3mnz7rdz5hqpsc"
     },
-    "overseer-nvim": {
+    "overseer-nvim--opt": {
       "type": "GitRelease",
       "repository": {
         "type": "GitHub",
@@ -564,7 +564,7 @@
       "url": "https://api.github.com/repos/kkharji/sqlite.lua/tarball/v1.2.2",
       "hash": "0ckifx6xxrannn9szacgiiqjsp4rswghxscdl3s411dhas8djj1m"
     },
-    "todo-comments": {
+    "todo-comments--opt": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
@@ -592,6 +592,18 @@
       "hash": "1cd8wxgicfm5f6g7lzqfhr1ip7cca5h11j190kx0w52h0kbf9k54"
     },
     "trouble-nvim": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "folke",
+        "repo": "trouble.nvim"
+      },
+      "branch": "main",
+      "revision": "50481f414bd3c1a40122c1d759d7e424d5fafe84",
+      "url": "https://github.com/folke/trouble.nvim/archive/50481f414bd3c1a40122c1d759d7e424d5fafe84.tar.gz",
+      "hash": "14cvhnz4njzqydnbyf9iydsdhqvms4kajlvxgkr1gfkw6rw96r37"
+    },
+    "trouble-nvim--opt": {
       "type": "Git",
       "repository": {
         "type": "GitHub",
