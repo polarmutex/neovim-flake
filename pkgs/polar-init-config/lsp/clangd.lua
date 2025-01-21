@@ -21,6 +21,7 @@ return {
         "--function-arg-placeholders",
         "--fallback-style=llvm",
     },
+    filetypes = { "cpp" },
     capabilities = {
         offsetEncoding = { "utf-16" },
     },
