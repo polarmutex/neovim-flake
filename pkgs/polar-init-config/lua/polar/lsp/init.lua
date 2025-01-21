@@ -17,8 +17,12 @@ function M.make_client_capabilities()
 end
 
 M.setup = function()
-    vim.lsp.enable("lua_ls")
     vim.lsp.enable("beancount")
+    vim.lsp.enable("clangd")
+    vim.lsp.enable("lua_ls")
+    vim.lsp.enable("python")
+    vim.lsp.enable("nix")
+    vim.lsp.enable("typescript")
 
     ---@type vim.diagnostic.Opts
     local opts = {

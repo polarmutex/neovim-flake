@@ -1,12 +1,5 @@
--- local python_lsp_cmd = "pylsp"
-local lsp_cmd = "vtsls"
-
--- Check if lsp-server is available
-if vim.fn.executable(lsp_cmd) ~= 1 then
-    return
-end
-
-local config = {
+---@type vim.lsp.Config
+return {
     cmd = { "vtsls", "--stdio" },
     filetypes = {
         "javascript",
@@ -21,20 +14,19 @@ local config = {
     ),
     single_file_support = true,
     settings = {
-        basedpyright = {
-            analysis = {
-                autoSearchPaths = true,
-                useLibraryCodeForTypes = true,
-                diagnosticMode = "openFilesOnly",
+        complete_function_calls = true,
+        vtsls = {
+            enableMoveToFileCodeAction = true,
+            autoUseWorkspaceTsdk = true,
+            experimental = {
+                maxInlayHintLength = 30,
+                completion = {
+                    enableServerSideFuzzyMatch = true,
+                },
             },
         },
     },
-}
-
-vim.lsp.start(config, {
     reuse_client = function(client, conf)
         return client.config.root_dir == conf.root_dir
     end,
-})
-
-require("dap-python").setup()
+}
