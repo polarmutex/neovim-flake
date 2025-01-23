@@ -15,6 +15,7 @@ return {
                     cpp = { "clang-format" },
                     lua = { "stylua" },
                     markdown = { "prettierd" },
+                    nix = { "alejandra" },
                     python = { "ruff_format" },
                 },
                 -- The options you set here will be merged with the builtin formatters.
