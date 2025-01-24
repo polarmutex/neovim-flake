@@ -418,10 +418,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v1.10.0",
-      "revision": "a428f309119086dc78dd4b19306d2d67be884eee",
-      "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/v1.10.0",
-      "hash": "0n40q6znpy1xzywd1hwyivx7y1n0i0fcp3m7jp0vgipm6qssda4b"
+      "version": "v1.10.1",
+      "revision": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
+      "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/v1.10.1",
+      "hash": "1bz5msxwk232zkkhfxcmr7a665la8pgkdx70q99ihl4x04jg6dkq"
     },
     "nvim-treesitter": {
       "type": "Git",
