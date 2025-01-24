@@ -260,9 +260,9 @@
         "repo": "tree-sitter-query"
       },
       "branch": "main",
-      "revision": "a6674e279b14958625d7a530cabe06119c7a1532",
-      "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/a6674e279b14958625d7a530cabe06119c7a1532.tar.gz",
-      "hash": "08lbljhakqdv6x6nw1iwc59pyx6cxkpcjf7zypp1zpiya8hzdnn6"
+      "revision": "5c2d02747250bc326bc33687b3319b7db8554e24",
+      "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/5c2d02747250bc326bc33687b3319b7db8554e24.tar.gz",
+      "hash": "04xa61dyz8ifpa4v23j9bx67fi6690jin989xipckggpp8i1p7vd"
     },
     "tree-sitter-regex": {
       "type": "Git",
@@ -344,9 +344,9 @@
         "repo": "tree-sitter-yaml"
       },
       "branch": "master",
-      "revision": "b733d3f5f5005890f324333dd57e1f0badec5c87",
-      "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/b733d3f5f5005890f324333dd57e1f0badec5c87.tar.gz",
-      "hash": "0z5fz9hiafzapi0ijhyz8np6rksq6c1pb16xv1vhnlfh75rg6zyv"
+      "revision": "1805917414a9a8ba2473717fd69447277a175fae",
+      "url": "https://github.com/ikatyang/tree-sitter-yaml/archive/1805917414a9a8ba2473717fd69447277a175fae.tar.gz",
+      "hash": "1l12qgz97dc0vclhxpz7nwa4az6a0k598a7f161lk5z162znbiwm"
     }
   },
   "version": 3
