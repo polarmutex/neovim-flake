@@ -60,10 +60,8 @@ M.setup = function()
     }
     vim.diagnostic.config(vim.deepcopy(opts))
 
-    -- -- setup autoformat
-    -- require("polar.lsp.format").setup({
-    --     autoformat = true,
-    -- })
+    -- setup autoformat
+    require("polar.utils.format").register(require("polar.utils.lsp").formatter())
 
     Util.on_attach(function(client, buffer)
         -- In this case, we create a function that lets us more easily define mappings specific

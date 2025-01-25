@@ -26,7 +26,7 @@ return {
                 "nvim-dap-virtual-text",
                 opts = {},
             },
-            "nvim-dap-python",
+            -- "nvim-dap-python",
         },
         keys = {
             {
@@ -183,22 +183,22 @@ return {
                 end,
                 desc = "Debug Nearest",
             },
-            {
-                "<leader>dPt",
-                function()
-                    require("dap-python").test_method()
-                end,
-                desc = "Debug Method",
-                ft = "python",
-            },
-            {
-                "<leader>dPc",
-                function()
-                    require("dap-python").test_class()
-                end,
-                desc = "Debug Class",
-                ft = "python",
-            },
+            -- {
+            --     "<leader>dPt",
+            --     function()
+            --         require("dap-python").test_method()
+            --     end,
+            --     desc = "Debug Method",
+            --     ft = "python",
+            -- },
+            -- {
+            --     "<leader>dPc",
+            --     function()
+            --         require("dap-python").test_class()
+            --     end,
+            --     desc = "Debug Class",
+            --     ft = "python",
+            -- },
         },
         after = function()
             local dap = require("dap")
@@ -256,7 +256,7 @@ return {
             end
 
             -- python
-            require("dap-python").setup()
+            -- require("dap-python").setup()
         end,
     },
     {
