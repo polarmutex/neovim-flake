@@ -1,5 +1,3 @@
-vim.bo.commentstring = "; %s"
-
 local map = vim.keymap.set
 map("n", "<Leader>mc", "<cmd>%s/txn/*/gc<CR>", {
     desc = "beancount-nvim: mark transactions as reconciled",
