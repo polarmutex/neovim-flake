@@ -250,10 +250,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.14.0",
-      "revision": "36fd52fb131aa02caa97b7cbcc838d0bdcb124d5",
-      "url": "https://api.github.com/repos/echasnovski/mini.nvim/tarball/v0.14.0",
-      "hash": "0wyhx7xrq12ykpgxq3bszipzhs7bdxjz6f6yhbxhzi2xcmfpyr8i"
+      "version": "v0.15.0",
+      "revision": "e1551a2c0267351dddfde6c9015743e2206bde00",
+      "url": "https://api.github.com/repos/echasnovski/mini.nvim/tarball/v0.15.0",
+      "hash": "10m52pxga86wl4cip8wcldnz64gdgf7gh2ah2czvnb3marxslc33"
     },
     "neodev-nvim--opt": {
       "type": "GitRelease",
