@@ -235,10 +235,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v2.10.0",
-      "revision": "3ce53b0a4c4df48523b7a5e078d3c4b07ab706cb",
-      "url": "https://api.github.com/repos/nvim-neorocks/lz.n/tarball/v2.10.0",
-      "hash": "10b6ldmxndprwpc7xawm0cvq68cp301ayp7zxpjkrsmrihzzs2jf"
+      "version": "v2.11.1",
+      "revision": "c90bed0898ac148d7faa8f71a5d1adef0eb78733",
+      "url": "https://api.github.com/repos/nvim-neorocks/lz.n/tarball/v2.11.1",
+      "hash": "0qs1flavg22j3jivqdcgabpfp97vdw5ga84c371cr8jngym9plzs"
     },
     "mini-nvim--opt": {
       "type": "GitRelease",
