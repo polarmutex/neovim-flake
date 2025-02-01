@@ -51,7 +51,7 @@
             pname = "blink-fuzzy-lib";
 
             useFetchCargoVendor = true;
-            cargoHash = "sha256-ISCrUaIWNn+SfNzrAXKqeBbQyEnuqs3F8GAEl90kK7I=";
+            cargoHash = "sha256-EoxKmVyJRxqI6HOuuiSj5+IOuo5M8ZNdSyk86sQNtE8=";
 
             nativeBuildInputs = [pkgs.git];
 
