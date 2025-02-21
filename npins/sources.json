@@ -173,9 +173,9 @@
         "repo": "gitsigns.nvim"
       },
       "branch": "main",
-      "revision": "2bc3b472bbc2484214549af4d9f38c127b886a55",
-      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/2bc3b472bbc2484214549af4d9f38c127b886a55.tar.gz",
-      "hash": "18p8kvb6ardndmzh1spsvrchynn8d90mphjs1gbpnl4iih87m04d"
+      "revision": "4c40357994f386e72be92a46f41fc1664c84c87d",
+      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/4c40357994f386e72be92a46f41fc1664c84c87d.tar.gz",
+      "hash": "1d3i82g5barb9afk7ra3gmcwwjvaqp49sbdz0acki4a0yc80m31w"
     },
     "hardtime-nvim--opt": {
       "type": "Git",
