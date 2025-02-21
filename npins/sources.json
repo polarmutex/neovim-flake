@@ -34,10 +34,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v0.11.0",
-      "revision": "7a70199efe4e333a3693ba3e56ddbec3b9c9c330",
-      "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.11.0",
-      "hash": "1j3sj03i72iw5npwwksc7w7axv8z0nbgi11adkfng9ak73kn1gdq"
+      "version": "v0.12.4",
+      "revision": "a5625f1b14fb5c44b0f9256f5ec0714817f5e355",
+      "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.12.4",
+      "hash": "0jdifjifxjqa8r80wlqgkn5rm48wziap92340xz228nrgd0c9g69"
     },
     "bufferline-nvim--opt": {
       "type": "GitRelease",
