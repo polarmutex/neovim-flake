@@ -236,9 +236,9 @@
         "repo": "tree-sitter-nix"
       },
       "branch": "master",
-      "revision": "b3a88cf3e597d48c33657deca4fda7a75c0069c1",
-      "url": "https://github.com/cstrahan/tree-sitter-nix/archive/b3a88cf3e597d48c33657deca4fda7a75c0069c1.tar.gz",
-      "hash": "16gkm286jvkv7kygs6ap9h06dvp96akahjdvqrdjzzp1vlsqlf5s"
+      "revision": "48057cf966641e7a49b09700550751195c34bcb5",
+      "url": "https://github.com/cstrahan/tree-sitter-nix/archive/48057cf966641e7a49b09700550751195c34bcb5.tar.gz",
+      "hash": "1dchzvmlh58jm9660iw57rxsarv2y6qh0197iyhj4rakjwfr74am"
     },
     "tree-sitter-python": {
       "type": "Git",
