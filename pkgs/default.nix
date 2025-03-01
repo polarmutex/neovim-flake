@@ -37,43 +37,6 @@
     npinPlugins' =
       npinPlugins
       // {
-        blink-cmp-src = let
-          inherit (pkgs.stdenv) hostPlatform;
-          libExt =
-            if hostPlatform.isDarwin
-            then "dylib"
-            else if hostPlatform.isWindows
-            then "dll"
-            else "so";
-          blink-cmp = npinPlugins.blink-cmp-src;
-          blink-fuzzy-lib = pkgs.rustPlatform.buildRustPackage {
-            inherit (blink-cmp) version src;
-            pname = "blink-fuzzy-lib";
-
-            useFetchCargoVendor = true;
-            cargoHash = "sha256-W7CdF70BMXKMCcooR6adw2wwHJ3WznZ+o8KRyHWMeeI=";
-
-            nativeBuildInputs = [pkgs.git];
-
-            env = {
-              # TODO: remove this if plugin stops using nightly rust
-              RUSTC_BOOTSTRAP = true;
-            };
-          };
-        in
-          npinPlugins.blink-cmp-src.overrideAttrs (old: {
-            preInstall = let
-              ext = pkgs.stdenv.hostPlatform.extensions.sharedLibrary;
-            in ''
-              mkdir -p target/release
-              ln -s ${blink-fuzzy-lib}/lib/libblink_cmp_fuzzy${ext} target/release/libblink_cmp_fuzzy${ext}
-            '';
-            patches = let
-              tag = old.version;
-            in [
-              (pkgs.replaceVars ./blink-cmp-force-version.patch {inherit tag;})
-            ];
-          });
         lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {opt = false;};};
       };
 
@@ -254,7 +217,6 @@
         stage2 =
           stage1
           // {
-            blink-cmp = npinCompressedPlugins.blink-cmp;
             pack-dir = let
               packName = "polar";
               allPlugins = lib.flatten [

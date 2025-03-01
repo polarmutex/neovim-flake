@@ -24,21 +24,6 @@
       "url": "https://github.com/polarmutex/beancount.nvim/archive/869564aba3087ee5df8f282aa37555e314aa2152.tar.gz",
       "hash": "1g6dssggk49p5j55h6m8v8vcyipafbqvc1ma4si2d4kpa0ch5q1f"
     },
-    "blink-cmp--opt": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Saghen",
-        "repo": "blink.cmp"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "version": "v0.13.1",
-      "revision": "29861baf37bbb16f5dbf524a6edac5daaad6f4fc",
-      "url": "https://api.github.com/repos/Saghen/blink.cmp/tarball/v0.13.1",
-      "hash": "1y5p7i6g884r65mhfsazx28g0qs37hc57jm37i7kch9kcf8m7sbq"
-    },
     "bufferline-nvim--opt": {
       "type": "GitRelease",
       "repository": {

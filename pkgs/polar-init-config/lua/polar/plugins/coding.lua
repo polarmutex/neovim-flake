@@ -37,8 +37,10 @@ return {
                 -- elsewhere in your config, without redefining it, via `opts_extend`
                 sources = {
                     default = { "lsp", "path", "snippets", "buffer" },
-                    -- optionally disable cmdline completions
-                    cmdline = {},
+                },
+                -- optionally disable cmdline completions
+                cmdline = {
+                    enabled = false,
                 },
                 signature = { enabled = true },
             }

@@ -8,7 +8,7 @@ function M.make_client_capabilities()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
 
     -- Add blink.cmp capabilities
-    capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
+    -- capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
 
     -- Add any additional plugin capabilities here.
     -- Make sure to follow the instructions provided in the plugin's docs.
