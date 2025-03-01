@@ -21,10 +21,14 @@
       flatten
       ;
 
-    allPlugins = flatten [
-      (attrValues npinCompressedPlugins)
-      (attrValues treesitterGrammars)
-    ];
+    allPlugins =
+      flatten [
+        (attrValues npinCompressedPlugins)
+        (attrValues treesitterGrammars)
+      ]
+      ++ [
+        pkgs.vimPlugins.blink-cmp
+      ];
 
     packName = "polar-pack";
     packDir =
