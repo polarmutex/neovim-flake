@@ -44,9 +44,9 @@
         "repo": "tree-sitter-cmake"
       },
       "branch": "master",
-      "revision": "e409ae33f00e04cde30f2bcffb979caf1a33562a",
-      "url": "https://github.com/uyha/tree-sitter-cmake/archive/e409ae33f00e04cde30f2bcffb979caf1a33562a.tar.gz",
-      "hash": "1v2kkxf9w0y9mwwgimgyvn1s9cmmp6jg71ckr001w1w8szyqqf7q"
+      "revision": "cd00bbcb77fe31283ca79b0038387ec7411759ae",
+      "url": "https://github.com/uyha/tree-sitter-cmake/archive/cd00bbcb77fe31283ca79b0038387ec7411759ae.tar.gz",
+      "hash": "0ig3005m9r9vrl8z3wgfwrakwyvlhcqf2q3d088dp65gy7xqlg9g"
     },
     "tree-sitter-cpp": {
       "type": "Git",
@@ -284,9 +284,9 @@
         "repo": "tree-sitter-rust"
       },
       "branch": "master",
-      "revision": "2eaf126458a4d6a69401089b6ba78c5e5d6c1ced",
-      "url": "https://github.com/tree-sitter/tree-sitter-rust/archive/2eaf126458a4d6a69401089b6ba78c5e5d6c1ced.tar.gz",
-      "hash": "0fsfxbn4069ak8rq32r5kh6pp2pw2cd5jl0dlgiq67cm3618jydv"
+      "revision": "e86119bdb4968b9799f6a014ca2401c178d54b5f",
+      "url": "https://github.com/tree-sitter/tree-sitter-rust/archive/e86119bdb4968b9799f6a014ca2401c178d54b5f.tar.gz",
+      "hash": "1a3gb8l69rj47m26y3l7q0wynj1vwprqg5k5hls9ym2hjv3x94fc"
     },
     "tree-sitter-toml": {
       "type": "Git",
