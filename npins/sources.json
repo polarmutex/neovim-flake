@@ -329,9 +329,9 @@
         "repo": "nvim-dap"
       },
       "branch": "master",
-      "revision": "8228cb00ab0850e483f8d58cc39cc580c05738d6",
-      "url": "https://github.com/mfussenegger/nvim-dap/archive/8228cb00ab0850e483f8d58cc39cc580c05738d6.tar.gz",
-      "hash": "17dysd4fhmrkzfnm7f2r4xnpsl5rbj8ja4as0a8fijgh0412vb13"
+      "revision": "a720d4966f758ab22e8ec28812b6df90a53e0f02",
+      "url": "https://github.com/mfussenegger/nvim-dap/archive/a720d4966f758ab22e8ec28812b6df90a53e0f02.tar.gz",
+      "hash": "0b979dhl5jr3kx9j5zih39jbrv22d554ws6y8g1cgsm2i3412s4h"
     },
     "nvim-dap-python--opt": {
       "type": "Git",
