@@ -499,10 +499,10 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
-      "version": "v5.25.0",
-      "revision": "2b0f0b7e03751cf8ed123322f9b02d8f73fa9df7",
-      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v5.25.0",
-      "hash": "0r2z5givkkxqswbk5wpqmhm04gn6gjlv7jdrgm5ddz1gn8vvkgci"
+      "version": "v5.25.1",
+      "revision": "448c76451ecf3c0edabcde427b7f1c8c219be2dd",
+      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v5.25.1",
+      "hash": "0h0grg3dbqbyx9z3v1dxflfcfm296lzmspj4yjwa4n2aag8zyq93"
     },
     "snacks-nvim--opt": {
       "type": "GitRelease",
