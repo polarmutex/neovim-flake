@@ -8,6 +8,7 @@
         "repo": "SchemaStore.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "d307d291f38678d064cb987112926df6d9134de3",
       "url": "https://github.com/b0o/SchemaStore.nvim/archive/d307d291f38678d064cb987112926df6d9134de3.tar.gz",
       "hash": "03blmpkrzgfsv4gpdlmhnan4f4jnxmzmj5gkl3hgqcabfbhdmazp"
@@ -20,6 +21,7 @@
         "repo": "beancount.nvim"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "869564aba3087ee5df8f282aa37555e314aa2152",
       "url": "https://github.com/polarmutex/beancount.nvim/archive/869564aba3087ee5df8f282aa37555e314aa2152.tar.gz",
       "hash": "1g6dssggk49p5j55h6m8v8vcyipafbqvc1ma4si2d4kpa0ch5q1f"
@@ -34,6 +36,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v4.9.1",
       "revision": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3",
       "url": "https://api.github.com/repos/akinsho/bufferline.nvim/tarball/v4.9.1",
@@ -47,6 +50,7 @@
         "repo": "cmake-tools.nvim"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "a5d5bf0a93bb96085502334a5036fc054ad9cf33",
       "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/a5d5bf0a93bb96085502334a5036fc054ad9cf33.tar.gz",
       "hash": "1d8k3m994wdlmbwp6564av5bpx3sw4q05h5ga8x14dcl6qw2zbp3"
@@ -61,6 +65,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v9.0.0",
       "revision": "a6f5bdb78caa305496357d17e962bbc4c0b392e2",
       "url": "https://api.github.com/repos/stevearc/conform.nvim/tarball/v9.0.0",
@@ -76,6 +81,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v0.6.0",
       "revision": "85356807f3a0e9a3f7015586f3a010170d338686",
       "url": "https://api.github.com/repos/Saecki/crates.nvim/tarball/v0.6.0",
@@ -89,6 +95,7 @@
         "repo": "diffview.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "url": "https://github.com/sindrets/diffview.nvim/archive/4516612fe98ff56ae0415a259ff6361a89419b0a.tar.gz",
       "hash": "0brabpd02596hg98bml118bx6z2sly98kf1cr2p0xzybiinb4zs9"
@@ -103,6 +110,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v1.10.2",
       "revision": "ebb77fde6f5cb2745431c6c0fe57024f66471728",
       "url": "https://api.github.com/repos/folke/edgy.nvim/tarball/v1.10.2",
@@ -118,6 +126,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v2.1.0",
       "revision": "ec0bf2842189f65f60fd40bf3557cac1029cc932",
       "url": "https://api.github.com/repos/folke/flash.nvim/tarball/v2.1.0",
@@ -131,6 +140,7 @@
         "repo": "friendly-snippets"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "efff286dd74c22f731cdec26a70b46e5b203c619",
       "url": "https://github.com/rafamadriz/friendly-snippets/archive/efff286dd74c22f731cdec26a70b46e5b203c619.tar.gz",
       "hash": "1vb5l8ipfjwsrqffbq8v2z5p1cpg035b3gk57692wd7835kr3i13"
@@ -145,6 +155,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "2.1.0",
       "revision": "3ad8c17a3d178ac19be925284389c14114638ebb",
       "url": "https://api.github.com/repos/polarmutex/git-worktree.nvim/tarball/2.1.0",
@@ -158,6 +169,7 @@
         "repo": "gitsigns.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9",
       "url": "https://github.com/lewis6991/gitsigns.nvim/archive/7010000889bfb6c26065e0b0f7f1e6aa9163edd9.tar.gz",
       "hash": "0hl572j5l1bqg51rg545bavxs8kxya02ss3fj5fxvp9ylrnaqsx9"
@@ -170,6 +182,7 @@
         "repo": "hardtime.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "f87c86d1aa1e05dcf3c6ecd97fbfd237e2de0bf5",
       "url": "https://github.com/m4xshen/hardtime.nvim/archive/f87c86d1aa1e05dcf3c6ecd97fbfd237e2de0bf5.tar.gz",
       "hash": "1zkrgszfh5sgnvbpsymp4vpfm8bpqasl8y3p214ww6bjmn00la5n"
@@ -182,6 +195,7 @@
         "repo": "harpoon"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3",
       "url": "https://github.com/ThePrimeagen/harpoon/archive/1bc17e3e42ea3c46b33c0bbad6a880792692a1b3.tar.gz",
       "hash": "0q7lcww2y1x8s6r5g6wbdlnv3dvc8pj1g7wq6yxvl5fsi40wvhwj"
@@ -194,6 +208,7 @@
         "repo": "inc-rename.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "87ebe7bee0b83d3b6e4f1494c74abed21b318175",
       "url": "https://github.com/smjonas/inc-rename.nvim/archive/87ebe7bee0b83d3b6e4f1494c74abed21b318175.tar.gz",
       "hash": "1cra8zz7a1c0w1d7bwvznqlrmjgzc3nap7762qz5mghi3z1yfgak"
@@ -206,6 +221,7 @@
         "repo": "kanagawa.nvim"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "709018d5af92d2e5780bfb8a6d36e9cad01a6402",
       "url": "https://github.com/rebelot/kanagawa.nvim/archive/709018d5af92d2e5780bfb8a6d36e9cad01a6402.tar.gz",
       "hash": "0p0bwydhpvjx5fdya10iwqkk2d0ihmkdkc1kkpi6i1cjk4ipkxws"
@@ -220,6 +236,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v2.11.2",
       "revision": "d5050a536ba1eee7a3e54371959427d7874ca27e",
       "url": "https://api.github.com/repos/nvim-neorocks/lz.n/tarball/v2.11.2",
@@ -235,6 +252,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v0.15.0",
       "revision": "e1551a2c0267351dddfde6c9015743e2206bde00",
       "url": "https://api.github.com/repos/echasnovski/mini.nvim/tarball/v0.15.0",
@@ -250,6 +268,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v3.0.0",
       "revision": "1f4ebcc10852518166ce165e57d425a4265a10d4",
       "url": "https://api.github.com/repos/folke/neodev.nvim/tarball/v3.0.0",
@@ -265,6 +284,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v5.8.0",
       "revision": "d66cf4e05a116957f0d3a7755a24291c7d1e1f72",
       "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.8.0",
@@ -278,6 +298,7 @@
         "repo": "neotest-python"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e",
       "url": "https://github.com/nvim-neotest/neotest-python/archive/a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e.tar.gz",
       "hash": "1m78f9bxsl548f1pcrmbndmnwdplvhqynpm86pv080272ci9msgy"
@@ -292,6 +313,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v4.10.0",
       "revision": "cf758e9df66451889aab56613a21b8673f045ec2",
       "url": "https://api.github.com/repos/folke/noice.nvim/tarball/v4.10.0",
@@ -305,6 +327,7 @@
         "repo": "nui.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "8d3bce9764e627b62b07424e0df77f680d47ffdb",
       "url": "https://github.com/MunifTanjim/nui.nvim/archive/8d3bce9764e627b62b07424e0df77f680d47ffdb.tar.gz",
       "hash": "0ia8q5d4xcss45vw6jlaanyr0migy03cjzq9g0kipfyqxkcxi105"
@@ -317,6 +340,7 @@
         "repo": "nvim-colorizer.lua"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "a065833f35a3a7cc3ef137ac88b5381da2ba302e",
       "url": "https://github.com/norcalli/nvim-colorizer.lua/archive/a065833f35a3a7cc3ef137ac88b5381da2ba302e.tar.gz",
       "hash": "0v1h9lj68kmx6052zg78v366iibxq78367h7avm97pvp5ksvqcw2"
@@ -329,6 +353,7 @@
         "repo": "nvim-dap"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "2d1bd2b6bd0f366a531b6d5b0f8a955d804c918a",
       "url": "https://github.com/mfussenegger/nvim-dap/archive/2d1bd2b6bd0f366a531b6d5b0f8a955d804c918a.tar.gz",
       "hash": "0c5khfg8z6s742g7c3dd2fdsnpfnv9qd11d6yga1babf1vhza43i"
@@ -341,6 +366,7 @@
         "repo": "nvim-dap-python"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "34282820bb713b9a5fdb120ae8dd85c2b3f49b51",
       "url": "https://github.com/mfussenegger/nvim-dap-python/archive/34282820bb713b9a5fdb120ae8dd85c2b3f49b51.tar.gz",
       "hash": "162kr9nkc5cshmsn3lsksc9qj63g6ln9cwhvm2v7mzvjcmj1wga3"
@@ -353,6 +379,7 @@
         "repo": "nvim-dap-ui"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "bc81f8d3440aede116f821114547a476b082b319",
       "url": "https://github.com/rcarriga/nvim-dap-ui/archive/bc81f8d3440aede116f821114547a476b082b319.tar.gz",
       "hash": "0hk34mfjxqiq82faf3q75ixpxd822vh8zbl1i5pvx6akn4v3mxk7"
@@ -365,6 +392,7 @@
         "repo": "nvim-dap-virtual-text"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "df66808cd78b5a97576bbaeee95ed5ca385a9750",
       "url": "https://github.com/theHamsta/nvim-dap-virtual-text/archive/df66808cd78b5a97576bbaeee95ed5ca385a9750.tar.gz",
       "hash": "0hmkm4d735j9w06g7qpp5w2j6d8hmk696kndylchrvh4wan4kz2s"
@@ -377,6 +405,7 @@
         "repo": "nvim-jdtls"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "2f7bff9b8d2ee1918b36ca55f19547d9d335a268",
       "url": "https://github.com/mfussenegger/nvim-jdtls/archive/2f7bff9b8d2ee1918b36ca55f19547d9d335a268.tar.gz",
       "hash": "00q4wy2qkr1845y9sf52iphang5cqipqh1b7jzvn4kzbbvi1lg54"
@@ -389,6 +418,7 @@
         "repo": "nvim-lint"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "93b8040115c9114dac1047311763bef275e752dc",
       "url": "https://github.com/mfussenegger/nvim-lint/archive/93b8040115c9114dac1047311763bef275e752dc.tar.gz",
       "hash": "1115rn9npzj2xdj2zr1ayhfy76281zv0avbiyi5vgnvfg7064jmq"
@@ -403,6 +433,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v1.10.1",
       "revision": "21f5324bfac14e22ba26553caf69ec76ae8a7662",
       "url": "https://api.github.com/repos/nvim-neotest/nvim-nio/tarball/v1.10.1",
@@ -416,6 +447,7 @@
         "repo": "nvim-treesitter"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "da5825bf70cc2ea7eacd1e60c32c07baf19adeba",
       "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/da5825bf70cc2ea7eacd1e60c32c07baf19adeba.tar.gz",
       "hash": "14k1ypylfw9b03iqhpyrg1zb43mmm2swrz5hcn6jxjk0nvkx9qz1"
@@ -430,6 +462,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v3.9.0",
       "revision": "c46c241026797bec7a81210db9d032fe7c90fbe5",
       "url": "https://api.github.com/repos/epwalsh/obsidian.nvim/tarball/v3.9.0",
@@ -443,6 +476,7 @@
         "repo": "one-small-step-for-vimkind"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "b9def31568d20b16f7da9479a4174d165046fe8a",
       "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/b9def31568d20b16f7da9479a4174d165046fe8a.tar.gz",
       "hash": "1gr44v55hd1gi9hzzfa9fsmb2kmrkp91nvjbsgiczmjqyl3kvrpq"
@@ -457,6 +491,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v1.6.0",
       "revision": "2c23513a4fd3a3be0459b3b62996fb0732c2fd7e",
       "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/v1.6.0",
@@ -470,6 +505,7 @@
         "repo": "plenary.nvim"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "857c5ac632080dba10aae49dba902ce3abf91b35",
       "url": "https://github.com/nvim-lua/plenary.nvim/archive/857c5ac632080dba10aae49dba902ce3abf91b35.tar.gz",
       "hash": "0jxx9nfga7z87v78cifglqs8w4mrpf99wcp483kb0hbv6537jmgh"
@@ -484,6 +520,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v1.1.0",
       "revision": "35c402c19a10e524d5378c9c0a5151ff5d847b06",
       "url": "https://api.github.com/repos/tris203/precognition.nvim/tarball/v1.1.0",
@@ -499,6 +536,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v5.25.2",
       "revision": "1486b5a2cc0de646d6d0837ec77127c9d6e2c50f",
       "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v5.25.2",
@@ -514,6 +552,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v2.22.0",
       "revision": "5eac729fa290248acfe10916d92a5ed5e5c0f9ed",
       "url": "https://api.github.com/repos/folke/snacks.nvim/tarball/v2.22.0",
@@ -529,6 +568,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v1.2.2",
       "revision": "6c00ab414dc1b69621b145908c582b747f24b46e",
       "url": "https://api.github.com/repos/kkharji/sqlite.lua/tarball/v1.2.2",
@@ -542,6 +582,7 @@
         "repo": "todo-comments.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5",
       "url": "https://github.com/folke/todo-comments.nvim/archive/304a8d204ee787d2544d8bc23cd38d2f929e7cc5.tar.gz",
       "hash": "0hrmiaxjp11200nds3y33brj8gpbn5ykd78jfy1jiash3d44xpva"
@@ -556,6 +597,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v4.11.0",
       "revision": "b262293ef481b0d1f7a14c708ea7ca649672e200",
       "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/v4.11.0",
@@ -569,6 +611,7 @@
         "repo": "trouble.nvim"
       },
       "branch": "main",
+      "submodules": false,
       "revision": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3",
       "url": "https://github.com/folke/trouble.nvim/archive/85bedb7eb7fa331a2ccbecb9202d8abba64d37b3.tar.gz",
       "hash": "0qn84q75dk2vbw2shh7g9i3x8m5wnhcg17zx26njpl0srykp1vva"
@@ -581,6 +624,7 @@
         "repo": "vim-arduino"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "2ded67cdf09bb07c4805d9e93d478095ed3d8606",
       "url": "https://github.com/stevearc/vim-arduino/archive/2ded67cdf09bb07c4805d9e93d478095ed3d8606.tar.gz",
       "hash": "10drm1dfh48wiwlnpycn277haagpm66mxaa2alx3svayln1hi8pr"
@@ -593,6 +637,7 @@
         "repo": "vim-be-good"
       },
       "branch": "master",
+      "submodules": false,
       "revision": "0ae3de14eb8efc6effe7704b5e46495e91931cc5",
       "url": "https://github.com/ThePrimeagen/vim-be-good/archive/0ae3de14eb8efc6effe7704b5e46495e91931cc5.tar.gz",
       "hash": "1kqb4ljlwypilq23y5d83njh08z5w8mlk323qcqp521jvmbmkcya"
@@ -607,6 +652,7 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v3.17.0",
       "revision": "fcbf4eea17cb299c02557d576f0d568878e354a4",
       "url": "https://api.github.com/repos/folke/which-key.nvim/tarball/v3.17.0",
@@ -622,11 +668,12 @@
       "pre_releases": false,
       "version_upper_bound": null,
       "release_prefix": null,
+      "submodules": false,
       "version": "v2.0.0",
       "revision": "9268018e92d02650a94e39dd5f5903c542f7ea11",
       "url": "https://api.github.com/repos/gbprod/yanky.nvim/tarball/v2.0.0",
       "hash": "07blik6lsj1qdk5y3afjc80a0rbjjxq68q3fkvkayn5zs41i76y2"
     }
   },
-  "version": 3
+  "version": 5
 }
