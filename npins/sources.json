@@ -141,9 +141,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "efff286dd74c22f731cdec26a70b46e5b203c619",
-      "url": "https://github.com/rafamadriz/friendly-snippets/archive/efff286dd74c22f731cdec26a70b46e5b203c619.tar.gz",
-      "hash": "1vb5l8ipfjwsrqffbq8v2z5p1cpg035b3gk57692wd7835kr3i13"
+      "revision": "31f2a2657b6261724313281fe0d8ba6f43f4a4fa",
+      "url": "https://github.com/rafamadriz/friendly-snippets/archive/31f2a2657b6261724313281fe0d8ba6f43f4a4fa.tar.gz",
+      "hash": "0rkz7zbv1maqhr22nxq39w7pahahcapfyc4rgscmr3bm4dcymk2a"
     },
     "git-worktree-nvim--opt": {
       "type": "GitRelease",
