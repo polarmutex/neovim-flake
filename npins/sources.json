@@ -354,9 +354,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "7aade9e99bef5f0735cf966e715b3ce45515d786",
-      "url": "https://github.com/mfussenegger/nvim-dap/archive/7aade9e99bef5f0735cf966e715b3ce45515d786.tar.gz",
-      "hash": "0cr2y3lkr6ffxxd9b2pj8hr3fzb5dlj003fcknswqwsdhws75l22"
+      "revision": "98bf130702eaafad8567c0e3ea1171c2552d58bb",
+      "url": "https://github.com/mfussenegger/nvim-dap/archive/98bf130702eaafad8567c0e3ea1171c2552d58bb.tar.gz",
+      "hash": "045sajd5amwxq4964yj4lbh20daa0g8473a0ggbwggxpq6qz2678"
     },
     "nvim-dap-python--opt": {
       "type": "Git",
