@@ -45,7 +45,7 @@
             # plugin-overlay
             inputs.gen-luarc.overlays.default
             (_final: _prev: {
-              neovim-nightly = inputs.neovim-nightly-overlay.packages.${system}.default;
+              neovim-nightly = inputs.neovim-nightly.packages.${system}.default;
               #   # nil-git = inputs'.nil.packages.default;
               #   basedpyright-nixpkgs = import inputs.nixpkgs-basedpyright {
               #     inherit (prev) system;
@@ -57,6 +57,7 @@
           default = pkgs.mkShell {
             name = "neovim-developer-shell";
             packages = with pkgs; [
+              self.packages.${system}.default.devMode
               lemmy-help
               # npins
               nix-tree
@@ -67,16 +68,6 @@
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
               ln -fs ${self'.packages.nvim-luarc-json} .luarc.json
-              #export NVIM_PYTHON_LOG_LEVEL=DEBUG
-              #export NVIM_LOG_FILE=/tmp/nvim.log
-              #export VIMRUNTIME=
-
-              # ASAN_OPTIONS=detect_leaks=1
-              #export ASAN_OPTIONS="log_path=./test.log:abort_on_error=1"
-
-              # for treesitter functionaltests
-              #mkdir -p runtime/parser
-              #cp -f {pkgs.vimPlugins.nvim-treesitter.builtGrammars.c}/parser runtime/parser/c.so
             '';
           };
         };
@@ -94,7 +85,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim-nightly-overlay = {
+    neovim-nightly = {
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.flake-parts.follows = "flake-parts";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -113,10 +104,10 @@
     spell-en-suggestions = {
       url = "http://ftp.nluug.nl/vim/runtime/spell/en.utf-8.sug";
       flake = false;
-    }; # Add the wrapper-manager flake
+    };
 
-    wrapper-manager = {
-      url = "github:viperML/wrapper-manager";
+    mnw = {
+      url = "github:gerg-l/mnw";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

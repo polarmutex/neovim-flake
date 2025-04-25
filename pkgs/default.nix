@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   perSystem = {
     inputs',
     system,
@@ -13,7 +17,7 @@
         version = pin.version or (builtins.substring 0 8 pin.revision);
         src = pin;
         doCheck = false;
-        passthru.opt =
+        passthru.optional =
           if (pin ? opt)
           then pin.opt
           else false;
@@ -76,83 +80,13 @@
           }
       ))
     ];
-
-    extraPackages = with pkgs; [
-      fswatch # for lsp file watching
-      xclip # for clipboard
-
-      # cpp
-      clang
-      clang-tools
-
-      # lua
-      lua-language-server
-      luajitPackages.luacheck
-      stylua
-
-      # markdown
-      prettierd
-      markdownlint-cli
-      # (pkgs.mdformat.withPlugins (p: [
-      #   p.mdformat-frontmatter
-      #   p.mdformat-gfm
-      #   p.mdformat-toc
-      # ]))
-
-      #nix
-      # nil
-      nixd
-      deadnix
-      statix
-      alejandra
-
-      # python
-      (python311.withPackages (ps:
-        with ps; [
-          black
-          python-lsp-server
-          python-lsp-black.overrideAttrs
-          (oldAttrs: {
-            patches =
-              oldAttrs.patches
-              /*
-              fix test failure with black>=24.3.0;
-              remove this patch once python-lsp-black>2.0.0
-              */
-              ++ lib.optional
-              (with lib; (versionOlder version "2.0.1") && (versionAtLeast black.version "24.3.0"))
-              (fetchpatch {
-                url = "https://patch-diff.githubusercontent.com/raw/python-lsp/python-lsp-black/pull/59.patch";
-                hash = "sha256-4u0VIS7eidVEiKRW2wc8lJVkJwhzJD/M+uuqmTtiZ7E=";
-              });
-          })
-          python-lsp-ruff
-          pydocstyle
-          debugpy
-        ]))
-      ruff
-      basedpyright
-
-      # rust
-      rust-analyzer
-
-      # yaml((
-      nodePackages_latest.yaml-language-server
-
-      # java
-      jdt-language-server
-
-      # arduino
-      arduino-cli
-    ];
   in {
     packages = let
       byteCompileLuaHook = pkgs.makeSetupHook {name = "byte-compile-lua-hook";} (
         let
           luajit = lib.getExe' pkgs.luajit "luajit";
         in
-          pkgs.writeText "byte-compile-lua-hook.sh" # bash
-          
+          pkgs.writeText "byte-compile-lua-hook.sh"
           ''
             byteCompileLuaPostFixup() {
                 while IFS= read -r -d "" file; do
@@ -191,69 +125,119 @@
           }))))
         plugins;
       npinCompressedPlugins = byteCompilePlugins npinPlugins';
-    in
-      lib.fix (_: let
-        # packages in $FLAKE/pkgs, callPackage'd automatically
-        stage1 = lib.fix (
-          self': let
-            callPackage = lib.callPackageWith (pkgs // self');
-            auto = lib.pipe (builtins.readDir ./.) [
-              (lib.filterAttrs (_: value: value == "directory"))
-              (builtins.mapAttrs (name: _: callPackage ./${name} {}))
-            ];
-          in
-            auto
-            // {
-              inherit (pkgs) neovim-nightly;
-              inherit (pkgs) npins;
-              nvim-luarc-json = pkgs.mk-luarc-json {
-                nvim = pkgs.neovim-nightly;
-                plugins = builtins.attrValues npinPlugins';
-              };
-            }
-        );
+    in {
+      default = self.packages.${system}.neovim;
+      inherit (pkgs) npins;
+      inherit (pkgs) neovim-nightly;
+      nvim-luarc-json = pkgs.mk-luarc-json {
+        nvim = pkgs.neovim-nightly;
+        plugins = builtins.attrValues npinPlugins';
+      };
+      neovim = inputs.mnw.lib.wrap pkgs {
+        inherit (inputs.neovim-nightly.packages.${system}) neovim;
 
-        # wrapper-manager packages
-        stage2 =
-          stage1
-          // {
-            pack-dir = let
-              packName = "polar";
-              allPlugins = lib.flatten [
-                (lib.attrValues npinCompressedPlugins)
-                (lib.attrValues treesitterGrammars)
-              ];
-            in
-              pkgs.runCommandLocal "pack-dir" {}
-              # bash
-              ''
-                mkdir -pv $out/pack/${packName}/{start,opt}
+        appName = "polar";
+        extraLuaPackages = p: [p.jsregexp];
 
-                ${lib.concatMapStringsSep "\n" (p: ''
-                    ln -vsfT ${p} $out/pack/${packName}/${
-                      if p ? passthru.opt && p.passthru.opt
-                      then "opt"
-                      else "start"
-                    }/${p.pname}
-                  '')
-                  allPlugins}
-              '';
-          }
-          // (inputs.wrapper-manager.lib {
-            pkgs = pkgs // stage1;
-            modules = lib.pipe (builtins.readDir ../wrapper-manager) [
-              (lib.filterAttrs (_: value: value == "directory"))
-              builtins.attrNames
-              (map (n: ../wrapper-manager/${n}))
-            ];
-            specialArgs = {
-              inherit inputs' npinCompressedPlugins treesitterGrammars;
-            };
-          })
-          .config
-          .build
-          .packages;
-      in
-        stage2);
+        providers = {
+          nodeJs.enable = true;
+          perl.enable = true;
+        };
+
+        # Source lua config
+        initLua = ''
+          require('polar')
+        '';
+
+        # Add lua config
+        devExcludedPlugins = [
+          ../polar
+        ];
+        # Impure path to lua config for devShell
+        devPluginPaths = [
+          "/home/polar/repos/personal/neovim-flake/main/polar"
+        ];
+
+        desktopEntry = false;
+
+        plugins =
+          lib.flatten [
+            (lib.attrValues npinCompressedPlugins)
+            (lib.attrValues treesitterGrammars)
+          ]
+          ++ [
+            pkgs.vimPlugins.blink-cmp
+          ];
+        extraBinPath = with pkgs; [
+          fswatch # for lsp file watching
+          xsel # for clipboard
+
+          # arduino
+          # arduino-cli
+
+          # cpp
+          clang
+          clang-tools
+          cpplint
+          cppcheck
+
+          # java
+          jdt-language-server
+
+          # lua
+          lua-language-server
+          luajitPackages.luacheck
+          stylua
+
+          # markdown
+          prettierd
+          markdownlint-cli
+
+          #nix
+          # nil
+          nixd
+          deadnix
+          statix
+          alejandra
+
+          # python
+          (python313.withPackages (ps:
+            with ps; [
+              black
+              python-lsp-server
+              python-lsp-black
+              # :.overrideAttrs
+              # (oldAttrs: {
+              #   patches =
+              #     oldAttrs.patches
+              #     /*
+              #     fix test failure with black>=24.3.0;
+              #     remove this patch once python-lsp-black>2.0.0
+              #     */
+              #     ++ lib.optional
+              #     (with lib; (versionOlder version "2.0.1") && (versionAtLeast black.version "24.3.0"))
+              #     (fetchpatch {
+              #       url = "https://patch-diff.githubusercontent.com/raw/python-lsp/python-lsp-black/pull/59.patch";
+              #       hash = "sha256-4u0VIS7eidVEiKRW2wc8lJVkJwhzJD/M+uuqmTtiZ7E=";
+              #     });
+              # })
+              python-lsp-ruff
+              pydocstyle
+              debugpy
+            ]))
+          ruff
+          basedpyright
+
+          # rust
+          rust-analyzer
+
+          # typescript
+          vtsls
+
+          # yaml
+          nodePackages_latest.yaml-language-server
+        ];
+      };
+    };
   };
 }
