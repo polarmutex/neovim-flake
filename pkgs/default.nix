@@ -41,7 +41,7 @@
     npinPlugins' =
       npinPlugins
       // {
-        lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {opt = false;};};
+        #   lz-n-src = npinPlugins.lz-n-src.overrideAttrs {passthru = {optional = false;};};
       };
 
     buildTSGrammar = pkgs.callPackage "${inputs.nixpkgs}/pkgs/development/tools/parsing/tree-sitter/grammar.nix" {};
