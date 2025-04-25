@@ -542,7 +542,7 @@
       "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v6.0.3",
       "hash": "0g40qj67pazf428wdgzijvf1a4xr2l1nimxisyka52fpwi1rah4y"
     },
-    "snacks-nvim": {
+    "snacks-nvim--opt": {
       "type": "GitRelease",
       "repository": {
         "type": "GitHub",
