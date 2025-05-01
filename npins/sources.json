@@ -55,6 +55,22 @@
       "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/1ee065c33ca777c0e03cd7c358010202ee70bb88.tar.gz",
       "hash": "0r41qf7vs3sb9jh65fr7ml8r7r7zjcjw37ymzk8nagzk7ricczm9"
     },
+    "codecompanion.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "olimorris",
+        "repo": "codecompanion.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v15.0.6",
+      "revision": "81691b1f2b95540f09d3910273edb6b83faa7520",
+      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/v15.0.6",
+      "hash": "0ks6hiy86ip5k87r5cndi5ddqqknwbjvz68ylq5kg0sxjlcyf3nl"
+    },
     "conform-nvim": {
       "type": "GitRelease",
       "repository": {

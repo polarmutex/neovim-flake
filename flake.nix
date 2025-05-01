@@ -59,7 +59,7 @@
             packages = with pkgs; [
               self.packages.${system}.default.devMode
               lemmy-help
-              # npins
+              npins
               nix-tree
               statix
               just
