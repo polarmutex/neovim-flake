@@ -127,8 +127,10 @@
       npinCompressedPlugins = byteCompilePlugins npinPlugins';
     in {
       default = self.packages.${system}.neovim;
+      inherit (pkgs) just;
       inherit (pkgs) npins;
       inherit (pkgs) neovim-nightly;
+      update-tree-sitter-grammars = pkgs.callPackage ./update-tree-sitter-grammars.nix {};
       nvim-luarc-json = pkgs.mk-luarc-json {
         nvim = pkgs.neovim-nightly;
         plugins = builtins.attrValues npinPlugins';

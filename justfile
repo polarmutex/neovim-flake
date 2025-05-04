@@ -13,12 +13,11 @@ generate-npins-matrix file:
 flake-commit-and-format-patch output-file:
     git commit -am "chore(update/flake): update nix flake" && git format-patch -1 HEAD --output {{output-file}}
 
-npins-commit-and-format-patch output-file:
-    git commit -am "chore(plugin/update): $2: $3 -> $4" && git format-patch -1 HEAD --output {{output-file}}
+npins-commit-and-format-patch output-file pin-name version new-version:
+    git commit -am "chore(plugin/update): {{pin-name}}: {{version}} -> {{new-version}}" && git format-patch -1 HEAD --output {{output-file}}
 
-npins-version-matrix file:
-    # https://stackoverflow.com/questions/51217020/jq-convert-array-to-object-indexed-by-filename
-    jq -rcn "inputs | .pins | to_entries | .[] | select(.key == \"$2\") |  if .value.version != null then .value.version else .value.revision[0:8] end " {{file}}
+npins-version-matrix file pin:
+    @jq -rcn 'inputs | .pins | to_entries | .[] | select(.key == "{{pin}}") |  if .value.version != null then .value.version else .value.revision[0:8] end' {{file}}
 
 new-nvim-plugin user repo:
     #!/bin/sh

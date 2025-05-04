@@ -10,7 +10,6 @@ on:
   workflow_dispatch:
 
 jobs:
-
   build:
     name: ${{matrix.attribute }} / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
@@ -21,13 +20,13 @@ jobs:
           - ubuntu-latest
         attribute:
           - .#devShells.x86_64-linux.default
-          - .#neovim-polar
+          - .#neovim
     steps:
       - uses: actions/checkout@v4
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - uses: cachix/cachix-action@v16
         with:
-          name: polarmutex
+          name: polar-nvim
           authToken: ${{ secrets.CACHIX_KEY }}
-      - run: nix build "${{matrix.attribute}}" -L  --accept-flake-config
+      - run: nix build "${{matrix.attribute}}" -L  #--accept-flake-config

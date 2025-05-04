@@ -25,20 +25,18 @@ jobs:
       uses: actions/checkout@v4
     - name: Install nix
       uses: cachix/install-nix-action@v31
-      with:
-        extra_nix_config: |
-          auto-optimise-store = true
-          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-          experimental-features = nix-command flakes
-          substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-          trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
+    # - uses: cachix/cachix-action@v16
+    #   with:
+    #     name: polar-nvim
+    #     authToken: '${{ secrets.CACHIX_KEY }}'
     - name: Update flake.lock
       run: nix flake update
     - id: generate-patch
       name: Generate patch
       run: |
-        nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
-        if nix run .#flake-commit-and-format-patch -- "flake-update.patch"
+        git config --local user.email "${{ env.GIT_EMAIL }}"
+        git config --local user.name "${{ env.GIT_USERNAME }}"
+        if nix run .#just "flake-update.patch"
         then
           echo "patch=true" >> "$GITHUB_OUTPUT"
         else
@@ -58,17 +56,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install nix
         uses: cachix/install-nix-action@v31
-        with:
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
       - id: npins-matrix
         name: Generate npins matrix
         run: |
-          matrix=$(nix run .#generate-npins-matrix -- npins/sources.json )
+          matrix=$(nix run .#just generate-npins-matrix npins/sources.json)
           printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
   update-npins:
@@ -83,13 +74,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install nix
         uses: cachix/install-nix-action@v31
-        with:
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
       - name: Update ${{ matrix.pin.name }}
         run: nix run .#npins -- -d "$(dirname ${{ matrix.pin.sources-file }})" update ${{ matrix.pin.name }}
       - name: Update tree-sitter parsers
@@ -99,8 +83,9 @@ jobs:
       - id: generate-patch
         name: Generate patch
         run: |
-          nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
-          if nix run .#npins-commit-and-format-patch --  "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#npins-version-matrix -- npins/sources.json ${{ matrix.pin.name }})
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USERNAME }}"
+          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins/sources.json ${{ matrix.pin.name }})
           then
             echo "patch=true" >> "$GITHUB_OUTPUT"
           else
@@ -120,15 +105,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install nix
         uses: cachix/install-nix-action@v31
-        with:
-          extra_nix_config: |
-            auto-optimise-store = true
-            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-            experimental-features = nix-command flakes
-            substituters = https://cache.nixos.org/ https://nix-community.cachix.org https://polarmutex.cachix.org
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= polarmutex.cachix.org-1:kUFH4ftZAlTrKlfFaKfdhKElKnvynBMOg77XRL2pc08=
       - name: Configure git
-        run: nix run .#configure-git-user -- "${{ env.GIT_USERNAME }}" "${{ env.GIT_EMAIL }}"
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USERNAME }}"
       - uses: actions/download-artifact@v4
         with:
           path: patches
