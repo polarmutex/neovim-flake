@@ -108,7 +108,7 @@
 
     mnw = {
       url = "github:gerg-l/mnw";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

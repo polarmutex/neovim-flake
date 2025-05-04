@@ -1,8 +1,8 @@
 {pkgs, ...}: let
-  data = builtins.fromJSON (builtins.readFile ../../npins-ts-grammars/sources.json);
+  data = builtins.fromJSON (builtins.readFile ../npins-ts-grammars/sources.json);
   inherit (data) pins;
 
-  grammar-sources = import ../../npins;
+  grammar-sources = import ../npins;
   lockfile = pkgs.lib.importJSON "${grammar-sources."nvim-treesitter"}/lockfile.json";
 
   allGrammars = with pkgs.lib;
