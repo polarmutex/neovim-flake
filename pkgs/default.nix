@@ -151,25 +151,26 @@
           require('polar')
         '';
 
-        # Add lua config
-        devExcludedPlugins = [
-          ../polar
-        ];
-        # Impure path to lua config for devShell
-        devPluginPaths = [
-          "/home/polar/repos/personal/neovim-flake/main/polar"
-        ];
+        desktopEntry = true;
 
-        desktopEntry = false;
+        plugins = {
+          dev.main = {
+            pure = lib.fileset.toSource {
+              root = ../polar;
+              fileset = lib.fileset.fromSource (lib.sources.cleanSource ../polar);
+            };
+            impure = "~/repos/personal/neovim-flake/main";
+          };
+          start =
+            lib.flatten [
+              (lib.attrValues npinCompressedPlugins)
+              (lib.attrValues treesitterGrammars)
+            ]
+            ++ [
+              pkgs.vimPlugins.blink-cmp
+            ];
+        };
 
-        plugins =
-          lib.flatten [
-            (lib.attrValues npinCompressedPlugins)
-            (lib.attrValues treesitterGrammars)
-          ]
-          ++ [
-            pkgs.vimPlugins.blink-cmp
-          ];
         extraBinPath = with pkgs; [
           fswatch # for lsp file watching
           xsel # for clipboard
