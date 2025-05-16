@@ -553,10 +553,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v6.0.10",
-      "revision": "d197f4942d79c699d1a7771b29197a733ffb0261",
-      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v6.0.10",
-      "hash": "08bvh6hb9nkks22k3vcp5a8n7n4cw41ykjzc3zq4kyrlh0a2mwih"
+      "version": "v6.1.0",
+      "revision": "01b28c60abde5cb79c0129e66c465699e78b0e6d",
+      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/v6.1.0",
+      "hash": "128drcc2vhy6b975p6l7cxjzwhcccqqbrz1amk0hamsql5291sh1"
     },
     "snacks-nvim--opt": {
       "type": "GitRelease",
