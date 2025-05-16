@@ -51,9 +51,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1ee065c33ca777c0e03cd7c358010202ee70bb88",
-      "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/1ee065c33ca777c0e03cd7c358010202ee70bb88.tar.gz",
-      "hash": "0r41qf7vs3sb9jh65fr7ml8r7r7zjcjw37ymzk8nagzk7ricczm9"
+      "revision": "d6fa30479c5f392f6f80b4b2e542f91155b289a8",
+      "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/d6fa30479c5f392f6f80b4b2e542f91155b289a8.tar.gz",
+      "hash": "062m7g49hqg6lx34p3l4plywg25x96lnjgysmm70b2655xik9929"
     },
     "codecompanion.nvim": {
       "type": "GitRelease",
