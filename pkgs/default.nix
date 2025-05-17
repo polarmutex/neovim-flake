@@ -154,12 +154,9 @@
         desktopEntry = true;
 
         plugins = {
-          dev.main = {
-            pure = lib.fileset.toSource {
-              root = ../polar;
-              fileset = lib.fileset.fromSource (lib.sources.cleanSource ../polar);
-            };
-            impure = "~/repos/personal/neovim-flake/main";
+          dev.polar = {
+            pure = ../polar;
+            impure = "~/repos/personal/neovim-flake/main/polar";
           };
           start =
             lib.flatten [
