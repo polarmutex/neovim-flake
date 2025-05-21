@@ -48,16 +48,17 @@ return {
             blink_cmp.setup(opts)
         end,
     },
-    {
-        "yanky-nvim",
-        event = "DeferredUIEnter",
-        after = function()
-            local opts = {
-                highlight = { timer = 200 },
-            }
-            require("yanky").setup(opts)
-        end,
-    },
+    -- broken on cosmic
+    -- {
+    --     "yanky-nvim",
+    --     event = "DeferredUIEnter",
+    --     after = function()
+    --         local opts = {
+    --             highlight = { timer = 200 },
+    --         }
+    --         require("yanky").setup(opts)
+    --     end,
+    -- },
     {
         "cmake-tools-nvim",
         lazy = true,
