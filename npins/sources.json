@@ -435,9 +435,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "fdb04e9285edefbe25a02a31a35e8fbb10fe054d",
-      "url": "https://github.com/mfussenegger/nvim-lint/archive/fdb04e9285edefbe25a02a31a35e8fbb10fe054d.tar.gz",
-      "hash": "0ijir72a906w70gr80ifh9mds6f3j9hsbmipmg7jyy1nx3rj4nx9"
+      "revision": "b47cbb249351873e3a571751c3fb66ed6369852f",
+      "url": "https://github.com/mfussenegger/nvim-lint/archive/b47cbb249351873e3a571751c3fb66ed6369852f.tar.gz",
+      "hash": "0cs6vs58p98fv6nmqsyik2kws6xnqbny79gl39mmyssm3z9mpps8"
     },
     "nvim-nio": {
       "type": "GitRelease",
