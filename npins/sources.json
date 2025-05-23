@@ -493,9 +493,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "ba909c68fed65e268df8a4684bafef4ec889c8bc",
-      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/ba909c68fed65e268df8a4684bafef4ec889c8bc.tar.gz",
-      "hash": "0wwzfqzmvfc4pi5na0njalwnm7lhf640ndrcxvzp2izf87cm8l7g"
+      "revision": "69c0dc61f2298862b3a38bdf3c4158c181cf15be",
+      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/69c0dc61f2298862b3a38bdf3c4158c181cf15be.tar.gz",
+      "hash": "1sqf64krbf4wrrfnm40adw23qpqa5gph1s58px7mm048r817yicy"
     },
     "overseer-nvim": {
       "type": "GitRelease",
