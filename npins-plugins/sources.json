@@ -98,10 +98,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.6.0",
-      "revision": "85356807f3a0e9a3f7015586f3a010170d338686",
-      "url": "https://api.github.com/repos/Saecki/crates.nvim/tarball/v0.6.0",
-      "hash": "0kx3657ck1039i6x8jhr5bydccxshx24ng8b9ywr8bppy8mkgygz"
+      "version": "v0.7.1",
+      "revision": "afcd1cc3eeceb5783676fc8464389b9216a29d05",
+      "url": "https://api.github.com/repos/Saecki/crates.nvim/tarball/v0.7.1",
+      "hash": "07q3k2b33kc5qb0qxdqyyy27krz8sr4rhc6c8rwximxriw53l4gl"
     },
     "diffview-nvim": {
       "type": "Git",
