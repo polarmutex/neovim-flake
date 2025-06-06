@@ -199,9 +199,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "b44e11d7a176f184db8b9666a1b41d5890aa5a5b",
-      "url": "https://github.com/m4xshen/hardtime.nvim/archive/b44e11d7a176f184db8b9666a1b41d5890aa5a5b.tar.gz",
-      "hash": "1lc2xy1zii3k65mfz42mw3mgwrpd28hgcdxbzw3b43y1aqijh7w5"
+      "revision": "145b930954a3146cfb5b8a73cdcad42eb7d2740c",
+      "url": "https://github.com/m4xshen/hardtime.nvim/archive/145b930954a3146cfb5b8a73cdcad42eb7d2740c.tar.gz",
+      "hash": "126wxmqc4y8pff7z4rj58pnnzlz61nr9z9vbffk889yphgjjkdfm"
     },
     "harpoon": {
       "type": "Git",
