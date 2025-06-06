@@ -315,9 +315,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e",
-      "url": "https://github.com/nvim-neotest/neotest-python/archive/a2861ab3c9a0bf75a56b11835c2bfc8270f5be7e.tar.gz",
-      "hash": "1m78f9bxsl548f1pcrmbndmnwdplvhqynpm86pv080272ci9msgy"
+      "revision": "34c9f6f3dc53fc462ea658b5071238037f95f7aa",
+      "url": "https://github.com/nvim-neotest/neotest-python/archive/34c9f6f3dc53fc462ea658b5071238037f95f7aa.tar.gz",
+      "hash": "0ig4xv01s6w7p7f65dzlq3ls1qi5hyclv5wiwqfcm5pvyxp6asfg"
     },
     "noice-nvim": {
       "type": "GitRelease",
