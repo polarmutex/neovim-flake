@@ -344,9 +344,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "7cd18e73cfbd70e1546931b7268b3eebaeff9391",
-      "url": "https://github.com/MunifTanjim/nui.nvim/archive/7cd18e73cfbd70e1546931b7268b3eebaeff9391.tar.gz",
-      "hash": "0xl6qsl98ajzmk0wy7kf8q2vjqb30ci3dgwdcj376r87vwli6xd2"
+      "revision": "de740991c12411b663994b2860f1a4fd0937c130",
+      "url": "https://github.com/MunifTanjim/nui.nvim/archive/de740991c12411b663994b2860f1a4fd0937c130.tar.gz",
+      "hash": "0l1ga86dr2rhfjshiicsw3nn03wrhmdqks8v1gn3xmzdgfd2anz3"
     },
     "nvim-colorizer-lua": {
       "type": "Git",
