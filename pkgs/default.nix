@@ -13,7 +13,8 @@
     sources = import ../npins;
     # npins-plugins = import ../npins-plugins;
 
-    pinned-plugins = (import sources.mnw).lib.npinsToPlugins pkgs ../npins-plugins/sources.json;
+    pinned-start-plugins = (import sources.mnw).lib.npinsToPlugins pkgs ../npins-plugins/start.json;
+    pinned-opt-plugins = (import sources.mnw).lib.npinsToPlugins pkgs ../npins-plugins/opt.json;
     # makePluginFromPin = name: pin:
     #   pkgs.vimUtils.buildVimPlugin {
     #     pname = "${name}";
@@ -133,15 +134,15 @@
 
       default = self.packages.${system}.neovim;
 
-      blink-cmp = pkgs.callPackage ./blink-cmp.nix {};
+      blink-cmp = pkgs.callPackage ./blink-cmp/package.nix {};
 
       nvim-luarc-json = pkgs.mk-luarc-json {
         nvim = pkgs.neovim;
         # plugins = builtins.attrValues npinPlugins';
-        plugins = pinned-plugins;
+        plugins = pinned-start-plugins ++ pinned-opt-plugins;
       };
 
-      neovim = (import sources.mnw).lib.wrap {inherit inputs pkgs pinned-plugins;} ./config.nix;
+      neovim = (import sources.mnw).lib.wrap {inherit inputs pkgs pinned-start-plugins pinned-opt-plugins;} ./config.nix;
     };
   };
 }

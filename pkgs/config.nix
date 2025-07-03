@@ -1,7 +1,8 @@
 {
   inputs,
   pkgs,
-  pinned-plugins,
+  pinned-start-plugins,
+  pinned-opt-plugins,
   ...
 }: {
   appName = "nvim-polar";
@@ -72,7 +73,8 @@
             tree-sitter-yaml
           ]))
       ]
-      ++ pinned-plugins;
+      ++ pinned-start-plugins;
+    opt = pinned-opt-plugins;
   };
 
   #

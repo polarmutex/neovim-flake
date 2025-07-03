@@ -76,10 +76,6 @@ jobs:
         uses: cachix/install-nix-action@v31
       - name: Update ${{ matrix.pin.name }}
         run: nix run .#npins -- -d "$(dirname ${{ matrix.pin.sources-file }})" update ${{ matrix.pin.name }}
-      - name: Update tree-sitter parsers
-        if: ${{ matrix.pin.name == 'nvim-treesitter' }}
-        run: |
-          nix run .#update-tree-sitter-grammars
       - id: generate-patch
         name: Generate patch
         run: |
@@ -97,40 +93,85 @@ jobs:
           name: ${{ matrix.pin.name }}-patch
           path: ${{ matrix.pin.name }}.patch
 
-  generate-npins-plugins-matrix:
+  generate-npins-start-plugins-matrix:
     runs-on: ubuntu-latest
     outputs:
-      npins-matrix: ${{ steps.npins-plugin-matrix.outputs.matrix }}
+      npins-matrix: ${{ steps.npins-start-plugin-matrix.outputs.matrix }}
     steps:
       - uses: actions/checkout@v4
       - name: Install nix
         uses: cachix/install-nix-action@v31
-      - id: npins-plugin-matrix
+      - id: npins-start-plugin-matrix
         name: Generate npins matrix
         run: |
-          matrix=$(nix run .#just generate-npins-matrix npins-plugins/sources.json)
+          matrix=$(nix run .#just generate-npins-matrix npins-plugins/start.json)
           printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
-  update-npins-plugins:
+  update-npins-start-plugins:
     runs-on: ubuntu-latest
-    needs: [generate-npins-plugins-matrix]
-    if: ${{ needs.generate-npins-plugins-matrix.result == 'success' && needs.generate-npins-plugins-matrix.outputs.npins-matrix != '[]' }}
+    needs: [generate-npins-start-plugins-matrix]
+    if: ${{ needs.generate-npins-start-plugins-matrix.result == 'success' && needs.generate-npins-start-plugins-matrix.outputs.npins-matrix != '[]' }}
     strategy:
       fail-fast: false
       matrix:
-        pin: ${{ fromJson(needs.generate-npins-plugins-matrix.outputs.npins-matrix) }}
+        pin: ${{ fromJson(needs.generate-npins-start-plugins-matrix.outputs.npins-matrix) }}
     steps:
       - uses: actions/checkout@v4
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - name: Update ${{ matrix.pin.name }}
-        run: nix run .#npins -- -d "$(dirname ${{ matrix.pin.sources-file }})" update ${{ matrix.pin.name }}
+        run: nix run .#npins -- --lock-file ${{ matrix.pin.sources-file }} update ${{ matrix.pin.name }}
       - id: generate-patch
         name: Generate patch
         run: |
           git config --local user.email "${{ env.GIT_EMAIL }}"
           git config --local user.name "${{ env.GIT_USERNAME }}"
-          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins-plugins/sources.json ${{ matrix.pin.name }})
+          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins-plugins/start.json ${{ matrix.pin.name }})
+          then
+            echo "patch=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "patch=false" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/upload-artifact@v4
+        if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
+        with:
+          name: ${{ matrix.pin.name }}-patch
+          path: ${{ matrix.pin.name }}.patch
+
+  generate-npins-opt-plugins-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      npins-matrix: ${{ steps.npins-opt-plugin-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nix
+        uses: cachix/install-nix-action@v31
+      - id: npins-opt-plugin-matrix
+        name: Generate npins matrix
+        run: |
+          matrix=$(nix run .#just generate-npins-matrix npins-plugins/opt.json)
+          printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
+
+  update-npins-opt-plugins:
+    runs-on: ubuntu-latest
+    needs: [generate-npins-opt-plugins-matrix]
+    if: ${{ needs.generate-npins-opt-plugins-matrix.result == 'success' && needs.generate-npins-opt-plugins-matrix.outputs.npins-matrix != '[]' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        pin: ${{ fromJson(needs.generate-npins-opt-plugins-matrix.outputs.npins-matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nix
+        uses: cachix/install-nix-action@v31
+      - name: Update ${{ matrix.pin.name }}
+        run: nix run .#npins -- --lock-file ${{ matrix.pin.sources-file }} update ${{ matrix.pin.name }}
+      - id: generate-patch
+        name: Generate patch
+        run: |
+          git config --local user.email "${{ env.GIT_EMAIL }}"
+          git config --local user.name "${{ env.GIT_USERNAME }}"
+          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins-plugins/opt.json ${{ matrix.pin.name }})
           then
             echo "patch=true" >> "$GITHUB_OUTPUT"
           else
@@ -144,7 +185,7 @@ jobs:
 
   create-pull-request:
     runs-on: ubuntu-latest
-    needs: [update-flake, update-npins, update-npins-plugins]
+    needs: [update-flake, update-npins, update-npins-start-plugins, update-npins-opt-plugins]
     if: contains(needs.*.result, 'success')
     steps:
       - uses: actions/checkout@v4

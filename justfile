@@ -19,23 +19,23 @@ npins-commit-and-format-patch output-file pin-name version new-version:
 npins-version-matrix file pin:
     @jq -rcn 'inputs | .pins | to_entries | .[] | select(.key == "{{pin}}") |  if .value.version != null then .value.version else .value.revision[0:8] end' {{file}}
 
-new-nvim-plugin user repo:
+new-nvim-plugin start_opt user repo:
     #!/bin/sh
     npins add --name {{repo}} github {{user}} {{repo}}
-    NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] | select(.repository.repo == "{{repo}}" ) |  if .version != null then .version else .revision[0:8] end' npins-plugins/sources.json)
+    NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] | select(.repository.repo == "{{repo}}" ) |  if .version != null then .version else .revision[0:8] end' npins-plugins/{{start_opt}}.json)
     git commit -am "chore(pin/new): {{repo}}: init @ $NEW_VERSION"
 
-new-nvim-plugin-branch plugin user repo branch:
+new-nvim-plugin-branch start_opt plugin user repo branch:
     #!/bin/sh
     npins add --name {{repo}} github -b {{branch}} {{user}} {{repo}}
-    NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] | select(.repository.repo == "{{repo}}" ) | if .version != null then .version else .revision[0:8] end' npins-plugins/sources.json)
+    NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] | select(.repository.repo == "{{repo}}" ) | if .version != null then .version else .revision[0:8] end' npins-plugins/{{start_opt}}.json)
     git commit -am "chore(pin/new): {{repo}}: init @ $NEW_VERSION"
 
-update-nvim-plugin repo:
+update-nvim-plugin start_opt repo:
     #!/bin/sh
-    OLD_VERSION=$(jq -rcn 'inputs | .pins | .[] |select(.repository.repo == "{{repo}}") | if .version != null then .version else .revision[0:8] end' npins-plugins/sources.json)
+    OLD_VERSION=$(jq -rcn 'inputs | .pins | .[] |select(.repository.repo == "{{repo}}") | if .version != null then .version else .revision[0:8] end' npins-plugins/{{start_opt}}.json)
     npins update {{repo}}
-    NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] |select(.repository.repo == "{{repo}}") | if .version != null then .version else .revision[0:8] end' npins-plugins/sources.json)
+    NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] |select(.repository.repo == "{{repo}}") | if .version != null then .version else .revision[0:8] end' npins-plugins/{{start_opt}}.json)
     git commit -am "chore(pin/update): {{repo}}: $OLD_VERSION -> $NEW_VERSION"
 
 update-treesitter-grammars:
