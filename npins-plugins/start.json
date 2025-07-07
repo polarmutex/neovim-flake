@@ -242,6 +242,22 @@
       "url": "https://api.github.com/repos/nvim-neorocks/lz.n/tarball/v2.11.3",
       "hash": "0vnr1iiq4z3q7s3qylfmvcclmspydg8ll4p75jilcx9d114v7wwc"
     },
+    "mcphub.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "ravitemer",
+        "repo": "mcphub.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v5.11.0",
+      "revision": "ced93307fd7ea5f4a13feba984cf8d682226958d",
+      "url": "https://api.github.com/repos/ravitemer/mcphub.nvim/tarball/v5.11.0",
+      "hash": "05f1iy8hlmnb4glrpncavb7cgbdwirwhn6v6qcj4345m87ki3dmb"
+    },
     "mini-nvim": {
       "type": "GitRelease",
       "repository": {

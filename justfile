@@ -21,7 +21,7 @@ npins-version-matrix file pin:
 
 new-nvim-plugin start_opt user repo:
     #!/bin/sh
-    npins add --name {{repo}} github {{user}} {{repo}}
+    npins --lock-file ./npins-plugins/{{start_opt}}.json add --name {{repo}} github {{user}} {{repo}}
     NEW_VERSION=$(jq -rcn 'inputs | .pins | .[] | select(.repository.repo == "{{repo}}" ) |  if .version != null then .version else .revision[0:8] end' npins-plugins/{{start_opt}}.json)
     git commit -am "chore(pin/new): {{repo}}: init @ $NEW_VERSION"
 
