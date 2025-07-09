@@ -66,6 +66,8 @@
               # statix
               just
               # gitu
+              inputs.mcp-hub.packages."${system}".default
+              task-master-ai
             ];
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}
@@ -96,5 +98,7 @@
       url = "http://ftp.nluug.nl/vim/runtime/spell/en.utf-8.sug";
       flake = false;
     };
+
+    mcp-hub = {url = "github:ravitemer/mcp-hub";};
   };
 }

@@ -1,5 +1,21 @@
 {
   "pins": {
+    "claude-code.nvim": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "greggh",
+        "repo": "claude-code.nvim"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.4.3",
+      "revision": "4fc655016427e18aac9d3027e1619c0f91e43765",
+      "url": "https://api.github.com/repos/greggh/claude-code.nvim/tarball/v0.4.3",
+      "hash": "1nmd1qf3pqdlfjqpn04nyf8szqj90ama23gp63p8nvam6q09nw4c"
+    },
     "flash-nvim": {
       "type": "GitRelease",
       "repository": {
