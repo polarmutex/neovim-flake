@@ -285,10 +285,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v5.8.0",
-      "revision": "d66cf4e05a116957f0d3a7755a24291c7d1e1f72",
-      "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.8.0",
-      "hash": "09bxarrrfnqvyv22ls6lm0y03ngcp6r372b8hy4rld902psdb11q"
+      "version": "v5.9.0",
+      "revision": "61d1951131e6770c815243d84a27ccd0436ec61c",
+      "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.9.0",
+      "hash": "094cv8dcc2fm7wqr61p69rp6xqzfdrwdh53z857rgx4gvbz70kxj"
     },
     "neotest-python": {
       "type": "Git",
