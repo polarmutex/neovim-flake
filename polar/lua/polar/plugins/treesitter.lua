@@ -1,46 +1,48 @@
-vim.api.nvim_create_autocmd("FileType", {
-    callback = function()
-        pcall(vim.treesitter.start)
-    end,
-})
+return {
+    {
+        "nvim-treesitter",
+        event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+        after = function()
+            -- Enable treesitter for all buffers
+            vim.api.nvim_create_autocmd("FileType", {
+                callback = function()
+                    pcall(vim.treesitter.start)
+                end,
+            })
 
--- broken need to use treesitter register function
---local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
---ft_to_parser.xml = "html"
+            -- Configure treesitter
+            require("nvim-treesitter.configs").setup({
+                ensure_installed = {}, -- We handle this via Nix
+                auto_install = false, -- Disable auto-install since we use Nix
 
-require("vim.treesitter.query").set(
-    "beancount",
-    "highlights",
-    [[
-(date) @field
-(txn) @attribute
+                highlight = {
+                    enable = true,
+                    -- Disable slow treesitter highlight for large files
+                    disable = function(_lang, buf)
+                        local max_filesize = 100 * 1024 -- 100 KB
+                        local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+                        if ok and stats and stats.size > max_filesize then
+                            return true
+                        end
+                    end,
+                },
 
-(account) @type
+                indent = {
+                    enable = true,
+                    -- Disable indent for certain languages if needed
+                    disable = { "python" }, -- Python indentation can be problematic
+                },
 
-(amount) @number
-(incomplete_amount) @number
-(compound_amount) @number
-(amount_tolerance) @number
-
-(currency) @property
-
-(key) @label
-(string) @string
-(payee) @string
-(narration) @string
-
-(tag) @constant
-(link) @constant
-
-(comment) @comment
-
-[
-    (balance) (open) (close) (commodity) (pad)
-    (event) (price) (note) (document) (query)
-    (custom) (pushtag) (poptag) (pushmeta)
-    (popmeta) (option) (include) (plugin)
-] @keyword
-]]
-)
-
-return {}
+                incremental_selection = {
+                    enable = true,
+                    keymaps = {
+                        init_selection = "<C-space>",
+                        node_incremental = "<C-space>",
+                        scope_incremental = false,
+                        node_decremental = "<bs>",
+                    },
+                },
+            })
+        end,
+    },
+}

@@ -4,7 +4,15 @@
   pinned-start-plugins,
   pinned-opt-plugins,
   ...
-}: {
+}: let
+  # Custom tree-sitter-beancount from devel branch
+  ts-grammars-sources = import ../npins-ts-grammars;
+  custom-tree-sitter-beancount = pkgs.tree-sitter.buildGrammar {
+    language = "beancount";
+    version = "devel-${builtins.substring 0 8 ts-grammars-sources.tree-sitter-beancount.revision}";
+    src = ts-grammars-sources.tree-sitter-beancount;
+  };
+in {
   appName = "nvim-polar";
 
   inherit (pkgs) neovim;
@@ -43,7 +51,7 @@
         (pkgs.vimPlugins.nvim-treesitter.withPlugins (grammars:
           with grammars; [
             tree-sitter-bash
-            tree-sitter-beancount
+            custom-tree-sitter-beancount
             tree-sitter-c
             tree-sitter-cmake
             tree-sitter-cpp
