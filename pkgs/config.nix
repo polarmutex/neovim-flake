@@ -95,6 +95,7 @@ in {
     ripgrep
     xsel # for clipboard
     vscode-langservers-extracted
+    inputs.mcp-hub.packages."${system}".default
 
     # arduino
     # arduino-cli
