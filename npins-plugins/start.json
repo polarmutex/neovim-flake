@@ -253,10 +253,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v5.11.0",
-      "revision": "ced93307fd7ea5f4a13feba984cf8d682226958d",
-      "url": "https://api.github.com/repos/ravitemer/mcphub.nvim/tarball/v5.11.0",
-      "hash": "05f1iy8hlmnb4glrpncavb7cgbdwirwhn6v6qcj4345m87ki3dmb"
+      "version": "v5.13.0",
+      "revision": "822dcfccdf013d5c4d0d0ddba9ef3b9dce4caadc",
+      "url": "https://api.github.com/repos/ravitemer/mcphub.nvim/tarball/v5.13.0",
+      "hash": "1xjswi8dgcbnmqwg5l74kyhq1h88s107j06jmf726c4s8cg22lif"
     },
     "mini-nvim": {
       "type": "GitRelease",
