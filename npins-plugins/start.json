@@ -480,9 +480,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "81fa8fe2b9ed69a2c2af5fa79a2d4fe7a6ca60e5",
-      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/81fa8fe2b9ed69a2c2af5fa79a2d4fe7a6ca60e5.tar.gz",
-      "hash": "157kj99b10djr1h7m4rzb50bqmrbn0krz8fm06fhc3bi26gxv6n7"
+      "revision": "91b4e0fb0d640def73812aceb22dafb99261dd67",
+      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/91b4e0fb0d640def73812aceb22dafb99261dd67.tar.gz",
+      "hash": "1nzql49pwix8k0ilz8avx704h57dkrw5ch0r4zsm9g0adq7q2fk8"
     },
     "overseer-nvim": {
       "type": "GitRelease",
