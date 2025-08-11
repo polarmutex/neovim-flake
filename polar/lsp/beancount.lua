@@ -15,8 +15,9 @@ end, {
 ---@type vim.lsp.Config
 return {
     -- cmd = {"beancount-language-server"},
-    cmd = { "/home/polar/repos/personal/beancount-language-server/main/target/release/beancount-language-server" },
-    -- cmd ={ "/home/polar/repos/personal/beancount-language-server/develop/target/release/beancount-language-server"},
+    -- cmd = { "/home/polar/repos/personal/beancount-language-server/main/target/release/beancount-language-server" },
+    -- cmd = { "/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server" },
+    cmd = { "/home/polar/repos/personal/beancount-language-server/develop/target/release/beancount-language-server" },
     -- cmd = { "/home/polar/repos/personal/beancount-language-server/develop/target/debug/beancount-language-server" },
 
     filetypes = { "beancount" },
@@ -25,6 +26,17 @@ return {
     -- single_file_support = true,
     init_options = {
         journal_file = "~/repos/personal/beancount/main/main.beancount",
+        diagnostics = {
+            enabled = false,
+            providers = {
+                tree_sitter = { enabled = true },
+                style = { enabled = true },
+            },
+        },
+        formatting = {
+            number_currency_spacing = 1,
+            indent_width = 2,
+        },
     },
     settings = {},
     reuse_client = function(client, conf)
