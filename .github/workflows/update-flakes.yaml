@@ -195,7 +195,7 @@ jobs:
         run: |
           git config --local user.email "${{ env.GIT_EMAIL }}"
           git config --local user.name "${{ env.GIT_USERNAME }}"
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with:
           path: patches
       - name: Apply patches
