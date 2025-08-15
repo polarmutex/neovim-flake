@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "9ecd375f7c261f622bd811ecebcddd59bf5e9de2",
-      "url": "https://github.com/b0o/SchemaStore.nvim/archive/9ecd375f7c261f622bd811ecebcddd59bf5e9de2.tar.gz",
-      "hash": "0x697ggh955m44pzixvvzph5bfxgjjwk194gsk5nywm5sxsffrbp"
+      "revision": "ae4039eceaeda147a91b6b26e4fb4a2ca16bb503",
+      "url": "https://github.com/b0o/SchemaStore.nvim/archive/ae4039eceaeda147a91b6b26e4fb4a2ca16bb503.tar.gz",
+      "hash": "0z9ykmrndpcxr8j4c7wbyna20x4wzdrvamfn5kida8gli8jhf395"
     },
     "beancount-nvim": {
       "type": "Git",
@@ -51,9 +51,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "17244215b1a96e4b2a83a16abd6719197f270f96",
-      "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/17244215b1a96e4b2a83a16abd6719197f270f96.tar.gz",
-      "hash": "06mk6ba4w5hv53a6f6f1j7i6mlj2frgzjy6a483dvxqrsnk4jccw"
+      "revision": "447fe7629bb5d5baca6f6099f3568484d149aa51",
+      "url": "https://github.com/Civitasv/cmake-tools.nvim/archive/447fe7629bb5d5baca6f6099f3568484d149aa51.tar.gz",
+      "hash": "1jdqsc1myq9mrsziix3w5g0l2g7rdv6lphx99w7svb97br8ifs29"
     },
     "codecompanion.nvim": {
       "type": "GitRelease",
@@ -66,10 +66,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v17.13.0",
-      "revision": "19d665a9b13c0b05652c359c4302465b8b2543be",
-      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/v17.13.0",
-      "hash": "1y2a8njqhns1rljjcli1l8fxjb83rf0rfgqc1kbvz6km3mc6x3yd"
+      "version": "v17.15.0",
+      "revision": "3fcf6d2e9a9ece7e2a61276d42749cd62ee3a798",
+      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/v17.15.0",
+      "hash": "17hwxj6m4iy953b404j7aakfja7zd4dyq4q5y35m781xivnaqq1h"
     },
     "conform-nvim": {
       "type": "GitRelease",
@@ -170,9 +170,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "736f51d2bb684c06f39a2032f064d7244f549981",
-      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/736f51d2bb684c06f39a2032f064d7244f549981.tar.gz",
-      "hash": "0yma3gawbynwas3b8wa1kixpwifk7fdgzahbf9f6p6hg0khhzbss"
+      "revision": "6e3c66548035e50db7bd8e360a29aec6620c3641",
+      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/6e3c66548035e50db7bd8e360a29aec6620c3641.tar.gz",
+      "hash": "1yw1bjyrhy2r0lv0m1bkgs5zd2cx6h104kg5w4iqzldlpyl2n5fc"
     },
     "hardtime-nvim": {
       "type": "Git",
