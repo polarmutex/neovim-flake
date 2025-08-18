@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
     - name: Install nix
       uses: cachix/install-nix-action@v31
     # - uses: cachix/cachix-action@v16
@@ -53,7 +53,7 @@ jobs:
     outputs:
       npins-matrix: ${{ steps.npins-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - id: npins-matrix
@@ -71,7 +71,7 @@ jobs:
       matrix:
         pin: ${{ fromJson(needs.generate-npins-matrix.outputs.npins-matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - name: Update ${{ matrix.pin.name }}
@@ -98,7 +98,7 @@ jobs:
     outputs:
       npins-matrix: ${{ steps.npins-start-plugin-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - id: npins-start-plugin-matrix
@@ -116,7 +116,7 @@ jobs:
       matrix:
         pin: ${{ fromJson(needs.generate-npins-start-plugins-matrix.outputs.npins-matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - name: Update ${{ matrix.pin.name }}
@@ -143,7 +143,7 @@ jobs:
     outputs:
       npins-matrix: ${{ steps.npins-opt-plugin-matrix.outputs.matrix }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - id: npins-opt-plugin-matrix
@@ -161,7 +161,7 @@ jobs:
       matrix:
         pin: ${{ fromJson(needs.generate-npins-opt-plugins-matrix.outputs.npins-matrix) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - name: Update ${{ matrix.pin.name }}
@@ -188,7 +188,7 @@ jobs:
     needs: [update-flake, update-npins, update-npins-start-plugins, update-npins-opt-plugins]
     if: contains(needs.*.result, 'success')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Install nix
         uses: cachix/install-nix-action@v31
       - name: Configure git
