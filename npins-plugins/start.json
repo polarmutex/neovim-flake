@@ -601,10 +601,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v4.11.0",
-      "revision": "b262293ef481b0d1f7a14c708ea7ca649672e200",
-      "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/v4.11.0",
-      "hash": "1cd8wxgicfm5f6g7lzqfhr1ip7cca5h11j190kx0w52h0kbf9k54"
+      "version": "v4.12.0",
+      "revision": "14fd5ff7f84027064724ec3157fe903199e77ded",
+      "url": "https://api.github.com/repos/folke/tokyonight.nvim/tarball/v4.12.0",
+      "hash": "0xwb76fbsfc3lxir9nyl1cpd3d0h6x5pp0hmjqzwvykm3pnv2gky"
     },
     "trouble-nvim": {
       "type": "Git",
