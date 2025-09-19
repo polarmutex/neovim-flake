@@ -1,3 +1,0 @@
-require("diffview").setup()
-
-return {}
