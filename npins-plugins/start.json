@@ -615,9 +615,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3",
-      "url": "https://github.com/folke/trouble.nvim/archive/85bedb7eb7fa331a2ccbecb9202d8abba64d37b3.tar.gz",
-      "hash": "0qn84q75dk2vbw2shh7g9i3x8m5wnhcg17zx26njpl0srykp1vva"
+      "revision": "3fb3bd737be8866e5f3a170abc70b4da8b5dd45a",
+      "url": "https://github.com/folke/trouble.nvim/archive/3fb3bd737be8866e5f3a170abc70b4da8b5dd45a.tar.gz",
+      "hash": "0vcx4dcrs36vrrj50wrhpkrjfadj7g0sdx730snbpqdazzjqxa2v"
     },
     "vim-arduino": {
       "type": "Git",
