@@ -22,9 +22,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "928308a20559523bb3898861a6f28e9589ab3a0e",
-      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/928308a20559523bb3898861a6f28e9589ab3a0e.tar.gz",
-      "hash": "0fyz1fz6q74lyjv1s9bsdd8gwdria8n11v64w2i4inhw91bm8471"
+      "revision": "5ad5860a0400c6744fe36a637326fb7f24e57e0c",
+      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/5ad5860a0400c6744fe36a637326fb7f24e57e0c.tar.gz",
+      "hash": "09dimnwhml5z5snai49vzwgd0nm3jfxlflxf102yifgwx34cx92f"
     },
     "nixpkgs": {
       "type": "Channel",
