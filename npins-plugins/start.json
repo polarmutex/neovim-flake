@@ -209,9 +209,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8ae25b35ae16ca4bd5de3d3c472eec3b574018d4",
-      "url": "https://github.com/smjonas/inc-rename.nvim/archive/8ae25b35ae16ca4bd5de3d3c472eec3b574018d4.tar.gz",
-      "hash": "0abkii2l8zrjr4lxb7hh8ylklwkvpw954wgn435ylkmpy23mqd48"
+      "revision": "7c79416330364976955ec8059fe3832b72ee1271",
+      "url": "https://github.com/smjonas/inc-rename.nvim/archive/7c79416330364976955ec8059fe3832b72ee1271.tar.gz",
+      "hash": "1n64wf9c9bqi5lh76kv9a6ziv5i9p812mj5k8kg73i5c4z68www5"
     },
     "kanagawa-nvim": {
       "type": "Git",
