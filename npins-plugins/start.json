@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "8e17e50b519ba360bcfd5dfb5843ccac9be500ba",
-      "url": "https://github.com/b0o/SchemaStore.nvim/archive/8e17e50b519ba360bcfd5dfb5843ccac9be500ba.tar.gz",
-      "hash": "1qvg11jaqkdhgzjlf0q2jip4icsfgvpas1bw0wn44lrc4yyrdaag"
+      "revision": "0a900e539511a4461701f241278626ce6ec8d331",
+      "url": "https://github.com/b0o/SchemaStore.nvim/archive/0a900e539511a4461701f241278626ce6ec8d331.tar.gz",
+      "hash": "0dvmnqr34v1y937z6y4jp2042ac36mjbrgp3xvfjwxnff0d71rnv"
     },
     "beancount-nvim": {
       "type": "Git",
