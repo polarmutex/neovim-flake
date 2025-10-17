@@ -301,10 +301,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v5.11.1",
-      "revision": "2cf3544fb55cdd428a9a1b7154aea9c9823426e8",
-      "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.11.1",
-      "hash": "1zz376wb3vyw984zjszg8hda4rzskaq7q93ajwdy63ssx8sc9vy4"
+      "version": "v5.13.0",
+      "revision": "7166dc36af2760a76479e021e0521e23f62165f1",
+      "url": "https://api.github.com/repos/nvim-neotest/neotest/tarball/v5.13.0",
+      "hash": "1mfdlns4y4dxf1im7rwcq264jqwm3814dlnf37c41yq13pc7fd13"
     },
     "neotest-python": {
       "type": "Git",
