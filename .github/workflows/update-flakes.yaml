@@ -42,7 +42,7 @@ jobs:
         else
           echo "patch=false" >> "$GITHUB_OUTPUT"
         fi
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
       with:
         name: flake-update-patch
@@ -87,7 +87,7 @@ jobs:
           else
             echo "patch=false" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
         with:
           name: ${{ matrix.pin.name }}-patch
@@ -132,7 +132,7 @@ jobs:
           else
             echo "patch=false" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
         with:
           name: ${{ matrix.pin.name }}-patch
@@ -177,7 +177,7 @@ jobs:
           else
             echo "patch=false" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
         with:
           name: ${{ matrix.pin.name }}-patch
