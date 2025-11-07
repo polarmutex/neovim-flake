@@ -586,9 +586,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "19d461ddd543e938eb22505fb03fa878800270b6",
-      "url": "https://github.com/folke/todo-comments.nvim/archive/19d461ddd543e938eb22505fb03fa878800270b6.tar.gz",
-      "hash": "1kpzji8al0dsxcilh3jkndxsfgnhm5nclw36hkgly5ksslnpg8s2"
+      "revision": "411503d3bedeff88484de572f2509c248e499b38",
+      "url": "https://github.com/folke/todo-comments.nvim/archive/411503d3bedeff88484de572f2509c248e499b38.tar.gz",
+      "hash": "1cvijn65ashf7vlcl47b6f56gjkjdkxzag34w4lljg0q5bzyfkjl"
     },
     "tokyonight-nvim": {
       "type": "GitRelease",
