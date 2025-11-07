@@ -66,10 +66,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v17.28.0",
-      "revision": "7844ef9d2b28e46c4453907cff4308a7e044638e",
-      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/v17.28.0",
-      "hash": "15lrxzsbj8k2dx7c3525alpdhrwh5k7kd9vp56i3v60vim7ra7jh"
+      "version": "v17.30.0",
+      "revision": "418d8abce319ed8cd449933ca1e12be4e595881e",
+      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/v17.30.0",
+      "hash": "1cja8a24pik84pnb90bydc2wh15jy4q5h8wwv1gvamgzad33pp4s"
     },
     "conform-nvim": {
       "type": "GitRelease",
