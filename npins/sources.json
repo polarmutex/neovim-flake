@@ -9,9 +9,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "cfbc7d1cc832e318d0863a5fc91d940a96034001",
-      "url": "https://github.com/Gerg-L/mnw/archive/cfbc7d1cc832e318d0863a5fc91d940a96034001.tar.gz",
-      "hash": "0s369nzhlxnzj82l64nxi711a8kaibzikmlxrbcsigbwh5ijzck3"
+      "revision": "c5543447e4240397ab320d26a72942f730a9c18b",
+      "url": "https://github.com/Gerg-L/mnw/archive/c5543447e4240397ab320d26a72942f730a9c18b.tar.gz",
+      "hash": "0idyh1gw0fr42h0vw8fb35rpiilzlsic1n1g5aqvg1n1sc5y33qq"
     },
     "neovim-nightly-overlay": {
       "type": "Git",
