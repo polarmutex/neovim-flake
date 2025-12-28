@@ -134,7 +134,7 @@
 
       default = self.packages.${system}.neovim;
 
-      blink-cmp = pkgs.callPackage ./blink-cmp/package.nix {};
+      blink-cmp = pkgs.callPackage ../packages/blink-cmp/package.nix {};
 
       nvim-luarc-json = pkgs.mk-luarc-json {
         nvim = pkgs.neovim;
@@ -142,7 +142,7 @@
         plugins = pinned-start-plugins ++ pinned-opt-plugins;
       };
 
-      neovim = (import sources.mnw).lib.wrap {inherit inputs pkgs pinned-start-plugins pinned-opt-plugins;} ./config.nix;
+      neovim = (import sources.mnw).lib.wrap {inherit inputs pkgs pinned-start-plugins pinned-opt-plugins;} ../config.nix;
     };
   };
 }
