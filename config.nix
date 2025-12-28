@@ -6,7 +6,7 @@
   ...
 }: let
   # Custom tree-sitter-beancount from devel branch
-  ts-grammars-sources = import ../npins-ts-grammars;
+  ts-grammars-sources = import ./npins-ts-grammars;
   custom-tree-sitter-beancount = pkgs.tree-sitter.buildGrammar {
     language = "beancount";
     version = "devel-${builtins.substring 0 8 ts-grammars-sources.tree-sitter-beancount.revision}";
@@ -35,8 +35,8 @@ in {
 
   plugins = {
     dev.polar = {
-      pure = ../polar;
-      impure = "~/repos/personal/neovim-flake/main/polar";
+      pure = ./.;
+      impure = "~/repos/personal/neovim-flake/main";
     };
 
     start =
