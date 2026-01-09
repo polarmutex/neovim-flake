@@ -30,8 +30,8 @@
       "version": "v2.1.0",
       "revision": "ec0bf2842189f65f60fd40bf3557cac1029cc932",
       "url": "https://api.github.com/repos/folke/flash.nvim/tarball/v2.1.0",
-      "hash": "0pv5czj11ckfxlgn252ynwm80npl67lgwi3wm6vi9d9idz5ns7s2"
+      "hash": "sha256-Qh9ty28xtRS3qXxE/ugx9FqAKrdeFGEf7W6yEORnZV8="
     }
   },
-  "version": 5
+  "version": 7
 }

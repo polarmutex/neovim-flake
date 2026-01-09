@@ -11,8 +11,8 @@
       "submodules": false,
       "revision": "40803e540ce36de25d8b968048182b85d4c00723",
       "url": "https://github.com/polarmutex/tree-sitter-beancount/archive/40803e540ce36de25d8b968048182b85d4c00723.tar.gz",
-      "hash": "0047gbxjcxv126s1pf4ylr49la164mzby4l4mzbcx0pk301yv9w8"
+      "hash": "sha256-iKftAxjzgs7Wr4QSv34lJiiaSKaeuBu0EWF3Jvt6hwA="
     }
   },
-  "version": 5
+  "version": 7
 }

@@ -11,10 +11,22 @@ generate-npins-matrix file:
     jq -cn '[ inputs | .pins | to_entries | .[] | { name: .key, version: (if .value.version != null then .value.version else .value.revision[0:8] end), "sources-file": input_filename } ]' {{file}}
 
 flake-commit-and-format-patch output-file:
-    git commit -am "chore(update/flake): update nix flake" && git format-patch -1 HEAD --output {{output-file}}
+    #!/bin/sh
+    if git diff --quiet && git diff --cached --quiet; then
+        echo "No changes to commit for flake update"
+        exit 1
+    fi
+    git commit -am "chore(update/flake): update nix flake"
+    git format-patch -1 HEAD --output {{output-file}}
 
 npins-commit-and-format-patch output-file pin-name version new-version:
-    git commit -am "chore(pin/update): {{pin-name}}: {{version}} -> {{new-version}}" && git format-patch -1 HEAD --output {{output-file}}
+    #!/bin/sh
+    if git diff --quiet && git diff --cached --quiet; then
+        echo "No changes to commit for {{pin-name}}"
+        exit 1
+    fi
+    git commit -am "chore(pin/update): {{pin-name}}: {{version}} -> {{new-version}}"
+    git format-patch -1 HEAD --output {{output-file}}
 
 npins-version-matrix file pin:
     @jq -rcn 'inputs | .pins | to_entries | .[] | select(.key == "{{pin}}") |  if .value.version != null then .value.version else .value.revision[0:8] end' {{file}}
