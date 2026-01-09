@@ -67,7 +67,7 @@
               just
               # gitu
               inputs.mcp-hub.packages."${system}".default
-              task-master-ai
+              # task-master-ai
             ];
             shellHook = ''
               ${self.checks.${system}.pre-commit-check.shellHook}

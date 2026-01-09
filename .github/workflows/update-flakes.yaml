@@ -1,214 +1,311 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
-name: update-flakes
+name: Update Flake and Dependencies
+
 on:
   workflow_dispatch:
     inputs:
-      dry-run:
-        description: "Dry run: if `true`, a pull request will not be made."
+      auto-merge:
+        description: "Auto-merge PR if checks pass"
         type: boolean
-        required: true
-        default: false
+        required: false
+        default: true
   schedule:
+    # Run every Friday at 4 AM UTC
     - cron: "0 4 * * 5"
 
-run-name: Update flake inputs and npins
+run-name: Update flake inputs and dependencies
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
 
 env:
   GIT_USERNAME: github-actions[bot]
   GIT_EMAIL: github-actions[bot]@users.noreply.github.com
 
 jobs:
-  update-flake:
+  update-dependencies:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v6
-    - name: Install nix
-      uses: cachix/install-nix-action@v31
-    # - uses: cachix/cachix-action@v16
-    #   with:
-    #     name: polar-nvim
-    #     authToken: '${{ secrets.CACHIX_KEY }}'
-    - name: Update flake.lock
-      run: nix flake update
-    - id: generate-patch
-      name: Generate patch
-      run: |
-        git config --local user.email "${{ env.GIT_EMAIL }}"
-        git config --local user.name "${{ env.GIT_USERNAME }}"
-        if nix run .#just flake-commit-and-format-patch "flake-update.patch"
-        then
-          echo "patch=true" >> "$GITHUB_OUTPUT"
-        else
-          echo "patch=false" >> "$GITHUB_OUTPUT"
-        fi
-    - uses: actions/upload-artifact@v6
-      if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
-      with:
-        name: flake-update-patch
-        path: flake-update.patch
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-  generate-npins-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      npins-matrix: ${{ steps.npins-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
+      - name: Install Nix
         uses: cachix/install-nix-action@v31
-      - id: npins-matrix
-        name: Generate npins matrix
-        run: |
-          matrix=$(nix run .#just generate-npins-matrix npins/sources.json)
-          printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            accept-flake-config = true
 
-  update-npins:
-    runs-on: ubuntu-latest
-    needs: [generate-npins-matrix]
-    if: ${{ needs.generate-npins-matrix.result == 'success' && needs.generate-npins-matrix.outputs.npins-matrix != '[]' }}
-    strategy:
-      fail-fast: false
-      matrix:
-        pin: ${{ fromJson(needs.generate-npins-matrix.outputs.npins-matrix) }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
-        uses: cachix/install-nix-action@v31
-      - name: Update ${{ matrix.pin.name }}
-        run: nix run .#npins -- -d "$(dirname ${{ matrix.pin.sources-file }})" update ${{ matrix.pin.name }}
-      - id: generate-patch
-        name: Generate patch
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v16
+        with:
+          name: polarmutex
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          skipPush: true
+
+      - name: Configure Git
         run: |
           git config --local user.email "${{ env.GIT_EMAIL }}"
           git config --local user.name "${{ env.GIT_USERNAME }}"
-          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins/sources.json ${{ matrix.pin.name }})
-          then
-            echo "patch=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "patch=false" >> "$GITHUB_OUTPUT"
+
+      - name: Capture versions before update
+        id: capture-before
+        run: |
+          # Capture flake inputs
+          {
+            echo "flake_inputs<<EOF"
+            nix flake metadata --json | jq -r '.locks.nodes.root.inputs | to_entries[] | "\(.key)"'
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+          # Capture npins versions
+          mkdir -p /tmp/versions-before
+
+          # Main npins
+          if [ -f "npins/sources.json" ]; then
+            jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' npins/sources.json > /tmp/versions-before/npins.txt
           fi
-      - uses: actions/upload-artifact@v6
-        if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
-        with:
-          name: ${{ matrix.pin.name }}-patch
-          path: ${{ matrix.pin.name }}.patch
 
-  generate-npins-start-plugins-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      npins-matrix: ${{ steps.npins-start-plugin-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
-        uses: cachix/install-nix-action@v31
-      - id: npins-start-plugin-matrix
-        name: Generate npins matrix
-        run: |
-          matrix=$(nix run .#just generate-npins-matrix npins-plugins/start.json)
-          printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
-
-  update-npins-start-plugins:
-    runs-on: ubuntu-latest
-    needs: [generate-npins-start-plugins-matrix]
-    if: ${{ needs.generate-npins-start-plugins-matrix.result == 'success' && needs.generate-npins-start-plugins-matrix.outputs.npins-matrix != '[]' }}
-    strategy:
-      fail-fast: false
-      matrix:
-        pin: ${{ fromJson(needs.generate-npins-start-plugins-matrix.outputs.npins-matrix) }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
-        uses: cachix/install-nix-action@v31
-      - name: Update ${{ matrix.pin.name }}
-        run: nix run .#npins -- --lock-file ${{ matrix.pin.sources-file }} update ${{ matrix.pin.name }}
-      - id: generate-patch
-        name: Generate patch
-        run: |
-          git config --local user.email "${{ env.GIT_EMAIL }}"
-          git config --local user.name "${{ env.GIT_USERNAME }}"
-          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins-plugins/start.json ${{ matrix.pin.name }})
-          then
-            echo "patch=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "patch=false" >> "$GITHUB_OUTPUT"
+          # Start plugins
+          if [ -f "npins-plugins/start.json" ]; then
+            jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' npins-plugins/start.json > /tmp/versions-before/start.txt
           fi
-      - uses: actions/upload-artifact@v6
-        if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
-        with:
-          name: ${{ matrix.pin.name }}-patch
-          path: ${{ matrix.pin.name }}.patch
 
-  generate-npins-opt-plugins-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      npins-matrix: ${{ steps.npins-opt-plugin-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
-        uses: cachix/install-nix-action@v31
-      - id: npins-opt-plugin-matrix
-        name: Generate npins matrix
-        run: |
-          matrix=$(nix run .#just generate-npins-matrix npins-plugins/opt.json)
-          printf '%s' "matrix=$matrix" >> "$GITHUB_OUTPUT"
-
-  update-npins-opt-plugins:
-    runs-on: ubuntu-latest
-    needs: [generate-npins-opt-plugins-matrix]
-    if: ${{ needs.generate-npins-opt-plugins-matrix.result == 'success' && needs.generate-npins-opt-plugins-matrix.outputs.npins-matrix != '[]' }}
-    strategy:
-      fail-fast: false
-      matrix:
-        pin: ${{ fromJson(needs.generate-npins-opt-plugins-matrix.outputs.npins-matrix) }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
-        uses: cachix/install-nix-action@v31
-      - name: Update ${{ matrix.pin.name }}
-        run: nix run .#npins -- --lock-file ${{ matrix.pin.sources-file }} update ${{ matrix.pin.name }}
-      - id: generate-patch
-        name: Generate patch
-        run: |
-          git config --local user.email "${{ env.GIT_EMAIL }}"
-          git config --local user.name "${{ env.GIT_USERNAME }}"
-          if nix run .#just npins-commit-and-format-patch "${{ matrix.pin.name }}.patch" ${{matrix.pin.name}} ${{matrix.pin.version}} $(nix run .#just npins-version-matrix npins-plugins/opt.json ${{ matrix.pin.name }})
-          then
-            echo "patch=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "patch=false" >> "$GITHUB_OUTPUT"
+          # Opt plugins
+          if [ -f "npins-plugins/opt.json" ]; then
+            jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' npins-plugins/opt.json > /tmp/versions-before/opt.txt
           fi
-      - uses: actions/upload-artifact@v6
-        if: ${{ fromJson(steps.generate-patch.outputs.patch) }}
-        with:
-          name: ${{ matrix.pin.name }}-patch
-          path: ${{ matrix.pin.name }}.patch
 
-  create-pull-request:
-    runs-on: ubuntu-latest
-    needs: [update-flake, update-npins, update-npins-start-plugins, update-npins-opt-plugins]
-    if: contains(needs.*.result, 'success')
-    steps:
-      - uses: actions/checkout@v6
-      - name: Install nix
-        uses: cachix/install-nix-action@v31
-      - name: Configure git
+          # Tree-sitter grammars
+          if [ -f "npins-ts-grammars/sources.json" ]; then
+            jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' npins-ts-grammars/sources.json > /tmp/versions-before/ts.txt
+          fi
+
+          # Capture blink.cmp version
+          if [ -f "packages/blink-cmp/package.nix" ]; then
+            BLINK_CMP_VERSION=$(grep "version =" packages/blink-cmp/package.nix | sed 's/.*= "//;s/".*//')
+            echo "blink_cmp_version=$BLINK_CMP_VERSION" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update flake.lock
+        id: flake-update
         run: |
-          git config --local user.email "${{ env.GIT_EMAIL }}"
-          git config --local user.name "${{ env.GIT_USERNAME }}"
-      - uses: actions/download-artifact@v7
-        with:
-          path: patches
-      - name: Apply patches
+          echo "Updating flake.lock..."
+          nix flake update || echo "Flake update completed with warnings"
+
+          if ! git diff --quiet flake.lock; then
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update npins (main)
+        id: npins-main
         run: |
-          shopt -s globstar
-          git am ./patches/**/*.patch
-      - name: Delete patch files
+          echo "Updating npins/sources.json..."
+          if [ -f "npins/sources.json" ]; then
+            nix run .#npins -- -d npins update
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update npins plugins (start)
+        id: npins-start
         run: |
-          rm -rf ./patches
-      - if: ${{ !inputs.dry-run }}
+          echo "Updating npins-plugins/start.json..."
+          if [ -f "npins-plugins/start.json" ]; then
+            nix run .#npins -- --lock-file npins-plugins/start.json update
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update npins plugins (opt)
+        id: npins-opt
+        run: |
+          echo "Updating npins-plugins/opt.json..."
+          if [ -f "npins-plugins/opt.json" ]; then
+            nix run .#npins -- --lock-file npins-plugins/opt.json update
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update npins tree-sitter grammars
+        id: npins-ts
+        run: |
+          echo "Updating npins-ts-grammars/sources.json..."
+          if [ -f "npins-ts-grammars/sources.json" ]; then
+            nix run .#npins -- -d npins-ts-grammars update
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update blink.cmp with nix-update
+        id: nix-update
+        run: |
+          echo "Updating blink.cmp with nix-update..."
+          nix run nixpkgs#nix-update -- --flake blink-cmp
+          if ! git diff --quiet packages/blink-cmp/package.nix; then
+            echo "updated=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "updated=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build commit message and commit changes
+        id: commit-changes
+        run: |
+          # Check if there are any changes
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No updates to commit"
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+
+          # Start building commit message
+          COMMIT_MSG="chore: update flake inputs and dependencies"
+          COMMIT_BODY=""
+
+          # Flake updates
+          if [ "${{ steps.flake-update.outputs.updated }}" == "true" ]; then
+            COMMIT_BODY="${COMMIT_BODY}Flake inputs updated\n"
+          fi
+
+          # nix-update changes
+          if [ "${{ steps.nix-update.outputs.updated }}" == "true" ]; then
+            NEW_BLINK_CMP_VERSION=$(grep "version =" packages/blink-cmp/package.nix | sed 's/.*= "//;s/".*//')
+            OLD_BLINK_CMP_VERSION="${{ steps.capture-before.outputs.blink_cmp_version }}"
+            if [ "$OLD_BLINK_CMP_VERSION" != "$NEW_BLINK_CMP_VERSION" ]; then
+              COMMIT_BODY="${COMMIT_BODY}blink.cmp: ${OLD_BLINK_CMP_VERSION} -> ${NEW_BLINK_CMP_VERSION}\n"
+            fi
+          fi
+
+          # Function to generate version changes
+          generate_changes() {
+            local before_file="$1"
+            local after_file="$2"
+            local prefix="$3"
+
+            if [ ! -f "$before_file" ]; then
+              return
+            fi
+
+            # Read after versions
+            if [ "$after_file" == "npins/sources.json" ]; then
+              jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' "$after_file" > /tmp/after.txt
+            elif [ "$after_file" == "npins-plugins/start.json" ] || [ "$after_file" == "npins-plugins/opt.json" ]; then
+              jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' "$after_file" > /tmp/after.txt
+            elif [ "$after_file" == "npins-ts-grammars/sources.json" ]; then
+              jq -r '.pins | to_entries[] | "\(.key)|\(.value.version // .value.revision[0:8])"' "$after_file" > /tmp/after.txt
+            fi
+
+            # Compare and generate changes
+            while IFS='|' read -r name old_ver; do
+              new_ver=$(grep "^${name}|" /tmp/after.txt 2>/dev/null | cut -d'|' -f2)
+              if [ -n "$new_ver" ] && [ "$old_ver" != "$new_ver" ]; then
+                COMMIT_BODY="${COMMIT_BODY}${prefix}${name}: ${old_ver} -> ${new_ver}\n"
+              fi
+            done < "$before_file"
+
+            rm -f /tmp/after.txt
+          }
+
+          # Add npins changes
+          if [ -f "/tmp/versions-before/npins.txt" ]; then
+            COMMIT_BODY="${COMMIT_BODY}\nMain dependencies:\n"
+            generate_changes "/tmp/versions-before/npins.txt" "npins/sources.json" "  "
+          fi
+
+          if [ -f "/tmp/versions-before/start.txt" ]; then
+            COMMIT_BODY="${COMMIT_BODY}\nStart plugins:\n"
+            generate_changes "/tmp/versions-before/start.txt" "npins-plugins/start.json" "  "
+          fi
+
+          if [ -f "/tmp/versions-before/opt.txt" ]; then
+            COMMIT_BODY="${COMMIT_BODY}\nOpt plugins:\n"
+            generate_changes "/tmp/versions-before/opt.txt" "npins-plugins/opt.json" "  "
+          fi
+
+          if [ -f "/tmp/versions-before/ts.txt" ]; then
+            COMMIT_BODY="${COMMIT_BODY}\nTree-sitter grammars:\n"
+            generate_changes "/tmp/versions-before/ts.txt" "npins-ts-grammars/sources.json" "  "
+          fi
+
+          # Create commit
+          git add -A
+
+          # Build full commit message in a temp file
+          {
+            echo "${COMMIT_MSG}"
+            echo ""
+            echo -e "${COMMIT_BODY}"
+          } > /tmp/commit-msg.txt
+
+          git commit -F /tmp/commit-msg.txt
+
+          echo "Commit created successfully"
+
+      - name: Create summary
+        if: steps.commit-changes.outputs.has_changes == 'true'
+        run: |
+          {
+            echo "## Update Summary"
+            echo ""
+            echo "✅ All updates committed in a single commit"
+            echo ""
+            echo "### Changes"
+            echo '```'
+            git log -1 --pretty=format:"%B"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Create Pull Request
+        if: steps.commit-changes.outputs.has_changes == 'true'
+        id: create-pr
         uses: peter-evans/create-pull-request@v8
         with:
-          title: Update flake inputs and npins
-          body: ${{ github.event_name == 'workflow_dispatch' && 'Manually triggered update.' || 'Automated periodic update.' }}
           token: '${{ secrets.PAT }}'
-          branch: update-flake-inputs-and-npins
+          branch: automated-updates
+          delete-branch: true
+          title: "chore: update flake inputs and dependencies"
+          body: |
+            ## Automated Dependency Updates
+
+            This PR contains automated updates for flake inputs and npins dependencies.
+
+            ### Commit Details
+            See the commit message for a detailed list of all version changes.
+
+            **Triggered by:** ${{ github.event_name == 'workflow_dispatch' && 'Manual trigger' || 'Scheduled run' }}
+
+            ---
+
+            🤖 This PR was automatically created by the update-flakes workflow.
+            ${{ (github.event_name == 'schedule' || inputs.auto-merge) && '🔄 Will auto-merge when checks pass.' || '' }}
+          labels: |
+            dependencies
+            automated
+          draft: false
+
+      - name: Enable auto-merge
+        if: |
+          steps.create-pr.outputs.pull-request-number &&
+          (github.event_name == 'schedule' || inputs.auto-merge)
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+          PR_NUMBER: ${{ steps.create-pr.outputs.pull-request-number }}
+        run: |
+          echo "Enabling auto-merge for PR #${PR_NUMBER}"
+          echo ""
+          echo "ℹ️  Auto-merge will wait for the following before merging:"
+          echo "  - nix-build workflow to pass"
+          echo "  - nix-check workflow to pass"
+          echo "  - Any required status checks configured in branch protection"
+          echo ""
+          gh pr merge "${PR_NUMBER}" --auto --squash --delete-branch
