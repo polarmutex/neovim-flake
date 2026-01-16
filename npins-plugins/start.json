@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "d5687736d15cfc3c1ac943485cad7808ba487d2b",
-      "url": "https://github.com/b0o/SchemaStore.nvim/archive/d5687736d15cfc3c1ac943485cad7808ba487d2b.tar.gz",
-      "hash": "sha256-+duGacPCeTZPCOTB/Ye+T33I9pBKZdu0cNMYWt6MhSg="
+      "revision": "fb7b9034285a5658c746faa12eff8c1c9d9b11b1",
+      "url": "https://github.com/b0o/SchemaStore.nvim/archive/fb7b9034285a5658c746faa12eff8c1c9d9b11b1.tar.gz",
+      "hash": "sha256-YqpMq96FPe6WfzlYNXIC5UMpHdYmD90snYyiq59spms="
     },
     "beancount-nvim": {
       "type": "Git",
@@ -66,10 +66,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v18.3.2",
-      "revision": "bfc0cd91db525f9652f91074d2b524dd3ede0c3f",
-      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/refs/tags/v18.3.2",
-      "hash": "sha256-31ekLPaaXKsaVoLNBdi2CnDFe8K0gi6JDpqkpwgIWSs="
+      "version": "v18.4.0",
+      "revision": "181e93c3f6a65ead4106f1b5a71194103accb3d3",
+      "url": "https://api.github.com/repos/olimorris/codecompanion.nvim/tarball/refs/tags/v18.4.0",
+      "hash": "sha256-DHU/eaZmNQ+rr05+OiZR6s5aEHXjyEd6SJzUYybnVr4="
     },
     "conform-nvim": {
       "type": "GitRelease",
@@ -170,9 +170,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "72acb69020c92d99cf388bfeb390481ccec50c04",
-      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/72acb69020c92d99cf388bfeb390481ccec50c04.tar.gz",
-      "hash": "sha256-/nSdEir9xSe8MtEC1LOZXs4F19r99phXQX8MAZZzCaI="
+      "revision": "42d6aed4e94e0f0bbced16bbdcc42f57673bd75e",
+      "url": "https://github.com/lewis6991/gitsigns.nvim/archive/42d6aed4e94e0f0bbced16bbdcc42f57673bd75e.tar.gz",
+      "hash": "sha256-L89x9n2OKCyUuWaNXPkuNGBEU9EBX+9zRlzS1Kfw428="
     },
     "hardtime-nvim": {
       "type": "Git",
@@ -480,9 +480,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "87eeca2bd4d90a94eed1ef0dbc66885117e7bacb",
-      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/87eeca2bd4d90a94eed1ef0dbc66885117e7bacb.tar.gz",
-      "hash": "sha256-/5/IZYedlfbKzj1vbmpLoerPe9kH8Ee/GvPDM8fGDBs="
+      "revision": "1af6ffb9b5229a856e8090fa2f690e0931a5aace",
+      "url": "https://github.com/jbyuki/one-small-step-for-vimkind/archive/1af6ffb9b5229a856e8090fa2f690e0931a5aace.tar.gz",
+      "hash": "sha256-IqyNgMf8hH2KpRY8gTrqREMCZwMNfDRdH/joqhGhjxI="
     },
     "overseer-nvim": {
       "type": "GitRelease",
@@ -495,10 +495,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v2.0.0",
-      "revision": "2fe35c4282c35179fb615acbf52881f22924e7ad",
-      "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/v2.0.0",
-      "hash": "sha256-nUShhR3lDCawgi25gVWiuLxvMbejhBwjVKbAcorCffo="
+      "version": "v2.1.0",
+      "revision": "95b1099c043e4231a1204abd9a394d379e69f029",
+      "url": "https://api.github.com/repos/stevearc/overseer.nvim/tarball/refs/tags/v2.1.0",
+      "hash": "sha256-US6YTRsfzw0/pdvGH0tP1YwnVC46ollj2W8kXjxcZTc="
     },
     "plenary-nvim": {
       "type": "Git",
@@ -540,10 +540,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v7.0.9",
-      "revision": "8490d5f6a10b618ce0d7078db55e6e86158a329b",
-      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/refs/tags/v7.0.9",
-      "hash": "sha256-5F4o9h43miWYXON8aMHmy1zgUicjetkHRnDDTr6Eza0="
+      "version": "v7.1.0",
+      "revision": "63c744d92f1d7428bc9acc26054331f85891d822",
+      "url": "https://api.github.com/repos/mrcjkb/rustaceanvim/tarball/refs/tags/v7.1.0",
+      "hash": "sha256-PFH8l21ZqH0D4zF5DQmPb1xlqNTfuoeXXz++xKs3USU="
     },
     "snacks-nvim--opt": {
       "type": "GitRelease",
