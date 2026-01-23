@@ -9,8 +9,8 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "75bb637454b0fbbb5ed652375a4bf7ffd28bcf6f",
-      "url": "https://github.com/Gerg-L/mnw/archive/75bb637454b0fbbb5ed652375a4bf7ffd28bcf6f.tar.gz",
+      "revision": "20d63a8a1ae400557c770052a46a9840e768926b",
+      "url": "https://github.com/Gerg-L/mnw/archive/20d63a8a1ae400557c770052a46a9840e768926b.tar.gz",
       "hash": "sha256-kSvWF3Xt2HW9hmV5V7i8PqeWJIBUKmuKoHhOgj3Znzs="
     },
     "neovim-nightly-overlay": {
@@ -22,15 +22,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "46edfd3b2ed593edd8a4fc94018ef8ae2065c352",
-      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/46edfd3b2ed593edd8a4fc94018ef8ae2065c352.tar.gz",
-      "hash": "sha256-pliWebSDPrqqUdUPQhoPjhXDzP6jtTOrtG0N9obIY9A="
+      "revision": "7c77dcce004c0845da25e0fe9a6c8b11bd46e614",
+      "url": "https://github.com/nix-community/neovim-nightly-overlay/archive/7c77dcce004c0845da25e0fe9a6c8b11bd46e614.tar.gz",
+      "hash": "sha256-vMWf9C4LK2fshCKgUYGR0fn4/3qg2/sWyFILv4YYTB8="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre927565.13868c071cc7/nixexprs.tar.xz",
-      "hash": "sha256-wufp5c0nWh/87f9eK7xy1eZXms5zd4yl6S4SR+LfA08="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre930822.ed142ab1b3a0/nixexprs.tar.xz",
+      "hash": "sha256-XH6awru9NnBc/m+2YhRNT8r1PAKEiPGF3gs//F3ods0="
     }
   },
   "version": 7
